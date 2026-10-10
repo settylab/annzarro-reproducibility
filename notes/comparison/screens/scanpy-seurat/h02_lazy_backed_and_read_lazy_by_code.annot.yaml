@@ -1,0 +1,76 @@
+{
+ "version": 1,
+ "image": "h02_lazy_backed_and_read_lazy_by_code.jpg",
+ "tool": "scanpy-seurat",
+ "software": "anndata 0.13.4 (code; Scanpy has no GUI)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "file://$DEMO_ROOT/_data/bm_demo.h5ad",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_code.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "lazy",
+   "mark": "P",
+   "caption": "code output, anndata 0.13.4 (2026-10-04): read_h5ad(backed='r') keeps X on disk and reads one gene on demand, read_lazy gives a dask X; backed mode still loads obsp whole and it is all code, so P"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    83,
+    1376,
+    262
+   ],
+   "label": "the code: backed='r', then read_lazy",
+   "selector": "#code0"
+  },
+  {
+   "n": 2,
+   "box": [
+    22,
+    514,
+    361,
+    24
+   ],
+   "label": "X is an on-disk _CSRDataset",
+   "selector": "[id^=hl1_] >> nth=0"
+  },
+  {
+   "n": 3,
+   "box": [
+    22,
+    534,
+    403,
+    24
+   ],
+   "label": "one gene read from disk",
+   "selector": "[id^=hl1_] >> nth=1"
+  },
+  {
+   "n": 4,
+   "box": [
+    22,
+    553,
+    840,
+    24
+   ],
+   "label": "read_lazy: X is a dask Array",
+   "selector": "[id^=hl1_] >> nth=2"
+  },
+  {
+   "n": 5,
+   "box": [
+    12,
+    592,
+    1376,
+    23
+   ],
+   "label": "obsp loaded whole; code only",
+   "selector": "#note"
+  }
+ ]
+}

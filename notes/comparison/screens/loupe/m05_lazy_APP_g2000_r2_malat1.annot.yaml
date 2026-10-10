@@ -1,0 +1,55 @@
+version: 1
+image: m05_lazy_APP_g2000_r2_malat1.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'tahoe_first1000000_g2000.cloupe: the same 1,000,000 Tahoe-100M cells with 2,000 genes (2.201 GiB), LoupeR
+  create_loupe() via benchmark/tool_ceiling/loupe_build.R'
+url: desktop app
+captured: '2026-10-08'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: Loupe Part D, lazy-read test (computer-use desktop session; protocol benchmark/tool_ceiling/lazy_loupe/PROTOCOL.md,
+  memory record benchmark/tool_ceiling/lazy_loupe/partD/g2000_r2.mem.json; redacted by notes/comparison/demos/loupe/redact_lazy_shots.py)
+source: manual
+image_sha256: 14017ba3208e519a3033c33d46a2b54d54cb4c9512b3bd9105d3a4347cc2b129
+proves:
+- column: lazy
+  mark: Y
+  caption: 'Loupe Browser 9.1.0 with the 2,000-gene file (2.201 GiB), repetition 2, colored by MALAT1: 999966 barcodes
+    found. The app''s memory after opening was 1.272 GiB; the 200-gene and the 2,000-gene file gave the same median
+    (1.273 and 1.272 GiB), see benchmark/tool_ceiling/lazy_loupe/partD/readout.txt'
+callouts:
+- n: 1
+  box:
+  - 404
+  - 3
+  - 305
+  - 18
+  label: 'title: the file that is open'
+- n: 2
+  box:
+  - 87
+  - 165
+  - 215
+  - 50
+  label: MALAT1, active feature
+- n: 3
+  box:
+  - 537
+  - 78
+  - 360
+  - 372
+  label: UMAP colored by MALAT1
+- n: 4
+  box:
+  - 909
+  - 155
+  - 190
+  - 55
+  label: 'color legend: Log2 Exp - MALAT1'
+- n: 5
+  box:
+  - 919
+  - 340
+  - 170
+  - 22
+  label: 999966 barcodes found

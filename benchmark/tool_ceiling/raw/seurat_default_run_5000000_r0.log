@@ -1,0 +1,13 @@
+During startup - Warning message:
+package ‘colorout’ in options("defaultPackages") was not found 
+[     7.7s] read_obs_obsm
+[    73.0s] read_counts
+[   120.2s] load
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+[   142.2s] plot_cat
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+[   161.3s] plot_gene
+[   161.3s] done
+{"status": "ok", "rc": 0, "wall_s": 164.12} fp_peak=24.06GB lifetime=24.06GB

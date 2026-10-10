@@ -1,0 +1,87 @@
+{
+ "version": 1,
+ "image": "03_legend_selection_highlights_gallery.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_focus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "Clicking Ery P in the legend selects its 687 cells; every gallery chart highlights them and a highres_celltype filter chip appears"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1125,
+    423,
+    210,
+    48
+   ],
+   "label": "legend: Ery P 687 / 687",
+   "selector": "[data-recap='eryp']"
+  },
+  {
+   "n": 2,
+   "box": [
+    127,
+    9,
+    125,
+    30
+   ],
+   "label": "687 / 8,090 cells",
+   "selector": "text=/\\/ 8,090 cells/ >> nth=0"
+  },
+  {
+   "n": 3,
+   "box": [
+    81,
+    499,
+    133,
+    32
+   ],
+   "label": "filter chip",
+   "selector": "[data-recap='chipct']"
+  },
+  {
+   "n": 5,
+   "box": [
+    247,
+    957,
+    308,
+    293
+   ],
+   "label": "gallery chart, selection highlighted",
+   "selector": "[data-recap='p2']"
+  },
+  {
+   "n": 7,
+   "box": [
+    553,
+    957,
+    308,
+    293
+   ],
+   "label": "gallery chart, selection highlighted",
+   "selector": "[data-recap='p3']"
+  },
+  {
+   "n": 8,
+   "box": [
+    859,
+    957,
+    308,
+    293
+   ],
+   "label": "gallery chart, selection highlighted",
+   "selector": "[data-recap='p4']"
+  }
+ ]
+}

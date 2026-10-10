@@ -1,0 +1,41 @@
+version: 1
+image: 21_github_release_desktop_assets.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: null
+url: https://github.com/settylab/annzarro/releases/tag/v0.4.1
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: desktop
+  mark: Y
+  caption: 'The v0.4.1 GitHub release carries the desktop apps: AnnZarro-0.4.1-linux-amd64.deb, AnnZarro-0.4.1-linux-x86_64.AppImage,
+    AnnZarro-0.4.1-macos-arm64.dmg, AnnZarro-0.4.1-macos-arm64.zip, AnnZarro-0.4.1-macos-x64.dmg, AnnZarro-0.4.1-macos-x64.zip,
+    AnnZarro-0.4.1-windows-x64-setup.exe, AnnZarro-0.4.1-windows-x64.zip.'
+callouts:
+- n: 1
+  box:
+  - 146
+  - 145
+  - 247
+  - 26
+  label: macOS disk image
+  selector: a[href*="/releases/download/"][href$=".dmg"]
+- n: 2
+  box:
+  - 146
+  - 321
+  - 280
+  - 26
+  label: Windows installer
+  selector: a[href*="/releases/download/"][href$="setup.exe"]
+- n: 3
+  box:
+  - 146
+  - 101
+  - 280
+  - 26
+  label: Linux AppImage
+  selector: a[href*="/releases/download/"][href$=".AppImage"]

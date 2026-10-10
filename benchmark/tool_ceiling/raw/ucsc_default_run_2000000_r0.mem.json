@@ -1,0 +1,57 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/ucsc/html_2000000",
+  "benchmark/tool_ceiling/shots/ucsc_default_run_2000000_r0",
+  "--n",
+  "2000000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 6.18,
+ "peaks": {
+  "client": {
+   "fp_peak": 1670161648,
+   "fp_lifetime_sum": 1874848040,
+   "rss_peak": 1549172736,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 14664160,
+   "fp_lifetime_sum": 17941416,
+   "rss_peak": 27508736,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 132379296,
+   "fp_lifetime_sum": 132379296,
+   "rss_peak": 167051264,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1684825808,
+   "rss_peak": 1576681472,
+   "fp_lifetime_sum": 1892789456
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.14,
+   1331815808
+  ],
+  [
+   4.22,
+   1672783544
+  ]
+ ],
+ "ps_before": "2026-10-04T11:37:48-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1055152 109.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n47007  27344  16.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n47006  25008  16.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n47013  25424  16.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n47011  25200  14.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n47012  25408  13.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n47015  24112  12.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n47014  23360  12.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  582  94336   9.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n47008  25376   9.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n"
+}

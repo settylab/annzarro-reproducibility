@@ -1,0 +1,86 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$SCRATCH/annzarro-scale/stores_panel/n20M/tahoe_panel_20M.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_20000000_r1",
+  "--server-url",
+  "http://hpc-node-36:8790",
+  "--proxy",
+  "socks5://127.0.0.1:8767",
+  "--n",
+  "20000000",
+  "--probe-store",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "--version-label",
+  "606f0bc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 19.33,
+ "peaks": {
+  "client": {
+   "fp_peak": 6546962184,
+   "fp_lifetime_sum": 7305345760,
+   "rss_peak": 4682645504,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 0,
+   "fp_lifetime_sum": 0,
+   "rss_peak": 0,
+   "n_proc_max": 0
+  },
+  "harness": {
+   "fp_peak": 131647464,
+   "fp_lifetime_sum": 131647464,
+   "rss_peak": 166690816,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6546962184,
+   "rss_peak": 4682645504,
+   "fp_lifetime_sum": 7305345760
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.11,
+   0
+  ],
+  [
+   4.32,
+   811082056
+  ],
+  [
+   6.55,
+   888988072
+  ],
+  [
+   8.76,
+   410067368
+  ],
+  [
+   11.0,
+   449503776
+  ],
+  [
+   13.2,
+   578970360
+  ],
+  [
+   15.44,
+   3362614600
+  ],
+  [
+   17.66,
+   6061781712
+  ]
+ ],
+ "ps_before": "2026-10-04T01:25:38-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 2512 124160  90.9 $TMPDIR/evidence/venv/bin/python\n  855 1853664  65.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n 2643 266048  50.0 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  582 108400  16.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n97961 650208  13.0 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n 2767  24224   7.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n 2762  24592   7.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n 2766  24480   6.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n 2761  14560   5.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n37026 116784   5.2 $HOME/Projects/investments/.venv/bin/python3\n"
+}

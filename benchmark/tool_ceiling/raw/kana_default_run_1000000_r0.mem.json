@@ -1,0 +1,76 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "kana",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "benchmark/tool_ceiling/shots/kana_default_run_1000000_r0",
+  "--n",
+  "1000000"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 15.68,
+ "peaks": {
+  "client": {
+   "fp_peak": 11376645504,
+   "fp_lifetime_sum": 11569633744,
+   "rss_peak": 11589369856,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 1818888,
+   "fp_lifetime_sum": 1818888,
+   "rss_peak": 3768320,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 120861392,
+   "fp_lifetime_sum": 120861392,
+   "rss_peak": 155451392,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 11376645504,
+   "rss_peak": 11589369856,
+   "fp_lifetime_sum": 11571452632
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.16,
+   967977040
+  ],
+  [
+   4.3,
+   3213178824
+  ],
+  [
+   6.39,
+   3462740704
+  ],
+  [
+   8.81,
+   9355513776
+  ],
+  [
+   10.95,
+   9710997880
+  ],
+  [
+   13.22,
+   11067495736
+  ],
+  [
+   15.37,
+   9672381560
+  ]
+ ],
+ "ps_before": "2026-10-04T23:45:37-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47028 266288  77.6 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  761  64288  47.6 /usr/libexec/searchpartyd\n97961 767088  17.6 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n 1012  17920   6.7 /usr/libexec/pboard\n  596  30960   4.8 /System/Library/CoreServices/launchservicesd\n  629 241104   4.6 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n47413 662576   3.9 /Applications/cmux.app/Contents/MacOS/cmux\n  626 513216   3.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n72627 490464   3.1 $HOME/.local/bin/claude\n 1240  48928   2.7 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n",
+ "others_at_start": []
+}

@@ -1,0 +1,70 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first2000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_default_run_2000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-test/bin/annzarro"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 14.66,
+ "peaks": {
+  "client": {
+   "fp_peak": 5761707456,
+   "fp_lifetime_sum": 5914849568,
+   "rss_peak": 4771512320,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 573866992,
+   "fp_lifetime_sum": 576947568,
+   "rss_peak": 597016576,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 161805320,
+   "fp_lifetime_sum": 161821704,
+   "rss_peak": 212844544,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 6335574448,
+   "rss_peak": 5368528896,
+   "fp_lifetime_sum": 6491797136
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.31,
+   1907959432
+  ],
+  [
+   4.69,
+   2815617224
+  ],
+  [
+   6.95,
+   3336579656
+  ],
+  [
+   9.28,
+   3080989496
+  ],
+  [
+   11.62,
+   4127403264
+  ],
+  [
+   13.93,
+   5511245608
+  ]
+ ],
+ "ps_before": "2026-10-03T16:59:36-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n15970 125040  99.9 /usr/libexec/duetexpertd\n14734 125072  13.3 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n57113 2059808   6.7 $HOME/.local/bin/claude\n14735  20752   6.3 benchmark/tool_ceiling/.venv/bin/python\n  626 553072   6.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n14738  19360   5.1 .venv/bin/python\n97961 723968   4.0 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n 1251  15632   1.9 /System/Library/Frameworks/ApplicationServices.framework/Frameworks/ATS.framework/Support/fontd\n47413 638320   1.5 /Applications/cmux.app/Contents/MacOS/cmux\n 4725 637408   1.2 claude\n"
+}

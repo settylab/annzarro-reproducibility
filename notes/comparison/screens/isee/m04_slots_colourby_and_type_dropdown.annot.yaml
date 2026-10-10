@@ -1,0 +1,29 @@
+version: 1
+image: m04_slots_colourby_and_type_dropdown.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3)
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: e77e35af2bdf3c45dde020f2f5666d766d97f84996480cc39cf201c142653091
+proves:
+- column: cells
+  mark: N
+  caption: 'iSEE 2.18.0: Color by lists None, Column data, Feature name, Sample name, Column selection; no cell
+    x cell (colPairs) entry.'
+- column: genes
+  mark: N
+  caption: 'iSEE 2.18.0: the same Color by list has no gene x gene (rowPairs) entry.'
+- column: slots
+  mark: P
+  caption: 'iSEE 2.18.0: colData columns are reachable as colours, but colPairs is not offered anywhere in the list.'
+callouts:
+- n: 1
+  box: [8, 672, 445, 74]
+  label: 'Color by: None, Column data, Feature name, Sample name, Column selection; no pairwise option'
+- n: 2
+  box: [25, 752, 410, 38]
+  label: Column data dropdown (colData column highres_celltype)

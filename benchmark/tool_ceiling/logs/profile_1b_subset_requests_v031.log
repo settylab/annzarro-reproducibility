@@ -1,0 +1,8 @@
+idle 0.05 GiB
+subset=auto: status 200, 267 B, 4.8 s, peak 0.11 GiB, after 0.12 GiB
+cells (names of the subset): status 200, 2290156 B, 19.1 s, peak 0.51 GiB, after 0.37 GiB
+obsm X_umap col 0: status 200, 400000 B, 30.2 s, peak 11.72 GiB, after 4.80 GiB
+obsm X_umap col 1: status 200, 400000 B, 29.5 s, peak 15.46 GiB, after 8.51 GiB
+layer X col 0: status 200, 370152 B, 2.2 s, peak 8.53 GiB, after 8.53 GiB
+obs cell_type: status 200, 3290709 B, 81.1 s, peak 10.78 GiB, after 5.38 GiB
+{"status": "ok", "rc": 0, "wall_s": 180.54} fp_peak=15.45GB lifetime=15.53GB

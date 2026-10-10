@@ -1,0 +1,35 @@
+{
+ "site": "laptop",
+ "hostname": "laptop",
+ "platform": "macOS-26.5.1-arm64-arm-64bit",
+ "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+ "packages": {
+  "annzarro": "0.1.1",
+  "zarr": "3.4.0",
+  "numcodecs": "0.17.0",
+  "anndata": null,
+  "numpy": "2.5.3",
+  "flask": "3.1.3",
+  "werkzeug": "3.1.9",
+  "playwright": "1.63.0",
+  "scipy": "1.18.1",
+  "server": "0.2.0 3.4.0 0.17.0 3.1.3"
+ },
+ "annzarro_commit": "d5be6645611f01af23f02860db6a1007295fd45d",
+ "annzarro_branch": "HEAD",
+ "cpu": "Apple M3 Max",
+ "n_cpu": 16,
+ "ram_bytes": 137438953472,
+ "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+ "client": {
+  "version": "0.3",
+  "exe": "$ANNZARRO_SRC/.venv-test/bin/annzarro",
+  "emb": "X_umap"
+ },
+ "cold_mode": "clone",
+ "reps": 3,
+ "warm": 2,
+ "timeout_s": 600,
+ "slow_s": 300.0,
+ "date": "2026-10-03 12:18:05 PDT"
+}

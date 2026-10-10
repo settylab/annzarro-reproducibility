@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "image": "m08_selection_APP_regulon_return_selection_kept.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (9ae5207), local Docker image scope:1.8.2-9ae5207-final, frontend http://127.0.0.1:55850/; Google Chrome 155.0.8059.39 driven through the Claude in Chrome extension",
+ "data": "SCope_Test.loom (100 cells, local)",
+ "url": "http://127.0.0.1:55850/",
+ "captured": "2026-10-09",
+ "by": "selection-test session (headed Chrome)",
+ "driver": "notes/comparison/demos/scope/selection/record.txt",
+ "source": "manual",
+ "image_sha256": "f471820ac42d7a55b1e9e6bb769b04d30965d891382bb08f9204e1a959457b27",
+ "proves": [],
+ "note": "Back on the Regulon page: Selection 1 is still there.",
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    578,
+    165,
+    135,
+    60
+   ],
+   "label": "Selection 1 listed again"
+  },
+  {
+   "n": 2,
+   "box": [
+    205,
+    270,
+    40,
+    36
+   ],
+   "label": "selected cells green again"
+  }
+ ]
+}

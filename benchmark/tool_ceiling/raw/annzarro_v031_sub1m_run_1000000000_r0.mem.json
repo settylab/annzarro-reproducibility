@@ -1,0 +1,212 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_1000000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_sub1m_run_1000000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 97.25,
+ "peaks": {
+  "client": {
+   "fp_peak": 2680694264,
+   "fp_lifetime_sum": 3025545752,
+   "rss_peak": 2483601408,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 25204575480,
+   "fp_lifetime_sum": 25394319184,
+   "rss_peak": 25276268544,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 115175832,
+   "fp_lifetime_sum": 115175832,
+   "rss_peak": 156893184,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 25623899760,
+   "rss_peak": 26450264064,
+   "fp_lifetime_sum": 28419864936
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.43,
+   956146472
+  ],
+  [
+   4.94,
+   986375000
+  ],
+  [
+   7.4,
+   724690376
+  ],
+  [
+   9.82,
+   1047914168
+  ],
+  [
+   12.27,
+   1057629880
+  ],
+  [
+   14.72,
+   1067509432
+  ],
+  [
+   17.14,
+   1074472656
+  ],
+  [
+   19.67,
+   1082042064
+  ],
+  [
+   22.16,
+   884156064
+  ],
+  [
+   24.57,
+   895657632
+  ],
+  [
+   27.03,
+   1655023624
+  ],
+  [
+   29.51,
+   1973660184
+  ],
+  [
+   31.96,
+   2450172800
+  ],
+  [
+   34.4,
+   3166137720
+  ],
+  [
+   36.86,
+   3885608840
+  ],
+  [
+   39.3,
+   4596658560
+  ],
+  [
+   41.66,
+   5237240696
+  ],
+  [
+   44.11,
+   5954205040
+  ],
+  [
+   46.49,
+   6648756072
+  ],
+  [
+   48.9,
+   7350040928
+  ],
+  [
+   51.35,
+   8058960728
+  ],
+  [
+   53.71,
+   8751447352
+  ],
+  [
+   56.19,
+   9484713800
+  ],
+  [
+   58.55,
+   10176053568
+  ],
+  [
+   60.97,
+   10880369464
+  ],
+  [
+   63.36,
+   11548345672
+  ],
+  [
+   65.75,
+   12262311744
+  ],
+  [
+   68.17,
+   12952914208
+  ],
+  [
+   70.53,
+   13624101632
+  ],
+  [
+   72.98,
+   14327090424
+  ],
+  [
+   75.37,
+   15016103664
+  ],
+  [
+   77.8,
+   15719567592
+  ],
+  [
+   80.36,
+   16425292512
+  ],
+  [
+   82.84,
+   18113091832
+  ],
+  [
+   85.47,
+   21480530568
+  ],
+  [
+   88.17,
+   24684964816
+  ],
+  [
+   90.76,
+   9726493112
+  ],
+  [
+   93.32,
+   11130356608
+  ],
+  [
+   95.85,
+   10831709512
+  ]
+ ],
+ "ps_before": "2026-10-05T15:58:59-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 507264  29.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n68269 861936   9.2 /Applications/Texifier.app/Contents/MacOS/Texifier\n 1012  17456   6.4 /usr/libexec/pboard\n69868  19980   5.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker\n69869  20252   5.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker\n  855 2165056   5.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  639 129520   4.7 /usr/sbin/coreaudiod\n  582 109680   4.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  734  54448   3.3 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n68627 413296   3.1 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

@@ -1,0 +1,80 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_150000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_sub_run_150000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 16.69,
+ "peaks": {
+  "client": {
+   "fp_peak": 1590616848,
+   "fp_lifetime_sum": 1698506496,
+   "rss_peak": 1387954176,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 4834808704,
+   "fp_lifetime_sum": 5021783512,
+   "rss_peak": 4867801088,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 130008728,
+   "fp_lifetime_sum": 130008728,
+   "rss_peak": 165019648,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5246907688,
+   "rss_peak": 5990219776,
+   "fp_lifetime_sum": 6720290008
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.46,
+   959112168
+  ],
+  [
+   4.97,
+   979314432
+  ],
+  [
+   7.47,
+   1482729696
+  ],
+  [
+   9.94,
+   2156702424
+  ],
+  [
+   12.44,
+   3011063208
+  ],
+  [
+   15.02,
+   5070664880
+  ]
+ ],
+ "ps_before": "2026-10-05T15:52:24-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n56407 269488  78.8 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  626 507136  33.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n97961 796176  20.3 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n56756  20768   8.5 benchmark/tool_ceiling/.venv/bin/python\n  557 503664   5.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  639 129552   4.8 /usr/sbin/coreaudiod\n  596  30400   4.3 /System/Library/CoreServices/launchservicesd\n  629 209312   4.0 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  855 2145248   3.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n 1012  17008   3.5 /usr/libexec/pboard\n",
+ "others_at_start": []
+}

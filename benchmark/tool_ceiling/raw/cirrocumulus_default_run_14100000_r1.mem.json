@@ -1,0 +1,202 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first14100000.h5ad",
+  "benchmark/tool_ceiling/shots/cirrocumulus_default_run_14100000_r1",
+  "--n",
+  "14100000",
+  "--port",
+  "8943"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 84.46,
+ "peaks": {
+  "client": {
+   "fp_peak": 6097349744,
+   "fp_lifetime_sum": 6175010552,
+   "rss_peak": 4126441472,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 46805861880,
+   "fp_lifetime_sum": 46808893280,
+   "rss_peak": 47078752256,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 121205504,
+   "fp_lifetime_sum": 121205504,
+   "rss_peak": 159350784,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 47439472448,
+   "rss_peak": 48119431168,
+   "fp_lifetime_sum": 52983903832
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.22,
+   877322976
+  ],
+  [
+   4.42,
+   4975095616
+  ],
+  [
+   6.62,
+   13874235536
+  ],
+  [
+   8.79,
+   15053753448
+  ],
+  [
+   10.96,
+   15792148136
+  ],
+  [
+   13.1,
+   16538144976
+  ],
+  [
+   15.29,
+   31629204504
+  ],
+  [
+   17.46,
+   44279506752
+  ],
+  [
+   19.64,
+   38765072144
+  ],
+  [
+   21.79,
+   18852747128
+  ],
+  [
+   23.96,
+   18864248744
+  ],
+  [
+   26.13,
+   19057842232
+  ],
+  [
+   28.28,
+   19188357272
+  ],
+  [
+   30.42,
+   19357800720
+  ],
+  [
+   32.58,
+   19582065128
+  ],
+  [
+   34.75,
+   19717265992
+  ],
+  [
+   36.95,
+   19788536440
+  ],
+  [
+   39.12,
+   18410903416
+  ],
+  [
+   41.27,
+   19278273072
+  ],
+  [
+   43.38,
+   19047979592
+  ],
+  [
+   45.51,
+   22032293696
+  ],
+  [
+   47.66,
+   21771935984
+  ],
+  [
+   49.83,
+   22117605976
+  ],
+  [
+   51.98,
+   22500762368
+  ],
+  [
+   54.1,
+   21018206136
+  ],
+  [
+   56.23,
+   21033443616
+  ],
+  [
+   58.37,
+   21040341280
+  ],
+  [
+   60.57,
+   21052334368
+  ],
+  [
+   62.81,
+   21052006712
+  ],
+  [
+   65.04,
+   21062066488
+  ],
+  [
+   67.27,
+   21071700280
+  ],
+  [
+   69.47,
+   21085053240
+  ],
+  [
+   71.67,
+   21083693368
+  ],
+  [
+   73.9,
+   21107302712
+  ],
+  [
+   76.12,
+   21100126520
+  ],
+  [
+   78.34,
+   21035786528
+  ],
+  [
+   80.59,
+   22737396144
+  ],
+  [
+   82.87,
+   22469682328
+  ]
+ ],
+ "ps_before": "2026-10-04T15:17:33-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  855 2174048 146.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n57113 2872736  25.2 $HOME/.local/bin/claude\n  557 567504   9.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  734  50896   7.6 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n  582 108400   7.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  626 513888   6.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1012  17808   5.6 /usr/libexec/pboard\n61414  43328   4.0 gh\n61415  44704   3.8 (gh)\n  774   6128   3.6 /usr/libexec/sysmond\n",
+ "others_at_start": []
+}

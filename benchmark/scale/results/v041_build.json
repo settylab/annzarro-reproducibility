@@ -1,0 +1,10 @@
+{
+ "measured_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+ "measured_tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+ "tag": "v0.4.1",
+ "tag_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+ "tag_tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+ "same_tree": true,
+ "build": "benchmark/scale/ceiling/setup_build.sh 78c9da6 v041-bench: clean detached worktree at the tag, vendor assets fetched by the tag's scripts/vendor_assets.py and checked (26 assets), editable install in its own venv; annzarro.__version__ 0.4.1",
+ "note": "Every *_v041 row (browser_v041*, http_v041, prewarm50M_v041, scale/sparse/sweep_v041, tool_ceiling v041*) is measured on the tag v0.4.1 itself."
+}

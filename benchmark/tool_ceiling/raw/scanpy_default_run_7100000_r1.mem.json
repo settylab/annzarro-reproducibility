@@ -1,0 +1,136 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "scanpy_task.py",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first7100000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_default_run_7100000_r1"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 38.36,
+ "peaks": {
+  "proc": {
+   "fp_peak": 15434837584,
+   "fp_lifetime_sum": 15434837584,
+   "rss_peak": 15610757120,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 15434837584,
+   "rss_peak": 15610757120,
+   "fp_lifetime_sum": 15434837584
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8896920
+  ],
+  [
+   1.46,
+   1154909624
+  ],
+  [
+   2.97,
+   6920803800
+  ],
+  [
+   4.43,
+   7676418144
+  ],
+  [
+   5.85,
+   8067963240
+  ],
+  [
+   7.28,
+   8285739512
+  ],
+  [
+   8.7,
+   9159318680
+  ],
+  [
+   10.14,
+   9159318680
+  ],
+  [
+   11.57,
+   9159318680
+  ],
+  [
+   13.01,
+   9159318680
+  ],
+  [
+   14.44,
+   9159318680
+  ],
+  [
+   15.88,
+   9159318680
+  ],
+  [
+   17.32,
+   9159318680
+  ],
+  [
+   18.8,
+   9159318680
+  ],
+  [
+   20.25,
+   9159318680
+  ],
+  [
+   21.7,
+   9165741232
+  ],
+  [
+   23.16,
+   14722460760
+  ],
+  [
+   24.61,
+   9208782048
+  ],
+  [
+   26.04,
+   9550552552
+  ],
+  [
+   27.46,
+   9550552552
+  ],
+  [
+   28.92,
+   9550552552
+  ],
+  [
+   30.35,
+   9550552552
+  ],
+  [
+   31.78,
+   9550552552
+  ],
+  [
+   33.23,
+   9550552552
+  ],
+  [
+   34.72,
+   9550552552
+  ],
+  [
+   36.16,
+   9550552552
+  ],
+  [
+   37.59,
+   9550552552
+  ]
+ ],
+ "ps_before": "2026-10-04T03:38:03-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47413 562960   1.4 /Applications/cmux.app/Contents/MacOS/cmux\n57113 1702640   1.3 $HOME/.local/bin/claude\n92291  30784   0.7 .venv/bin/python\n86901 506080   0.6 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n68627 389152   0.5 $HOME/.local/bin/claude\n15066   1232   0.4 sleep\n  626 420912   0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n98631 445616   0.3 $HOME/.local/bin/claude\n80588 582272   0.3 $HOME/.local/bin/claude\n34972 470640   0.3 $HOME/.local/bin/claude\n"
+}

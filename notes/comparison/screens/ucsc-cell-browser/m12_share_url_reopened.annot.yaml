@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m12_share_url_reopened.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo&meta=Age",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "Y",
+   "caption": "The copied URL (?ds=bm_demo&meta=Age) reopens with the Age colouring and legend"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1196,
+    24,
+    204,
+    876
+   ],
+   "label": "legend: Age, restored from the URL",
+   "selector": "#tpLegendBar"
+  },
+  {
+   "n": 2,
+   "box": [
+    246,
+    56,
+    958,
+    834
+   ],
+   "label": "plot coloured by Age",
+   "selector": "#mpCanvas, canvas"
+  }
+ ]
+}

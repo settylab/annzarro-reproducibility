@@ -1,0 +1,54 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first2000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_run_2000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 3.54,
+ "peaks": {
+  "client": {
+   "fp_peak": 2049778688,
+   "fp_lifetime_sum": 2183833536,
+   "rss_peak": 1660895232,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 862782664,
+   "fp_lifetime_sum": 910362280,
+   "rss_peak": 885456896,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 125301456,
+   "fp_lifetime_sum": 125301456,
+   "rss_peak": 163282944,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2912561352,
+   "rss_peak": 2546352128,
+   "fp_lifetime_sum": 3094195816
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.41,
+   1241015512
+  ]
+ ],
+ "ps_before": "2026-10-06T00:08:08-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  557  44736 104.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  855 1459520  80.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n59322  94304  69.1 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n  582 117856  47.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n96336  48624  34.9 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService\n  592  16544  21.9 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored\n47413 543136  15.0 /Applications/cmux.app/Contents/MacOS/cmux\n35757  21104  10.8 benchmark/tool_ceiling/.venv/bin/python\n 6219  56368   3.4 $HOME/Projects/investments/.venv/bin/python3\n  687  49344   2.6 /usr/libexec/syspolicyd\n",
+ "others_at_start": []
+}

@@ -1,0 +1,20 @@
+{
+ "version": 1,
+ "image": "m12_share_save_project_dialog.jpg",
+ "tool": "tissuumaps",
+ "software": "TissUUmaps 3.2.1.11 (server build, pip; TU4 is beta)",
+ "data": "bm_demo_csc.h5ad (8,090 cells x 16,285 genes)",
+ "url": "http://127.0.0.1:8908/bm_demo_csc.h5ad#",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/tissuumaps/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "P",
+   "caption": "Save project asks for a name and writes a .tmap project on the server; see f02 for what reopening restores"
+  }
+ ],
+ "callouts": []
+}

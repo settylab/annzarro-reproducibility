@@ -1,0 +1,11 @@
+# Process snapshots taken during the benchmark. The export keeps the benchmark's own processes (pid, elapsed time, rss in kB, command) and omits the unrelated ones; see the count below.
+2026-10-03 11:04:21
+11:04  up 110 days,  9:49, 27 users, load averages: 22.85 13.80 8.07
+91
+pid=7522 etime=11:06:45 rss_kb=8329424 cmd=$ANNZARRO_SRC/venv/bin/python -m annzarro.cli start --host 127.0.0.1 --port 8800 --data-dir $DATA_ROOT/tahoe_scale/stores --no-browser --a
+pid=7523 etime=11:06:45 rss_kb=130400 cmd=$ANNZARRO_SRC/venv/bin/python -m annzarro.cli start --host 127.0.0.1 --port 8801 --data-dir data --no-browse
+pid=9114 etime=11:05:37 rss_kb=17712 cmd=$ANNZARRO_SRC/venv/bin/python -c from multiprocessing.resource_tracker import main;main(11)
+pid=11336 etime=11:04:14 rss_kb=17824 cmd=$ANNZARRO_SRC/venv/bin/python -c from multiprocessing.resource_tracker import main;main(12)
+pid=51705 etime=07:37 rss_kb=1363568 cmd=$ANNZARRO_SRC/.venv-test/bin/python .venv-test/bin/annzarro start --host 127.0.0.1 --port 8810 --data-dir /Use
+pid=55636 etime=05:10 rss_kb=2384 cmd=/bin/bash benchmark/scale/ceiling/queue_rerun.sh sub all http
+# omitted: 31 process lines unrelated to the benchmark

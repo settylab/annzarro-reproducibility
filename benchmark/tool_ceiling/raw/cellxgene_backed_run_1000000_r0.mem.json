@@ -1,0 +1,69 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_backed_run_1000000_r0",
+  "--n",
+  "1000000",
+  "--port",
+  "8934"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 11.16,
+ "peaks": {
+  "client": {
+   "fp_peak": 1491166568,
+   "fp_lifetime_sum": 1559242928,
+   "rss_peak": 1624588288,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 2279016752,
+   "fp_lifetime_sum": 2356120384,
+   "rss_peak": 2358673408,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 122417992,
+   "fp_lifetime_sum": 122417992,
+   "rss_peak": 156893184,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3770183320,
+   "rss_peak": 3983261696,
+   "fp_lifetime_sum": 3915363312
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.08,
+   695837576
+  ],
+  [
+   4.14,
+   2012031416
+  ],
+  [
+   6.27,
+   1995663800
+  ],
+  [
+   8.4,
+   3678498432
+  ],
+  [
+   10.53,
+   3102682752
+  ]
+ ],
+ "ps_before": "2026-10-03T20:22:58-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n80588 616432   6.3 $HOME/.local/bin/claude\n57113 2036144   2.5 $HOME/.local/bin/claude\n97961 683696   1.2 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n80005 380416   1.1 $HOME/.local/bin/claude\n 4725 616784   1.1 claude\n  555  26304   1.0 /usr/libexec/UserEventAgent\n34972 495280   0.9 $HOME/.local/bin/claude\n92291  30832   0.6 .venv/bin/python\n98631 478784   0.5 $HOME/.local/bin/claude\n72627 488848   0.4 $HOME/.local/bin/claude\n"
+}

@@ -1,0 +1,31 @@
+version: 1
+image: m14_desktop_APP_about.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: 8a3591bb5114c2a696f6f0d396bc3d30acc32f4c4c66c2bd96a09ebb2938fa4b
+proves:
+- column: desktop
+  mark: Y
+  caption: 'About box: Loupe Browser 9, Version 9.1.0 (9.1.0), a native desktop application'
+- column: hosted
+  mark: N
+  caption: a desktop application; no server or hosted mode in the app
+- column: static
+  mark: N
+  caption: a desktop application, not a web page
+callouts:
+- n: 1
+  box:
+  - 378
+  - 47
+  - 217
+  - 138
+  label: About Loupe Browser 9.1.0

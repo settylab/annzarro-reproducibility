@@ -1,0 +1,22 @@
+version: 1
+image: m15_hosted_shinycell2_showcase.jpg
+tool: shinycell
+software: ShinyCell2 (public showcase)
+data: ShinyCell2 showcase spatial dataset (Visium)
+url: https://shinycell.ouyanglab.com/
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/shinycell/matrix_check2.py
+source: manual
+image_sha256: be344fa4c47d4d285a724df36e2ab79ce869c88da71deef86f3e26aafeca3935
+proves:
+- column: hosted
+  mark: Y
+  caption: A ShinyCell2 app is served publicly to any visitor (shinycell.ouyanglab.com showcase).
+callouts:
+- n: 1
+  box: [12, 16, 294, 42]
+  label: shinycell2 showcase
+- n: 2
+  box: [44, 62, 500, 52]
+  label: menus Spatial Data, scATAC-seq Data, scMultiOmics Data

@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Plotly scattergl ceiling</title>
+<script src="/static/vendor/js/plotly-2.20.0.min.js"></script>
+<style>body { margin: 0; } #plot { width: 1400px; height: 1000px; }</style>
+</head>
+<body>
+<div id="plot"></div>
+<script>
+// Plotly scattergl alone, on the same AnnZarro binary responses the app reads.
+// window.run(opts) -> timings; opts: {store, mode, chunk, hover, typed}
+//   mode  one     one trace, one colour
+//         num     one trace, marker.color = per-point values (Plotly's colorscale path)
+//         bins    numeric colour as K single-colour traces (quantised colour)
+//         cat     one single-colour trace per category (codes = floor(gene) % 50; see notes)
+//   chunk max points per trace (0 = no limit); below 100000 scattergl builds no
+//         hover index (TOO_MANY_POINTS)
+//   typed x/y as Float32Array views (true) or plain Arrays (false)
+const API = '/api/v1/data';
+async function f32(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(url + ' ' + r.status);
+  const buf = await r.arrayBuffer();
+  const enc = r.headers.get('X-Annzarro-Encoding') || 'dense';
+  const n = parseInt(r.headers.get('X-Annzarro-Shape'), 10);
+  if (enc === 'dense') return new Float32Array(buf);
+  const nnz = parseInt(r.headers.get('X-Annzarro-Nnz'), 10);
+  const vals = new Float32Array(buf, 0, nnz), pos = new Uint32Array(buf, nnz * 4, nnz);
+  const out = new Float32Array(n);
+  for (let i = 0; i < nnz; i++) out[pos[i]] = vals[i];
+  return out;
+}
+const PAL = ['#1f77b4','#ff7f0e','#2ca02c','#d62728','#9467bd','#8c564b','#e377c2','#7f7f7f','#bcbd22','#17becf'];
+function viridis(t) {  // coarse viridis
+  const s = [[68,1,84],[59,82,139],[33,145,140],[94,201,98],[253,231,37]];
+  const p = Math.min(Math.max(t, 0), 1) * 4, i = Math.min(Math.floor(p), 3), f = p - i;
+  const c = s[i].map((v, k) => Math.round(v + f * (s[i + 1][k] - v)));
+  return `rgb(${c[0]},${c[1]},${c[2]})`;
+}
+window.run = async (o) => {
+  const T = {}; let t = performance.now();
+  const q = `dataset_path=${encodeURIComponent(o.store)}&format=f32`;
+  const [x, y, g] = await Promise.all([
+    f32(`${API}/obsm/X_umap?${q}&column_name=0`),
+    f32(`${API}/obsm/X_umap?${q}&column_name=1`),
+    o.mode === 'one' ? null : f32(`${API}/layer/X?${q}&cols=0`)]);
+  T.fetch_ms = performance.now() - t; t = performance.now();
+  const n = x.length;
+  let key = null, nkeys = 1, colorOf = () => '#1f77b4', nameOf = k => 'all';
+  if (o.mode === 'cat') {
+    nkeys = 50; key = new Uint16Array(n);
+    for (let i = 0; i < n; i++) key[i] = (Math.floor(g[i]) * 5 + (i % 5)) % 50;
+    colorOf = k => PAL[k % 10]; nameOf = k => 'c' + k;
+  } else if (o.mode === 'bins') {
+    nkeys = o.bins || 64; key = new Uint16Array(n);
+    let lo = Infinity, hi = -Infinity;
+    for (let i = 0; i < n; i++) { const v = g[i]; if (v < lo) lo = v; if (v > hi) hi = v; }
+    const w = (hi - lo) / nkeys || 1;
+    for (let i = 0; i < n; i++) key[i] = Math.min(nkeys - 1, Math.floor((g[i] - lo) / w));
+    colorOf = k => viridis(k / (nkeys - 1)); nameOf = k => 'b' + k;
+  }
+  // counting sort of points by key -> contiguous runs, as typed arrays
+  let X = x, Y = y, starts = [0, n], keys = [0];
+  if (key) {
+    const cnt = new Float64Array(nkeys + 1);
+    for (let i = 0; i < n; i++) cnt[key[i] + 1]++;
+    for (let k = 0; k < nkeys; k++) cnt[k + 1] += cnt[k];
+    const pos = Float64Array.from(cnt);
+    X = new Float32Array(n); Y = new Float32Array(n);
+    for (let i = 0; i < n; i++) { const p = pos[key[i]]++; X[p] = x[i]; Y[p] = y[i]; }
+    starts = Array.from(cnt); keys = [...Array(nkeys).keys()];
+  }
+  T.prep_ms = performance.now() - t; t = performance.now();
+  const traces = [];
+  const chunk = o.chunk || Infinity;
+  for (const k of keys) {
+    for (let a = starts[k]; a < starts[k + 1]; a += chunk) {
+      const b = Math.min(a + chunk, starts[k + 1]);
+      let xs = X.subarray(a, b), ys = Y.subarray(a, b);
+      if (!o.typed) { xs = Array.from(xs); ys = Array.from(ys); }
+      const tr = {type: 'scattergl', mode: 'markers', x: xs, y: ys, name: nameOf(k), legendgroup: nameOf(k),
+                  showlegend: a === starts[k] && keys.length > 1, hoverinfo: o.hover ? 'x+y+name' : 'skip',
+                  marker: {size: 1, opacity: 0.5, color: colorOf(k)}};
+      if (o.mode === 'num') {
+        tr.marker.color = o.typed ? g : Array.from(g);
+        tr.marker.colorscale = 'Viridis'; tr.marker.showscale = true;
+      }
+      traces.push(tr);
+    }
+  }
+  T.traces = traces.length;
+  T.build_ms = performance.now() - t; t = performance.now();
+  const layout = {margin: {l: 40, r: 10, t: 10, b: 30}, hovermode: o.hover ? 'closest' : false,
+                  dragmode: 'pan', showlegend: keys.length > 1};
+  await Plotly.newPlot('plot', traces, layout, {responsive: false});
+  T.newplot_ms = performance.now() - t; t = performance.now();
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  T.frame_ms = performance.now() - t;
+  T.n = n;
+  T.heap = performance.memory.usedJSHeapSize;
+  return T;
+};
+window.zoom = async (dir) => {
+  const g = document.getElementById('plot');
+  const f = dir < 0 ? 0.25 : 1.0, upd = {};
+  for (const ax of ['xaxis', 'yaxis']) {
+    const [a, b] = g._fullLayout[ax].range, c = (a + b) / 2, h = (b - a) * f;
+    upd[ax + '.range'] = [c - h, c + h];
+  }
+  const t0 = performance.now();
+  await Plotly.relayout(g, upd);
+  const t1 = performance.now();
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+  return {relayout_ms: t1 - t0, frame_ms: performance.now() - t0};
+};
+</script>
+</body>
+</html>

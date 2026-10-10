@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "h01_subset_button_with_selection.jpg",
+ "tool": "cellxgene",
+ "software": "CELLxGENE Annotate 1.3.0 (local)",
+ "data": "bm_demo.h5ad (8,090 cells; obsp holds connectivities, distances, diffusion_distance; one counts layer)",
+ "url": "http://127.0.0.1:8903/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "subset",
+   "mark": "Y",
+   "caption": "Annotate 1.3.0 (2026-10-04): with a lasso selection active, the toolbar's 'Subset to currently selected cells and associated metadata' button restricts the view to it"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    753,
+    4,
+    38,
+    38
+   ],
+   "label": "Subset button",
+   "selector": "[data-testid='subset-button']"
+  },
+  {
+   "n": 2,
+   "box": [
+    592,
+    46,
+    358,
+    46
+   ],
+   "label": "Subset to currently selected cells and associated metadata",
+   "selector": "[data-cap='tip']"
+  },
+  {
+   "n": 3,
+   "box": [
+    403,
+    865,
+    169,
+    24
+   ],
+   "label": "umap: 1996 out of 8090 cells",
+   "selector": "text=/out of 8090 cells/ >> nth=0"
+  }
+ ]
+}

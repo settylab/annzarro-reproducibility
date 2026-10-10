@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "image": "g01_share_url_unchanged_overlay.jpg",
+ "tool": "shinycell",
+ "software": "ShinyCell 2.1.0 (local app)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8907/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_shinycell.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "N",
+   "caption": "ShinyCell 2.1.0 (local app) (2026-10-04): the URL is http://127.0.0.1:8907/ before and after changing cell information, gene and tab (identical); no bookmark, share or copy-link control"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    8,
+    26,
+    590,
+    24
+   ],
+   "label": "URL before",
+   "selector": "#u0"
+  },
+  {
+   "n": 2,
+   "box": [
+    8,
+    47,
+    590,
+    24
+   ],
+   "label": "URL after changing the plot",
+   "selector": "#u1"
+  },
+  {
+   "n": 3,
+   "box": [
+    26,
+    552,
+    308,
+    42
+   ],
+   "label": "plot changed: Cell information = Age",
+   "selector": "#sc1a1inp1 + .selectize-control"
+  },
+  {
+   "n": 4,
+   "box": [
+    711,
+    552,
+    308,
+    42
+   ],
+   "label": "Gene = Mpo",
+   "selector": "#sc1a1inp2 + .selectize-control"
+  }
+ ]
+}

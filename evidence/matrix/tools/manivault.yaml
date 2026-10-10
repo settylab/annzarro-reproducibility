@@ -1,0 +1,610 @@
+# ManiVault Studio: marks and evidence (comparison-auditor, 2026-10-04). Scored in the running app by a
+# computer-use desktop session following notes/comparison/manivault_checklist.md; schema: evidence/README.md.
+id: manivault
+name: ManiVault Studio 1.5.0-dev
+figure:
+  row: 13
+  label: ManiVault Studio
+  largest_documented: 15M (cytometry)
+notes: notes/comparison/manivault.md
+cells:
+  cells:
+    reason: >-
+      A stored obsp matrix can colour a scatterplot, one row at a time, but the row is picked by number,
+      so the user cannot tell which cell on the plot it belongs to: partial.
+    detail: >-
+      **Observed.** The H5AD loader loads obsp by default; the scatterplot's Datasets > Color list offers
+      obsp/connectivities, obsp/diffusion_distance and obsp/distances, and colouring the UMAP by obsp/diffusion_distance
+      with dimension 4237 shows one cell's distance row. Rows are picked by a 1-based number (dense input;
+      sparse input is numbered from 0), not by cell name, and nothing ties the row to a selected cell.
+      **Scored partial (operator, 2026-10-05).** Full marks need the user to know which cell the shown
+      row belongs to (for example by focusing that cell). Here the row is a number in a dimension field
+      and a click on a cell does not select its row, so exploring the matrix this way is very hard. The
+      screenshots stay as evidence that it can colour by a row.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m01_cells_colour_sources.jpg
+      label: obsp matrices in the Color list
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m01_cells_obsp_row_as_colour.jpg
+      label: UMAP coloured by an obsp row
+    - kind: code
+      repo: ManiVaultStudio/HDF5Loader
+      commit: 89077343023b0d6767b4308c1f507a45964e4195
+      path: src/H5ADLoader/HDF5_AD_Loader.cpp
+      lines: 317-327
+      url: >-
+        https://github.com/ManiVaultStudio/HDF5Loader/blob/89077343023b0d6767b4308c1f507a45964e4195/src/H5ADLoader/HDF5_AD_Loader.cpp#L317-L327
+      label: loader lists every top-level group except X, uns, var, varm, varp; obs* ticked
+    - kind: code
+      repo: ManiVaultStudio/HDF5Loader
+      commit: 89077343023b0d6767b4308c1f507a45964e4195
+      path: src/H5ADLoader/H5ADUtils.cpp
+      lines: 1303-1306
+      url: >-
+        https://github.com/ManiVaultStudio/HDF5Loader/blob/89077343023b0d6767b4308c1f507a45964e4195/src/H5ADLoader/H5ADUtils.cpp#L1303-L1306
+      label: 'dense 2-D obs-indexed data: dimension labels l+1'
+    reproduce: &id001
+    - notes/comparison/manivault_checklist.md
+    - notes/comparison/demos/manivault/session_notes.txt
+    checked: &id002
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app (computer-use desktop session following notes/comparison/manivault_checklist.md)
+    mark: P
+  genes:
+    reason: varp is never offered by the loader.
+    detail: >-
+      **Observed and source.** The loader's list skips var, varm and varp (HDF5_AD_Loader.cpp L317); no
+      var-indexed pairwise dataset exists after loading.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m04_slots_loader_dialog.jpg
+      label: Load list without varp
+    - kind: code
+      repo: ManiVaultStudio/HDF5Loader
+      commit: 89077343023b0d6767b4308c1f507a45964e4195
+      path: src/H5ADLoader/HDF5_AD_Loader.cpp
+      lines: 317-317
+      url: >-
+        https://github.com/ManiVaultStudio/HDF5Loader/blob/89077343023b0d6767b4308c1f507a45964e4195/src/H5ADLoader/HDF5_AD_Loader.cpp#L317-L317
+      label: ignoreItems = X, uns, var, varm, varp
+    reproduce: *id001
+    checked: *id002
+    mark: N
+  focus:
+    reason: >-
+      No focused cell drives other panels; an obsp row is chosen by number, and a click on a cell does
+      nothing.
+    detail: >-
+      **Observed.** Gene colouring (Mpo) is feature colouring; a single click on a cell changed nothing.
+      The obsp row used as colour is picked in a dimension field by number, not by focusing a cell.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m03_focus_gene_colouring.jpg
+      label: gene colouring; click does nothing
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m01_cells_obsp_row_as_colour.jpg
+      label: row chosen by number
+    - kind: code
+      repo: ManiVaultStudio/Scatterplot
+      commit: a458c7b25ec31853fc6b292174e3f7adcb6df561
+      path: src/ColoringAction.cpp
+      lines: 20-22
+      url: >-
+        https://github.com/ManiVaultStudio/Scatterplot/blob/a458c7b25ec31853fc6b292174e3f7adcb6df561/src/ColoringAction.cpp#L20-L22
+      label: >-
+        colour comes from a dataset plus numeric Dimension pickers, which is how an obsp row is chosen
+        (Scatterplot plugin master, a458c7b, 2026-09-10; the plugin build bundled in the 1.5.0 dmg is
+        not pinned)
+    reproduce: *id001
+    checked: *id002
+    mark: N
+  slots:
+    reason: >-
+      X, layers, obs, obsm and obsp load; var columns become properties; varm, varp and uns are not offered.
+    detail: >-
+      **Observed.** Load list: layers, obs, obsm, obsp; X loads as the main matrix. After loading, the
+      Data hierarchy holds X, layers/counts, each obs column (categorical ones as cluster sets), four
+      obsm layouts and three obsp matrices.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m04_slots_loader_dialog.jpg
+      label: Load list
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m04_slots_data_hierarchy.jpg
+      label: loaded datasets
+    - kind: code
+      repo: ManiVaultStudio/HDF5Loader
+      commit: 89077343023b0d6767b4308c1f507a45964e4195
+      path: src/H5ADLoader/HDF5_AD_Loader.cpp
+      lines: 317-327
+      url: >-
+        https://github.com/ManiVaultStudio/HDF5Loader/blob/89077343023b0d6767b4308c1f507a45964e4195/src/H5ADLoader/HDF5_AD_Loader.cpp#L317-L327
+      label: which groups are offered
+    reproduce: *id001
+    checked: *id002
+    mark: P
+  remote:
+    na:
+      visual: >-
+        decided by the coordinator (0b2a6ae): no screenshot and no desktop step; N rests on the loader
+        source and the written session log (File > Import data... lists file loaders only)
+    reason: >-
+      N, resting on source and the session log, not on a screenshot: the H5AD loader opens a local file
+      path, and File > Import data... lists file loaders only (BIN, Cluster BIN/JSON, ENVI, Example, Extended
+      CSV, H5 10X, H5AD, Image, TOME).
+    detail: >-
+      **Observed and source.** File > Import data... > H5AD Loader opens a local 'Open' file dialog (filter
+      H5AD). The loader opens the file with the HDF5 C++ API on a local path; no remote access was found.
+      **Visual proof:** none. Per the coordinator (2026-10-04) this mark rests on the loader source (HDF5_AD_Loader.cpp)
+      plus the desktop session log, step 2, which lists every item of File > Import data... (all file
+      loaders); a window shot of that submenu is optional step G1 in DESKTOP_PROMPT.md if another desktop
+      session ever runs.
+    evidence:
+    - kind: code
+      repo: ManiVaultStudio/HDF5Loader
+      commit: 89077343023b0d6767b4308c1f507a45964e4195
+      path: src/H5ADLoader/HDF5_AD_Loader.cpp
+      lines: 307-316
+      url: >-
+        https://github.com/ManiVaultStudio/HDF5Loader/blob/89077343023b0d6767b4308c1f507a45964e4195/src/H5ADLoader/HDF5_AD_Loader.cpp#L307-L316
+      label: load() opens the local HDF5 file
+    - &id003
+      kind: docs
+      url: https://www.manivault.studio/
+      label: ManiVault Studio site
+      checked: '2026-10-04'
+    - kind: note
+      path: notes/comparison/demos/manivault/session_notes.txt
+      label: 'session log, step 2: Import data... submenu items (file loaders only)'
+    reproduce:
+    - notes/comparison/manivault_checklist.md
+    - notes/comparison/demos/manivault/session_notes.txt
+    - notes/comparison/demos/manivault/DESKTOP_PROMPT.md
+    checked: &id004
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source and docs
+    mark: N
+  spatial:
+    reason: >-
+      Any 2-D obsm can be a scatterplot position, so obsm['spatial'] should plot as axes; this was not
+      observed because the Visium file's CSC-encoded X was misread.
+    detail: >-
+      **Observed (negative, with cause).** Loading spatial_demo.h5ad (2,693 spots, X stored as CSC) produced
+      a single 2,000 x 2,000 dataset with no obs or obsm: the loader reads X as CSR (`xsize = indptr.size()
+      - 1`), so a CSC matrix with 2,001 indptr entries becomes 2,000 rows and the obs-indexed groups no
+      longer match. The file itself is correct (checked with h5py). With a CSR file, obsm['spatial'] would
+      load like obsm/X_umap, which plots (m00); this is inference, so P, and the CSC limitation is noted.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m05_spatial_csc_input_misread_hierarchy.jpg
+      label: spatial_demo loaded without obsm
+    - kind: code
+      repo: ManiVaultStudio/HDF5Loader
+      commit: 89077343023b0d6767b4308c1f507a45964e4195
+      path: src/H5ADLoader/H5ADUtils.cpp
+      lines: 456-462
+      url: >-
+        https://github.com/ManiVaultStudio/HDF5Loader/blob/89077343023b0d6767b4308c1f507a45964e4195/src/H5ADLoader/H5ADUtils.cpp#L456-L462
+      label: X read as CSR rows
+    reproduce: *id001
+    checked: *id002
+    mark: P
+  selection:
+    reason: A lasso in one scatterplot highlights the same cells in every other view at once.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m19_selection_linked_umap.jpg
+      label: lasso in UMAP
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m19_selection_linked_fa.jpg
+      label: same cells in FA
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m07_filters_panel.jpg
+      label: true-colour window shot of both views
+    - kind: docs
+      url: https://www.manivault.studio/tutorials/hyperspectral-image-analysis-hsne/
+      label: >-
+        HSNE tutorial: 'the image viewer and the scatterplot viewer share a selection channel which means
+        that selections made in the image viewer are reflected in the scatterplot and vice versa'
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: ManiVaultStudio/core
+      commit: 3451a06a64764b1854f89444577724929de7ba9e
+      path: ManiVault/src/private/EventManager.cpp
+      lines: 321-333
+      url: >-
+        https://github.com/ManiVaultStudio/core/blob/3451a06a64764b1854f89444577724929de7ba9e/ManiVault/src/private/EventManager.cpp#L321-L333
+      label: a selection change is pushed to every selection group and every linked dataset
+    - kind: code
+      repo: ManiVaultStudio/core
+      commit: 3451a06a64764b1854f89444577724929de7ba9e
+      path: ManiVault/src/private/EventManager.cpp
+      lines: 84-96
+      url: >-
+        https://github.com/ManiVaultStudio/core/blob/3451a06a64764b1854f89444577724929de7ba9e/ManiVault/src/private/EventManager.cpp#L84-L96
+      label: each dataset with a changed selection fires DataSelectionChanged to every listening view
+    - kind: paper
+      url: https://doi.org/10.1109/TVCG.2023.3326582
+      label: Vieth et al., ManiVault, IEEE TVCG 2023
+      where: 4.3 Data Handling
+      quote: >-
+        Each raw data object is associated with exactly one selection object to ensure straightforward
+        selection sharing across all plugins that access a data set.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: Read in the author version, arXiv:2308.01751v2.
+    checked: *id002
+    mark: Y
+  annot:
+    reason: >-
+      A lasso selection becomes a named, coloured cluster via the scatterplot's Clustering > Add cluster;
+      it is stored in a cluster dataset, saved with the project and exported as JSON (checked in the app).
+    detail: >-
+      **Observed (desktop follow-up, 2026-10-04).** The 2x2-grid toolbar icon opens Clustering: Cluster
+      name, Cluster color, Target clusters dataset (a picker plus a button that creates a new cluster
+      dataset) and Add cluster. The name and colour fields stay disabled until a target dataset is chosen,
+      which is why the first session saw an icon that did nothing. Choosing leiden as the target switched
+      the UMAP colouring to leiden (side effect); Add cluster then added my_cells (442 cells) to leiden,
+      which now lists 26 clusters, and Export > Clusters (JSON) wrote the name, colour and 442 indices
+      (demos/manivault/f3_my_cells_clusters.json). Because the cluster went into an existing cluster set,
+      those 442 cells now belong to two leiden clusters; a separate cluster dataset avoids that (create
+      button, not tried). **Criterion.** As for CELLxGENE Annotate and the UCSC Cell Browser (Y), a user-chosen
+      cell set becomes a named label stored as data and exported from the GUI; it is not written back
+      into the h5ad, which no Y row does either. Vitessce is P because its cell sets live in the view
+      configuration, not in a dataset. Hence Y. **Source.** ManiVaultStudio/Scatterplot a458c7b, src/ClusteringAction.cpp
+      L12-L32, L74-L92; the same strings ('Add cluster', 'Cluster name', 'Create cluster dataset') are
+      in the shipped libScatterplotPlugin_p1.0.0_c1.5.0.dylib.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/f1_annot_clustering_popup.jpg
+      label: Clustering popup
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/f2_annot_cluster_added.jpg
+      label: my_cells (442) added to leiden
+    - kind: code
+      repo: ManiVaultStudio/Scatterplot
+      commit: a458c7b25ec31853fc6b292174e3f7adcb6df561
+      path: src/ClusteringAction.cpp
+      lines: 74-92
+      url: >-
+        https://github.com/ManiVaultStudio/Scatterplot/blob/a458c7b25ec31853fc6b292174e3f7adcb6df561/src/ClusteringAction.cpp#L74-L92
+      label: 'Add cluster: selection indices become a named cluster'
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m08_annot_cluster_from_selection.jpg
+      label: cluster dataset menu
+    reproduce:
+    - notes/comparison/manivault_checklist.md
+    - notes/comparison/demos/manivault/session_notes.txt
+    - notes/comparison/demos/manivault/DESKTOP_PROMPT.md
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app (computer-use desktop follow-up)
+    mark: Y
+  de:
+    reason: No differential-expression or marker analysis in this build.
+    detail: |-
+      **Observed.** Analyze on X: Example Analysis, Example dependencies, HSNE, Mean-shift analysis, PCA, TSNE, UMAP Analysis.
+
+      Cytosplore Viewer (a separate distribution built on ManiVault, with its own plugin set) offers DE (paper Fig. 11); ManiVault Studio 1.5.0 ships no DE plugin among its 47 plugins, so this row is N.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m09_de_analyze_menu.jpg
+      label: Analyze menu
+    - kind: docs
+      url: https://www.manivault.studio/plugins
+      label: >-
+        Plugins page: the analysis plugins are Gaussian Mean Shift, PCA, t-SNE and HSNE, and spatially
+        informed DR; no differential-expression plugin
+      checked: '2026-10-04'
+      archive: null
+    reproduce: *id001
+    checked: *id002
+    mark: N
+  image:
+    reason: 'The scatterplot has no image layer (Render Mode: Scatter, Density, Contour).'
+    detail: >-
+      **Observed.** No background or image layer in the view; the separate Image Viewer plugin was not
+      in the View menu for these datasets.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m10_image_layers.jpg
+      label: Render Mode popup
+    - kind: code
+      repo: ManiVaultStudio/Scatterplot
+      commit: a458c7b25ec31853fc6b292174e3f7adcb6df561
+      path: src/RenderModeAction.cpp
+      lines: 7-12
+      url: >-
+        https://github.com/ManiVaultStudio/Scatterplot/blob/a458c7b25ec31853fc6b292174e3f7adcb6df561/src/RenderModeAction.cpp#L7-L12
+      label: >-
+        scatterplot render modes are Scatter, Density and Contour; no image layer (Scatterplot plugin
+        master, a458c7b, 2026-09-10; the plugin build bundled in the 1.5.0 dmg is not pinned)
+    reproduce: *id001
+    checked: *id002
+    mark: N
+  share:
+    reason: >-
+      A saved project (.mv) reopens with its views, colouring and derived datasets; the selection is not
+      restored.
+    detail: >-
+      **Observed.** File > Save Project wrote bm_demo.mv (1.88 GB, data included); File > Open Project
+      restored both scatterplots, the Mpo colouring and the HSNE datasets in 4.7 s, not the lasso selection.
+      (After saving, File > New Project made the app crash once; noted, not scored.)
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m11_share_project_reopened.jpg
+      label: reopened project
+    - kind: docs
+      url: https://www.manivault.studio/
+      label: >-
+        Home page, 'Project Export: Share the complete state of your analysis in a single project file
+        containing all information.'
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: ManiVaultStudio/core
+      commit: 3451a06a64764b1854f89444577724929de7ba9e
+      path: ManiVault/src/private/ProjectSaveWorkflowPlan.cpp
+      lines: 56-98
+      url: >-
+        https://github.com/ManiVaultStudio/core/blob/3451a06a64764b1854f89444577724929de7ba9e/ManiVault/src/private/ProjectSaveWorkflowPlan.cpp#L56-L98
+      label: 'Save project: project.json, meta.json and workspace.json are written, then archived into
+        one file'
+    - kind: paper
+      url: https://doi.org/10.1109/TVCG.2023.3326582
+      label: Vieth et al., ManiVault, IEEE TVCG 2023
+      where: 4.6 Projects and Workspaces
+      quote: As such, a project is completely self-contained and can be easily distributed to share findings
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: Read in the author version, arXiv:2308.01751v2.
+    reproduce: *id001
+    checked: *id002
+    mark: Y
+  export:
+    reason: >-
+      Each view saves a PNG (F2), but only PNG, without size options, and the saved colours differ from
+      the screen.
+    detail: >-
+      **Observed.** The Save Screenshot dialog offers 'Image files (*.png)' only. Every F2 PNG had red
+      and blue swapped relative to the screen (compare m07, a window capture, with m03). Source: ViewPlugin::createScreenshot
+      grabs the widget and saves it.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m12_export_screenshot_dialog.jpg
+      label: PNG-only dialog
+    - kind: code
+      repo: ManiVaultStudio/core
+      commit: 3451a06a64764b1854f89444577724929de7ba9e
+      path: ManiVault/src/ViewPlugin.cpp
+      lines: 110-112
+      url: >-
+        https://github.com/ManiVaultStudio/core/blob/3451a06a64764b1854f89444577724929de7ba9e/ManiVault/src/ViewPlugin.cpp#L110-L112
+      label: Screenshot action
+    reproduce: *id001
+    checked: *id002
+    mark: P
+  desktop:
+    reason: Notarized desktop installers for macOS (universal), Windows and Ubuntu.
+    detail: >-
+      **Source and docs.** 1.5.0 macOS dmg (sha256 06837bc1...aa77287, Developer ID notarized, universal
+      arm64+x86_64); 1.5.1 for Windows and Ubuntu.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/g01_desktop_DOCS_release_macos_installer.jpg
+      label: 'docs: official macOS installer on the releases page'
+    - kind: docs
+      url: https://github.com/ManiVaultStudio/Releases/releases/tag/manivault_1.5.0_mac
+      label: ManiVault 1.5.0 macOS installer (notarized dmg, sha256 06837bc1...aa77287)
+      checked: '2026-10-04'
+    - *id003
+    - kind: docs
+      url: https://www.manivault.studio/downloads
+      label: 'Downloads: installers for Windows 10/11, Ubuntu 24 LTS and macOS 13.3 and up'
+      checked: '2026-10-04'
+      archive: null
+    reproduce: *id001
+    checked: *id004
+    mark: Y
+  hosted:
+    reason: A desktop application; no multi-user server mode.
+    detail: '**Docs.** ManiVault Studio is distributed as desktop installers; no server deployment is
+      documented.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/g02_hosted_static_DOCS_site.jpg
+      label: 'docs: ManiVault Studio site (desktop app, project-file sharing; no server mode)'
+    - *id003
+    - kind: paper
+      url: https://doi.org/10.1109/TVCG.2023.3326582
+      label: Vieth et al., ManiVault, IEEE TVCG 2023
+      where: whole paper (framework, plugin system)
+      checked: '2026-10-04'
+    reproduce: *id001
+    checked: *id004
+    mark: N
+  static:
+    reason: No static-site export of a view.
+    detail: >-
+      **Docs and app.** File menu: New, Open, Save Project, Publish (not tested), Import data, Plugin
+      Browser; no web export found.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/g02_hosted_static_DOCS_site.jpg
+      label: 'docs: ManiVault Studio site (no web or static export)'
+    - *id003
+    reproduce: *id001
+    checked: *id004
+    mark: N
+  lazy:
+    reason: >-
+      X is held dense in memory (502.57 MiB for 8,090 x 16,285 float32), even from a sparse h5ad (the desktop
+      ladder on the Tool ceiling page: 1M cells drawn at 12.73 GiB, 2M over the 16 GiB budget).
+    detail: >-
+      **Observed.** Data properties for X: Storage type Owner, raw data size 502.57 MiB = 8,090 x 16,285
+      x 4 bytes; layers/counts the same; each obsp 249.66 MiB (dense). The loader's 'Data Type: Optimized
+      (lossless)' option did not make it sparse.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m16_lazy_data_properties.jpg
+      label: Data properties of X
+    - kind: code
+      repo: ManiVaultStudio/HDF5Loader
+      commit: 89077343023b0d6767b4308c1f507a45964e4195
+      path: src/H5ADLoader/H5ADUtils.cpp
+      lines: 268-281
+      url: >-
+        https://github.com/ManiVaultStudio/HDF5Loader/blob/89077343023b0d6767b4308c1f507a45964e4195/src/H5ADLoader/H5ADUtils.cpp#L268-L281
+      label: the whole X 'data' array is read into memory
+    - kind: code
+      repo: ManiVaultStudio/HDF5Loader
+      commit: 89077343023b0d6767b4308c1f507a45964e4195
+      path: src/H5ADLoader/H5ADUtils.cpp
+      lines: 455-462
+      url: >-
+        https://github.com/ManiVaultStudio/HDF5Loader/blob/89077343023b0d6767b4308c1f507a45964e4195/src/H5ADLoader/H5ADUtils.cpp#L455-L462
+      label: then copied into an in-memory rows x columns points container
+    - kind: paper
+      url: https://doi.org/10.1109/TVCG.2023.3326582
+      label: Vieth et al., ManiVault, IEEE TVCG 2023
+      where: 4.3 Data Handling
+      quote: Each loaded data set produces less than 1.5 MB overhead in addition to its binary size
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Read in the author version, arXiv:2308.01751v2. Loaded data are held in memory at their binary
+        size; no lazy or chunked reads are described.
+    reproduce: *id001
+    checked: *id002
+    mark: N
+  every_cell:
+    reason: >-
+      The plain scatterplot draws all 8,090 cells; HSNE adds an optional landmark view (300 landmarks
+      at the top level).
+    detail: >-
+      **Observed.** obsm/X_umap scatterplot: 8,090 points. HSNE top level: 300 landmarks. Every cell is
+      drawn by default; HSNE aggregation is an analysis the user starts. Published scale: HSNE on up to
+      15 million cells (CyTOF).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m00_render_umap.jpg
+      label: all cells
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m17_every_cell_hsne_top_level.jpg
+      label: HSNE landmarks
+    - kind: paper
+      url: https://doi.org/10.1038/s41467-017-01689-9
+      label: van Unen et al. 2017, HSNE for mass cytometry, Nat Commun 8:1740
+      where: 'Results: hierarchical landmarks, up to 15 million cells'
+      checked: '2026-10-04'
+    reproduce: *id001
+    checked: *id002
+    mark: Y
+  subset:
+    reason: >-
+      'Create subset' and HSNE 'Refine selection' draw only the chosen cells, but the whole matrix is
+      already held in memory (storage Owner, 502.57 MiB).
+    detail: |-
+      **Observed.** HSNE lasso of 2,749 cells > Refine selection built 'Hsne scale 0' (2,858 points). The scatterplot's Subset popup creates a dataset from the selection.
+
+      **Re-scored under X8 (2026-10-04)**: 'Create subset' and HSNE 'Refine selection' draw only the chosen cells, but the whole matrix is already held in memory (storage Owner, 502.57 MiB).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m18_subset_hsne_refine.jpg
+      label: refined HSNE level
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m07_filters_panel.jpg
+      label: Subset popup
+    - kind: docs
+      url: https://www.manivault.studio/tutorials/hyperspectral-image-analysis-hsne/
+      label: >-
+        HSNE tutorial, Drilling-in: 'a region of interest is selected and subsequently refined', and the
+        refined embedding opens in a new scatterplot
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: ManiVaultStudio/Scatterplot
+      commit: a458c7b25ec31853fc6b292174e3f7adcb6df561
+      path: src/SubsetAction.cpp
+      lines: 18-32
+      url: >-
+        https://github.com/ManiVaultStudio/Scatterplot/blob/a458c7b25ec31853fc6b292174e3f7adcb6df561/src/SubsetAction.cpp#L18-L32
+      label: >-
+        Subset popup: name, source data, 'Create subset from selected data points' (Scatterplot plugin
+        master, a458c7b, 2026-09-10; the plugin build bundled in the 1.5.0 dmg is not pinned)
+    - kind: code
+      repo: ManiVaultStudio/core
+      commit: 3451a06a64764b1854f89444577724929de7ba9e
+      path: ManiVault/src/plugins/PointData/src/CreateSetFromSelectionAction.cpp
+      lines: 19-41
+      url: >-
+        https://github.com/ManiVaultStudio/core/blob/3451a06a64764b1854f89444577724929de7ba9e/ManiVault/src/plugins/PointData/src/CreateSetFromSelectionAction.cpp#L19-L41
+      label: core 'Create set from selection' makes a new dataset from the current selection
+    - kind: paper
+      url: https://doi.org/10.1109/TVCG.2023.3326582
+      label: Vieth et al., ManiVault, IEEE TVCG 2023
+      where: 4.5 Actions
+      quote: The plugin creates a hierarchical embedding structure that can be refined interactively.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: Read in the author version, arXiv:2308.01751v2. The plugin is HSNE.
+    reproduce: *id001
+    checked: *id002
+    mark: P
+  auto_subset:
+    na:
+      visual: no automatic subsetting in source or docs; a demo-size shot cannot show its absence at scale
+    reason: The scatterplot draws every point; HSNE's landmark overview is an analysis the user starts.
+    detail: >-
+      **New column (user X8, 2026-10-04).** The scatterplot draws every point; HSNE's landmark overview
+      is an analysis the user starts. Evidence is the same as for every cell drawn, which shows how the
+      default view is drawn.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m00_render_umap.jpg
+      label: all cells
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m17_every_cell_hsne_top_level.jpg
+      label: HSNE landmarks
+    - kind: paper
+      url: https://doi.org/10.1038/s41467-017-01689-9
+      label: van Unen et al. 2017, HSNE for mass cytometry, Nat Commun 8:1740
+      where: 'Results: hierarchical landmarks, up to 15 million cells'
+      checked: '2026-10-04'
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: N
+retired_cells:
+  filters:
+    proposed: N
+    reason: No filter by obs category or value masks the plots.
+    detail: >-
+      **Observed.** Scatterplot popups: Datasets, Position, Plot, Coloring, Subset, Selection; Data properties'
+      funnel filters lists, not plots. The closest control is Subset (Create subset from the selection).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/manivault/m07_filters_panel.jpg
+      label: no filter panel; Subset popup
+    reproduce:
+    - notes/comparison/manivault_checklist.md
+    - notes/comparison/demos/manivault/session_notes.txt
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app (computer-use desktop session following notes/comparison/manivault_checklist.md)
+version_note: >-
+  Scored build: the official 'ManiVault 1.5.0 macOS installer' (manivault_1.5.0_mac.dmg, sha256 06837bc1...aa77287),
+  whose app reports 1.5.0-dev: it was built from a pre-release commit (core VERSION SUFFIX "dev"; the
+  v1.5.0 tag has SUFFIX ""). No newer macOS build exists (1.5.1 is Windows/Ubuntu only).

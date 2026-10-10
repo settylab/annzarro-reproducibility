@@ -1,0 +1,58 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "noprewarm",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first1000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_noprewarm_run_1000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-test/bin/annzarro"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 8.34,
+ "peaks": {
+  "client": {
+   "fp_peak": 3745048992,
+   "fp_lifetime_sum": 4243385816,
+   "rss_peak": 3322347520,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 313246512,
+   "fp_lifetime_sum": 315704472,
+   "rss_peak": 336543744,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 162444416,
+   "fp_lifetime_sum": 162477184,
+   "rss_peak": 213434368,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 4056640720,
+   "rss_peak": 3657072640,
+   "fp_lifetime_sum": 4559090288
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.19,
+   1669457544
+  ],
+  [
+   4.48,
+   2581293184
+  ],
+  [
+   6.71,
+   3635653576
+  ]
+ ],
+ "ps_before": "2026-10-03T17:57:45-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 2058336   6.6 $HOME/.local/bin/claude\n  626 524656   3.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 6219  58624   1.3 $HOME/Projects/investments/.venv/bin/python3\n 4725 613056   1.2 claude\n34972 494736   0.9 $HOME/.local/bin/claude\n  633  30160   0.9 /usr/libexec/runningboardd\n92291  30832   0.7 .venv/bin/python\n80588 616864   0.7 $HOME/.local/bin/claude\n72627 489104   0.7 $HOME/.local/bin/claude\n47413 619184   0.7 /Applications/cmux.app/Contents/MacOS/cmux\n"
+}

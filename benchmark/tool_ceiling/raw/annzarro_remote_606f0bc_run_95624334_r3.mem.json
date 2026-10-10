@@ -1,0 +1,150 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$SCRATCH/annzarro-scale/stores_panel/n95.6M/tahoe_panel_95.6M.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_95624334_r3",
+  "--server-url",
+  "http://hpc-node-36:8790",
+  "--proxy",
+  "socks5://127.0.0.1:8767",
+  "--n",
+  "95624334",
+  "--probe-store",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "--version-label",
+  "606f0bc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 52.05,
+ "peaks": {
+  "client": {
+   "fp_peak": 13554507848,
+   "fp_lifetime_sum": 13986210968,
+   "rss_peak": 13509869568,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1818888,
+   "fp_lifetime_sum": 1818888,
+   "rss_peak": 3768320,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 157075312,
+   "fp_lifetime_sum": 157091696,
+   "rss_peak": 192266240,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 13554507848,
+   "rss_peak": 13509869568,
+   "fp_lifetime_sum": 13988029856
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.16,
+   0
+  ],
+  [
+   4.28,
+   791846976
+  ],
+  [
+   6.42,
+   941383960
+  ],
+  [
+   8.58,
+   639918672
+  ],
+  [
+   10.87,
+   792241056
+  ],
+  [
+   13.03,
+   934110376
+  ],
+  [
+   15.19,
+   1055565208
+  ],
+  [
+   17.33,
+   1178379888
+  ],
+  [
+   19.48,
+   1302587232
+  ],
+  [
+   21.62,
+   1440622696
+  ],
+  [
+   23.76,
+   1592387976
+  ],
+  [
+   26.02,
+   1757129384
+  ],
+  [
+   28.19,
+   1899097920
+  ],
+  [
+   30.37,
+   8494205144
+  ],
+  [
+   32.53,
+   10899839392
+  ],
+  [
+   34.76,
+   11187001352
+  ],
+  [
+   36.9,
+   11278784520
+  ],
+  [
+   39.06,
+   11966388352
+  ],
+  [
+   41.19,
+   9447758024
+  ],
+  [
+   43.43,
+   9689110968
+  ],
+  [
+   45.54,
+   8955812784
+  ],
+  [
+   47.76,
+   13480632368
+  ],
+  [
+   49.87,
+   0
+  ],
+  [
+   51.94,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-04T02:56:12-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n93048 4444496   8.1 .venv/bin/python\n57113 2200752   3.0 $HOME/.local/bin/claude\n86901 518000   2.3 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n90797 363808   1.3 $HOME/.local/bin/claude\n92291  30800   0.9 .venv/bin/python\n80588 613136   0.8 $HOME/.local/bin/claude\n47413 585408   0.7 /Applications/cmux.app/Contents/MacOS/cmux\n 4725 611520   0.7 claude\n 6219  57744   0.5 $HOME/Projects/investments/.venv/bin/python3\n80005 373008   0.4 $HOME/.local/bin/claude\n"
+}

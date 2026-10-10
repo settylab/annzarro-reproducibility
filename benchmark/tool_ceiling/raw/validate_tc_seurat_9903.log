@@ -1,0 +1,10 @@
+[     4.0s] read_obs_obsm
+[    21.6s] read_counts
+[    42.0s] load
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+[    55.4s] plot_cat
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+[    65.7s] plot_gene
+[    65.7s] done

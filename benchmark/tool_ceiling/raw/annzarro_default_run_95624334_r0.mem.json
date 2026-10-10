@@ -1,0 +1,94 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_default_run_95624334_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-test/bin/annzarro"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 26.65,
+ "peaks": {
+  "client": {
+   "fp_peak": 12667854848,
+   "fp_lifetime_sum": 14117182696,
+   "rss_peak": 11768856576,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 15897047328,
+   "fp_lifetime_sum": 15898997288,
+   "rss_peak": 15913304064,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 162034720,
+   "fp_lifetime_sum": 162182176,
+   "rss_peak": 213041152,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 27135807536,
+   "rss_peak": 25900122112,
+   "fp_lifetime_sum": 30016179984
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.22,
+   4056821448
+  ],
+  [
+   4.45,
+   7607483536
+  ],
+  [
+   6.7,
+   14877139808
+  ],
+  [
+   8.94,
+   15070604264
+  ],
+  [
+   11.13,
+   17877233096
+  ],
+  [
+   13.32,
+   18667794536
+  ],
+  [
+   15.59,
+   20335573328
+  ],
+  [
+   17.83,
+   20695219592
+  ],
+  [
+   20.1,
+   5680764448
+  ],
+  [
+   22.11,
+   5680764448
+  ],
+  [
+   24.11,
+   5680764448
+  ],
+  [
+   26.14,
+   5680764448
+  ]
+ ],
+ "ps_before": "2026-10-03T17:53:43-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 523808  12.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n47413 618448   6.3 /Applications/cmux.app/Contents/MacOS/cmux\n 1012  14192   3.6 /usr/libexec/pboard\n80588 616816   2.2 $HOME/.local/bin/claude\n  596  27952   1.8 /System/Library/CoreServices/launchservicesd\n57113 2055264   1.7 $HOME/.local/bin/claude\n  582  99040   1.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  629 189952   1.5 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  855 1504816   1.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  633  30000   1.3 /usr/libexec/runningboardd\n"
+}

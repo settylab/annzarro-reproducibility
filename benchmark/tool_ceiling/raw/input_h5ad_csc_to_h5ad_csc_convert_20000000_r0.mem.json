@@ -1,0 +1,110 @@
+{
+ "cmd": [
+  ".venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "20000000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first20000000_csc.h5ad",
+  "--csc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 28.1,
+ "peaks": {
+  "proc": {
+   "fp_peak": 6596925560,
+   "fp_lifetime_sum": 6612228216,
+   "rss_peak": 7201456128,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 6596925560,
+   "rss_peak": 7201456128,
+   "fp_lifetime_sum": 6612228216
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9453976
+  ],
+  [
+   1.41,
+   2081130872
+  ],
+  [
+   2.82,
+   2750155680
+  ],
+  [
+   4.22,
+   3011890272
+  ],
+  [
+   5.62,
+   3414723944
+  ],
+  [
+   7.02,
+   4187803536
+  ],
+  [
+   8.41,
+   4388458528
+  ],
+  [
+   9.8,
+   3156987456
+  ],
+  [
+   11.22,
+   4234662304
+  ],
+  [
+   12.63,
+   4859482984
+  ],
+  [
+   14.05,
+   4859548520
+  ],
+  [
+   15.46,
+   5527852360
+  ],
+  [
+   16.88,
+   5527999816
+  ],
+  [
+   18.29,
+   5528114504
+  ],
+  [
+   19.71,
+   5528376648
+  ],
+  [
+   21.13,
+   5528507720
+  ],
+  [
+   22.53,
+   5528687944
+  ],
+  [
+   23.94,
+   5528851784
+  ],
+  [
+   25.36,
+   5528999240
+  ],
+  [
+   26.77,
+   6356965376
+  ]
+ ],
+ "ps_before": "2026-10-05T11:48:14-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47413 671152  10.0 /Applications/cmux.app/Contents/MacOS/cmux\n60058  20704   9.0 benchmark/tool_ceiling/.venv/bin/python\n57113 2902272   5.0 $HOME/.local/bin/claude\n  629 241824   4.0 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  31104   3.9 /System/Library/CoreServices/launchservicesd\n  601  47600   2.5 /usr/libexec/locationd\n93323 1098128   1.6 $HOME/.local/bin/claude\n 6219  59792   1.6 $HOME/Projects/investments/.venv/bin/python3\n 4725 686016   1.4 claude\n  626 518144   1.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n",
+ "others_at_start": []
+}

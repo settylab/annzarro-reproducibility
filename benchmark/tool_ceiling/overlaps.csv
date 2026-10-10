@@ -1,0 +1,337 @@
+id,clean_time,clean_memory,windows
+scanpy_default_run_1000000_r0,True,True,
+scanpy_default_run_2000000_r0,True,True,
+scanpy_default_run_5000000_r0,True,True,
+annzarro_default_run_1000000_r0,True,True,
+annzarro_default_run_2000000_r0,True,True,
+scanpy_default_run_10000000_r0,True,True,
+isee_default_run_1000000_r0,True,True,
+annzarro_default_run_5000000_r0,True,True,
+annzarro_default_run_10000000_r0,True,True,
+scanpy_default_run_20000000_r0,True,True,
+isee_default_run_2000000_r0,True,True,
+annzarro_default_run_20000000_r0,True,True,
+annzarro_default_run_50000000_r0,True,True,
+scanpy_default_run_50000000_r0,True,True,
+isee_default_run_5000000_r0,True,True,
+annzarro_default_run_95624334_r0,True,True,
+vitessce_default_run_1000000_r0,True,True,
+scanpy_backed_run_1000000_r0,True,True,
+annzarro_noprewarm_run_1000000_r0,True,True,
+vitessce_default_run_2000000_r0,True,True,
+scanpy_backed_run_2000000_r0,True,True,
+isee_default_run_10000000_r0,True,True,
+annzarro_noprewarm_run_2000000_r0,True,True,
+vitessce_default_run_5000000_r0,True,True,
+scanpy_backed_run_5000000_r0,True,True,
+annzarro_noprewarm_run_5000000_r0,True,True,
+vitessce_default_run_10000000_r0,True,True,
+scanpy_backed_run_10000000_r0,True,True,
+annzarro_noprewarm_run_10000000_r0,True,True,
+vitessce_default_run_20000000_r0,True,True,
+scanpy_backed_run_20000000_r0,True,True,
+shinycell_default_run_1000000_r0,True,True,
+annzarro_noprewarm_run_20000000_r0,True,True,
+vitessce_default_run_50000000_r0,True,True,
+scanpy_backed_run_50000000_r0,True,True,
+annzarro_noprewarm_run_50000000_r0,True,True,
+scanpy_lazy_h5ad_run_1000000_r0,True,True,
+shinycell_default_run_2000000_r0,True,True,
+annzarro_noprewarm_run_95624334_r0,True,True,
+scanpy_lazy_h5ad_run_2000000_r0,True,True,
+cellxgene_default_run_1000000_r0,True,True,
+scanpy_lazy_h5ad_run_5000000_r0,True,True,
+cellxgene_default_run_2000000_r0,True,True,
+scanpy_lazy_h5ad_run_10000000_r0,True,True,
+cellxgene_default_run_5000000_r0,True,True,
+scanpy_lazy_h5ad_run_20000000_r0,True,True,
+cellxgene_default_run_10000000_r0,True,True,
+scanpy_lazy_h5ad_run_50000000_r0,True,True,
+cellxgene_default_run_20000000_r0,True,True,
+cellxgene_backed_run_1000000_r0,True,True,
+scanpy_lazy_h5ad_run_95624334_r0,True,True,
+scanpy_lazy_zarr_run_1000000_r0,True,True,
+cirrocumulus_default_run_1000000_r0,True,True,
+scanpy_lazy_zarr_run_2000000_r0,True,True,
+cirrocumulus_default_run_2000000_r0,True,True,
+scanpy_lazy_zarr_run_5000000_r0,True,True,
+cellxgene_backed_run_2000000_r1,True,True,
+cellxgene_backed_run_5000000_r1,True,True,
+scanpy_lazy_zarr_run_10000000_r0,True,True,
+cirrocumulus_default_run_5000000_r0,True,True,
+cellxgene_backed_run_10000000_r1,True,True,
+scanpy_lazy_zarr_run_20000000_r0,True,True,
+cirrocumulus_default_run_10000000_r0,True,True,
+cellxgene_backed_run_20000000_r1,True,True,
+cellxgene_default_run_14100000_r0,True,True,
+scanpy_lazy_zarr_run_50000000_r0,True,True,
+cirrocumulus_default_run_20000000_r0,True,True,
+scanpy_backed_run_14100000_r0,True,True,
+scanpy_lazy_zarr_run_95624334_r0,True,True,
+scanpy_default_run_7100000_r0,True,True,
+seurat_default_run_1000000_r0,True,True,
+cirrocumulus_prepared_run_1000000_r0,True,True,
+seurat_default_run_2000000_r0,True,True,
+scanpy_lazy_h5ad_run_31600000_r0,True,True,
+seurat_default_run_5000000_r0,True,True,
+cirrocumulus_prepared_run_2000000_r0,True,True,
+vitessce_default_run_14100000_r0,True,True,
+seurat_default_run_10000000_r0,True,True,
+cirrocumulus_prepared_run_5000000_r0,True,True,
+seurat_bpcells_run_1000000_r0,True,True,
+cellxgene_default_run_16800000_r0,True,True,
+cirrocumulus_prepared_run_10000000_r0,True,True,
+seurat_bpcells_run_2000000_r0,True,True,
+scanpy_backed_run_11900000_r0,True,True,
+seurat_bpcells_run_5000000_r0,True,True,
+scanpy_default_run_8400000_r0,True,True,
+seurat_bpcells_run_10000000_r0,True,True,
+annzarro_remote_606f0bc_run_1000000_r1,True,True,
+annzarro_remote_606f0bc_run_2000000_r1,True,True,
+annzarro_remote_606f0bc_run_5000000_r1,True,True,
+annzarro_remote_606f0bc_run_10000000_r1,True,True,
+annzarro_remote_606f0bc_run_20000000_r1,True,True,
+annzarro_remote_606f0bc_run_50000000_r1,True,True,
+annzarro_remote_606f0bc_run_95624334_r1,True,True,
+scanpy_lazy_h5ad_run_39700000_r0,True,True,
+annzarro_remote_606f0bc_run_1000000_r2,True,True,
+seurat_bpcells_run_20000000_r0,True,True,
+vitessce_default_run_16800000_r0,True,True,
+annzarro_remote_606f0bc_run_1000000_r3,True,True,
+seurat_bpcells_run_50000000_r0,True,True,
+annzarro_remote_606f0bc_run_95624334_r2,True,True,
+scanpy_lazy_h5ad_run_44600000_r0,True,True,
+annzarro_remote_606f0bc_run_95624334_r3,True,True,
+cellxgene_default_run_16800000_r1,True,True,
+seurat_bpcells_run_95624334_r0,True,True,
+cellxgene_default_run_16800000_r2,True,True,
+isee_default_run_10000000_r1,True,True,
+isee_default_run_10000000_r2,True,True,
+scanpy_backed_run_11900000_r1,True,True,
+scanpy_backed_run_11900000_r2,True,True,
+scanpy_backed_run_14100000_r1,True,True,
+scanpy_backed_run_14100000_r2,True,True,
+scanpy_default_run_7100000_r1,True,True,
+scanpy_default_run_7100000_r2,True,True,
+scanpy_default_run_8400000_r1,True,True,
+scanpy_default_run_8400000_r2,True,True,
+scanpy_lazy_h5ad_run_39700000_r1,True,True,
+scanpy_lazy_h5ad_run_39700000_r2,True,True,
+scanpy_lazy_h5ad_run_44600000_r1,True,True,
+scanpy_lazy_h5ad_run_44600000_r2,True,True,
+vitessce_default_run_16800000_r1,True,True,
+vitessce_default_run_16800000_r2,True,True,
+vitessce_default_run_20000000_r1,True,True,
+vitessce_default_run_20000000_r2,True,True,
+ucsc_default_run_1000000_r1,True,True,
+ucsc_default_run_2000000_r0,True,True,
+cellxgene_backed_run_14100000_r0,True,True,
+cirrocumulus_default_run_14100000_r0,False,False,"session: user session (memory-guard test server, 127.0.0.1:8811, up to 95.6M) | others at start: 4 (95401 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chr)"
+ucsc_default_run_5000000_r2,False,False,"session: user session (memory-guard test server, 127.0.0.1:8811, up to 95.6M) | others at start: 7 (27027 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-17908)"
+cirrocumulus_default_run_14100000_r1,True,True,
+ucsc_default_run_10000000_r0,True,True,
+ucsc_default_run_5000000_r3,False,True,others at start: 5 (10533 $HOME/.cache/ms-playwright/chromium-1243/chrome-mac-arm64/G)
+ucsc_default_run_3200000_r0,True,True,
+cellxgene_backed_run_16800000_r0,True,True,
+cirrocumulus_default_run_16800000_r0,True,True,
+cellxgene_backed_run_16800000_r1,True,True,
+cirrocumulus_default_run_14100000_r2,False,True,others at start: 4 (69000 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chr)
+cirrocumulus_prepared_run_10000000_r1,True,True,
+cirrocumulus_prepared_run_10000000_r2,True,True,
+shinycell_default_run_2000000_r1,True,True,
+shinycell_default_run_2000000_r2,True,True,
+ucsc_default_run_10000000_r1,True,True,
+ucsc_default_run_10000000_r2,True,True,
+annzarro_v030p_run_95624334_r0,True,True,
+annzarro_v030p_syn_run_150000000_r0,True,True,
+annzarro_v030_run_1000000_r0,True,True,
+annzarro_v030_run_2000000_r0,True,True,
+annzarro_v030_run_5000000_r0,True,True,
+annzarro_v030_run_10000000_r0,True,True,
+annzarro_v030_run_20000000_r0,True,True,
+annzarro_v030_run_50000000_r0,True,True,
+annzarro_v030_run_95624334_r0,True,True,
+annzarro_v030_synth_run_150000000_r0,True,True,
+annzarro_v030_synth_run_200000000_r0,True,True,
+annzarro_v030_syn_run_150000000_r0,True,True,
+annzarro_v030_syn_run_160000000_r0,True,True,
+annzarro_v030_syn_run_167000000_r0,True,True,
+annzarro_v030_syn_run_175000000_r0,True,True,
+annzarro_v030_syn_run_182000000_r0,True,True,
+annzarro_v030_syn_run_200000000_r0,True,True,
+annzarro_v030_syn_run_160000000_r1,True,True,
+kana_default_run_1000000_r0,True,True,
+annzarro_v030_syn_run_167000000_r1,True,True,
+annzarro_v030_syn_run_175000000_r1,True,True,
+annzarro_v030_synth_run_200000000_r1,True,True,
+annzarro_v030_sub_run_150000000_r0,True,True,
+annzarro_v030_sub1m_run_150000000_r0,True,True,
+annzarro_v030_sub_run_200000000_r0,True,True,
+annzarro_v030_sub1m_run_200000000_r0,True,True,
+annzarro_v030_sub_run_300000000_r0,True,True,
+annzarro_v030_sub1m_run_300000000_r0,True,True,
+annzarro_v030_sub_run_500000000_r0,True,True,
+annzarro_v030_sub1m_run_500000000_r0,True,True,
+annzarro_v030_sub_run_1000000000_r0,True,True,
+annzarro_v030_sub1m_run_1000000000_r0,True,True,
+kana_default_run_2000000_r1,True,True,
+annzarro_v030_tag_run_95624334_r0,True,True,
+annzarro_v030_tag_run_150000000_r0,True,True,
+annzarro_v030_tag_run_160000000_r0,True,True,
+annzarro_v030_tag_sub_run_1000000000_r0,True,True,
+annzarro_v030_tag_sub1m_run_1000000000_r0,True,True,
+cellxgene_remote_default_run_20000000_r0,True,True,
+isee_hdf5_run_1000000_r0,True,True,
+isee_hdf5_run_2000000_r0,True,True,
+isee_hdf5_run_5000000_r0,True,True,
+cirrocumulus_remote_prepared_run_20000000_r0,True,True,
+isee_hdf5_run_10000000_r0,True,True,
+isee_hdf5_run_20000000_r0,False,True,others at start: 4 (16385 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chr)
+ucsc_remote_default_run_20000000_r0,True,True,
+shinycell_remote_default_run_5000000_r0,True,True,
+isee_hdf5_run_20000000_r1,True,True,
+shinycell_remote_default_run_10000000_r0,True,True,
+annzarro_v031_run_1000000_r0,True,True,
+annzarro_v031_run_2000000_r0,True,True,
+annzarro_v031_run_5000000_r0,True,True,
+annzarro_v031_run_10000000_r0,True,True,
+annzarro_v031_run_20000000_r0,True,True,
+annzarro_v031_run_50000000_r0,True,True,
+annzarro_v031_run_95624334_r0,True,True,
+annzarro_v031_syn_run_150000000_r0,True,True,
+annzarro_v031_syn_run_160000000_r0,True,True,
+annzarro_v031_sub_run_150000000_r0,True,True,
+annzarro_v031_sub1m_run_150000000_r0,True,True,
+annzarro_v031_sub_run_200000000_r0,True,True,
+annzarro_v031_sub1m_run_200000000_r0,True,True,
+annzarro_v031_sub_run_300000000_r0,True,True,
+annzarro_v031_sub1m_run_300000000_r0,True,True,
+annzarro_v031_sub_run_500000000_r0,True,True,
+annzarro_v031_sub1m_run_500000000_r0,True,True,
+annzarro_v031_sub_run_1000000000_r0,True,True,
+annzarro_v031_sub1m_run_1000000000_r0,True,True,
+manivault_default_run_250000_r1,False,True,others at start: 1 (18915 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-17908)
+manivault_default_run_500000_r1,True,True,
+manivault_default_run_1000000_r0,True,True,
+manivault_default_run_2000000_r0,True,True,
+loupe_default_run_250000_r0,True,True,
+loupe_default_run_500000_r0,False,True,others at start: 2 (77304 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-17908)
+loupe_default_run_1000000_r0,True,True,
+loupe_default_run_2000000_r0,True,True,
+loupe_default_run_5000000_r0,True,True,
+loupe_default_run_10000000_r0,True,True,
+loupe_default_run_10000000_r1,True,True,
+annzarro_v031_noguard_run_160000000_r0,True,True,
+ucsc_remote_default_run_50000000_r0,False,True,others at start: 3 (19752 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-17908)
+annzarro_v040_run_1000000_r0,True,True,
+annzarro_v040_run_2000000_r0,True,True,
+annzarro_v040_run_5000000_r0,True,True,
+annzarro_v040_run_10000000_r0,True,True,
+annzarro_v040_run_20000000_r0,True,True,
+annzarro_v040_run_50000000_r0,True,True,
+annzarro_v040_run_95624334_r0,True,True,
+annzarro_v040_syn_run_150000000_r0,True,True,
+annzarro_v040_syn_run_160000000_r0,True,True,
+annzarro_v040_sub_run_150000000_r0,True,True,
+annzarro_v040_sub1m_run_150000000_r0,True,True,
+annzarro_v040_sub_run_200000000_r0,True,True,
+annzarro_v040_sub1m_run_200000000_r0,True,True,
+annzarro_v040_sub_run_300000000_r0,True,True,
+annzarro_v040_sub1m_run_300000000_r0,True,True,
+annzarro_v040_sub_run_500000000_r0,True,True,
+annzarro_v040_sub1m_run_500000000_r0,True,True,
+annzarro_v040_sub_run_1000000000_r0,True,True,
+annzarro_v040_sub1m_run_1000000000_r0,True,True,
+annzarro_v040_noguard_run_160000000_r0,True,True,
+annzarro_v040_noguard_run_175000000_r0,True,True,
+annzarro_v040_noguard_run_200000000_r0,True,True,
+annzarro_v040_sub_run_1250000000_r0,True,True,
+annzarro_v040_sub1m_run_1250000000_r0,True,True,
+annzarro_v040_sub_run_1400000000_r0,True,True,
+annzarro_v040_sub1m_run_1400000000_r0,True,True,
+annzarro_v040_sub_run_1500000000_r0,True,True,
+annzarro_v040_sub1m_run_1500000000_r0,True,True,
+annzarro_v040_noguard_run_200000000_r2,True,True,
+annzarro_v040_noguard_run_200000000_r3,True,True,
+ucsc_remote_default_run_95624334_r0,True,True,
+annzarro_v041_run_1000000_r0,False,True,"others at start: 2 (92280 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_run_2000000_r0,False,True,"others at start: 2 (92536 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_run_5000000_r0,False,True,"others at start: 2 (92726 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_run_10000000_r0,False,True,"others at start: 2 (92903 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_run_20000000_r0,False,True,"others at start: 2 (93105 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_run_50000000_r0,False,True,"others at start: 2 (93418 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_run_95624334_r0,False,True,"others at start: 2 (93935 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_syn_run_150000000_r0,False,True,"others at start: 2 (94400 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_syn_run_160000000_r0,False,True,"others at start: 2 (95090 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_syn_run_167000000_r0,False,True,"others at start: 2 (95805 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_syn_run_175000000_r0,False,True,"others at start: 2 (96556 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_syn_run_182000000_r0,False,True,"others at start: 2 (97355 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_syn_run_190000000_r0,False,True,"others at start: 2 (98197 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_syn_run_200000000_r0,False,True,"others at start: 2 (99107 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_sub_run_150000000_r0,False,True,"others at start: 2 (2028 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+annzarro_v041_sub1m_run_150000000_r0,False,True,"others at start: 2 (2380 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+annzarro_v041_sub_run_200000000_r0,False,True,"others at start: 2 (2831 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+annzarro_v041_sub1m_run_200000000_r0,False,True,"others at start: 2 (3216 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+annzarro_v041_sub_run_300000000_r0,False,True,"others at start: 2 (3721 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+annzarro_v041_sub1m_run_300000000_r0,False,True,"others at start: 2 (4220 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+annzarro_v041_sub_run_500000000_r0,False,True,"others at start: 2 (4903 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+annzarro_v041_sub1m_run_500000000_r0,False,True,"others at start: 2 (5699 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+annzarro_v041_sub_run_1000000000_r0,False,True,"others at start: 2 (6571 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+annzarro_v041_sub1m_run_1000000000_r0,False,True,"others at start: 2 (7868 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+annzarro_v041_sub_run_1250000000_r0,False,True,"others at start: 2 (9291 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+annzarro_v041_sub1m_run_1250000000_r0,False,True,"others at start: 2 (11824 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_sub_run_1400000000_r0,False,True,"others at start: 2 (13681 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_sub1m_run_1400000000_r0,False,True,"others at start: 2 (15563 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_sub_run_1500000000_r0,False,True,"others at start: 2 (17388 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_sub1m_run_1500000000_r0,False,True,"others at start: 2 (19213 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_syn_run_250000000_r1,False,True,"others at start: 2 (29805 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_noguard_run_250000000_r1,False,True,"others at start: 2 (49583 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_noguard_run_300000000_r1,False,True,"others at start: 2 (52537 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_noguard_run_500000000_r1,False,True,"others at start: 2 (54465 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_noguard_edge_run_210000000_r0,False,True,"others at start: 2 (71871 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_noguard_edge_run_240000000_r0,False,True,"others at start: 2 (15699 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_noguard_edge_run_225000000_r1,False,True,"others at start: 2 (19071 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_noguard_edge_run_240000000_r2,False,True,"others at start: 4 (33695 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+annzarro_v041_noguard_edge_run_240000000_r1,False,True,"others at start: 2 (35669 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+scope_default_run_1000000_r0,False,True,"others at start: 2 (88007 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+scope_default_run_2000000_r0,False,True,"others at start: 2 (7613 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+scope_default_run_2000000_r1,False,True,"others at start: 2 (65069 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 

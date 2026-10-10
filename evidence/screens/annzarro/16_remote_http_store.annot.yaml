@@ -1,0 +1,45 @@
+version: 1
+image: 16_remote_http_store.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:8920/?dataset_path=http://127.0.0.1:8923/bm_aging_showcase.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZENlbGwiOiJNYXR1cm...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: remote
+  mark: Y
+  caption: The store is opened from an http:// URL (a web server on 127.0.0.1), and the plot is read from
+    it; s3:// and gs:// go through the same fsspec path.
+- column: lazy
+  mark: Y
+  caption: 'Colouring by one gene fetched 8 of the layer''s 128 chunks over HTTP (shape [8090, 16285],
+    chunks [1024, 1024]): a gene column, not the matrix.'
+callouts:
+- n: 1
+  box:
+  - 0
+  - 75
+  - 1400
+  - 38
+  label: 'Dataset: Bm Aging Showcase; Cells 8,090, Genes 16285'
+  selector: '#dataset-stats'
+- n: 2
+  box:
+  - 69
+  - 229
+  - 394
+  - 36
+  label: Color = layer / kompot_de_Young_to_Old_fold_change / Focused gene H2-Q7
+  selector: .tile[data-tile-id="cell-plot-r1"] .axis-type-select[data-axis="color"] >> xpath=..
+- n: 3
+  box:
+  - 0
+  - 359
+  - 1400
+  - 729
+  label: 'web-server log: 22 GETs, of which 8 chunk files of the layer, e.g. [''/bm_aging_showcase.zarr/layers/kompot_de_Young_to_Old_fold_change/2.14'',
+    ''/bm_aging_showcase.zarr/layers/kompot_de_Young_to_Old_fold_change/1.14'']'
+  selector: .tile[data-tile-id="cell-plot-r1"] .js-plotly-plot

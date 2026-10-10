@@ -1,0 +1,90 @@
+{
+ "cmd": [
+  ".venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "10000000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first10000000_csc.h5ad",
+  "--csc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 19.94,
+ "peaks": {
+  "proc": {
+   "fp_peak": 6769285144,
+   "fp_lifetime_sum": 6773889048,
+   "rss_peak": 7083327488,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 6769285144,
+   "rss_peak": 7083327488,
+   "fp_lifetime_sum": 6773889048
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   9159064
+  ],
+  [
+   1.4,
+   1485490192
+  ],
+  [
+   2.8,
+   1822558464
+  ],
+  [
+   4.19,
+   2312129128
+  ],
+  [
+   5.59,
+   2613464160
+  ],
+  [
+   7.0,
+   4414198128
+  ],
+  [
+   8.41,
+   4641149464
+  ],
+  [
+   9.83,
+   5317612536
+  ],
+  [
+   11.22,
+   5317743608
+  ],
+  [
+   12.63,
+   5326951416
+  ],
+  [
+   14.05,
+   5327115256
+  ],
+  [
+   15.45,
+   5327197176
+  ],
+  [
+   16.86,
+   5328049144
+  ],
+  [
+   18.27,
+   5555033248
+  ],
+  [
+   19.67,
+   5791815056
+  ]
+ ],
+ "ps_before": "2026-10-05T11:46:33-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57360  20704   7.7 benchmark/tool_ceiling/.venv/bin/python\n  626 516928   7.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57358  19648   6.5 .venv/bin/python\n 6219  59792   5.4 $HOME/Projects/investments/.venv/bin/python3\n 1012  14944   3.6 /usr/libexec/pboard\n  596  31040   3.4 /System/Library/CoreServices/launchservicesd\n  629 241824   2.3 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n57113 2902256   1.6 $HOME/.local/bin/claude\n 1240  49408   1.5 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  557 586464   1.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n",
+ "others_at_start": []
+}

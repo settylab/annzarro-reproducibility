@@ -1,0 +1,146 @@
+[
+ {
+  "store": "50M",
+  "rep": 0,
+  "status": 200,
+  "seconds": 46.45,
+  "bytes": 600000755,
+  "content_type": "application/json",
+  "cache_info_after": {
+   "dataset_count": 1,
+   "dataset_limit": 20,
+   "datasets": {
+    "$SCRATCH/annzarro-scale/stores_panel/n50M/tahoe_panel_50M.zarr": 2
+   },
+   "enabled": true,
+   "item_counts": {
+    "dataframe": 1,
+    "matrix": 0,
+    "metadata": 1,
+    "total": 2
+   },
+   "max_memory_mb": 4000,
+   "memory_usage_mb": 3147.1353492736816,
+   "memory_usage_percent": 78.67838373184203
+  }
+ },
+ {
+  "store": "50M",
+  "rep": 1,
+  "status": 200,
+  "seconds": 8.43,
+  "bytes": 600000755,
+  "content_type": "application/json",
+  "cache_info_after": {
+   "dataset_count": 1,
+   "dataset_limit": 20,
+   "datasets": {
+    "$SCRATCH/annzarro-scale/stores_panel/n50M/tahoe_panel_50M.zarr": 2
+   },
+   "enabled": true,
+   "item_counts": {
+    "dataframe": 1,
+    "matrix": 0,
+    "metadata": 1,
+    "total": 2
+   },
+   "max_memory_mb": 4000,
+   "memory_usage_mb": 3147.1353492736816,
+   "memory_usage_percent": 78.67838373184203
+  }
+ },
+ {
+  "store": "50M",
+  "rep": 2,
+  "status": 200,
+  "seconds": 8.58,
+  "bytes": 600000755,
+  "content_type": "application/json",
+  "cache_info_after": {
+   "dataset_count": 1,
+   "dataset_limit": 20,
+   "datasets": {
+    "$SCRATCH/annzarro-scale/stores_panel/n50M/tahoe_panel_50M.zarr": 2
+   },
+   "enabled": true,
+   "item_counts": {
+    "dataframe": 1,
+    "matrix": 0,
+    "metadata": 1,
+    "total": 2
+   },
+   "max_memory_mb": 4000,
+   "memory_usage_mb": 3147.1353492736816,
+   "memory_usage_percent": 78.67838373184203
+  }
+ },
+ {
+  "store": "95.6M",
+  "rep": 0,
+  "status": 200,
+  "seconds": 92.54,
+  "bytes": 1147492767,
+  "content_type": "application/json",
+  "cache_info_after": {
+   "dataset_count": 0,
+   "dataset_limit": 20,
+   "datasets": {},
+   "enabled": true,
+   "item_counts": {
+    "dataframe": 0,
+    "matrix": 0,
+    "metadata": 0,
+    "total": 0
+   },
+   "max_memory_mb": 4000,
+   "memory_usage_mb": 0,
+   "memory_usage_percent": 0.0
+  }
+ },
+ {
+  "store": "95.6M",
+  "rep": 1,
+  "status": 200,
+  "seconds": 92.79,
+  "bytes": 1147492767,
+  "content_type": "application/json",
+  "cache_info_after": {
+   "dataset_count": 0,
+   "dataset_limit": 20,
+   "datasets": {},
+   "enabled": true,
+   "item_counts": {
+    "dataframe": 0,
+    "matrix": 0,
+    "metadata": 0,
+    "total": 0
+   },
+   "max_memory_mb": 4000,
+   "memory_usage_mb": 0,
+   "memory_usage_percent": 0.0
+  }
+ },
+ {
+  "store": "95.6M",
+  "rep": 2,
+  "status": 200,
+  "seconds": 91.98,
+  "bytes": 1147492767,
+  "content_type": "application/json",
+  "cache_info_after": {
+   "dataset_count": 0,
+   "dataset_limit": 20,
+   "datasets": {},
+   "enabled": true,
+   "item_counts": {
+    "dataframe": 0,
+    "matrix": 0,
+    "metadata": 0,
+    "total": 0
+   },
+   "max_memory_mb": 4000,
+   "memory_usage_mb": 0,
+   "memory_usage_percent": 0.0
+  }
+ }
+]

@@ -1,0 +1,110 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "isee",
+  "hdf5",
+  "$DATA_ROOT/tool_ceiling_data/sce_h5/first2000000.rds",
+  "benchmark/tool_ceiling/shots/isee_hdf5_run_2000000_r0",
+  "--n",
+  "2000000",
+  "--port",
+  "8948"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 35.81,
+ "peaks": {
+  "client": {
+   "fp_peak": 844030160,
+   "fp_lifetime_sum": 903750848,
+   "rss_peak": 1083228160,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 6169926160,
+   "fp_lifetime_sum": 6330458632,
+   "rss_peak": 7970193408,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 130757568,
+   "fp_lifetime_sum": 130757568,
+   "rss_peak": 165232640,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6565952200,
+   "rss_peak": 9030221824,
+   "fp_lifetime_sum": 7234209480
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.46,
+   844014688
+  ],
+  [
+   4.73,
+   1517200960
+  ],
+  [
+   7.01,
+   1321576192
+  ],
+  [
+   9.28,
+   1446373192
+  ],
+  [
+   11.53,
+   2473601560
+  ],
+  [
+   13.75,
+   2265377712
+  ],
+  [
+   15.98,
+   2316004488
+  ],
+  [
+   18.29,
+   2316184712
+  ],
+  [
+   20.49,
+   2849778944
+  ],
+  [
+   22.71,
+   3655987536
+  ],
+  [
+   24.94,
+   3834852120
+  ],
+  [
+   27.14,
+   6275856880
+  ],
+  [
+   29.38,
+   2657220360
+  ],
+  [
+   31.57,
+   3637884536
+  ],
+  [
+   33.88,
+   3638474432
+  ]
+ ],
+ "ps_before": "2026-10-05T12:50:44-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 729808 119.7 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n65983 552080 100.0 lualatex\n64692  38768  11.1 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n94883 262544   9.5 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n91505  22496   8.5 /usr/libexec/trustd\n  594  27104   5.3 /usr/libexec/opendirectoryd\n47413 665824   4.8 /Applications/cmux.app/Contents/MacOS/cmux\n  557 514448   3.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n57113 2769296   3.5 $HOME/.local/bin/claude\n  639 142336   3.5 /usr/sbin/coreaudiod\n",
+ "others_at_start": []
+}

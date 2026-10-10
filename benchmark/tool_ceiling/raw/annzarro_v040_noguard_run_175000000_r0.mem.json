@@ -1,0 +1,100 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_175000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_noguard_run_175000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 29.91,
+ "peaks": {
+  "client": {
+   "fp_peak": 16780730584,
+   "fp_lifetime_sum": 18369323800,
+   "rss_peak": 16289906688,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 8125160072,
+   "fp_lifetime_sum": 8171707568,
+   "rss_peak": 8163213312,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 132630432,
+   "fp_lifetime_sum": 132630432,
+   "rss_peak": 167067648,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 24750570240,
+   "rss_peak": 23317250048,
+   "fp_lifetime_sum": 26541031368
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.54,
+   2675255760
+  ],
+  [
+   5.16,
+   10052060296
+  ],
+  [
+   7.79,
+   13373558848
+  ],
+  [
+   10.74,
+   18120811384
+  ],
+  [
+   13.41,
+   21235479232
+  ],
+  [
+   16.03,
+   19496218080
+  ],
+  [
+   18.59,
+   20478751760
+  ],
+  [
+   21.22,
+   12257219272
+  ],
+  [
+   23.83,
+   20973234480
+  ],
+  [
+   26.72,
+   20995110816
+  ],
+  [
+   29.44,
+   8072698480
+  ]
+ ],
+ "ps_before": "2026-10-06T00:15:37-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n54866 532432 100.0 lualatex\n59322  96768  97.1 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n55007  37008  30.5 .venv/bin/python\n57113 2938992   5.1 $HOME/.local/bin/claude\n  557  44752   3.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  629 205040   3.3 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  855 1499104   2.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n 1012  15936   2.2 /usr/libexec/pboard\n  582 115088   2.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  596  26736   1.9 /System/Library/CoreServices/launchservicesd\n",
+ "others_at_start": []
+}

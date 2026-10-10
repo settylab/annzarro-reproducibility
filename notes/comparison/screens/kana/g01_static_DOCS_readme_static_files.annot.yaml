@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "g01_static_DOCS_readme_static_files.jpg",
+ "tool": "kana",
+ "software": "Kana README, GitHub kanaverse/kana master (read 2026-10-04; app v3.2.0)",
+ "data": "docs page: https://github.com/kanaverse/kana",
+ "url": "https://github.com/kanaverse/kana",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_kana.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "static",
+   "mark": "Y",
+   "caption": "docs page, Kana v3.2.0 README (read 2026-10-04): deployment is serving static files (GitHub Pages); no backend server"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    121,
+    410,
+    846,
+    80
+   ],
+   "label": "docs page: \"Deployment is as easy as serving the static files\"",
+   "selector": "[data-gap-phrase='1']"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    0,
+    1400,
+    42
+   ],
+   "label": "docs page, with its URL",
+   "selector": "#gapbanner"
+  }
+ ]
+}

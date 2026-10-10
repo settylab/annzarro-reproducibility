@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m09_annotation_custom_field_created.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo&meta=custom",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "annot",
+   "mark": "Y",
+   "caption": "OK adds the colour-by field 'My custom annotations' (neutro matrixcheck 27.5%), stored in localStorage"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1196,
+    24,
+    204,
+    876
+   ],
+   "label": "new field: My custom annotations",
+   "selector": "#tpLegendBar"
+  }
+ ]
+}

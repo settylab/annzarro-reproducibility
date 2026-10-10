@@ -1,0 +1,224 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_1000000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_tag_sub1m_run_1000000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030_3fb6826/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3fb6826",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 95.09,
+ "peaks": {
+  "client": {
+   "fp_peak": 3365464072,
+   "fp_lifetime_sum": 3540888232,
+   "rss_peak": 3004465152,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 25360010560,
+   "fp_lifetime_sum": 25414766416,
+   "rss_peak": 25428836352,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 116158872,
+   "fp_lifetime_sum": 116158872,
+   "rss_peak": 158875648,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 25778073392,
+   "rss_peak": 26604175360,
+   "fp_lifetime_sum": 28955654648
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.25,
+   950395784
+  ],
+  [
+   4.5,
+   804955064
+  ],
+  [
+   6.8,
+   679077392
+  ],
+  [
+   9.06,
+   1042491160
+  ],
+  [
+   11.39,
+   1056974616
+  ],
+  [
+   13.63,
+   1060890392
+  ],
+  [
+   15.88,
+   1071490864
+  ],
+  [
+   18.17,
+   1074358064
+  ],
+  [
+   20.37,
+   894691048
+  ],
+  [
+   22.64,
+   905406184
+  ],
+  [
+   24.89,
+   915924736
+  ],
+  [
+   27.24,
+   1735502072
+  ],
+  [
+   29.49,
+   2204478192
+  ],
+  [
+   31.73,
+   2654104664
+  ],
+  [
+   34.0,
+   3378802280
+  ],
+  [
+   36.29,
+   4085756000
+  ],
+  [
+   38.51,
+   4791595608
+  ],
+  [
+   40.72,
+   5414319160
+  ],
+  [
+   43.02,
+   6115079752
+  ],
+  [
+   45.22,
+   6834419776
+  ],
+  [
+   47.42,
+   7523383840
+  ],
+  [
+   49.62,
+   8211512344
+  ],
+  [
+   51.87,
+   9080176336
+  ],
+  [
+   54.08,
+   9691414704
+  ],
+  [
+   56.29,
+   10412573352
+  ],
+  [
+   58.61,
+   11112039584
+  ],
+  [
+   60.79,
+   11754309224
+  ],
+  [
+   63.02,
+   12409276488
+  ],
+  [
+   65.21,
+   13057378856
+  ],
+  [
+   67.43,
+   13737937904
+  ],
+  [
+   69.66,
+   14410796520
+  ],
+  [
+   71.9,
+   15089029064
+  ],
+  [
+   74.22,
+   15781040552
+  ],
+  [
+   76.43,
+   16442807176
+  ],
+  [
+   78.66,
+   17790179408
+  ],
+  [
+   80.94,
+   20307828640
+  ],
+  [
+   83.31,
+   23035291496
+  ],
+  [
+   85.73,
+   25778073392
+  ],
+  [
+   87.99,
+   9855124256
+  ],
+  [
+   90.33,
+   11533108480
+  ],
+  [
+   92.6,
+   11791893976
+  ],
+  [
+   94.86,
+   12390352800
+  ]
+ ],
+ "ps_before": "2026-10-05T03:27:01-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  629 240384  18.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  626 502592   7.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1012  17952   6.7 /usr/libexec/pboard\n57113 2887184   5.5 $HOME/.local/bin/claude\n  596  30944   3.3 /System/Library/CoreServices/launchservicesd\n  557 567648   3.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  855 1998768   2.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n 6219  59408   2.4 $HOME/Projects/investments/.venv/bin/python3\n47413 662096   2.3 /Applications/cmux.app/Contents/MacOS/cmux\n 1240  48928   2.3 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n",
+ "others_at_start": []
+}

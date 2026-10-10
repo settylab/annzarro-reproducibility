@@ -1,0 +1,35 @@
+{
+ "variant": "lazy_h5ad",
+ "path": "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first31600000.h5ad",
+ "versions": {
+  "scanpy": "1.12.4",
+  "anndata": "0.13.4",
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.3",
+  "h5py": "3.16.0",
+  "zarr": "3.4.0"
+ },
+ "phases": {
+  "import": 1.31,
+  "load": 87.89,
+  "plot_cat": 155.9,
+  "plot_gene": 221.21,
+  "done": 221.21
+ },
+ "checks": {
+  "cat": {
+   "n_drawn": 31600000,
+   "all_cells": true,
+   "n_colours": 870,
+   "png": "benchmark/tool_ceiling/shots/scanpy_lazy_h5ad_run_31600000_r0_cat.png"
+  },
+  "gene": {
+   "n_drawn": 31600000,
+   "all_cells": true,
+   "n_colours": 610,
+   "png": "benchmark/tool_ceiling/shots/scanpy_lazy_h5ad_run_31600000_r0_gene.png"
+  }
+ },
+ "n_obs": 31600000,
+ "ok": true
+}

@@ -1,0 +1,136 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_1500000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub1m_run_1500000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 50.81,
+ "peaks": {
+  "client": {
+   "fp_peak": 3109726168,
+   "fp_lifetime_sum": 3155979088,
+   "rss_peak": 2795978752,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 13548382744,
+   "fp_lifetime_sum": 13664349200,
+   "rss_peak": 13600391168,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 140068216,
+   "fp_lifetime_sum": 142427608,
+   "rss_peak": 175292416,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 14004603912,
+   "rss_peak": 14785314816,
+   "fp_lifetime_sum": 16820328288
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.37,
+   960996232
+  ],
+  [
+   4.84,
+   981492664
+  ],
+  [
+   7.43,
+   533521336
+  ],
+  [
+   9.88,
+   711418976
+  ],
+  [
+   12.3,
+   1025484088
+  ],
+  [
+   14.78,
+   1035248976
+  ],
+  [
+   17.22,
+   1039508816
+  ],
+  [
+   19.66,
+   1045587280
+  ],
+  [
+   22.13,
+   976348472
+  ],
+  [
+   24.77,
+   978855224
+  ],
+  [
+   27.2,
+   981361976
+  ],
+  [
+   29.64,
+   1207002616
+  ],
+  [
+   32.14,
+   1048241632
+  ],
+  [
+   34.54,
+   1051108832
+  ],
+  [
+   36.95,
+   1057531360
+  ],
+  [
+   39.8,
+   6546683608
+  ],
+  [
+   42.51,
+   1707666016
+  ],
+  [
+   44.99,
+   1917840160
+  ],
+  [
+   47.4,
+   3652791720
+  ],
+  [
+   49.88,
+   3806703184
+  ]
+ ],
+ "ps_before": "2026-10-06T00:30:22-0700\nmemorystatus_level=88 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n81582 271456  78.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n47413 428736  47.1 /Applications/cmux.app/Contents/MacOS/cmux\n96336  48448  22.2 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService\n97961 681120  19.9 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n91512  15424   7.7 /usr/libexec/trustd\n  557  37088   7.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n84235 145184   5.5 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n  855 1251152   3.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n57113 2588272   3.8 $HOME/.local/bin/claude\n  687  33488   3.7 /usr/libexec/syspolicyd\n",
+ "others_at_start": []
+}

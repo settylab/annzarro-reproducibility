@@ -1,0 +1,36 @@
+version: 1
+image: 19_docs_every_mode_runs_a_server.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: null
+url: https://annzarro.readthedocs.io/en/latest/deployment/modes.html
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: static
+  mark: N
+  caption: 'Docs screenshot (a GUI shot cannot show an absent mode): all three deployment modes run an
+    AnnZarro server process; none serves static files without a backend.'
+- column: desktop
+  mark: Y
+  caption: 'The deployment table lists the desktop app as its own mode: open the app, its server runs
+    inside, no login, no setup.'
+callouts:
+- n: 1
+  box:
+  - 331
+  - 295
+  - 744
+  - 89
+  label: 'Where the server runs: your laptop | a workstation or HPC node | an institutional server'
+  selector: article table tr:has-text('Where the server runs')
+- n: 2
+  box:
+  - 331
+  - 376
+  - 744
+  - 65
+  label: 'How you start it: open the app | annzarro start | gunicorn'
+  selector: article table tr:has-text('How you start it')

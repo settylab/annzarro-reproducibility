@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m09_annotation_name_selection_dialog.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo#",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "annot",
+   "mark": "Y",
+   "caption": "Edit > Name selection... opens 'Annotate selected cells' for the 2,221 selected cells"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    292,
+    246,
+    816,
+    408
+   ],
+   "label": "Annotate selected cells dialog",
+   "selector": ".ui-dialog"
+  }
+ ]
+}

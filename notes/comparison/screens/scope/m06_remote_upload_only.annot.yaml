@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m06_remote_upload_only.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (scope.aertslab.org)",
+ "data": "Wouters_Human_Melanoma / 10_Baselines_filteredRegulons.loom (4,322 cells)",
+ "url": "https://scope.aertslab.org/#/Wouters_Human_Melanoma/*/welcome",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/scope/matrix_check_fix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "remote",
+   "mark": "N",
+   "caption": "Data are server-side looms or .loom uploads into a user session ('Datasets can be uploaded ... Files should be in the loom file format'); no URL / S3 / GCS input"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    258,
+    46,
+    1068,
+    769
+   ],
+   "label": "upload .loom only",
+   "selector": "text=Datasets can be uploaded"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    94,
+    266,
+    28
+   ],
+   "label": "server-side looms",
+   "selector": "text=Session Looms"
+  }
+ ]
+}

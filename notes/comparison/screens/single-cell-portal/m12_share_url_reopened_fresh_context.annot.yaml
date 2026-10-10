@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m12_share_url_reopened_fresh_context.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP383, 10X 1.3M brain cells E18 (1,306,127 cells)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP383/10x-1-3-million-brain-cells-from-e18-mice?genes=Sox2&tab=distribution",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/single-cell-portal/matrix_check_fix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "Y",
+   "caption": "URL ?genes=Sox2&tab=distribution opened in a fresh browser restores the gene and the Distribution tab"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    666,
+    102,
+    112,
+    50
+   ],
+   "label": "Distribution tab restored",
+   "selector": "text=Distribution >> nth=0"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    320,
+    1175,
+    680
+   ],
+   "label": "Sox2 violins",
+   "selector": ".js-plotly-plot >> nth=2"
+  }
+ ]
+}

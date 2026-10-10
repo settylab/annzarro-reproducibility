@@ -1,0 +1,9 @@
+site,step,n_cells,nnz,seconds,peak_rss_bytes,csc_disk_gb,note
+laptop,master,10000000,14394387573,259,17572839424,,master CSR of the first 10M cells (21 GB); used for the 1M-10M stores
+laptop,master,50000000,72289498226,1392,23823319040,,master CSR of the first 50M cells (107 GB); shards deleted as consumed
+laptop,store,1000000,1257742755,21,30717902848,1.6,
+laptop,store,2000000,2598825768,40,41441886208,3.3,
+laptop,store,5000000,7151145040,161,55092805632,9.0,
+laptop,store,10000000,14394387573,242,62183178240,18,
+laptop,store,20000000,30108451781,645,57135890432,38,
+laptop,store,50000000,72289498226,8004,57549750272,91,13 CSC passes; pass 1 took 6213 s under memory pressure from other jobs on the machine (load average up to ~28) and the other 12 passes 130-145 s each

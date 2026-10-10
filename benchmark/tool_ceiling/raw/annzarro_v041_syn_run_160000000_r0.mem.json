@@ -1,0 +1,89 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_160000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_syn_run_160000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 21.96,
+ "peaks": {
+  "client": {
+   "fp_peak": 14918167120,
+   "fp_lifetime_sum": 17941441248,
+   "rss_peak": 15260319744,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 8006490784,
+   "fp_lifetime_sum": 8053152896,
+   "rss_peak": 8025554944,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 131696400,
+   "fp_lifetime_sum": 131696400,
+   "rss_peak": 166936576,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 22679961112,
+   "rss_peak": 22104965120,
+   "fp_lifetime_sum": 25994594144
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.39,
+   2857068984
+  ],
+  [
+   4.88,
+   9612329760
+  ],
+  [
+   7.31,
+   12414456592
+  ],
+  [
+   9.86,
+   18659718736
+  ],
+  [
+   12.35,
+   20669922912
+  ],
+  [
+   14.85,
+   20260242072
+  ],
+  [
+   17.31,
+   13779710632
+  ],
+  [
+   19.79,
+   20986348088
+  ]
+ ],
+ "ps_before": "2026-10-07T16:20:40-0700\nmemorystatus_level=90 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n  855 1230576  97.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n94089 275232  11.1 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n95089  19808   6.4 .venv/bin/python\n86901 506176   4.7 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  626 422128   3.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n90797 395168   3.4 $HOME/.local/bin/claude\n94088 182288   3.1 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  557  51760   3.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 6219  59056   2.7 $HOME/Projects/investments/.venv/bin/python3\n47413 694928   2.6 /Applications/cmux.app/Contents/MacOS/cmux\n",
+ "others_at_start": [
+  "95090 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "95091 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

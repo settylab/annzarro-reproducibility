@@ -1,0 +1,117 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first20000000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_default_run_20000000_r0",
+  "--n",
+  "20000000",
+  "--port",
+  "8934"
+ ],
+ "status": "cap",
+ "rc": -9,
+ "wall_s": 35.81,
+ "peaks": {
+  "client": {
+   "fp_peak": 7819706352,
+   "fp_lifetime_sum": 9025897656,
+   "rss_peak": 8825602048,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 45701989592,
+   "fp_lifetime_sum": 45779421144,
+   "rss_peak": 46283702272,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 120942880,
+   "fp_lifetime_sum": 120942880,
+   "rss_peak": 159956992,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 52477887448,
+   "rss_peak": 54772088832,
+   "fp_lifetime_sum": 54805318800
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.09,
+   717873912
+  ],
+  [
+   4.21,
+   12582323312
+  ],
+  [
+   6.27,
+   19404626120
+  ],
+  [
+   8.38,
+   20222663576
+  ],
+  [
+   10.38,
+   21534367840
+  ],
+  [
+   12.43,
+   21667258560
+  ],
+  [
+   14.45,
+   22074450400
+  ],
+  [
+   16.49,
+   22234702448
+  ],
+  [
+   18.56,
+   24064141088
+  ],
+  [
+   20.64,
+   28301669200
+  ],
+  [
+   22.71,
+   30060166320
+  ],
+  [
+   24.84,
+   32037881864
+  ],
+  [
+   26.87,
+   33745439760
+  ],
+  [
+   28.9,
+   34053476112
+  ],
+  [
+   30.88,
+   34087964552
+  ],
+  [
+   32.88,
+   34447642792
+  ],
+  [
+   34.92,
+   42388973160
+  ]
+ ],
+ "ps_before": "2026-10-03T20:11:02-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 2036080   1.8 $HOME/.local/bin/claude\n 4725 616160   1.4 claude\n86901 509280   1.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n34972 495120   1.0 $HOME/.local/bin/claude\n  626 494080   0.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n80588 616320   0.7 $HOME/.local/bin/claude\n32927  26752   0.7 /System/Cryptexes/App/usr/libexec/SafariBookmarksSyncAgent\n92291  30832   0.6 .venv/bin/python\n82396   1232   0.6 sleep\n72627 488624   0.6 $HOME/.local/bin/claude\n"
+}

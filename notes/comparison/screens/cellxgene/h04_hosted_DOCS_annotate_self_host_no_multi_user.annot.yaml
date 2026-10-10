@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "image": "h04_hosted_DOCS_annotate_self_host_no_multi_user.jpg",
+ "tool": "cellxgene",
+ "software": "CELLxGENE Annotate docs, cellxgene.cziscience.com (read 2026-10-04; Annotate 1.3.0)",
+ "data": "docs page: https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_2__Self%20Host%20cellxgene",
+ "url": "https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_2__Self%20Host%20cellxgene",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_docs.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "hosted",
+   "mark": "P",
+   "caption": "docs, CELLxGENE Annotate '5_2 Self Host' (cellxgene.cziscience.com, read 2026-10-04; Annotate 1.3.0): web deployment is 'not officially supported' and there is 'no testing or official support' for several users on one Annotate instance; the page cautions about multi-user or hosted use but documents no multi-user deployment: P",
+   "row": "cellxgene-annotate"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    467,
+    428,
+    604,
+    44
+   ],
+   "label": "docs page: \"no testing or official support for deployments where multiple users\"",
+   "selector": "[data-cap='phrase']"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    0,
+    1400,
+    42
+   ],
+   "label": "docs page, with its URL",
+   "selector": "#gapbanner"
+  },
+  {
+   "n": 3,
+   "box": [
+    444,
+    123,
+    627,
+    44
+   ],
+   "label": "web deployment not officially supported",
+   "selector": "text=officially support web deployment >> nth=0"
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m08_filters_only_show_selected.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "filters",
+   "mark": "P",
+   "caption": "Only show selected leaves 2.2k of 8.1k cells; legend selection, not a table filter"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    661,
+    68,
+    159,
+    37
+   ],
+   "label": "Only show selected",
+   "selector": "#tpOnlySel"
+  },
+  {
+   "n": 2,
+   "box": [
+    946,
+    883,
+    251,
+    17
+   ],
+   "label": "2.2k of 8.1k cells shown",
+   "selector": "#tpCellCount"
+  }
+ ]
+}

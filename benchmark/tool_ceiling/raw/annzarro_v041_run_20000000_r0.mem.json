@@ -1,0 +1,61 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first20000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_run_20000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 5.48,
+ "peaks": {
+  "client": {
+   "fp_peak": 5054542544,
+   "fp_lifetime_sum": 5611189784,
+   "rss_peak": 3770744832,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1952287024,
+   "fp_lifetime_sum": 2001226512,
+   "rss_peak": 1974140928,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 126453472,
+   "fp_lifetime_sum": 126453472,
+   "rss_peak": 163823616,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6949469160,
+   "rss_peak": 5512675328,
+   "fp_lifetime_sum": 7612416296
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.43,
+   2701929272
+  ],
+  [
+   4.92,
+   6873676728
+  ]
+ ],
+ "ps_before": "2026-10-07T16:19:51-0700\nmemorystatus_level=91 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n  855 1229920  96.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n93117  21008   7.8 $TMPDIR/sw_v041/benchmark/tool_ceiling/.venv/bin/python\n57113 2346000   7.0 $HOME/.local/bin/claude\n  626 422208   5.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n93104  19824   3.9 .venv/bin/python\n47413 694976   3.2 /Applications/cmux.app/Contents/MacOS/cmux\n 1012  17040   1.6 /usr/libexec/pboard\n  629 189200   1.6 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  35120   1.5 /System/Library/CoreServices/launchservicesd\n  557  51856   1.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n",
+ "others_at_start": [
+  "93105 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "93106 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

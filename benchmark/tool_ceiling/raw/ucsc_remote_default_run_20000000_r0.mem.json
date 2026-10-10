@@ -1,0 +1,116 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "none",
+  "benchmark/tool_ceiling/shots/ucsc_remote_default_run_20000000_r0",
+  "--n",
+  "20000000",
+  "--server-url",
+  "http://hpc-node-13:8791",
+  "--proxy",
+  "socks5://localhost:1080"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 36.52,
+ "peaks": {
+  "client": {
+   "fp_peak": 5034830552,
+   "fp_lifetime_sum": 5930643576,
+   "rss_peak": 3823632384,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 0,
+   "fp_lifetime_sum": 0,
+   "rss_peak": 0,
+   "n_proc_max": 0
+  },
+  "harness": {
+   "fp_peak": 161105752,
+   "fp_lifetime_sum": 161351536,
+   "rss_peak": 196001792,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5034830552,
+   "rss_peak": 3823632384,
+   "fp_lifetime_sum": 5930643576
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.31,
+   645177432
+  ],
+  [
+   4.54,
+   1039131072
+  ],
+  [
+   6.85,
+   1403102040
+  ],
+  [
+   9.08,
+   1277830144
+  ],
+  [
+   11.34,
+   2098440224
+  ],
+  [
+   13.56,
+   2612603272
+  ],
+  [
+   15.84,
+   1969842184
+  ],
+  [
+   18.12,
+   1939449864
+  ],
+  [
+   20.39,
+   1922754568
+  ],
+  [
+   22.76,
+   1924327432
+  ],
+  [
+   25.02,
+   1926277128
+  ],
+  [
+   27.29,
+   1928488992
+  ],
+  [
+   29.59,
+   2403608608
+  ],
+  [
+   31.87,
+   2237425744
+  ],
+  [
+   34.11,
+   2849679896
+  ],
+  [
+   36.36,
+   3069319360
+  ]
+ ],
+ "ps_before": "2026-10-05T13:23:12-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 872144 186.2 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n57113 2299680  24.1 $HOME/.local/bin/claude\n79305 138320  14.8 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n  626 474352   4.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  639 141872   3.8 /usr/sbin/coreaudiod\n37026 109952   2.2 $HOME/Projects/investments/.venv/bin/python3\n  596  30048   1.9 /System/Library/CoreServices/launchservicesd\n 1240  48816   1.5 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n47413 652224   1.4 /Applications/cmux.app/Contents/MacOS/cmux\n22831  20816   1.2 benchmark/tool_ceiling/.venv/bin/python\n",
+ "others_at_start": []
+}

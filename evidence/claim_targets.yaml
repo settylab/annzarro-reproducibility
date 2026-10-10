@@ -1,0 +1,33 @@
+# Claims the site does not draw, and why (evidence/tools/claim_targets.py; build.py --check).
+# A claim whose sources are only the manuscript needs no entry. Every other claim needs a page
+# that shows it (a rule in claim_targets.py) or an entry here.
+no_visualization:
+  - {claim: supp1.loupe.lazy_files, why: "Loupe lazy-read test (benchmark/tool_ceiling/lazy_loupe): six repetitions in a table, shown as text on the Loupe lazy-reads cell page; no series to draw"}
+  - {claim: supp1.loupe.lazy_median, why: "Loupe lazy-read test (benchmark/tool_ceiling/lazy_loupe): six repetitions in a table, shown as text on the Loupe lazy-reads cell page; no series to draw"}
+  - {claim: supp1.loupe.lazy_spread, why: "Loupe lazy-read test (benchmark/tool_ceiling/lazy_loupe): six repetitions in a table, shown as text on the Loupe lazy-reads cell page; no series to draw"}
+  - {claim: supp1.loupe.lazy_gene, why: "Loupe lazy-read test (benchmark/tool_ceiling/lazy_loupe): six repetitions in a table, shown as text on the Loupe lazy-reads cell page; no series to draw"}
+  - {claim: supp1.loupe.lazy_peak, why: "Loupe lazy-read test (benchmark/tool_ceiling/lazy_loupe): six repetitions in a table, shown as text on the Loupe lazy-reads cell page; no series to draw"}
+  - {claim: supp1.loupe.lazy_n, why: "Loupe lazy-read test (benchmark/tool_ceiling/lazy_loupe): six repetitions in a table, shown as text on the Loupe lazy-reads cell page; no series to draw"}
+  - {claim: supp1.loupe.barcodes, why: "Loupe lazy-read test (benchmark/tool_ceiling/lazy_loupe): six repetitions in a table, shown as text on the Loupe lazy-reads cell page; no series to draw"}
+  - {claim: data.zenodo_size, why: "data preparation record (data_prep/VALIDATION.md): a size, no series to draw"}
+  - {claim: timing.prep, why: "data preparation timing (data_prep/README.md): one run, no series to draw"}
+  - {claim: timing.prep_parts, why: "data preparation timing (data_prep/README.md): one run, no series to draw"}
+  - {claim: prep.download, why: "data preparation record (data_prep/VALIDATION.md)"}
+  - {claim: prep.kompot_time, why: "data preparation timing (data_prep/README.md): one run"}
+  - {claim: prep.h5ad_size, why: "data preparation record (data_prep/README.md): a file size"}
+  - {claim: prep.knn_row, why: "data preparation check (data_prep/VALIDATION.md)"}
+  - {claim: prep.dense_limit, why: "data preparation check (data_prep/VALIDATION.md)"}
+  - {claim: ar.deploy.demo_row, why: "data preparation check (data_prep/VALIDATION.md)"}
+  - {claim: ar.hpc.rule_shape, why: "the lab deployment's runtime record; internal host, not published as a page (publication scrub)"}
+  - {claim: equip.server_burst, why: "HTTP concurrency series (http_v040_summary.csv), not drawn on the site yet"}
+  - {claim: ar.guard.off, why: "guard-off context (ceilings.csv annzarro/v040_noguard), outside Fig. 1c and the Scale figure"}
+  - {claim: supp1.subset.first_plot_1b, why: "two first-plot times from the 1B runs' task.json (raw/annzarro_v040_sub*_run_1000000000_r0); the scale page draws their request times and memory trace instead"}
+  - {claim: lim.threshold_reason, why: "an operator decision (notes/APPROVALS.md), not a measurement"}
+  - {claim: sw.anndata, why: "the Procedure's tested package versions (notes/sources/procedure_env.txt), a version record, no series to draw"}
+  - {claim: sw.zarr, why: "the Procedure's tested package versions (notes/sources/procedure_env.txt), a version record, no series to draw"}
+  - {claim: sw.scanpy, why: "the Procedure's tested package versions (notes/sources/procedure_env.txt), a version record, no series to draw"}
+  - {claim: sw.kompot, why: "the Procedure's tested package versions (notes/sources/procedure_env.txt), a version record, no series to draw"}
+  - {claim: sw.palantir, why: "the Procedure's tested package versions (notes/sources/procedure_env.txt), a version record, no series to draw"}
+  - {claim: sw.mellon, why: "the Procedure's tested package versions (notes/sources/procedure_env.txt), a version record, no series to draw"}
+  - {claim: sw.python, why: "the Procedure's tested package versions (notes/sources/procedure_env.txt), a version record, no series to draw"}
+  - {claim: data.zenodo_record, why: "the dataset's Zenodo record (notes/sources/zenodo_15587768.json), a date and a licence, no series to draw"}

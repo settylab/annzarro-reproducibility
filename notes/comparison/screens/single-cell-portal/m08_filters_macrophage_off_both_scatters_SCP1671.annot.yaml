@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m08_filters_macrophage_off_both_scatters_SCP1671.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP1671, human lactation (49,310 cells)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP1671/cellular-and-transcriptional-diversity-over-the-course-of-human-lactation?genes=CD74&facets=cell_type__ontology_label--group--study%3Amacrophage",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/single-cell-portal/matrix_check_fix2.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "filters",
+   "mark": "P",
+   "caption": "'Filter plotted cells' facet: unticking macrophage greys those cells in both scatters (facets, not a table)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1170,
+    292,
+    21,
+    21
+   ],
+   "label": "macrophage unticked",
+   "selector": "input[name*='macrophage']"
+  },
+  {
+   "n": 2,
+   "box": [
+    6,
+    269,
+    557,
+    658
+   ],
+   "label": "filtered cells greyed",
+   "selector": ".js-plotly-plot >> nth=0"
+  }
+ ]
+}

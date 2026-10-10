@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "image": "m04_slots_annotate_layout_menu.jpg",
+ "tool": "cellxgene",
+ "software": "CELLxGENE Annotate 1.3.0 (local)",
+ "data": "bm_demo.h5ad (8,090 cells; obsp holds connectivities, distances, diffusion_distance; one counts layer)",
+ "url": "http://127.0.0.1:8903/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "slots",
+   "mark": "N",
+   "caption": "Annotate 1.3.0 (2026-10-04): X, obs and four obsm layouts only; the counts layer, obsp, varp and varm appear in no menu"
+  },
+  {
+   "column": "cells",
+   "mark": "N",
+   "caption": "neither the embedding menu nor the obs panel offers any obsp (cell x cell) matrix, although the file holds three"
+  },
+  {
+   "column": "genes",
+   "mark": "N",
+   "caption": "the gene panel offers only gene search over X and gene sets; no varp (gene x gene) matrix"
+  },
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "no control takes a cell or gene's stored pairwise row: the menus list obsm layouts and obs columns only"
+  },
+  {
+   "column": "spatial",
+   "mark": "N",
+   "row": "cellxgene-annotate",
+   "caption": "Annotate 1.3.0 (2026-10-04): the layout menu lists the obsm embeddings (diffusion, draw_graph_fa, pca, umap) and no spatial mode; spatial view is Explorer-only"
+  },
+  {
+   "column": "image",
+   "mark": "N",
+   "row": "cellxgene-annotate",
+   "caption": "Annotate 1.3.0 (2026-10-04): no spatial mode in the layout menu (obsm embeddings only), so no tissue image can be drawn under the cells; the image layer is Explorer-only"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    370,
+    652,
+    408,
+    199
+   ],
+   "label": "Embedding Choice: diffusion: 8090 cells, draw_graph_fa: 8090 cells, pca: 8090 cells, uma (obsm only)",
+   "selector": ".bp3-popover-content >> visible=true"
+  },
+  {
+   "n": 3,
+   "box": [
+    1041,
+    37,
+    353,
+    38
+   ],
+   "label": "Genes: search over X and gene sets; no varp",
+   "selector": "[data-testid='gene-search']"
+  }
+ ]
+}

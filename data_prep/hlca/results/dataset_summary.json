@@ -1,0 +1,17 @@
+{
+ "dataset_id": "9f222629-9e39-47d0-b83f-e08d610c7479",
+ "dataset_version_id": "5f863718-02a6-46cb-83e7-52be988b915b",
+ "title": "An integrated cell atlas of the human lung in health and disease (full)",
+ "schema_version": "7.1.0",
+ "cell_count": 2282447,
+ "revised_at": "2026-06-11T16:52:43+00:00",
+ "published_at": "2023-05-09T17:49:57+00:00",
+ "primary_cell_count": 1926653,
+ "assets": [
+  {
+   "filetype": "H5AD",
+   "filesize": 21860171922,
+   "url": "https://datasets.cellxgene.cziscience.com/5f863718-02a6-46cb-83e7-52be988b915b.h5ad"
+  }
+ ]
+}

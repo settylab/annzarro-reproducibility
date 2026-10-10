@@ -1,0 +1,61 @@
+version: 1
+image: 07_table_filter_masks_linked_plots.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:8920/?dataset_path=$DATA_DIR/bm_aging_showcase.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZENlbGwiOiJNYXR1cm...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: filters
+  mark: Y
+  caption: A nested AND/OR filter on the cell table masks the same cells in both linked plots (cells outside
+    the filter in grey).
+- column: selection
+  mark: Y
+  caption: 'The table filter is the selection mechanism: it restricts every plot linked to it; the plot
+    toolbar has no lasso or box select.'
+callouts:
+- n: 1
+  box:
+  - 0
+  - 157
+  - 1400
+  - 428
+  label: 'SearchBuilder: highres_celltype = HSC AND (DA z-score > 2 OR Age = Old)'
+  selector: .tile[data-tile-id="cell-table-T"] .dtsb-searchBuilder
+- n: 2
+  box:
+  - 0
+  - 847
+  - 814
+  - 46
+  label: 'table: Showing 1 to 25 of 301 entries (filtered from 8,090 total entries)'
+  selector: .tile[data-tile-id="cell-table-T"] .dataTables_info, .dt-info
+- n: 3
+  box:
+  - 0
+  - 942
+  - 704
+  - 268
+  label: 'plot 1 (controls hidden) Filter by Table = Cell table: HSC AND (DA z-score > 2 OR Age = Old)'
+  selector: .tile[data-tile-id="cell-plot-P1"] .js-plotly-plot
+- n: 4
+  box:
+  - 699
+  - 942
+  - 701
+  - 268
+  label: 'plot 2 (controls hidden) Filter by Table = Cell table: HSC AND (DA z-score > 2 OR Age = Old)'
+  selector: .tile[data-tile-id="cell-plot-P2"] .js-plotly-plot
+- n: 5
+  box:
+  - 515
+  - 944
+  - 184
+  - 32
+  label: 'plot toolbar: Zoom, Pan, Zoom in, Zoom out, Reset axes, Download plot as a png; no lasso or
+    box select'
+  selector: .tile[data-tile-id="cell-plot-P1"] .modebar

@@ -1,0 +1,31 @@
+version: 1
+image: m11_share_project_reopened.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0 (macOS universal, start page reads 1.5.0-dev)
+data: bm_demo.h5ad (8,090 cells x 16,285 genes; obsp kept)
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/manivault_checklist.md (run by hand in a computer-use desktop session; log: notes/comparison/demos/manivault/session_notes.txt)'
+source: manual
+image_sha256: f6117b419ee15682c0a79de8aedd0c10282bf40bfd6f2dcd83639b8d84cc4df4
+proves:
+- column: share
+  mark: Y
+  caption: File > Save Project wrote bm_demo.mv (1.88 GB, data included); reopening it restored both scatterplots,
+    the Mpo colouring and the HSNE datasets, but not the lasso selection.
+callouts:
+- n: 1
+  box:
+  - 160
+  - 15
+  - 1070
+  - 38
+  label: reopened from bm_demo.mv
+- n: 2
+  box:
+  - 340
+  - 1820
+  - 450
+  - 32
+  label: '''Open project'' took 4713.78 ms'

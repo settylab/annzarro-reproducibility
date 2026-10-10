@@ -1,0 +1,56 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "lazy_zarr",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first1000000.zarr",
+  "benchmark/tool_ceiling/shots/scanpy_lazy_zarr_run_1000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 9.24,
+ "peaks": {
+  "proc": {
+   "fp_peak": 1117980208,
+   "fp_lifetime_sum": 1117980208,
+   "rss_peak": 1180368896,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1117980208,
+   "rss_peak": 1180368896,
+   "fp_lifetime_sum": 1117980208
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8044952
+  ],
+  [
+   1.51,
+   121012776
+  ],
+  [
+   3.03,
+   333710152
+  ],
+  [
+   4.5,
+   1057654272
+  ],
+  [
+   5.95,
+   1057654272
+  ],
+  [
+   7.41,
+   1117914672
+  ],
+  [
+   8.9,
+   1117980208
+  ]
+ ],
+ "ps_before": "2026-10-03T21:09:14-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  557 651376  11.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  855 1720528   5.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n57113 1836752   4.5 $HOME/.local/bin/claude\n  629 154000   3.0 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  28128   2.9 /System/Library/CoreServices/launchservicesd\n  582 104064   2.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n 1012  16736   2.0 /usr/libexec/pboard\n  626 486928   2.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n86901 497696   1.5 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  633  30752   1.0 /usr/libexec/runningboardd\n"
+}

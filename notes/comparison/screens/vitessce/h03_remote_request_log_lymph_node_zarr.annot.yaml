@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "image": "h03_remote_request_log_lymph_node_zarr.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (hosted app at vitessce.io, @vitessce 4.0.10)",
+ "data": "human-lymph-node-10x-visium (Vitessce demo, remote zarr)",
+ "url": "https://vitessce.io/#?dataset=human-lymph-node-10x-visium",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_vitessce.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "remote",
+   "mark": "Y",
+   "caption": "request log, Vitessce @vitessce 4.0.10 (2026-10-04): the lymph node demo reads its AnnData zarr (data-1.vitessce.io) and OME-zarr image (Google Cloud Storage) over HTTP chunk by chunk: 39 chunk GETs at load, 16 more after a Gene List click, 72 after zooming"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    231,
+    1375,
+    35
+   ],
+   "label": "chunk read at page load",
+   "selector": "#r4"
+  },
+  {
+   "n": 2,
+   "box": [
+    12,
+    444,
+    1375,
+    35
+   ],
+   "label": "after a gene click: new chunk reads",
+   "selector": "#r12"
+  },
+  {
+   "n": 3,
+   "box": [
+    12,
+    657,
+    1375,
+    35
+   ],
+   "label": "after zooming: image tiles, chunk by chunk",
+   "selector": "#r20"
+  },
+  {
+   "n": 4,
+   "box": [
+    0,
+    41,
+    1400,
+    55
+   ],
+   "label": "chunk reads per step",
+   "selector": ".sub"
+  }
+ ]
+}

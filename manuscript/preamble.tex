@@ -1,0 +1,120 @@
+% Shared preamble of main.tex and supplement.tex.
+
+% ---------------------------------------------------------------- packages
+\usepackage[a4paper,margin=1.5cm]{geometry}
+% Fonts (LuaLaTeX/XeLaTeX): Arial for text (a system font, not vendored; Liberation Sans, metric-
+% identical to Arial, or TeX Gyre Heros where Arial is missing), Fira Math for maths, JetBrains Mono
+% for code; Fira Math and JetBrains Mono are SIL OFL 1.1, vendored in fonts/ with their licences.
+% Under any other engine (pdfTeX, Texpad's TexpadTeX) a fallback with standard fonts is used: the
+% preview is legible and complete but not the typeset PDF; build the real PDF with `make` (LuaLaTeX).
+\usepackage{amsmath}
+\usepackage{iftex}
+% iftex before 2019 (Texpad ships v0.2 of 2013) has no \iftutex; there it is false, so the fallback runs.
+\expandafter\ifx\csname iftutex\endcsname\relax\expandafter\newif\csname iftutex\endcsname\fi
+\iftutex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \IfFontExistsTF{Arial}{\def\azmainfont{Arial}}{%
+    \IfFontExistsTF{Liberation Sans}{\def\azmainfont{Liberation Sans}}{\def\azmainfont{TeX Gyre Heros}}}
+  \setmainfont{\azmainfont}
+  \setsansfont{\azmainfont}
+  \setmonofont{JetBrainsMono}[Path=fonts/, Extension=.ttf, UprightFont=*-Regular, ItalicFont=*-Italic,
+    BoldFont=*-Bold, Scale=0.88]
+  \setmathfont{FiraMath-Regular.otf}[Path=fonts/]
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp}
+  \usepackage{amssymb}  % \blacktriangleright in (unicode-math provides it under LuaLaTeX)
+  % Helvetica (same widths as Arial; needs its metrics), else Latin Modern Sans.
+  \IfFileExists{phvr8t.tfm}{\usepackage{helvet}}{\usepackage{lmodern}}
+  \renewcommand{\familydefault}{\sfdefault}
+  \IfFileExists{sansmath.sty}{\usepackage{sansmath}\sansmath}{}
+\fi
+% microtype only where it knows the engine (LuaTeX, XeTeX, pdfTeX); other previews skip it.
+\ifPDFTeX\usepackage{microtype}\else\iftutex\usepackage{microtype}\fi\fi
+% Allow a line break after an underscore in code-like names (long identifiers in narrow table cells).
+\AtBeginDocument{\let\origunderscore\_\renewcommand{\_}{\origunderscore\allowbreak}}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem} % \sout for revision marks; normalem keeps \emph italic
+\usepackage{array,calc,longtable,booktabs}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+\usepackage[numbers,sort&compress,super]{natbib}
+% supplement.tex sets \azsupplement: xr-hyper (before hyperref) resolves its references to main.tex's figures
+\ifdefined\azsupplement\usepackage{xr-hyper}\fi
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor={rgb:red,47;green,111;blue,214}, linkcolor=black, citecolor=black, filecolor=black}
+% Web links are blue and clickable; figure, step and reference links are clickable in black.
+% \azfile{path in the AnnZarro repo}{display}: a link to that file at the release the paper describes.
+\newcommand{\azfile}[2]{\href{https://github.com/settylab/annzarro/blob/v0.4.1/#1}{\texttt{#2}}}
+\newcommand{\azdir}[2]{\href{https://github.com/settylab/annzarro/tree/v0.4.1/#1}{\texttt{#2}}}
+% URLs and \path{} names break after / . - _ # and stretch slightly, so long paths wrap at line ends
+\def\UrlBreaks{\do\/\do\.\do\-\do\_\do\#\do\=\do\&\do\?}
+\Urlmuskip=0mu plus 2mu
+\usepackage{setspace}
+\setstretch{1.15}
+\setcounter{secnumdepth}{0} % no section numbers
+
+% ---------------------------------------------------------------- pandoc shims
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\passthrough}[1]{#1}
+\newcounter{none}
+
+% ---------------------------------------------------------------- protocol step markers
+\definecolor{npred}{HTML}{B3261E}
+\newcommand{\critical}{\textcolor{npred}{\textbf{CRITICAL STEP}}}
+\newcommand{\pausepoint}{\textbf{PAUSE POINT}}
+\newcommand{\pending}[1]{\textcolor{red}{[#1]}} % visible placeholder
+\newcommand{\timing}[1]{\par\noindent\textbf{TIMING} #1\par}
+\newcommand{\troubleshoot}{\par\noindent\textbf{? TROUBLESHOOTING} (Table~2)\par}
+\newcommand{\ui}[1]{\textit{#1}} % interface labels (buttons, menus, fields), italic as in Nature Protocols
+
+% Captions are always set as a paragraph: article's one-line test measures the whole caption in an
+% hbox, and Fig. 1's caption (with panel d) is longer than TeX's largest dimension.
+\makeatletter
+% Figure legends: \small. MS set them in a dark blue (wordblue, 005A9E); black while reviews mark comments in blue and changes in purple (operator, 2026-10-10).
+\definecolor{wordblue}{HTML}{005A9E}
+\long\def\@makecaption#1#2{\vskip\abovecaptionskip
+  {\small #1: #2\par}\vskip\belowcaptionskip}
+\makeatother
+
+% ---------------------------------------------------------------- revision marks
+% xcolor and ulem are loaded with the packages above.
+\definecolor{addgreen}{HTML}{1B7F3B}
+\definecolor{delgray}{HTML}{9A9A9A}
+\newif\ifclean \cleanfalse        % \cleantrue hides all markup
+\ifclean
+  \newcommand{\add}[1]{#1}
+  \newcommand{\del}[1]{}
+\else
+  \newcommand{\add}[1]{\textcolor{addgreen}{#1}}
+  \newcommand{\del}[1]{\textcolor{delgray}{\sout{#1}}}
+\fi
+\newcommand{\chg}[2]{\del{#1}\add{#2}}   % replacement in one call
+% Changes made after Manu's review of 2026-10-08 (db29da4), in a colour of their own; \cleantrue hides it too.
+\definecolor{newpurple}{HTML}{8E24AA}
+\ifclean \newcommand{\new}[1]{#1}\else \newcommand{\new}[1]{\textcolor{newpurple}{#1}}\fi
+% \newhere: a purple triangle where sourced numbers changed (a claim's text cannot be wrapped in \new).
+\ifclean \newcommand{\newhere}{}\else \newcommand{\newhere}{\textcolor{newpurple}{$\blacktriangleright$}\,}\fi
+\newenvironment{addblock}{\color{addgreen}}{}
+
+% ---------------------------------------------------------------- code
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=single,
+  rulecolor=\color{black!25},
+  backgroundcolor=\color{black!3},
+  xleftmargin=1em,
+  framexleftmargin=0.5em,
+  showstringspaces=false,
+}
+
+
+

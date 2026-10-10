@@ -1,0 +1,19 @@
+version: 1
+image: m04_slots_dimred_dropdown.jpg
+tool: shinycell
+software: ShinyCell 2.1.0 (local app)
+data: bone marrow SCE (8,090 cells)
+url: http://127.0.0.1:8907
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/shinycell/matrix_check.py
+source: manual
+image_sha256: 368929ab4a7559b9aa1a7f6cc485ede10999545ac557a390c690164a6b38e302
+proves:
+- column: slots
+  mark: P
+  caption: 'ShinyCell 2.1.0: obsm embeddings are reachable as X/Y axes (UMAP1, UMAP2, X0, X1, ...).'
+callouts:
+- n: 1
+  box: [28, 367, 304, 152]
+  label: 'X-axis list: UMAP1, UMAP2, X0, X1 (obsm columns)'

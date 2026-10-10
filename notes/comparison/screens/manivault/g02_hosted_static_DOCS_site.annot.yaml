@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "image": "g02_hosted_static_DOCS_site.jpg",
+ "tool": "manivault",
+ "software": "ManiVault Studio docs (documentation pages, not the app)",
+ "data": null,
+ "url": "https://www.manivault.studio/",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/manivault/docs_shots.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "hosted",
+   "mark": "N",
+   "caption": "Docs, not the app: ManiVault Studio is presented and distributed as a desktop application; no server or multi-user deployment is offered"
+  },
+  {
+   "column": "static",
+   "mark": "N",
+   "caption": "Docs, not the app: no web or static-site export is offered"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    0,
+    1400,
+    900
+   ],
+   "label": "ManiVault Studio site",
+   "selector": "body"
+  }
+ ]
+}

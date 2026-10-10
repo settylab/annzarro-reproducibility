@@ -1,0 +1,72 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/ucsc/html_5000000",
+  "benchmark/tool_ceiling/shots/ucsc_default_run_5000000_r3",
+  "--n",
+  "5000000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 9.7,
+ "peaks": {
+  "client": {
+   "fp_peak": 2513118952,
+   "fp_lifetime_sum": 3089738480,
+   "rss_peak": 2079883264,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 14385656,
+   "fp_lifetime_sum": 16368432,
+   "rss_peak": 27213824,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 143411344,
+   "fp_lifetime_sum": 143411344,
+   "rss_peak": 174161920,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2527488200,
+   "rss_peak": 2107097088,
+   "fp_lifetime_sum": 3106106912
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.24,
+   1400006208
+  ],
+  [
+   4.37,
+   1727244104
+  ],
+  [
+   6.49,
+   1707075424
+  ],
+  [
+   8.63,
+   2523015368
+  ]
+ ],
+ "ps_before": "2026-10-04T15:42:38-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n10974 177920  99.7 /opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python\n11495 269232  82.0 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 600608  22.4 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n47413 604624  12.1 /Applications/cmux.app/Contents/MacOS/cmux\n77736 141648   9.7 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n77769 940352   7.0 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n  626 515296   3.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n10363  28256   2.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n 6720  28208   2.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n93323 904480   1.9 $HOME/.local/bin/claude\n",
+ "others_at_start": [
+  "10533 $HOME/.cache/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing --headless=new -",
+  "10538 $HOME/.cache/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/Frameworks/Google Chrome for Testing Framework.f",
+  "10540 $HOME/.cache/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/Frameworks/Google Chrome for Testing Framework.f",
+  "11553 $HOME/.cache/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/Frameworks/Google Chrome for Testing Framework.f",
+  "11556 $HOME/.cache/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/Frameworks/Google Chrome for Testing Framework.f"
+ ]
+}

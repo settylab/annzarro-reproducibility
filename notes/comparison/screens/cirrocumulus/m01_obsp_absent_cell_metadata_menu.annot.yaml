@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "image": "m01_obsp_absent_cell_metadata_menu.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_matrix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "cells",
+   "mark": "N",
+   "caption": "Cell Metadata lists obs columns only; no obsp matrix in any dropdown"
+  },
+  {
+   "column": "genes",
+   "mark": "N",
+   "caption": "No varp in any dropdown"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    336,
+    239,
+    200
+   ],
+   "label": "obs columns only, no obsp",
+   "selector": "[role=listbox] >> visible=true"
+  }
+ ]
+}

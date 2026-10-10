@@ -1,0 +1,29 @@
+version: 1
+image: m08_table_search_restricts_plot.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3)
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: 32672872857fa8c17d8fb5e1757204d07f63fea4582b68bd788077bfd140568c
+proves:
+- column: filters
+  mark: Y
+  caption: 'iSEE 2.18.0: searching Neutrophil in the column data table keeps 2,221 of 8,090 cells, and the linked
+    plot draws only those.'
+callouts:
+- n: 1
+  box: [283, 9, 167, 34]
+  label: 'table search: Neutrophil'
+- n: 2
+  box: [6, 722, 395, 26]
+  label: Showing 1 to 10 of 2,221 entries (filtered from 8,090)
+- n: 3
+  box: [488, 648, 415, 140]
+  label: plot 2 receives from Column data table 1, Restrict ticked
+- n: 4
+  box: [505, 30, 410, 470]
+  label: plot 2 draws only the filtered cells

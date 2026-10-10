@@ -1,0 +1,107 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_235000000.zarr",
+  "$TMPDIR/wt-ceiling-max/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_235000000_r1",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 28.04,
+ "peaks": {
+  "client": {
+   "fp_peak": 19841696912,
+   "fp_lifetime_sum": 20287391848,
+   "rss_peak": 20275757056,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 9284099608,
+   "fp_lifetime_sum": 9330909176,
+   "rss_peak": 9302556672,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 137758624,
+   "fp_lifetime_sum": 137758624,
+   "rss_peak": 173146112,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 29094240936,
+   "rss_peak": 29543858176,
+   "fp_lifetime_sum": 29618301024
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.06,
+   879518528
+  ],
+  [
+   4.31,
+   10010085136
+  ],
+  [
+   6.43,
+   13329699192
+  ],
+  [
+   8.59,
+   15937395368
+  ],
+  [
+   10.79,
+   18799472552
+  ],
+  [
+   13.03,
+   22556164592
+  ],
+  [
+   15.29,
+   27740249088
+  ],
+  [
+   17.54,
+   28901761704
+  ],
+  [
+   19.78,
+   28912198312
+  ],
+  [
+   22.01,
+   26498079840
+  ],
+  [
+   24.22,
+   25168205648
+  ],
+  [
+   26.49,
+   26823205352
+  ]
+ ],
+ "ps_before": "2026-10-09T19:18:02-0700\nmemorystatus_level=93 swap=total = 5120.00M  used = 3904.19M  free = 1215.81M  (encrypted)\n  626 526848  47.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1250 195280  38.9 /System/Library/CoreServices/NotificationCenter.app/Contents/MacOS/NotificationCenter\n  621  17472  19.8 /usr/libexec/corebrightnessd\n    1  34336  17.5 /sbin/launchd\n75254 144192   8.0 /System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter\n48573  19856   6.4 .venv/bin/python\n12615   8464   6.0 /System/Library/PrivateFrameworks/AmbientDisplay.framework/Versions/A/XPCServices/com.apple.AmbientDisplayAgent.xpc/Contents/MacOS/com.apple.AmbientDisplayAgent\n28847 1183360   3.2 $HOME/.local/bin/claude\n 4725 825776   2.4 claude\n66469  43120   1.9 /usr/libexec/PerfPowerServices\n",
+ "others_at_start": [
+  "48574 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "48575 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

@@ -1,0 +1,3238 @@
+{
+ "runs": [
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "bad3d1666d7770122f2c145cfae0134a97747dee",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first1000000_sub_r0",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.1,
+      "memory_usage_mb": 79.16,
+      "system_load": 25.9
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 68905,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:00:28.194173",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 68905,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first1000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "0",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:00:29Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:00:28 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "bad3d1666d7770122f2c145cfae0134a97747dee",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first1000000_sub_r1",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.03,
+      "system_load": 12.7
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 69420,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:00:42.855654",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 69420,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first1000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "1",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:00:44Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:00:42 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "bad3d1666d7770122f2c145cfae0134a97747dee",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first1000000_sub_r2",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.45,
+      "system_load": 21.2
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 69910,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:00:57.645992",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 69910,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first1000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "2",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:00:58Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:00:57 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "bad3d1666d7770122f2c145cfae0134a97747dee",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first2000000_sub_r0",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.42,
+      "system_load": 16.1
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 70419,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:01:12.306958",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 70419,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first2000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "0",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:01:13Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:01:12 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "bad3d1666d7770122f2c145cfae0134a97747dee",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first2000000_sub_r1",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.2,
+      "system_load": 14.5
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 77160,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:04:57.817190",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 77160,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first2000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "1",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:04:59Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:04:57 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "bad3d1666d7770122f2c145cfae0134a97747dee",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first2000000_sub_r2",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.53,
+      "system_load": 5.1
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 77905,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:05:13.170358",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 77905,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first2000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "2",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:05:14Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:05:13 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first5000000_sub_r0",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.34,
+      "system_load": 15.4
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 78715,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:05:28.732911",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 78715,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first5000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "0",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:05:30Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:05:28 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first5000000_sub_r1",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.52,
+      "system_load": 21.6
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 79539,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:05:45.861041",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 79539,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first5000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "1",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:05:47Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:05:45 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first5000000_sub_r2",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.2,
+      "system_load": 25.9
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 80159,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:06:03.198957",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 80159,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first5000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "2",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:06:04Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:06:03 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first10000000_sub_r0",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.1,
+      "memory_usage_mb": 79.62,
+      "system_load": 43.5
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 80756,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:06:20.657831",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 80756,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first10000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "0",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:06:22Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:06:20 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first10000000_sub_r1",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.28,
+      "system_load": 42.4
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 81402,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:06:40.457906",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 81402,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first10000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "1",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:06:41Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:06:40 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first10000000_sub_r2",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.3,
+      "system_load": 43.6
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 82195,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:07:00.570118",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 82195,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first10000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "2",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:07:01Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:07:00 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first20000000_sub_r0",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.33,
+      "system_load": 43.9
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 83006,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:07:20.816761",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 83006,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first20000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "0",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:07:22Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:07:20 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first20000000_sub_r1",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.38,
+      "system_load": 33.9
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 84005,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:07:46.565452",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 84005,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first20000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "1",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:07:47Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:07:46 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first20000000_sub_r2",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.12,
+      "system_load": 37.1
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 85036,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:08:11.684355",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 85036,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first20000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "2",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:08:13Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:08:11 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first50000000_sub_r0",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.27,
+      "system_load": 35.8
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 86188,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:08:37.548114",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 86188,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first50000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "0",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:08:38Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:08:36 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first50000000_sub_r1",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.2,
+      "system_load": 35.8
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 87607,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:09:19.241873",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 87607,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first50000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "1",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:09:20Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:09:18 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe95_first50000000_sub_r2",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.2,
+      "system_load": 36.2
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 88892,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:10:00.338640",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 88892,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first50000000.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "2",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:10:01Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:09:59 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe_panel_95.6M_plot_sub_r0",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.23,
+      "system_load": 31.4
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 90299,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:10:40.808961",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 90299,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "0",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:10:42Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:10:39 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe_panel_95.6M_plot_sub_r1",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.14,
+      "system_load": 33.3
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 2595,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:16:49.107316",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 2595,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "1",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:16:50Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:16:47 PDT"
+    }
+   }
+  },
+  {
+   "bench": {
+    "repo": "$TMPDIR/sw_v041",
+    "commit": "6d3039088ab08a365613fdb4f4a6d31ce02bb836",
+    "dirty": false,
+    "dirty_scripts": []
+   },
+   "annzarro": {
+    "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+    "python_exe": "$ANNZARRO_SRC/.venv-bench/bin/python",
+    "python": "3.13.9 (main, Nov 19 2025, 23:39:32) [Clang 21.1.4 ]",
+    "packages": {
+     "annzarro": "0.4.1",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "anndata": null,
+     "numpy": "2.5.3",
+     "scipy": "1.18.1",
+     "flask": "3.1.3",
+     "werkzeug": "3.1.9",
+     "pandas": null,
+     "h5py": "3.16.0"
+    },
+    "version_metadata": "0.4.1",
+    "version_attr": "0.4.1",
+    "path": "$ANNZARRO_SRC",
+    "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+    "branch": "HEAD",
+    "tag": "v0.4.1",
+    "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+    "dirty": false,
+    "dirty_files": []
+   },
+   "server": {
+    "root": "http://127.0.0.1:8964",
+    "status": {
+     "config": {
+      "data_dir": "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun/cold_tahoe_panel_95.6M_plot_sub_r2",
+      "host": "127.0.0.1",
+      "port": 8964,
+      "unified_server": true
+     },
+     "data": {
+      "data_dir_exists": true,
+      "data_dir_readable": true,
+      "data_dir_writable": true,
+      "zarr_file_count": 14
+     },
+     "resources": {
+      "connections": 2,
+      "cpu_load": 0.0,
+      "memory_usage_mb": 79.2,
+      "system_load": 50.0
+     },
+     "server": {
+      "hostname": "laptop",
+      "pid": 4909,
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "python_version": "3.13.9",
+      "start_time": "2026-10-07T17:17:57.076086",
+      "status": "running",
+      "uptime": "0d 0h 0m 1s",
+      "uptime_seconds": 1,
+      "version": "0.4.1"
+     }
+    },
+    "version": "0.4.1",
+    "pid": 4909,
+    "python": "3.13.9"
+   },
+   "browser": null,
+   "machine": {
+    "hostname": "laptop",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
+    "cpu": "Apple M3 Max",
+    "n_cpu": 16,
+    "ram_bytes": 137438953472,
+    "harness_python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "harness_executable": "benchmark/scale/ceiling/.venv/bin/python",
+    "harness_packages": {
+     "playwright": "1.63.0",
+     "psutil": "7.2.2",
+     "requests": "2.34.2",
+     "zarr": "3.4.0",
+     "numcodecs": "0.17.0",
+     "numpy": "2.5.3"
+    }
+   },
+   "run": {
+    "argv": [
+     "benchmark/scale/ceiling/.venv/bin/python",
+     "bench_http.py",
+     "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+     "--site",
+     "laptop",
+     "--client",
+     "0.3",
+     "--exe",
+     "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+     "--emb",
+     "X_umap",
+     "--out",
+     "results/http_v041.csv",
+     "--scratch",
+     "$DATA_ROOT/tahoe_scale/stores/_scratch_http_rerun",
+     "--port",
+     "8964",
+     "--reps",
+     "1",
+     "--rep-base",
+     "2",
+     "--slow",
+     "300"
+    ],
+    "cwd": "$TMPDIR/sw_v041/benchmark/scale",
+    "time_utc": "2026-10-08T00:17:58Z",
+    "harness_environment": {
+     "site": "laptop",
+     "hostname": "laptop",
+     "platform": "macOS-26.5.1-arm64-arm-64bit",
+     "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+     "packages": {
+      "annzarro": "0.1.1",
+      "zarr": "3.4.0",
+      "numcodecs": "0.17.0",
+      "anndata": null,
+      "numpy": "2.5.3",
+      "flask": "3.1.3",
+      "werkzeug": "3.1.9",
+      "playwright": "1.63.0",
+      "scipy": "1.18.1",
+      "server": "0.4.1 3.4.0 0.17.0 3.1.3"
+     },
+     "annzarro_commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+     "annzarro_branch": "HEAD",
+     "cpu": "Apple M3 Max",
+     "n_cpu": 16,
+     "ram_bytes": 137438953472,
+     "filesystem": "\n/dev/disk3s1 on /System/Volumes/Data (apfs, local, journaled, nobrowse, protect, root data)\nmap auto_home on /System/Volumes/Data/home (autofs, automounted, nobrowse)",
+     "client": {
+      "version": "0.3",
+      "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+      "emb": "X_umap"
+     },
+     "cold_mode": "clone",
+     "reps": 1,
+     "warm": 2,
+     "timeout_s": 600,
+     "slow_s": 300.0,
+     "date": "2026-10-07 17:17:55 PDT"
+    }
+   }
+  }
+ ]
+}

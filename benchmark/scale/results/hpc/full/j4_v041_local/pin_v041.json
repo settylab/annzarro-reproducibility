@@ -1,0 +1,21 @@
+{
+ "ref": "v0.4.1",
+ "commit": "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+ "tree": "661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d",
+ "version": "0.4.1",
+ "vendor_assets": "ok",
+ "venv": "$SCRATCH/annzarro-scale/hpcbench/venv_v041",
+ "src": "$SCRATCH/annzarro-scale/hpcbench/src_v041",
+ "installed_from": {
+  "url": "file://$SCRATCH/annzarro-scale/hpcbench/src_v041",
+  "dir_info": {}
+ },
+ "checks": {
+  "version": true,
+  "vendor": true,
+  "non_editable": true,
+  "from_clone": true,
+  "deps": true,
+  "static_matches": true
+ }
+}

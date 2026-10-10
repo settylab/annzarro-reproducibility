@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m12_share_permalink.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (scope.aertslab.org)",
+ "data": "Wouters_Human_Melanoma / 10_Baselines_filteredRegulons.loom (4,322 cells)",
+ "url": "https://scope.aertslab.org/#/Wouters_Human_Melanoma/Wouters_Human_Melanoma%2F10_Baselines_filteredRegulons.loom/gene",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/scope/matrix_check_fix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "Y",
+   "caption": "Link icon produces a permalink https://bit.ly/4AOpMg6 (state in the long URL, shortened by bit.ly)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    685,
+    10,
+    127,
+    26
+   ],
+   "label": "permalink",
+   "selector": "text=/bit\\.ly/"
+  },
+  {
+   "n": 2,
+   "box": [
+    816,
+    6,
+    199,
+    33
+   ],
+   "label": "optional session UUID",
+   "selector": "text=Include session UUID in permalink?"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m13_export_capture_dialog.jpg",
+ "tool": "tissuumaps",
+ "software": "TissUUmaps 3.2.1.11 (server build, pip; TU4 is beta)",
+ "data": "bm_demo_csc.h5ad (8,090 cells x 16,285 genes)",
+ "url": "http://127.0.0.1:8908/bm_demo_csc.h5ad#",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/tissuumaps/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "export",
+   "mark": "Y",
+   "caption": "Capture viewport asks for a resolution factor (1 = screen); with 4 it downloaded TissUUmaps_capture.png (2,201,435 bytes)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    446,
+    24,
+    508,
+    286
+   ],
+   "label": "capture dialog",
+   "selector": ".modal-dialog >> nth=-1"
+  }
+ ]
+}

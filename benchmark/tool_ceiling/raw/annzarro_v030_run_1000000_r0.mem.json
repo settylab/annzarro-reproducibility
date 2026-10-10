@@ -1,0 +1,82 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first1000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_run_1000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 19.09,
+ "peaks": {
+  "client": {
+   "fp_peak": 3906496856,
+   "fp_lifetime_sum": 4045565256,
+   "rss_peak": 3448684544,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 397510048,
+   "fp_lifetime_sum": 450512816,
+   "rss_peak": 432717824,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 122925944,
+   "fp_lifetime_sum": 122925944,
+   "rss_peak": 160743424,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 4302368504,
+   "rss_peak": 3879632896,
+   "fp_lifetime_sum": 4496078072
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.12,
+   41320976
+  ],
+  [
+   4.21,
+   55575080
+  ],
+  [
+   6.28,
+   59114024
+  ],
+  [
+   8.31,
+   61407784
+  ],
+  [
+   10.47,
+   999826840
+  ],
+  [
+   12.79,
+   2584013312
+  ],
+  [
+   15.11,
+   3448990856
+  ],
+  [
+   17.41,
+   3361025592
+  ]
+ ],
+ "ps_before": "2026-10-04T21:51:31-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n77233 521648 100.0 lualatex\n47413 660896  39.2 /Applications/cmux.app/Contents/MacOS/cmux\n  626 528912  27.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n78218 1147056  18.0 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n86901 571712   7.7 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n57113 2880736   5.3 $HOME/.local/bin/claude\n 1492  42512   4.5 /System/Library/PrivateFrameworks/TextInputUIMacHelper.framework/Versions/A/XPCServices/CursorUIViewService.xpc/Contents/MacOS/CursorUIViewService\n  855 1982880   3.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  557 567808   3.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n80005 425920   3.3 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

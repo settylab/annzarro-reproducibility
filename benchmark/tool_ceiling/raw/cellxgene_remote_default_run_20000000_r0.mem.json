@@ -1,0 +1,180 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "default",
+  "none",
+  "benchmark/tool_ceiling/shots/cellxgene_remote_default_run_20000000_r0",
+  "--n",
+  "20000000",
+  "--server-url",
+  "http://hpc-node-09:8791",
+  "--proxy",
+  "socks5://localhost:1080"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 66.43,
+ "peaks": {
+  "client": {
+   "fp_peak": 6846462952,
+   "fp_lifetime_sum": 8064631584,
+   "rss_peak": 7239712768,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 78971384,
+   "fp_lifetime_sum": 78971384,
+   "rss_peak": 104759296,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 119173504,
+   "fp_lifetime_sum": 122171872,
+   "rss_peak": 160006144,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6846462952,
+   "rss_peak": 7239712768,
+   "fp_lifetime_sum": 8143602968
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.12,
+   859300192
+  ],
+  [
+   4.22,
+   987406784
+  ],
+  [
+   6.29,
+   781132224
+  ],
+  [
+   8.39,
+   773743040
+  ],
+  [
+   10.47,
+   762847680
+  ],
+  [
+   12.56,
+   958980544
+  ],
+  [
+   14.63,
+   767664576
+  ],
+  [
+   16.7,
+   1434134248
+  ],
+  [
+   18.79,
+   3106958760
+  ],
+  [
+   20.86,
+   1912990520
+  ],
+  [
+   22.88,
+   3125112904
+  ],
+  [
+   24.92,
+   3796415328
+  ],
+  [
+   26.96,
+   4099470560
+  ],
+  [
+   28.99,
+   4936185800
+  ],
+  [
+   31.04,
+   4603312504
+  ],
+  [
+   33.14,
+   5057936408
+  ],
+  [
+   35.2,
+   5089213488
+  ],
+  [
+   37.26,
+   4711332864
+  ],
+  [
+   39.35,
+   5165055024
+  ],
+  [
+   41.5,
+   4711775304
+  ],
+  [
+   43.55,
+   4713315400
+  ],
+  [
+   45.59,
+   4707728456
+  ],
+  [
+   47.64,
+   4711300168
+  ],
+  [
+   49.68,
+   4714789960
+  ],
+  [
+   51.77,
+   4718263368
+  ],
+  [
+   53.83,
+   4721769544
+  ],
+  [
+   55.89,
+   4725210184
+  ],
+  [
+   57.92,
+   4728650848
+  ],
+  [
+   60.0,
+   4732271712
+  ],
+  [
+   62.03,
+   4321098416
+  ],
+  [
+   64.11,
+   6846446568
+  ],
+  [
+   66.15,
+   4706647016
+  ]
+ ],
+ "ps_before": "2026-10-05T10:40:36-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  557 586528 124.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  582 120736  71.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  855 2004192  70.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  592  20400  27.0 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored\n86901 538752  16.0 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n31741  20704   7.9 benchmark/tool_ceiling/.venv/bin/python\n30485  20736   6.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n30480  20912   5.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n29094  27264   5.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n30484  21040   5.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

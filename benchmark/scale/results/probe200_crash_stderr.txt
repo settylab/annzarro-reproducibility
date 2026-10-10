@@ -1,0 +1,3 @@
+# probe.py syn_200000000 cat, default flags + --enable-logging=stderr --v=0, DEBUG=pw:browser (2026-10-03 13:47)
+2026-10-03T20:47:33.952Z pw:browser [pid=94991][err] [1003/134733.952497:ERROR:third_party/blink/renderer/bindings/core/v8/v8_initializer.cc:971] V8 javascript OOM (CALL_AND_RETRY_LAST).
+2026-10-03T20:47:34.970Z pw:browser [pid=94991] <process did exit: exitCode=0, signal=null>

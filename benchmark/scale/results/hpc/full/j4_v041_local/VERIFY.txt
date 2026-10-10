@@ -1,0 +1,5 @@
+annzarro 0.4.1: PyPI wheel vs tag v0.4.1 (78c9da657ecbff30163fd29055f0e6b10e915c5c, tree 661a454) vs hpcbench/venv_v041. Checked 2026-10-07.
+- The wheel annzarro-0.4.1-py3-none-any.whl has sha256 2b747ceb…aaca, equal to PyPI's published digest (meta.json).
+- venv_v041 site-packages/annzarro (built non-editable from src_v041 at the tag) vs the extracted wheel: 182/182 files have identical sha256 (__pycache__ excluded). Lists: wheel.sha, installed.sha.
+- The wheel's files vs the tag: 61 package files = git annzarro/ at the tag; 93 static files = git static/; 2 templates = git templates/; 26 vendor assets = sha256 in the tag's scripts/vendor-assets.json. 61+93+2+26 = 182, mismatches 0.
+- Conclusion: the measured code is byte-identical to PyPI annzarro==0.4.1. It is installed from the tag clone because the J3/J4/T pin guards require direct_url == file://src_v041.

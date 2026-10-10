@@ -1,0 +1,145 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scope_task.py",
+  "$DATA_ROOT/tool_ceiling_data/loom/tahoe_first1000000.loom",
+  "$TMPDIR/tc-wt-final/benchmark/tool_ceiling/shots/scope_default_run_1000000_r0",
+  "--n",
+  "1000000"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 54.38,
+ "peaks": {
+  "client": {
+   "fp_peak": 4329237688,
+   "fp_lifetime_sum": 5163725376,
+   "rss_peak": 4726865920,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 24626280,
+   "fp_lifetime_sum": 248114360,
+   "rss_peak": 56131584,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 234293416,
+   "fp_lifetime_sum": 262310152,
+   "rss_peak": 264994816,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 4341509856,
+   "rss_peak": 4754718720,
+   "fp_lifetime_sum": 5411839736
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.29,
+   12141096
+  ],
+  [
+   4.63,
+   0
+  ],
+  [
+   6.87,
+   12157504
+  ],
+  [
+   9.14,
+   12157528
+  ],
+  [
+   11.39,
+   0
+  ],
+  [
+   13.57,
+   12059200
+  ],
+  [
+   15.76,
+   0
+  ],
+  [
+   17.92,
+   12337728
+  ],
+  [
+   20.11,
+   12075584
+  ],
+  [
+   22.29,
+   0
+  ],
+  [
+   24.45,
+   12173864
+  ],
+  [
+   26.64,
+   818012704
+  ],
+  [
+   28.86,
+   2303666520
+  ],
+  [
+   31.11,
+   3945524528
+  ],
+  [
+   33.31,
+   3319474952
+  ],
+  [
+   35.5,
+   3268799840
+  ],
+  [
+   37.71,
+   3514788856
+  ],
+  [
+   39.94,
+   3202247456
+  ],
+  [
+   42.14,
+   2263952712
+  ],
+  [
+   44.36,
+   2748787512
+  ],
+  [
+   46.53,
+   2277338512
+  ],
+  [
+   48.7,
+   2492197712
+  ],
+  [
+   50.91,
+   4329237688
+  ],
+  [
+   53.09,
+   3487903456
+  ]
+ ],
+ "ps_before": "2026-10-07T23:38:24-0700\nmemorystatus_level=93 swap=total = 5120.00M  used = 3960.19M  free = 1159.81M  (encrypted)\n 5615 268576  16.1 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n 1031  87792   7.7 /usr/sbin/usernoted\n 1056 139328   7.4 /System/Library/PrivateFrameworks/IDS.framework/identityservicesd.app/Contents/MacOS/identityservicesd\n57113 3392176   3.4 $HOME/.local/bin/claude\n92291  30816   2.5 .venv/bin/python\n84235 361904   2.4 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n80005 1030672   2.2 $HOME/.local/bin/claude\n 4725 753280   2.0 claude\n86901 579776   1.5 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 6320   1232   1.3 sleep\n",
+ "others_at_start": [
+  "88007 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "88008 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM HUP\nreg() { for f in \"$REG\"/*; d"
+ ]
+}

@@ -1,0 +1,132 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "7100000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first7100000.h5ad"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 37.58,
+ "peaks": {
+  "proc": {
+   "fp_peak": 17872632784,
+   "fp_lifetime_sum": 18262817984,
+   "rss_peak": 18051006464,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 17872632784,
+   "rss_peak": 18051006464,
+   "fp_lifetime_sum": 18262817984
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8339864
+  ],
+  [
+   1.51,
+   1029506776
+  ],
+  [
+   2.99,
+   1515505680
+  ],
+  [
+   4.47,
+   1630980592
+  ],
+  [
+   5.99,
+   8181505680
+  ],
+  [
+   7.51,
+   8385470240
+  ],
+  [
+   8.98,
+   8793497688
+  ],
+  [
+   10.44,
+   8793497688
+  ],
+  [
+   11.9,
+   9616450224
+  ],
+  [
+   13.37,
+   11596098552
+  ],
+  [
+   14.85,
+   12893712312
+  ],
+  [
+   16.31,
+   12893712312
+  ],
+  [
+   17.76,
+   12893712312
+  ],
+  [
+   19.22,
+   12893712312
+  ],
+  [
+   20.69,
+   13396209952
+  ],
+  [
+   22.17,
+   15717742272
+  ],
+  [
+   23.66,
+   13452489112
+  ],
+  [
+   25.14,
+   13670609448
+  ],
+  [
+   26.61,
+   14110733152
+  ],
+  [
+   28.05,
+   14110733152
+  ],
+  [
+   29.49,
+   15007692264
+  ],
+  [
+   30.97,
+   16810490616
+  ],
+  [
+   32.47,
+   10325961336
+  ],
+  [
+   33.93,
+   11472268688
+  ],
+  [
+   35.39,
+   11713375824
+  ],
+  [
+   36.85,
+   11710361168
+  ]
+ ],
+ "ps_before": "2026-10-03T22:00:22-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n62833 323104 110.7 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n62832 179232  23.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n    1  35280  14.7 /sbin/launchd\n97961 633904  12.2 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n47413 607728  10.7 /Applications/cmux.app/Contents/MacOS/cmux\n57113 1899168   6.4 $HOME/.local/bin/claude\n80588 616800   2.8 $HOME/.local/bin/claude\n97977 233808   2.5 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n37026 116704   1.8 $HOME/Projects/investments/.venv/bin/python3\n86901 498848   1.5 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n"
+}

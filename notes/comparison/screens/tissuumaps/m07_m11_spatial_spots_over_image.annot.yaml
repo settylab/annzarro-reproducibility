@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "image": "m07_m11_spatial_spots_over_image.jpg",
+ "tool": "tissuumaps",
+ "software": "TissUUmaps 3.2.1.11 (server build, pip; TU4 is beta)",
+ "data": "spatial_demo.h5ad (2,693 Visium spots; synthetic grey tissue image)",
+ "url": "http://127.0.0.1:8908/spatial_demo.h5ad",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/tissuumaps/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "spatial",
+   "mark": "Y",
+   "caption": "2,693 Visium spots placed by obsm/spatial, coloured by leiden"
+  },
+  {
+   "column": "image",
+   "mark": "Y",
+   "caption": "The image from uns/spatial is drawn under the spots (here a synthetic grey image built from spot density, not histology)"
+  },
+  {
+   "column": "subset",
+   "mark": "P",
+   "caption": "Each category has a visibility checkbox in the marker table; unticking hides those cells from the view only, nothing is loaded less"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    37,
+    941,
+    863
+   ],
+   "label": "spots over the image",
+   "selector": "#ISS_viewer, .openseadragon-container"
+  }
+ ]
+}

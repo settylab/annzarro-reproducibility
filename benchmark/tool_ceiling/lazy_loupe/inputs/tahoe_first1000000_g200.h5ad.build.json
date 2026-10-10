@@ -1,0 +1,9 @@
+{
+ "n_cells": 1000000,
+ "n_genes": 200,
+ "nnz": 101488849,
+ "values_per_cell": 101.5,
+ "source": "work50/master.zarr rows 0..N-1; obs/obsm from tahoe_first1000000.h5ad",
+ "panel_genes": 200,
+ "seconds": 34
+}

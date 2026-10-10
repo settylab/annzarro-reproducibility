@@ -1,0 +1,83 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/cirrocumulus/.venv/bin/cirro",
+  "prepare_data",
+  "--format",
+  "zarr",
+  "--no-auto-groups",
+  "--out",
+  "$DATA_ROOT/tool_ceiling_data/cirro/first20000000.zarr",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first20000000.h5ad"
+ ],
+ "status": "cap",
+ "rc": -9,
+ "wall_s": 17.85,
+ "peaks": {
+  "proc": {
+   "fp_peak": 51823129624,
+   "fp_lifetime_sum": 51905786904,
+   "rss_peak": 52439498752,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 51823129624,
+   "rss_peak": 52439498752,
+   "fp_lifetime_sum": 51905786904
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8536520
+  ],
+  [
+   1.46,
+   4392996488
+  ],
+  [
+   2.93,
+   13313337232
+  ],
+  [
+   4.41,
+   18963052392
+  ],
+  [
+   5.88,
+   19412023480
+  ],
+  [
+   7.33,
+   20462828760
+  ],
+  [
+   8.79,
+   21252505440
+  ],
+  [
+   10.25,
+   21590360144
+  ],
+  [
+   11.73,
+   21997420912
+  ],
+  [
+   13.17,
+   21997420912
+  ],
+  [
+   14.63,
+   39861138280
+  ],
+  [
+   16.07,
+   44870640800
+  ],
+  [
+   17.54,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-03T22:43:30-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 1903008   2.7 $HOME/.local/bin/claude\n80588 617024   0.8 $HOME/.local/bin/claude\n98631 478944   0.7 $HOME/.local/bin/claude\n92291  30816   0.7 .venv/bin/python\n35651   1232   0.5 sleep\n35649   1232   0.3 sleep\n72627 493248   0.2 $HOME/.local/bin/claude\n35648   1232   0.2 sleep\n35647   1232   0.2 sleep\n 8667  31104   0.2 $HOME/Projects/investments/.venv/bin/python3\n"
+}

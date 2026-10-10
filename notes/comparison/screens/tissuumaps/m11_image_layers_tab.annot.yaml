@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m11_image_layers_tab.jpg",
+ "tool": "tissuumaps",
+ "software": "TissUUmaps 3.2.1.11 (server build, pip; TU4 is beta)",
+ "data": "spatial_demo.h5ad (2,693 Visium spots; synthetic grey tissue image)",
+ "url": "http://127.0.0.1:8908/spatial_demo.h5ad",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/tissuumaps/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "image",
+   "mark": "Y",
+   "caption": "Layers tab: the image layer 'demo' with visibility, opacity, saturation, brightness and contrast controls, under the spots"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1127,
+    41,
+    90,
+    50
+   ],
+   "label": "Layers tab",
+   "selector": "#title-tab-image"
+  }
+ ]
+}

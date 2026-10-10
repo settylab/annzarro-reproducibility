@@ -1,0 +1,82 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "tissuumaps",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first10000000_csc.h5ad",
+  "benchmark/tool_ceiling/shots/tissuumaps_default_run_10000000_r0",
+  "--n",
+  "10000000",
+  "--port",
+  "8944"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 16.96,
+ "peaks": {
+  "client": {
+   "fp_peak": 5269744008,
+   "fp_lifetime_sum": 5389168112,
+   "rss_peak": 3043803136,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 79283232,
+   "fp_lifetime_sum": 86918416,
+   "rss_peak": 195182592,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 165218400,
+   "fp_lifetime_sum": 165218400,
+   "rss_peak": 196050944,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5346454952,
+   "rss_peak": 3238985728,
+   "fp_lifetime_sum": 5476086528
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.16,
+   1333028680
+  ],
+  [
+   4.3,
+   1728490008
+  ],
+  [
+   6.41,
+   2505206872
+  ],
+  [
+   8.51,
+   2030447704
+  ],
+  [
+   10.64,
+   2643799440
+  ],
+  [
+   12.73,
+   2515512768
+  ],
+  [
+   14.86,
+   5237599656
+  ],
+  [
+   16.96,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-05T11:47:21-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n58540 264880  72.6 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  626 517616  41.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n47413 671344  41.5 /Applications/cmux.app/Contents/MacOS/cmux\n97961 870176  20.5 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n57113 2902240  10.9 $HOME/.local/bin/claude\n 1492  43008  10.3 /System/Library/PrivateFrameworks/TextInputUIMacHelper.framework/Versions/A/XPCServices/CursorUIViewService.xpc/Contents/MacOS/CursorUIViewService\n75254 142768   9.4 /System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter\n49144 675952   8.2 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n 1240  49344   5.1 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  633  30640   4.9 /usr/libexec/runningboardd\n",
+ "others_at_start": []
+}

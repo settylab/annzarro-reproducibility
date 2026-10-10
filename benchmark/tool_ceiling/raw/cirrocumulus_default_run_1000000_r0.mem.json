@@ -1,0 +1,77 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "benchmark/tool_ceiling/shots/cirrocumulus_default_run_1000000_r0",
+  "--n",
+  "1000000",
+  "--port",
+  "8934"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 15.88,
+ "peaks": {
+  "client": {
+   "fp_peak": 1595155432,
+   "fp_lifetime_sum": 1701488648,
+   "rss_peak": 1685422080,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 3748121816,
+   "fp_lifetime_sum": 3769651088,
+   "rss_peak": 3807363072,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 117486120,
+   "fp_lifetime_sum": 117486120,
+   "rss_peak": 152109056,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5282951216,
+   "rss_peak": 5405392896,
+   "fp_lifetime_sum": 5471139736
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.21,
+   738599552
+  ],
+  [
+   4.38,
+   4964872000
+  ],
+  [
+   6.59,
+   4402278208
+  ],
+  [
+   8.74,
+   4885426128
+  ],
+  [
+   11.01,
+   4657705008
+  ],
+  [
+   13.19,
+   5218037904
+  ],
+  [
+   15.31,
+   5228900472
+  ]
+ ],
+ "ps_before": "2026-10-03T21:09:24-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n71211 446512  56.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n47413 607296   2.2 /Applications/cmux.app/Contents/MacOS/cmux\n71247  23456   1.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n57113 1836816   1.5 $HOME/.local/bin/claude\n86901 497744   1.2 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 6219  58688   0.7 $HOME/Projects/investments/.venv/bin/python3\n  626 486928   0.7 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n92291  30816   0.6 .venv/bin/python\n 4725 638464   0.5 claude\n98631 476592   0.4 $HOME/.local/bin/claude\n"
+}

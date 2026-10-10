@@ -1,0 +1,4 @@
+[     1.2s] import
+[    25.6s] load
+[   134.5s] plot_cat
+{"status": "cap", "rc": -9, "wall_s": 150.1} fp_peak=48.20GB lifetime=48.25GB

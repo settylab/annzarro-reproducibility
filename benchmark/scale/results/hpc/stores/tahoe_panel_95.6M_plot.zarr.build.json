@@ -1,0 +1,12 @@
+{
+ "n_cells": 95624334,
+ "n_genes_var": 5000,
+ "n_genes_with_values": 200,
+ "nnz": 10500473009,
+ "nnz_source": 103379294311,
+ "source": "$SCRATCH/annzarro-scale/stores_panel/n95.6M/tahoe_panel_95.6M.zarr",
+ "seconds": 475.5341205596924,
+ "x_umap_sha256": "575e8bb1efac3a69d556d129f3d44b53946501554b0122061a60766e3fda458a",
+ "x_umap_sha256_of": "raw little-endian float32 bytes of obsm/X_umap [n, 2], C order",
+ "zarr": "3.1.6"
+}

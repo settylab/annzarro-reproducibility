@@ -1,0 +1,45 @@
+version: 1
+image: m12_panel_settings_download_rds.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3)
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: 7faac18aa3608d122a092f028e05644acf7acfc5e524e8f97a28dd827b7f54fa
+proves:
+- column: share
+  mark: P
+  caption: 'iSEE 2.18.0: the view state downloads as an RDS file of panel settings; it restores only through
+    iSEE(initial=) in code, no link carries it.'
+- column: every_cell
+  mark: Y
+  caption: 'iSEE 2.18.0: the panel state shows Downsample = FALSE, the default, so every cell is drawn.'
+- column: auto_subset
+  mark: N
+  caption: 'iSEE 2.18.0: the default panel state has Downsample = FALSE, so no automatic subset is applied
+    at any size; downsampling happens only if the user ticks it'
+callouts:
+- n: 1
+  box:
+  - 262
+  - 108
+  - 218
+  - 110
+  label: 'Panel settings: include SummarizedExperiment (unticked), Download RDS'
+- n: 2
+  box:
+  - 311
+  - 233
+  - 136
+  - 22
+  label: 'initial <- list(): the state is R code for iSEE(initial=)'
+- n: 3
+  box:
+  - 342
+  - 730
+  - 460
+  - 21
+  label: 'line 32: Downsample = FALSE'

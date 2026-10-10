@@ -1,0 +1,114 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/synth/synth_tahoe_150000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_synth_run_150000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 37.94,
+ "peaks": {
+  "client": {
+   "fp_peak": 15221038792,
+   "fp_lifetime_sum": 16548175896,
+   "rss_peak": 14712176640,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 16083792928,
+   "fp_lifetime_sum": 16182326880,
+   "rss_peak": 16168910848,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 121926064,
+   "fp_lifetime_sum": 124039648,
+   "rss_peak": 160694272,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 28949826048,
+   "rss_peak": 29470228480,
+   "fp_lifetime_sum": 32730502776
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.25,
+   1041262168
+  ],
+  [
+   4.55,
+   1578018896
+  ],
+  [
+   6.82,
+   2064247512
+  ],
+  [
+   9.11,
+   2712251600
+  ],
+  [
+   11.5,
+   5231195576
+  ],
+  [
+   13.78,
+   8446297056
+  ],
+  [
+   16.09,
+   11768843824
+  ],
+  [
+   18.46,
+   18215284096
+  ],
+  [
+   20.86,
+   19338146232
+  ],
+  [
+   23.28,
+   20806809504
+  ],
+  [
+   25.64,
+   14004592928
+  ],
+  [
+   28.01,
+   21582772752
+  ],
+  [
+   30.38,
+   26397704448
+  ],
+  [
+   32.75,
+   19885734128
+  ],
+  [
+   35.15,
+   27398343888
+  ],
+  [
+   37.48,
+   16014472176
+  ]
+ ],
+ "ps_before": "2026-10-04T21:53:38-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n82395  14576  22.4 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n82334  25936  21.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n82426  20312  20.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker\n82355 264672  17.1 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n    1  34768  12.8 /sbin/launchd\n82396  14256  11.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n82400  14224  11.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  582 117488  11.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n82405  14272  10.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n82402  14256  10.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

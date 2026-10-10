@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "image": "h03_subset_only_show_selected.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_ucsc.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "subset",
+   "mark": "Y",
+   "caption": "UCSC Cell Browser cellbrowser 1.2.20 (2026-10-04): after a selection, 'Only show selected' restricts the plot to that subset (view only, nothing recomputed)"
+  },
+  {
+   "column": "filters",
+   "mark": "P",
+   "caption": "the subset comes from a legend selection, not a table filter"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    661,
+    68,
+    159,
+    37
+   ],
+   "label": "Only show selected: the other cells are hidden",
+   "selector": "#tpOnlySel"
+  },
+  {
+   "n": 2,
+   "box": [
+    946,
+    883,
+    251,
+    17
+   ],
+   "label": "cells shown of 8.1k",
+   "selector": "#tpCellCount"
+  },
+  {
+   "n": 3,
+   "box": [
+    246,
+    56,
+    958,
+    834
+   ],
+   "label": "only the selected cells drawn",
+   "selector": "#mpCanvas"
+  },
+  {
+   "n": 4,
+   "box": [
+    538,
+    68,
+    123,
+    37
+   ],
+   "label": "Hide selected",
+   "selector": "#tpHideSel"
+  }
+ ]
+}

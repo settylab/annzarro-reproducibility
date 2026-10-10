@@ -1,0 +1,21 @@
+version: 1
+image: 05_cell_hover.jpg
+tool: single-cell-portal
+software: Single Cell Portal (singlecell.broadinstitute.org; build of 2026-10-03)
+data: SCP1671, human lactation (49,310 cells; All Cells UMAP 48,478 drawn)
+url: https://singlecell.broadinstitute.org/single_cell/study/SCP1671
+captured: '2026-10-03'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: headless Playwright session of 2026-10-03, script not kept (see notes/comparison/single-cell-portal.md,
+  Focus section)
+source: manual
+image_sha256: 1b0afb6ad5b45b5098f924d46d79861c8bcb6ce6a251665679c25193705ce8e0
+proves:
+- column: focus
+  mark: N
+  caption: 'Single Cell Portal: hovering a cell shows only a label (coordinates, cell name, cell type); nothing
+    else on the page reacts.'
+callouts:
+- n: 1
+  box: [294, 404, 214, 60]
+  label: 'hover label: (-9.184, -0.729) BM13_6wk_r1_... GPMNB macrophages'

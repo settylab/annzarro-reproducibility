@@ -1,0 +1,13 @@
+# Python environment used for the Procedure's data preparation (data_prep/VALIDATION.md, 2026-10-01)
+# Recorded 2026-10-06T05:03Z from the repo's .venv: python -c 'importlib.metadata.version(...)'
+python 3.11.11
+anndata 0.12.19
+zarr 3.1.6
+numpy 2.4.6
+scipy 1.17.1
+pandas 2.3.3
+scanpy 1.11.5
+kompot 0.8.0
+mellon 1.7.1
+palantir 1.4.5
+jax 0.10.2

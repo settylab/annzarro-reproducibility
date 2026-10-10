@@ -1,0 +1,147 @@
+{
+ "keys": {
+  "FC_KEY": "kompot_de_Young_to_Old_fold_change",
+  "SMOOTH_KEYS": [
+   "kompot_de_Young_smoothed",
+   "kompot_de_Old_smoothed"
+  ],
+  "LFC_KEY": "kompot_de_Young_to_Old_mean_lfc",
+  "MAHAL_KEY": "kompot_de_Young_to_Old_mahalanobis",
+  "DA_Z_KEY": "kompot_da_Young_to_Old_lfc_zscore",
+  "DA_LFC_KEY": "kompot_da_Young_to_Old_lfc",
+  "IS_DE_KEY": "kompot_de_Young_to_Old_is_de",
+  "WALK_KEY": "diffusion_walk_t5"
+ },
+ "genes": {
+  "focus": {
+   "name": "S100a9",
+   "index": 2551,
+   "mahalanobis_rank": 8,
+   "mahalanobis": 10.375174379853012,
+   "mean_lfc": -0.051279275140919706,
+   "selection_score": 7,
+   "top_correlated_smoothed": [
+    {
+     "gene": "S100a8",
+     "rho": 0.992,
+     "is_de": true
+    },
+    {
+     "gene": "Ngp",
+     "rho": 0.959,
+     "is_de": true
+    },
+    {
+     "gene": "Camp",
+     "rho": 0.956,
+     "is_de": true
+    },
+    {
+     "gene": "Retnlg",
+     "rho": 0.941,
+     "is_de": true
+    },
+    {
+     "gene": "Lcn2",
+     "rho": 0.926,
+     "is_de": true
+    },
+    {
+     "gene": "Rac2",
+     "rho": 0.905,
+     "is_de": false
+    },
+    {
+     "gene": "Wfdc21",
+     "rho": 0.902,
+     "is_de": true
+    },
+    {
+     "gene": "Actb",
+     "rho": 0.888,
+     "is_de": false
+    }
+   ],
+   "top_correlated_fold_change": [
+    {
+     "gene": "S100a8",
+     "rho": 0.954,
+     "is_de": true
+    },
+    {
+     "gene": "Tmsb4x",
+     "rho": 0.781,
+     "is_de": false
+    },
+    {
+     "gene": "Actb",
+     "rho": 0.748,
+     "is_de": false
+    },
+    {
+     "gene": "Camp",
+     "rho": 0.721,
+     "is_de": true
+    },
+    {
+     "gene": "Samhd1",
+     "rho": 0.672,
+     "is_de": false
+    },
+    {
+     "gene": "Coro1a",
+     "rho": 0.66,
+     "is_de": false
+    },
+    {
+     "gene": "Lcp1",
+     "rho": 0.654,
+     "is_de": false
+    },
+    {
+     "gene": "Cd52",
+     "rho": 0.647,
+     "is_de": true
+    }
+   ],
+   "fold_change_by_celltype_top": {
+    "Treg": 0.12300000339746475,
+    "Memory B cell": 0.14000000059604645,
+    "CD8 TEM": 0.2549999952316284
+   },
+   "fold_change_by_celltype_bottom": {
+    "HSC": -1.2020000219345093,
+    "Non Classical Monocyte": -0.20200000703334808,
+    "Naive CD8 T cell": -0.16699999570846558
+   }
+  },
+  "alternative": {
+   "name": "H2-Q7",
+   "index": 14400,
+   "mahalanobis_rank": 1
+  }
+ },
+ "cells": {
+  "HSC": {
+   "name": "HSPC_Old_1#GAAGCCCGTGGCTCTG-1",
+   "index": 2089,
+   "celltype": "HSC",
+   "age": "Old",
+   "da_zscore": 10.99,
+   "celltype_median_da_zscore": 10.99,
+   "walk_mass_in_own_celltype": 0.907,
+   "fold_change_of_gene": -1.35
+  },
+  "Monocyte": {
+   "name": "Mature_Young_2#TCAATTCAGTGAGGCT-1",
+   "index": 4236,
+   "celltype": "Monocyte",
+   "age": "Young",
+   "da_zscore": -3.34,
+   "celltype_median_da_zscore": -2.98,
+   "walk_mass_in_own_celltype": 0.886,
+   "fold_change_of_gene": -0.017
+  }
+ },
+ "celltype_column": "highres_celltype"
+}

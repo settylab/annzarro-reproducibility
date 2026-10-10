@@ -1,0 +1,45 @@
+version: 1
+image: m07_filters_panel.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0 (macOS universal, start page reads 1.5.0-dev)
+data: bm_demo.h5ad (8,090 cells x 16,285 genes; obsp kept)
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/manivault_checklist.md (run by hand in a computer-use desktop session; log: notes/comparison/demos/manivault/session_notes.txt)'
+source: manual
+image_sha256: f3abe81e3136128742d4cf1fb6c4f3c9e10482a8143244be1b177de4355f87ff
+proves:
+- column: filters
+  mark: N
+  caption: No filter panel masks plots by obs category or value; the closest control is the Subset popup (Subset
+    name, Source data, Create subset), shown open.
+- column: selection
+  mark: Y
+  caption: 'Window shot with true colours: the lasso selection in the UMAP view (left, red) is highlighted in the
+    FA view (right, red).'
+- column: subset
+  mark: Y
+  caption: 'Subset popup: ''Create subset'' turns the current selection into a new dataset.'
+callouts:
+- n: 1
+  box:
+  - 290
+  - 180
+  - 640
+  - 265
+  label: Subset popup (the only filter-like control)
+- n: 2
+  box:
+  - 30
+  - 760
+  - 240
+  - 190
+  label: selection in the UMAP view
+- n: 3
+  box:
+  - 750
+  - 980
+  - 230
+  - 300
+  label: same cells in the FA view

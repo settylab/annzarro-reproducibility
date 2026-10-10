@@ -1,0 +1,147 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "napari_task.py",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first10000000.zarr",
+  "benchmark/tool_ceiling/shots/napari_allpoints_run_10000000_r0",
+  "--n",
+  "10000000",
+  "--all-points"
+ ],
+ "status": "cap",
+ "rc": -9,
+ "wall_s": 40.1,
+ "peaks": {
+  "proc": {
+   "fp_peak": 51570988256,
+   "fp_lifetime_sum": 51713447208,
+   "rss_peak": 50521391104,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 51570988256,
+   "rss_peak": 50521391104,
+   "fp_lifetime_sum": 51713447208
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8978840
+  ],
+  [
+   1.42,
+   202851288
+  ],
+  [
+   2.82,
+   1133168800
+  ],
+  [
+   4.22,
+   2764180912
+  ],
+  [
+   5.62,
+   4914173064
+  ],
+  [
+   7.05,
+   12840610352
+  ],
+  [
+   8.44,
+   17401739016
+  ],
+  [
+   9.83,
+   17401739016
+  ],
+  [
+   11.23,
+   17746147584
+  ],
+  [
+   12.61,
+   17319393536
+  ],
+  [
+   13.99,
+   31647572232
+  ],
+  [
+   15.39,
+   34559093064
+  ],
+  [
+   16.78,
+   32629744600
+  ],
+  [
+   18.18,
+   25861361896
+  ],
+  [
+   19.57,
+   26886230800
+  ],
+  [
+   20.95,
+   26986943320
+  ],
+  [
+   22.36,
+   19150289824
+  ],
+  [
+   23.77,
+   19142933408
+  ],
+  [
+   25.17,
+   32792978032
+  ],
+  [
+   26.58,
+   44575687536
+  ],
+  [
+   27.97,
+   32493117872
+  ],
+  [
+   29.37,
+   43529076872
+  ],
+  [
+   30.76,
+   27553698912
+  ],
+  [
+   32.15,
+   27689588096
+  ],
+  [
+   33.54,
+   27992479152
+  ],
+  [
+   34.94,
+   28474431544
+  ],
+  [
+   36.32,
+   31540763760
+  ],
+  [
+   37.72,
+   31577021672
+  ],
+  [
+   39.11,
+   45724501088
+  ]
+ ],
+ "ps_before": "2026-10-05T11:44:50-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n37026 123712  99.0 $HOME/Projects/investments/.venv/bin/python3\n 1191 1234832   7.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/corespotlightd\n54712  20704   6.1 benchmark/tool_ceiling/.venv/bin/python\n 6219  59792   2.0 $HOME/Projects/investments/.venv/bin/python3\n57113 2905024   1.7 $HOME/.local/bin/claude\n  863  22352   1.6 /System/Library/PrivateFrameworks/ModelCatalogRuntime.framework/Versions/A/modelcatalogd\n 7890 220192   1.2 /System/Library/ExtensionKit/Extensions/TGOnDeviceInferenceProviderService.appex/Contents/MacOS/TGOnDeviceInferenceProviderService\n92291  30992   0.5 .venv/bin/python\n54614 313328   0.5 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n 1031  89328   0.4 /usr/sbin/usernoted\n",
+ "others_at_start": []
+}

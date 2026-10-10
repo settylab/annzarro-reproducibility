@@ -1,0 +1,10 @@
+{
+ "measured_commit": "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+ "measured_tree": "bb2ace6d4f0078c41738dabd1bb6f64de15771ca",
+ "tag": "v0.4.0",
+ "tag_commit": "49e2a1962d30d9adccbf5093f7d199b42b2bce12",
+ "tag_tree": "bb2ace6d4f0078c41738dabd1bb6f64de15771ca",
+ "same_tree": true,
+ "note": "Every *_v040 row (browser_v040*, http_v040, scale/sparse/sweep_v040) was measured on the v0.4.0 release candidate 3bdeb09 (worktree $ANNZARRO_SRC whose tree is identical to the v0.4.0 tag's. Environment entries record 3bdeb09 and tag null; this file maps them to the tag.",
+ "checked_utc": "2026-10-06T06:51:49Z"
+}

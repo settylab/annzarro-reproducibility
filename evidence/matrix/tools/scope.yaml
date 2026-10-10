@@ -1,0 +1,800 @@
+# SCope: Fig. 1c marks and their evidence.
+# Seeded by evidence/tools/import_notes.py from notes/comparison/scope.md and
+# figures/fig_comparison.py; edit this file from now on (schema: evidence/README.md).
+id: scope
+name: SCope
+figure:
+  row: 11
+  label: SCope
+  largest_documented: 568k (Fly Cell Atlas)
+notes: notes/comparison/scope.md
+cells:
+  cells:
+    reason: >-
+      The loom's col_graphs (the obsp analogue) are never read; colour sources are genes, regulons, annotations,
+      clusterings and metrics.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The Coordinates menu lists stored embeddings only: Expression tSNE, PCA, Diffusion Map, Expression UMAP, AUCell UMAP, CCA. Query types are all features, gene, regulon and cluster. No graph or pairwise entry. *Steps:* Gene page; click "Expression tSNE ▾" under Settings → Coordinates; click "all features" next to the red search box. *Evidence:* [m04 coordinates](screens/scope/m04_slots_coordinates_menu.jpg), [m04 query types](screens/scope/m04_slots_feature_type_menu.jpg)
+
+      **Source and docs.** Loom's pairwise slots (`col_graphs`, analogue of obsp) are never read: `grep -rn col_graphs opt/scopeserver` returns nothing. Colour sources are genes, regulons, annotations, clusterings, metrics (`SC src/proto/s.proto#L20-L47` lists all RPCs).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m04_slots_coordinates_menu.jpg
+      label: m04 coordinates
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m04_slots_feature_type_menu.jpg
+      label: m04 query types
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/proto/s.proto
+      lines: 20-47
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/proto/s.proto#L20-L47
+      label: 'SC src/proto/s.proto L20-47: the data-server RPCs; none returns a graph'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  genes:
+    reason: The loom's row_graphs are never read; query types are gene, regulon and cluster.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Query types are gene, regulon and cluster (plus "all features"); no gene-pair relation. *Steps:* As above, query-type menu. *Evidence:* [m04 query types](screens/scope/m04_slots_feature_type_menu.jpg)
+
+      **Source and docs.** Same; `row_graphs` never read.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m04_slots_feature_type_menu.jpg
+      label: m04 query types
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/proto/s.proto
+      lines: 20-47
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/proto/s.proto#L20-L47
+      label: 'SC src/proto/s.proto L20-47: the data-server RPCs; none returns a graph'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  focus:
+    reason: >-
+      A regulon or gene pick re-drives several viewers (feature colouring) and there is no focused cell
+      or relation row, so N by the strict definition.
+    detail: |-
+      **Focus, checked in the running app.** The Regulon page is the strongest (a2) case among these tools, one regulon re-driving three viewers, but it is a feature column, not a row of a cell x cell or gene x gene relation, so N.
+
+      **Source and docs.** Picking a gene colours the active viewer and fills the right sidebar (gene info, cluster markers); on the Compare page the shared query colours every display. No focused-cell concept, and a gene pick does not re-query other panel types. Same standard as CELLxGENE N. A reviewer could argue P for the Compare page. Demo: open the FCA loom, search `elav`.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1016/j.cell.2018.05.057
+      label: Davie et al. 2018, Cell 174(4):982-998.e20
+      where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases'''
+      quote: >-
+        Different analyses are available such as simultaneous display of up to three genes, with optional
+        log and CPM normalizations
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Gene colouring (RGB up to three genes), which the strict definition excludes.
+    - kind: screenshot
+      path: notes/comparison/screens/scope/01_loaded.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/scope/02_regulon_pick_recolours_three_viewers.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/scope/03_lasso_attempt_points_vanish_no_selection.jpg
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/common/Viewer.jsx
+      lines: 939-940
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/common/Viewer.jsx#L939-L940
+      label: 'SC Viewer.jsx L939-940: viewers query features and annotations, not relations'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  slots:
+    reason: >-
+      Reads loom per-cell content only (main matrix, embeddings, annotations, regulons, clusterings);
+      no layers or graphs, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Per-cell loom content only: embeddings (Coordinates), genes, regulons, clusters. No layers, no col/row graphs. *Steps:* As row 1. *Evidence:* [m04 coordinates](screens/scope/m04_slots_coordinates_menu.jpg), [m04 query types](screens/scope/m04_slots_feature_type_menu.jpg)
+
+      **Source and docs.** Not AnnData. From loom it reads the main matrix (`SC opt/scopeserver/dataserver/utils/loom.py#L776-L777`), column attributes (annotations, metrics, embeddings `Embeddings_X/Y`, clusterings, regulon AUC `#L842-L850`) and row attributes (genes, `ClusterMarkers_*` `#L1009-L1026`, regulons). No layers, no col/row graphs.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m04_slots_coordinates_menu.jpg
+      label: m04 coordinates
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m04_slots_feature_type_menu.jpg
+      label: m04 query types
+    - kind: paper
+      url: https://doi.org/10.1016/j.cell.2018.05.057
+      label: Davie et al. 2018, Cell 174(4):982-998.e20
+      where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases''; Fig. 7A legend'
+      quote: >-
+        a HDF5-based data file that contains a raw or normalized gene expression matrix for a dataset
+        with t-SNE coordinates but can contain extra annotation
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Loom, not AnnData; matrix plus embeddings, annotations, clusters, regulons. No pairwise slots
+        mentioned.
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: opt/scopeserver/dataserver/utils/loom.py
+      lines: 776-777
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/opt/scopeserver/dataserver/utils/loom.py#L776-L777
+      label: 'SC loom.py L776-777: one gene row of the main matrix'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: P
+  remote:
+    reason: Datasets are uploaded as .loom files into a server session; there is no URL, S3 or GCS input.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Public session: server-side "Session Looms"; the welcome text says datasets are uploaded in user sessions as `.loom` files. A fresh user session shows only "Upload new dataset +" (visible in m12 reopened). No URL, S3 or GCS input. *Steps:* Open `#/Wouters_Human_Melanoma/*/welcome`; open a permalink without the session UUID (new session). *Evidence:* [m06](screens/scope/m06_remote_upload_only.jpg), [m12 reopened](screens/scope/m12_share_permalink_reopened.jpg)
+
+      **Source and docs.** Files are local paths on the server; users upload `.loom` into a session (kept 5 days, README). No s3/gcs/fsspec/boto in `opt/scopeserver` (grep).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m06_remote_upload_only.jpg
+      label: m06
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m12_share_permalink_reopened.jpg
+      label: m12 reopened
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: opt/scopeserver/dataserver/utils/loom_file_handler.py
+      lines: 32-34
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/opt/scopeserver/dataserver/utils/loom_file_handler.py#L32-L34
+      label: 'SC loom_file_handler.py L32-34: looms opened from the server''s disk'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  spatial:
+    reason: Coordinates are stored embeddings only; there is no spatial mode anywhere in client, server
+      or docs.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Coordinates are the six stored embeddings; nothing spatial. N: no spatial view to show. *Steps:* As row 1. *Evidence:* [m04 coordinates](screens/scope/m04_slots_coordinates_menu.jpg)
+
+      **Source and docs.** No spatial mode or "spatial" anywhere in client, server, README or CHANGELOG (grep). Any 2D coordinates could be stored as an embedding, but that is not documented as spatial.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m04_slots_coordinates_menu.jpg
+      label: m04 coordinates
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/common/Viewer.jsx
+      lines: 344-347
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/common/Viewer.jsx#L344-L347
+      label: 'SC Viewer.jsx L344-347: viewer layers (main, label, lasso, trajectory)'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  selection:
+    reason: >-
+      A lasso in one viewer recolors the same cells in the other linked viewers (3 of 3 on the Regulon page),
+      and on the Compare page it marks the same cells in an annotation-filtered display.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m08_selection_APP_regulon_lasso_linked_3_viewers.jpg
+      label: a lasso of 25 cells recolored in all 3 Regulon viewers
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m08_selection_APP_regulon_eye_hides_in_3_viewers.jpg
+      label: eye icon hides the selection in all 3 viewers
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m08_selection_APP_regulon_threshold_recolors_only.jpg
+      label: AUC threshold recolors, hides nothing (P route)
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m08_selection_APP_compare_lasso_two_displays.jpg
+      label: Compare page, a lasso in the all-cells display marks the same cells in the first-half display
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m08_selection_APP_gene_page_no_selection.jpg
+      label: selections are per page
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/common/API.jsx
+      lines: 1043-1047
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/common/API.jsx#L1043-L1047
+      label: >-
+        viewer selections are kept per page in the shared BackendAPI (getViewerSelections / addViewerSelection)
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/common/Viewer.jsx
+      lines: '180'
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/common/Viewer.jsx#L180
+      label: every viewer subscribes to selection changes (onViewerSelectionsChange)
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/common/Viewer.jsx
+      lines: 595-599
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/common/Viewer.jsx#L595-L599
+      label: repaintLassoSelections highlights the selected lasso points in this viewer
+    checked:
+      date: '2026-10-09'
+      by: selection-test session
+      how: running app
+    detail: |-
+      **Observed 2026-10-09 in the running app** (SCope 1.8.2, 9ae5207, local Docker image scope:1.8.2-9ae5207-final, frontend http://127.0.0.1:55850/, SCope_Test.loom with 100 cells; Google Chrome 155.0.8059.39 driven through the Claude in Chrome extension). The viewers draw in real Chrome; they did not in automated headless Chromium (0 WebGL draw calls on 2026-10-05).
+
+      Regulon page, three linked viewers. A lasso around one dot group gave "Selection 1 (25 cells)", and the same 25 cells turned green in all 3 viewers. The overlap table read Cluster set 0 / Unannotated Cluster 2 = 25, Cluster set 1 / Unannotated Cluster 2 = 7, Cluster set 1 / Unannotated Cluster 3 = 6 (page 1 of 2). The eye icon hides the selection in all 3 viewers and a second click restores it.
+
+      Compare page, annotation "Half cells". Drag and drop worked: First Half to display 1 (fewer dots), First plus Second Half to display 3 (all cells, OR superposition). A lasso in display 3 gave "Selection 1 (25 cells)"; the same group is magenta in display 3 and in display 1, where only its first-half cells are colored (about 15 dots, an estimate, not counted).
+
+      The AUC threshold filter ("AUC threshold: 0.3577 (matched points: 48 / 100)") recolors red and grey and hides nothing, so that route highlights without restricting. Selections are per page: the Gene page lists none and the Regulon page shows Selection 1 again on return. The selection magnifier opens a table of Cell ID, expression, AUC, annotation and clustering with Download; no sign-in appeared. Saving a selection as a clustering needing ORCID login is from source only, not verified.
+
+      **Deviations.** (a) Both lassos were drawn with synthetic PointerEvents (pointerdown, 16 pointermoves, pointerup) dispatched on the viewer canvas, because the extension has no raw mouse down, move and up; the selection, overlap table and recoloring are SCope's own response. (b) The screenshots are JPG viewport captures from the extension, not screencapture PNGs. (c) Not done: a second lasso in another viewer, moving the threshold handle, Compare dot counts. The old "0 WebGL draw calls" note applies to automated Chromium only. The code references below say why it works: selections are kept per page and every viewer repaints them.
+
+      Record and harness: notes/comparison/demos/scope/selection/record.txt.
+    mark: Y
+  annot:
+    reason: >-
+      Signed-in (ORCID) users rename clusters, add collaborative annotations with voting and save lasso
+      clusterings, written back to the loom.
+    detail: |-
+      **Checked in the running app (2026-10-04).** "Authenticate with ORCID" in the header. Annotation and voting need it; not exercised (no account). *Steps:* Header, right of the link icon. *Evidence:* [m09](screens/scope/m09_annot_orcid_login_required.jpg)
+
+      **Source and docs.** Rename a cluster (`loom.py#L118`), ORCID-signed collaborative annotations with voting (`#L149`, `#L227`), new clustering from lasso selections (`#L371`); all written back to the loom's `MetaData` attribute in `r+` mode (`#L110-L114`). Requires ORCID login on the public site.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m09_annot_orcid_login_required.jpg
+      label: m09
+    - kind: paper
+      url: https://doi.org/10.1126/science.abk2432
+      label: Li et al. 2022 (Fly Cell Atlas), Science 375(6584):eabk2432
+      where: '''Crowd-based cell type annotation by tissue experts'''
+      quote: >-
+        We developed a consensus-voting strategy within the SCope web application (https://flycellatlas.org/scope),
+        where curators annotated clusters at multiple resolutions
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1126/science.abk2432
+      label: Li et al. 2022 (Fly Cell Atlas), Science 375(6584):eabk2432
+      where: Discussion
+      quote: >-
+        the development of a crowd-annotation platform with voting, comments and references via SCope
+        (https://flycellatlas.org/scope)
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: opt/scopeserver/dataserver/utils/loom.py
+      lines: '118'
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/opt/scopeserver/dataserver/utils/loom.py#L118
+      label: 'SC loom.py L118: rename_annotation'
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: opt/scopeserver/dataserver/utils/loom.py
+      lines: '149'
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/opt/scopeserver/dataserver/utils/loom.py#L149
+      label: 'SC loom.py L149: add_collab_annotation'
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: opt/scopeserver/dataserver/utils/loom.py
+      lines: 110-114
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/opt/scopeserver/dataserver/utils/loom.py#L110-L114
+      label: 'SC loom.py L110-114: metadata written to the loom in r+ mode'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  de:
+    reason: Cluster markers are precomputed loom attributes; no control computes DE in the session.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Query types offer no DE, and no control computes markers; markers shown in the sidebar are precomputed `ClusterMarkers_*` loom attributes (code). *Steps:* Query-type menu; sidebar after picking a cluster. *Evidence:* [m04 query types](screens/scope/m04_slots_feature_type_menu.jpg)
+
+      **Source and docs.** Cluster markers are precomputed row attributes `ClusterMarkers_<id>` read from the loom (`loom.py#L1009-L1026`). The only in-session computation is AUCell gene-set scoring (Davie et al. 2018, main text, section "SCope: Cloud-Based Exploration of Single-Cell Atlases") and cluster overlap of a lasso selection (`loom.py#L410`). Not DE.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m04_slots_feature_type_menu.jpg
+      label: m04 query types
+    - kind: paper
+      url: https://doi.org/10.1016/j.cell.2018.05.057
+      label: Davie et al. 2018, Cell 174(4):982-998.e20
+      where: Results, 'Single-Cell RNA-Seq of the Adult Brain Identifies Discrete Cell Types'
+      quote: >-
+        We provide all clustering information, and markers for each cluster, through an online resource
+        called SCope.
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Markers are precomputed (Seurat, STAR Methods 'Seurat') and served, not computed in the session.
+    - kind: paper
+      url: https://doi.org/10.1016/j.cell.2018.05.057
+      label: Davie et al. 2018, Cell 174(4):982-998.e20
+      where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases'''
+      quote: >-
+        Finally, gene sets can be provided that are scored with AUCell (Aibar et al., 2017) to visualize
+        which cells are enriched for the gene set.
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: In-session gene-set scoring, not differential expression.
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: opt/scopeserver/dataserver/utils/loom.py
+      lines: 1009-1012
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/opt/scopeserver/dataserver/utils/loom.py#L1009-L1012
+      label: 'SC loom.py L1009-1012: ClusterMarkers_<id> read from the loom'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  image:
+    reason: The viewer has main, label, lasso and trajectory layers only; no image option.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The viewer toolbar has lasso and reset-zoom only; Settings (coordinates, log/CPM, point size/alpha, labels, mouse events) has no image option. *Steps:* Gene page; look at the toolbar left of the viewer and the Settings panel. *Evidence:* [m11](screens/scope/m11_image_m13_export_viewer_toolbar.jpg)
+
+      **Source and docs.** No image layer; PIXI stage has main, label, lasso, trajectory layers only (`SC src/components/common/Viewer.jsx#L344-L347`).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m11_image_m13_export_viewer_toolbar.jpg
+      label: m11
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/common/Viewer.jsx
+      lines: 344-347
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/common/Viewer.jsx#L344-L347
+      label: 'SC Viewer.jsx L344-347: viewer layers, no image layer'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  share:
+    reason: >-
+      "Get permalink" serialises dataset, page, coordinates, features and settings into a bit.ly link
+      that restores the view.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The link icon in the header produced `https://bit.ly/4AOpMg6`, with the option "Include session UUID in permalink?". Opening it in a new page restored the gene page with `MITF` in the red query and the "F1: MITF" tab, in a new session because the UUID was not included. The viewer was still loading after 18 s headless. *Steps:* Pick a gene; click the link icon right of About; open the bit.ly link in a private window. *Evidence:* [m12](screens/scope/m12_share_permalink.jpg), [m12 reopened](screens/scope/m12_share_permalink_reopened.jpg)
+
+      **Source and docs.** "Get permalink" serialises loom, page, coordinates, features, gene/regulon, sprite settings etc. into the URL and shortens it with bit.ly (`SC src/components/AppHeader.jsx#L422-L441`, keys `SC src/components/common/API.jsx#L133-L145`). Optional session UUID gives the recipient read/write access to the session (tooltip `AppHeader.jsx#L279`).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m12_share_permalink.jpg
+      label: m12
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m12_share_permalink_reopened.jpg
+      label: m12 reopened
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/AppHeader.jsx
+      lines: 422-441
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/AppHeader.jsx#L422-L441
+      label: 'SC AppHeader.jsx L422-441: getPermalink'
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/common/API.jsx
+      lines: 133-145
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/common/API.jsx#L133-L145
+      label: 'SC API.jsx L133-145: state keys in the permalink'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  export:
+    reason: The viewer toolbar and Settings offer no image download; the only downloads are data (a sub-loom).
+    detail: |-
+      **Checked in the running app (2026-10-04).** The toolbar and Settings offer no PNG, SVG or PDF download (same place as row 11). *Steps:* As row 11. *Evidence:* [m11](screens/scope/m11_image_m13_export_viewer_toolbar.jpg)
+
+      **Source and docs.** No image export: no `toDataURL`, `toBlob`, `saveAs`, PIXI extract, PNG/SVG/PDF download in `src/` (grep). Downloads offered are data only ("Download subset of active .loom", `SC src/components/common/ViewerSidebar.jsx#L170-L200`).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m11_image_m13_export_viewer_toolbar.jpg
+      label: m11
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/common/ViewerSidebar.jsx
+      lines: 170-200
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/common/ViewerSidebar.jsx#L170-L200
+      label: 'SC ViewerSidebar.jsx L170-200: data downloads only'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  desktop:
+    reason: >-
+      No usable desktop app: the last desktop release is from 2019, and its maintainers say the apps are
+      likely non-functional on current operating systems.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation from GitHub releases: newest desktop binaries are the 2019 v1.3.5 CI prerelease (macOS x64, Linux x64). Nothing to show in the web app. *Steps:* https://github.com/aertslab/SCope/releases
+
+      **Source and docs.** Electron packaging scripts exist (`SC package.json#L20-L23`). The latest binaries are prerelease "SCope_macOS_x64_v1.3.5_CI" (2019-02-08; macOS x64 .dmg and Linux x64 zip, ~250 MB) on [releases](https://github.com/aertslab/SCope/releases); no Windows build; README says the app still needs Node.js > v9 installed. Exists but stale by 7 major-ish versions.
+
+      Qualified by evidence-curator's gap capture (2026-10-04, shot g01): the newest desktop release (v1.3.5 CI, 2019-02-08) says "App development has currently halted and due to OS updates, these apps are likely to be non-functional." That supports P and arguably N.
+
+      Ruled N by comparison-auditor (ccdc64c, 2026-10-04): no release since 2019 plus the maintainers' note.
+    evidence:
+    - kind: docs
+      url: https://github.com/aertslab/SCope/releases
+      label: releases
+      checked: '2026-10-04'
+    - kind: paper
+      url: https://doi.org/10.1016/j.cell.2018.05.057
+      label: Davie et al. 2018, Cell 174(4):982-998.e20
+      where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases''; Fig. 7A legend'
+      quote: >-
+        SCope can also be easily installed on a local computer, server, or cloud-based infrastructure
+        using a Singularity container (Kurtzer et al., 2017).
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Local install is a server container, i.e. server setup by the user. The paper never mentions the
+        Electron build on which the notes' P rests.
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: package.json
+      lines: 20-23
+      url: https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/package.json#L20-L23
+      label: 'SC package.json L20-23: electron-packager scripts'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    - evidence/screens/gaps/capture_scope.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  hosted:
+    reason: scope.aertslab.org is one public deployment serving many users with per-user sessions and
+      uploads.
+    detail: |-
+      **Checked in the running app (2026-10-04).** One public deployment; the header reads "Your session will be deleted in a year" (public session) or "in 5 days" (fresh user session, m12 reopened), plus "Get new session". *Steps:* Header of any page. *Evidence:* [m12 reopened](screens/scope/m12_share_permalink_reopened.jpg)
+
+      **Source and docs.** scope.aertslab.org serves many users with per-user session UUIDs and uploads ("Your session will be deleted in ..." header, `AppHeader.jsx#L289-L302`); Davie et al. describe cloud/Singularity deployment.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m12_share_permalink_reopened.jpg
+      label: m12 reopened
+    - kind: paper
+      url: https://doi.org/10.1016/j.cell.2018.05.057
+      label: Davie et al. 2018, Cell 174(4):982-998.e20
+      where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases'''
+      quote: >-
+        The single-cell atlas of the Drosophila brain, as presented here, is available through a user-friendly
+        online application called SCope (http://scope.aertslab.org).
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1016/j.cell.2018.05.057
+      label: Davie et al. 2018, Cell 174(4):982-998.e20
+      where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases'''
+      quote: In addition, users can also upload their own .loom files.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Uploads into the public deployment; supports one deployment serving many users. Not a remote-store
+        read.
+    - kind: paper
+      url: https://doi.org/10.1016/j.cell.2018.05.057
+      label: Davie et al. 2018, Cell 174(4):982-998.e20
+      where: Discussion
+      quote: >-
+        the provided containers make it easy for groups and institutions to deploy this platform using
+        their own servers or cloud-computing solutions.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1126/science.abk2432
+      label: Li et al. 2022 (Fly Cell Atlas), Science 375(6584):eabk2432
+      where: Data and materials availability
+      quote: >-
+        All data are available for user-friendly querying via https://flycellatlas.org/scope and for custom
+        analyses at https://flycellatlas.org/asap.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/AppHeader.jsx
+      lines: 289-302
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/AppHeader.jsx#L289-L302
+      label: 'SC AppHeader.jsx L289-302: per-user session expiry'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    - evidence/screens/gaps/capture_scope.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  static:
+    reason: Data come from a Python gRPC server over a websocket; nothing works as static files.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Data arrive over a websocket to the server's protobuf/gRPC endpoint (`wss://scope.aertslab.org/protobuf/`); the page itself is served by `SimpleHTTP/0.6 Python/3.7.4`. *Steps:* DevTools → Network → WS; `curl -sI https://scope.aertslab.org`.
+
+      **Source and docs.** Requires the Python gRPC data server (`opt/scopeserver`); client calls it over a websocket bind server.
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    - evidence/screens/gaps/capture_scope.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    evidence:
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/proto/s.proto
+      lines: 20-47
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/proto/s.proto#L20-L47
+      label: 'SC src/proto/s.proto L20-47: every data request is a server RPC'
+    mark: N
+  lazy:
+    reason: >-
+      The server keeps the loom open and reads one gene row per request (about 12 kB of websocket frames
+      for 4,322 cells); attributes are read whole.
+    detail: |-
+      **Checked in the running app (2026-10-04).** After the MITF pick the server pushed 18 websocket frames over `wss://scope.aertslab.org/protobuf/`, the largest 12,487 bytes. That is the order of one value per cell for 4,322 cells; the matrix is never sent. The viewer stayed empty headless, so the colouring was not seen; the one-row server read is in code (`loom.py#L776-L777`). *Steps:* Gene page; DevTools → Network → WS; search `MITF`, pick the gene; read frame sizes. *Evidence:* [m05](screens/scope/m05_lazy_gene_MITF.jpg) + observation
+
+      **Source and docs.** Server-side: `loompy.connect` keeps the HDF5 file open (`SC opt/scopeserver/dataserver/utils/loom_file_handler.py#L34`) and a gene request slices one row, `self.loom_connection[self.get_genes() == gene_symbol, :][0]` (`SC opt/scopeserver/dataserver/utils/loom.py#L776-L777`). Caveat: CPM normalisation without a stored `nUMI` sums the whole matrix (`#L760-L772`, the code's own TODO says it is slow at 1M rows). Browser always receives full-length per-cell vectors.
+
+      **Scale group.** **Server process** (Python, loompy/h5py on HDF5 on server disk): gene rows read on demand; cell attributes (coordinates, annotations, regulon AUC) read whole per request. **Browser** holds full per-cell arrays for coordinates and the current colour vectors. Evidence: `loom_file_handler.py#L34`; `loom.py#L776-L777`, `#L906-L931`, `#L842-L850`.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m05_lazy_gene_MITF.jpg
+      label: m05
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: opt/scopeserver/dataserver/utils/loom.py
+      lines: 776-777
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/opt/scopeserver/dataserver/utils/loom.py#L776-L777
+      label: 'SC loom.py L776-777: one gene row read per request'
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: opt/scopeserver/dataserver/utils/loom_file_handler.py
+      lines: 32-34
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/opt/scopeserver/dataserver/utils/loom_file_handler.py#L32-L34
+      label: 'SC loom_file_handler.py L32-34: loompy.connect keeps the file open'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  every_cell:
+    reason: >-
+      Every cell becomes one PIXI sprite with no downsampling (seen 2026-10-03; not re-observed on 2026-10-04,
+      when the headless viewer did not draw).
+    detail: |-
+      **Checked in the running app (2026-10-04).** Today: viewer still "Loading" after 65 s headless. 2026-10-03: all 4,322 cells drawn on Expression tSNE. *Steps:* Open `https://scope.aertslab.org/#/Wouters_Human_Melanoma/Wouters_Human_Melanoma%2F10_Baselines_filteredRegulons.loom/gene` in a desktop browser. *Evidence:* [m01](screens/scope/m01_plots_render_tsne.jpg) (loading), [01 from focus check](screens/scope/01_loaded.jpg)
+
+      **Scale group.** **All cells drawn**, no downsampling, binning or density mode. Every coordinate becomes one PIXI sprite in a `ParticleContainer` (WebGL with canvas fallback via `autoDetectRenderer`). Optional sort so expressing cells draw on top. Evidence: `SC src/components/common/Viewer.jsx#L1020-L1033` (loop adds one sprite per cell; container resized to n), `#L334`, `#L358-L365`, sort `#L1291-L1307`. Demo: 567,950 sprites.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m01_plots_render_tsne.jpg
+      label: m01
+    - kind: screenshot
+      path: notes/comparison/screens/scope/01_loaded.jpg
+      label: 01 from focus check
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/common/Viewer.jsx
+      lines: 1020-1033
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/common/Viewer.jsx#L1020-L1033
+      label: 'SC Viewer.jsx L1020-1033: one sprite per cell'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  subset:
+    reason: >-
+      The Compare page shows only cells matching chosen annotation values; coordinates for all cells are
+      still loaded.
+    detail: |-
+      **Scale group.** **Yes, by annotation**: Compare page shows only cells matching chosen annotation values per display (OR/AND); lasso selections can be saved as a new clustering or downloaded as a sub-loom. No random downsample slider, no subset-and-recompute embedding. Evidence: `Viewer.jsx#L939-L940`; `GServer.py#L333-L343`, `#L695-L717` (downloadSubLoom by cluster or `cellIndices`).
+
+      **Re-scored under X8 (2026-10-04)**: The Compare page shows only cells matching chosen annotation values; coordinates for all cells are still loaded.
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    evidence:
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/common/Viewer.jsx
+      lines: 939-940
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/common/Viewer.jsx#L939-L940
+      label: 'SC Viewer.jsx L939-940: annotation filter per display'
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: opt/scopeserver/dataserver/modules/gserver/GServer.py
+      lines: 695-717
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/opt/scopeserver/dataserver/modules/gserver/GServer.py#L695-L717
+      label: 'SC GServer.py L695-717: downloadSubLoom'
+    reproduce:
+    - evidence/screens/gaps/capture_scope.py
+    mark: P
+  auto_subset:
+    na:
+      visual: no automatic subsetting in source or docs; a demo-size shot cannot show its absence at scale
+    reason: Every coordinate becomes one sprite; no default subsample.
+    detail: >-
+      **New column (user X8, 2026-10-04).** Every coordinate becomes one sprite; no default subsample.
+      Evidence is the same as for every cell drawn, which shows how the default view is drawn.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m01_plots_render_tsne.jpg
+      label: m01
+    - kind: screenshot
+      path: notes/comparison/screens/scope/01_loaded.jpg
+      label: 01 from focus check
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: src/components/common/Viewer.jsx
+      lines: 1020-1033
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/src/components/common/Viewer.jsx#L1020-L1033
+      label: 'SC Viewer.jsx L1020-1033: one sprite per cell'
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: N
+retired_cells:
+  filters:
+    proposed: P
+    reason: >-
+      The Compare page restricts each display to dragged annotation values (OR/AND), per display and categorical
+      only, with no table, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The Compare page offers 4 displays, Superposition OR, Configuration drag-and-drop, and annotation categories `cell_line`, `state`, `experiment` and `cell_line_experiment` to drag onto a display. Categorical only, no table. I did not complete a drag headless, so the per-display filtering is from code (`GServer.py#L333-L343`). *Steps:* Click Compare; expand an annotation; drag a value onto a display in a desktop browser. *Evidence:* [m08](screens/scope/m08_filters_compare_page.jpg)
+
+      **Source and docs.** Compare page: drag annotation values onto up to four displays, combined with OR/AND ("superposition"), and the server returns only matching cells (`SC src/components/common/Viewer.jsx#L939-L940`, `SC opt/scopeserver/dataserver/modules/gserver/GServer.py#L333-L343`, `SC opt/scopeserver/dataserver/utils/loom.py#L716`). Categorical only; no table, no numeric filters. Same level as CELLxGENE P.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scope/m08_filters_compare_page.jpg
+      label: m08
+    - kind: paper
+      url: https://doi.org/10.1016/j.cell.2018.05.057
+      label: Davie et al. 2018, Cell 174(4):982-998.e20
+      where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases''; Fig. 7B'
+      quote: >-
+        Datasets can be compared within dataset; between annotations such as genotype, replicate, or age;
+        and between dataset, including cross-species plotting of orthologous genes
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Describes the Compare page (split by annotation), not table filters; matches the notes' P.
+    - kind: code
+      repo: aertslab/SCope
+      commit: 9ae520733138f3cf4315ad1a681863fa4126cec4
+      path: opt/scopeserver/dataserver/modules/gserver/GServer.py
+      lines: 333-343
+      url: >-
+        https://github.com/aertslab/SCope/blob/9ae520733138f3cf4315ad1a681863fa4126cec4/opt/scopeserver/dataserver/modules/gserver/GServer.py#L333-L343
+      label: 'SC GServer.py L333-343: getCoordinates filters cells by annotation'
+    reproduce:
+    - notes/comparison/demos/scope/matrix_check.py
+    - notes/comparison/demos/scope/matrix_check_fix.py
+    - notes/comparison/demos/scope/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app

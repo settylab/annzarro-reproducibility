@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "image": "01_gene_mpo_on_both_embeddings.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_focus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Feature colouring, not a focus: Mpo (one column of X) colours every chosen embedding, the primary FA plot and the X_umap gallery chart"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    244,
+    60,
+    1156,
+    892
+   ],
+   "label": "primary: Mpo on X_draw_graph_fa",
+   "selector": "[data-recap='p0']"
+  },
+  {
+   "n": 3,
+   "box": [
+    247,
+    957,
+    308,
+    293
+   ],
+   "label": "gallery chart",
+   "selector": "[data-recap='p2']"
+  },
+  {
+   "n": 5,
+   "box": [
+    553,
+    957,
+    308,
+    293
+   ],
+   "label": "gallery chart",
+   "selector": "[data-recap='p3']"
+  },
+  {
+   "n": 6,
+   "box": [
+    859,
+    957,
+    308,
+    293
+   ],
+   "label": "gallery chart",
+   "selector": "[data-recap='p4']"
+  }
+ ]
+}

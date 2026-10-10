@@ -1,0 +1,195 @@
+=== tahoe_95624334 start 2026-10-07T16:03:37-07:00 host=hpc-node-04 job=10171780 mem=16384M input=$SCRATCH/annzarro-scale/scsva/inputs/tahoe_95624334 gene=MALAT1
+lscpu: failed to determine number of CPUs: /sys/devices/system/cpu/possible: No such file or directory
+              total        used        free      shared  buff/cache   available
+Mem:            376           7         136           1         232         364
+During startup - Warning messages:
+1: In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called ‘colorout’
+2: package ‘colorout’ in options("defaultPackages") was not found 
+host shim: /media absent, shinyFiles::getVolumes() -> c(Computer='/')
+Loading required package: shiny
+Loading required package: reticulate
+Loading required package: rhdf5
+Loading required package: Matrix
+Loading required package: ggplot2
+Loading required package: Cairo
+Loading required package: MASS
+Loading required package: colorRamps
+Loading required package: dichromat
+Loading required package: viridis
+Loading required package: viridisLite
+Loading required package: colourpicker
+
+Attaching package: ‘colourpicker’
+
+The following object is masked from ‘package:shiny’:
+
+    runExample
+
+Loading required package: shinydashboard
+
+Attaching package: ‘shinydashboard’
+
+The following object is masked from ‘package:graphics’:
+
+    box
+
+Loading required package: shinythemes
+Loading required package: scales
+
+Attaching package: ‘scales’
+
+The following object is masked from ‘package:viridis’:
+
+    viridis_pal
+
+Loading required package: sp
+Loading required package: extrafont
+Registering fonts with R
+Loading required package: plyr
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following object is masked from ‘package:MASS’:
+
+    select
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: ggrepel
+Loading required package: plotly
+
+Attaching package: ‘plotly’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, mutate, rename, summarise
+
+The following object is masked from ‘package:MASS’:
+
+    select
+
+The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+The following object is masked from ‘package:graphics’:
+
+    layout
+
+Loading required package: plot3D
+Loading required package: DT
+
+Attaching package: ‘DT’
+
+The following objects are masked from ‘package:shiny’:
+
+    dataTableOutput, renderDataTable
+
+Loading required package: data.table
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+Loading required package: tableHTML
+Loading required package: future
+Loading required package: future.apply
+Loading required package: shinyBS
+Loading required package: shinyjqui
+Loading required package: shinyAce
+Loading required package: gridExtra
+
+Attaching package: ‘gridExtra’
+
+The following object is masked from ‘package:dplyr’:
+
+    combine
+
+Warning in system("which gsutil", intern = T) :
+  running command 'which gsutil' had status 1
+
+Listening on http://127.0.0.1:54921
+app up after ~20s on port 54921
+23:04:15 shot 01_file_tab
+23:04:19 shot 02_file_chooser_modal
+23:04:19 shinyFiles root (from modal)  | modal: None
+23:04:24 verified {'X_coord': '/X', 'Y_coord': '/Y'}
+23:04:33 verified {'inputGenes': '/'}
+23:04:39 verified {'inputClusters': '/clusters'}
+23:04:43 shot 03_file_tab_loaded
+23:04:51 shot 04_2d_density_grid512
+23:04:54 shot 05_hover_no_tooltip
+[1] "Selected method Mean"
+[1] "Selected method Mean"
+23:05:09 shot 06_2d_gene_mean_per_bin
+23:05:12 shot 07_brush_on_bins
+[1] "Selected method Mean"
+23:05:21 shot 08_zoomed_rebinned
+[1] "Selected method Mean"
+23:06:21 shot 09_2d_groups
+23:06:26 shot 10_groups_tab
+23:06:29 shot 11_annotation_tab
+{
+ "app_ready_s": 4.02,
+ "modal_visible_text": null,
+ "load_xy_s": 6.17,
+ "load_gene_list_s": 3.08,
+ "load_groups_s": 3.59,
+ "density_draw_s": 6.14,
+ "plot1_img_natural": [
+  755,
+  700
+ ],
+ "hover_input_exists": [],
+ "gene_draw_s": 8.85,
+ "brush_input": "{\"xmin\":6.4111748949567,\"xmax\":12.797878583623,\"ymin\":-0.98712294134104,\"ymax\":4.9364724720078,\"coords_css\":{\"xmin\":302,\"xmax\":415,\"ymin\":280,\"ymax\":385},\"coords_img\":{\"xmin\":302,\"xmax\":415,\"ymin\":280,\"ymax\":385},\"img_css_ratio\":{\"x\":1,\"y\":1},\"mapping\":{\"x\":\"i\",\"y\":\"j\",\"colour\":[\"if (input$show_lege",
+ "zoom_draw_s": 7.24,
+ "groups_draw_s": 51.34,
+ "total_s": 138.33,
+ "status": "ok"
+}
+drive rc=0
+{"status": "stopped", "rc": -15, "wall_s": 167.07, "rss_peak_bytes": 6010327040, "rss_peak_gb": 5.598, "t_peak_s": 128.0, "hwm_sum_bytes": 6046560256, "hwm_sum_gb": 5.631, "n_procs_seen": 4, "cap_gb": 15.0, "timeout_s": 5400.0, "cmd": ["Rscript", "$SCRATCH/annzarro-scale/scsva/run/launch.R", "54921"], "host": "hpc-node-04", "slurm_job_id": "10171780"}
+memmon rc=0
+{
+ "status": "stopped",
+ "rc": -15,
+ "wall_s": 167.07,
+ "rss_peak_bytes": 6010327040,
+ "rss_peak_gb": 5.598,
+ "t_peak_s": 128.0,
+ "hwm_sum_bytes": 6046560256,
+ "hwm_sum_gb": 5.631,
+ "n_procs_seen": 4,
+ "cap_gb": 15.0,
+ "timeout_s": 5400.0,
+ "cmd": [
+  "Rscript",
+  "$SCRATCH/annzarro-scale/scsva/run/launch.R",
+  "54921"
+ ],
+ "host": "hpc-node-04",
+ "slurm_job_id": "10171780"
+}10171780||00:03:05|hpc-node-04
+10171780.batch||00:03:05|hpc-node-04
+10171780.extern||00:03:05|hpc-node-04
+=== end 2026-10-07T16:06:31-07:00

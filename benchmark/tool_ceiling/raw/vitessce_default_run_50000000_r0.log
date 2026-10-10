@@ -1,0 +1,7 @@
+[     1.1s] server_ready
+TimeoutError: Locator.wait_for: Timeout 1750000ms exceeded.
+Call log:
+  - waiting for get_by_text("50,000,000 cells").first to be visible
+
+[  1752.2s] done
+{"status": "error", "rc": 3, "wall_s": 1752.3} fp_peak=7.34GB lifetime=7.86GB

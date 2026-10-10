@@ -1,0 +1,808 @@
+# Single Cell Portal: Fig. 1c marks and their evidence.
+# Seeded by evidence/tools/import_notes.py from notes/comparison/single-cell-portal.md and
+# figures/fig_comparison.py; edit this file from now on (schema: evidence/README.md).
+id: single-cell-portal
+name: Single Cell Portal
+figure:
+  row: 8
+  label: Single Cell Portal
+  largest_documented: 3.18M (SCP2805)
+notes: notes/comparison/single-cell-portal.md
+cells:
+  cells:
+    reason: >-
+      Ingest reads obsm embeddings, obs metadata and one expression matrix, and Options offers no pairwise
+      entry; obsp is never read.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Options holds Clustering (embeddings), Spatial groups, Annotation (cell metadata; on SCP2510 `biosample_id`, `donor_id`, `library`, `ntx`, `ngene`, `hubType`, `type_lvl1`), Subsampling and "Filter plotted cells". No pairwise entry anywhere. *Steps:* SCP2510 Explore; open the Annotation menu. *Evidence:* [m04](screens/single-cell-portal/m04_slots_annotation_menu_SCP2510.jpg)
+
+      **Source and docs.** AnnData ingest reads embeddings from `obsm`, metadata from `obs`, expression from `X`/`.raw`/a layer ([I/ingest/anndata_.py#L73-L82](https://github.com/broadinstitute/scp-ingest-pipeline/blob/af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2/ingest/anndata_.py#L73-L82), [#L131-L164](https://github.com/broadinstitute/scp-ingest-pipeline/blob/af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2/ingest/anndata_.py#L131-L164)). `grep -rn "obsp\|varp\|varm"` over both repos' `app/`, `ingest/` finds nothing.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m04_slots_annotation_menu_SCP2510.jpg
+      label: m04
+    - kind: code
+      repo: broadinstitute/scp-ingest-pipeline
+      commit: af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2
+      path: ingest/anndata_.py
+      lines: 73-82
+      url: >-
+        https://github.com/broadinstitute/scp-ingest-pipeline/blob/af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2/ingest/anndata_.py#L73-L82
+      label: I/ingest/anndata_.py#L73-L82
+    - kind: code
+      repo: broadinstitute/scp-ingest-pipeline
+      commit: af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2
+      path: ingest/anndata_.py
+      lines: 131-164
+      url: >-
+        https://github.com/broadinstitute/scp-ingest-pipeline/blob/af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2/ingest/anndata_.py#L131-L164
+      label: '#L131-L164'
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  genes:
+    reason: >-
+      No varp is read or offered; the Correlation tab plots two genes' expression against each other (computed
+      co-expression, not a stored matrix).
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; searched Options, the gene search and the Correlation tab (it plots two genes' expression against each other, computed co-expression, not a stored matrix). *Steps:* Explore; search two genes; open Correlation.
+
+      **Source and docs.** Same search. The "Correlation" tab plots two genes' expression against each other ([C/app/javascript/components/explore/PlotTabs.jsx#L7](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/PlotTabs.jsx#L7)); that is co-expression, not a stored matrix.
+    evidence:
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/explore/PlotTabs.jsx
+      lines: '7'
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/PlotTabs.jsx#L7
+      label: C/app/javascript/components/explore/PlotTabs.jsx#L7
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    - evidence/screens/gaps/capture_single_cell_portal.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  focus:
+    reason: >-
+      Clicking a DE gene re-drives the scatter, violin and spatial panels with that gene's expression
+      (feature colouring), and no cell is ever a focus, so N by the strict definition.
+    detail: |-
+      **Focus, checked in the running app.** The DE click is (a2): one gene's expression re-drives the scatter and violin panels together (and spatial plots in studies that have them, per the code cited in the matrix row), which is N under the strict definition; no cell is ever a focus and no pairwise matrix exists.
+
+      **Source and docs.** Only feature colouring exists, which the strict definition scores N. Clicking a gene in the DE table calls `searchGenes`, which re-drives scatter, distribution and spatial panels together ([C/.../DifferentialExpressionPanel.jsx#L269-L276](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/DifferentialExpressionPanel.jsx#L269-L276)). No focused cell drives anything, and no pairwise row is read, so N. Repeat: SCP2805, Explore, open "Differential expression", click a gene.
+    evidence:
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/explore/DifferentialExpressionPanel.jsx
+      lines: 269-276
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/DifferentialExpressionPanel.jsx#L269-L276
+      label: C/.../DifferentialExpressionPanel.jsx#L269-L276
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: How SCP supports single-cell research, 'Exploring Data'
+      quote: >-
+        each point is colored according to the measured expression for a gene that the user has searched
+        for ... viewed side-by-side with cell cluster plots
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Gene feature colouring; the strict definition excludes it.
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/01_explore_default.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/02_de_gene_CD74_click_recolours_scatter.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/03_lasso_in_gene_scatter_not_in_cluster_scatter.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/04_filter_macrophage_off_both_scatters.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/05_cell_hover.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/06_de_gene_CD74_distribution_tab.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/07_cell_click_no_effect.jpg
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    - evidence/screens/gaps/capture2_scp.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  slots:
+    reason: >-
+      Embeddings (obsm, 2 or 3 dimensions), cell metadata and one expression matrix are reachable; obsp,
+      varp, varm and uns are not, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Embeddings (Clustering), cell metadata (Annotation) and one expression matrix; nothing for obsp, varp, varm, uns. *Steps:* As row 1. *Evidence:* [m04](screens/single-cell-portal/m04_slots_annotation_menu_SCP2510.jpg)
+
+      **Source and docs.** `obs`, `obsm` (2 or 3 dims only, [anndata_.py#L131-L141](https://github.com/broadinstitute/scp-ingest-pipeline/blob/af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2/ingest/anndata_.py#L131-L141)), `X`/`.raw`/one layer. No `obsp`, `varp`, `varm`, `uns`.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m04_slots_annotation_menu_SCP2510.jpg
+      label: m04
+    - kind: code
+      repo: broadinstitute/scp-ingest-pipeline
+      commit: af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2
+      path: ingest/anndata_.py
+      lines: 131-141
+      url: >-
+        https://github.com/broadinstitute/scp-ingest-pipeline/blob/af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2/ingest/anndata_.py#L131-L141
+      label: anndata_.py#L131-L141
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: P
+  remote:
+    reason: >-
+      Data enter only through the signed-in upload wizard into SCP's own bucket; no field takes a user
+      URL, S3 or GCS path.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; searched Explore Options, the Download tab and the study menus: no field for a user URL, S3 or GCS path. Data enter only through the signed-in upload wizard ("Create study"). *Steps:* Explore and Download tabs of any study.
+
+      **Source and docs.** You cannot point SCP at your own store; files are uploaded into the study's Terra/GCS bucket and ingested. The viewer reads MongoDB, plus a few precomputed artefacts from SCP's own bucket (DE TSVs, [DifferentialExpressionGroupPicker.jsx#L14](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/controls/DifferentialExpressionGroupPicker.jsx#L14)). Same architecture as CELLxGENE Explorer but no user-facing remote read; I chose N rather than CELLxGENE's P because SCP's main data path is a database, not the store. Arguable.
+    evidence:
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/visualization/controls/DifferentialExpressionGroupPicker.jsx
+      lines: '14'
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/controls/DifferentialExpressionGroupPicker.jsx#L14
+      label: DifferentialExpressionGroupPicker.jsx#L14
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: Storing Data in the Cloud
+      quote: All data uploaded to SCP are stored on cloud servers as a part of the Terra Platform.
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Uploaded into SCP's own storage; no reading from a user's object store or URL.
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    - evidence/screens/gaps/capture2_docs.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  spatial:
+    reason: Spatial groups draw cells at their X/Y positions beside the embedding (SCP2510).
+    detail: |-
+      **Checked in the running app (2026-10-04).** `?spatialGroups=spatial_Pt38` draws "spatial_Pt38, 608161 cells, subsample[100000]" as an X/Y scatter beside the UMAP; the Spatial groups picker lists the study's 4 groups. *Steps:* Open `.../SCP2510?spatialGroups=spatial_Pt38#study-visualize`, or Options → Spatial groups. *Evidence:* [m07](screens/single-cell-portal/m07_spatial_SCP2510_Pt38.jpg)
+
+      **Source and docs.** [Spatial transcriptomics doc](https://singlecell.zendesk.com/hc/en-us/articles/10994355298331-Spatial-transcriptomics): spatial files are X/Y cluster files shown as scatter plots beside the clustering. Demo SCP2510 (4 spatial groups).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m07_spatial_SCP2510_Pt38.jpg
+      label: m07
+    - kind: docs
+      url: https://singlecell.zendesk.com/hc/en-us/articles/10994355298331-Spatial-transcriptomics
+      label: Spatial transcriptomics doc
+      checked: '2026-10-04'
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: How SCP supports single-cell research, 'Exploring Data'; Fig. 4b legend
+      quote: >-
+        SCP also supports plots of spatial transcriptomics data (e.g., slide-seq; Rodrigues et al., 2019;
+        Figure 4b). These plots show a spatial map of the data
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  selection:
+    reason: '"Filter plotted cells" facets act on every scatter; the lasso stays in its own plot'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/04_filter_macrophage_off_both_scatters.jpg
+      label: scp/04
+    - kind: docs
+      url: https://singlecell.zendesk.com/hc/en-us/articles/21415002866587-Filter-plotted-cells
+      label: >-
+        Filter plotted cells: the panel shows 'the filters that can be used for filtering the plot(s)
+        shown to the left of the panel'
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/explore/ScatterTab.jsx
+      lines: 40-60
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/ScatterTab.jsx#L40-L60
+      label: every scatter plot in the tab receives the same filteredCells
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: running app
+    detail: '"Filter plotted cells" facets act on every scatter; the lasso stays in its own plot'
+    mark: Y
+    reproduce:
+    - evidence/screens/gaps/capture2_scp.py
+  annot:
+    reason: >-
+      Signed-in users lasso cells and save them as a custom annotation on the study; the control is shown
+      but login-gated, not exercised here.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The "+" next to Annotation shows "You must sign in to create custom annotations". The feature exists but is login-gated; not exercised (no account). *Steps:* Hover the "+" next to Annotation while signed out. *Evidence:* [m09](screens/single-cell-portal/m09_annot_create_requires_signin.jpg)
+
+      **Source and docs.** Signed-in users lasso cells ([ScatterPlot.jsx#L590](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/ScatterPlot.jsx#L590)) and save named labels as a stored `UserAnnotation` ([CreateAnnotation.jsx#L97-L117](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/controls/CreateAnnotation.jsx#L97-L117), gated by login at [#L180-L181](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/controls/CreateAnnotation.jsx#L180-L181)); annotations can be shared by email ([user_annotation.rb#L41-L51](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/models/user_annotation.rb#L41-L51)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m09_annot_create_requires_signin.jpg
+      label: m09
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/visualization/ScatterPlot.jsx
+      lines: '590'
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/ScatterPlot.jsx#L590
+      label: ScatterPlot.jsx#L590
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/visualization/controls/CreateAnnotation.jsx
+      lines: 97-117
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/controls/CreateAnnotation.jsx#L97-L117
+      label: CreateAnnotation.jsx#L97-L117
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/visualization/controls/CreateAnnotation.jsx
+      lines: 180-181
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/controls/CreateAnnotation.jsx#L180-L181
+      label: '#L180-L181'
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/models/user_annotation.rb
+      lines: 41-51
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/models/user_annotation.rb#L41-L51
+      label: user_annotation.rb#L41-L51
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  de:
+    reason: >-
+      The GUI shows only DE tables precomputed at ingest; no control computes DE for a new group or selection,
+      so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The Differential expression panel shows a precomputed table for the chosen group ("B cells"); the GUI has no control to compute DE for a new group or a lasso selection (the REST endpoint is not wired to the frontend, see matrix row). *Steps:* SCP1671 Explore; Options → Differential expression; group "B cells". *Evidence:* [m10](screens/single-cell-portal/m10_de_precomputed_table_SCP1671.jpg)
+
+      **Source and docs.** GUI shows only precomputed DE: SCP runs Scanpy `rank_genes_groups` (Wilcoxon) one-vs-rest and pairwise at ingest ([I/ingest/de.py#L498-L502](https://github.com/broadinstitute/scp-ingest-pipeline/blob/af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2/ingest/de.py#L498-L502); [DE doc](https://singlecell.zendesk.com/hc/en-us/articles/28157597291291-Pre-computed-differential-expression-DE)). A signed-in user can request a new DE job only through the REST API `POST /api/v1/site/studies/:accession/differential_expression` ([site_controller.rb#L478-L490](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/controllers/api/v1/site_controller.rb#L478-L490)); it runs as a batch job, weekly quota 5 ([differential_expression_service.rb#L15](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/lib/differential_expression_service.rb#L15)), and no frontend code calls it (`grep -rn "/differential_expression" app/javascript` finds only the bucket path). Not "in session" either way; N is defensible.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m10_de_precomputed_table_SCP1671.jpg
+      label: m10
+    - kind: code
+      repo: broadinstitute/scp-ingest-pipeline
+      commit: af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2
+      path: ingest/de.py
+      lines: 498-502
+      url: >-
+        https://github.com/broadinstitute/scp-ingest-pipeline/blob/af4f23505ee31dbe6c0a50d79c5f103c8ebeb4b2/ingest/de.py#L498-L502
+      label: I/ingest/de.py#L498-L502
+    - kind: docs
+      url: >-
+        https://singlecell.zendesk.com/hc/en-us/articles/28157597291291-Pre-computed-differential-expression-DE
+      label: DE doc
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20240815172212/https://singlecell.zendesk.com/hc/en-us/articles/28157597291291-Pre-computed-differential-expression-DE
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/controllers/api/v1/site_controller.rb
+      lines: 478-490
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/controllers/api/v1/site_controller.rb#L478-L490
+      label: site_controller.rb#L478-L490
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/lib/differential_expression_service.rb
+      lines: '15'
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/lib/differential_expression_service.rb#L15
+      label: differential_expression_service.rb#L15
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: How SCP supports single-cell research, 'Exploring Data'
+      quote: >-
+        SCP’s studies include results from exploratory differential expression analyses. These are either
+        computed by the Portal ... or provided by the study owners
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Computed by the portal, but the text does not say in the session; the notes find it runs at
+        ingest.
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: P
+  image:
+    reason: Spatial plots are points only; there is no image file type or image layer.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The spatial plot is points only; Options has no image layer. *Steps:* As row 7. *Evidence:* [m07](screens/single-cell-portal/m07_spatial_SCP2510_Pt38.jpg)
+
+      **Source and docs.** No image file type among `STUDY_FILE_TYPES` ([study_file.rb#L25-L28](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/models/study_file.rb#L25-L28)); the spatial doc mentions none. An `images` key exists in `PlotTabs.jsx#L16` but nothing references it.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m07_spatial_SCP2510_Pt38.jpg
+      label: m07
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/models/study_file.rb
+      lines: 25-28
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/models/study_file.rb#L25-L28
+      label: study_file.rb#L25-L28
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  share:
+    reason: >-
+      The Explore URL carries gene, tab, cluster, annotation, subsampling and filters, and reopening it
+      restores the view.
+    detail: |-
+      **Checked in the running app (2026-10-04).** `...SCP383/...?genes=Sox2&tab=distribution` opened in a fresh browser context restores the gene and the Distribution tab (Sox2 violins per cluster). *Steps:* Set a gene and tab; copy the address bar; open it in a private window. *Evidence:* [m12](screens/single-cell-portal/m12_share_url_reopened_fresh_context.jpg)
+
+      **Source and docs.** Explore URL carries cluster, annotation, subsample, genes, spatialGroups, tab, facets, hidden traces, colour scale and more ([ExploreTabRouter.jsx#L79-L135](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/ExploreTabRouter.jsx#L79-L135)); copy the URL and it restores the view.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m12_share_url_reopened_fresh_context.jpg
+      label: m12
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/explore/ExploreTabRouter.jsx
+      lines: 79-135
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/ExploreTabRouter.jsx#L79-L135
+      label: ExploreTabRouter.jsx#L79-L135
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: How SCP supports single-cell research, after Fig. 4 legend
+      quote: sharing a link to a specific, user-generated plot.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: Sharing Data with Reviewers
+      quote: >-
+        Researchers can grant anonymous, view-only access to their SCP study via a URL that a journal
+        editor can pass on to reviewers
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: A link to the study, not to a view state.
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  export:
+    reason: The Plotly mode bar's camera button downloads each plot as PNG.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Plotly mode bar "Download plot as a png" saved `newplot.png`, 220,598 bytes (toast "Snapshot succeeded - newplot.png"). *Steps:* Hover a scatter; click the camera icon. *Evidence:* [m13](screens/single-cell-portal/m13_export_plotly_png.jpg)
+
+      **Source and docs.** Plots are Plotly with the default mode bar (no config passed, [ScatterPlot.jsx#L371](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/ScatterPlot.jsx#L371)), which includes "Download plot as a png". Confirm by hovering a plot (camera icon).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m13_export_plotly_png.jpg
+      label: m13
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/visualization/ScatterPlot.jsx
+      lines: '371'
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/ScatterPlot.jsx#L371
+      label: ScatterPlot.jsx#L371
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: How SCP supports single-cell research, after Fig. 4 legend
+      quote: saving a plot as an image file
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  desktop:
+    reason: >-
+      SCP is a hosted service; its Docker setup is a developer environment tied to GCP, Terra and MongoDB,
+      not an installer.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; hosted service only, no installer.
+
+      **Source and docs.** Hosted service only; the repo's Docker setup is a developer environment tied to GCP/Terra/MongoDB.
+    na:
+      visual: No desktop application exists
+      so there is no GUI place in which its absence could be shown.: null
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    evidence:
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: README.md
+      lines: 5-9
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/README.md#L5-L9
+      label: 'README SETUP: built and deployed with Docker (developer setup)'
+    mark: N
+  hosted:
+    reason: >-
+      One deployment at singlecell.broadinstitute.org serves every visitor and its public studies anonymously.
+    detail: |-
+      **Checked in the running app (2026-10-04).** One deployment serves every visitor; everything above ran anonymously against `singlecell.broadinstitute.org`.
+
+      **Source and docs.** One deployment at singlecell.broadinstitute.org serves all users and 1,050 public studies.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: Introduction
+      quote: >-
+        SCP (https://singlecell.broadinstitute.org/single_cell) is an open-access, web-based portal for
+        sharing and exploring single-cell genomics data.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: Publishing Data on SCP
+      quote: In 2022, approximately 96,500 users visited the Portal.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    - evidence/screens/gaps/capture_single_cell_portal.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  static:
+    reason: >-
+      Every view is filled from the Rails JSON API, computed server-side per request; it needs Rails,
+      MongoDB and Google Batch.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Every view is filled from the Rails JSON API (`/single_cell/api/v1/studies/SCP383/explore`, 218,829 bytes; `/clusters/...`, 2,419,969 bytes for the default view), computed server-side per request. *Steps:* DevTools Network while opening Explore.
+
+      **Source and docs.** Requires Rails, MongoDB and Google Batch ingest.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: Introduction
+      quote: >-
+        SCP is supported by a performant computational infrastructure, which allows visualizations to
+        scale with growing datasets.
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Server infrastructure.
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    - evidence/screens/gaps/capture_single_cell_portal.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  lazy:
+    reason: >-
+      The server reads one gene on demand from its per-gene store (5.2 MB for one gene over 1.3M cells);
+      the browser gets whole coordinate arrays.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation with curl against the API the Explore tab uses: one gene (Sox2) for all 1,306,127 cells returns 5,226,850 bytes in 5.1 s (`fields=expression&gene=Sox2&subsample=all`); for the 100,000 subsample 401,453 bytes in 2.0 s. Coordinates, cell names and annotation for the subsample are a separate 6,456,342-byte response. The server reads one gene on demand from its per-gene store; the source h5ad is not opened. (The browser's own request log was not captured: Playwright's `requestfinished` hook saw no `/api/v1/` calls during the first page load, so I measured with curl.) *Steps:* `curl -s -o /dev/null -w '%{size_download} %{time_total}\n' 'https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP383/clusters/1M%20cell%20clusters?annotation_name=Cluster&annotation_scope=study&annotation_type=group&fields=expression&gene=Sox2&subsample=all'`
+
+      **Source and docs.** Server side. Expression is stored per gene as `DataArray` documents in MongoDB and fetched per requested gene ([C/app/models/gene.rb#L25-L46](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/models/gene.rb#L25-L46), [C/app/lib/expression_viz_service.rb#L146](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/lib/expression_viz_service.rb#L146)). The source h5ad is never opened at view time. Coordinates for the chosen cluster and subsample arrive whole.
+
+      **Scale group.** **Server, lazy per gene.** Ingest parses the file once into MongoDB; at view time Rails reads only the requested gene's scores and the chosen cluster's coordinate arrays. The browser receives whole coordinate arrays for the selected subsample (or all cells) as JSON and holds them in memory for Plotly. Evidence: `gene.rb#L25-L46`, `expression_viz_service.rb#L146`, `cluster_viz_service.rb#L160-L181` at `1fd5f77`.
+    evidence:
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/models/gene.rb
+      lines: 25-46
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/models/gene.rb#L25-L46
+      label: C/app/models/gene.rb#L25-L46
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/lib/expression_viz_service.rb
+      lines: '146'
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/lib/expression_viz_service.rb#L146
+      label: C/app/lib/expression_viz_service.rb#L146
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    - evidence/screens/gaps/capture_single_cell_portal.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  every_cell:
+    reason: >-
+      Large studies open on a 100,000-cell subsample by default; 'All Cells' in the subsampling menu draws
+      every cell; scored by what the GUI can do (reading B), so Y.
+    detail: |-
+      **Checked in the running app (2026-10-04).** SCP383 with `?genes=Sox2`: Sox2 expression scatter beside the cluster scatter, each "1306127 cells, subsample[100000]". The Subsampling menu offers `100000` (default) or `All Cells`. *Steps:* Open `https://singlecell.broadinstitute.org/single_cell/study/SCP383?genes=Sox2#study-visualize`; Options → Subsampling. *Evidence:* [m01](screens/single-cell-portal/m01_plots_render_SCP383_Sox2.jpg), [m01 subsampling](screens/single-cell-portal/m01_every_cell_subsampling_menu_SCP383.jpg)
+
+      **Scale group.** **Downsampled by default above 100k.** At ingest each cluster with >1,000 cells is subsampled at 1k/10k/20k/100k, stratified by an annotation ([doc](https://singlecell.zendesk.com/hc/en-us/articles/360060610032-Cluster-file-subsampling); `SUBSAMPLE_THRESHOLDS = [100000, 20000, 10000, 1000]`, [cluster_group.rb#L67-L70](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/models/cluster_group.rb#L67-L70)). Clusters with ≥100k cells default to the 100k sample ([cluster_viz_service.rb#L89-L93](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/lib/cluster_viz_service.rb#L89-L93), [ExploreDisplayTabs.jsx#L89-L94](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/ExploreDisplayTabs.jsx#L89-L94)). If subsampling has not completed, every cell is sent (SCP2805). No binning or density mode. A flagged "progressive loading" path shows a pre-rendered WebP of a gene's expression before the points arrive ([ScatterPlot.jsx#L420-L450](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/ScatterPlot.jsx#L420-L450)). Evidence: Measured 2026-10-03: SCP383 default returned 100,000 of 1,306,127 points; SCP259 100,000 of 123,006; SCP2805 3,177,310 of 3,177,310 (`isSubsampled: false`, thresholds `[]`).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m01_plots_render_SCP383_Sox2.jpg
+      label: m01
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m01_every_cell_subsampling_menu_SCP383.jpg
+      label: m01 subsampling
+    - kind: docs
+      url: https://singlecell.zendesk.com/hc/en-us/articles/360060610032-Cluster-file-subsampling
+      label: doc
+      checked: '2026-10-04'
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/models/cluster_group.rb
+      lines: 67-70
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/models/cluster_group.rb#L67-L70
+      label: cluster_group.rb#L67-L70
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/lib/cluster_viz_service.rb
+      lines: 89-93
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/lib/cluster_viz_service.rb#L89-L93
+      label: cluster_viz_service.rb#L89-L93
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/explore/ExploreDisplayTabs.jsx
+      lines: 89-94
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/ExploreDisplayTabs.jsx#L89-L94
+      label: ExploreDisplayTabs.jsx#L89-L94
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/visualization/ScatterPlot.jsx
+      lines: 420-450
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/ScatterPlot.jsx#L420-L450
+      label: ScatterPlot.jsx#L420-L450
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+    by_reading:
+      A: P
+      B: Y
+  subset:
+    reason: >-
+      The Subsampling menu (100,000 or All Cells) decides how many cells the server sends and the plot
+      draws, so choosing the subsample reduces both; facet filters are view-only.
+    detail: |-
+      **Scale group.** **Y, coarse.** A "Subsampling" dropdown offers 100,000 or "All Cells" (the 1k/10k/20k levels are computed but filtered out of the menu, [SubsampleSelector.jsx#L14-L31](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/controls/SubsampleSelector.jsx#L14-L31)); the help text warns "All cells" may dramatically slow rendering above 100k (#L83-L93). Users can also hide cells with "Filter plotted cells" facets. No subset-and-recompute. Evidence: Open SCP383 Explore, Options panel, "Subsampling" dropdown; the URL gains `subsample=all`.
+
+      **Re-scored under X8 (2026-10-04)**: The Subsampling menu (100,000 or All Cells) decides how many cells the server sends and the plot draws, so choosing the subsample reduces both; facet filters are view-only.
+    evidence:
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/visualization/controls/SubsampleSelector.jsx
+      lines: 14-31
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/controls/SubsampleSelector.jsx#L14-L31
+      label: SubsampleSelector.jsx#L14-L31
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: How SCP supports single-cell research, 'Exploring Data'
+      quote: >-
+        Users can focus on a specific subset of the data by showing or hiding cells with specific annotation
+        labels
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    mark: Y
+    reproduce:
+    - evidence/screens/gaps/capture2_scp.py
+  auto_subset:
+    reason: >-
+      Clusters above 100,000 cells are subsampled to 100,000 for display by default (stratified, computed
+      at ingest); 'All Cells' is opt-in.
+    detail: >-
+      **New column (user X8, 2026-10-04).** Clusters above 100,000 cells are subsampled to 100,000 for
+      display by default (stratified, computed at ingest); 'All Cells' is opt-in. Evidence is the same
+      as for every cell drawn, which shows how the default view is drawn.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m01_plots_render_SCP383_Sox2.jpg
+      label: m01
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m01_every_cell_subsampling_menu_SCP383.jpg
+      label: m01 subsampling
+    - kind: docs
+      url: https://singlecell.zendesk.com/hc/en-us/articles/360060610032-Cluster-file-subsampling
+      label: doc
+      checked: '2026-10-04'
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/models/cluster_group.rb
+      lines: 67-70
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/models/cluster_group.rb#L67-L70
+      label: cluster_group.rb#L67-L70
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/lib/cluster_viz_service.rb
+      lines: 89-93
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/lib/cluster_viz_service.rb#L89-L93
+      label: cluster_viz_service.rb#L89-L93
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/explore/ExploreDisplayTabs.jsx
+      lines: 89-94
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/ExploreDisplayTabs.jsx#L89-L94
+      label: ExploreDisplayTabs.jsx#L89-L94
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/visualization/ScatterPlot.jsx
+      lines: 420-450
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/visualization/ScatterPlot.jsx#L420-L450
+      label: ScatterPlot.jsx#L420-L450
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: Y
+retired_cells:
+  filters:
+    proposed: P
+    reason: >-
+      "Filter plotted cells" facets (categories, numeric ranges) grey the same cells in every scatter,
+      but there is no table, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** "Filter plotted cells": unticking Cell type `macrophage` greys those cells in both the CD74 scatter and the cluster scatter. Facets (categories, numeric ranges), not a table. *Steps:* `.../SCP1671?genes=CD74#study-visualize`; Options → Filter plotted cells; untick macrophage. *Evidence:* [m08](screens/single-cell-portal/m08_filters_macrophage_off_both_scatters_SCP1671.jpg)
+
+      **Source and docs.** "Filter plotted cells" facet panel restricts the scatter by annotation values and numeric ranges ([C/.../CellFilteringPanel.jsx#L23](https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/CellFilteringPanel.jsx#L23)). Facets, not a table of rows; marked P as for CELLxGENE.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/single-cell-portal/m08_filters_macrophage_off_both_scatters_SCP1671.jpg
+      label: m08
+    - kind: code
+      repo: broadinstitute/single_cell_portal_core
+      commit: 1fd5f77ca34a63f9949c458b80cf23df848612f2
+      path: app/javascript/components/explore/CellFilteringPanel.jsx
+      lines: '23'
+      url: >-
+        https://github.com/broadinstitute/single_cell_portal_core/blob/1fd5f77ca34a63f9949c458b80cf23df848612f2/app/javascript/components/explore/CellFilteringPanel.jsx#L23
+      label: C/.../CellFilteringPanel.jsx#L23
+    - kind: paper
+      url: https://doi.org/10.1101/2023.07.13.548886
+      label: Tarhan et al. 2023 (preprint), bioRxiv
+      where: How SCP supports single-cell research, 'Exploring Data'
+      quote: >-
+        Users can focus on a specific subset of the data by showing or hiding cells with specific annotation
+        labels
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Annotation-label show/hide, no table; linking across plots not stated.
+    reproduce:
+    - notes/comparison/demos/single-cell-portal/matrix_check.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix.py
+    - notes/comparison/demos/single-cell-portal/matrix_check_fix2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app

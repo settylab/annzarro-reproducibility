@@ -1,0 +1,2898 @@
+# URL -> live status and closest Wayback Machine snapshot, for evidence refs.
+# Loaded by evidence/tools/refs.py (archive_for). Regenerate: rerun the lookup script; it resumes.
+# status: final HTTP status after redirects (via: direct | proxy; error = no connection).
+# dead: 404/410/5xx or no connection. blocked: 401/403/429 from a bot wall or rate limit
+# (direct and SOCKS proxy both refused), so liveness is unverified, not disproved.
+# needs_snapshot: no snapshot, or newest snapshot older than 2026-01-01; candidates for a
+# web.archive.org/save request, which needs the user's approval (none was made).
+generated_by: 'archive lookup (read-only: archive.org/wayback/available; no snapshot was created)'
+checked: '2026-10-04'
+summary:
+  urls: 254
+  skipped: 15
+  archived: 158
+  dead: 14
+  blocked: 31
+  needs_snapshot: 100
+dead:
+- http://scope-mirror.aertslab.org/
+- http://shiny.imbei.uni-mainz.de:3838/iSEE
+- https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_1__Getting%20Started:%20Install
+- https://cirrocumulus.apps.broadinstitute.org
+- https://cirrocumulus.appspot.com
+- https://cors-proxy.aaron-lun.workers.dev
+- https://cumulus.readthedocs.io/en/stable/cirrocumulus.html
+- https://federicomarini.shinyapps.io/iSEEindex_demo/
+- https://flycellatlas.org/asap
+- https://marionilab.cruk.cam.ac.uk/
+- https://marionilab.cruk.cam.ac.uk/iSEE_cytof
+- https://marionilab.cruk.cam.ac.uk/iSEE_pbmc4k
+- https://marionilab.cruk.cam.ac.uk/iSEE_tcga
+- https://vitessce-demo-data.storage.googleapis.com/anndata-demos/BALF_VIB-UGent_processed_cleaned.zarr/
+blocked:
+- https://data-1.vitessce.io/
+- https://data-1.vitessce.io/0.0.33/main/human-lymph-node-10x-visium/human_lymph_node_10x_visium.h5ad.zarr
+- https://doi.org/10.1093/bioadv/vbaf107
+- https://doi.org/10.1093/bioinformatics/btab209
+- https://doi.org/10.1093/bioinformatics/btab503
+- https://doi.org/10.1093/nar/gkae1142
+- https://doi.org/10.1101/2021.12.16.473007
+- https://doi.org/10.1101/2022.03.02.482701
+- https://doi.org/10.1101/2023.07.13.548886
+- https://doi.org/10.1101/2025.04.22.650045
+- https://doi.org/10.1126/science.abk2432
+- https://doi.org/10.1126/science.adn3949
+- https://europepmc.org/article/PMC/PMC6086935
+- https://vitessce.io/demos/
+- https://www.10xgenomics.com/products/loupe-browser/downloads/eula
+- https://www.10xgenomics.com/support/software/loupe-browser
+- https://www.10xgenomics.com/support/software/loupe-browser/downloads
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/algorithms-overview/lb-sc-algorithms
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/getting-started/lb-what-is-loupe-browser
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/release-notes/lb-release-notes
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-hd-spatial-gene-expression
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-analyzing-public-data
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-exploring-substructure
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-identify-cell-subtypes
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-recluster
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-sharing
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/spatial-reclustering
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-louper
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+needs_snapshot:
+- https://annzarro.readthedocs.io
+- https://annzarro.readthedocs.io/en/latest/data/chunking.html
+- https://annzarro.readthedocs.io/en/latest/data/pairwise-matrices.html
+- https://annzarro.readthedocs.io/en/latest/data/slot-map.html
+- https://annzarro.readthedocs.io/en/latest/deployment/lab-server.html
+- https://annzarro.readthedocs.io/en/latest/deployment/modes.html
+- https://annzarro.readthedocs.io/en/latest/getting-started/desktop-app.html
+- https://annzarro.readthedocs.io/en/latest/reference/architecture.html#what-annzarro-does-not-do
+- https://annzarro.readthedocs.io/en/latest/reference/architecture.html#what-happens-on-a-click
+- https://annzarro.readthedocs.io/en/latest/tutorials/gene-similarity.html
+- https://annzarro.readthedocs.io/en/latest/user-guide/cell-and-gene-plots.html
+- https://annzarro.readthedocs.io/en/latest/user-guide/export.html
+- https://annzarro.readthedocs.io/en/latest/user-guide/focus-and-lock.html
+- https://annzarro.readthedocs.io/en/latest/user-guide/interface.html
+- https://annzarro.readthedocs.io/en/latest/user-guide/panel-sets.html
+- https://annzarro.readthedocs.io/en/latest/user-guide/remote-datasets.html
+- https://annzarro.readthedocs.io/en/latest/user-guide/share-links.html
+- https://annzarro.readthedocs.io/en/latest/user-guide/spatial-coordinates.html
+- https://annzarro.readthedocs.io/en/latest/user-guide/subsets.html
+- https://annzarro.readthedocs.io/en/latest/user-guide/tables-and-filters.html
+- https://annzarro.readthedocs.io/en/latest/user-guide/tables-and-filters.html#link-a-plot-to-a-table
+- https://api.biorxiv.org/pubs/biorxiv/10.1101/2023.07.13.548886
+- https://api.cellxgene.cziscience.com/curation/v1/datasets
+- https://api.crossref.org/works/10.1038/s41592-024-02436-x
+- https://api.crossref.org/works/10.1101/2023.07.13.548886
+- https://api.crossref.org/works/10.12688/f1000research.14966.1
+- https://cells.ucsc.edu/?ds=adultPancreas
+- https://cells.ucsc.edu/?ds=brain-spatial-omics
+- https://cells.ucsc.edu/?ds=brain-spatial-omics+p21
+- https://cells.ucsc.edu/?ds=mouse-pansci+all
+- https://cells.ucsc.edu/?ds=whole-brain-perturb+combined
+- https://cells.ucsc.edu/cb.conf
+- https://cells.ucsc.edu/mouse-pansci/all/dataset.json
+- https://cells.ucsc.edu/mouse-pansci/all/desc.json
+- https://cellxgene.cziscience.com/e/85585f3f-d16a-412d-b93a-406d52721221.cxg/
+- https://cirrocumulus-dot-broad-cumulus.appspot.com
+- https://data-1.vitessce.io/
+- https://data-1.vitessce.io/0.0.33/main/codeluppi-2018/codeluppi_2018_nature_methods.cells.csv
+- https://data-1.vitessce.io/0.0.33/main/human-lymph-node-10x-visium/human_lymph_node_10x_visium.h5ad.zarr
+- https://doi.org/10.1038/s41592-024-02436-x
+- https://doi.org/10.1101/2020.10.25.354100
+- https://doi.org/10.1126/science.adn3949
+- https://doi.org/10.12688/f1000research.161076.1
+- https://doi.org/10.17504/protocols.io.n92ld6qk8g5b/v1
+- https://eurobioc2023.bioconductor.org/abstracts/paper15/
+- https://europepmc.org/article/PMC/PMC6086935
+- https://flycellatlas.org/scope
+- https://git.bioconductor.org/packages/iSEEfier
+- https://github.com/10xGenomics/loupeR/tree/b1cba07374f7326c6a69fddc2405e17157cb93de
+- https://github.com/aertslab/SCope/releases
+- https://github.com/aertslab/SCope/wiki
+- https://github.com/chanzuckerberg/single-cell-explorer
+- https://github.com/kanaverse/bakana
+- https://github.com/kanaverse/bakana-remotes
+- https://github.com/kanaverse/kana
+- https://github.com/kanaverse/kana/tree/ecb0360c5e00200ed9cee2d73d45725e93d53a39/src/components/NewAnalysis
+- https://github.com/kanaverse/kana/wiki/How-to-interactively-explore-results
+- https://github.com/kanaverse/kana/wiki/How-to-load-datasets
+- https://github.com/kanaverse/scran.js
+- https://github.com/kanaverse/wobbegong-kana
+- https://github.com/settylab/annzarro/releases/tag/v0.2.0
+- https://github.com/the-ouyang-lab/ShinyCell2-tutorial
+- https://gypsum.artifactdb.com
+- https://htmlpreview.github.io/?https://github.com/SGDDNB/ShinyCell/blob/master/docs/4cloud.html
+- https://htmlpreview.github.io/?https://github.com/the-ouyang-lab/ShinyCell2-tutorial/master/docs/tutCiteseq.html
+- https://htmlpreview.github.io/?https://github.com/the-ouyang-lab/ShinyCell2-tutorial/master/docs/tutSpatial.html
+- https://isee.github.io/iSEE/articles/bigdata.html
+- https://isee.github.io/iSEE/articles/links.html
+- https://raw.githubusercontent.com/openjournals/joss-papers/master/joss.05603/10.21105.joss.05603.pdf
+- https://rehwinkellab.shinyapps.io/ifnresource/
+- https://satijalab.org/seurat/reference/featureplot
+- https://shiny.posit.co/r/gallery/life-sciences/isee/
+- https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP2805/explore
+- https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP383/clusters/1M%20cell%20clusters?annotation_name=Cluster&annotation_scope=study&annotation_type=group&fields=expression&gene=Sox2&subsample=all
+- https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP383/clusters/1M%20cell%20clusters?fields=coordinates
+- https://singlecell.broadinstitute.org/single_cell/study/SCP2510
+- https://singlecell.broadinstitute.org/single_cell/study/SCP383
+- https://singlecell.broadinstitute.org/single_cell/study/SCP383?genes=Sox2#study-visualize
+- https://singlecell.zendesk.com/hc/en-us/articles/10994355298331-Spatial-transcriptomics
+- https://singlecell.zendesk.com/hc/en-us/articles/28157597291291-Pre-computed-differential-expression-DE
+- https://singlecell.zendesk.com/hc/en-us/articles/360060610032-Cluster-file-subsampling
+- https://spatialdata.scverse.org/en/stable/tutorials/notebooks/notebooks/examples/napari_rois.html
+- https://spatialdata.scverse.org/projects/napari/en/stable/
+- https://storage.googleapis.com/vitessce-demo-data/habib-2017/habib17.processed.h5ad.zarr/obsm/X_umap/.zarray
+- https://storage.googleapis.com/vitessce-demo-data/salcher-2022/salcher_2022_extended.h5ad.zarr/obsm/X_umap/.zarray
+- https://unpkg.com/vega-embed@6/build/vega-embed.js
+- https://vitessce-data.storage.googleapis.com/
+- https://vitessce-data.storage.googleapis.com/0.0.33/main/human-lymph-node-10x-visium/human_lymph_node_10x_visium.ome.zarr/.zattrs
+- https://vitessce.io/?url=http://127.0.0.1:8904/config.json
+- https://vitessce.io/blog/spatial-elements/
+- https://vitessce.io/demos/
+- https://vitessce.io/docs/tutorial-gh-pages/
+- https://vitessce.io/examples/
+- https://www.10xgenomics.com/support/software/loupe-browser
+- https://www.10xgenomics.com/support/software/loupe-browser/downloads
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/release-notes/lb-release-notes
+- https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-louper
+- https://www.kanaverse.org/kana/asset-manifest.json
+- https://www.nature.com/articles/s41592-024-02212-x
+- https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC7437817/unicode
+urls:
+  http://127.0.0.1:8901:
+    cited_in:
+    - notes/comparison/_local_demos.md
+    - notes/comparison/cirrocumulus.md
+    checked: '2026-10-04'
+    status: null
+    skipped: local demo server
+    archive: null
+    archive_timestamp: null
+  http://127.0.0.1:8901/#q={:
+    cited_in:
+    - evidence/matrix/tools/cirrocumulus.yaml
+    - notes/comparison/cirrocumulus.md
+    checked: '2026-10-04'
+    status: null
+    skipped: local demo server
+    archive: null
+    archive_timestamp: null
+  http://127.0.0.1:8902:
+    cited_in:
+    - notes/comparison/_local_demos.md
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: null
+    skipped: local demo server
+    archive: null
+    archive_timestamp: null
+  http://127.0.0.1:8903:
+    cited_in:
+    - notes/comparison/_local_demos.md
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: null
+    skipped: local demo server
+    archive: null
+    archive_timestamp: null
+  http://127.0.0.1:8903/:
+    cited_in:
+    - evidence/matrix/tools/cellxgene.yaml
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: null
+    skipped: local demo server
+    archive: null
+    archive_timestamp: null
+  http://127.0.0.1:8904/config.json:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: null
+    skipped: local demo server
+    archive: null
+    archive_timestamp: null
+  http://127.0.0.1:8906/?ds=bm_demo:
+    cited_in:
+    - notes/comparison/_local_demos.md
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: null
+    skipped: local demo server
+    archive: null
+    archive_timestamp: null
+  http://127.0.0.1:8906/?ds=bm_demo&gene=Mpo:
+    cited_in:
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: null
+    skipped: local demo server
+    archive: null
+    archive_timestamp: null
+  http://127.0.0.1:8907:
+    cited_in:
+    - notes/comparison/_local_demos.md
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: null
+    skipped: local demo server
+    archive: null
+    archive_timestamp: null
+  http://127.0.0.1:8907/:
+    cited_in:
+    - evidence/matrix/tools/shinycell.yaml
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: null
+    skipped: local demo server
+    archive: null
+    archive_timestamp: null
+  http://scope-mirror.aertslab.org/:
+    cited_in:
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 503
+    final_url: https://scope-mirror.aertslab.org/
+    via: direct
+    archive: https://web.archive.org/web/20180807143055/http://scope-mirror.aertslab.org/
+    archive_timestamp: '20180807143055'
+    archive_status: '200'
+    archive_source: availability+cdx
+    dead: true
+  http://scope.aertslab.org:
+    cited_in:
+    - evidence/matrix/tools/scope.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://scope.aertslab.org/
+    via: direct
+    archive: https://web.archive.org/web/20260919024024/https://scope.aertslab.org/
+    archive_timestamp: '20260919024024'
+    archive_status: '200'
+    archive_source: cdx
+  http://shiny.imbei.uni-mainz.de:3838/iSEE:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: error
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260127042137/http://shiny.imbei.uni-mainz.de:3838/iSEE/
+    archive_timestamp: '20260127042137'
+    archive_status: '200'
+    archive_source: cdx
+    dead: true
+  http://shinycell1.ddnetbio.com:
+    cited_in:
+    - notes/comparison/_summary.md
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: http://shinycell1.ddnetbio.com/
+    via: direct
+    archive: https://web.archive.org/web/20260616094930/http://shinycell1.ddnetbio.com/
+    archive_timestamp: '20260616094930'
+    archive_status: '200'
+  http://shinycell2.ddnetbio.com:
+    cited_in:
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: http://shinycell2.ddnetbio.com/
+    via: direct
+    archive: https://web.archive.org/web/20260605220149/http://shinycell2.ddnetbio.com/
+    archive_timestamp: '20260605220149'
+    archive_status: '200'
+  https://anndata.readthedocs.io:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://anndata.scverse.org/en/stable/
+    via: direct
+    archive: https://web.archive.org/web/20260902071429/https://anndata.scverse.org/en/stable/
+    archive_timestamp: '20260902071429'
+    archive_status: '200'
+  https://anndata.readthedocs.io/en/stable/generated/anndata.io.read_h5ad.html:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260606022445/https://anndata.readthedocs.io/en/stable/generated/anndata.io.read_h5ad.html
+    archive_timestamp: '20260606022445'
+    archive_status: '200'
+  https://anndata.readthedocs.io/en/stable/tutorials/notebooks/read_lazy.html:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260521200415/https://anndata.readthedocs.io/en/stable/tutorials/notebooks/read_lazy.html
+    archive_timestamp: '20260521200415'
+    archive_status: '200'
+  https://anndata.readthedocs.io/en/stable/tutorials/zarr-v3.html:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260521191553/https://anndata.readthedocs.io/en/stable/tutorials/zarr-v3.html
+    archive_timestamp: '20260521191553'
+    archive_status: '200'
+  https://annzarro.readthedocs.io:
+    cited_in:
+    - notes/comparison/_open_questions.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://annzarro.readthedocs.io/en/latest/
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/data/chunking.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/data/pairwise-matrices.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/data/slot-map.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/deployment/lab-server.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/deployment/modes.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/getting-started/desktop-app.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/reference/architecture.html#what-annzarro-does-not-do:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/reference/architecture.html#what-happens-on-a-click:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/tutorials/gene-similarity.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/user-guide/cell-and-gene-plots.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/user-guide/export.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/user-guide/focus-and-lock.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/user-guide/interface.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/user-guide/panel-sets.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/user-guide/remote-datasets.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/user-guide/share-links.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/user-guide/spatial-coordinates.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/user-guide/subsets.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/user-guide/tables-and-filters.html:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://annzarro.readthedocs.io/en/latest/user-guide/tables-and-filters.html#link-a-plot-to-a-table:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://api.biorxiv.org/pubs/biorxiv/10.1101/2023.07.13.548886:
+    cited_in:
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://api.cellxgene.cziscience.com/cellxgene/s3_uri/<double-encoded:
+    cited_in:
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: null
+    skipped: placeholder in prose
+    archive: null
+    archive_timestamp: null
+  https://api.cellxgene.cziscience.com/curation/v1/datasets:
+    cited_in:
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://api.crossref.org/works/10.1038/s41592-024-02436-x:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://api.crossref.org/works/10.1101/2023.07.13.548886:
+    cited_in:
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://api.crossref.org/works/10.12688/f1000research.14966.1:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20250718111311/https://api.crossref.org/works/10.12688%2FF1000RESEARCH.14966.1
+    archive_timestamp: '20250718111311'
+    archive_status: '200'
+    archive_source: cdx
+  https://bioconductor.org/packages/release/bioc/html/iSEE.html:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260802032110/https://bioconductor.org/packages/release/bioc/html/iSEE.html
+    archive_timestamp: '20260802032110'
+    archive_status: '200'
+    archive_source: cdx
+  ? https://bioconductor.org/packages/release/data/experiment/vignettes/TabulaMurisSenisData/inst/doc/TabulaMurisSenisData.html
+  : cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260127120531/https://bioconductor.org/packages/release/data/experiment/vignettes/TabulaMurisSenisData/inst/doc/TabulaMurisSenisData.html
+    archive_timestamp: '20260127120531'
+    archive_status: '200'
+  https://bit.ly/4AOpMg6:
+    cited_in:
+    - evidence/matrix/tools/scope.yaml
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://scope.aertslab.org/
+    via: direct
+    archive: https://web.archive.org/web/20260919024024/https://scope.aertslab.org/
+    archive_timestamp: '20260919024024'
+    archive_status: '200'
+    archive_source: cdx
+  https://cellbrowser.readthedocs.io/en/master/:
+    cited_in:
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260519185605/https://cellbrowser.readthedocs.io/en/master/
+    archive_timestamp: '20260519185605'
+    archive_status: '200'
+  https://cells.ucsc.edu/:
+    cited_in:
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260929004117/https://cells.ucsc.edu/
+    archive_timestamp: '20260929004117'
+    archive_status: '200'
+  https://cells.ucsc.edu/?ds=adultPancreas:
+    cited_in:
+    - notes/comparison/_summary.md
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20250829130957/https://cells.ucsc.edu/?ds=adultPancreas
+    archive_timestamp: '20250829130957'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://cells.ucsc.edu/?ds=brain-spatial-omics:
+    cited_in:
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20250429082013/http://cells.ucsc.edu/?ds=brain-spatial-omics
+    archive_timestamp: '20250429082013'
+    archive_status: '200'
+    archive_source: cdx
+  https://cells.ucsc.edu/?ds=brain-spatial-omics+p21:
+    cited_in:
+    - evidence/matrix/tools/ucsc-cell-browser.yaml
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://cells.ucsc.edu/?ds=mouse-pansci+all:
+    cited_in:
+    - notes/comparison/_summary.md
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://cells.ucsc.edu/?ds=whole-brain-perturb+combined:
+    cited_in:
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://cells.ucsc.edu/cb.conf:
+    cited_in:
+    - evidence/matrix/tools/ucsc-cell-browser.yaml
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://cells.ucsc.edu/dataset.json:
+    cited_in:
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260610004040/https://cells.ucsc.edu/dataset.json
+    archive_timestamp: '20260610004040'
+    archive_status: '200'
+  https://cells.ucsc.edu/mouse-pansci/all/dataset.json:
+    cited_in:
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://cells.ucsc.edu/mouse-pansci/all/desc.json:
+    cited_in:
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://cellxgene.cziscience.com/:
+    cited_in:
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260915072630/https://cellxgene.cziscience.com/
+    archive_timestamp: '20260915072630'
+    archive_status: '200'
+  https://cellxgene.cziscience.com/collections/45d5d2c3-bc28-4814-aed6-0bb6f0e11c82:
+    cited_in:
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260518092559/https://cellxgene.cziscience.com/collections/45d5d2c3-bc28-4814-aed6-0bb6f0e11c82
+    archive_timestamp: '20260518092559'
+    archive_status: '200'
+    archive_source: cdx
+  https://cellxgene.cziscience.com/docs/01__CellxGene:
+    cited_in:
+    - figures/COMPARISON_NOTES.md
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260610154322/https://cellxgene.cziscience.com/docs/01__CellxGene
+    archive_timestamp: '20260610154322'
+    archive_status: '200'
+  https://cellxgene.cziscience.com/docs/04__Analyze%20Public%20Data/4_1__Hosted%20Tutorials:
+    cited_in:
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260711232332/https://cellxgene.cziscience.com/docs/04__Analyze%20Public%20Data/4_1__Hosted%20Tutorials
+    archive_timestamp: '20260711232332'
+    archive_status: '200'
+    archive_source: cdx
+  https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_1__Getting%20Started:%20Install:
+    cited_in:
+    - evidence/matrix/tools/cellxgene.yaml
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 404
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+    dead: true
+  https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_2__Self%20Host%20cellxgene:
+    cited_in:
+    - evidence/matrix/tools/cellxgene.yaml
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260516121220/https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_2__Self%20Host%20cellxgene
+    archive_timestamp: '20260516121220'
+    archive_status: '200'
+  https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/:
+    cited_in:
+    - notes/comparison/_summary.md
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260505061246/https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/
+    archive_timestamp: '20260505061246'
+    archive_status: '200'
+    archive_source: cdx
+  https://cellxgene.cziscience.com/e/85585f3f-d16a-412d-b93a-406d52721221.cxg/:
+    cited_in:
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://cellxgene.cziscience.com/e/dcfd4feb-18a3-4b30-81d7-1b0c544a8ab3.cxg/:
+    cited_in:
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260211091613/https://cellxgene.cziscience.com/e/dcfd4feb-18a3-4b30-81d7-1b0c544a8ab3.cxg/
+    archive_timestamp: '20260211091613'
+    archive_status: '200'
+    archive_source: cdx
+  https://cirrocumulus-dot-broad-cumulus.appspot.com:
+    cited_in:
+    - notes/comparison/cirrocumulus.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://cirrocumulus-dot-broad-cumulus.appspot.com/
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://cirrocumulus.apps.broadinstitute.org:
+    cited_in:
+    - notes/comparison/cirrocumulus.md
+    checked: '2026-10-04'
+    status: error
+    final_url: https://cirrocumulus.apps.broadinstitute.org/
+    via: direct
+    archive: pending
+    archive_timestamp: null
+    archive_source: cdx-error
+    dead: true
+  https://cirrocumulus.appspot.com:
+    cited_in:
+    - notes/comparison/cirrocumulus.md
+    checked: '2026-10-04'
+    status: 404
+    final_url: https://cirrocumulus.appspot.com/
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+    dead: true
+  https://cirrocumulus.readthedocs.io/en/latest/:
+    cited_in:
+    - figures/COMPARISON_NOTES.md
+    - notes/comparison/cirrocumulus.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260206122532/https://cirrocumulus.readthedocs.io/en/latest/
+    archive_timestamp: '20260206122532'
+    archive_status: '200'
+  https://cirrocumulus.readthedocs.io/en/latest/documentation.html:
+    cited_in:
+    - notes/comparison/cirrocumulus.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260617193435/https://cirrocumulus.readthedocs.io/en/latest/documentation.html
+    archive_timestamp: '20260617193435'
+    archive_status: '200'
+  https://cors-proxy.aaron-lun.workers.dev:
+    cited_in:
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 500
+    final_url: https://cors-proxy.aaron-lun.workers.dev/
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+    dead: true
+  https://cumulus.readthedocs.io/en/stable/cirrocumulus.html:
+    cited_in:
+    - notes/comparison/cirrocumulus.md
+    checked: '2026-10-04'
+    status: 404
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+    dead: true
+  https://data-1.vitessce.io/:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 403
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+    blocked: true
+  https://data-1.vitessce.io/0.0.33/main/codeluppi-2018/codeluppi_2018_nature_methods.cells.csv:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://data-1.vitessce.io/0.0.33/main/human-lymph-node-10x-visium/human_lymph_node_10x_visium.h5ad.zarr:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 403
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+    blocked: true
+  https://doi.org/10.1016/j.cell.2018.05.057:
+    cited_in:
+    - evidence/matrix/tools/scope.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://linkinghub.elsevier.com/retrieve/pii/S0092867418307207
+    via: direct
+    archive: https://web.archive.org/web/20261003031244/https://linkinghub.elsevier.com/retrieve/pii/S0092867418307207
+    archive_timestamp: '20261003031244'
+    archive_status: '301'
+    archive_source: cdx
+  https://doi.org/10.1038/s41587-023-01767-y:
+    cited_in:
+    - evidence/matrix/tools/scanpy-seurat.yaml
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://www.nature.com/articles/s41587-023-01767-y?error=cookies_not_supported&code=fe3f3cab-ae20-4be4-9be9-3dcc6bb1933f
+    via: direct
+    archive: https://web.archive.org/web/20260929032127/https://doi.org/10.1038%2Fs41587-023-01767-y
+    archive_timestamp: '20260929032127'
+    archive_status: '302'
+    archive_source: cdx
+  https://doi.org/10.1038/s41592-020-0905-x:
+    cited_in:
+    - evidence/matrix/tools/cirrocumulus.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/cirrocumulus.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://www.nature.com/articles/s41592-020-0905-x?error=cookies_not_supported&code=20dab3d7-fe55-408f-9464-a926436fe496
+    via: direct
+    archive: https://web.archive.org/web/20260918150601/https://doi.org/10.1038/s41592-020-0905-x
+    archive_timestamp: '20260918150601'
+    archive_status: '302'
+    archive_source: cdx
+  https://doi.org/10.1038/s41592-024-02212-x:
+    cited_in:
+    - evidence/matrix/tools/napari-spatialdata.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://www.nature.com/articles/s41592-024-02212-x?error=cookies_not_supported&code=c8375ac9-39bf-4edc-92f9-0b9d0178d0fc
+    via: direct
+    archive: https://web.archive.org/web/20260902071341/https://doi.org/10.1038/s41592-024-02212-x
+    archive_timestamp: '20260902071341'
+    archive_status: '302'
+    archive_source: cdx
+  https://doi.org/10.1038/s41592-024-02436-x:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://www.nature.com/articles/s41592-024-02436-x?error=cookies_not_supported&code=5b69894d-9f8c-4113-a7e2-974a13eebe3b
+    via: direct
+    archive: https://web.archive.org/web/20250827204641/https://doi.org/10.1038/s41592-024-02436-x
+    archive_timestamp: '20250827204641'
+    archive_status: '-'
+    archive_source: cdx
+  https://doi.org/10.1093/bioadv/vbaf107:
+    cited_in:
+    - evidence/matrix/tools/isee.yaml
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 403
+    final_url: https://academic.oup.com/bioinformaticsadvances/article/doi/10.1093/bioadv/vbaf107/8125648
+    via: direct
+    archive: https://web.archive.org/web/20260914130831/https://academic.oup.com/bioinformaticsadvances/article/doi/10.1093/bioadv/vbaf107/8125648
+    archive_timestamp: '20260914130831'
+    archive_status: '403'
+    archive_source: cdx
+    blocked: true
+  https://doi.org/10.1093/bioinformatics/btab209:
+    cited_in:
+    - notes/comparison/_summary.md
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 403
+    final_url: https://academic.oup.com/bioinformatics/article/37/19/3374/6198103
+    via: direct
+    archive: https://web.archive.org/web/20260524194915/https://academic.oup.com/bioinformatics/article/37/19/3374/6198103
+    archive_timestamp: '20260524194915'
+    archive_status: '200'
+    archive_source: cdx
+    blocked: true
+  https://doi.org/10.1093/bioinformatics/btab503:
+    cited_in:
+    - evidence/matrix/tools/ucsc-cell-browser.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 403
+    final_url: https://academic.oup.com/bioinformatics/article/37/23/4578/6318386
+    via: direct
+    archive: https://web.archive.org/web/20260904045025/https://academic.oup.com/bioinformatics/article/37/23/4578/6318386
+    archive_timestamp: '20260904045025'
+    archive_status: '302'
+    archive_source: cdx
+    blocked: true
+  https://doi.org/10.1093/nar/gkae1142:
+    cited_in:
+    - evidence/matrix/tools/cellxgene.yaml
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 403
+    final_url: https://academic.oup.com/nar/article/53/D1/D886/7912032
+    via: direct
+    archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+    archive_timestamp: '20260727020852'
+    archive_status: '200'
+    blocked: true
+  https://doi.org/10.1101/2020.10.25.354100:
+    cited_in:
+    - evidence/matrix/tools/shinycell.yaml
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+    via: direct
+    archive: https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+    archive_timestamp: '20221226151858'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://doi.org/10.1101/2021.04.05.438318:
+    cited_in:
+    - evidence/matrix/tools/cellxgene.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://www.biorxiv.org/content/10.1101/2021.04.05.438318v1
+    via: direct
+    archive: https://web.archive.org/web/20261002014308/https://www.biorxiv.org/content/10.1101/2021.04.05.438318v1
+    archive_timestamp: '20261002014308'
+    archive_status: '200'
+    archive_source: cdx
+  https://doi.org/10.1101/2021.12.16.473007:
+    cited_in:
+    - evidence/matrix/tools/scanpy-seurat.yaml
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: https://www.biorxiv.org/lookup/doi/10.1101/2021.12.16.473007
+    via: direct
+    archive: https://web.archive.org/web/20261002045036/https://www.biorxiv.org/lookup/doi/10.1101/2021.12.16.473007
+    archive_timestamp: '20261002045036'
+    archive_status: '301'
+    archive_source: cdx
+    blocked: true
+  https://doi.org/10.1101/2022.03.02.482701:
+    cited_in:
+    - evidence/matrix/tools/kana.yaml
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: https://www.biorxiv.org/lookup/doi/10.1101/2022.03.02.482701
+    via: direct
+    archive: https://web.archive.org/web/20260731211216/https://www.biorxiv.org/lookup/doi/10.1101/2022.03.02.482701
+    archive_timestamp: '20260731211216'
+    archive_status: '301'
+    archive_source: cdx
+    blocked: true
+  https://doi.org/10.1101/2023.07.13.548886:
+    cited_in:
+    - evidence/matrix/tools/single-cell-portal.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: https://www.biorxiv.org/lookup/doi/10.1101/2023.07.13.548886
+    via: direct
+    archive: https://web.archive.org/web/20260909064208/http://biorxiv.org/lookup/doi/10.1101/2023.07.13.548886
+    archive_timestamp: '20260909064208'
+    archive_status: '302'
+    archive_source: cdx
+    blocked: true
+  https://doi.org/10.1101/2025.04.22.650045:
+    cited_in:
+    - evidence/matrix/tools/shinycell.yaml
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: https://www.biorxiv.org/lookup/doi/10.1101/2025.04.22.650045
+    via: direct
+    archive: https://web.archive.org/web/20260228021348/http://biorxiv.org/lookup/doi/10.1101/2025.04.22.650045
+    archive_timestamp: '20260228021348'
+    archive_status: '302'
+    archive_source: cdx
+    blocked: true
+  https://doi.org/10.1126/science.abk2432:
+    cited_in:
+    - evidence/matrix/tools/scope.yaml
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 403
+    final_url: https://www.science.org/doi/10.1126/science.abk2432
+    via: direct
+    archive: https://web.archive.org/web/20260916205443/https://www.science.org/doi/10.1126/science.abk2432
+    archive_timestamp: '20260916205443'
+    archive_status: '403'
+    archive_source: cdx
+    blocked: true
+  https://doi.org/10.1126/science.adn3949:
+    cited_in:
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 403
+    final_url: https://www.science.org/doi/10.1126/science.adn3949
+    via: direct
+    archive: https://web.archive.org/web/20250726131326/https://www.science.org/doi/10.1126/science.adn3949
+    archive_timestamp: '20250726131326'
+    archive_status: '200'
+    archive_source: availability+cdx
+    blocked: true
+  https://doi.org/10.1186/s13059-017-1382-0:
+    cited_in:
+    - evidence/matrix/tools/scanpy-seurat.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://link.springer.com/article/10.1186/s13059-017-1382-0
+    via: direct
+    archive: https://web.archive.org/web/20260919071559/https://link.springer.com/article/10.1186/s13059-017-1382-0
+    archive_timestamp: '20260919071559'
+    archive_status: '-'
+    archive_source: cdx
+  https://doi.org/10.12688/f1000research.14966.1:
+    cited_in:
+    - evidence/matrix/tools/isee.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://f1000research.com/articles/7-741/v1
+    via: direct
+    archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+    archive_timestamp: '20260802032036'
+    archive_status: '200'
+  https://doi.org/10.12688/f1000research.161076.1:
+    cited_in:
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://f1000research.com/articles/14-338/v1
+    via: direct
+    archive: https://web.archive.org/web/20251204041823/https://f1000research.com/articles/14-338/v1
+    archive_timestamp: '20251204041823'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://doi.org/10.17504/protocols.io.n92ld6qk8g5b/v1:
+    cited_in:
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://www.protocols.io/view/loupe-browser-access-and-loading-data-n92ld6qk8g5b/v1
+    via: direct
+    archive: https://web.archive.org/web/20251019110715/https://www.protocols.io/view/loupe-browser-access-and-loading-data-n92ld6qk8g5b/v1
+    archive_timestamp: '20251019110715'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://doi.org/10.21105/joss.04371:
+    cited_in:
+    - evidence/matrix/tools/scanpy-seurat.yaml
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://joss.theoj.org/papers/10.21105/joss.04371
+    via: direct
+    archive: https://web.archive.org/web/20260830005611/https://joss.theoj.org/papers/10.21105/joss.04371
+    archive_timestamp: '20260830005611'
+    archive_status: '200'
+    archive_source: cdx
+  https://doi.org/10.21105/joss.05603:
+    cited_in:
+    - evidence/matrix/tools/kana.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://joss.theoj.org/papers/10.21105/joss.05603
+    via: direct
+    archive: https://web.archive.org/web/20260926084941/https://joss.theoj.org/papers/10.21105/joss.05603
+    archive_timestamp: '20260926084941'
+    archive_status: '200'
+    archive_source: cdx
+  https://doi.org/10.5281/zenodo.3555620:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://zenodo.org/records/23047950
+    via: direct
+    archive: https://web.archive.org/web/20260919204414/https://doi.org/10.5281/ZENODO.3555620
+    archive_timestamp: '20260919204414'
+    archive_status: '302'
+    archive_source: cdx
+  https://eurobioc2023.bioconductor.org/abstracts/paper15/:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20251112162717/https://eurobioc2023.bioconductor.org/abstracts/paper15/
+    archive_timestamp: '20251112162717'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://europepmc.org/article/PMC/PMC6086935:
+    cited_in:
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 403
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+    blocked: true
+  https://example.org/remote.zarr:
+    cited_in:
+    - evidence/matrix/tools/napari-spatialdata.yaml
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: null
+    skipped: placeholder in prose
+    archive: null
+    archive_timestamp: null
+  https://federicomarini.shinyapps.io/iSEEindex_demo/:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 404
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+    dead: true
+  https://flycellatlas.org:
+    cited_in:
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://flycellatlas.org/
+    via: direct
+    archive: https://web.archive.org/web/20260430001035/https://flycellatlas.org/
+    archive_timestamp: '20260430001035'
+    archive_status: '200'
+    archive_source: cdx
+  https://flycellatlas.org/asap:
+    cited_in:
+    - evidence/matrix/tools/scope.yaml
+    checked: '2026-10-04'
+    status: 404
+    final_url: https://asap.epfl.ch/fca
+    via: direct
+    archive: https://web.archive.org/web/20220815112947/http://flycellatlas.org/asap
+    archive_timestamp: '20220815112947'
+    archive_status: '302'
+    archive_source: cdx
+    dead: true
+  https://flycellatlas.org/scope:
+    cited_in:
+    - evidence/matrix/tools/scope.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://scope.aertslab.org/#/FlyCellAtlas/*/welcome
+    via: direct
+    archive: https://web.archive.org/web/20220815112854/http://flycellatlas.org/scope
+    archive_timestamp: '20220815112854'
+    archive_status: '302'
+    archive_source: cdx
+  https://git.bioconductor.org/packages/iSEEfier:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20251121172026/https://git.bioconductor.org/packages/iSEEfier
+    archive_timestamp: '20251121172026'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://github.com/10xGenomics/loupeR:
+    cited_in:
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260522170358/https://github.com/10XGenomics/loupeR
+    archive_timestamp: '20260522170358'
+    archive_status: '200'
+  https://github.com/10xGenomics/loupeR/tree/b1cba07374f7326c6a69fddc2405e17157cb93de:
+    cited_in:
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://github.com/SGDDNB/ShinyCell:
+    cited_in:
+    - figures/COMPARISON_NOTES.md
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260929032152/https://github.com/SGDDNB/ShinyCell
+    archive_timestamp: '20260929032152'
+    archive_status: '200'
+  https://github.com/aertslab/SCope:
+    cited_in:
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260212051249/https://github.com/aertslab/SCope
+    archive_timestamp: '20260212051249'
+    archive_status: '200'
+  https://github.com/aertslab/SCope/releases:
+    cited_in:
+    - evidence/matrix/tools/scope.yaml
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20201216195238/https://github.com/aertslab/SCope/releases
+    archive_timestamp: '20201216195238'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/aertslab/SCope/wiki:
+    cited_in:
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20201216195243/https://github.com/aertslab/SCope/wiki
+    archive_timestamp: '20201216195243'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://github.com/broadinstitute/scp-ingest-pipeline:
+    cited_in:
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260625094212/https://github.com/broadinstitute/scp-ingest-pipeline
+    archive_timestamp: '20260625094212'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/broadinstitute/single_cell_portal_core:
+    cited_in:
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260518011054/https://github.com/broadinstitute/single_cell_portal_core
+    archive_timestamp: '20260518011054'
+    archive_status: '200'
+  https://github.com/chanzuckerberg/cellxgene:
+    cited_in:
+    - figures/COMPARISON_NOTES.md
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260629111347/https://github.com/chanzuckerberg/cellxgene
+    archive_timestamp: '20260629111347'
+    archive_status: '200'
+  https://github.com/chanzuckerberg/single-cell-explorer:
+    cited_in:
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://github.com/iSEE/iSEE:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260226152513/https://github.com/iSEE/iSEE
+    archive_timestamp: '20260226152513'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/kanaverse/bakana:
+    cited_in:
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20230517171237/http://github.com/kanaverse/bakana
+    archive_timestamp: '20230517171237'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/kanaverse/bakana-remotes:
+    cited_in:
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://github.com/kanaverse/kana:
+    cited_in:
+    - evidence/matrix/tools/kana.yaml
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20240917155736/https://github.com/kanaverse/kana
+    archive_timestamp: '20240917155736'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://github.com/kanaverse/kana/tree/ecb0360c5e00200ed9cee2d73d45725e93d53a39/src/components/NewAnalysis:
+    cited_in:
+    - evidence/matrix/tools/kana.yaml
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://github.com/kanaverse/kana/wiki:
+    cited_in:
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260822135753/https://github.com/kanaverse/kana/wiki
+    archive_timestamp: '20260822135753'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/kanaverse/kana/wiki/How-to-interactively-explore-results:
+    cited_in:
+    - evidence/matrix/tools/kana.yaml
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://github.com/kanaverse/kana/wiki/How-to-load-datasets:
+    cited_in:
+    - evidence/matrix/tools/kana.yaml
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://github.com/kanaverse/scran.js:
+    cited_in:
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20241025062222/https://github.com/kanaverse/scran.js
+    archive_timestamp: '20241025062222'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/kanaverse/wobbegong-kana:
+    cited_in:
+    - evidence/matrix/tools/kana.yaml
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://github.com/lilab-bcb/cirrocumulus:
+    cited_in:
+    - notes/comparison/cirrocumulus.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260206122533/https://github.com/lilab-bcb/cirrocumulus
+    archive_timestamp: '20260206122533'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/microbiome/iSEEtree:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260129140502/https://github.com/microbiome/iSEEtree
+    archive_timestamp: '20260129140502'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/napari/napari/releases/latest:
+    cited_in:
+    - evidence/matrix/tools/napari-spatialdata.yaml
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://github.com/napari/napari/releases/tag/v0.9.2
+    via: direct
+    archive: https://web.archive.org/web/20261003032456/https://github.com/napari/napari/releases/tag/v0.9.2
+    archive_timestamp: '20261003032456'
+    archive_status: '200'
+  https://github.com/satijalab/seurat:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260604023503/https://github.com/satijalab/seurat
+    archive_timestamp: '20260604023503'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/scverse/anndata:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260625170914/https://github.com/scverse/anndata
+    archive_timestamp: '20260625170914'
+    archive_status: '200'
+  https://github.com/scverse/napari-spatialdata:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260627015148/https://github.com/scverse/napari-spatialdata
+    archive_timestamp: '20260627015148'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/scverse/scanpy:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260701072745/https://github.com/scverse/scanpy
+    archive_timestamp: '20260701072745'
+    archive_status: '200'
+  https://github.com/scverse/spatialdata:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260624160617/https://github.com/scverse/spatialdata
+    archive_timestamp: '20260624160617'
+    archive_status: '200'
+  https://github.com/scverse/squidpy:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260629111750/https://github.com/scverse/squidpy
+    archive_timestamp: '20260629111750'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/settylab/annzarro/releases/tag/v0.2.0:
+    cited_in:
+    - evidence/matrix/tools/annzarro.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://github.com/the-ouyang-lab/ShinyCell2:
+    cited_in:
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260602172721/https://github.com/the-ouyang-lab/ShinyCell2
+    archive_timestamp: '20260602172721'
+    archive_status: '200'
+  https://github.com/the-ouyang-lab/ShinyCell2-tutorial:
+    cited_in:
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://github.com/ucscGenomeBrowser/cellBrowser:
+    cited_in:
+    - notes/comparison/ucsc-cell-browser.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260206122706/https://github.com/ucscGenomeBrowser/cellBrowser
+    archive_timestamp: '20260206122706'
+    archive_status: '200'
+    archive_source: cdx
+  https://github.com/vitessce/vitessce:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511020137/https://github.com/vitessce/vitessce
+    archive_timestamp: '20260511020137'
+    archive_source: cdx
+    archive_status: '200'
+  https://github.com/vitessce/vitessce-python:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260629150900/https://github.com/vitessce/vitessce-python
+    archive_timestamp: '20260629150900'
+    archive_status: '200'
+    archive_source: cdx
+  https://gypsum.artifactdb.com:
+    cited_in:
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://artifactdb.github.io/gypsum-worker/
+    via: direct
+    archive: https://web.archive.org/web/20250407000832/http://gypsum.artifactdb.com/
+    archive_timestamp: '20250407000832'
+    archive_status: '-'
+    archive_source: cdx
+  https://htmlpreview.github.io/?https://github.com/SGDDNB/ShinyCell/blob/master/docs/4cloud.html:
+    cited_in:
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20240420152842/https://htmlpreview.github.io/?https://github.com/SGDDNB/ShinyCell/blob/master/docs/4cloud.html
+    archive_timestamp: '20240420152842'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://htmlpreview.github.io/?https://github.com/the-ouyang-lab/ShinyCell2-tutorial/master/docs/tutCiteseq.html:
+    cited_in:
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://htmlpreview.github.io/?https://github.com/the-ouyang-lab/ShinyCell2-tutorial/master/docs/tutSpatial.html:
+    cited_in:
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://isee.github.io/iSEE/:
+    cited_in:
+    - figures/COMPARISON_NOTES.md
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260210211614/https://isee.github.io/iSEE/
+    archive_timestamp: '20260210211614'
+    archive_status: '200'
+  https://isee.github.io/iSEE/articles/basic.html:
+    cited_in:
+    - evidence/matrix/tools/isee.yaml
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260216145925/https://isee.github.io/iSEE/articles/basic.html
+    archive_timestamp: '20260216145925'
+    archive_status: '200'
+    archive_source: cdx
+  https://isee.github.io/iSEE/articles/bigdata.html:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20250906040539/https://isee.github.io/iSEE/articles/bigdata.html
+    archive_timestamp: '20250906040539'
+    archive_status: '200'
+    archive_source: cdx
+  https://isee.github.io/iSEE/articles/links.html:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20250901091405/https://isee.github.io/iSEE/articles/links.html
+    archive_timestamp: '20250901091405'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://kevinrue.shinyapps.io/isee-shiny-contest/:
+    cited_in:
+    - evidence/matrix/tools/isee.yaml
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 202
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260101112934/https://kevinrue.shinyapps.io/isee-shiny-contest/
+    archive_timestamp: '20260101112934'
+    archive_status: '202'
+  https://marionilab.cruk.cam.ac.uk/:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 503
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20250609012050/https://marionilab.cruk.cam.ac.uk/
+    archive_timestamp: '20250609012050'
+    archive_status: '-'
+    archive_source: cdx
+    dead: true
+  https://marionilab.cruk.cam.ac.uk/iSEE_cytof:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 503
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20250830171524/https://marionilab.cruk.cam.ac.uk/iSEE_cytof
+    archive_timestamp: '20250830171524'
+    archive_status: '-'
+    archive_source: cdx
+    dead: true
+  https://marionilab.cruk.cam.ac.uk/iSEE_pbmc4k:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 503
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20250911041649/https://marionilab.cruk.cam.ac.uk/iSEE_pbmc4k
+    archive_timestamp: '20250911041649'
+    archive_status: '-'
+    archive_source: cdx
+    dead: true
+  https://marionilab.cruk.cam.ac.uk/iSEE_tcga:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 503
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20250904113056/https://marionilab.cruk.cam.ac.uk/iSEE_tcga
+    archive_timestamp: '20250904113056'
+    archive_source: cdx
+    archive_status: '-'
+    dead: true
+  https://napari-hub.org/plugins/napari-spatialdata:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260307031646/https://napari-hub.org/plugins/napari-spatialdata
+    archive_timestamp: '20260307031646'
+    archive_status: '200'
+  https://napari.org:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://napari.org/
+    via: direct
+    archive: https://web.archive.org/web/20260924132653/https://napari.org/
+    archive_timestamp: '20260924132653'
+    archive_status: '200'
+  https://napari.org/stable/plugins/start_using_plugins/finding_and_installing_plugins.html:
+    cited_in:
+    - evidence/matrix/tools/napari-spatialdata.yaml
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260924132704/https://napari.org/stable/plugins/start_using_plugins/finding_and_installing_plugins.html
+    archive_timestamp: '20260924132704'
+    archive_status: '200'
+  https://python-docs.vitessce.io/:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260711074230/http://python-docs.vitessce.io/
+    archive_timestamp: '20260711074230'
+    archive_status: '200'
+    archive_source: cdx
+  https://raw.githubusercontent.com/openjournals/joss-papers/master/joss.05603/10.21105.joss.05603.pdf:
+    cited_in:
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://rehwinkellab.shinyapps.io/ifnresource/:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 202
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20240519124547/http://rehwinkellab.shinyapps.io/ifnresource/
+    archive_timestamp: '20240519124547'
+    archive_status: '301'
+    archive_source: cdx
+  https://satijalab.org/seurat/:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260930011331/https://satijalab.org/seurat/
+    archive_timestamp: '20260930011331'
+    archive_status: '200'
+  https://satijalab.org/seurat/articles/parsebio_sketch_integration:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260925025058/https://satijalab.org/seurat/articles/parsebio_sketch_integration
+    archive_timestamp: '20260925025058'
+    archive_status: '200'
+    archive_source: cdx
+  https://satijalab.org/seurat/articles/seurat5_bpcells_interaction_vignette:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260925025058/https://satijalab.org/seurat/articles/seurat5_bpcells_interaction_vignette
+    archive_timestamp: '20260925025058'
+    archive_source: cdx
+    archive_status: '200'
+  https://satijalab.org/seurat/articles/seurat5_sketch_analysis:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260831215526/https://satijalab.org/seurat/articles/seurat5_sketch_analysis
+    archive_timestamp: '20260831215526'
+    archive_status: '200'
+    archive_source: cdx
+  https://satijalab.org/seurat/articles/spatial_vignette:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260825173005/https://satijalab.org/seurat/articles/spatial_vignette
+    archive_timestamp: '20260825173005'
+    archive_status: '200'
+  https://satijalab.org/seurat/reference/cellselector:
+    cited_in:
+    - evidence/matrix/tools/scanpy-seurat.yaml
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260616151216/https://satijalab.org/seurat/reference/cellselector
+    archive_timestamp: '20260616151216'
+    archive_status: '200'
+  https://satijalab.org/seurat/reference/dimplot:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260520231137/https://satijalab.org/seurat/reference/dimplot
+    archive_timestamp: '20260520231137'
+    archive_status: '200'
+  https://satijalab.org/seurat/reference/featureplot:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20251119221740/https://satijalab.org/seurat/reference/featureplot
+    archive_timestamp: '20251119221740'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://satijalab.org/seurat/reference/sketchdata:
+    cited_in:
+    - evidence/matrix/tools/scanpy-seurat.yaml
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260305185634/https://satijalab.org/seurat/reference/sketchdata
+    archive_timestamp: '20260305185634'
+    archive_status: '200'
+  https://scanpy.readthedocs.io:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://scanpy.scverse.org/en/stable/
+    via: direct
+    archive: https://web.archive.org/web/20261001160752/https://scanpy.readthedocs.io/
+    archive_timestamp: '20261001160752'
+    archive_status: '302'
+    archive_source: cdx
+  https://scanpy.readthedocs.io/en/stable/api/generated/scanpy.pl.spatial.html:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260618163722/https://scanpy.readthedocs.io/en/stable/api/generated/scanpy.pl.spatial.html
+    archive_timestamp: '20260618163722'
+    archive_status: '200'
+  https://scanpy.readthedocs.io/en/stable/installation.html:
+    cited_in:
+    - evidence/matrix/tools/scanpy-seurat.yaml
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260921003257/https://scanpy.readthedocs.io/en/stable/installation.html
+    archive_timestamp: '20260921003257'
+    archive_status: '200'
+  https://scanpy.readthedocs.io/en/stable/tutorials/experimental/dask.html:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260417161729/https://scanpy.readthedocs.io/en/stable/tutorials/experimental/dask.html
+    archive_timestamp: '20260417161729'
+    archive_status: '200'
+  https://scope.aertslab.org:
+    cited_in:
+    - evidence/matrix/tools/scope.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://scope.aertslab.org/
+    via: direct
+    archive: https://web.archive.org/web/20260919024024/https://scope.aertslab.org/
+    archive_timestamp: '20260919024024'
+    archive_status: '200'
+    archive_source: cdx
+  https://scope.aertslab.org/#/FlyCellAtlas/*/welcome:
+    cited_in:
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260919024024/https://scope.aertslab.org/
+    archive_timestamp: '20260919024024'
+    archive_status: '200'
+    archive_source: cdx
+  https://scope.aertslab.org/#/Wouters_Human_Melanoma/Wouters_Human_Melanoma%2F10_Baselines_filteredRegulons.loom/gene:
+    cited_in:
+    - evidence/matrix/tools/scope.yaml
+    - notes/comparison/scope.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260919024024/https://scope.aertslab.org/
+    archive_timestamp: '20260919024024'
+    archive_status: '200'
+    archive_source: cdx
+  https://shiny.posit.co/r/gallery/life-sciences/isee/:
+    cited_in:
+    - notes/comparison/isee.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx-error
+  https://shinycell.ouyanglab.com/:
+    cited_in:
+    - evidence/matrix/tools/shinycell.yaml
+    - notes/comparison/_summary.md
+    - notes/comparison/shinycell.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260602172706/https://shinycell.ouyanglab.com/
+    archive_timestamp: '20260602172706'
+    archive_status: '200'
+  https://singlecell.broadinstitute.org/single_cell:
+    cited_in:
+    - evidence/matrix/tools/single-cell-portal.yaml
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20261002124730/https://singlecell.broadinstitute.org/single_cell
+    archive_timestamp: '20261002124730'
+    archive_status: '200'
+    archive_source: cdx
+  https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP2805/explore:
+    cited_in:
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  ? https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP383/clusters/1M%20cell%20clusters?annotation_name=Cluster&annotation_scope=study&annotation_type=group&fields=expression&gene=Sox2&subsample=all
+  : cited_in:
+    - evidence/matrix/tools/single-cell-portal.yaml
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP383/clusters/1M%20cell%20clusters?fields=coordinates:
+    cited_in:
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://singlecell.broadinstitute.org/single_cell/study/SCP1671:
+    cited_in:
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://singlecell.broadinstitute.org/single_cell/study/SCP1671/cellular-and-transcriptional-diversity-over-the-course-of-human-lactation
+    via: direct
+    archive: https://web.archive.org/web/20260317023224/https://singlecell.broadinstitute.org/single_cell/study/SCP1671/cellular-and-transcriptional-diversity-over-the-course-of-human-lactation
+    archive_timestamp: '20260317023224'
+    archive_status: '200'
+    archive_source: cdx
+  https://singlecell.broadinstitute.org/single_cell/study/SCP2510:
+    cited_in:
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://singlecell.broadinstitute.org/single_cell/study/SCP2510/human-lung-cancer-harbors-spatially-organized-stem-immunity-hubs-that-associate-with-response-to-immunotherapy
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://singlecell.broadinstitute.org/single_cell/study/SCP259:
+    cited_in:
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://singlecell.broadinstitute.org/single_cell/study/SCP259/intra-and-inter-cellular-rewiring-of-the-human-colon-during-ulcerative-colitis
+    via: direct
+    archive: https://web.archive.org/web/20260702053057/https://singlecell.broadinstitute.org/single_cell/study/SCP259
+    archive_timestamp: '20260702053057'
+    archive_status: '-'
+    archive_source: cdx
+  https://singlecell.broadinstitute.org/single_cell/study/SCP2805:
+    cited_in:
+    - notes/comparison/_summary.md
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://singlecell.broadinstitute.org/single_cell/study/SCP2805/hrca-snrna-seq-of-the-human-retina-all-cells
+    via: direct
+    archive: https://web.archive.org/web/20260317025344/https://singlecell.broadinstitute.org/single_cell/study/SCP2805/hrca-snrna-seq-of-the-human-retina-all-cells
+    archive_timestamp: '20260317025344'
+    archive_status: '200'
+    archive_source: cdx
+  https://singlecell.broadinstitute.org/single_cell/study/SCP383:
+    cited_in:
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://singlecell.broadinstitute.org/single_cell/study/SCP383/10x-1-3-million-brain-cells-from-e18-mice
+    via: direct
+    archive: https://web.archive.org/web/20200424085953/https://singlecell.broadinstitute.org/single_cell/study/SCP383/10x-1-3-million-brain-cells-from-e18-mice
+    archive_timestamp: '20200424085953'
+    archive_status: '200'
+    archive_source: cdx
+  https://singlecell.broadinstitute.org/single_cell/study/SCP383?genes=Sox2#study-visualize:
+    cited_in:
+    - evidence/matrix/tools/single-cell-portal.yaml
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://singlecell.broadinstitute.org/single_cell/study/SCP383/10x-1-3-million-brain-cells-from-e18-mice?genes=Sox2
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://singlecell.zendesk.com/hc/en-us:
+    cited_in:
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260622111432/https://singlecell.zendesk.com/hc/en-us
+    archive_timestamp: '20260622111432'
+    archive_status: '200'
+  https://singlecell.zendesk.com/hc/en-us/articles/10994355298331-Spatial-transcriptomics:
+    cited_in:
+    - evidence/matrix/tools/single-cell-portal.yaml
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://singlecell.zendesk.com/hc/en-us/articles/28157597291291-Pre-computed-differential-expression-DE:
+    cited_in:
+    - evidence/matrix/tools/single-cell-portal.yaml
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20240815172212/https://singlecell.zendesk.com/hc/en-us/articles/28157597291291-Pre-computed-differential-expression-DE
+    archive_timestamp: '20240815172212'
+    archive_status: '200'
+    archive_source: availability+cdx
+  https://singlecell.zendesk.com/hc/en-us/articles/360060610032-Cluster-file-subsampling:
+    cited_in:
+    - evidence/matrix/tools/single-cell-portal.yaml
+    - notes/comparison/single-cell-portal.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://spatialdata.scverse.org/en/stable/tutorials/notebooks/datasets/README.html:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511053501/https://spatialdata.scverse.org/en/stable/tutorials/notebooks/datasets/README.html
+    archive_timestamp: '20260511053501'
+    archive_status: '200'
+  https://spatialdata.scverse.org/en/stable/tutorials/notebooks/notebooks/examples/napari_rois.html:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://spatialdata.scverse.org/projects/napari/en/stable/:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/nanostring_analysis.html:
+    cited_in:
+    - evidence/matrix/tools/napari-spatialdata.yaml
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511051117/https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/nanostring_analysis.html
+    archive_timestamp: '20260511051117'
+    archive_status: '200'
+  https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/scatterwidget.html:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511051155/https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/scatterwidget.html
+    archive_timestamp: '20260511051155'
+    archive_status: '200'
+    archive_source: cdx
+  https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/scatterwidget_annotation.html:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511062009/https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/scatterwidget_annotation.html
+    archive_timestamp: '20260511062009'
+    archive_status: '200'
+    archive_source: cdx
+  https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/spatialdata.html:
+    cited_in:
+    - evidence/matrix/tools/napari-spatialdata.yaml
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260317192918/https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/spatialdata.html
+    archive_timestamp: '20260317192918'
+    archive_status: '200'
+    archive_source: cdx
+  https://squidpy.readthedocs.io/en/stable/notebooks/tutorials/tutorial_visium_hne.html:
+    cited_in:
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260607192720/https://squidpy.readthedocs.io/en/stable/notebooks/tutorials/tutorial_visium_hne.html
+    archive_timestamp: '20260607192720'
+    archive_status: '200'
+    archive_source: cdx
+  https://storage.googleapis.com/vitessce-demo-data/habib-2017/habib17.processed.h5ad.zarr/obsm/X_umap/.zarray:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    archive_source: cdx
+  https://storage.googleapis.com/vitessce-demo-data/salcher-2022/salcher_2022_extended.h5ad.zarr/obsm/X_umap/.zarray:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+  https://unpkg.com/vega-embed@6/build/vega-embed.js:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://unpkg.com/vega-embed@6.29.0/build/vega-embed.js
+    via: direct
+    archive: null
+    archive_timestamp: null
+  https://vitessce-data.storage.googleapis.com/:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+  ? https://vitessce-data.storage.googleapis.com/0.0.33/main/human-lymph-node-10x-visium/human_lymph_node_10x_visium.ome.zarr/.zattrs
+  : cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+  https://vitessce-demo-data.storage.googleapis.com/anndata-demos/BALF_VIB-UGent_processed_cleaned.zarr/:
+    cited_in:
+    - evidence/matrix/tools/scanpy-seurat.yaml
+    - notes/comparison/scanpy-seurat.md
+    checked: '2026-10-04'
+    status: 404
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    dead: true
+  https://vitessce.io:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://vitessce.io/
+    via: direct
+    archive: https://web.archive.org/web/20260511020122/https://vitessce.io/
+    archive_timestamp: '20260511020122'
+    archive_status: '200'
+  https://vitessce.io/:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511020122/https://vitessce.io/
+    archive_timestamp: '20260511020122'
+    archive_status: '200'
+  https://vitessce.io/#?dataset=codeluppi-2018:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511020122/https://vitessce.io/
+    archive_timestamp: '20260511020122'
+    archive_status: '200'
+  https://vitessce.io/#?dataset=habib-2017:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511020122/https://vitessce.io/
+    archive_timestamp: '20260511020122'
+    archive_status: '200'
+  https://vitessce.io/#?dataset=human-lymph-node-10x-visium:
+    cited_in:
+    - notes/comparison/_summary.md
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511020122/https://vitessce.io/
+    archive_timestamp: '20260511020122'
+    archive_status: '200'
+  https://vitessce.io/#?dataset=salcher-2022:
+    cited_in:
+    - notes/comparison/_summary.md
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511020122/https://vitessce.io/
+    archive_timestamp: '20260511020122'
+    archive_status: '200'
+  https://vitessce.io/#?url=http://127.0.0.1:8904/config.json:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511020122/https://vitessce.io/
+    archive_timestamp: '20260511020122'
+    archive_status: '200'
+  https://vitessce.io/?url=:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: null
+    skipped: URL template
+    archive: null
+    archive_timestamp: null
+  https://vitessce.io/?url=http://127.0.0.1:8904/config.json:
+    cited_in:
+    - notes/comparison/_local_demos.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+  https://vitessce.io/blog/spatial-elements/:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+  https://vitessce.io/demos/:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 403
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    blocked: true
+  https://vitessce.io/docs/:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511020136/https://vitessce.io/docs/
+    archive_timestamp: '20260511020136'
+    archive_status: '200'
+  https://vitessce.io/docs/data-comparative/:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - figures/COMPARISON_NOTES.md
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260512113611/https://vitessce.io/docs/data-comparative/
+    archive_timestamp: '20260512113611'
+    archive_status: '200'
+  https://vitessce.io/docs/data-hosting/:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260512113610/https://vitessce.io/docs/data-hosting/
+    archive_timestamp: '20260512113610'
+    archive_status: '200'
+  https://vitessce.io/docs/data-troubleshooting/:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260512113610/https://vitessce.io/docs/data-troubleshooting/
+    archive_timestamp: '20260512113610'
+    archive_status: '200'
+  https://vitessce.io/docs/platforms/:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - figures/COMPARISON_NOTES.md
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260512113629/https://vitessce.io/docs/platforms/
+    archive_timestamp: '20260512113629'
+    archive_status: '200'
+  https://vitessce.io/docs/tutorial-gh-pages/:
+    cited_in:
+    - evidence/matrix/tools/vitessce.yaml
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20240302200137/http://vitessce.io/docs/tutorial-gh-pages/
+    archive_timestamp: '20240302200137'
+    archive_status: '200'
+  https://vitessce.io/examples/:
+    cited_in:
+    - notes/comparison/vitessce.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+  https://www.10xgenomics.com/products/loupe-browser/downloads/eula:
+    cited_in:
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260208223158/https://www.10xgenomics.com/products/loupe-browser/downloads/eula
+    archive_timestamp: '20260208223158'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser:
+    cited_in:
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20231229064001/https://www.10xgenomics.com/support/software/loupe-browser
+    archive_timestamp: '20231229064001'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/downloads:
+    cited_in:
+    - evidence/matrix/tools/loupe.yaml
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/:
+    cited_in:
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260729104805/https://www.10xgenomics.com/support/software/loupe-browser/latest
+    archive_timestamp: '20260729104805'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/algorithms-overview/lb-sc-algorithms:
+    cited_in:
+    - evidence/matrix/tools/loupe.yaml
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511053856/https://www.10xgenomics.com/support/software/loupe-browser/latest/algorithms-overview/lb-sc-algorithms
+    archive_timestamp: '20260511053856'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/getting-started/lb-what-is-loupe-browser:
+    cited_in:
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260711120919/https://www.10xgenomics.com/support/software/loupe-browser/latest/getting-started/lb-what-is-loupe-browser
+    archive_timestamp: '20260711120919'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/release-notes/lb-release-notes:
+    cited_in:
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-hd-spatial-gene-expression:
+    cited_in:
+    - evidence/matrix/tools/loupe.yaml
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260207172038/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-hd-spatial-gene-expression
+    archive_timestamp: '20260207172038'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-analyzing-public-data:
+    cited_in:
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260511064344/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-analyzing-public-data
+    archive_timestamp: '20260511064344'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-exploring-substructure:
+    cited_in:
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260608114547/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-exploring-substructure
+    archive_timestamp: '20260608114547'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-identify-cell-subtypes:
+    cited_in:
+    - evidence/matrix/tools/loupe.yaml
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260618114158/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-identify-cell-subtypes
+    archive_timestamp: '20260618114158'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-recluster:
+    cited_in:
+    - evidence/matrix/tools/loupe.yaml
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260617190612/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-recluster
+    archive_timestamp: '20260617190612'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-sharing:
+    cited_in:
+    - evidence/matrix/tools/loupe.yaml
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260116100816/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-sharing
+    archive_timestamp: '20260116100816'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/spatial-reclustering:
+    cited_in:
+    - evidence/matrix/tools/loupe.yaml
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260517150626/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/spatial-reclustering
+    archive_timestamp: '20260517150626'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-louper:
+    cited_in:
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial:
+    cited_in:
+    - evidence/matrix/tools/loupe.yaml
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260117203630/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial
+    archive_timestamp: '20260117203630'
+    archive_status: '200'
+    blocked: true
+  https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation:
+    cited_in:
+    - evidence/matrix/tools/loupe.yaml
+    - notes/comparison/loupe.md
+    checked: '2026-10-04'
+    status: 429
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+    archive_timestamp: '20260613184701'
+    archive_status: '200'
+    blocked: true
+  https://www.kanaverse.org/kana/:
+    cited_in:
+    - evidence/matrix/tools/kana.yaml
+    - notes/comparison/_local_demos.md
+    - notes/comparison/_summary.md
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260801124306/https://www.kanaverse.org/kana/
+    archive_timestamp: '20260801124306'
+    archive_status: '200'
+  https://www.kanaverse.org/kana/asset-manifest.json:
+    cited_in:
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+  https://www.kanaverse.org/kana/manifest.json:
+    cited_in:
+    - evidence/matrix/tools/kana.yaml
+    - notes/comparison/kana.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: https://web.archive.org/web/20260801124310/https://www.kanaverse.org/kana/manifest.json
+    archive_timestamp: '20260801124310'
+    archive_status: '200'
+  https://www.nature.com/articles/s41592-024-02212-x:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://www.nature.com/articles/s41592-024-02212-x?error=cookies_not_supported&code=63aa3daf-c512-480e-a5a9-d31bdf5ef522
+    via: direct
+    archive: null
+    archive_timestamp: null
+  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11701654/:
+    cited_in:
+    - notes/comparison/cellxgene.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11701654/
+    via: direct
+    archive: https://web.archive.org/web/20260608214133/https://pmc.ncbi.nlm.nih.gov/articles/PMC11701654/
+    archive_timestamp: '20260608214133'
+    archive_status: '200'
+  https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC7437817/unicode:
+    cited_in:
+    - notes/comparison/cirrocumulus.md
+    checked: '2026-10-04'
+    status: 200
+    final_url: null
+    via: direct
+    archive: null
+    archive_timestamp: null
+  https://…:
+    cited_in:
+    - evidence/matrix/tools/napari-spatialdata.yaml
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: null
+    skipped: placeholder in prose
+    archive: null
+    archive_timestamp: null
+  https://…/x.zarr:
+    cited_in:
+    - notes/comparison/napari-spatialdata.md
+    checked: '2026-10-04'
+    status: null
+    skipped: placeholder in prose
+    archive: null
+    archive_timestamp: null

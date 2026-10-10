@@ -1,0 +1,32 @@
+version: 1
+image: 02_scatter_umap_leiden_spatial_Mbp.jpg
+tool: napari-spatialdata
+software: napari 0.9.2, napari-spatialdata 0.7.2, anndata 0.13.4 (with _get_X shim)
+data: Visium demo (obsp spatial_kernel, spatial_distance, connectivities, distances; varp spearman_hvg)
+captured: '2026-10-03'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/napari-spatialdata/focus_check.py
+source: manual
+image_sha256: f2859191c098224007638249c96f02919af10c1da5af633454a10670bb6f1371
+proves:
+- column: focus
+  mark: N
+  caption: 'napari-spatialdata 0.7.2: Mbp recolours the spatial layer while the Scatter widget keeps obs leiden;
+    a pick does not reach the other view.'
+- column: selection
+  mark: P
+  caption: 'napari-spatialdata 0.7.2: the Scatter widget has its own rectangle and lasso ROI tools and an Annotate
+    button; a ROI acts inside the scatter only.'
+callouts:
+- n: 1
+  box: [1841, 1243, 196, 42]
+  label: 'View: Color by Mbp (spatial layer)'
+- n: 2
+  box: [2513, 1834, 213, 146]
+  label: 'Scatter: Select for Color stays at leiden'
+- n: 3
+  box: [1946, 1411, 140, 56]
+  label: 'Scatter ROI tools: rectangle and lasso'
+- n: 4
+  box: [2191, 2096, 273, 53]
+  label: 'Annotate: turns a ROI into an obs column, re-picked by hand'

@@ -1,0 +1,75 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_200000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_sub_run_200000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 11.21,
+ "peaks": {
+  "client": {
+   "fp_peak": 1548493656,
+   "fp_lifetime_sum": 1664722640,
+   "rss_peak": 1340375040,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 2556267232,
+   "fp_lifetime_sum": 2706214128,
+   "rss_peak": 2578006016,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 131008608,
+   "fp_lifetime_sum": 131008608,
+   "rss_peak": 165953536,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3778096480,
+   "rss_peak": 3708026880,
+   "fp_lifetime_sum": 4370936768
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.38,
+   2234017776
+  ],
+  [
+   4.79,
+   2217224272
+  ],
+  [
+   7.26,
+   2234018088
+  ],
+  [
+   9.96,
+   3182177392
+  ]
+ ],
+ "ps_before": "2026-10-07T16:24:31-0700\nmemorystatus_level=90 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n  855 1233408  93.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  626 420688  15.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n97961 744752  12.2 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n57113 2345984  10.9 $HOME/.local/bin/claude\n 2826  19776   6.9 .venv/bin/python\n73194 135056   6.2 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n  629 189200   5.5 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n 1012  16928   3.6 /usr/libexec/pboard\n  596  35024   2.5 /System/Library/CoreServices/launchservicesd\n97977 285568   2.3 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n",
+ "others_at_start": [
+  "2831 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "2832 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

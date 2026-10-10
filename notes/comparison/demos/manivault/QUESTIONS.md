@@ -1,0 +1,2 @@
+# Step 6: which dimension label is cell index 4236?
+ManiVault labels the obsp/diffusion_distance dimensions "1".."8090" (1-based numbers, no barcodes), so I can't select Mature_Young_2#TCAATTCAGTGAGGCT-1 by name. I used label "4237", assuming the checklist's index 4236 is 0-based (Python). Is that right, or should it be "4236"? Barring an answer, m01_cells_obsp_row_as_colour.png stays as dimension 4237.

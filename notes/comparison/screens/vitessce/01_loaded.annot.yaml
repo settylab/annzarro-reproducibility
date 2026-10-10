@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "01_loaded.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (hosted app at vitessce.io, 2026-10-04)",
+ "data": "bm_demo.zarr (8,090 cells), served on 127.0.0.1:8904",
+ "url": "https://vitessce.io/#?url=http://127.0.0.1:8904/config.json",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/vitessce/recap_a.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Cell Sets lists only obs columns and Gene List only var names; no obsp/varp relation can be chosen as a focus"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1045,
+    86,
+    349,
+    245
+   ],
+   "label": "Cell Sets: obs columns only",
+   "selector": "[data-recap='cellsets']"
+  },
+  {
+   "n": 2,
+   "box": [
+    1045,
+    328,
+    349,
+    245
+   ],
+   "label": "Gene List: var names only",
+   "selector": "[data-recap='genelist']"
+  }
+ ]
+}

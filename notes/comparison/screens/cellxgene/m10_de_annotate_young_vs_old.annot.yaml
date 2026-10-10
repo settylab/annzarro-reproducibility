@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "image": "m10_de_annotate_young_vs_old.jpg",
+ "tool": "cellxgene",
+ "software": "CELLxGENE Annotate 1.3.0 (local)",
+ "data": "bm_demo.h5ad (8,090 cells; obsp holds connectivities, distances, diffusion_distance; one counts layer)",
+ "url": "http://127.0.0.1:8903/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "de",
+   "mark": "Y",
+   "caption": "Annotate 1.3.0 (2026-10-04): two cell sets (Young 2917, Old 3116) are compared in the session, returning Pop1 high and Pop2 high gene sets"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    537,
+    4,
+    98,
+    38
+   ],
+   "label": "set 1: 2917 (Young)",
+   "selector": "[data-testid='cellset-button-1']"
+  },
+  {
+   "n": 2,
+   "box": [
+    626,
+    4,
+    98,
+    38
+   ],
+   "label": "set 2: 3116 (Old)",
+   "selector": "[data-testid='cellset-button-2']"
+  },
+  {
+   "n": 3,
+   "box": [
+    715,
+    4,
+    38,
+    38
+   ],
+   "label": "See top differentially expressed genes",
+   "selector": "[data-testid='diffexp-button']"
+  },
+  {
+   "n": 4,
+   "box": [
+    1041,
+    123,
+    353,
+    73
+   ],
+   "label": "results: Pop1 high and Pop2 high gene sets",
+   "selector": "[data-cap='deres']"
+  }
+ ]
+}

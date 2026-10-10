@@ -1,0 +1,82 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first16800000.h5ad",
+  "benchmark/tool_ceiling/shots/cirrocumulus_default_run_16800000_r0",
+  "--n",
+  "16800000",
+  "--port",
+  "8940"
+ ],
+ "status": "cap",
+ "rc": -9,
+ "wall_s": 18.63,
+ "peaks": {
+  "client": {
+   "fp_peak": 893673680,
+   "fp_lifetime_sum": 943170752,
+   "rss_peak": 1044529152,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 51178250056,
+   "fp_lifetime_sum": 51188884088,
+   "rss_peak": 51716046848,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 113979560,
+   "fp_lifetime_sum": 114667736,
+   "rss_peak": 148586496,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 51810254872,
+   "rss_peak": 52760576000,
+   "fp_lifetime_sum": 52132054840
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.15,
+   711877200
+  ],
+  [
+   4.28,
+   5655720080
+  ],
+  [
+   6.37,
+   16489238448
+  ],
+  [
+   8.46,
+   17746613200
+  ],
+  [
+   10.57,
+   18235938296
+  ],
+  [
+   12.68,
+   18500900536
+  ],
+  [
+   14.76,
+   29658969584
+  ],
+  [
+   16.83,
+   41098032704
+  ]
+ ],
+ "ps_before": "2026-10-04T16:15:55-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  761  61888  52.1 /usr/libexec/searchpartyd\n84235 421248  50.0 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n  626 519088  44.7 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  621  16288   9.7 /usr/libexec/corebrightnessd\n75254 139568   5.7 /System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter\n67066  19536   5.4 benchmark/tool_ceiling/.venv/bin/python\n 1012  17776   3.6 /usr/libexec/pboard\n  596  30768   3.2 /System/Library/CoreServices/launchservicesd\n12615   8224   2.8 /System/Library/PrivateFrameworks/AmbientDisplay.framework/Versions/A/XPCServices/com.apple.AmbientDisplayAgent.xpc/Contents/MacOS/com.apple.AmbientDisplayAgent\n  557 566832   2.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n",
+ "others_at_start": []
+}

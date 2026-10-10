@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "h01_remote_DOCS_internet_s3_gcs.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser docs, cellbrowser.readthedocs.io/en/master (read 2026-10-04; cellbrowser 1.2.20)",
+ "data": "docs page: https://cellbrowser.readthedocs.io/en/master/internet.html",
+ "url": "https://cellbrowser.readthedocs.io/en/master/internet.html",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_docs.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "remote",
+   "mark": "P",
+   "caption": "docs, UCSC Cell Browser (cellbrowser.readthedocs.io, read 2026-10-04; cellbrowser 1.2.20): the cbBuild output can sit on S3, GCS, Azure or github.io and is read over HTTP, but only that pre-built format, not an h5ad or zarr in place: P"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    372,
+    382,
+    680,
+    56
+   ],
+   "label": "docs page: \"Amazon S3, Google Cloud Storage, Microsoft Azure\"",
+   "selector": "[data-cap='phrase']"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    0,
+    1400,
+    42
+   ],
+   "label": "docs page, with its URL",
+   "selector": "#gapbanner"
+  },
+  {
+   "n": 3,
+   "box": [
+    348,
+    212,
+    704,
+    82
+   ],
+   "label": "only the cbBuild output is deployed",
+   "selector": "text=copying the output of >> nth=0"
+  }
+ ]
+}

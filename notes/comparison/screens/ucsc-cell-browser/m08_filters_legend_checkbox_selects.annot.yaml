@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m08_filters_legend_checkbox_selects.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "filters",
+   "mark": "P",
+   "caption": "Ticking Neutrophil in the legend selects its 2,221 cells; selection on one plot, no table"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1196,
+    24,
+    204,
+    876
+   ],
+   "label": "legend checkbox: Neutrophil",
+   "selector": "#tpLegendBar"
+  },
+  {
+   "n": 2,
+   "box": [
+    1023,
+    883,
+    174,
+    17
+   ],
+   "label": "2.2k selected",
+   "selector": "#tpCellCount"
+  }
+ ]
+}

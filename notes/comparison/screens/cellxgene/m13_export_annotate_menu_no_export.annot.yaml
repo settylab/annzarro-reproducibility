@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "image": "m13_export_annotate_menu_no_export.jpg",
+ "tool": "cellxgene",
+ "software": "CELLxGENE Annotate 1.3.0 (local)",
+ "data": "bm_demo.h5ad (8,090 cells; obsp holds connectivities, distances, diffusion_distance; one counts layer)",
+ "url": "http://127.0.0.1:8903/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "export",
+   "mark": "N",
+   "caption": "Annotate 1.3.0 (2026-10-04) has no image export: its only menu lists Documentation, Chat, Github, cellxgene v1.3.0, MIT License, and the toolbar has no download (Explorer's export: m13_export_explorer_download_menu)",
+   "row": "cellxgene-annotate"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    176,
+    49,
+    188,
+    168
+   ],
+   "label": "the only menu: Documentation, Chat, Github, cellxgene v1.3.0, MIT License",
+   "selector": ".bp3-menu >> visible=true"
+  },
+  {
+   "n": 2,
+   "box": [
+    161,
+    9,
+    163,
+    26
+   ],
+   "label": "toolbar: no download or export",
+   "selector": "[data-testid='header']"
+  }
+ ]
+}

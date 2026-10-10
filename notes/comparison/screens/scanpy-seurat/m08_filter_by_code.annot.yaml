@@ -1,0 +1,31 @@
+version: 1
+image: m08_filter_by_code.jpg
+tool: scanpy-seurat
+software: scanpy 1.11.5, anndata 0.12.19 (code output; Seurat not run)
+data: bm_demo.h5ad (8,090 cells)
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/scanpy-seurat/matrix_check.py
+source: manual
+image_sha256: 4392c1b373d842037dd6d1b7a1f18ebd4d60c63a03f1d3446ab06d0650212721
+proves:
+- column: filters
+  mark: P
+  caption: 'By code only (scanpy): adata[obs.highres_celltype == ''Neutrophil''] keeps 2,221 cells, replotted; there
+    is no filter table.'
+- column: subset
+  mark: P
+  caption: 'By code only (scanpy): the subset is a code expression (adata[mask]), drawn as a new plot.'
+- column: every_cell
+  mark: Y
+  caption: 'scanpy: sc.pl.umap draws all 8,090 cells by default, with no subsampling.'
+callouts:
+- n: 1
+  box: [164, 4, 127, 22]
+  label: all 8090 cells drawn
+- n: 2
+  box: [456, 4, 433, 22]
+  label: adata[obs.highres_celltype == 'Neutrophil'] (2221 cells)
+- n: 3
+  box: [485, 30, 405, 331]
+  label: only the filtered cells, same axes

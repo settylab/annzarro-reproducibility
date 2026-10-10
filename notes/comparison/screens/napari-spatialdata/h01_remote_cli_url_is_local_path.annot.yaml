@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "h01_remote_cli_url_is_local_path.jpg",
+ "tool": "napari-spatialdata",
+ "software": "napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (CLI)",
+ "data": "https://example.org/remote.zarr (any URL)",
+ "url": "file://$DEMO_ROOT/napari-spatialdata",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_code.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "remote",
+   "mark": "P",
+   "caption": "terminal, napari-spatialdata 0.7.2 (2026-10-04): 'view https://...' resolves the URL as a local path and stops; remote zarr only through Python, so P"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    22,
+    202,
+    436,
+    24
+   ],
+   "label": "the URL turned into a local path that does not exist",
+   "selector": "[id^=hl0_] >> nth=0"
+  },
+  {
+   "n": 2,
+   "box": [
+    22,
+    339,
+    495,
+    24
+   ],
+   "label": "the CLI asserts the path exists",
+   "selector": "[id^=hl0_] >> nth=-1"
+  },
+  {
+   "n": 3,
+   "box": [
+    12,
+    377,
+    1376,
+    23
+   ],
+   "label": "remote only through Python",
+   "selector": "#note"
+  }
+ ]
+}

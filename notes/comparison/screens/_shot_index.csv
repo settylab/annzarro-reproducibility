@@ -1,0 +1,100 @@
+shot,tool,column,mark,section,row_label
+screens/cellxgene/m04_slots_annotate_layout_menu.jpg,cellxgene,cells,N,"Matrix marks, checked in the running app",1 cell x cell matrix
+screens/cellxgene/m04_slots_annotate_layout_menu.jpg,cellxgene,genes,N,"Matrix marks, checked in the running app",2 gene x gene matrix
+screens/cellxgene/m04_slots_annotate_layout_menu.jpg,cellxgene,slots,N,"Matrix marks, checked in the running app",4 all slots
+screens/cellxgene/m04_slots_explorer_embedding_menu.jpg,cellxgene,slots,N,"Matrix marks, checked in the running app",4 all slots
+screens/cellxgene/m07_spatial_explorer_visium_default.jpg,cellxgene,spatial,Y,"Matrix marks, checked in the running app",7 spatial coordinates
+screens/cellxgene/m08_filters_annotate_age_young_only.jpg,cellxgene,filters,P,"Matrix marks, checked in the running app",8 table filters mask plots
+screens/cellxgene/m09_annotation_annotate_category_and_label.jpg,cellxgene,annot,Y,"Matrix marks, checked in the running app",9 annotation editing
+screens/cellxgene/m10_de_annotate_young_vs_old.jpg,cellxgene,de,Y,"Matrix marks, checked in the running app",10 on-the-fly DE
+screens/cellxgene/m10_de_annotate_pop1_high_genes.jpg,cellxgene,de,Y,"Matrix marks, checked in the running app",10 on-the-fly DE
+screens/cellxgene/m11_image_explorer_myh7_on_tissue.jpg,cellxgene,image,Y,"Matrix marks, checked in the running app",11 tissue image underlay
+screens/cellxgene/m12_share_annotate_coloured_before_reload.jpg,cellxgene,share,N,"Matrix marks, checked in the running app",12 shareable view state
+screens/cellxgene/m12_share_annotate_same_url_reopened.jpg,cellxgene,share,N,"Matrix marks, checked in the running app",12 shareable view state
+screens/cellxgene/m12_share_explorer_same_url_reopened.jpg,cellxgene,share,N,"Matrix marks, checked in the running app",12 shareable view state
+screens/cellxgene/m13_export_explorer_download_menu.jpg,cellxgene,export,Y,"Matrix marks, checked in the running app",13 plot export
+screens/cellxgene/m13_export_annotate_menu_no_export.jpg,cellxgene,export,context,"Matrix marks, checked in the running app",Annotate has no export (context); export Y rests on the hosted Explorer Download menu (no shot yet)
+screens/cellxgene/m07_spatial_explorer_visium_default.jpg,cellxgene,hosted,Y,"Matrix marks, checked in the running app",15 hosted multi-user
+screens/cirrocumulus/m01_obsp_absent_cell_metadata_menu.jpg,cirrocumulus,cells,N,sidecar (dom),Cell Metadata lists obs columns only; no obsp matrix in any dropdown
+screens/cirrocumulus/m01_obsp_absent_cell_metadata_menu.jpg,cirrocumulus,genes,N,sidecar (dom),No varp in any dropdown
+screens/cirrocumulus/m04_slots_layers_menu.jpg,cirrocumulus,slots,P,sidecar (dom),Layers lists counts
+screens/cirrocumulus/m04_slots_embeddings_menu.jpg,cirrocumulus,slots,P,sidecar (dom),Embeddings offers X_umap and X_draw_graph_fa only; X_pca and X_diffusion are not offered
+screens/cirrocumulus/m07_spatial_tissue_hires_clusters.jpg,cirrocumulus,spatial,Y,sidecar (dom),Spots drawn in tissue coordinates (tissue_hires)
+screens/cirrocumulus/m07_spatial_embeddings_menu.jpg,cirrocumulus,spatial,Y,sidecar (dom),With --spatial the dataset gets an embedding tissue_hires
+screens/cirrocumulus/m08_filters_age_young_chip.jpg,cirrocumulus,filters,Y,sidecar (dom),"Clicking Young in the Age legend adds an Age filter chip; header 2,917 / 8,090 cells; gall"
+screens/cirrocumulus/m09_annotation_legend_renamed.jpg,cirrocumulus,annot,Y,sidecar (dom),Right-click > Annotate renamed Monocyte to Monocyte_matrixcheck in the legend; saved serve
+screens/cirrocumulus/m10_de_results.jpg,cirrocumulus,de,Y,sidecar (dom),One vs. Rest DE on Age computed in the app; Results tab shows a dot plot of the top featur
+screens/cirrocumulus/m11_image_cr2_spots_on_he.jpg,cirrocumulus,image,Y,sidecar (dom),The H&E tissue_hires image is drawn under the spots; CR2 colouring on top
+screens/cirrocumulus/m12_share_menu_copy_link.jpg,cirrocumulus,share,Y,sidecar (dom),"The top-right menu offers Copy Link, a URL that carries the view state"
+screens/cirrocumulus/m12_share_link_reopened.jpg,cirrocumulus,share,Y,sidecar (dom),"The copied link, opened in a new tab, restores X_umap, Mpo colouring and the gallery"
+screens/cirrocumulus/m13_export_save_image_menu.jpg,cirrocumulus,export,Y,sidecar (dom),Save Image offers PNG and SVG
+screens/isee/m04_slots_colourby_and_type_dropdown.jpg,isee,slots,P,"Matrix marks, checked in the running app",4 all slots
+screens/isee/m04_slots_assay_dropdown.jpg,isee,slots,P,"Matrix marks, checked in the running app",4 all slots
+screens/isee/m10_brush_source_umap.jpg,isee,de,P,"Matrix marks, checked in the running app",10 on-the-fly DE
+screens/isee/m10_dynamic_marker_table_on_brush.jpg,isee,de,P,"Matrix marks, checked in the running app",10 on-the-fly DE
+screens/isee/m10_dynamic_marker_table_filled.jpg,isee,de,P,"Matrix marks, checked in the running app",10 on-the-fly DE
+screens/isee/m10_dynamic_marker_table_after_rebrush.jpg,isee,de,P,"Matrix marks, checked in the running app",10 on-the-fly DE
+screens/isee/m12_panel_settings_download_rds.jpg,isee,share,Y,"Matrix marks, checked in the running app",12 shareable view state
+screens/isee/m12_restored_from_state_file.jpg,isee,share,Y,"Matrix marks, checked in the running app",12 shareable view state
+screens/isee/m12_landing_page_upload.jpg,isee,share,Y,"Matrix marks, checked in the running app",12 shareable view state
+screens/isee/m12_landing_page_after_launch.jpg,isee,share,Y,"Matrix marks, checked in the running app",12 shareable view state
+screens/isee/m13_export_menu.jpg,isee,export,Y,"Matrix marks, checked in the running app",13 plot export
+screens/isee/m13_download_panel_output_dialog.jpg,isee,export,Y,"Matrix marks, checked in the running app",13 plot export
+screens/isee/m13_extract_r_code.jpg,isee,export,Y,"Matrix marks, checked in the running app",13 plot export
+screens/kana/01_loaded_umap_celltype.jpg,kana,focus,,"Focus, feature colouring and selection (",(a1) one cell or gene slices a cell x cell / gene x gene rel
+screens/kana/02_gene_Mpo_main_only.jpg,kana,"focus(a2: feature colouring, not scored)",,"Focus, feature colouring and selection (",(a2) one gene recolours several linked views
+screens/kana/03_lasso_main_view_only.jpg,kana,selection,,"Focus, feature colouring and selection (",(b) selection in one view highlights the same cells in other
+screens/kana/05_saved_selection_listed.jpg,kana,selection,,"Focus, feature colouring and selection (",(b) selection in one view highlights the same cells in other
+screens/kana/04_cell_click_no_visible_change.jpg,kana,focus(single-cell click),,"Focus, feature colouring and selection (",single-cell click
+screens/napari-spatialdata/m04_view_dock_lists_no_obsp.jpg,napari-spatialdata,slots,P,"Matrix marks, checked in the running app",4 all slots
+screens/napari-spatialdata/m00_m07_m11_visium_spots_over_HE.jpg,napari-spatialdata,spatial,Y,"Matrix marks, checked in the running app",7 spatial coordinates
+screens/napari-spatialdata/m00_m07_m11_visium_spots_over_HE.jpg,napari-spatialdata,image,Y,"Matrix marks, checked in the running app",11 tissue image underlay
+screens/scanpy-seurat/m04_slots_obsm_layers_obsp_by_code.jpg,scanpy-seurat,cells,P,"Matrix marks, checked in the running app",1 cell × cell matrix
+screens/scanpy-seurat/01_obsp_row_by_code.jpg,scanpy-seurat,cells,P,"Matrix marks, checked in the running app",1 cell × cell matrix
+screens/scope/01_loaded.jpg,scope,focus,,"Focus, feature colouring and selection (",(a1) one cell or gene slices a cell x cell / gene x gene rel
+screens/scope/02_regulon_pick_recolours_three_viewers.jpg,scope,"focus(a2: feature colouring, not scored)",,"Focus, feature colouring and selection (",(a2) one gene recolours several linked views
+screens/scope/03_lasso_attempt_points_vanish_no_selection.jpg,scope,selection,,"Focus, feature colouring and selection (",(b) selection in one view highlights the same cells in other
+screens/shinycell/m04_slots_dimred_dropdown.jpg,shinycell,slots,P,"Matrix marks, checked in the running app",4 all slots
+screens/shinycell/m04_slots_cellinfo_dropdown.jpg,shinycell,slots,P,"Matrix marks, checked in the running app",4 all slots
+screens/shinycell/m10_violin_tab_no_de.jpg,shinycell,de,N,"Matrix marks, checked in the running app",10 on-the-fly DE
+screens/shinycell/m10_shinycell2_violin_test_option.jpg,shinycell,de,N,"Matrix marks, checked in the running app",10 on-the-fly DE
+screens/single-cell-portal/01_explore_default.jpg,single-cell-portal,focus,,"Focus, feature colouring and selection (",(a1) one cell or gene slices a cell x cell / gene x gene rel
+screens/single-cell-portal/02_de_gene_CD74_click_recolours_scatter.jpg,single-cell-portal,"focus(a2: feature colouring, not scored)",,"Focus, feature colouring and selection (",(a2) one gene recolours several linked views
+screens/single-cell-portal/06_de_gene_CD74_distribution_tab.jpg,single-cell-portal,"focus(a2: feature colouring, not scored)",,"Focus, feature colouring and selection (",(a2) one gene recolours several linked views
+screens/single-cell-portal/03_lasso_in_gene_scatter_not_in_cluster_scatter.jpg,single-cell-portal,selection,,"Focus, feature colouring and selection (",(b) selection in one view highlights the same cells in other
+screens/single-cell-portal/04_filter_macrophage_off_both_scatters.jpg,single-cell-portal,selection,,"Focus, feature colouring and selection (",(b) selection in one view highlights the same cells in other
+screens/single-cell-portal/05_cell_hover.jpg,single-cell-portal,focus(single-cell click),,"Focus, feature colouring and selection (",single-cell click
+screens/single-cell-portal/07_cell_click_no_effect.jpg,single-cell-portal,focus(single-cell click),,"Focus, feature colouring and selection (",single-cell click
+screens/ucsc-cell-browser/m04_slots_annotation_tab.jpg,ucsc-cell-browser,cells,N,sidecar (dom),The Annotation tab lists obs fields only; no obsp matrix anywhere
+screens/ucsc-cell-browser/m04_slots_annotation_tab.jpg,ucsc-cell-browser,genes,N,sidecar (dom),No varp anywhere; the Gene tab searches genes of X only
+screens/ucsc-cell-browser/m04_slots_layout_tab.jpg,ucsc-cell-browser,slots,P,sidecar (dom),"Layout tab: the embedding dropdown holds UMAP and ForceAtlas2 only; X_pca, X_diffusion, la"
+screens/ucsc-cell-browser/m07_spatial_portal_p21.jpg,ucsc-cell-browser,spatial,Y,sidecar (dom),"Portal p21: the Spots layout places 2,373 spots in tissue coordinates"
+screens/ucsc-cell-browser/m07_spatial_portal_p21.jpg,ucsc-cell-browser,image,Y,sidecar (dom),The tissue image is drawn grey under the spots
+screens/ucsc-cell-browser/m07_spatial_portal_p21.jpg,ucsc-cell-browser,hosted,Y,sidecar (dom),"cells.ucsc.edu opened the dataset anonymously, no login or install"
+screens/ucsc-cell-browser/m08_filters_legend_checkbox_selects.jpg,ucsc-cell-browser,filters,P,sidecar (dom),"Ticking Neutrophil in the legend selects its 2,221 cells; selection on one plot, no table"
+screens/ucsc-cell-browser/m08_filters_only_show_selected.jpg,ucsc-cell-browser,filters,P,sidecar (dom),"Only show selected leaves 2.2k of 8.1k cells; legend selection, not a table filter"
+screens/ucsc-cell-browser/m09_annotation_name_selection_dialog.jpg,ucsc-cell-browser,annot,Y,sidecar (dom),"Edit > Name selection... opens 'Annotate selected cells' for the 2,221 selected cells"
+screens/ucsc-cell-browser/m09_annotation_custom_field_created.jpg,ucsc-cell-browser,annot,Y,sidecar (dom),"OK adds the colour-by field 'My custom annotations' (neutro matrixcheck 27.5%), stored in "
+screens/ucsc-cell-browser/m10_de_tools_menu_no_de.jpg,ucsc-cell-browser,de,N,sidecar (dom),The Tools menu has no Differential expression item (DE UI is off by default and has no rel
+screens/ucsc-cell-browser/m11_image_portal_p21_gene_on_tissue.jpg,ucsc-cell-browser,image,Y,sidecar (dom),Colouring by Mbp keeps the tissue image visible under the spots
+screens/ucsc-cell-browser/m12_share_state_before.jpg,ucsc-cell-browser,share,Y,sidecar (dom),Colouring by Age writes meta=Age into the URL
+screens/ucsc-cell-browser/m12_share_url_reopened.jpg,ucsc-cell-browser,share,Y,sidecar (dom),The copied URL (?ds=bm_demo&meta=Age) reopens with the Age colouring and legend
+screens/ucsc-cell-browser/m13_export_file_menu.jpg,ucsc-cell-browser,export,Y,sidecar (dom),File menu: Download bitmap image (PNG) and vector image (SVG)
+screens/vitessce/m00_plots_render.jpg,vitessce,cells,N,sidecar (dom),"Only configured obs columns (Cell type, Age, Sample) and var names are offered; no obsp ma"
+screens/vitessce/m00_plots_render.jpg,vitessce,genes,N,sidecar (dom),No varp matrix offered anywhere
+screens/vitessce/m00_plots_render.jpg,vitessce,slots,P,sidecar (dom),"No slot browser: views show what the config names (two obsm embeddings, three obs columns,"
+screens/vitessce/01_loaded.jpg,vitessce,focus,N,sidecar (dom),Cell Sets lists only obs columns and Gene List only var names; no obsp/varp relation can b
+screens/vitessce/m05_lazy_scatter_genelist_mpo.jpg,vitessce,lazy,Y,sidecar (dom),"With only UMAP and Gene List, load fetches no X chunk; choosing Mpo fetches X/.zarray, X/."
+screens/vitessce/m07_spatial_lymph_node_spots_on_he.jpg,vitessce,spatial,Y,sidecar (dom),"Lymph node demo: 3,861 spots in tissue coordinates in two Spatial views"
+screens/vitessce/m07_spatial_lymph_node_spots_on_he.jpg,vitessce,image,Y,sidecar (dom),H&E image drawn under the spots; Spatial Layers has an Image layer toggle
+screens/vitessce/04_cellset_uncheck_CD4_both_views.jpg,vitessce,filters,P,"Matrix marks, checked in the running app",8 table filters mask plots
+screens/vitessce/m09_annotation_lasso_creates_set.jpg,vitessce,annot,P,"Matrix marks, checked in the running app",9 annotation editing
+screens/vitessce/m09_annotation_set_menu.jpg,vitessce,annot,P,"Matrix marks, checked in the running app",9 annotation editing
+screens/vitessce/m12_share_edit_config_with_live_state.jpg,vitessce,share,Y,sidecar (dom),EDIT serialises the live view config (including the Mpo selection) into a data: URL
+screens/vitessce/m12_share_data_url_reopened.jpg,vitessce,share,Y,sidecar (dom),The same URL with edit=false reopens both scatterplots coloured by Mpo
+screens/vitessce/m13_export_vega_views.jpg,vitessce,export,P,sidecar (dom),"The Vega views (Cell Set Sizes, Histogram, Expression by Cell Set) carry a '...' export me"
+screens/vitessce/m13_export_vega_actions_menu.jpg,vitessce,export,P,sidecar (dom),"Vega '...' menu: Save as SVG, Save as PNG, View Source, View Compiled Vega, Open in Vega E"
+screens/vitessce/02_gene_Mpo_both_scatterplots.jpg,vitessce,focus,N,sidecar (dom),"Feature colouring (a2, not a relation focus): Mpo recolours both the UMAP and the FA scatt"
+screens/vitessce/03_lasso_UMAP_highlights_FA.jpg,vitessce,selection,,"Focus, feature colouring and selection (",(b) selection in one view highlights the same cells in other
+screens/vitessce/04_cellset_uncheck_CD4_both_views.jpg,vitessce,selection,,"Focus, feature colouring and selection (",(b) selection in one view highlights the same cells in other
+screens/vitessce/05_cell_hover_tooltip.jpg,vitessce,focus,N,sidecar (dom),Single-cell click: hover shows a tooltip and a crosshair in the FA plot; a click adds no s

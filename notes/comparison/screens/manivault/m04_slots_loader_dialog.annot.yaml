@@ -1,0 +1,29 @@
+version: 1
+image: m04_slots_loader_dialog.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0 (macOS universal, start page reads 1.5.0-dev)
+data: bm_demo.h5ad (8,090 cells x 16,285 genes; obsp kept)
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/manivault_checklist.md (run by hand in a computer-use desktop session; log: notes/comparison/demos/manivault/session_notes.txt)'
+source: manual
+image_sha256: b0b37e1596bd619e7494dc44cb4abac3c516cda6ffc4059a9219a2975317e216
+proves:
+- column: slots
+  mark: P
+  caption: The H5AD loader offers layers, obs, obsm and obsp; X loads as the main matrix, and var, varm, varp and
+    uns are not offered.
+- column: genes
+  mark: N
+  caption: 'bm_demo.h5ad has a top-level varp group, but the loader lists only layers, obs, obsm and obsp: varp
+    is on its fixed ignore list (HDF5_AD_Loader.cpp L317), whatever it holds, so a gene x gene matrix cannot be
+    loaded'
+callouts:
+- n: 1
+  box:
+  - 22
+  - 193
+  - 512
+  - 384
+  label: 'Load: layers, obs, obsm, obsp (obs* ticked by default); no var, varm, varp, uns'

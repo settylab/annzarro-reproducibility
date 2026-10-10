@@ -1,0 +1,98 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "shinycell",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/shinycell/first2000000",
+  "benchmark/tool_ceiling/shots/shinycell_default_run_2000000_r1",
+  "--n",
+  "2000000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 26.94,
+ "peaks": {
+  "client": {
+   "fp_peak": 843210888,
+   "fp_lifetime_sum": 886088800,
+   "rss_peak": 1075167232,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 1300204256,
+   "fp_lifetime_sum": 1496273432,
+   "rss_peak": 3058991104,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 128644416,
+   "fp_lifetime_sum": 131642664,
+   "rss_peak": 162775040,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2143382376,
+   "rss_peak": 4134158336,
+   "fp_lifetime_sum": 2382362232
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.15,
+   676537008
+  ],
+  [
+   4.24,
+   1198007488
+  ],
+  [
+   6.33,
+   942024016
+  ],
+  [
+   8.47,
+   1316792088
+  ],
+  [
+   10.56,
+   1523394856
+  ],
+  [
+   12.67,
+   1528785216
+  ],
+  [
+   14.78,
+   1384687960
+  ],
+  [
+   16.89,
+   1347398264
+  ],
+  [
+   18.99,
+   1347562104
+  ],
+  [
+   21.11,
+   1914186696
+  ],
+  [
+   23.23,
+   1363782696
+  ],
+  [
+   25.33,
+   1363897384
+  ]
+ ],
+ "ps_before": "2026-10-04T16:20:15-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n75370  52576 100.0 .venv/bin/python\n  626 519232   8.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n74948  25152   3.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n57113 2848640   2.4 $HOME/.local/bin/claude\n47413 610688   2.1 /Applications/cmux.app/Contents/MacOS/cmux\n 1012  17728   1.7 /usr/libexec/pboard\n  629 236160   1.6 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n 1240  49152   1.4 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  855 1978208   1.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  596  30768   1.4 /System/Library/CoreServices/launchservicesd\n",
+ "others_at_start": []
+}

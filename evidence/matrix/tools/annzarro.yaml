@@ -1,0 +1,1094 @@
+# AnnZarro: Fig. 1c marks and their evidence.
+# Rewritten 2026-10-04 by evidence-curator from the running app (settylab/annzarro@606f0bc, github/main),
+# its source and its Read the Docs pages (RTD 'latest' was built from the same commit); repinned and
+# re-shot on v0.4.1 (78c9da6) 2026-10-07; every mark has a DOM-recorded screenshot in
+# evidence/screens/annzarro/ (driver: capture.py there). Marks equal figures/fig_comparison.py;
+# `proposed:` marks await a decision. Edit this file from now on (schema: evidence/README.md).
+id: annzarro
+name: AnnZarro
+figure:
+  row: 1
+  label: AnnZarro
+  largest_documented: |-
+    1.5B (this paper,
+    with a subset)
+notes: evidence/notes/annzarro.md
+cells:
+  cells:
+    mark: Y
+    reason: >-
+      Any obsp matrix is offered as a colour or axis source in a Cell Plot, and the focused cell's row
+      of it is drawn.
+    detail: >-
+      The Cell Plot's source menu lists obs, obsm, obsp and layer for each of X, Y, Z and Color (`panel-ui-make.js`);
+      choosing obsp lists every obsp key and reads the focused cell's row (`plot-make.js` -> `DataManager.loadObsp`
+      -> `GET /api/v1/data/obsp/<key>?rows=<i>`). Shot 01: on the 8,090-cell showcase store, `diffusion_distance`
+      colours the UMAP, and `umap_distance` and `diffusion_distance` are the x and y axes of a second
+      plot (the paper's [[fig:cellcell]]b), all for the focused plasma cell. Sparse (CSR/CSC) and dense obsp are
+      both served.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/01_obsp_row_as_colour_and_axes.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/panel-ui-make.js
+      lines: 358-368
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/panel-ui-make.js#L358-L368
+      label: 'Cell Plot source menu: obs, obsm, obsp, layer'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/panel-ui-update.js
+      lines: 162-170
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/panel-ui-update.js#L162-L170
+      label: obsp key menu
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/plot-make.js
+      lines: 551-578
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/plot-make.js#L551-L578
+      label: obsp axis/colour reads the focused cell's row
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/server/routes/data_routes.py
+      lines: 993-1046
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/server/routes/data_routes.py#L993-L1046
+      label: GET /data/obsp/<key> (rows=)
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/core/zarr_reader.py
+      lines: 2119-2153
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/core/zarr_reader.py#L2119-L2153
+      label: 'get_obsp_varp: row slice of sparse or dense obsp'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/tests/integration/test_remote_http_store.py
+      lines: 212-217
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/tests/integration/test_remote_http_store.py#L212-L217
+      label: 'test: obsp row of one cell equals the stored CSR row'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/cell-and-gene-plots.html
+      label: 'Cell and gene plots: obsp as colour or axis'
+      checked: '2026-10-04'
+      archive: null
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/data/pairwise-matrices.html
+      label: 'Pairwise matrices: what to store in obsp and how it is shown'
+      checked: '2026-10-04'
+      archive: null
+    na: &id001
+      paper: this paper is the primary reference; AnnZarro has no earlier publication
+    reproduce: &id002
+    - evidence/screens/annzarro/capture.py
+    checked: &id003
+      date: '2026-10-07'
+      by: evidence-curator
+      how: running app (v0.4.1 78c9da6); code links repinned to v0.4.1 by content
+  genes:
+    mark: Y
+    reason: >-
+      Any varp matrix is offered as a colour or axis source in a Gene Plot, and the focused gene's row
+      of it is drawn.
+    detail: >-
+      The Gene Plot's source menu lists var, varm, varp and layer (`panel-ui-make.js`); varp reads the
+      focused gene's row (`GET /api/v1/data/varp/<key>?rows=<j>`). Shot 02: `spearman_fold_change` colours
+      a volcano plot, and the rows of `spearman_smoothed` and `spearman_fold_change` are the x and y axes
+      of a second gene plot (the paper's [[fig:genegene]]d), for focused gene H2-Q7.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/02_varp_row_as_colour_and_axes.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/panel-ui-make.js
+      lines: 345-356
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/panel-ui-make.js#L345-L356
+      label: 'Gene Plot source menu: var, varm, varp, layer'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/panel-ui-update.js
+      lines: 190-199
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/panel-ui-update.js#L190-L199
+      label: varm/varp key menu
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/server/routes/data_routes.py
+      lines: 1047-1099
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/server/routes/data_routes.py#L1047-L1099
+      label: GET /data/varp/<key> (rows=)
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/tests/js/pairwise-columns.test.mjs
+      lines: 33-54
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/tests/js/pairwise-columns.test.mjs#L33-L54
+      label: 'test: varp and obsp entries are named after the matrices'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/tutorials/gene-similarity.html
+      label: 'Tutorial: gene-by-gene similarity from varp'
+      checked: '2026-10-04'
+      archive: null
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/cell-and-gene-plots.html
+      label: 'Cell and gene plots: varp as colour or axis'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  focus:
+    mark: Y
+    reason: >-
+      One click on a cell (or gene) makes it the focus, and every panel that reads a focused row (obsp,
+      varp, a layer row) re-reads and redraws.
+    detail: >-
+      Clicks call `DataManager.setFocusedCell/Gene` (`plot-make-helper.js`), which dispatches `focusedCellChanged`/`focusedGeneChanged`
+      (`data-manager.js`); each Cell Plot re-reads every axis and colour that is an obsp row (or, for
+      a gene, a layer column) and each Gene Plot every varp row or layer row (`cell-plot.js`, `gene-plot.js`).
+      Shots 04 -> 05: one click on a cell in plot A redraws A (obsp `diffusion_walk_t5` row), B (obsp
+      `diffusion_distance` row) and C (genes coloured by the cell's row of the fold-change layer); the
+      browser's data requests after the click are listed in the shot's callouts. Shots 02 -> 03: a click
+      on a gene redraws both varp panels. This is the strict definition (through the stored pairwise row),
+      not feature colouring. Panels whose sources do not depend on the focus only move the focus marker;
+      a Lock button pins one axis to its entity.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/04_focus_before_cell_click.png
+    - kind: screenshot
+      path: evidence/screens/annzarro/05_focus_after_cell_click.png
+    - kind: screenshot
+      path: evidence/screens/annzarro/03_gene_click_redrives_varp_panels.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/plot-make-helper.js
+      lines: 179-226
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/plot-make-helper.js#L179-L226
+      label: plot click -> setFocusedCell / setFocusedGene
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/data-manager.js
+      lines: 1835-1869
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/data-manager.js#L1835-L1869
+      label: setFocusedCell dispatches focusedCellChanged
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/cell-plot.js
+      lines: 167-259
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/cell-plot.js#L167-L259
+      label: Cell Plot re-reads every obsp axis/colour on a focus change
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/gene-plot.js
+      lines: 171-264
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/gene-plot.js#L171-L264
+      label: Gene Plot re-reads every varp axis/colour on a focus change
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/tests/server/test_focus_rows.py
+      lines: 122-157
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/tests/server/test_focus_rows.py#L122-L157
+      label: 'tests: the focused cell''s pairwise and expression rows'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/focus-and-lock.html
+      label: 'Focus and lock: hover, click to focus, every panel follows'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  slots:
+    mark: Y
+    reason: >-
+      X, layers, obs, var, obsm, varm, obsp and varp are each offered in the plot menus (X as the first
+      entry of the layer menu).
+    detail: >-
+      Cell Plot sources: obs, obsm, obsp, layer; Gene Plot sources: var, varm, varp, layer (`panel-ui-make.js`).
+      X is offered as the first 'layer' when the store has X (`structure-keys.js` `layerKeys`; the reader
+      serves layer 'X' as X, `zarr_reader.py`). Tables offer obs/var, obsm/varm, obsp/varp and layer columns.
+      Shot 06 shows all eight slots driving an axis or a colour in one layout. Docs disagree: `data/slot-map.md`
+      (and `spatial-coordinates.md`, `showcase-store.md`) still say X is 'not offered in the plot menus';
+      the code and the running app show it is (fixed in 642dbed, docs not updated).
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/06_every_slot_in_the_source_menus.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/panel-ui-make.js
+      lines: 345-368
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/panel-ui-make.js#L345-L368
+      label: source menus of both plot types
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/utils/structure-keys.js
+      lines: 11-24
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/utils/structure-keys.js#L11-L24
+      label: 'layerKeys: X first, then the layers'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/core/zarr_reader.py
+      lines: 1503-1525
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/core/zarr_reader.py#L1503-L1525
+      label: layer 'X' reads the X matrix
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/panel-ui-update.js
+      lines: 137-200
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/panel-ui-update.js#L137-L200
+      label: key menus for obs, obsm, obsp, layer, var, varm, varp
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/tests/server/test_layer_x.py
+      lines: 1-30
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/tests/server/test_layer_x.py#L1-L30
+      label: 'test: layer ''X'' is the X matrix'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/data/slot-map.html
+      label: 'Slot map: which slot drives which view (stale on X: says X is not in the menus)'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  remote:
+    mark: Y
+    reason: >-
+      The server opens zarr stores from s3://, gs:// and http(s):// URLs through fsspec, chunk by chunk,
+      with the optional annzarro[remote] readers.
+    detail: >-
+      `core/remote.py` maps s3/gs/http(s) to s3fs, gcsfs and aiohttp and opens every remote store through
+      `open_remote_group`, under a policy: allowed on a loopback single-user server, only from `remote_allowlist`
+      on a hosted one (`config/base.yaml`). Shot 16: the showcase store served by a plain web server on
+      127.0.0.1 opens from its http:// URL and is plotted; its log shows only the chunks of one gene column
+      fetched. Limits: zarr only (a remote .h5ad is refused), consolidated metadata needed over HTTP,
+      not in the desktop app (it ships without the remote readers), 4-7 s to open (docs). S3 and GCS were
+      not exercised here (same code path, other fsspec backend). manuscript/body.tex Limitations 'Data
+      access' now agrees with this.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/22_remote_s3_store.png
+      label: s3://lamindata/.lamindb/CFcQxNjzSRzWZrVh.anndata.zarr opened anonymously and plotted (46,086
+        cells)
+    - kind: screenshot
+      path: evidence/screens/annzarro/23_remote_gcs_store.png
+      label: gs://vitessce-demo-data/habib-2017/habib17.processed.h5ad.zarr opened anonymously and plotted
+    - kind: script
+      path: evidence/screens/annzarro/capture_remote.py
+      label: driver for shots 22-23
+    - kind: screenshot
+      path: evidence/screens/annzarro/16_remote_http_store.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/core/remote.py
+      lines: 31-39
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/core/remote.py#L31-L39
+      label: 'REMOTE_SCHEMES: s3, gs, http, https -> fsspec backends'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/core/remote.py
+      lines: 457-495
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/core/remote.py#L457-L495
+      label: 'open_remote_group: the one place a remote store is opened'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/config/base.yaml
+      lines: 69-88
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/config/base.yaml#L69-L88
+      label: remote_stores policy and allowlist
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/tests/integration/test_remote_http_store.py
+      lines: 188-227
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/tests/integration/test_remote_http_store.py#L188-L227
+      label: 'test: data routes read a zarr store over HTTP'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/remote-datasets.html
+      label: 'Remote datasets: open s3://, gs://, https:// stores; limits and latency'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  spatial:
+    mark: Y
+    reason: >-
+      Spatial positions are an obsm matrix like any embedding, so any two of its columns are a Cell Plot's
+      x and y, with an Equal aspect toggle.
+    detail: >-
+      There is no separate spatial mode: `obsm/spatial` (or any registered coordinates) is chosen in the
+      X/Y menus, and **Equal aspect** (`settings.equalAspect`) fixes one unit of x to one unit of y. Shot
+      10: the 10x Visium mouse-brain section (2,693 spots, `spatial_demo.zarr`) in tissue coordinates,
+      coloured by Leiden cluster. Everything else (obsp kernel rows, focus, table filters) works on top.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/10_spatial_coordinates_as_axes.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/listeners.js
+      lines: 721-730
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/listeners.js#L721-L730
+      label: Equal aspect button
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/plot-make-helper.js
+      lines: 24-32
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/plot-make-helper.js#L24-L32
+      label: equal aspect applied to 2D axes
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/spatial-coordinates.html
+      label: 'Spatial coordinates: obsm positions as axes, Equal aspect'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  selection:
+    reason: >-
+      A table filter (AND/OR on any obs or var column) restricts every plot linked to that table; there
+      is no lasso or box select in plots.
+    detail: >-
+      Selection in AnnZarro is made in a table, not by brushing a plot: the Plotly toolbar has lasso2d
+      and select2d removed (`main.js`, `plot-make.js`). A table's SearchBuilder filter greys or removes
+      the other cells in every plot linked to it (shot 07, two plots). A single click focuses one cell
+      or gene rather than selecting. Y under 'a selection or filter made in one view restricts the same
+      cells in other linked views'; P if the column means plot brushing.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/07_table_filter_masks_linked_plots.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/main.js
+      lines: 1358-1375
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/main.js#L1358-L1375
+      label: 'modeBarButtonsToRemove: lasso2d, select2d'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panel-manager.js
+      lines: 52-67
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panel-manager.js#L52-L67
+      label: linked plots reload when their table filter changes
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/tables-and-filters.html#link-a-plot-to-a-table
+      label: Link a plot to a table
+      checked: '2026-10-04'
+      archive: null
+    reproduce: *id002
+    checked: *id003
+    mark: Y
+  annot:
+    mark: N
+    reason: >-
+      Read-only by design: no control writes a label back to the store; tables are display, filter and
+      CSV export only.
+    detail: >-
+      The server opens every store read-only (`zarr.open_group(..., mode='r')`) and has no write route
+      for datasets; the only files it writes are panel sets in `<data_dir>/sessions/`, logs and the user
+      file (docs, Architecture, 'What AnnZarro does not do'). Shot 08: the cell table, where a label editor
+      would be, offers column choice, SearchBuilder filters, Export CSV and Apply Changes; the table body
+      has no editable field. A design choice stated in manuscript/body.tex Limitations ('Read-only data').
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/08_cell_table_has_no_edit_control.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/core/zarr_reader.py
+      lines: '641'
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/core/zarr_reader.py#L641
+      label: stores opened with mode='r'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/table-utilities/table-ui-make.js
+      lines: 41-94
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/table-utilities/table-ui-make.js#L41-L94
+      label: 'table controls: columns, Export CSV, Apply Changes'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/server/routes/data_routes.py
+      lines: 2036-2104
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/server/routes/data_routes.py#L2036-L2104
+      label: 'the only write route: sessions/save (panel sets)'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/reference/architecture.html#what-annzarro-does-not-do
+      label: 'Architecture: ''never writes to a dataset and never runs user code'''
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  de:
+    mark: N
+    reason: >-
+      AnnZarro computes no statistics: every value shown is a slice of a stored array, and no panel runs
+      DE or marker tests.
+    detail: >-
+      Enabled panel types are cell-plot, gene-plot, cell-table, gene-table and gene-set (`config/base.yaml`).
+      The gene-set panel (enabled in v0.4.0) sends the genes passing a Gene Table filter to external services
+      (STRING, g:Profiler, MyGene.info; Enrichr, Reactome, HPA when turned on) and shows their enrichment
+      results; it compares no cell groups and recomputes nothing in the browser. Searched `static/js` and
+      `annzarro/` at v0.4.1 for t-test, wilcoxon, rank_genes, findMarkers, mannwhitney: none outside tests.
+      Shot 09: the Create New Panel menu, where a DE panel would be, offers those five types. DE results
+      (e.g. Kompot) are shown when precomputed into var/layers. Agrees with manuscript/body.tex Limitations
+      ('computes no statistics').
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/09_panel_types_no_de.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/config/base.yaml
+      lines: 125-131
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/config/base.yaml#L125-L131
+      label: 'enabled_panel_types: the four panels and gene-set'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/gene-set.js
+      lines: 1-18
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/gene-set.js#L1-L18
+      label: 'gene-set panel: asks external services (STRING, g:Profiler, MyGene.info); computes nothing itself'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/data/slot-map.html
+      label: 'Slot map: ''AnnZarro computes nothing'''
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  image:
+    mark: N
+    reason: >-
+      No image layer: spatial positions are plain axes, and a plot's appearance options set colours, axes,
+      margins and legend only.
+    detail: >-
+      Plots are Plotly scatter traces with no layout image; Plot Options (`plot-aesthetics-menu.js`) has
+      Appearance (background colour, theme), Axes, Margins, Legend and Export sections. Searched `static/js`
+      for layout `images`, OpenSeadragon, tiles, `imgData`, `uns/spatial` images: none. Shot 11: Plot
+      Options on the Visium plot, where an underlay would be set. The docs' spatial page says 'AnnZarro
+      has no special spatial mode'.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/11_plot_options_no_image_layer.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/plot-aesthetics-menu.js
+      lines: 130-172
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/plot-aesthetics-menu.js#L130-L172
+      label: 'Appearance section: background colour, 3D backdrop, theme'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/spatial-coordinates.html
+      label: 'Spatial coordinates: ''no special spatial mode'''
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  share:
+    mark: Y
+    reason: >-
+      Share Link copies a URL whose fragment holds the dataset, layout, every panel's settings, subset
+      and focus; panel sets are saved on the server for all users.
+    detail: >-
+      `_shareCurrentView` builds `?dataset_path=...#view=<payload>` from the same capture a panel set
+      stores (`main.js`, `deeplink.js`); panel sets go to `<data_dir>/sessions/` through `/api/v1/sessions/*`
+      and can be exported as JSON. Shot 13: the link copied after two focus clicks; shot 14: that link
+      opened in a fresh browser context restores the layout, panel settings and focused cell and gene;
+      shot 15: a saved panel set listed by the server. Links refer to datasets by server path, so they
+      reproduce a view on the same deployment (manuscript Limitations 'Reproducibility scope').
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/13_share_link_copied.png
+    - kind: screenshot
+      path: evidence/screens/annzarro/14_share_link_reopened.png
+    - kind: screenshot
+      path: evidence/screens/annzarro/15_panel_set_saved_on_server.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/main.js
+      lines: 206-267
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/main.js#L206-L267
+      label: 'Share Link: build the view URL, copy it'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/utils/deeplink.js
+      lines: 94-123
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/utils/deeplink.js#L94-L123
+      label: 'encodeView / decodeView of #view='
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/server/routes/data_routes.py
+      lines: 2036-2201
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/server/routes/data_routes.py#L2036-L2201
+      label: sessions save, list, load
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/tests/e2e/test_deeplink_smoke.py
+      lines: 41-90
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/tests/e2e/test_deeplink_smoke.py#L41-L90
+      label: 'tests: deep links resolve'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/share-links.html
+      label: 'Share links: what a link contains'
+      checked: '2026-10-04'
+      archive: null
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/panel-sets.html
+      label: 'Panel sets: save, load, export, owners'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  export:
+    mark: Y
+    reason: >-
+      Plot Options exports a plot as SVG, PNG, JPEG or WebP at a chosen size; the Plotly camera button
+      gives a quick PNG.
+    detail: >-
+      Export buttons and width/height fields in Plot Options (`plot-aesthetics-menu.js`), `exportPlot`
+      checks the memory guard and calls `exportImage` (`utils/plot-export.js`); the modebar camera is
+      configured in `main.js`. Shot 11b: PNG and SVG were clicked and the downloads saved (file names and sizes in the callout). WebGL points in the
+      SVG are an embedded bitmap, so 'vector' applies to axes and text only.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/11b_plot_options_export.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/plot-aesthetics-menu.js
+      lines: 339-406
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/plot-aesthetics-menu.js#L339-L406
+      label: 'Export section: JPEG, SVG, WEBP, PNG, size'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/plot-aesthetics-menu.js
+      lines: 1729-1787
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/plot-aesthetics-menu.js#L1729-L1787
+      label: exportPlot -> exportImage (memory-checked)
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/main.js
+      lines: 1358-1375
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/main.js#L1358-L1375
+      label: 'camera button: PNG 1200x800, scale 2'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/export.html
+      label: 'Export: camera PNG; Plot Options format and size; table CSV'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  desktop:
+    mark: Y
+    reason: >-
+      Standalone Electron apps for macOS, Windows and Linux are attached to the v0.4.1 GitHub release;
+      each runs its own server, no setup.
+    detail: >-
+      The app spawns a frozen `annzarro-server` on 127.0.0.1 with login off (`desktop/electron/main.js`),
+      built by `.github/workflows/build.yml` for macOS arm64/x64, Windows x64 and Linux (AppImage, .deb).
+      Release v0.4.1 (published 2026-10-07) carries all eight installers (shot 21). Docs screenshot (20) and
+      deployment table (19). The v0.4.1 macOS arm64 app was launched from its release zip and used (shot 24).
+      The builds are not signed with a developer identity (Gatekeeper/SmartScreen warnings) and the app has no
+      remote-store readers.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/24_desktop_app_showcase.png
+      label: >-
+        AnnZarro 0.4.1 desktop app (macOS arm64 release zip, sha256 c1b675ed...), launched from its bundle,
+        8,090-cell demo loaded from its Dataset menu; captured over CDP 2026-10-07 (v0.4.1)
+    - kind: script
+      path: evidence/screens/annzarro/capture_desktop.py
+      label: driver for shot 24
+    - kind: screenshot
+      path: evidence/screens/annzarro/21_github_release_desktop_assets.png
+    - kind: screenshot
+      path: evidence/screens/annzarro/20_docs_desktop_app_downloads.png
+    - kind: screenshot
+      path: evidence/screens/annzarro/19_docs_every_mode_runs_a_server.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/desktop/electron/main.js
+      lines: 1-45
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/desktop/electron/main.js#L1-L45
+      label: 'Electron shell: frozen server on 127.0.0.1'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/desktop/electron/main.js
+      lines: 195-215
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/desktop/electron/main.js#L195-L215
+      label: spawn the server, login off
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: .github/workflows/build.yml
+      lines: 1-30
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/.github/workflows/build.yml#L1-L30
+      label: desktop builds for Windows, macOS, Linux
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/getting-started/desktop-app.html
+      label: 'Desktop app: downloads per system, no Python needed'
+      checked: '2026-10-04'
+      archive: null
+    - kind: docs
+      url: https://github.com/settylab/annzarro/releases/tag/v0.4.1
+      label: GitHub release v0.4.1 with .dmg, .zip, setup.exe, .AppImage, .deb
+      checked: '2026-10-07'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked:
+      date: '2026-10-06'
+      by: evidence-curator
+      how: release page, docs and source; v0.4.1 macOS arm64 app launched and used (shot 24)
+  hosted:
+    mark: Y
+    reason: >-
+      One server serves many users with login (annzarro user add), per-user panel-set ownership, and a
+      gunicorn WSGI entry that turns login on by default.
+    detail: >-
+      `login_required` gates every route when auth is on (`server/core.py`); `wsgi.py` makes the hosted
+      factory confine paths and require login by default; `permissions.py` records panel-set owners and
+      admins. Shots 17-18: a server started with login on (127.0.0.1, config `auth.enabled: true`) asks
+      for sign-in; alice saves a panel set, and bob, signed in from a separate browser session, sees it.
+      A lab deployment of 33 datasets is described in the manuscript (Anticipated results).
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/17_hosted_login.png
+    - kind: screenshot
+      path: evidence/screens/annzarro/18_hosted_second_user_sees_panel_set.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/server/core.py
+      lines: 210-237
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/server/core.py#L210-L237
+      label: login_required
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/server/wsgi.py
+      lines: 1-23
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/server/wsgi.py#L1-L23
+      label: 'hosted WSGI factory: login on, paths confined'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/server/permissions.py
+      lines: 1-31
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/server/permissions.py#L1-L31
+      label: panel-set owners and admins
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/tests/server/test_session_permissions.py
+      lines: 1-40
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/tests/server/test_session_permissions.py#L1-L40
+      label: 'tests: who may change a shared panel set'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/deployment/lab-server.html
+      label: 'Lab server: gunicorn, users, nginx, TLS'
+      checked: '2026-10-04'
+      archive: null
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/deployment/modes.html
+      label: 'Deployment modes: lab server shared by all users'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  static:
+    mark: N
+    reason: >-
+      Every arrangement runs a Flask server process that reads the store and answers /api/v1 requests;
+      there is no static-file mode.
+    detail: >-
+      The single-page app is served by the same Flask app (`static_routes.py`) and every data request
+      goes to `/api/v1/...` (`config.js`), answered by Python readers; nothing is precomputed into static
+      files, and no export-to-static-site command exists (`annzarro --help`: start, stop, user, install,
+      config, desktop). Docs screenshot (shot 19, a GUI shot cannot show an absent mode): all three modes
+      list where the server runs.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/19_docs_every_mode_runs_a_server.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/server/routes/static_routes.py
+      lines: 14-30
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/server/routes/static_routes.py#L14-L30
+      label: the app itself is served by Flask
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/config.js
+      lines: 79-90
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/config.js#L79-L90
+      label: every endpoint is under /api/v1 on that server
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/deployment/modes.html
+      label: 'Deployment modes: where the server runs in each mode'
+      checked: '2026-10-04'
+      archive: null
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/reference/architecture.html#what-happens-on-a-click
+      label: 'Architecture: browser, server, store'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked:
+      date: '2026-10-04'
+      by: evidence-curator
+      how: source and docs (an absent mode cannot be shown in the GUI)
+  lazy:
+    mark: Y
+    reason: >-
+      The server opens zarr (and h5ad) stores lazily and reads only the chunks a request touches: one
+      gene column, one cell row, one pairwise row.
+    detail: >-
+      Each route slices the stored array (`zarr_reader.py` `get_layer`, `get_obsp_varp`); sparse X/layers
+      are read block by block on the other axis (`test_lazy_sparse_slice.py`: no read exceeds a block).
+      Shot 16: colouring by one gene over HTTP fetched only the chunks of that gene's column (count in
+      the callout, from the web server's log). Shot 05: one cell click fetches that cell's rows only (request
+      list in the callout). Large numbers: manuscript Anticipated results (Tahoe-100M, dense 200k x 200k
+      rows).
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/16_remote_http_store.png
+    - kind: screenshot
+      path: evidence/screens/annzarro/05_focus_after_cell_click.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/core/zarr_reader.py
+      lines: 1503-1525
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/core/zarr_reader.py#L1503-L1525
+      label: 'get_layer: row/column selection'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/core/zarr_reader.py
+      lines: 2119-2153
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/core/zarr_reader.py#L2119-L2153
+      label: 'get_obsp_varp: one row of a pairwise matrix'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/tests/core/test_lazy_sparse_slice.py
+      lines: 145-163
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/tests/core/test_lazy_sparse_slice.py#L145-L163
+      label: 'test: other-axis reads never exceed a block'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/reference/architecture.html#what-happens-on-a-click
+      label: 'Architecture: what happens on a click'
+      checked: '2026-10-04'
+      archive: null
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/data/chunking.html
+      label: 'Chunking: why chunk shape decides the read'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  every_cell:
+    mark: Y
+    reason: >-
+      Every cell can be drawn in one plot: above 200,000 cells the default view is a 100,000-cell subset,
+      and 'All cells' in the subset dialog draws all 95.6M (large-plot mode); scored by what the GUI can
+      do (reading B), so Y.
+    detail: >-
+      Shot 01: the UMAP trace holds all 8,090 cells, badge 'All cells'. But `core/subset.py` (`DEFAULT_THRESHOLD
+      = 200_000`, `DEFAULT_SIZE = 100_000`) and `config/base.yaml` open any dataset above 200,000 cells
+      on a 100,000-cell subset by default; the manuscript's own Tahoe-100M timings are 'on the default
+      100,000-cell part'. Drawing every cell needs the subset dialog (all cells), and above 1 million
+      points (v0.4.1 `large_plot_points`) switches to large-plot mode (no hover, click or table filter). Under the column's wording,
+      'every cell by default, without downsampling', that is P for large data: the default is a subset,
+      not every cell. Proposed P; Y only if the column scores 'can draw every cell'.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/01_obsp_row_as_colour_and_axes.png
+    - kind: screenshot
+      path: evidence/screens/annzarro/12_subset_dialog.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/core/subset.py
+      lines: 83-86
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/core/subset.py#L83-L86
+      label: DEFAULT_THRESHOLD 200,000; DEFAULT_SIZE 100,000
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/config/base.yaml
+      lines: 141-151
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/config/base.yaml#L141-L151
+      label: subset_threshold, large_plot_points, subset_size
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/interface.html
+      label: 'Interface: datasets over 200,000 cells open on a 100,000-cell subset'
+      checked: '2026-10-04'
+      archive: null
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/subsets.html
+      label: 'Cell subsets: the default; stepping through every cell'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+    by_reading:
+      A: P
+      B: Y
+  subset:
+    mark: Y
+    reason: >-
+      The subset dialog picks a reproducible subset (size, seed, balance, AND conditions); only its rows
+      are fetched from the store and drawn.
+    detail: |-
+      `subset-dialog.js` edits the spec (size, seed, balance, conditions) and every panel reloads on those cells; the server draws the subset deterministically from seed and row (`core/subset.py`), so a larger subset with the same seed contains a smaller one, and parts step through every cell. Shot 12: the dialog on the 8,090-cell store. Table filters (shot 07) restrict linked plots as well.
+
+      **Re-scored under X8 (2026-10-04)**: The subset dialog picks a reproducible subset (size, seed, balance, AND conditions); only its rows are fetched from the store and drawn.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/12_subset_dialog.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/subset-dialog.js
+      lines: 242-294
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/subset-dialog.js#L242-L294
+      label: 'open the dialog: size, seed, balance, conditions'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/core/subset.py
+      lines: 245-294
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/core/subset.py#L245-L294
+      label: 'parse_spec: size, seed, balance, conditions'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/tests/core/test_subset_partitions.py
+      lines: 1-30
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/tests/core/test_subset_partitions.py#L1-L30
+      label: 'tests: parts cover every cell'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/subsets.html
+      label: 'Cell subsets: choose a subset, balanced parts'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003
+  auto_subset:
+    reason: >-
+      Above 200,000 cells a dataset opens on a 100,000-cell subset by default; 'All cells' and the parts
+      reach the rest.
+    detail: >-
+      **New column (user X8, 2026-10-04).** Above 200,000 cells a dataset opens on a 100,000-cell subset
+      by default; 'All cells' and the parts reach the rest. Evidence is the same as for every cell drawn,
+      which shows how the default view is drawn.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/01_obsp_row_as_colour_and_axes.png
+    - kind: screenshot
+      path: evidence/screens/annzarro/12_subset_dialog.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/core/subset.py
+      lines: 83-86
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/core/subset.py#L83-L86
+      label: DEFAULT_THRESHOLD 200,000; DEFAULT_SIZE 100,000
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/config/base.yaml
+      lines: 141-151
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/config/base.yaml#L141-L151
+      label: subset_threshold, large_plot_points, subset_size
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/interface.html
+      label: 'Interface: datasets over 200,000 cells open on a 100,000-cell subset'
+      checked: '2026-10-04'
+      archive: null
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/subsets.html
+      label: 'Cell subsets: the default; stepping through every cell'
+      checked: '2026-10-04'
+      archive: null
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: Y
+retired_cells:
+  filters:
+    mark: Y
+    reason: >-
+      A cell or gene table's SearchBuilder filter (AND/OR, nested groups) masks the same cells or genes
+      in every plot linked to it.
+    detail: >-
+      Each plot has a **Filter by Table** menu (`panel-ui-make.js`); a table whose filtered rows change
+      notifies its plots (`table-data.js` -> `tableFiltered` -> `panel-manager.js`), which draw the rows
+      outside the filter grey or, with the eye button, remove them (`plot-make.js`). The SearchBuilder
+      takes conditions joined by AND or OR, nested to depth 2. Shot 07: HSC AND (DA z-score > 2 OR Age
+      = Old) on a cell table masks a UMAP and a diffusion-component plot at once.
+    evidence:
+    - kind: screenshot
+      path: evidence/screens/annzarro/07_table_filter_masks_linked_plots.png
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/panel-ui-make.js
+      lines: 190-201
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/panel-ui-make.js#L190-L201
+      label: Filter by Table menu and remove/grey toggle
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/table-utilities/table-data.js
+      lines: 768-799
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/table-utilities/table-data.js#L768-L799
+      label: 'SearchBuilder: AND/OR, depth 2'
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/table-utilities/table-data.js
+      lines: 1057-1082
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/table-utilities/table-data.js#L1057-L1082
+      label: a filter change notifies tableFiltered
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panel-manager.js
+      lines: 52-67
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panel-manager.js#L52-L67
+      label: plots linked to that table reload
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: static/js/panels/plot-utilities/plot-make.js
+      lines: 2634-2652
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/static/js/panels/plot-utilities/plot-make.js#L2634-L2652
+      label: rows outside the table drawn as a grey trace
+    - kind: code
+      repo: settylab/annzarro
+      commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c
+      path: annzarro/tests/js/panelset-view.test.mjs
+      lines: 111-130
+      url: >-
+        https://github.com/settylab/annzarro/blob/78c9da657ecbff30163fd29055f0e6b10e915c5c/annzarro/tests/js/panelset-view.test.mjs#L111-L130
+      label: 'test: a plot''s tableFilter follows its table'
+    - kind: docs
+      url: https://annzarro.readthedocs.io/en/latest/user-guide/tables-and-filters.html
+      label: 'Tables and filters: AND, OR, nested groups; link a plot to a table'
+      checked: '2026-10-04'
+      archive: null
+    na: *id001
+    reproduce: *id002
+    checked: *id003

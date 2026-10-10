@@ -1,0 +1,40 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_prep.py",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/annzarro_prep/first2000000.zarr"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 3.81,
+ "peaks": {
+  "proc": {
+   "fp_peak": 7268194424,
+   "fp_lifetime_sum": 7268653176,
+   "rss_peak": 7349338112,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 7268194424,
+   "rss_peak": 7349338112,
+   "fp_lifetime_sum": 7268653176
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9421208
+  ],
+  [
+   1.46,
+   2079082464
+  ],
+  [
+   2.91,
+   7222679480
+  ]
+ ],
+ "ps_before": "2026-10-05T12:20:11-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 3031   6192 100.0 ugrep\n  626 534464  36.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 8344 1007888  33.9 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  855 2591248  23.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n73194 196784  14.6 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n 8968  10256  12.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n 8966   9504  11.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n 8970  10080  11.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n 8969   9440  11.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n 8965  10016  11.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

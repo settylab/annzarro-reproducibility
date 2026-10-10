@@ -1,0 +1,93 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first10000000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_backed_run_10000000_r1",
+  "--n",
+  "10000000",
+  "--port",
+  "8939"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 25.52,
+ "peaks": {
+  "client": {
+   "fp_peak": 4514443216,
+   "fp_lifetime_sum": 4597363744,
+   "rss_peak": 4525998080,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 22617686912,
+   "fp_lifetime_sum": 22699525880,
+   "rss_peak": 22923231232,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 123744976,
+   "fp_lifetime_sum": 123744976,
+   "rss_peak": 162217984,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 25576845968,
+   "rss_peak": 27162476544,
+   "fp_lifetime_sum": 27296889624
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.18,
+   740795128
+  ],
+  [
+   4.37,
+   2612389992
+  ],
+  [
+   6.47,
+   2311383336
+  ],
+  [
+   8.57,
+   4002688664
+  ],
+  [
+   10.72,
+   7571602648
+  ],
+  [
+   12.86,
+   8031190760
+  ],
+  [
+   14.98,
+   8934637648
+  ],
+  [
+   17.15,
+   8448082240
+  ],
+  [
+   19.41,
+   25109344576
+  ],
+  [
+   21.52,
+   8268923440
+  ],
+  [
+   23.66,
+   8489353896
+  ]
+ ],
+ "ps_before": "2026-10-03T21:42:35-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n37026 116688   6.1 $HOME/Projects/investments/.venv/bin/python3\n32429  20592   5.2 benchmark/tool_ceiling/.venv/bin/python\n 6219  58688   4.5 $HOME/Projects/investments/.venv/bin/python3\n57113 1897600   4.3 $HOME/.local/bin/claude\n68627 422624   2.4 $HOME/.local/bin/claude\n  629 154160   2.2 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30208   2.0 /System/Library/CoreServices/launchservicesd\n  626 486912   1.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n80588 616784   1.1 $HOME/.local/bin/claude\n47413 607632   1.1 /Applications/cmux.app/Contents/MacOS/cmux\n"
+}

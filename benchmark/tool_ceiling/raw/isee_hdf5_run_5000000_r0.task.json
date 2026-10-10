@@ -1,0 +1,50 @@
+{
+ "tool": "isee",
+ "variant": "hdf5",
+ "input": "$DATA_ROOT/tool_ceiling_data/sce_h5/first5000000.rds",
+ "n": 5000000,
+ "phases": {
+  "server_ready": 16.22,
+  "first_plot": 40.12,
+  "plot_cat": 40.18,
+  "plot_gene": 76.83,
+  "done": 76.99
+ },
+ "checks": {
+  "cat": {
+   "gl": null,
+   "stated": 5000000,
+   "png": "benchmark/tool_ceiling/shots/isee_hdf5_run_5000000_r0_cat.png",
+   "all_cells": true
+  },
+  "gene": {
+   "gl": null,
+   "stated": 5000000,
+   "png": "benchmark/tool_ceiling/shots/isee_hdf5_run_5000000_r0_gene.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "iSEE": "2.18.0",
+  "shiny": "1.14.0",
+  "Rscript": "$ENVS_ROOT/rceiling/bin/Rscript"
+ },
+ "console": [
+  "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+  "error: [shiny] Error on client while running Shiny app - Unexpected input value mode: '[object Object]'",
+  "error: Error: Unexpected input value mode: '[object Object]'\n    at Ai (http://127.0.0.1:8948/shiny-javascript-1.14.0/shiny.min.js:436:3925)\n    at Bt.setInput (http://127.0.0.1:8948/shiny-javascript-1.14.0/",
+  "error: [shiny] Error on client while running Shiny app - Unexpected input value mode: '[object Object]'",
+  "error: Error: Unexpected input value mode: '[object Object]'\n    at Ai (http://127.0.0.1:8948/shiny-javascript-1.14.0/shiny.min.js:436:3925)\n    at Bt.setInput (http://127.0.0.1:8948/shiny-javascript-1.14.0/",
+  "error: [shiny] Error on client while running Shiny app - Unexpected input value mode: '[object Object]'",
+  "error: Error: Unexpected input value mode: '[object Object]'\n    at Ai (http://127.0.0.1:8948/shiny-javascript-1.14.0/shiny.min.js:436:3925)\n    at Bt.setInput (http://127.0.0.1:8948/shiny-javascript-1.14.0/",
+  "error: [shiny] Error on client while running Shiny app - Unexpected input value mode: '[object Object]'",
+  "error: Error: Unexpected input value mode: '[object Object]'\n    at Ai (http://127.0.0.1:8948/shiny-javascript-1.14.0/shiny.min.js:436:3925)\n    at Bt.setInput (http://127.0.0.1:8948/shiny-javascript-1.14.0/",
+  "error: [shiny] Error on client while running Shiny app - Unexpected input value mode: '[object Object]'",
+  "error: Error: Unexpected input value mode: '[object Object]'\n    at Ai (http://127.0.0.1:8948/shiny-javascript-1.14.0/shiny.min.js:436:3925)\n    at Bt.setInput (http://127.0.0.1:8948/shiny-javascript-1.14.0/"
+ ],
+ "every_cell_basis": "Downsample = FALSE (iSEE default); not counted in the page",
+ "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
+ "crashed": false,
+ "ok": true
+}

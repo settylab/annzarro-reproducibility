@@ -1,0 +1,58 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first1000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_default_run_1000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-test/bin/annzarro"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 8.34,
+ "peaks": {
+  "client": {
+   "fp_peak": 3717146944,
+   "fp_lifetime_sum": 4231245152,
+   "rss_peak": 3324100608,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 314622720,
+   "fp_lifetime_sum": 317686888,
+   "rss_peak": 337952768,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 161903744,
+   "fp_lifetime_sum": 161936512,
+   "rss_peak": 212860928,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 4029541440,
+   "rss_peak": 3659661312,
+   "fp_lifetime_sum": 4548932040
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.28,
+   1688331912
+  ],
+  [
+   4.55,
+   2643060816
+  ],
+  [
+   6.85,
+   3651709800
+  ]
+ ],
+ "ps_before": "2026-10-03T16:55:37-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 9195 267952  85.3 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 724048  19.5 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n33029 316304  19.3 /System/Library/CoreServices/ReportCrash\n33034   3120   9.4 /System/Library/PrivateFrameworks/CoreSymbolication.framework/coresymbolicationd\n57113 2059616   7.8 $HOME/.local/bin/claude\n47413 638368   4.9 /Applications/cmux.app/Contents/MacOS/cmux\n 6219  58688   3.9 $HOME/Projects/investments/.venv/bin/python3\n  626 553040   3.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  629 222320   2.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30608   2.3 /System/Library/CoreServices/launchservicesd\n"
+}

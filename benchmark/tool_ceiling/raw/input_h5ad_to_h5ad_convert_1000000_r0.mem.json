@@ -1,0 +1,44 @@
+{
+ "cmd": [
+  ".venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "1000000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 5.75,
+ "peaks": {
+  "proc": {
+   "fp_peak": 7697521672,
+   "fp_lifetime_sum": 7705582600,
+   "rss_peak": 7752990720,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 7697521672,
+   "rss_peak": 7752990720,
+   "fp_lifetime_sum": 7705582600
+  }
+ },
+ "trace": [
+  [
+   0.03,
+   13205912
+  ],
+  [
+   1.76,
+   5910452008
+  ],
+  [
+   3.33,
+   6255319040
+  ],
+  [
+   4.86,
+   6458857616
+  ]
+ ],
+ "ps_before": "2026-10-03T16:22:13-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n53976  23120  45.0 .venv/bin/python\n  557 652256  28.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  855 1601968   9.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n 6219  58688   9.6 $HOME/Projects/investments/.venv/bin/python3\n47413 636336   8.3 /Applications/cmux.app/Contents/MacOS/cmux\n  582 102352   6.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n57113 2049952   3.3 $HOME/.local/bin/claude\n80005 382864   2.1 $HOME/.local/bin/claude\n  626 553120   2.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n86901 597776   1.3 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n"
+}

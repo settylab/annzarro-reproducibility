@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "05_cell_hover_tooltip.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (hosted app at vitessce.io, 2026-10-04)",
+ "data": "bm_demo.zarr (8,090 cells), served on 127.0.0.1:8904",
+ "url": "https://vitessce.io/#?url=http://127.0.0.1:8904/config.json",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/vitessce/recap_a.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Single-cell click: hover shows a tooltip and a crosshair in the FA plot; a click adds no selection or focus"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    101,
+    442,
+    284,
+    77
+   ],
+   "label": "hover tooltip (Cell ID, type, Age, Sample)",
+   "selector": "[data-recap='tooltip']"
+  },
+  {
+   "n": 2,
+   "box": [
+    583,
+    86,
+    465,
+    486
+   ],
+   "label": "linked crosshair in FA",
+   "selector": "[data-recap='fa']"
+  },
+  {
+   "n": 3,
+   "box": [
+    6,
+    871,
+    1378,
+    23
+   ],
+   "label": "heatmap: all 8,090 cells still selected",
+   "selector": "[data-recap='hmfoot']"
+  }
+ ]
+}

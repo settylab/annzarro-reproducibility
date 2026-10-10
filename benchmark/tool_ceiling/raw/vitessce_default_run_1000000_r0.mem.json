@@ -1,0 +1,65 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "vitessce",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/vitessce/first1000000",
+  "benchmark/tool_ceiling/shots/vitessce_default_run_1000000_r0",
+  "--n",
+  "1000000",
+  "--port",
+  "8937"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 9.6,
+ "peaks": {
+  "client": {
+   "fp_peak": 2411276104,
+   "fp_lifetime_sum": 2529241768,
+   "rss_peak": 2326659072,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 14057928,
+   "fp_lifetime_sum": 14189048,
+   "rss_peak": 26918912,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 122843952,
+   "fp_lifetime_sum": 127087600,
+   "rss_peak": 161202176,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2425334032,
+   "rss_peak": 2353152000,
+   "fp_lifetime_sum": 2543430816
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.09,
+   1067918192
+  ],
+  [
+   4.13,
+   2250123488
+  ],
+  [
+   6.19,
+   1511057656
+  ],
+  [
+   8.23,
+   1568041208
+  ]
+ ],
+ "ps_before": "2026-10-03T17:56:21-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  273  20592   7.9 benchmark/tool_ceiling/.venv/bin/python\n  626 525040   7.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 2055648   6.9 $HOME/.local/bin/claude\n47413 619104   6.1 /Applications/cmux.app/Contents/MacOS/cmux\n  629 189952   4.5 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30144   3.8 /System/Library/CoreServices/launchservicesd\n98631 476816   2.3 $HOME/.local/bin/claude\n 4725 613104   2.3 claude\n92291  30832   2.1 .venv/bin/python\n72627 489008   2.0 $HOME/.local/bin/claude\n"
+}

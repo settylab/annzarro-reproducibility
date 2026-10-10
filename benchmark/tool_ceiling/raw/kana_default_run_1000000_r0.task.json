@@ -1,0 +1,37 @@
+{
+ "tool": "kana",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+ "n": 1000000,
+ "phases": {
+  "first_plot": 11.71,
+  "plot_cat": 11.76,
+  "plot_gene": 15.44,
+  "done": 15.57
+ },
+ "checks": {
+  "cat": {
+   "gl": null,
+   "stated": 1000000,
+   "png": "benchmark/tool_ceiling/shots/kana_default_run_1000000_r0_cat.png",
+   "all_cells": true
+  },
+  "gene": {
+   "gl": null,
+   "stated": 1000000,
+   "png": "benchmark/tool_ceiling/shots/kana_default_run_1000000_r0_gene.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "kana": "v3.2.0"
+ },
+ "console": [
+  "error: Failed to load resource: net::ERR_FAILED"
+ ],
+ "every_cell_basis": "Kana's header 'N cells' after the explore load (it draws every loaded cell)",
+ "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
+ "crashed": false,
+ "ok": true
+}

@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "m08_filters_age_young_chip.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_matrix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "filters",
+   "mark": "Y",
+   "caption": "Clicking Young in the Age legend adds an Age filter chip; header 2,917 / 8,090 cells; gallery dims the rest"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    93,
+    475,
+    63,
+    32
+   ],
+   "label": "filter chip Age",
+   "selector": "[data-recap='chipAge']"
+  },
+  {
+   "n": 2,
+   "box": [
+    127,
+    9,
+    136,
+    30
+   ],
+   "label": "2,917 / 8,090 cells",
+   "selector": "text=/\\/ 8,090 cells/ >> nth=0"
+  },
+  {
+   "n": 3,
+   "box": [
+    65,
+    451,
+    41,
+    31
+   ],
+   "label": "AND/OR Combine switch",
+   "selector": "[data-recap='comb']"
+  }
+ ]
+}

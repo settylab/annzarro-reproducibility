@@ -1,0 +1,77 @@
+{
+ "version": 1,
+ "image": "m07_spatial_explorer_visium_default.jpg",
+ "tool": "cellxgene",
+ "software": "CZ CELLxGENE Discover Explorer (hosted, as served 2026-10-04)",
+ "data": "Visium Spatial of Human muscle in Healthy control_2 (4,992 spots x 35,476 genes)",
+ "url": "https://cellxgene.cziscience.com/e/85585f3f-d16a-412d-b93a-406d52721221.cxg/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene_explorer.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "spatial",
+   "mark": "Y",
+   "caption": "Explorer (hosted) (2026-10-04): the Visium dataset opens in its spatial embedding, spots in tissue coordinates with a scale bar",
+   "row": "cellxgene-explorer"
+  },
+  {
+   "column": "hosted",
+   "mark": "Y",
+   "caption": "Explorer on CZ CELLxGENE Discover serves the dataset to an anonymous visitor: no sign-in, no install",
+   "row": "cellxgene-explorer"
+  },
+  {
+   "column": "every_cell",
+   "mark": "Y",
+   "caption": "all spots are drawn (4992 of 4992 cells), no downsampling"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    370,
+    60,
+    111,
+    38
+   ],
+   "label": "embedding: spatial",
+   "selector": "[data-testid='layout-choice']"
+  },
+  {
+   "n": 2,
+   "box": [
+    362,
+    52,
+    676,
+    848
+   ],
+   "label": "spots in tissue coordinates",
+   "selector": "[data-cap='emb']"
+  },
+  {
+   "n": 3,
+   "box": [
+    370,
+    95,
+    109,
+    26
+   ],
+   "label": "4992 of 4992 cells",
+   "selector": "text=/[0-9]+ of [0-9]+ cells/ >> nth=0"
+  },
+  {
+   "n": 4,
+   "box": [
+    0,
+    0,
+    1400,
+    64
+   ],
+   "label": "Discover header, no login",
+   "selector": "[data-testid='header']"
+  }
+ ]
+}

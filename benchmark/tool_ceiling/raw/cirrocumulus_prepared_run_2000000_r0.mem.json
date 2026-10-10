@@ -1,0 +1,89 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "prepared",
+  "$DATA_ROOT/tool_ceiling_data/cirro/first2000000.zarr",
+  "benchmark/tool_ceiling/shots/cirrocumulus_prepared_run_2000000_r0",
+  "--n",
+  "2000000",
+  "--port",
+  "8934"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 22.05,
+ "peaks": {
+  "client": {
+   "fp_peak": 1894999232,
+   "fp_lifetime_sum": 2041473152,
+   "rss_peak": 1935081472,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 2866383968,
+   "fp_lifetime_sum": 2905165352,
+   "rss_peak": 2919448576,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 122303256,
+   "fp_lifetime_sum": 122303256,
+   "rss_peak": 156811264,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 4745916632,
+   "rss_peak": 4832985088,
+   "fp_lifetime_sum": 4946638504
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.15,
+   1286759880
+  ],
+  [
+   4.31,
+   3621907592
+  ],
+  [
+   6.46,
+   4249284368
+  ],
+  [
+   8.74,
+   3621252880
+  ],
+  [
+   10.84,
+   4141510656
+  ],
+  [
+   12.95,
+   3858395136
+  ],
+  [
+   15.06,
+   3888689224
+  ],
+  [
+   17.21,
+   4584059000
+  ],
+  [
+   19.32,
+   3951489168
+  ],
+  [
+   21.41,
+   3936678032
+  ]
+ ],
+ "ps_before": "2026-10-03T22:31:18-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47413 607808  19.8 /Applications/cmux.app/Contents/MacOS/cmux\n57113 1902832   4.1 $HOME/.local/bin/claude\n90797 371600   3.5 $HOME/.local/bin/claude\n86901 499024   1.6 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n80005 381520   1.4 $HOME/.local/bin/claude\n92291  30816   0.8 .venv/bin/python\n34972 494384   0.7 $HOME/.local/bin/claude\n80588 617024   0.4 $HOME/.local/bin/claude\n72627 493232   0.3 $HOME/.local/bin/claude\n15110   1232   0.3 sleep\n"
+}

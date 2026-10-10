@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "image": "m00_every_cell_geneview_umap.jpg",
+ "tool": "vizit",
+ "software": "VizIt v1.0.0 as deployed at pd5d.yale.edu (Parkinson's Cell Atlas)",
+ "data": "PD5D_MTG_snRNAseq (snRNA-seq, 94 samples), hosted",
+ "url": "https://pd5d.yale.edu/views/geneview?dataset=PD5D_MTG_snRNAseq&gene=SNCA&sample=all&color=MajorCellTypes&group=MajorCellTypes",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/vizit/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "every_cell",
+   "mark": "N",
+   "caption": "Gene View UMAP of PD5D_MTG_snRNAseq draws 50,000 points while the violins below carry 309,960 cell values: the UMAP is a sample made when the data were prepared"
+  },
+  {
+   "column": "auto_subset",
+   "mark": "P",
+   "caption": "The 50,000-point UMAP sample is fixed by the dataset preparation ('UMAP embedding sampling' step), not chosen at viewing time"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    558,
+    146,
+    635,
+    635
+   ],
+   "label": "UMAP plot",
+   "selector": ".js-plotly-plot >> nth=0"
+  }
+ ]
+}

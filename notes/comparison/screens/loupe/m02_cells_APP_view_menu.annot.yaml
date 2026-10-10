@@ -1,0 +1,33 @@
+version: 1
+image: m02_cells_APP_view_menu.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: 889222f494ebf4504f398ed38d6be705e2d3ac931fae116fc420982d3460b513
+proves:
+- column: cells
+  mark: N
+  caption: 'no neighbour-graph, distance or similarity view: the View menu holds only ''Toggle Full Screen'', and
+    the left rail offers Clusters, Features, Reanalyze, Advanced Selection, V(D)J Clonotypes'
+callouts:
+- n: 1
+  box:
+  - 160
+  - 28
+  - 160
+  - 30
+  label: 'View menu: Toggle Full Screen only'
+- n: 2
+  box:
+  - 192
+  - 215
+  - 58
+  - 345
+  label: left rail

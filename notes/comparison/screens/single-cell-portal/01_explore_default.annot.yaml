@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "01_explore_default.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP1671, human lactation (49,310 cells; All Cells UMAP)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP1671/cellular-and-transcriptional-diversity-over-the-course-of-human-lactation#study-visualize",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_scp.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "SCP 1.20.0 (2026-10-04): Explore holds cluster, annotation and expression views only; no control takes a cell or gene as an index into a pairwise matrix (none exists)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    36,
+    124,
+    1135,
+    808
+   ],
+   "label": "cluster UMAP (All Cells UMAP)",
+   "selector": "[data-cap='plot0']"
+  },
+  {
+   "n": 2,
+   "box": [
+    1179,
+    145,
+    210,
+    265
+   ],
+   "label": "Options: Clustering, Annotation, ... no pairwise matrix",
+   "selector": "[data-cap='opts']"
+  }
+ ]
+}

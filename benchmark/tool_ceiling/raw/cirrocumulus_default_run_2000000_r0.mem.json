@@ -1,0 +1,81 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+  "benchmark/tool_ceiling/shots/cirrocumulus_default_run_2000000_r0",
+  "--n",
+  "2000000",
+  "--port",
+  "8934"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 18.72,
+ "peaks": {
+  "client": {
+   "fp_peak": 1939055928,
+   "fp_lifetime_sum": 2068212080,
+   "rss_peak": 1999388672,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 7649908664,
+   "fp_lifetime_sum": 7661066552,
+   "rss_peak": 7742783488,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 120287928,
+   "fp_lifetime_sum": 120287928,
+   "rss_peak": 154796032,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 9511517304,
+   "rss_peak": 9616982016,
+   "fp_lifetime_sum": 9729278632
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.23,
+   2769397960
+  ],
+  [
+   4.47,
+   8468723920
+  ],
+  [
+   6.63,
+   8961489536
+  ],
+  [
+   8.81,
+   8326167168
+  ],
+  [
+   10.98,
+   8835775368
+  ],
+  [
+   13.1,
+   8565980064
+  ],
+  [
+   15.28,
+   9092824256
+  ],
+  [
+   17.41,
+   8777612456
+  ]
+ ],
+ "ps_before": "2026-10-03T21:12:09-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  557 651600  11.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n77573  20480   7.0 benchmark/tool_ceiling/.venv/bin/python\n57113 1849456   6.4 $HOME/.local/bin/claude\n  855 1723728   5.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n86901 498864   2.6 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  582 104208   2.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n 1012  16736   2.0 /usr/libexec/pboard\n  629 154848   1.9 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  28112   1.5 /System/Library/CoreServices/launchservicesd\n  633  30752   1.1 /usr/libexec/runningboardd\n"
+}

@@ -1,0 +1,74 @@
+{
+ "cmd": [
+  ".venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "5000000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first5000000_csc.h5ad",
+  "--csc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 14.2,
+ "peaks": {
+  "proc": {
+   "fp_peak": 6440916656,
+   "fp_lifetime_sum": 6564271864,
+   "rss_peak": 6605471744,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 6440916656,
+   "rss_peak": 6605471744,
+   "fp_lifetime_sum": 6564271864
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8929688
+  ],
+  [
+   1.4,
+   941786672
+  ],
+  [
+   2.79,
+   1471465560
+  ],
+  [
+   4.2,
+   4244033616
+  ],
+  [
+   5.63,
+   5004612216
+  ],
+  [
+   7.04,
+   5004677752
+  ],
+  [
+   8.47,
+   5004743288
+  ],
+  [
+   9.89,
+   5004808824
+  ],
+  [
+   11.31,
+   5233578760
+  ],
+  [
+   12.73,
+   4305637672
+  ],
+  [
+   14.13,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-05T11:45:30-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 1042 132864  11.2 /System/Library/Frameworks/Accounts.framework/Versions/A/Support/accountsd\n  626 519408   8.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 2905008   7.8 $HOME/.local/bin/claude\n47413 675872   7.4 /Applications/cmux.app/Contents/MacOS/cmux\n55305  50608   3.2 /System/Library/PrivateFrameworks/SafariPlatformSupport.framework/Versions/A/XPCServices/com.apple.SafariPlatformSupport.Helper.xpc/Contents/MacOS/com.apple.SafariPlatformSupport.Helper\n73194 196784   2.8 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n15970 126048   2.7 /usr/libexec/duetexpertd\n 2074 322048   2.4 /System/Library/Frameworks/Contacts.framework/Support/contactsd\n72627 504240   2.1 $HOME/.local/bin/claude\n55731  20736   1.7 benchmark/tool_ceiling/.venv/bin/python\n",
+ "others_at_start": []
+}

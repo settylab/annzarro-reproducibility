@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "g04_subset_compare_page_MM001_only.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (scope.aertslab.org)",
+ "data": "Wouters_Human_Melanoma / 10_Baselines_filteredRegulons.loom (4,322 cells)",
+ "url": "https://scope.aertslab.org/#/Wouters_Human_Melanoma/Wouters_Human_Melanoma%2F10_Baselines_filteredRegulons.loom/compare",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_scope.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "subset",
+   "mark": "Y",
+   "caption": "SCope 1.8.2 Compare page (2026-10-04): cell_line MM 001 dropped on display 1, which now carries the filter tag 'cell_line MM001' and shows only those cells; headless WebGL left the points undrawn, so the shot shows the filter, not the cells"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    276,
+    168,
+    210,
+    35
+   ],
+   "label": "annotation value cell_line = MM 001",
+   "selector": "text=MM 001 >> nth=0"
+  },
+  {
+   "n": 2,
+   "box": [
+    402,
+    150,
+    359,
+    362
+   ],
+   "label": "display 1, filtered to cell_line MM001 (tag above it; points not drawn headless)",
+   "selector": "canvas >> nth=0"
+  },
+  {
+   "n": 3,
+   "box": [
+    258,
+    39,
+    1068,
+    95
+   ],
+   "label": "number of displays, superposition OR / AND",
+   "selector": "text=Number of displays: >> xpath=.."
+  }
+ ]
+}

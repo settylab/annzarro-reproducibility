@@ -1,0 +1,134 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_160000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_syn_run_160000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 47.55,
+ "peaks": {
+  "client": {
+   "fp_peak": 879665360,
+   "fp_lifetime_sum": 896098488,
+   "rss_peak": 1106165760,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 324928736,
+   "fp_lifetime_sum": 421300360,
+   "rss_peak": 360022016,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 134170048,
+   "fp_lifetime_sum": 134170048,
+   "rss_peak": 169197568,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1162257816,
+   "rss_peak": 1447706624,
+   "fp_lifetime_sum": 1317398848
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.2,
+   1162257816
+  ],
+  [
+   4.43,
+   891725136
+  ],
+  [
+   6.64,
+   626828624
+  ],
+  [
+   8.95,
+   599991632
+  ],
+  [
+   11.23,
+   600253776
+  ],
+  [
+   13.57,
+   596829520
+  ],
+  [
+   15.86,
+   597091664
+  ],
+  [
+   18.13,
+   597321040
+  ],
+  [
+   20.43,
+   597534032
+  ],
+  [
+   22.82,
+   597845328
+  ],
+  [
+   25.16,
+   598451536
+  ],
+  [
+   27.42,
+   598484304
+  ],
+  [
+   29.73,
+   598795600
+  ],
+  [
+   32.06,
+   583132544
+  ],
+  [
+   34.36,
+   581199232
+  ],
+  [
+   36.61,
+   581395840
+  ],
+  [
+   38.93,
+   581592448
+  ],
+  [
+   41.21,
+   581805440
+  ],
+  [
+   43.63,
+   582100352
+  ],
+  [
+   45.97,
+   582264192
+  ]
+ ],
+ "ps_before": "2026-10-04T21:55:53-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n86042 128528  99.4 $TMPDIR/evidence/venv/bin/python\n57113 2881360  33.0 $HOME/.local/bin/claude\n    1  34672  23.2 /sbin/launchd\n  855 1976880  13.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  687  65232  12.0 /usr/libexec/syspolicyd\n86632 274624  11.6 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n86631 180672   8.4 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  626 528304   8.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n33029 194960   7.6 /System/Library/CoreServices/ReportCrash\n85781  27472   6.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

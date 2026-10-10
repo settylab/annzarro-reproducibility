@@ -1,0 +1,84 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_500000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub_run_500000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 17.84,
+ "peaks": {
+  "client": {
+   "fp_peak": 1598841472,
+   "fp_lifetime_sum": 1704207912,
+   "rss_peak": 1405861888,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 5456155424,
+   "fp_lifetime_sum": 5522134272,
+   "rss_peak": 5476401152,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 131188664,
+   "fp_lifetime_sum": 131188664,
+   "rss_peak": 166051840,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6648493160,
+   "rss_peak": 6598574080,
+   "fp_lifetime_sum": 7226342184
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.42,
+   951591744
+  ],
+  [
+   5.03,
+   1061069704
+  ],
+  [
+   7.53,
+   925361272
+  ],
+  [
+   9.92,
+   930473080
+  ],
+  [
+   12.41,
+   927818872
+  ],
+  [
+   15.06,
+   5104087232
+  ],
+  [
+   17.63,
+   6531626208
+  ]
+ ],
+ "ps_before": "2026-10-06T00:12:34-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n46379 635728 100.0 lualatex\n59322  97936  93.3 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n47413 543200  14.2 /Applications/cmux.app/Contents/MacOS/cmux\n 1012  15872   6.4 /usr/libexec/pboard\n  626 385808   4.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n49293 805472   4.1 $HOME/.local/bin/claude\n  557  44576   3.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 1240  45424   3.0 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n57113 2938896   2.1 $HOME/.local/bin/claude\n  855 1483456   2.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n",
+ "others_at_start": []
+}

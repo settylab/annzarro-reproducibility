@@ -1,0 +1,126 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_150000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_tag_run_150000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030_3fb6826/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3fb6826",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 42.37,
+ "peaks": {
+  "client": {
+   "fp_peak": 15150145200,
+   "fp_lifetime_sum": 16563314976,
+   "rss_peak": 14779285504,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 9055723320,
+   "fp_lifetime_sum": 9113428656,
+   "rss_peak": 9090416640,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 130205312,
+   "fp_lifetime_sum": 133629712,
+   "rss_peak": 165478400,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 22732290504,
+   "rss_peak": 22577430528,
+   "fp_lifetime_sum": 25676743632
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.18,
+   1160259256
+  ],
+  [
+   4.51,
+   1591732424
+  ],
+  [
+   6.71,
+   2187701048
+  ],
+  [
+   8.92,
+   2864295216
+  ],
+  [
+   11.18,
+   3956044064
+  ],
+  [
+   13.43,
+   4658148120
+  ],
+  [
+   15.72,
+   6111656720
+  ],
+  [
+   17.97,
+   8436859824
+  ],
+  [
+   20.22,
+   11249716328
+  ],
+  [
+   22.62,
+   17165690680
+  ],
+  [
+   24.98,
+   18476003000
+  ],
+  [
+   27.31,
+   18635452352
+  ],
+  [
+   29.59,
+   10505475360
+  ],
+  [
+   31.91,
+   20161900240
+  ],
+  [
+   34.23,
+   21510894296
+  ],
+  [
+   36.62,
+   12630352496
+  ],
+  [
+   38.89,
+   21870408864
+  ],
+  [
+   41.24,
+   21236218696
+  ]
+ ],
+ "ps_before": "2026-10-05T03:20:58-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n98631 487632   7.7 $HOME/.local/bin/claude\n57113 2887232   7.1 $HOME/.local/bin/claude\n37026 121760   4.6 $HOME/Projects/investments/.venv/bin/python3\n47413 662944   3.8 /Applications/cmux.app/Contents/MacOS/cmux\n92291  30992   2.0 .venv/bin/python\n32799   1232   1.5 sleep\n 4725 644432   1.5 claude\n86901 573424   1.3 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  695  30688   1.3 /usr/sbin/mDNSResponder\n  734  50160   1.1 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n",
+ "others_at_start": []
+}

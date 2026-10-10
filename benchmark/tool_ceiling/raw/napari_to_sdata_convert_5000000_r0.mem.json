@@ -1,0 +1,56 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "to_sdata.py",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first5000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first5000000.zarr"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 9.67,
+ "peaks": {
+  "proc": {
+   "fp_peak": 7964171248,
+   "fp_lifetime_sum": 7964285936,
+   "rss_peak": 8290385920,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 7964171248,
+   "rss_peak": 8290385920,
+   "fp_lifetime_sum": 7964285936
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8454552
+  ],
+  [
+   1.46,
+   3071167224
+  ],
+  [
+   2.92,
+   5270770104
+  ],
+  [
+   4.32,
+   5546857152
+  ],
+  [
+   5.8,
+   6315464248
+  ],
+  [
+   7.19,
+   6420617048
+  ],
+  [
+   8.6,
+   7351769664
+  ]
+ ],
+ "ps_before": "2026-10-05T00:18:25-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  582 111648   6.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  855 1973968   5.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n86901 573168   4.7 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n88766  17312   3.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n72627 490688   2.0 $HOME/.local/bin/claude\n97961 765808   1.6 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n87553  26144   1.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n88780  19824   1.2 .venv/bin/python\n  592  21312   0.8 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored\n93323 1098912   0.7 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

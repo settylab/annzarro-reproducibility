@@ -1,0 +1,26 @@
+version: 1
+image: m05_spatial_csc_input_misread_hierarchy.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0 (macOS universal, start page reads 1.5.0-dev)
+data: spatial_demo.h5ad (2,693 spots x 2,000 genes; X stored as CSC)
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/manivault_checklist.md (run by hand in a computer-use desktop session; log: notes/comparison/demos/manivault/session_notes.txt)'
+source: manual
+image_sha256: 2f63548d9a3d370ae8ab27f001a38c6e615f7562f9078975e8794053ad180721
+proves:
+- column: spatial
+  mark: P
+  caption: 'Loading the Visium demo gave one childless ''spatial_demo'' node of 2,000 x 2,000: the loader reads
+    X as CSR (HDF5Loader H5ADUtils.cpp L456-L462), so a CSC-encoded X is misread and obs/obsm are dropped. Spatial
+    coordinates were therefore not shown; any 2-D obsm (as X_umap in m00) can be plotted, so obsm[''spatial''] from
+    a CSR file should work, but this was not observed.'
+callouts:
+- n: 1
+  box:
+  - 0
+  - 900
+  - 210
+  - 34
+  label: 'spatial_demo: no children (no obs, no obsm/spatial)'

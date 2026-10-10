@@ -1,0 +1,43 @@
+# AnnZarro v0.3.0 release tag, as cited in the manuscript (Software, Code availability, Supp. Note 1).
+# Copied with git; the web client (static/) is unchanged from 120f322, the build ceiling-benchmarker measured as v030.
+
+## git rev-parse --short v0.3.0^{commit}
+3fb6826
+
+## pyproject.toml version at v0.3.0
+version = "0.3.0"
+
+## git diff --stat 120f322 v0.3.0 -- static (empty: client identical)
+(end of diff)
+
+## git diff --stat 120f322 v0.3.0 (server side; fix 3, the leaner name index)
+ annzarro/core/name_index.py                 | 101 ++++++++++++++++------------
+ annzarro/tests/browser/test_memory_guard.py |   4 ++
+ annzarro/tests/core/test_name_index_lean.py |  24 ++++++-
+ pyproject.toml                              |   1 +
+ 4 files changed, 86 insertions(+), 44 deletions(-)
+
+## annzarro/config/base.yaml at v0.3.0 (ui.defaults: subset and large-plot thresholds)
+    # Datasets with more cells than subset_threshold open on a reproducible
+    # subset of subset_size cells (seed subset_seed); the header shows it and
+    # its dialog changes or removes it. Every panel shows the same cells.
+    subset_threshold: 200000
+    # A Cell Plot with more points than this is drawn in large-plot mode
+    # (typed arrays, no hover, click or table filter); only reachable with
+    # the subset off or larger than this. 1M keeps several regular plots
+    # (400-900 B of browser heap per point) open side by side.
+    large_plot_points: 1000000
+    subset_size: 100000
+    subset_seed: 0
+
+
+## static/js/data-manager.js at v0.3.0, the large-plot switch
+            
+            // Every cell of a dataset above the large-plot threshold: the names
+            // stay on the server (large-plot mode shows none)
+            const threshold = Config.DEFAULTS.LARGE_PLOT_POINTS;
+            if (typeof expected === 'number' && typeof threshold === 'number' && expected > threshold) {
+                return _remoteNames(datasetPath, expected);
+            }
+            const params = _withSubset(Config.API.CELLS, { dataset_path: datasetPath });
+            const fullUrl = `${Config.API.CELLS}?${new URLSearchParams(params).toString()}`;

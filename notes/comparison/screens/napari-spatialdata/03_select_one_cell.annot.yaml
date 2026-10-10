@@ -1,0 +1,25 @@
+version: 1
+image: 03_select_one_cell.jpg
+tool: napari-spatialdata
+software: napari 0.9.2, napari-spatialdata 0.7.2, anndata 0.13.4 (with _get_X shim)
+data: Visium demo (obsp spatial_kernel, spatial_distance, connectivities, distances; varp spearman_hvg)
+captured: '2026-10-03'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/napari-spatialdata/focus_check.py
+source: manual
+image_sha256: 878970a4277f97fbae0858a8c1bb0a462b771572bfc0e43c499092a37ec4691c
+proves:
+- column: focus
+  mark: N
+  caption: 'napari-spatialdata 0.7.2: selecting one spot only draws a ring on it; the View colour (Pcp2) and the
+    Scatter colour (leiden) do not change.'
+callouts:
+- n: 1
+  box: [1460, 1438, 48, 48]
+  label: 'the selected spot: a ring, nothing else'
+- n: 2
+  box: [1841, 1243, 196, 42]
+  label: 'View still: Color by Pcp2'
+- n: 3
+  box: [2513, 1834, 213, 146]
+  label: 'Scatter still: leiden'

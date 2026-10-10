@@ -1,0 +1,117 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "isee",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/sce/first2000000.rds",
+  "benchmark/tool_ceiling/shots/isee_default_run_2000000_r0",
+  "--n",
+  "2000000",
+  "--port",
+  "8935"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 37.61,
+ "peaks": {
+  "client": {
+   "fp_peak": 842588248,
+   "fp_lifetime_sum": 917103688,
+   "rss_peak": 1094483968,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 4743107384,
+   "fp_lifetime_sum": 4981709664,
+   "rss_peak": 6346014720,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 133559448,
+   "fp_lifetime_sum": 133624768,
+   "rss_peak": 167919616,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5366281464,
+   "rss_peak": 7438008320,
+   "fp_lifetime_sum": 5898813352
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.15,
+   803070544
+  ],
+  [
+   4.3,
+   1274635432
+  ],
+  [
+   6.38,
+   1249551912
+  ],
+  [
+   8.53,
+   1367385736
+  ],
+  [
+   10.66,
+   2254924048
+  ],
+  [
+   12.8,
+   4609502896
+  ],
+  [
+   14.88,
+   4231081984
+  ],
+  [
+   16.97,
+   4760449648
+  ],
+  [
+   19.07,
+   4659819528
+  ],
+  [
+   21.16,
+   4658410504
+  ],
+  [
+   23.27,
+   4658623496
+  ],
+  [
+   25.41,
+   4658787336
+  ],
+  [
+   27.51,
+   4940576040
+  ],
+  [
+   29.65,
+   4471207304
+  ],
+  [
+   31.78,
+   4453725624
+  ],
+  [
+   33.88,
+   4451694008
+  ],
+  [
+   36.05,
+   4451857848
+  ]
+ ],
+ "ps_before": "2026-10-03T17:16:30-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1218464  75.6 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n45357  24048  14.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  855 1586240  11.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n42484 214352   8.1 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n45360  20624   4.2 benchmark/tool_ceiling/.venv/bin/python\n47413 640512   3.5 /Applications/cmux.app/Contents/MacOS/cmux\n57113 2094560   2.5 $HOME/.local/bin/claude\n45365  19312   2.4 .venv/bin/python\n86901 589984   2.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  626 553856   1.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n"
+}

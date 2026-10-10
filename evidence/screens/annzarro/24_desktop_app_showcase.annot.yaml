@@ -1,0 +1,60 @@
+version: 1
+image: 24_desktop_app_showcase.png
+tool: annzarro
+software: AnnZarro 0.4.1 desktop app (macOS arm64, Electron); release asset AnnZarro-0.4.1-macos-arm64.zip,
+  sha256 c1b675ede4fe3328350816bf5357e13d37b0987cce62764602f3835f6d630752; run unpacked from a scratch
+  dir
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:39487/
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture_desktop.py
+source: dom
+proves:
+- column: desktop
+  mark: Y
+  caption: AnnZarro 0.4.1 desktop app (macOS) showing the 8,090-cell demo, no server set up by the user.
+    The released app, launched from its bundle, started its own server; the store was picked in its Dataset
+    menu and plotted.
+callouts:
+- n: 1
+  box:
+  - 32
+  - 41
+  - 216
+  - 74
+  label: 'window page of the Electron app: AnnZarro/0.4.1 Electron/44.5.1; isPackaged=True'
+  selector: .app-title
+- n: 2
+  box:
+  - 280
+  - 56
+  - 546
+  - 92
+  label: 'Dataset picker: bm_aging_showcase, clicked in the list of the app''s data directory'
+  selector: '#dataset-selector >> xpath=..'
+- n: 3
+  box:
+  - 0
+  - 150
+  - 2400
+  - 76
+  label: Cells 8,090, Genes 16285; served by the app's bundled server AnnZarro.app/Contents/Resources/server/annzarro-server
+    at http://127.0.0.1:39487
+  selector: '#dataset-stats'
+- n: 4
+  box:
+  - 138
+  - 458
+  - 649
+  - 72
+  label: X = obsm / X_umap / 0; Y = obsm / X_umap / 1; Color = obs / highres_celltype / N/A
+  selector: .tile[data-tile-id="cell-plot-1791418642861"] .axis-type-select[data-axis="color"] >> xpath=..
+- n: 5
+  box:
+  - 0
+  - 712
+  - 2396
+  - 782
+  label: 8,090 cells drawn
+  selector: .tile[data-tile-id="cell-plot-1791418642861"] .js-plotly-plot

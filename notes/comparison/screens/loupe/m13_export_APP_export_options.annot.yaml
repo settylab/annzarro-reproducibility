@@ -1,0 +1,25 @@
+version: 1
+image: m13_export_APP_export_options.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: 038a5577598dcb7d5559f5c5b2e1fdf427fff09c72feb80a274fa22858e2c013
+proves:
+- column: export
+  mark: Y
+  caption: 'Export menu: plot to PNG or SVG, projection to CSV; a PNG was saved (87,893 bytes)'
+callouts:
+- n: 1
+  box:
+  - 752
+  - 64
+  - 168
+  - 186
+  label: Export menu

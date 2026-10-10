@@ -1,0 +1,25 @@
+version: 1
+image: m09_roi_saved_in_memory.jpg
+tool: napari-spatialdata
+software: napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0
+data: SpatialData sandbox Visium mouse brain (visium.zarr; table with 4 obsp, varp spearman_hvg)
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/napari-spatialdata/matrix_check.py
+source: manual
+image_sha256: 17e4cd036e6cfb2b4bd706445ad27f5aa8d038149fd0f84c915011256136a883
+proves:
+- column: annot
+  mark: P
+  caption: 'napari-spatialdata 0.7.2: a drawn polygon my_roi is added to the SpatialData object with Shift+E ("Layer
+    saved"), but only in memory; writing to disk needs code.'
+callouts:
+- n: 1
+  box: [77, 756, 497, 56]
+  label: shapes layer my_roi
+- n: 2
+  box: [25, 1379, 560, 98]
+  label: Elements now lists my_roi
+- n: 3
+  box: [1407, 1771, 231, 50]
+  label: 'napari: Layer saved (log: annotations only added in memory)'

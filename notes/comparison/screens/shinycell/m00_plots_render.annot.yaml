@@ -1,0 +1,19 @@
+version: 1
+image: m00_plots_render.jpg
+tool: shinycell
+software: ShinyCell 2.1.0 (local app)
+data: bone marrow SCE (8,090 cells)
+url: http://127.0.0.1:8907
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/shinycell/matrix_check.py
+source: manual
+image_sha256: 1d9567304b51df061fe44be2e7f764d2fc230d0db34316cbcde2d0813f9e6806
+proves:
+- column: annot
+  mark: N
+  caption: 'ShinyCell 2.1.0: the app''s seven tabs are all plot views; no tab or control writes a cell label.'
+callouts:
+- n: 1
+  box: [28, 112, 1262, 52]
+  label: 'all tabs: CellInfo vs GeneExpr ... Bubbleplot / Heatmap; none edits labels'

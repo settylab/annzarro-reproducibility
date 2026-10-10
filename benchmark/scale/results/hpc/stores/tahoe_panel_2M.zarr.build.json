@@ -1,0 +1,13 @@
+{
+ "n_cells": 2000000,
+ "n_genes": 5000,
+ "genes": "$SCRATCH/annzarro-scale/paper/benchmark/scale/genes_panel.txt",
+ "nnz": 1938646265,
+ "obsm": [],
+ "master": "master_panel.zarr",
+ "seconds": 164.85612273216248,
+ "chunk": 2097152,
+ "compressor": "blosc zstd clevel 3",
+ "zarr": "3.1.6",
+ "anndata": "0.12.19"
+}

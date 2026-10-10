@@ -1,0 +1,57 @@
+{
+ "view": {
+  "v": 1,
+  "constants": {
+   "focusedGene": "VIM"
+  },
+  "layout": {
+   "v": 1,
+   "hierarchy": [
+    {
+     "type": "tile",
+     "id": "cell-plot-A",
+     "controlsVisible": false
+    }
+   ],
+   "controlState": {
+    "cell-plot-A": false
+   },
+   "panelConfigs": {
+    "cell-plot-A": {
+     "id": "cell-plot-A",
+     "title": "cat",
+     "x": {
+      "type": "obsm",
+      "key": "X_pca_2d",
+      "column": "0"
+     },
+     "y": {
+      "type": "obsm",
+      "key": "X_pca_2d",
+      "column": "1"
+     },
+     "z": null,
+     "color": {
+      "type": "obs",
+      "key": "cell_line_id",
+      "column": ""
+     },
+     "pointSize": 1.0,
+     "pointOpacity": 0.2
+    }
+   }
+  },
+  "subset": null
+ },
+ "store": "$DATA_ROOT/tahoe_scale/stores/n50M_plot/tahoe_50M_plot.zarr",
+ "n_cells_store": 50000000,
+ "ready_s": 4.4,
+ "browser": "chromium 153.0.8010.12",
+ "dsf": 2,
+ "viewport": [
+  1600,
+  1000
+ ],
+ "gl": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version) | maxbuf? 16384",
+ "notice": "Large-plot mode (50M points): hover, click and table filters are off; use a subset for them"
+}

@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "g02_hosted_public_session_header.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (scope.aertslab.org)",
+ "data": "Wouters_Human_Melanoma / 10_Baselines_filteredRegulons.loom (4,322 cells)",
+ "url": "https://scope.aertslab.org/#/Wouters_Human_Melanoma/Wouters_Human_Melanoma%2F10_Baselines_filteredRegulons.loom/gene",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_scope.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "hosted",
+   "mark": "Y",
+   "caption": "SCope 1.8.2 at scope.aertslab.org (2026-10-04), opened anonymously: one deployment serves every visitor, each with its own session ('Your session will be deleted in ...', 'Get new session')"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1078,
+    2,
+    320,
+    41
+   ],
+   "label": "per-user session on the public server",
+   "selector": "text=/Your session will be deleted/ >> nth=0"
+  },
+  {
+   "n": 2,
+   "box": [
+    1274,
+    5,
+    115,
+    35
+   ],
+   "label": "Get new session",
+   "selector": "text=/new session/i >> nth=0"
+  },
+  {
+   "n": 3,
+   "box": [
+    365,
+    112,
+    693,
+    786
+   ],
+   "label": "viewer area (still loading in headless Chromium after 45 s; data come from the server)",
+   "selector": "canvas >> nth=0"
+  }
+ ]
+}

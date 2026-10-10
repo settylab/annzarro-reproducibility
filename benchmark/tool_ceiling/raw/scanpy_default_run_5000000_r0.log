@@ -1,0 +1,6 @@
+[     2.1s] import
+[     4.8s] load
+[    16.4s] plot_cat
+[    27.9s] plot_gene
+[    27.9s] done
+{"status": "ok", "rc": 0, "wall_s": 28.45} fp_peak=10.01GB lifetime=10.01GB

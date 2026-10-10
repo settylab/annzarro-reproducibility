@@ -1,0 +1,68 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "benchmark/scale/ceiling/cut_prefix.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "$DATA_ROOT/tool_ceiling_data/zarr",
+  "16800000"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 14.5,
+ "peaks": {
+  "proc": {
+   "fp_peak": 5335585232,
+   "fp_lifetime_sum": 5386129920,
+   "rss_peak": 5345460224,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5335585232,
+   "rss_peak": 5345460224,
+   "fp_lifetime_sum": 5386129920
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9011608
+  ],
+  [
+   1.51,
+   3531902096
+  ],
+  [
+   3.03,
+   4314681040
+  ],
+  [
+   4.58,
+   5073359072
+  ],
+  [
+   6.06,
+   5075259616
+  ],
+  [
+   7.59,
+   5078274272
+  ],
+  [
+   9.08,
+   5079060704
+  ],
+  [
+   10.58,
+   5079077088
+  ],
+  [
+   12.06,
+   4663414744
+  ],
+  [
+   13.54,
+   2023393608
+  ]
+ ],
+ "ps_before": "2026-10-03T22:36:25-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  582 105856 105.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n23343  20416  22.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n23348  20416  18.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n20170  26544  17.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  592  15808  17.3 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored\n23342  20352  17.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n23353  20368  16.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n23339  20384  16.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n15201  26624  16.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  855 1674736  15.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n"
+}

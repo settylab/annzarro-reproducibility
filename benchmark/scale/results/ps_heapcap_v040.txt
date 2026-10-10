@@ -1,0 +1,10 @@
+# Process snapshots taken during the benchmark. The export keeps the benchmark's own processes (pid, elapsed time, rss in kB, command) and omits the unrelated ones; see the count below.
+2026-10-06 16:27:01Z
+ 9:27  up 113 days,  8:11, 28 users, load averages: 9.16 12.03 12.54
+pid=25773 etime=01-21:58:40 rss_kb=10608 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=73397 etime=05:00 rss_kb=2176 cmd=/bin/bash $TMPDIR/heapcap_v040.sh
+pid=75535 etime=13:47:36 rss_kb=27088 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 55645 --data-dir /var/folders/h_/5f3
+pid=75574 etime=13:47:34 rss_kb=11456 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -c from multiprocessing.resource_tracker import main;main(11)
+pid=77031 etime=16:04:40 rss_kb=26656 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 62230 --data-dir /var/folders/h_/5f3
+pid=87077 etime=00:00 rss_kb=3680 cmd=tar -x -C $TMPDIR/cap_v0.4.0/annzarro_src
+# omitted: 36 process lines unrelated to the benchmark

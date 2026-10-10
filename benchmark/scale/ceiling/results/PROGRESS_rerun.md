@@ -1,0 +1,122 @@
+# Release-0.3 scale rerun: progress (one line per step)
+- 2026-10-03 10:55:31 start; code d5be664 (worktree tahoe95-run); cutting real Tahoe prefixes 1M-50M into ~/tahoe_scale/stores/rerun_prefix (cut_prefix.py)
+- 2026-10-03 10:56:49 prefix stores 1M-50M cut (45 s) and verified (3 gene columns, X_umap, cell_line_id codes vs source; anndata reads 1M); log results/cut_prefix_rerun.log
+- 2026-10-03 10:59:11 item 2 (default subset) browser sweep started
+- 2026-10-03 11:04:18 item 2 browser sweep finished: {"store": "tahoe_panel_95.6M_plot_cat_r2.zarr", "color": "cat", "rep": 2, "event": "zoom", "status": "ok", "seconds": 0.
+- 2026-10-03 11:04:18 item 1 (every cell) browser sweep started
+- 2026-10-03 12:17:59 item 1 browser sweep finished: {"store": "tahoe_panel_95.6M_plot_cat_r2.zarr", "color": "cat", "rep": 2, "event": "drag", "status": "ok", "seconds": 6.
+- 2026-10-03 12:17:59 item 3 (server per click) sweep started
+- 2026-10-03 12:28:01 item 3 sweep finished:   tahoe_panel_95.6M_plot.zarr all rep 2 done (cold prep 1.2s)
+- 2026-10-03 12:28:33 confirm 95.6M (figure settings) started
+- 2026-10-03 12:30:37 confirm 95.6M finished
+- 2026-10-03 12:30:40 heapcap (bundled chromium, default flags) finished: {"version": "153.0.8010.12", "flags": [], "heap": {"exception": "Page.evaluate: Target crashed ", "crashed": true, "last": ["onheap 3892314112 used 40
+- 2026-10-03 12:31:16 confirm95 done (figure settings: 4.8-7.6 s); heapcap: jsHeapSizeLimit 4.40 GB, tab crashed at 4.03 GB on-heap; ArrayBuffers 16.9 GB then RangeError. Building synthetic master 300M (+150M, 200M, 250M prefixes) in ~/tahoe_scale_ceiling
+- 2026-10-03 12:33:01 ceiling hunt (synthetic 95.6M-300M, default flags) started
+- 2026-10-03 13:34:25 ceiling hunt finished:   60 "status": "ok" 
+- 2026-10-03 13:34:45 ceiling hunt: 95.6M (syn) and 150M ok x3 (gene, cat). 200M gene rep 0: after the server served all columns (13:10:07), the page renderer process was gone (175 MB left, 0% CPU) with no Playwright crash event; the harness hung in an unguarded CDP Runtime.getHeapUsage call for 24 min and I killed it (13:34). Watchdog now also guards that call; rerunning 200M-300M. Note: another agent's swap-in-place annzarro server + headless Chrome ran unlocked during this window (ps_rerun_ceiling2.txt).
+- 2026-10-03 13:34:48 ceiling hunt part 2 (synthetic 200M-300M) started
+- 2026-10-03 13:45:23 ceiling hunt part 2 finished: 
+- 2026-10-03 13:46:16 ceiling part 2 also hung (browser killed by watchdog, Playwright call never returned); wrote probe.py (async, timeouts on every call, 0.5 s timeline); probing 200M x3 per colour
+- 2026-10-03 13:47:58 part 5: 175M default flags (ceiling.py) and 200M probes with --max-old-space-size started
+- 2026-10-03 13:48:03 200M default flags: 6/6 probes crash (gene at 9.8-9.9 s, cat at 7.4 s from server start; all columns received by 2.2 s); Chromium stderr: 'V8 javascript OOM (CALL_AND_RETRY_LAST)'; renderer RSS peak 9.3 GB (gene) / 7.8 GB (cat). On-heap at 95.6M 1.94 GB, 150M 3.03 GB (20.2 B/point).
+- 2026-10-03 14:10:11 175M:    6 "event": "first_plot", "status": "ok" 
+- 2026-10-03 14:10:12 200M probes with --max-old-space-size 8192/16384: 0 ok of 0
+- 2026-10-03 14:25:20 ceiling done: 175M ok 6/6 (ceiling.py), 182M/190M/200M crash 6/6 each (V8 on-heap OOM); --max-old-space-size 8192/16384 does not change jsHeapSizeLimit (4.40 GB) nor the 200M crash (12/12). NOTES.md ceiling section written.
+- 2026-10-03 21:28:29Z part 6 started (per-run lock): subset sweep, every-cell 1M-50M, prewarm test, profiles, ceiling timings
+- 2026-10-03 21:28:51Z part 6 started (per-run lock): subset sweep, every-cell 1M-50M, prewarm test, profiles, ceiling timings
+- 2026-10-03 21:47:52Z part 6: subset sweep done
+- 2026-10-03 23:14:54Z part 6: every-cell 1M-50M done
+- 2026-10-04 00:54:45Z part 6: 95.6M prewarm test done
+- 2026-10-04 01:44:43Z part 6: regular-path profiles done
+- 2026-10-04 04:37:41Z part 6 finished
+- 2026-10-05 10:10:31Z v0.3.0 Fig. 7 rerun started (queue_v030.sh)
+- 2026-10-05 10:10:41Z v0.3.0 Fig. 7 rerun started (queue_v030.sh)
+- 2026-10-05 11:30:15Z v0.3.0: real every-cell series done
+- 2026-10-05 11:46:27Z v0.3.0 Fig. 7 rerun finished
+- 2026-10-05 11:46:37Z v0.3.0 subset + HTTP series started (queue_v030b.sh)
+- 2026-10-05 12:13:10Z v0.3.0: subset series done
+- 2026-10-05 12:33:54Z v0.3.0 subset + HTTP series finished
+- 2026-10-05 17:10:37Z v0.3.0: conf95 + Fig. 7a-d re-shoot started (queue_v030c.sh)
+- 2026-10-05 17:41:28Z standby (coordinator): queue_v030c stopped before its 2nd run; conf95_v030 cat r0 done 17:4xZ before standby; rest requeued after wake
+- 2026-10-05 18:38:16Z wake (coordinator): queue_v030c relaunched
+- 2026-10-05 18:38:16Z v0.3.0: conf95 + Fig. 7a-d re-shoot started (queue_v030c.sh)
+- 2026-10-05 19:19:18Z v0.3.0: conf95 + Fig. 7a-d re-shoot finished
+- 2026-10-05 22:45:09Z v031 queue started (queue_v031.sh 1391357, $ANNZARRO_SRC/.venv-bench/bin/annzarro)
+- 2026-10-05 22:45:09Z v031 Fig. 7 rerun started (queue_series.sh)
+- 2026-10-05 23:55:06Z v031: real every-cell series done
+- 2026-10-06 00:18:25Z v031 Fig. 7 rerun finished
+- 2026-10-06 01:26:20Z v031: subset series done
+- 2026-10-06 01:31:29Z v031: conf95 done
+- 2026-10-06 02:20:07Z paused for the live ManiVault session (coordinator): queue_v031 stopped between runs; done: all, ceil, guard, sub, conf95, HTTP 1M-50M; left: HTTP 95.6M x3, shots
+- 2026-10-06 02:24:37Z ManiVault session stop file seen: queue_v031 resumed (HTTP 95.6M, shots)
+- 2026-10-06 02:24:38Z v031 queue started (queue_v031.sh 1391357, $ANNZARRO_SRC/.venv-bench/bin/annzarro)
+- 2026-10-06 02:24:39Z v031 Fig. 7 rerun started (queue_series.sh)
+- 2026-10-06 02:24:39Z v031: real every-cell series done
+- 2026-10-06 02:24:39Z v031 Fig. 7 rerun finished
+- 2026-10-06 02:24:40Z v031: subset series done
+- 2026-10-06 02:24:40Z v031: conf95 done
+- 2026-10-06 02:30:21Z re-paused (coordinator): desktop session continues; no bench lock while $DEMO_ROOT/DESKTOP_SESSION_ACTIVE exists
+- 2026-10-06 02:30:40Z queue_v031 stopped between runs (95.6M HTTP r0 was still waiting for the lock, never ran); resume trigger: DESKTOP_SESSION_ACTIVE deleted
+- 2026-10-06 02:31:06Z http_v031 95.6M rep 0 (02:24-02:27Z) voided by coordinator (desktop session overlap); rows moved to http_v031_voided.csv; the queue reruns it after resume
+- 2026-10-06 04:27:43Z DESKTOP_SESSION_ACTIVE gone: queue_v031 resumed (HTTP 95.6M, shots)
+- 2026-10-06 04:27:44Z v031 queue started (queue_v031.sh 1391357, $ANNZARRO_SRC/.venv-bench/bin/annzarro)
+- 2026-10-06 04:27:44Z v031 Fig. 7 rerun started (queue_series.sh)
+- 2026-10-06 04:27:44Z v031: real every-cell series done
+- 2026-10-06 04:27:44Z v031 Fig. 7 rerun finished
+- 2026-10-06 04:27:45Z v031: subset series done
+- 2026-10-06 04:27:45Z v031: conf95 done
+- 2026-10-06 05:12:08Z v031 HTTP 95.6M reps done; queue_v031 stopped before the shots (coordinator: shots move to v0.4.0)
+- 2026-10-06 06:34:49Z v040 queue started (queue_v040.sh 3bdeb0913d7e5761c496070dbb30acd2cd32ceb5, $ANNZARRO_SRC/.venv-bench/bin/annzarro)
+- 2026-10-06 07:08:38Z v040: endpoint check passed
+- 2026-10-06 07:08:38Z v040 Fig. 7 rerun started (queue_series.sh)
+- 2026-10-06 07:56:05Z v040: real every-cell series done
+- 2026-10-06 08:11:40Z v040 Fig. 7 rerun finished
+- 2026-10-06 08:39:52Z v040: subset series done
+- 2026-10-06 08:43:57Z v040: conf95 done
+- 2026-10-06 08:47:59Z v040: conf95auto done
+- 2026-10-06 09:09:02Z v040: HTTP series done
+- 2026-10-06 09:14:05Z v040 queue finished (shots done)
+- 2026-10-06 09:14:07Z perf v040 started (queue_perf.sh 3bdeb0913d7e5761c496070dbb30acd2cd32ceb5)
+- 2026-10-06 15:28:54Z perf v040 started (queue_perf.sh 3bdeb0913d7e5761c496070dbb30acd2cd32ceb5)
+- 2026-10-06 15:50:15Z perf v040: scale done
+- 2026-10-06 15:54:27Z perf v040: sparse done
+- 2026-10-06 16:02:09Z perf v040: sweep 100k done
+- 2026-10-06 16:26:33Z perf v040 finished
+- 2026-10-06 16:27:04Z heapcap v040 (R10) done
+- 2026-10-06 17:43:06Z prewarm50M v040 (ts.name_index) done
+- 2026-10-07 20:15:57Z v041 step1 started (queue_v041.sh, $ANNZARRO_SRC/.venv-bench/bin/annzarro)
+- 2026-10-07 20:18:56Z v041: endpoint check passed
+- 2026-10-07 21:17:23Z v041 step1 stopped between rungs and restarted: gap between timed holds 30 s -> 5 s (operator); 7 rungs that overlapped another process's headless browser (run-timed's drain timed out; ps_v041.txt) moved to results/excluded/browser_v041_overlapped.jsonl and rerun; operator test servers 8795/8796 stopped
+- 2026-10-07 21:17:24Z v041 step1 started (queue_v041.sh, $ANNZARRO_SRC/.venv-bench/bin/annzarro)
+- 2026-10-07 21:17:24Z v041: endpoint check passed
+- 2026-10-07 21:35:25Z v041: real every-cell series done
+- 2026-10-07 21:47:35Z v041 step1 done
+- 2026-10-08 00:00:27Z v041: prewarm50M (ts.name_index) done
+- 2026-10-08 00:01:18Z v041 chain paused between rungs for the step 1+2 gate (manuscript-writer)
+- 2026-10-08 00:04:29Z v041 chain resumed (gate done)
+- 2026-10-08 00:19:02Z v041: HTTP series done
+- 2026-10-08 00:19:05Z perf v041 started (queue_perf.sh 78c9da657ecbff30163fd29055f0e6b10e915c5c)
+- 2026-10-08 00:19:06Z v041 chain held for a gate (manuscript-writer)
+- 2026-10-08 00:22:03Z v041 chain released (pushed dd05603c262dd355e08977b6b4bca38c08abd97e)
+- 2026-10-08 00:28:26Z perf v041: scale done
+- 2026-10-08 00:31:56Z perf v041: sparse done
+- 2026-10-08 00:39:05Z perf v041: sweep 100k done
+- 2026-10-08 00:59:53Z perf v041 finished
+- 2026-10-08 00:59:58Z v041 chain held for a gate (manuscript-writer)
+- 2026-10-08 01:02:53Z v041 chain released (pushed b889471e050d173e68bdb46b83fa02533422ac41)
+- 2026-10-08 01:02:56Z timing-series start (steps 6-8, pid 44987)
+- 2026-10-08 01:13:57Z v041: subset series done
+- 2026-10-08 01:13:57Z v041 chain name,http,perf,sub done
+- 2026-10-08 01:16:34Z v041: Scale a-d shots done (rc=0)
+- 2026-10-08 01:16:37Z heapcap v041 done (rc=0)
+- 2026-10-08 01:16:37Z v041 tail done
+- 2026-10-08 01:16:56Z timing-series stop
+- 2026-10-08 01:39:08Z rerun18 started: 11 HTTP rungs and Fig. 9 scale/sparse that overlapped other sessions' paper gates (rows in results/excluded/); timing-series pid 56185
+- 2026-10-08 01:43:36Z v041: HTTP series done
+- 2026-10-08 01:43:38Z perf v041 started (queue_perf.sh 78c9da657ecbff30163fd29055f0e6b10e915c5c)
+- 2026-10-08 01:48:57Z perf v041: scale done
+- 2026-10-08 01:52:22Z perf v041: sparse done
+- 2026-10-08 01:52:22Z perf v041: sweep 100k done
+- 2026-10-08 01:52:22Z perf v041 finished
+- 2026-10-08 01:52:22Z rerun18 done
+- 2026-10-08 01:52:22Z timing-series stop (rerun18)

@@ -1,0 +1,42 @@
+version: 1
+image: 08_cell_table_has_no_edit_control.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:8920/?dataset_path=$DATA_DIR/bm_aging_showcase.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZENlbGwiOiJNYXR1cm...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: annot
+  mark: N
+  caption: The cell table, where a label editor would sit, offers column choice, filters and CSV export
+    only; its cells are read-only text.
+callouts:
+- n: 1
+  box:
+  - 0
+  - 157
+  - 1400
+  - 293
+  label: 'table controls: buttons [''obs'', ''obsm'', ''obsp'', ''layers'', ''AbCapture'', ''DM_EigenVectors'',
+    ''HTO'', ''X_diffusion'', ''X_draw_graph_fa'', ''X_pca'', ''X_pca_harmony'', ''X_pca_noregression'',
+    ''X_umap'', ''Export CSV'', ''Apply Changes'']; no add, rename or label action'
+  selector: .tile[data-tile-id="cell-table-tb"] .table-controls
+- n: 2
+  box:
+  - 0
+  - 665
+  - 1400
+  - 235
+  label: 25 rows shown, 0 editable fields in the table body
+  selector: .tile[data-tile-id="cell-table-tb"] table tbody
+- n: 3
+  box:
+  - 838
+  - 16
+  - 546
+  - 46
+  label: 'the only things a user can save: panel sets and share links (views, not labels)'
+  selector: '#btn-save-session >> xpath=..'

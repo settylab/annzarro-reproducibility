@@ -1,0 +1,84 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_300000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub1m_run_300000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 18.74,
+ "peaks": {
+  "client": {
+   "fp_peak": 2968282952,
+   "fp_lifetime_sum": 3003509464,
+   "rss_peak": 2632024064,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 3845705304,
+   "fp_lifetime_sum": 3899199544,
+   "rss_peak": 3866804224,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 129762896,
+   "fp_lifetime_sum": 133433008,
+   "rss_peak": 165085184,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6362952976,
+   "rss_peak": 6058360832,
+   "fp_lifetime_sum": 6902709008
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.42,
+   964977592
+  ],
+  [
+   4.87,
+   1184687224
+  ],
+  [
+   7.32,
+   1063003496
+  ],
+  [
+   9.79,
+   1084908904
+  ],
+  [
+   12.5,
+   4349014304
+  ],
+  [
+   15.12,
+   6043317160
+  ],
+  [
+   17.62,
+   6113473640
+  ]
+ ],
+ "ps_before": "2026-10-06T00:12:08-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n59322  94784  96.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n47413 543152  16.8 /Applications/cmux.app/Contents/MacOS/cmux\n45574  36480  13.7 .venv/bin/python\n 6219  56368  10.8 $HOME/Projects/investments/.venv/bin/python3\n  629 205248   6.2 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n49293 805472   3.9 $HOME/.local/bin/claude\n  596  24976   3.6 /System/Library/CoreServices/launchservicesd\n  557  44768   3.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 1012  15920   3.4 /usr/libexec/pboard\n57113 2938720   3.3 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

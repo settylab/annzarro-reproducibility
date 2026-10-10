@@ -1,0 +1,111 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_210000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_210000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 31.53,
+ "peaks": {
+  "client": {
+   "fp_peak": 19543475608,
+   "fp_lifetime_sum": 22635186472,
+   "rss_peak": 19721486336,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 9710034888,
+   "fp_lifetime_sum": 9789203168,
+   "rss_peak": 9739714560,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 133400312,
+   "fp_lifetime_sum": 133400312,
+   "rss_peak": 168837120,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 29119668232,
+   "rss_peak": 29263118336,
+   "fp_lifetime_sum": 32424389640
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.21,
+   387028128
+  ],
+  [
+   4.65,
+   5621789368
+  ],
+  [
+   7.11,
+   12474700728
+  ],
+  [
+   9.45,
+   14947639176
+  ],
+  [
+   11.89,
+   18103170712
+  ],
+  [
+   14.42,
+   24031400464
+  ],
+  [
+   16.92,
+   27017617488
+  ],
+  [
+   19.35,
+   25788423288
+  ],
+  [
+   21.74,
+   22588004032
+  ],
+  [
+   24.19,
+   16659793904
+  ],
+  [
+   26.71,
+   22246444552
+  ],
+  [
+   29.2,
+   26273112000
+  ],
+  [
+   31.53,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-08T00:23:26-0700\nmemorystatus_level=92 swap=total = 5120.00M  used = 3960.19M  free = 1159.81M  (encrypted)\n  626 438496  17.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 3393776  15.0 $HOME/.local/bin/claude\n73194 194672  13.0 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n40858 995344  10.2 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 770944   9.8 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n71870  19760   7.4 .venv/bin/python\n  687  61664   5.0 /usr/libexec/syspolicyd\n  629 259888   4.8 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n97977 346640   3.5 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n 1018  45216   2.8 /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Resources/AXVisualSupportAgent.app/Contents/MacOS/AXVisualSupportAgent\n",
+ "others_at_start": [
+  "71871 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "71872 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

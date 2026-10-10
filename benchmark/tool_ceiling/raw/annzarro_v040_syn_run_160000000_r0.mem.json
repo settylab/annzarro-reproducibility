@@ -1,0 +1,130 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_160000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_syn_run_160000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 47.44,
+ "peaks": {
+  "client": {
+   "fp_peak": 880189792,
+   "fp_lifetime_sum": 918905952,
+   "rss_peak": 1108541440,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 194069128,
+   "fp_lifetime_sum": 372098248,
+   "rss_peak": 216743936,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 135480864,
+   "fp_lifetime_sum": 135480864,
+   "rss_peak": 170524672,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1074258920,
+   "rss_peak": 1325285376,
+   "fp_lifetime_sum": 1291004200
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.38,
+   1038033896
+  ],
+  [
+   4.88,
+   1052009448
+  ],
+  [
+   7.35,
+   591094760
+  ],
+  [
+   9.83,
+   590898152
+  ],
+  [
+   12.26,
+   586884072
+  ],
+  [
+   14.77,
+   587654120
+  ],
+  [
+   17.27,
+   587932648
+  ],
+  [
+   19.73,
+   588145640
+  ],
+  [
+   22.23,
+   588424168
+  ],
+  [
+   24.77,
+   589013992
+  ],
+  [
+   27.26,
+   589079528
+  ],
+  [
+   29.75,
+   589423592
+  ],
+  [
+   32.39,
+   577315912
+  ],
+  [
+   34.86,
+   573678664
+  ],
+  [
+   37.4,
+   573891656
+  ],
+  [
+   39.86,
+   574104648
+  ],
+  [
+   42.29,
+   574432328
+  ],
+  [
+   44.8,
+   574612552
+  ],
+  [
+   47.29,
+   574612552
+  ]
+ ],
+ "ps_before": "2026-10-06T00:09:42-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n96336  48640  48.6 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService\n59322  95056  35.2 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n47413 543200  25.3 /Applications/cmux.app/Contents/MacOS/cmux\n39695  14288  15.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n39692  14304  15.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n39691  14320  15.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n39685  14288  15.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n39696  14304  15.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n39683  24256  14.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n39684  19440  14.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

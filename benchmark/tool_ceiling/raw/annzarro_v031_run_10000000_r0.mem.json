@@ -1,0 +1,54 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first10000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_run_10000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 4.56,
+ "peaks": {
+  "client": {
+   "fp_peak": 3489311232,
+   "fp_lifetime_sum": 3799887296,
+   "rss_peak": 2589736960,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1572309440,
+   "fp_lifetime_sum": 1625492792,
+   "rss_peak": 1607090176,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 125023072,
+   "fp_lifetime_sum": 125023072,
+   "rss_peak": 162922496,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5041288104,
+   "rss_peak": 4115578880,
+   "fp_lifetime_sum": 5425380088
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.32,
+   1039246840
+  ]
+ ],
+ "ps_before": "2026-10-05T15:48:41-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 506912  44.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 2447872   8.1 $HOME/.local/bin/claude\n47606  20912   6.5 benchmark/tool_ceiling/.venv/bin/python\n  639 129536   5.5 /usr/sbin/coreaudiod\n  629 209280   5.2 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30496   4.7 /System/Library/CoreServices/launchservicesd\n86901 536768   2.2 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  601  42256   2.2 /usr/libexec/locationd\n  618  59056   2.1 /usr/sbin/bluetoothd\n92291  30992   1.8 .venv/bin/python\n",
+ "others_at_start": []
+}

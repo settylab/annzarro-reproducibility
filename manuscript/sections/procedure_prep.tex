@@ -1,0 +1,169 @@
+\subsection{Data preparation (Steps 3--10)}\timing{about 10 min on a 16-core workstation; 32 GiB RAM}
+
+\begin{enumerate}[start=3]
+%claim{prep.download}
+\item Download the murine bone marrow aging data (2.4 GB) from Zenodo\cite{zenodo_bm_aging} and verify its checksum. The script \azfile{docs/_tools/datasets/bm_aging.py}{docs/\allowbreak\_tools/\allowbreak datasets/\allowbreak bm\_aging.py} in the AnnZarro repository (v0.4.1) does both and, run without options, also performs Steps 4--10; it pins the tested package versions (Software).
+\begin{lstlisting}[language=bash]
+curl -L -o murine_bone_marrow_aging.h5ad \
+  "https://zenodo.org/records/15587768/files/murine_bone_marrow_aging.h5ad?download=1"
+md5sum murine_bone_marrow_aging.h5ad   # 3e346c91e029e5fde551a9ebf9ecee78
+\end{lstlisting}
+
+%claim{prep.kompot_time}
+\item Run Kompot differential abundance and differential expression between Young and Old, following the Kompot getting-started tutorial (the \texttt{kompot} stage of \texttt{bm\_aging.py}; about 1 min). Write the result to \texttt{bm\_aging\_processed.h5ad}.
+
+\critical{} Do not call \texttt{kompot.cleanup(adata)} before saving, as the tutorial does: it deletes the smoothed-expression and fold-change layers that Step 7 and Worked examples 3 and 4 need.
+
+%claim{prep.h5ad_size}
+\pausepoint{} The processed h5ad (5.6 GB) can be stored indefinitely.
+
+\item Load the processed file and read the keys Kompot wrote from its run record. Use these names in later steps rather than typing them; they differ between Kompot versions.
+\begin{lstlisting}[language=Python]
+import json
+import anndata as ad, numpy as np, scipy.sparse as sp
+adata = ad.read_h5ad("bm_aging_processed.h5ad")
+
+def kompot_fields(adata, kind):            # kind: "kompot_de" or "kompot_da"
+    info = adata.uns[kind]["last_run_info"]
+    if isinstance(info, (str, bytes)):     # stored as a JSON string
+        info = json.loads(info)
+    return info["field_names"]
+
+de, da = kompot_fields(adata, "kompot_de"), kompot_fields(adata, "kompot_da")
+FC_KEY      = de["fold_change_key"]
+SMOOTH_KEYS = [de["smoothed_key_1"], de["smoothed_key_2"]]
+LFC_KEY, MAHAL_KEY = de["mean_lfc_key"], de["mahalanobis_key"]
+DA_Z_KEY    = da["zscore_key"]
+assert FC_KEY in adata.layers
+\end{lstlisting}
+\critical{} \texttt{field\_names} also lists keys that were not stored (for example a posterior covariance when it was not requested). Check membership before using a key.
+\troubleshoot{}
+
+%claim{prep.knn_row}
+\item Add a dense cell-by-cell similarity. Palantir's diffusion maps already store a sparse kernel (\texttt{DM\_Kernel}) and its row-normalized transition matrix (\texttt{DM\_Similarity}) in obsp, but one row of a kNN kernel covers only about 33 cells and appears as a speck on the embedding. A few steps of the diffusion random walk spread each row over a few hundred cells and make the cell-state neighborhood visible:
+\begin{lstlisting}[language=Python]
+K = sp.csr_matrix(adata.obsp["DM_Kernel"], dtype=np.float64)
+T = sp.diags(1 / np.asarray(K.sum(1)).ravel()) @ K      # row-stochastic
+W = T.toarray(); M = W.copy()
+for _ in range(4):                                     # T^5
+    M = M @ W
+adata.obsp["diffusion_walk_t5"] = M.astype(np.float32)
+\end{lstlisting}
+%claim{prep.dense_obsp} %claim{prep.dense_limit}
+\critical{} A dense cells~$\times$~cells matrix costs $4n^2$ bytes (0.26 GB for 8,090 cells, 4 GB for 32,000). Above roughly 30,000 cells, keep the sparse kernel or threshold $T^t$ into a sparse matrix; AnnZarro reads sparse rows lazily.
+
+%claim{prep.varp_cost}
+\item Add gene-by-gene Spearman correlations. Correlation of the fold-change layer asks which genes' age effects vary together across cell states and recovers co-regulated aging responses; correlation of smoothed expression recovers cell-type programs. Store both (about 30 s and 4 GiB of RAM for 16,285 genes):
+\begin{lstlisting}[language=Python]
+from scipy.stats import rankdata
+def spearman_columns(S):
+    R = rankdata(S, axis=0).astype(np.float32)
+    sd = R.std(0)
+    R -= R.mean(0); R /= np.where(sd == 0, 1.0, sd)
+    C = (R.T @ R) / np.float32(R.shape[0])
+    return np.clip(C, -1, 1)
+
+adata.varp["spearman_fold_change"] = spearman_columns(
+    np.asarray(adata.layers[FC_KEY], np.float32))
+adata.varp["spearman_smoothed"] = spearman_columns(
+    np.vstack([adata.layers[k] for k in SMOOTH_KEYS]).astype(np.float32))
+\end{lstlisting}
+%claim{prep.varp_size}
+\critical{} A genes~$\times$~genes float32 matrix costs $4n_\mathrm{genes}^2$ bytes (about 1 GB each here). Restrict to highly variable or differentially expressed genes if memory is short.
+
+\item Cast dense arrays to float32, which halves storage and the data decompressed per click, and store sparse matrices that will be read by gene in compressed sparse column (CSC) form. From CSC a single gene is one contiguous slice; from the default compressed sparse row form AnnZarro has to scan every stored index to find one gene's values, which is far slower on large data.
+\begin{lstlisting}[language=Python]
+for slot in ("layers", "obsp", "varp"):
+    for key, arr in getattr(adata, slot).items():
+        if not sp.issparse(arr):
+            getattr(adata, slot)[key] = np.asarray(arr, np.float32)
+adata.X = adata.X.tocsc()
+adata.layers["logged_counts"] = adata.layers["logged_counts"].tocsc()
+\end{lstlisting}
+In this dataset X holds scaled expression; color cells by \texttt{logged\_counts} for interpretable expression values.
+
+\item Write the store in zarr format 2, anndata's current default, which every AnnZarro server reads.
+\begin{lstlisting}[language=Python]
+ad.settings.zarr_write_format = 2
+adata.write_zarr("datasets/bm_aging.zarr")
+\end{lstlisting}
+
+\item (Optional) Check chunk shapes of large dense arrays. anndata 0.12 with zarr 3 already chooses suitable chunks; rewrite only stores produced elsewhere with whole-gene or square chunks. Showing a gene across cells reads one column of a cells~$\times$~genes layer, and showing a cell across genes reads one row; the cost of each grows with the chunk's extent along the other axis. Chunks whose aspect ratio follows the matrix's own ($n_\mathrm{cells}/n_\mathrm{genes}$) and hold about $5\times10^5$ values keep both reads fast at any size. Pairwise matrices in obsp and varp are only read by row, so their chunks span whole rows. Because \texttt{write\_zarr} consolidates the store's metadata, open it without consolidation, rewrite, and re-consolidate:
+\begin{lstlisting}[language=Python]
+import math, zarr
+def layer_chunks(n_obs, n_vars, target=5e5):
+    rows = 2 ** round(math.log2(math.sqrt(target * n_obs / n_vars)))
+    cols = 2 ** round(math.log2(target / rows))
+    return min(rows, n_obs), min(cols, n_vars)
+
+def row_chunks(n, target=1e6):
+    return max(1, min(n, int(target // n))), n
+
+g = zarr.open_group("datasets/bm_aging.zarr", mode="r+", use_consolidated=False)
+for slot in ("layers", "obsp", "varp"):
+    for key, arr in getattr(adata, slot).items():
+        if sp.issparse(arr) or np.ndim(arr) != 2:
+            continue
+        chunks = layer_chunks(*arr.shape) if slot == "layers" else row_chunks(arr.shape[1])
+        ad.io.write_elem(g[slot], key, arr, dataset_kwargs={"chunks": chunks})
+zarr.consolidate_metadata("datasets/bm_aging.zarr")
+\end{lstlisting}
+%claim{prep.chunks} %claim{prep.whole_gene}
+For the demonstration data (8,090 cells, 16,285 genes) this gives $512\times1024$ chunks for layers; for 1 million cells and 5,000 genes it gives $8192\times64$. Whole-gene chunks such as ($n_\mathrm{cells}$, 4), common in practice, make a single cell row decompress the entire layer: 7.8 s for 1 million cells, against 0.38 s with the rule's $8192\times64$ chunks (\textbf{Supplementary Note~2}).
+
+\critical{} Skipping \texttt{consolidate\_metadata} leaves a store that neither AnnZarro nor anndata can read.
+\troubleshoot{}
+\end{enumerate}
+
+
+
+\subsection{Starting AnnZarro (Steps 11--13)}\timing{2 min}
+
+\begin{enumerate}[start=11]
+\item Start the server on the directory that holds the store.
+\begin{lstlisting}[language=bash]
+annzarro start --data-dir datasets --port 8000
+\end{lstlisting}
+On a laptop the browser opens at \path{http://localhost:8000} without a login. On a remote host, either open an SSH tunnel (\texttt{ssh -L 8000:localhost:8000 host}) or run a multi-user server (Steps 42--44). In the desktop app, choose the data directory in the app instead.
+
+%claim{prep.status_bar}
+\item Select \texttt{bm\_aging.zarr} in the \ui{Dataset} menu. The status bar reports 8,090 cells and 16,285 genes; the header shows the \ui{Focused Gene} and \ui{Focused Cell} selectors with back and forward buttons.
+\troubleshoot{}
+
+%claim{step.load_set}
+\item Add panels with \ui{Create New Panel} (\ui{Cell Plot}, \ui{Gene Plot}, \ui{Cell Table}, \ui{Gene Table}). Drag the dividers to arrange them; \ui{Duplicate} or \ui{Reopen Panel} clones a configured panel. Ready-made panel sets and share links for every worked example are on the documentation's procedure page (\url{https://annzarro.readthedocs.io/en/latest/paper/procedure.html\#paper-procedure-examples}). In \ui{Load Panel Set}, \ui{Load} opens the set's dataset and every panel that was open when it was saved, in its layout; the icons beside it load the set on the open dataset, or only add its panels to the closed list.
+\end{enumerate}
+
+\subsection{Worked example 1: walk a diffusion neighborhood across the embedding (Steps 14--17)}\timing{5 min}
+
+\noindent\textbf{Tutorial:} \url{https://annzarro.readthedocs.io/en/latest/tutorials/cell-similarity.html}
+
+
+\begin{enumerate}[start=14]
+\item Create a \ui{Cell Plot}. Set \ui{X} and \ui{Y} to \ui{obsm} $\rightarrow$ \texttt{X\_umap}, columns 0 and 1. Set \ui{Color} to \ui{obsp} $\rightarrow$ \texttt{diffusion\_walk\_t5}. The row selector reads \ui{Focused cell}.
+
+\item Click a hematopoietic stem cell (for example \texttt{HSPC\_Old\_1\#GAAGCCCGTGGCTCTG-1}). It becomes the focused cell everywhere, and the plot recolors by that cell's row: the cells its diffusion walk reaches in five steps. Only this one row is fetched; the embedding is not.
+
+\item Click cells along the trajectory toward monocytes and watch the neighborhood move and change shape. Use the history arrows beside \ui{Focused Cell} to step back.
+
+\item (Optional) Split the view, pick this panel under \ui{Duplicate} or \ui{Reopen Panel}, and color the copy by \texttt{DM\_Kernel} or \texttt{distances} to compare neighborhood definitions for the same cell. For spatial data, set \ui{X} and \ui{Y} to the spatial coordinates in obsm.
+\end{enumerate}
+
+\subsection{Worked example 2: browse co-regulated genes in the differential expression volcano (Steps 18--21)}\timing{5 min}
+
+\noindent\textbf{Tutorial:} \url{https://annzarro.readthedocs.io/en/latest/tutorials/gene-similarity.html}
+
+
+\begin{enumerate}[start=18]
+\item Create a \ui{Gene Plot}. Set \ui{X} to \ui{var} $\rightarrow$ \texttt{kompot\_de\_Young\_to\_Old\_mean\_lfc} and \ui{Y} to \ui{var} $\rightarrow$ \texttt{kompot\_de\_Young\_to\_Old\_mahalanobis}. This is the volcano.
+\troubleshoot{}
+
+\item Set \ui{Color} to \ui{varp} $\rightarrow$ \texttt{spearman\_fold\_change}. The row selector reads \ui{Focused gene}.
+
+\item Click a strongly changed gene, for example \textit{H2-Q7}. It becomes the focused gene, and every gene is colored by how similarly its age effect varies across cell states. Genes of the same response light up wherever they sit in effect size; for \textit{H2-Q7} these include \textit{H2-Q6}, \textit{Tapbpl}, \textit{H2-D1} and \textit{B2m} (MHC class I antigen presentation).
+
+\critical{} Start from a gene that is in the correlation matrix. If the focused gene is absent, every point is gray.
+\troubleshoot{}
+
+\item Click a correlated gene to move the focus to it, or switch \ui{Color} to \texttt{spearman\_smoothed} to see which genes share the focused gene's cell-type expression pattern instead. To fade weak correlations, set \ui{Map} to Blues, press \ui{Reverse} so that the pale end is low, enter 0.3 as \ui{Min} and press \ui{Lock Range}: genes below 0.3, anti-correlated ones included, take the pale color, and the range holds as the focus moves.
+\end{enumerate}

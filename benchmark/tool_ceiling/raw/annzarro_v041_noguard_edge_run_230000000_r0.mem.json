@@ -1,0 +1,99 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_230000000.zarr",
+  "$TMPDIR/wt-ceiling-max/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_230000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 22.49,
+ "peaks": {
+  "client": {
+   "fp_peak": 20526875816,
+   "fp_lifetime_sum": 20918667392,
+   "rss_peak": 20522598400,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 9586122576,
+   "fp_lifetime_sum": 9634406704,
+   "rss_peak": 9604415488,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 136202024,
+   "fp_lifetime_sum": 136202024,
+   "rss_peak": 171671552,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 29871530808,
+   "rss_peak": 29885677568,
+   "fp_lifetime_sum": 30553074096
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.04,
+   876520160
+  ],
+  [
+   4.33,
+   9998976856
+  ],
+  [
+   6.53,
+   13353554440
+  ],
+  [
+   8.69,
+   16193314384
+  ],
+  [
+   10.88,
+   18921206296
+  ],
+  [
+   13.12,
+   23389341320
+  ],
+  [
+   15.41,
+   28453986408
+  ],
+  [
+   17.62,
+   28929139128
+  ],
+  [
+   19.8,
+   26479811320
+  ],
+  [
+   22.0,
+   25207168024
+  ]
+ ],
+ "ps_before": "2026-10-09T19:16:34-0700\nmemorystatus_level=94 swap=total = 5120.00M  used = 3904.19M  free = 1215.81M  (encrypted)\n86901 625760  14.2 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n43892 169072  11.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor\n46028  21008   8.1 $TMPDIR/wt-ceiling-max/benchmark/tool_ceiling/.venv/bin/python\n  626 524944   7.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  596  37088   4.2 /System/Library/CoreServices/launchservicesd\n  557 1814112   3.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  629 226608   2.5 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n47413 850816   2.4 /Applications/cmux.app/Contents/MacOS/cmux\n 1012  19680   1.8 /usr/libexec/pboard\n  774   6848   1.6 /usr/libexec/sysmond\n",
+ "others_at_start": [
+  "42702 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "46020 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

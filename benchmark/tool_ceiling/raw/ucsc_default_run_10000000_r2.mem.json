@@ -1,0 +1,94 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/ucsc/html_10000000",
+  "benchmark/tool_ceiling/shots/ucsc_default_run_10000000_r2",
+  "--n",
+  "10000000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 24.55,
+ "peaks": {
+  "client": {
+   "fp_peak": 3096864320,
+   "fp_lifetime_sum": 3453872784,
+   "rss_peak": 2381234176,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 14533112,
+   "fp_lifetime_sum": 28001480,
+   "rss_peak": 27361280,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 145753992,
+   "fp_lifetime_sum": 145753992,
+   "rss_peak": 176717824,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3111381024,
+   "rss_peak": 2408562688,
+   "fp_lifetime_sum": 3481874264
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.24,
+   1265411144
+  ],
+  [
+   4.39,
+   1967892200
+  ],
+  [
+   6.56,
+   1831790504
+  ],
+  [
+   8.73,
+   1790895992
+  ],
+  [
+   10.87,
+   1769858936
+  ],
+  [
+   13.05,
+   1771153272
+  ],
+  [
+   15.22,
+   1772742520
+  ],
+  [
+   17.38,
+   1276732992
+  ],
+  [
+   19.53,
+   1276716608
+  ],
+  [
+   21.64,
+   1794058008
+  ],
+  [
+   23.78,
+   2012833824
+  ]
+ ],
+ "ps_before": "2026-10-04T16:21:33-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  855 1956640  57.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n78083  11664  42.7 rsync\n78080  10816  29.4 rsync\n  557 566752  15.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n78092   9552  12.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n78087  10016  11.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n78093   9472  11.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n78090   9456  11.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n78091   9440  11.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n78088   9488  11.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

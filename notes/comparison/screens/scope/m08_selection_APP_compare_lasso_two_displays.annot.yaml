@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "image": "m08_selection_APP_compare_lasso_two_displays.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (9ae5207), local Docker image scope:1.8.2-9ae5207-final, frontend http://127.0.0.1:55850/; Google Chrome 155.0.8059.39 driven through the Claude in Chrome extension",
+ "data": "SCope_Test.loom (100 cells, local)",
+ "url": "http://127.0.0.1:55850/",
+ "captured": "2026-10-09",
+ "by": "selection-test session (headed Chrome)",
+ "driver": "notes/comparison/demos/scope/selection/record.txt",
+ "source": "manual",
+ "image_sha256": "cf15ad4e443a20f99a1a21c9b2c493fff494a94d105b86da1ce76bfe8b10c677",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "Lasso in display 3: Selection 1 (25 cells); the same group is magenta in display 3 and in the first-half-filtered display 1 (only its first-half cells)."
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    470,
+    285,
+    65,
+    50
+   ],
+   "label": "selected group in display 1"
+  },
+  {
+   "n": 2,
+   "box": [
+    470,
+    625,
+    65,
+    60
+   ],
+   "label": "selected group in display 3"
+  },
+  {
+   "n": 3,
+   "box": [
+    1222,
+    190,
+    212,
+    40
+   ],
+   "label": "Selection 1 (25 cells)"
+  }
+ ]
+}

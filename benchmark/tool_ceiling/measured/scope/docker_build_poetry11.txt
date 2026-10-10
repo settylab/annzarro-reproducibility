@@ -1,0 +1,254 @@
+Tue Oct  6 16:40:58 PDT 2026
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 3.25kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:bullseye
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 90B done
+#3 DONE 0.0s
+
+#4 [ 1/17] FROM docker.io/library/debian:bullseye@sha256:6f519a81440354a85eb592c5f32109ab80605f6b892455983a6f618bf87fabe9
+#4 resolve docker.io/library/debian:bullseye@sha256:6f519a81440354a85eb592c5f32109ab80605f6b892455983a6f618bf87fabe9 done
+#4 DONE 0.0s
+
+#5 [ 5/17] RUN apt-get install -y xz-utils &&     curl -fsSLO https://nodejs.org/dist/v14.21.3/node-v14.21.3-linux-x64.tar.xz &&     echo "05c08a107c50572ab39ce9e8663a2a2d696b5d262d5bd6f98d84b997ce932d9a  node-v14.21.3-linux-x64.tar.xz" | sha256sum -c - &&     tar -xJf node-v14.21.3-linux-x64.tar.xz -C /usr/local --strip-components=1 &&     rm node-v14.21.3-linux-x64.tar.xz && node --version && npm --version
+#5 CACHED
+
+#6 [ 7/17] RUN wget --quiet https://github.com/conda-forge/miniforge/releases/download/26.7.2-0/Miniforge3-26.7.2-0-Linux-x86_64.sh -O ~/miniconda.sh &&     echo "281b0ac7d550802efc81af633225a5e6116d29ae72f3ab4eae7168c3931a4c05  /root/miniconda.sh" | sha256sum -c - &&     /bin/bash ~/miniconda.sh -b -p /opt/conda &&     rm ~/miniconda.sh &&     printf 'channels:\n  - conda-forge\n  - nodefaults\nchannel_priority: strict\n' > /opt/conda/.condarc &&     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh &&     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc &&     echo "conda activate base" >> ~/.bashrc
+#6 CACHED
+
+#7 [ 8/17] RUN . /opt/conda/etc/profile.d/conda.sh
+#7 CACHED
+
+#8 [ 2/17] RUN printf 'deb http://archive.debian.org/debian bullseye main\ndeb http://archive.debian.org/debian bullseye-updates main\ndeb http://archive.debian.org/debian-security bullseye-security main\n' > /etc/apt/sources.list &&     printf 'Acquire::Check-Valid-Until "false";\n' > /etc/apt/apt.conf.d/99archive
+#8 CACHED
+
+#9 [ 3/17] RUN apt-get update -y
+#9 CACHED
+
+#10 [ 4/17] RUN apt-get install -y     curl wget     gnupg     unzip     git
+#10 CACHED
+
+#11 [ 6/17] RUN apt-get install -y build-essential
+#11 CACHED
+
+#12 [ 9/17] RUN conda create -n scope python=3.8.3 -y
+#12 CACHED
+
+#13 [10/17] RUN echo "conda activate scope" >> ~/.bashrc
+#13 CACHED
+
+#14 [internal] load build context
+#14 transferring context: 25.91kB 0.0s done
+#14 DONE 0.0s
+
+#15 [11/17] RUN conda install -y -c conda-forge "poetry=1.1.*" && poetry --version
+#15 1.310 Channels:
+#15 1.310  - conda-forge
+#15 1.310  - nodefaults
+#15 1.310 Platform: linux-64
+#15 1.310 Collecting package metadata (repodata.json): ...working... done
+#15 4.179 Solving environment: ...working... failed
+#15 24.39 
+#15 24.39 LibMambaUnsatisfiableError: Encountered problems while solving:
+#15 24.39   - nothing provides __osx needed by keyring-24.3.1-pyh534df25_1
+#15 24.39 
+#15 24.39 Could not solve for environment specs
+#15 24.39 The following packages are incompatible
+#15 24.39 ├─ pin on python =3.14 * is installable and it requires
+#15 24.39 │  └─ python =3.14 *, which can be installed;
+#15 24.39 └─ poetry =1.1 * is not installable because there are no viable options
+#15 24.39    ├─ poetry 1.1.15 would require
+#15 24.39    │  ├─ importlib-metadata >=1.6.0,<2.0.0 * with the potential options
+#15 24.39    │  │  ├─ importlib-metadata [1.6.0|1.6.1|1.7.0|4.11.4] would require
+#15 24.39    │  │  │  └─ python >=3.7,<3.8.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │  │  ├─ importlib-metadata [1.6.0|1.6.1|1.7.0|4.11.4] would require
+#15 24.39    │  │  │  └─ python >=3.8,<3.9.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │  │  ├─ importlib-metadata 1.7.0, which can be installed;
+#15 24.39    │  │  └─ importlib-metadata [1.6.0|1.6.1|1.7.0] would require
+#15 24.39    │  │     └─ python >=3.6,<3.7.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │  └─ keyring >=21.2.0 * but there are no viable options
+#15 24.39    │     ├─ keyring [21.2.1|23.11.0|...|25.0.0] would require
+#15 24.39    │     │  └─ python >=3.10,<3.11.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │     ├─ keyring [21.2.1|23.11.0|...|25.0.0] would require
+#15 24.39    │     │  └─ python >=3.11,<3.12.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │     ├─ keyring [21.2.1|21.3.0|...|23.2.1] would require
+#15 24.39    │     │  └─ python >=3.6,<3.7.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │     ├─ keyring [21.2.1|21.3.0|...|23.9.3] would require
+#15 24.39    │     │  └─ python >=3.7,<3.8.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │     ├─ keyring [21.2.1|21.3.0|...|25.0.0] would require
+#15 24.39    │     │  └─ python >=3.8,<3.9.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │     ├─ keyring [21.2.1|21.4.0|...|25.0.0] would require
+#15 24.39    │     │  └─ python >=3.9,<3.10.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │     ├─ keyring [24.2.0|24.3.0|24.3.1|25.0.0] would require
+#15 24.39    │     │  └─ python [>=3.12,<3.13.0a0 *|>=3.12.0rc3,<3.13.0a0 *], which conflicts with any installable versions previously reported;
+#15 24.39    │     ├─ keyring [24.3.1|25.0.0|...|25.7.0] would require
+#15 24.39    │     │  └─ __osx =* *, which is missing on the system;
+#15 24.39    │     ├─ keyring [24.3.1|25.0.0|...|25.7.0] would require
+#15 24.39    │     │  └─ __win =* *, which is missing on the system;
+#15 24.39    │     └─ keyring [24.3.1|25.0.0|...|25.7.0] would require
+#15 24.39    │        ├─ importlib-metadata >=4.11.4 * but there are no viable options
+#15 24.39    │        │  ├─ importlib-metadata 5.0.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 4.11.4 would require
+#15 24.39    │        │  │  └─ python >=3.10,<3.11.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata [1.6.0|1.6.1|1.7.0|4.11.4], which cannot be installed (as previously explained);
+#15 24.39    │        │  ├─ importlib-metadata [1.6.0|1.6.1|1.7.0|4.11.4], which cannot be installed (as previously explained);
+#15 24.39    │        │  ├─ importlib-metadata 4.11.4 would require
+#15 24.39    │        │  │  └─ python >=3.9,<3.10.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 4.13.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 5.1.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 5.2.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.0.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.1.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.10.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.2.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.2.1 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.3.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.4.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.4.1 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.5.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.5.1 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.6.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.7.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.8.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 6.9.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 7.0.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 7.0.1 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 7.0.2 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 7.1.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 7.2.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 7.2.1 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 8.0.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 8.1.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 8.2.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 8.3.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 8.4.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 8.5.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 8.6.1 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 8.7.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 8.7.1 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 8.8.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  ├─ importlib-metadata 9.0.0 conflicts with any installable versions previously reported;
+#15 24.39    │        │  └─ importlib-metadata 9.0.1 conflicts with any installable versions previously reported;
+#15 24.39    │        └─ importlib_metadata >=4.11.4 * but there are no viable options
+#15 24.39    │           ├─ importlib_metadata 4.11.4 would require
+#15 24.39    │           │  └─ importlib-metadata >=4.11.4,<4.11.5.0a0 *, which cannot be installed (as previously explained);
+#15 24.39    │           ├─ importlib_metadata 5.0.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=5.0.0,<5.0.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 4.13.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=4.13.0,<4.13.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 5.1.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=5.1.0,<5.1.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 5.2.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=5.2.0,<5.2.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.0.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.0.0,<6.0.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.1.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.1.0,<6.1.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.10.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.10.0,<6.10.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.2.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.2.0,<6.2.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.2.1 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.2.1,<6.2.2.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.3.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.3.0,<6.3.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.4.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.4.0,<6.4.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.4.1 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.4.1,<6.4.2.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.5.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.5.0,<6.5.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.5.1 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.5.1,<6.5.2.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.6.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.6.0,<6.6.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.7.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.7.0,<6.7.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.8.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.8.0,<6.8.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 6.9.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=6.9.0,<6.9.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 7.0.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=7.0.0,<7.0.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 7.0.1 would require
+#15 24.39    │           │  └─ importlib-metadata >=7.0.1,<7.0.2.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 7.0.2 would require
+#15 24.39    │           │  └─ importlib-metadata >=7.0.2,<7.0.3.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 7.1.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=7.1.0,<7.1.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 7.2.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=7.2.0,<7.2.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 7.2.1 would require
+#15 24.39    │           │  └─ importlib-metadata >=7.2.1,<7.2.2.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 8.0.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=8.0.0,<8.0.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 8.1.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=8.1.0,<8.1.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 8.2.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=8.2.0,<8.2.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 8.3.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=8.3.0,<8.3.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 8.4.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=8.4.0,<8.4.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 8.5.0 would require
+#15 24.39    │           │  └─ importlib-metadata >=8.5.0,<8.5.1.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 8.6.1 would require
+#15 24.39    │           │  └─ importlib-metadata >=8.6.1,<8.6.2.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 8.7.0 would require
+#15 24.39    │           │  └─ importlib-metadata ==8.7.0 pyhe01879c_1, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 8.7.1 would require
+#15 24.39    │           │  └─ importlib-metadata ==8.7.1 pyhcf101f3_0, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 8.8.0 would require
+#15 24.39    │           │  └─ importlib-metadata ==8.8.0 pyhcf101f3_0, which conflicts with any installable versions previously reported;
+#15 24.39    │           ├─ importlib_metadata 9.0.0 would require
+#15 24.39    │           │  └─ importlib-metadata ==9.0.0 pyhcf101f3_0, which conflicts with any installable versions previously reported;
+#15 24.39    │           └─ importlib_metadata 9.0.1 would require
+#15 24.39    │              └─ importlib-metadata ==9.0.1 pyhcf101f3_0, which conflicts with any installable versions previously reported;
+#15 24.39    ├─ poetry [1.1.10|1.1.2|...|1.1.8] would require
+#15 24.39    │  └─ python >=3.6,<3.7.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    ├─ poetry [1.1.10|1.1.11|...|1.1.8] would require
+#15 24.39    │  └─ python >=3.7,<3.8.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    ├─ poetry [1.1.10|1.1.11|...|1.1.8] would require
+#15 24.39    │  └─ python >=3.8,<3.9.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    ├─ poetry [1.1.10|1.1.11|...|1.1.8] would require
+#15 24.39    │  └─ python >=3.9,<3.10.0a0 *, which conflicts with any installable versions previously reported;
+#15 24.39    └─ poetry [1.1.11|1.1.12|1.1.13|1.1.14|1.1.15] would require
+#15 24.39       └─ python >=3.10,<3.11.0a0 *, which conflicts with any installable versions previously reported.
+#15 24.39 
+#15 24.39 Pins seem to be involved in the conflict. Currently pinned specs:
+#15 24.39  - python=3.14
+#15 24.39 
+#15 24.39 
+#15 ERROR: process "/bin/sh -c conda install -y -c conda-forge \"poetry=1.1.*\" && poetry --version" did not complete successfully: exit code: 1
+------
+ > [11/17] RUN conda install -y -c conda-forge "poetry=1.1.*" && poetry --version:
+24.39    │  └─ python >=3.8,<3.9.0a0 *, which conflicts with any installable versions previously reported;
+24.39    ├─ poetry [1.1.10|1.1.11|...|1.1.8] would require
+24.39    │  └─ python >=3.9,<3.10.0a0 *, which conflicts with any installable versions previously reported;
+24.39    └─ poetry [1.1.11|1.1.12|1.1.13|1.1.14|1.1.15] would require
+24.39       └─ python >=3.10,<3.11.0a0 *, which conflicts with any installable versions previously reported.
+24.39 
+24.39 Pins seem to be involved in the conflict. Currently pinned specs:
+24.39  - python=3.14
+24.39 
+24.39 
+------
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 41)
+ - UndefinedVar: Usage of undefined variable '$SCOPE_CONFIG' (line 59)
+Dockerfile:50
+--------------------
+  48 |     # Poetry
+  49 |     # patched: Poetry pinned to the 2021 line (2026 Poetry 2.x rejects the pyproject; SCope unchanged)
+  50 | >>> RUN conda install -y -c conda-forge "poetry=1.1.*" && poetry --version
+  51 |     
+  52 |     # Get sources into container
+--------------------
+ERROR: failed to solve: process "/bin/sh -c conda install -y -c conda-forge \"poetry=1.1.*\" && poetry --version" did not complete successfully: exit code: 1

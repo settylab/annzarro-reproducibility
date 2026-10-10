@@ -1,0 +1,76 @@
+{
+ "version": 1,
+ "image": "h02_subset_per_plot_form.jpg",
+ "tool": "shinycell",
+ "software": "ShinyCell 2.1.0 (local Shiny app built by build.R)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8907",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_shinycell.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "subset",
+   "mark": "Y",
+   "caption": "ShinyCell 2.1.0 (2026-10-04): 'Toggle to subset cells' opens a per-plot form; choosing a metadata field and unticking values (Select which cells to show off) restricts both plots of the tab to the rest"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    368,
+    300,
+    170,
+    42
+   ],
+   "label": "Toggle to subset cells",
+   "selector": "#sc1a1togL"
+  },
+  {
+   "n": 2,
+   "box": [
+    368,
+    359,
+    308,
+    42
+   ],
+   "label": "Cell information to subset: Age",
+   "selector": "#sc1a1sub1 + .selectize-control"
+  },
+  {
+   "n": 3,
+   "box": [
+    368,
+    408,
+    320,
+    53
+   ],
+   "label": "Select which cells to show: Mid, Old, Young",
+   "selector": "#sc1a1sub1\\.ui"
+  },
+  {
+   "n": 4,
+   "box": [
+    26,
+    616,
+    661,
+    608
+   ],
+   "label": "plot drawn from the subset",
+   "selector": "#sc1a1oup1 img"
+  },
+  {
+   "n": 5,
+   "box": [
+    711,
+    616,
+    663,
+    608
+   ],
+   "label": "second plot, same subset",
+   "selector": "#sc1a1oup2 img"
+  }
+ ]
+}

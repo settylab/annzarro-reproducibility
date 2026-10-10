@@ -1,0 +1,143 @@
+{
+  "name": "protocol_C_foldchange_umap",
+  "timestamp": "2026-10-06T16:31:48.403843+00:00",
+  "dataset": "bm_aging.zarr",
+  "datasetName": "bm_aging",
+  "constants": {
+    "focusedGene": "S100a9",
+    "focusedCell": "HSPC_Old_1#GAAGCCCGTGGCTCTG-1",
+    "taxonomyId": "10090"
+  },
+  "panelConfigs": {
+    "cell-plot-C1": {
+      "id": "cell-plot-C1",
+      "type": "cell-plot",
+      "title": "C | Kompot fold change (Old vs Young) of focused gene",
+      "config": {
+        "id": "cell-plot-C1",
+        "title": "C | Kompot fold change (Old vs Young) of focused gene",
+        "x": {
+          "type": "obsm",
+          "key": "X_umap",
+          "column": "0"
+        },
+        "y": {
+          "type": "obsm",
+          "key": "X_umap",
+          "column": "1"
+        },
+        "z": null,
+        "color": {
+          "type": "layer",
+          "key": "kompot_de_Young_to_Old_fold_change",
+          "column": "S100a9",
+          "locked": false
+        },
+        "pointSize": 3,
+        "pointOpacity": 0.8,
+        "colorScale": "RdBu",
+        "highlightFocusedCell": true,
+        "hoverInfo": [
+          {
+            "type": "obs",
+            "key": "_index"
+          },
+          {
+            "type": "obs",
+            "key": "highres_celltype"
+          }
+        ],
+        "centeringActive": true
+      },
+      "isSelectionTile": false
+    },
+    "cell-plot-C2": {
+      "id": "cell-plot-C2",
+      "type": "cell-plot",
+      "title": "C | Young smoothed expression",
+      "config": {
+        "id": "cell-plot-C2",
+        "title": "C | Young smoothed expression",
+        "x": {
+          "type": "obsm",
+          "key": "X_umap",
+          "column": "0"
+        },
+        "y": {
+          "type": "obsm",
+          "key": "X_umap",
+          "column": "1"
+        },
+        "z": null,
+        "color": {
+          "type": "layer",
+          "key": "kompot_de_Young_smoothed",
+          "column": "S100a9",
+          "locked": false
+        },
+        "pointSize": 3,
+        "pointOpacity": 0.8,
+        "colorScale": "Viridis",
+        "highlightFocusedCell": true,
+        "hoverInfo": [
+          {
+            "type": "obs",
+            "key": "_index"
+          },
+          {
+            "type": "obs",
+            "key": "highres_celltype"
+          }
+        ],
+        "colorMin": 0,
+        "colorMax": 3.77,
+        "lockColorRange": true
+      },
+      "isSelectionTile": false
+    },
+    "cell-plot-C3": {
+      "id": "cell-plot-C3",
+      "type": "cell-plot",
+      "title": "C | Old smoothed expression",
+      "config": {
+        "id": "cell-plot-C3",
+        "title": "C | Old smoothed expression",
+        "x": {
+          "type": "obsm",
+          "key": "X_umap",
+          "column": "0"
+        },
+        "y": {
+          "type": "obsm",
+          "key": "X_umap",
+          "column": "1"
+        },
+        "z": null,
+        "color": {
+          "type": "layer",
+          "key": "kompot_de_Old_smoothed",
+          "column": "S100a9",
+          "locked": false
+        },
+        "pointSize": 3,
+        "pointOpacity": 0.8,
+        "colorScale": "Viridis",
+        "highlightFocusedCell": true,
+        "hoverInfo": [
+          {
+            "type": "obs",
+            "key": "_index"
+          },
+          {
+            "type": "obs",
+            "key": "highres_celltype"
+          }
+        ],
+        "colorMin": 0,
+        "colorMax": 3.77,
+        "lockColorRange": true
+      },
+      "isSelectionTile": false
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_default_run_1000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 7.95,
+ "peaks": {
+  "proc": {
+   "fp_peak": 2265663720,
+   "fp_lifetime_sum": 2265696488,
+   "rss_peak": 2346926080,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2265663720,
+   "rss_peak": 2346926080,
+   "fp_lifetime_sum": 2265696488
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9257368
+  ],
+  [
+   1.52,
+   179077816
+  ],
+  [
+   3.01,
+   1392789112
+  ],
+  [
+   4.5,
+   1392789112
+  ],
+  [
+   5.99,
+   2265008360
+  ],
+  [
+   7.49,
+   2265008360
+  ]
+ ],
+ "ps_before": "2026-10-03T16:33:42-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n69306  22992  44.8 .venv/bin/python\n47413 639840   6.7 /Applications/cmux.app/Contents/MacOS/cmux\n69315 117760   5.3 benchmark/tool_ceiling/.venv/lib/python3.12/site-packages/playwright/driver/node\n57113 2050256   5.2 $HOME/.local/bin/claude\n  626 553920   4.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n31621 386304   3.4 $HOME/.local/bin/claude\n  557 652448   3.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n74820  20544   2.2 benchmark/tool_ceiling/.venv/bin/python\n  855 1582464   2.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n90797 372416   1.3 $HOME/.local/bin/claude\n"
+}

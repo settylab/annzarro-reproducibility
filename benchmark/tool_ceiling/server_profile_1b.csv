@@ -1,0 +1,15 @@
+build,run,request,seconds,server_peak_gib,server_after_gib,bytes
+"v0.4.0 3bdeb09 (tag 49e2a19, tree bb2ace6d)","one request at a time, fresh server",subset=auto,4.5,0.11,0.12,267
+"v0.4.0 3bdeb09 (tag 49e2a19, tree bb2ace6d)","one request at a time, fresh server",cells (names of the subset),18.7,0.51,0.36,2290156
+"v0.4.0 3bdeb09 (tag 49e2a19, tree bb2ace6d)","one request at a time, fresh server",obsm X_umap col 0,1.2,4.47,4.52,400000
+"v0.4.0 3bdeb09 (tag 49e2a19, tree bb2ace6d)","one request at a time, fresh server",obsm X_umap col 1,1.4,8.28,8.32,400000
+"v0.4.0 3bdeb09 (tag 49e2a19, tree bb2ace6d)","one request at a time, fresh server",layer X col 0,2.3,8.34,8.34,370152
+"v0.4.0 3bdeb09 (tag 49e2a19, tree bb2ace6d)","one request at a time, fresh server",obs cell_type,52.6,9.72,5.36,3290709
+"v0.4.0 3bdeb09 (tag 49e2a19, tree bb2ace6d)","full task (browser default view, requests in parallel)",whole first plot (server process tree of annzarro_v040_sub1m_run_1000000000_r0: lifetime max sum from memmon; after-task footprint not taken),,8.87,,
+"v0.4.1 78c9da6 (the tag, tree 661a454f)","one request at a time, fresh server",subset=auto,4.7,0.12,0.12,267
+"v0.4.1 78c9da6 (the tag, tree 661a454f)","one request at a time, fresh server",cells (names of the subset),19.2,0.51,0.36,2290156
+"v0.4.1 78c9da6 (the tag, tree 661a454f)","one request at a time, fresh server",obsm X_umap col 0,1.1,0.78,0.64,400000
+"v0.4.1 78c9da6 (the tag, tree 661a454f)","one request at a time, fresh server",obsm X_umap col 1,1.1,0.74,0.74,400000
+"v0.4.1 78c9da6 (the tag, tree 661a454f)","one request at a time, fresh server",layer X col 0,0.6,0.75,0.75,370152
+"v0.4.1 78c9da6 (the tag, tree 661a454f)","one request at a time, fresh server",obs cell_type,54.4,2.74,1.58,3290709
+"v0.4.1 78c9da6 (the tag, tree 661a454f)","full task (browser default view, requests in parallel)",whole first plot (server process tree of annzarro_v041_sub1m_run_1000000000_r0: lifetime max sum from memmon; after-task footprint not taken),,3.99,,

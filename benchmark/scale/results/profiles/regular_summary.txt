@@ -1,0 +1,5 @@
+Self time by source in the CPU profile of one every-cell first plot (regular path), release-0.3 d5be664
+regular_tahoe95_first1000000_cat.cpuprofile total 1.12 s: (idle) 0.40, plotly 0.25, (program) 0.12, plot-make-helper.js 0.11, (garbage collector) 0.07, plot-make.js 0.06
+regular_tahoe95_first1000000_gene.cpuprofile total 5.94 s: plotly 4.25, (garbage collector) 0.44, (idle) 0.40, (program) 0.22, plot-make.js 0.21, RegExp: (?:[-\+]?\d*\.\d+%?)|(?:[-\+]?\d+%?) 0.15
+regular_tahoe95_first2000000_cat.cpuprofile total 1.95 s: (idle) 0.69, plotly 0.43, plot-make-helper.js 0.25, (program) 0.14, plot-make.js 0.12, (garbage collector) 0.10
+regular_tahoe95_first2000000_gene.cpuprofile total 11.85 s: plotly 8.50, (garbage collector) 0.96, (idle) 0.75, plot-make.js 0.43, RegExp: (?:[-\+]?\d*\.\d+%?)|(?:[-\+]?\d+%?) 0.36, (program) 0.34

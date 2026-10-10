@@ -1,0 +1,23 @@
+version: 1
+image: m09_annotation_set_menu.jpg
+tool: vitessce
+software: Vitessce web app at vitessce.io (as served 2026-10-04; source checked at fed6719, @vitessce 4.0.10)
+data: bm_demo.zarr via config_matrix.json (8,090 cells; UMAP, cell sets, gene list, Vega views)
+url: https://vitessce.io/#?url=http://127.0.0.1:8904/config_matrix.json
+captured: 2026-10-04
+by: comparison-auditor (shots) / retrofit by evidence-curator
+driver: notes/comparison/demos/vitessce/matrix_check2.py
+source: manual
+image_sha256: 9c0e72688d48ad190159d11906bfbbf3d2060ec21318066754b1ba34443b7ee9
+proves:
+  - column: annot
+    mark: P
+    caption: >-
+      Vitessce's set menu offers Rename, Delete and Export hierarchy to JSON or CSV; nothing writes the label back to the dataset.
+callouts:
+  - n: 1
+    box: [776, 96, 138, 160]
+    label: "Rename, Delete, Export hierarchy (to JSON file), Export hierarchy (to CSV file); no save to data"
+  - n: 2
+    box: [716, 268, 140, 44]
+    label: My Selections

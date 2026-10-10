@@ -1,0 +1,42 @@
+# AnnZarro v0.4.0 release tag, as cited in the manuscript (Software, Code availability, Supp. Note 1).
+# Copied with git from settylab/annzarro (git ls-remote confirms the tag). The v0.4.0 series ran on the release
+# candidate 3bdeb09, whose tree is the tag's tree (below), so its measurements hold for the tag.
+
+## git rev-parse --short v0.4.0^{commit}
+49e2a19
+
+## git rev-parse v0.4.0^{commit} (merge of PR #81)
+49e2a1962d30d9adccbf5093f7d199b42b2bce12
+
+## git rev-parse v0.4.0 (annotated tag object)
+e8039c718311dc5ae883a894b8270f40f96c14c9
+
+## git rev-parse v0.4.0^{tree}
+bb2ace6d4f0078c41738dabd1bb6f64de15771ca
+
+## release candidate the v0.4.0 series ran on: git rev-parse 3bdeb09^{commit} 3bdeb09^{tree}
+3bdeb0913d7e5761c496070dbb30acd2cd32ceb5
+bb2ace6d4f0078c41738dabd1bb6f64de15771ca
+
+## git show -s --format='%H %s%n%ci' v0.4.0^{commit}
+49e2a1962d30d9adccbf5093f7d199b42b2bce12 Release v0.4.0 (#81)
+2026-10-05 23:49:14 -0700
+
+## pyproject.toml version at v0.4.0
+version = "0.4.0"
+
+## annzarro/config/base.yaml at v0.4.0 (ui.defaults: subset and large-plot thresholds)
+    # Datasets with more cells than subset_threshold open on a reproducible
+    # subset of subset_size cells (seed subset_seed); the header shows it and
+    # its dialog changes or removes it. Every panel shows the same cells.
+    subset_threshold: 200000
+    # A Cell Plot with more points than this is drawn in large-plot mode
+    # (typed arrays, no hover, click or table filter); only reachable with
+    # the subset off or larger than this. 1M keeps several regular plots
+    # (400-900 B of browser heap per point) open side by side.
+    large_plot_points: 1000000
+    subset_size: 100000
+    subset_seed: 0
+
+## pyproject.toml requires-python at v0.4.0 (git show v0.4.0:pyproject.toml, line 10)
+requires-python = ">=3.9"  # list[str] annotations are evaluated at import

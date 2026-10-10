@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "04_brush_restrict_in_pca.jpg",
+ "tool": "isee",
+ "software": "iSEE 2.18.0 (Bioconductor 3.20)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8902/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_portal_isee.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "Restrict to selected columns in plot 2 drops every cell outside plot 1's brush"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    943,
+    55,
+    447,
+    508
+   ],
+   "label": "plot 2 shows only the brushed cells",
+   "selector": "#ReducedDimensionPlot2"
+  },
+  {
+   "n": 2,
+   "box": [
+    959,
+    808,
+    193,
+    28
+   ],
+   "label": "Restrict to selected columns",
+   "selector": "#ReducedDimensionPlot2_ColumnSelectionRestrict >> xpath=.."
+  }
+ ]
+}

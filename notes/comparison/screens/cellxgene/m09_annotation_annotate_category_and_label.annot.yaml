@@ -1,0 +1,26 @@
+version: 1
+image: m09_annotation_annotate_category_and_label.jpg
+tool: cellxgene
+software: CELLxGENE Annotate 1.3.0 (local)
+data: bm_demo.h5ad (8,090 cells; obsp holds connectivities, distances, diffusion_distance; one counts layer)
+url: http://127.0.0.1:8903
+captured: 2026-10-04
+by: comparison-auditor (shots) / retrofit by evidence-curator
+driver: notes/comparison/demos/cellxgene/matrix_check2.py
+source: manual
+image_sha256: 7fafa9d56cc52e73ed965410163117eff630af9db878bc3c4d6913373efb8df7
+proves:
+  - column: annot
+    mark: Y
+    caption: >-
+      In Annotate 1.3.0 a user-created category matrix_check labels the 3,116 selected cells old_cells, saved to a CSV in the user data directory.
+callouts:
+  - n: 1
+    box: [10, 55, 135, 31]
+    label: Create new category
+  - n: 2
+    box: [6, 438, 352, 94]
+    label: "new category matrix_check: label old_cells (3116) and unassigned (4974)"
+  - n: 3
+    box: [970, 872, 60, 22]
+    label: "All saved: labels written to annotations/matrixcheck-cell-labels-<id>.csv"

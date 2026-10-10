@@ -1,0 +1,166 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$SCRATCH/annzarro-scale/stores_panel/n5M/tahoe_panel_5M.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_5000000_r1",
+  "--server-url",
+  "http://hpc-node-36:8790",
+  "--proxy",
+  "socks5://127.0.0.1:8767",
+  "--n",
+  "5000000",
+  "--probe-store",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "--version-label",
+  "606f0bc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 62.9,
+ "peaks": {
+  "client": {
+   "fp_peak": 7093661912,
+   "fp_lifetime_sum": 7828633136,
+   "rss_peak": 6410076160,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 0,
+   "fp_lifetime_sum": 0,
+   "rss_peak": 0,
+   "n_proc_max": 0
+  },
+  "harness": {
+   "fp_peak": 131434304,
+   "fp_lifetime_sum": 131434304,
+   "rss_peak": 166428672,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 7093661912,
+   "rss_peak": 6410076160,
+   "fp_lifetime_sum": 7828633136
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.15,
+   0
+  ],
+  [
+   4.38,
+   703913808
+  ],
+  [
+   6.67,
+   865509560
+  ],
+  [
+   8.9,
+   406839480
+  ],
+  [
+   11.15,
+   382230712
+  ],
+  [
+   13.39,
+   381935800
+  ],
+  [
+   15.63,
+   1420026760
+  ],
+  [
+   17.87,
+   1113367504
+  ],
+  [
+   20.19,
+   1107289040
+  ],
+  [
+   22.43,
+   1107370960
+  ],
+  [
+   24.68,
+   1107420112
+  ],
+  [
+   26.9,
+   1107518416
+  ],
+  [
+   29.11,
+   1192436928
+  ],
+  [
+   31.35,
+   2420844576
+  ],
+  [
+   33.59,
+   1862805512
+  ],
+  [
+   35.9,
+   3985025872
+  ],
+  [
+   38.15,
+   3152341936
+  ],
+  [
+   40.38,
+   3414862768
+  ],
+  [
+   42.55,
+   4675202304
+  ],
+  [
+   44.79,
+   4157058544
+  ],
+  [
+   47.03,
+   4402458168
+  ],
+  [
+   49.25,
+   5747289776
+  ],
+  [
+   51.55,
+   4305137232
+  ],
+  [
+   53.78,
+   4454657592
+  ],
+  [
+   56.0,
+   4656082512
+  ],
+  [
+   58.22,
+   6731968584
+  ],
+  [
+   60.42,
+   5589610760
+  ],
+  [
+   62.7,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-04T01:24:18-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  855 1757024  25.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n98389 223264  23.6 $TMPDIR/evidence/venv/bin/python\n98959  14272  15.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n98960  14288  14.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  594  28192   8.2 /usr/libexec/opendirectoryd\n  582 106480   7.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n98964  23856   7.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n    1  35648   7.4 /sbin/launchd\n98965  23776   7.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  619   7088   5.2 /usr/sbin/notifyd\n"
+}

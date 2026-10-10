@@ -1,0 +1,32 @@
+version: 1
+image: m00_render_umap.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0 (macOS universal, start page reads 1.5.0-dev)
+data: bm_demo.h5ad (8,090 cells x 16,285 genes; obsp kept)
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/manivault_checklist.md (run by hand in a computer-use desktop session; log: notes/comparison/demos/manivault/session_notes.txt)'
+source: manual
+image_sha256: 171e5fc8254c33d182cbaf338573200918090723f1fe0937dd65b97a4a1ddcdf
+proves:
+- column: every_cell
+  mark: Y
+  caption: 'The plain scatterplot draws obsm/X_umap for all 8,090 cells (status bar: Number of data points 8090;
+    not visible in this F2 crop). F2 export: colours in this PNG differ from the screen (red and blue swapped),
+    see m12.'
+callouts:
+- n: 1
+  box:
+  - 60
+  - 110
+  - 340
+  - 40
+  label: 'Position by: obsm/X_umap'
+- n: 2
+  box:
+  - 80
+  - 420
+  - 960
+  - 890
+  label: all 8,090 points

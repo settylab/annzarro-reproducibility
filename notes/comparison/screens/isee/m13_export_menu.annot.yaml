@@ -1,0 +1,22 @@
+version: 1
+image: m13_export_menu.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3)
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: 122f36b106e22bf70ddf0345af6ba36001b4bbda695d48ea73ac988277f70068
+proves:
+- column: export
+  mark: Y
+  caption: 'iSEE 2.18.0: the Export menu offers Download panel output, Extract the R code and Display panel settings.'
+callouts:
+- n: 1
+  box: [296, 55, 196, 190]
+  label: Export menu
+- n: 2
+  box: [530, 10, 36, 34]
+  label: Export (download) icon in the top bar

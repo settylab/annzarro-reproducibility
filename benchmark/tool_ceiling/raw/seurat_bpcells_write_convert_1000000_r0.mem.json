@@ -1,0 +1,61 @@
+{
+ "cmd": [
+  "$ENVS_ROOT/rceiling/bin/Rscript",
+  "seurat_task.R",
+  "bpcells_write",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "benchmark/tool_ceiling/shots/seurat_bpcells_write_convert_1000000_r0",
+  "$DATA_ROOT/tool_ceiling_data/bpcells/first1000000"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 11.22,
+ "peaks": {
+  "proc": {
+   "fp_peak": 735790664,
+   "fp_lifetime_sum": 741295688,
+   "rss_peak": 910327808,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 735790664,
+   "rss_peak": 910327808,
+   "fp_lifetime_sum": 741295688
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   803032
+  ],
+  [
+   1.49,
+   365462560
+  ],
+  [
+   3.0,
+   722503048
+  ],
+  [
+   4.5,
+   714737176
+  ],
+  [
+   6.02,
+   714884656
+  ],
+  [
+   7.47,
+   714884656
+  ],
+  [
+   8.93,
+   711771696
+  ],
+  [
+   10.41,
+   711771696
+  ]
+ ],
+ "ps_before": "2026-10-03T22:36:39-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n23707 266176  73.1 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  582 104480  20.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n97961 632816  17.9 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n  855 1670784  17.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n23342  21424   7.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n15201  26800   7.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n23384  20624   6.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n23340  20752   4.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n23353  20864   3.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n57113 1902880   3.1 $HOME/.local/bin/claude\n"
+}

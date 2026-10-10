@@ -1,0 +1,20 @@
+{
+ "tool": "vitessce",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/vitessce/first50000000",
+ "n": 50000000,
+ "phases": {
+  "server_ready": 1.07,
+  "done": 1752.17
+ },
+ "checks": {},
+ "versions": {
+  "chromium": "153.0.8010.12"
+ },
+ "console": [
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)"
+ ],
+ "error": "TimeoutError: Locator.wait_for: Timeout 1750000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"50,000,000 cells\").first to be visible\n",
+ "ok": false
+}

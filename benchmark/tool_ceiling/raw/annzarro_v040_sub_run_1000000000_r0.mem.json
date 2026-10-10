@@ -1,0 +1,104 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_1000000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub_run_1000000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 31.78,
+ "peaks": {
+  "client": {
+   "fp_peak": 1598071472,
+   "fp_lifetime_sum": 1707288128,
+   "rss_peak": 1414217728,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 9174441448,
+   "fp_lifetime_sum": 9437241384,
+   "rss_peak": 9214099456,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 135972528,
+   "fp_lifetime_sum": 135972528,
+   "rss_peak": 171032576,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 10606461008,
+   "rss_peak": 10455302144,
+   "fp_lifetime_sum": 11144529512
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.5,
+   964223856
+  ],
+  [
+   4.96,
+   967992176
+  ],
+  [
+   7.48,
+   616244128
+  ],
+  [
+   9.98,
+   934012048
+  ],
+  [
+   12.35,
+   930407568
+  ],
+  [
+   14.85,
+   931439760
+  ],
+  [
+   17.29,
+   932340880
+  ],
+  [
+   19.85,
+   933356688
+  ],
+  [
+   22.31,
+   766927992
+  ],
+  [
+   24.81,
+   771777656
+  ],
+  [
+   27.75,
+   8335866808
+  ],
+  [
+   30.41,
+   10589323296
+  ]
+ ],
+ "ps_before": "2026-10-06T00:13:24-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n59322  95392  93.4 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n48290 273360  82.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 759136  21.3 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n47413 543136  11.9 /Applications/cmux.app/Contents/MacOS/cmux\n57113 2938896   9.7 $HOME/.local/bin/claude\n  626 385824   5.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  629 205104   4.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  24944   3.6 /System/Library/CoreServices/launchservicesd\n 1012  15936   3.5 /usr/libexec/pboard\n  557  44784   3.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n",
+ "others_at_start": []
+}

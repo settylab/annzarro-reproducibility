@@ -1,0 +1,94 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/ucsc/html_10000000",
+  "benchmark/tool_ceiling/shots/ucsc_default_run_10000000_r0",
+  "--n",
+  "10000000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 25.82,
+ "peaks": {
+  "client": {
+   "fp_peak": 3093358264,
+   "fp_lifetime_sum": 3452758816,
+   "rss_peak": 2396717056,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 14598624,
+   "fp_lifetime_sum": 16433920,
+   "rss_peak": 27443200,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 147146536,
+   "fp_lifetime_sum": 147146536,
+   "rss_peak": 178110464,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3107924120,
+   "rss_peak": 2424094720,
+   "fp_lifetime_sum": 3469192736
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.29,
+   758309264
+  ],
+  [
+   4.6,
+   1742153640
+  ],
+  [
+   6.86,
+   2305763456
+  ],
+  [
+   9.15,
+   1791469672
+  ],
+  [
+   11.4,
+   1774872680
+  ],
+  [
+   13.67,
+   1770793064
+  ],
+  [
+   15.9,
+   1772398696
+  ],
+  [
+   18.12,
+   1281697560
+  ],
+  [
+   20.36,
+   1281779480
+  ],
+  [
+   22.57,
+   1575823176
+  ],
+  [
+   24.79,
+   3107760280
+  ]
+ ],
+ "ps_before": "2026-10-04T15:24:26-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1168000 153.1 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n 9532  97664  12.8 /usr/sbin/BTLEServer\n80437  10048  12.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n80436  10032  12.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n80433  19632  10.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n80435  18944  10.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n80430  15264   9.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n80431  14768   9.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n80434  10048   9.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n    1  34640   8.6 /sbin/launchd\n",
+ "others_at_start": []
+}

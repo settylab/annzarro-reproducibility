@@ -1,0 +1,117 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scope_task.py",
+  "$DATA_ROOT/tool_ceiling_data/loom/tahoe_first2000000.loom",
+  "$TMPDIR/tc-wt-final/benchmark/tool_ceiling/shots/scope_default_run_2000000_r0",
+  "--n",
+  "2000000"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 38.62,
+ "peaks": {
+  "client": {
+   "fp_peak": 5090684784,
+   "fp_lifetime_sum": 5865174120,
+   "rss_peak": 5729320960,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 24724584,
+   "fp_lifetime_sum": 225339688,
+   "rss_peak": 56213504,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 266618616,
+   "fp_lifetime_sum": 289550912,
+   "rss_peak": 297648128,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5090684784,
+   "rss_peak": 5756829696,
+   "fp_lifetime_sum": 6090513808
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.3,
+   0
+  ],
+  [
+   4.43,
+   12091968
+  ],
+  [
+   6.58,
+   0
+  ],
+  [
+   8.73,
+   12173888
+  ],
+  [
+   10.89,
+   0
+  ],
+  [
+   13.01,
+   12288552
+  ],
+  [
+   15.15,
+   12255808
+  ],
+  [
+   17.27,
+   0
+  ],
+  [
+   19.41,
+   12206656
+  ],
+  [
+   21.58,
+   0
+  ],
+  [
+   23.74,
+   12403240
+  ],
+  [
+   25.92,
+   965157192
+  ],
+  [
+   28.15,
+   1100784040
+  ],
+  [
+   30.36,
+   2335664376
+  ],
+  [
+   32.66,
+   4595019248
+  ],
+  [
+   34.94,
+   5064339312
+  ],
+  [
+   37.2,
+   5047071152
+  ]
+ ],
+ "ps_before": "2026-10-07T23:39:18-0700\nmemorystatus_level=92 swap=total = 5120.00M  used = 3960.19M  free = 1159.81M  (encrypted)\n 6350 3335088  17.0 /System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine\n 6219  60960   7.0 $HOME/Projects/investments/.venv/bin/python3\n 7612  19744   6.3 .venv/bin/python\n93323 551712   5.1 $HOME/.local/bin/claude\n47413 716912   2.0 /Applications/cmux.app/Contents/MacOS/cmux\n  626 437696   1.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 3392352   1.7 $HOME/.local/bin/claude\n86901 579728   1.4 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n80588 629232   1.3 $HOME/.local/bin/claude\n  557 1820368   1.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n",
+ "others_at_start": [
+  "7613 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "7614 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

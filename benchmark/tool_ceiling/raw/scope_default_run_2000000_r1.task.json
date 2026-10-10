@@ -1,0 +1,31 @@
+{
+ "tool": "scope",
+ "variant": "default",
+ "n_obs": 2000000,
+ "checks": {},
+ "image": "scope:1.8.2-9ae5207-final",
+ "image_id": "sha256:dd89d344b6c3954d153e374ab0300f214da47b84500e6c870d89f0a82b61a04f",
+ "versions": {
+  "scope": "1.8.2 (9ae5207)",
+  "image": "sha256:dd89d344b6c3",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ok": false,
+ "server_ready_s": 24.4,
+ "error": "Error: Page.evaluate: Target crashed ",
+ "server_container_peak_gib": 0.602,
+ "server_log_tail": "r_description\":\"client_id is required\"}\n2026-10-08 08:27:52,176 - scopeserver.dataserver.modules.gserver.GServer - INFO - IP client-ip connected to SCope. Passing new UUID 562be179-0690-45ac-a130-a85ba3a94d53.\n2026-10-08 08:27:52,184 - scopeserver.dataserver.modules.gserver.GServer - INFO - IP client-ip connected to SCope. Using UUID 562be179-0690-45ac-a130-a85ba3a94d53 from frontend.\n2026-10-08 08:27:52,248 - scopeserver.dataserver.utils.loom - INFO - New Loom object created for tahoe_first2000000.loom\n2026-10-08 08:27:52,264 - scopeserver.dataserver.utils.search_space - DEBUG - Building Search Spaces for tahoe_first2000000.loom\n2026-10-08 08:27:52,289 - scopeserver.dataserver.utils.search_space - DEBUG - Built Search Space for tahoe_first2000000.loom\n2026-10-08 08:27:52,322 - scopeserver.dataserver.utils.search_space - DEBUG - Writing SS for tahoe_first2000000.loom to /root/.local/share/SCope/my-looms/tahoe_first2000000.ss_pkl\n2026-10-08 08:27:52,348 - scopeserver.dataserver.utils.loom_file_handler - DEBUG - Returning newly loaded loom file tahoe_first2000000.loom. Object 140737355443888, mode r\n2026-10-08 08:27:52,616 - scopeserver.dataserver.utils.loom_file_handler - DEBUG - Should be preloaded\n2026-10-08 08:27:52,616 - scopeserver.dataserver.utils.loom_file_handler - DEBUG - Current mode: r, wanted mode r\n2026-10-08 08:27:52,616 - scopeserver.dataserver.utils.loom_file_handler - DEBUG - Returning pre-loaded loom file tahoe_first2000000.loom. Object 140737355443888\n",
+ "heap": {
+  "samples": 2,
+  "last": {
+   "t": 27.41,
+   "phase": "the embedding",
+   "pm_used": 49824526,
+   "pm_limit": 4395630592,
+   "cdp_used": 28914852,
+   "cdp_total": 36683776
+  },
+  "peak_cdp_used": 28914852,
+  "peak_pm_used": 49824526
+ }
+}

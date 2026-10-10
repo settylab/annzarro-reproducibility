@@ -1,0 +1,439 @@
+{
+ "walk_key": "diffusion_walk_t5",
+ "n_cells": 8090,
+ "diffusion_space": "DM_EigenVectors[:,1:40] * l/(1-l) (Palantir multiscale, 39 comps)",
+ "trajectory": [
+  {
+   "cell": "HSPC_Old_1#GAAGCCCGTGGCTCTG-1",
+   "celltype": "HSC",
+   "path_fraction": 0.0,
+   "walk_max": 0.012568027712404728,
+   "n_eff": 251.0996414287506,
+   "n_cells_above_floor": 956,
+   "mass_below_floor": 0.0022175562169794993,
+   "mass_in_own_celltype": 0.9073874769237591,
+   "spearman_umap_vs_diffusion": 0.954767644405365,
+   "knn30_jaccard": 0.17647058823529413,
+   "nA": 21,
+   "nB": 0
+  },
+  {
+   "cell": "HSPC_Old_2#ACTCTCGCAAACCGGA-1",
+   "celltype": "LMPP",
+   "path_fraction": 0.319,
+   "walk_max": 0.007759903557598591,
+   "n_eff": 516.5967534855846,
+   "n_cells_above_floor": 1953,
+   "mass_below_floor": 0.003267437106984239,
+   "mass_in_own_celltype": 0.7245405464494752,
+   "spearman_umap_vs_diffusion": 0.9508101344108582,
+   "knn30_jaccard": 0.36363636363636365,
+   "nA": 0,
+   "nB": 0
+  },
+  {
+   "cell": "HSPC_Old_3#ATTTCACTCGTAGTGT-1",
+   "celltype": "GMP",
+   "path_fraction": 0.626,
+   "walk_max": 0.006289000157266855,
+   "n_eff": 559.2587373217923,
+   "n_cells_above_floor": 2148,
+   "mass_below_floor": 0.002315972293197549,
+   "mass_in_own_celltype": 0.24342743497390984,
+   "spearman_umap_vs_diffusion": 0.9589521288871765,
+   "knn30_jaccard": 0.5789473684210527,
+   "nA": 5,
+   "nB": 11
+  },
+  {
+   "cell": "Mature_Young_2#TCAATTCAGTGAGGCT-1",
+   "celltype": "Monocyte",
+   "path_fraction": 1.0,
+   "walk_max": 0.009889896959066391,
+   "n_eff": 289.21957486863937,
+   "n_cells_above_floor": 844,
+   "mass_below_floor": 0.0008952934985423378,
+   "mass_in_own_celltype": 0.8858128808060428,
+   "spearman_umap_vs_diffusion": 0.7100321650505066,
+   "knn30_jaccard": 0.30434782608695654,
+   "nA": 0,
+   "nB": 0
+  }
+ ],
+ "trajectory_path_celltypes": [
+  "HSC",
+  "HSC",
+  "LMPP",
+  "LMPP",
+  "LMPP",
+  "LMPP",
+  "GMP",
+  "GMP",
+  "GMP",
+  "GMP",
+  "GMP",
+  "Monocyte",
+  "Monocyte"
+ ],
+ "dataset": {
+  "spearman_umap_vs_diffusion_per_cell_median": 0.8509680032730103,
+  "spearman_per_cell_IQR": [
+   0.65,
+   0.92
+  ],
+  "knn30_jaccard_median": 0.30434782608695654,
+  "knn30_jaccard_IQR": [
+   0.2,
+   0.5
+  ],
+  "knn30_shared_neighbours_median": 14.0,
+  "frac_cells_with_groupA": 0.3389369592088999,
+  "frac_cells_with_groupB": 0.14709517923362175,
+  "n_cells_both_groups_ge15": 236,
+  "both_groups_ge15_by_celltype": {
+   "LMPP": 58,
+   "CLP": 54,
+   "Basophil": 47,
+   "Basophil Progenitor": 25,
+   "MBEP": 14,
+   "MKP": 13,
+   "Plasma cell": 12,
+   "Pre-B cell": 7,
+   "HSC": 2,
+   "Ery P": 2,
+   "GMP": 1,
+   "Monocyte": 1
+  },
+  "celltype_sizes": {
+   "Neutrophil": 2221,
+   "LMPP": 807,
+   "Ery P": 687,
+   "Mature Naive B cell": 423,
+   "Pre-B II cell": 358,
+   "Monocyte": 355,
+   "MKP": 342,
+   "Immature B cell": 321,
+   "HSC": 319,
+   "CLP": 308,
+   "Mono P": 280,
+   "Myelo P": 272,
+   "GMP": 245,
+   "Pre-B cell": 161,
+   "Memory B cell": 117,
+   "pDC": 111,
+   "cMoP": 105,
+   "Naive CD8 T cell": 100,
+   "T cell": 87,
+   "CD8 TEM": 81,
+   "NK": 67,
+   "Treg": 55,
+   "Basophil": 47,
+   "Pro-B cell": 45,
+   "CD4 T cell": 40,
+   "Non Classical Monocyte": 33,
+   "cDC": 33,
+   "Basophil Progenitor": 31,
+   "MBEP": 14,
+   "ILC": 13,
+   "Plasma cell": 12
+  },
+  "median_by_celltype": {
+   "Basophil": {
+    "nA": 92.0,
+    "nB": 277.0,
+    "wA": 0.006899999920278788,
+    "wB": 0.06369999796152115
+   },
+   "Basophil Progenitor": {
+    "nA": 62.0,
+    "nB": 236.0,
+    "wA": 0.009999999776482582,
+    "wB": 0.2061000019311905
+   },
+   "CD4 T cell": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "CD8 TEM": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "CLP": {
+    "nA": 1.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "Ery P": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "GMP": {
+    "nA": 1.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "HSC": {
+    "nA": 7.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "ILC": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "Immature B cell": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "LMPP": {
+    "nA": 2.0,
+    "nB": 0.0,
+    "wA": 0.0005000000237487257,
+    "wB": 0.0
+   },
+   "MBEP": {
+    "nA": 142.0,
+    "nB": 243.5,
+    "wA": 0.04560000076889992,
+    "wB": 0.08380000293254852
+   },
+   "MKP": {
+    "nA": 1.0,
+    "nB": 0.0,
+    "wA": 9.999999747378752e-05,
+    "wB": 0.0
+   },
+   "Mature Naive B cell": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "Memory B cell": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "Mono P": {
+    "nA": 1.0,
+    "nB": 0.0,
+    "wA": 0.00019999999494757503,
+    "wB": 0.0
+   },
+   "Monocyte": {
+    "nA": 1.0,
+    "nB": 0.0,
+    "wA": 9.999999747378752e-05,
+    "wB": 0.0
+   },
+   "Myelo P": {
+    "nA": 3.0,
+    "nB": 1.0,
+    "wA": 0.0005000000237487257,
+    "wB": 0.0
+   },
+   "NK": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "Naive CD8 T cell": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "Neutrophil": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "Non Classical Monocyte": {
+    "nA": 2.0,
+    "nB": 0.0,
+    "wA": 0.0015999999595806003,
+    "wB": 0.0
+   },
+   "Plasma cell": {
+    "nA": 267.0,
+    "nB": 389.5,
+    "wA": 0.0020000000949949026,
+    "wB": 0.5318999886512756
+   },
+   "Pre-B II cell": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "Pre-B cell": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "Pro-B cell": {
+    "nA": 106.0,
+    "nB": 4.0,
+    "wA": 0.00039999998989515007,
+    "wB": 0.00039999998989515007
+   },
+   "T cell": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "Treg": {
+    "nA": 0.0,
+    "nB": 0.0,
+    "wA": 0.0,
+    "wB": 0.0
+   },
+   "cDC": {
+    "nA": 27.0,
+    "nB": 0.0,
+    "wA": 0.0024999999441206455,
+    "wB": 0.0
+   },
+   "cMoP": {
+    "nA": 3.0,
+    "nB": 0.0,
+    "wA": 0.0003000000142492354,
+    "wB": 0.0
+   },
+   "pDC": {
+    "nA": 23.0,
+    "nB": 2.0,
+    "wA": 0.00039999998989515007,
+    "wB": 0.0
+   }
+  }
+ },
+ "focus_selection": {
+  "type_score_median_min_AB": {
+   "Plasma cell": 266.0,
+   "MBEP": 142.0,
+   "Basophil": 92.0,
+   "Basophil Progenitor": 62.0,
+   "Pro-B cell": 4.0,
+   "pDC": 2.0
+  },
+  "chosen_type": "Plasma cell",
+  "single_cell_argmax": "HSPC_Old_2#TCGCTCAAGTTGCATC-1",
+  "single_cell_argmax_type": "LMPP"
+ },
+ "focus_bc": {
+  "cell": "Mature_Mid_1#GCCATGGAGTATGATG-1",
+  "celltype": "Plasma cell",
+  "index": 5330,
+  "spearman_umap_vs_diffusion": 0.6168970355222746,
+  "knn30_jaccard": 0.2,
+  "nA_near_umap_far_diffusion": 265,
+  "A_celltypes": {
+   "pDC": 92,
+   "NK": 66,
+   "Basophil": 43,
+   "T cell": 40,
+   "CD8 TEM": 18,
+   "Basophil Progenitor": 3,
+   "LMPP": 1,
+   "GMP": 1,
+   "Naive CD8 T cell": 1
+  },
+  "nB_far_umap_near_diffusion": 392,
+  "B_celltypes": {
+   "Mature Naive B cell": 274,
+   "Memory B cell": 111,
+   "Immature B cell": 7
+  },
+  "walk_mass_on_A": 0.000860328902490437,
+  "walk_mass_on_B": 0.5916728377342224,
+  "walk_mass_on_umap_near5pct": 0.23052799701690674,
+  "walk_mass_on_diffusion_near5pct": 0.785675048828125,
+  "same_celltype_all_cells": {
+   "n": 12,
+   "n_with_both_groups_ge15": 12,
+   "median_walk_mass_A": 0.002015848644077778,
+   "median_walk_mass_B": 0.5318964123725891
+  },
+  "umap_dist_thresholds": [
+   6.026006579399109,
+   8.976219749450683
+  ],
+  "diffusion_dist_thresholds": [
+   5.046763586997986,
+   32.371918487548825
+  ],
+  "label_A": "pDC, NK, basophil, T\nwalk mass 0.1%",
+  "label_B": "naive B, memory B\nwalk mass 59.2%"
+ },
+ "hsc_example": {
+  "spearman": 0.954767644405365,
+  "knn30_jaccard": 0.17647058823529413,
+  "nA": 21,
+  "nB": 0,
+  "A_celltypes": {
+   "LMPP": 21
+  }
+ },
+ "neuro": {
+  "n_classes": 112,
+  "n_genes": 13669,
+  "focus": "AVA",
+  "n_partners": 18,
+  "total": 296.0,
+  "top": [
+   [
+    "VA",
+    82.0
+   ],
+   [
+    "DA",
+    78.0
+   ],
+   [
+    "AS",
+    62.0
+   ],
+   [
+    "PVC",
+    28.0
+   ]
+  ],
+  "top3_share": 0.75,
+  "self": 3.0,
+  "total_to_other_classes": 293.0,
+  "top3_share_of_other_classes": 0.757679180887372,
+  "motor_cluster": [
+   "AS",
+   "DA",
+   "DA9",
+   "DB",
+   "DB01",
+   "PDB",
+   "SAB",
+   "VA",
+   "VA12",
+   "VB",
+   "VB01",
+   "VB02"
+  ]
+ }
+}

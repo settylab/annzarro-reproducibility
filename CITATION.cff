@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: "AnnZarro: evidence site and benchmark code"
+message: "If you use this repository, please cite it together with the AnnZarro preprint."
+type: software
+# DRAFT. Authors, order and affiliations follow the \author block of the manuscript (main.tex).
+# ORCIDs are only those marked VERIFIED in the authors' records; S. Baasri's is unconfirmed and left out.
+authors:
+  - family-names: Otto
+    given-names: Dominik J.
+    orcid: "https://orcid.org/0009-0009-3295-1234"
+    affiliation: "Basic Sciences Division and Computational Biology Program, Fred Hutchinson Cancer Center, Seattle WA, USA"
+  - family-names: Baasri
+    given-names: Siddharth
+    affiliation: "Fred Hutchinson Cancer Center, Seattle WA, USA; University of Washington, Seattle WA, USA"
+  - family-names: Setty
+    given-names: Manu
+    orcid: "https://orcid.org/0000-0002-0344-2627"
+    affiliation: "Basic Sciences Division and Computational Biology Program, Fred Hutchinson Cancer Center, Seattle WA, USA"
+repository-code: "https://github.com/settylab/annzarro-reproducibility"
+url: "https://settylab.github.io/annzarro-reproducibility/"
+license: MIT
+# version, date-released and doi are added when the Zenodo release is made:
+# doi: ZENODO_DOI_TBD

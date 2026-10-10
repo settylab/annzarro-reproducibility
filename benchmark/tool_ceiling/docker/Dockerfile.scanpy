@@ -1,0 +1,7 @@
+# Hard-limit check for the Scanpy runs: same task, same package versions,
+# under `docker run --memory=16g --memory-swap=16g` (README, "Validation").
+FROM python:3.12-slim
+RUN pip install --no-cache-dir scanpy==1.12.4 anndata==0.13.4 matplotlib==3.11.2 xarray dask h5py zarr==3.4.0
+COPY scanpy_task.py /task/scanpy_task.py
+WORKDIR /task
+ENTRYPOINT ["python", "/task/scanpy_task.py"]

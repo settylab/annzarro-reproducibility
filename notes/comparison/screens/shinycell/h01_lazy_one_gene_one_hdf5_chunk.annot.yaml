@@ -1,0 +1,66 @@
+{
+ "version": 1,
+ "image": "h01_lazy_one_gene_one_hdf5_chunk.jpg",
+ "tool": "shinycell",
+ "software": "ShinyCell 2.1.0 (generated app), hdf5r, h5py 3.16.0",
+ "data": "sc1gexpr.h5 (bm_demo, 8,090 cells x 16,285 genes)",
+ "url": "file://$DEMO_ROOT/shinycell/app",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_code.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "lazy",
+   "mark": "Y",
+   "caption": "terminal, ShinyCell 2.1.0 (2026-10-04): expression is stored one gene per HDF5 chunk and the app's read for one gene touches only that chunk"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    73,
+    1376,
+    342
+   ],
+   "label": "server.R reads per plot; the read call; the chunk index",
+   "selector": "#out0"
+  },
+  {
+   "n": 2,
+   "box": [
+    22,
+    260,
+    537,
+    24
+   ],
+   "label": "chunk dims 1 x 8,090: one gene per chunk",
+   "selector": "[id^=hl0_] >> nth=0"
+  },
+  {
+   "n": 3,
+   "box": [
+    22,
+    378,
+    731,
+    24
+   ],
+   "label": "one gene = one chunk of the file",
+   "selector": "[id^=hl0_] >> nth=-1"
+  },
+  {
+   "n": 4,
+   "box": [
+    12,
+    416,
+    1376,
+    23
+   ],
+   "label": "metadata loads whole",
+   "selector": "#note"
+  }
+ ],
+ "note": "Terminal replay of the app's read path (the call in server.R) outside the running Shiny server."
+}

@@ -1,0 +1,90 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "noprewarm",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_noprewarm_run_95624334_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-test/bin/annzarro"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 24.31,
+ "peaks": {
+  "client": {
+   "fp_peak": 12760703336,
+   "fp_lifetime_sum": 14369267064,
+   "rss_peak": 11699912704,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 4406382720,
+   "fp_lifetime_sum": 4416508056,
+   "rss_peak": 4428120064,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 159314928,
+   "fp_lifetime_sum": 163280024,
+   "rss_peak": 210518016,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 17152127440,
+   "rss_peak": 16113123328,
+   "fp_lifetime_sum": 18785775120
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.28,
+   5616940544
+  ],
+  [
+   4.48,
+   7862795600
+  ],
+  [
+   6.68,
+   14144088200
+  ],
+  [
+   8.88,
+   13829581128
+  ],
+  [
+   11.08,
+   15796119760
+  ],
+  [
+   13.24,
+   15590762704
+  ],
+  [
+   15.45,
+   16501370600
+  ],
+  [
+   17.75,
+   16831771088
+  ],
+  [
+   19.97,
+   16484495320
+  ],
+  [
+   22.15,
+   4391424104
+  ],
+  [
+   24.27,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-03T19:41:49-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 1012  17104   6.6 /usr/libexec/pboard\n98631 478656   4.1 $HOME/.local/bin/claude\n  629 154160   3.7 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  29728   3.5 /System/Library/CoreServices/launchservicesd\n 1240  50208   2.3 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n45247  20464   2.2 benchmark/tool_ceiling/.venv/bin/python\n  626 494048   2.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  855 1458544   1.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  557 651440   1.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 4725 613488   1.0 claude\n"
+}

@@ -1,0 +1,212 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_1000000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_tag_sub_run_1000000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030_3fb6826/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3fb6826",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 89.09,
+ "peaks": {
+  "client": {
+   "fp_peak": 1653253192,
+   "fp_lifetime_sum": 1777477496,
+   "rss_peak": 1403699200,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 25052826704,
+   "fp_lifetime_sum": 25232903848,
+   "rss_peak": 25095569408,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 116224312,
+   "fp_lifetime_sum": 116224312,
+   "rss_peak": 158892032,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 25429651296,
+   "rss_peak": 26212073472,
+   "fp_lifetime_sum": 27010381344
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.22,
+   959079688
+  ],
+  [
+   4.63,
+   799647032
+  ],
+  [
+   6.92,
+   631367496
+  ],
+  [
+   9.19,
+   938780728
+  ],
+  [
+   11.48,
+   943761464
+  ],
+  [
+   13.75,
+   939878456
+  ],
+  [
+   16.01,
+   940894264
+  ],
+  [
+   18.28,
+   941877304
+  ],
+  [
+   20.63,
+   783296544
+  ],
+  [
+   22.89,
+   784459808
+  ],
+  [
+   25.17,
+   785623072
+  ],
+  [
+   27.42,
+   1383246312
+  ],
+  [
+   29.67,
+   2066820040
+  ],
+  [
+   31.92,
+   2544790904
+  ],
+  [
+   34.16,
+   3213946712
+  ],
+  [
+   36.51,
+   3922030928
+  ],
+  [
+   38.76,
+   4606391112
+  ],
+  [
+   41.01,
+   5277431080
+  ],
+  [
+   43.26,
+   5946210032
+  ],
+  [
+   45.5,
+   6622050536
+  ],
+  [
+   47.78,
+   7294270152
+  ],
+  [
+   50.04,
+   7965375632
+  ],
+  [
+   52.36,
+   8781528904
+  ],
+  [
+   54.57,
+   9469509952
+  ],
+  [
+   56.84,
+   10133259040
+  ],
+  [
+   59.07,
+   10805445912
+  ],
+  [
+   61.34,
+   11463837456
+  ],
+  [
+   63.56,
+   12147673328
+  ],
+  [
+   65.79,
+   12784356048
+  ],
+  [
+   68.14,
+   13501910216
+  ],
+  [
+   70.37,
+   14192365200
+  ],
+  [
+   72.62,
+   14840631432
+  ],
+  [
+   74.87,
+   15546520168
+  ],
+  [
+   77.11,
+   16230175816
+  ],
+  [
+   79.39,
+   17698593088
+  ],
+  [
+   81.76,
+   20718936592
+  ],
+  [
+   84.32,
+   23572769312
+  ],
+  [
+   86.66,
+   9565684272
+  ],
+  [
+   88.95,
+   9780507104
+  ]
+ ],
+ "ps_before": "2026-10-05T03:24:27-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n37584 372592  49.4 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 852560  35.7 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n 1012  17936   6.8 /usr/libexec/pboard\n  557 567648   4.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  626 514304   3.7 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  855 1998000   3.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  596  30912   3.2 /System/Library/CoreServices/launchservicesd\n  629 241296   2.8 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n 1240  48912   2.5 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  582 111808   1.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n",
+ "others_at_start": []
+}

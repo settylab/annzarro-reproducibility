@@ -1,0 +1,27 @@
+version: 1
+image: 06_de_gene_CD74_distribution_tab.jpg
+tool: single-cell-portal
+software: Single Cell Portal (singlecell.broadinstitute.org; build of 2026-10-03)
+data: SCP1671, human lactation (49,310 cells; All Cells UMAP 48,478 drawn)
+url: https://singlecell.broadinstitute.org/single_cell/study/SCP1671?genes=CD74#study-visualize
+captured: '2026-10-03'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: headless Playwright session of 2026-10-03, script not kept (see notes/comparison/single-cell-portal.md,
+  Focus section)
+source: manual
+image_sha256: 9b6cf2af004e3b415af9e17fe82b369dff674ad6ff487dba308cd42e40978bda
+proves:
+- column: focus
+  mark: N
+  caption: 'Single Cell Portal: the same CD74 pick fills the Distribution tab with violins per cell type, an expression
+    column, not a relation row.'
+callouts:
+- n: 1
+  box: [670, 56, 108, 40]
+  label: Distribution tab
+- n: 2
+  box: [100, 246, 400, 22]
+  label: CD74 expression in All Cells UMAP by General_Celltype
+- n: 3
+  box: [1052, 456, 80, 24]
+  label: CD74 picked in the DE table

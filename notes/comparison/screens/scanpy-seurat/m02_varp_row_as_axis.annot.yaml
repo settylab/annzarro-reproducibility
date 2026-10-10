@@ -1,0 +1,22 @@
+version: 1
+image: m02_varp_row_as_axis.jpg
+tool: scanpy-seurat
+software: scanpy 1.11.5, anndata 0.12.19 (code output; Seurat not run)
+data: data/spatial_demo.zarr (varp spearman_hvg, 2000 x 2000)
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/scanpy-seurat/matrix_check.py
+source: manual
+image_sha256: 429ea93eba2c54342cd7fecc823f62c4e16713b3c932c7fce06d133a48e771cd
+proves:
+- column: genes
+  mark: P
+  caption: 'By code only (scanpy): the varp[''spearman_hvg''] row of Mbp drawn as an axis; top partners Mobp, Plp1,
+    Mal.'
+callouts:
+- n: 1
+  box: [70, 40, 425, 360]
+  label: 'Spearman to Mbp: one gene x gene row as a bar axis'
+- n: 2
+  box: [110, 430, 342, 22]
+  label: varp['spearman_hvg'] row 1884

@@ -1,0 +1,15 @@
+During startup - Warning message:
+package ‘colorout’ in options("defaultPackages") was not found 
+class: SingleCellExperiment 
+dim: 5000 1000000 
+metadata(0):
+assays(1): counts
+rownames(5000): DPM1 GCLC ... ENSG00000291214 SOD2
+rowData names(0):
+colnames(1000000): 01_001_052-lib_1105 01_001_105-lib_1105 ...
+  17_160_165-lib_1124 17_160_173-lib_1124
+colData names(7): sample plate ... n_genes total_counts
+reducedDimNames(1): UMAP
+mainExpName: NULL
+altExpNames(0):
+{"status": "ok", "rc": 0, "wall_s": 8.03} fp_peak=1.90GB lifetime=1.90GB

@@ -1,0 +1,30 @@
+version: 1
+image: m12_landing_page_upload.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3)
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: c0c21c6a85a7dc5e28774cb522c062ff4232b63ddca9b1743abb2ce97fbdba56
+proves:
+- column: share
+  mark: P
+  caption: 'iSEE 2.18.0: the shipped landing page rejects the 64 MB object (Maximum upload size exceeded), so the
+    state file cannot be restored in the GUI.'
+- column: remote
+  mark: N
+  caption: 'iSEE 2.18.0: the landing page takes data only as a local file upload (Browse...); there is no URL or
+    remote-store field.'
+callouts:
+- n: 1
+  box: [14, 88, 302, 58]
+  label: 'SummarizedExperiment RDS file: Browse... then Maximum upload size exceeded'
+- n: 2
+  box: [14, 187, 302, 58]
+  label: 'Initial state RDS file: Browse..., upload complete'
+- n: 3
+  box: [14, 262, 72, 36]
+  label: Launch

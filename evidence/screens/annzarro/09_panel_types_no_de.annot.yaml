@@ -1,0 +1,34 @@
+version: 1
+image: 09_panel_types_no_de.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:8920/?dataset_path=$DATA_DIR/bm_aging_showcase.zarr
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: de
+  mark: N
+  caption: The Create New Panel menu, where a differential-expression or marker panel would be offered,
+    lists plots and tables of stored slots and no DE or marker panel. Gene Set Analysis sends the selected
+    genes to external enrichment services and shows their results; it tests nothing between cell groups.
+callouts:
+- n: 1
+  box:
+  - 45
+  - 320
+  - 1310
+  - 188
+  label: 'panel types offered: Cell Plot, Gene Plot, Cell Table, Gene Table, Gene Set Analysis; no DE,
+    marker or statistics panel'
+  selector: '#panel-type-grid-1791418857955'
+- n: 2
+  box:
+  - 140
+  - 28
+  - 217
+  - 46
+  label: the server only reads stored arrays (see the slot menus in shot 06); nothing is computed
+  selector: '#dataset-selector >> xpath=..'

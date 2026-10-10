@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m08_filters_annotate_age_young_only.jpg",
+ "tool": "cellxgene",
+ "software": "CELLxGENE Annotate 1.3.0 (local)",
+ "data": "bm_demo.h5ad (8,090 cells; obsp holds connectivities, distances, diffusion_distance; one counts layer)",
+ "url": "http://127.0.0.1:8903/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "filters",
+   "mark": "P",
+   "caption": "Annotate 1.3.0 (2026-10-04): unticking Age Mid and Old masks the embedding to the Young cells, but via category checkboxes, not a table of cells or genes"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 2,
+   "box": [
+    362,
+    0,
+    676,
+    900
+   ],
+   "label": "only Young cells drawn at full size",
+   "selector": "[data-testid='layout-graph']"
+  },
+  {
+   "n": 3,
+   "box": [
+    403,
+    865,
+    169,
+    24
+   ],
+   "label": "umap: 2917 out of 8090 cells",
+   "selector": "text=/out of 8090 cells/ >> nth=0"
+  }
+ ]
+}

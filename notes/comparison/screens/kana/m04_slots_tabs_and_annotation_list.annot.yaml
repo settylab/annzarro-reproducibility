@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "image": "m04_slots_tabs_and_annotation_list.jpg",
+ "tool": "kana",
+ "software": "Kana v3.2.0 (live build, kanaverse.org)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "https://www.kanaverse.org/kana/",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/kana/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "slots",
+   "mark": "N",
+   "caption": "Embedding tabs = the 4 obsm keys; colour-by options (from the DOM) = obs columns only: Age, Compartment, Replicate, Sample, fig3_diffusion_dist_to_plasma, highres_celltype, kompot_da_Young_to_Old_lfc, leiden, midres_celltype, n_genes_by_counts, pct_counts_mt, phase, total_counts; no obsp, varp, varm, uns"
+  },
+  {
+   "column": "cells",
+   "mark": "N",
+   "caption": "No obsp entry (connectivities, distances, diffusion_distance) among tabs or colour-by options"
+  },
+  {
+   "column": "image",
+   "mark": "N",
+   "caption": "No image layer or image input: tabs are obsm keys only"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    62,
+    51,
+    365,
+    33
+   ],
+   "label": "embedding tabs: obsm keys only",
+   "selector": "button:has-text('X_diffusion') >> xpath=.."
+  },
+  {
+   "n": 2,
+   "box": [
+    969,
+    362,
+    163,
+    38
+   ],
+   "label": "colour by: obs columns only (13 options)",
+   "selector": "select >> nth=0"
+  }
+ ]
+}

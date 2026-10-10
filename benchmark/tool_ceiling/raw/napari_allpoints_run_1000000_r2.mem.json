@@ -1,0 +1,75 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "napari_task.py",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first1000000.zarr",
+  "benchmark/tool_ceiling/shots/napari_allpoints_run_1000000_r2",
+  "--n",
+  "1000000",
+  "--all-points"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 15.13,
+ "peaks": {
+  "proc": {
+   "fp_peak": 9633782312,
+   "fp_lifetime_sum": 9633782312,
+   "rss_peak": 7196229632,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 9633782312,
+   "rss_peak": 7196229632,
+   "fp_lifetime_sum": 9633782312
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8520088
+  ],
+  [
+   1.41,
+   120537928
+  ],
+  [
+   2.8,
+   188138408
+  ],
+  [
+   4.2,
+   283821112
+  ],
+  [
+   5.61,
+   1489389752
+  ],
+  [
+   7.02,
+   2334460808
+  ],
+  [
+   8.44,
+   6295885320
+  ],
+  [
+   9.85,
+   7389452456
+  ],
+  [
+   11.3,
+   7301339304
+  ],
+  [
+   12.72,
+   9463650640
+  ],
+  [
+   14.13,
+   9547160080
+  ]
+ ],
+ "ps_before": "2026-10-05T11:41:34-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n98631 493264   4.9 $HOME/.local/bin/claude\n96336  57392   4.3 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService\n57113 2904752   4.3 $HOME/.local/bin/claude\n  626 522976   2.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n80005 435200   1.9 $HOME/.local/bin/claude\n92291  30992   1.3 .venv/bin/python\n 4725 686000   1.3 claude\n  601  49584   1.3 /usr/libexec/locationd\n48832  19600   1.2 .venv/bin/python\n47413 670224   1.2 /Applications/cmux.app/Contents/MacOS/cmux\n",
+ "others_at_start": []
+}

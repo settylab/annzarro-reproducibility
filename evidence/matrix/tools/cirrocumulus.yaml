@@ -1,0 +1,984 @@
+# Cirrocumulus: Fig. 1c marks and their evidence.
+# Seeded by evidence/tools/import_notes.py from notes/comparison/cirrocumulus.md and
+# figures/fig_comparison.py; edit this file from now on (schema: evidence/README.md).
+id: cirrocumulus
+name: Cirrocumulus
+figure:
+  row: 5
+  label: Cirrocumulus
+  largest_documented: 1.3M
+notes: notes/comparison/cirrocumulus.md
+cells:
+  cells:
+    mark: N
+    reason: >-
+      No dropdown offers an obsp matrix; the server reads X, layers, obs, obsm, uns and varm, and obsp/varp
+      appear nowhere in the source.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The Cell Metadata dropdown lists the obs columns only (Age, Compartment, fig3_diffusion_dist_to_plasma, ..., total_counts). `connectivities`, `distances` and `diffusion_distance` appear in no dropdown. *Steps:* Open the Cell Metadata, Embeddings and Layers dropdowns in the side bar. *Evidence:* [m01](screens/cirrocumulus/m01_obsp_absent_cell_metadata_menu.jpg)
+
+      **Source and docs.** `grep -rn "obsp\|varp" cirrocumulus src` gives 0 hits at cae75c9. The schema reads X, layers, obs, obsm, uns and varm only ([cirrocumulus/anndata_util.py#L21](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_util.py#L21), [#L62-L66](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_util.py#L62-L66)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m01_obsp_absent_cell_metadata_menu.jpg
+      label: m01
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/anndata_util.py
+      lines: '21'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_util.py#L21
+      label: cirrocumulus/anndata_util.py#L21
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/anndata_util.py
+      lines: 62-66
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_util.py#L62-L66
+      label: '#L62-L66'
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  genes:
+    mark: N
+    reason: No varp is read or offered; Genes/Features searches var names only.
+    detail: |-
+      **Checked in the running app (2026-10-04).** No `varp` anywhere; Genes/Features searches var names. *Steps:* As column 1. *Evidence:* [m01](screens/cirrocumulus/m01_obsp_absent_cell_metadata_menu.jpg)
+
+      **Source and docs.** Same grep, 0 hits.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m01_obsp_absent_cell_metadata_menu.jpg
+      label: m01
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/anndata_util.py
+      lines: '21'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_util.py#L21
+      label: cirrocumulus/anndata_util.py#L21
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  focus:
+    mark: N
+    reason: >-
+      No cell or gene can be picked as a focus; gene colouring across embeddings is feature colouring,
+      which the strict definition excludes.
+    detail: |-
+      **Focus, checked in the running app.** No cell or gene can be picked as a focus at all; the gene behaviour in (a2) is feature colouring across embeddings, which the strict column excludes.
+
+      **Source and docs.** Selections and filters highlight the selected cells in every gallery plot ([docs/documentation.rst L85-87](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L85-L87)). Clicking a gene chip makes it the primary view (L101). Neither one selected cell nor one gene re-drives the other panels.
+    evidence:
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/documentation.rst
+      lines: 85-87
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L85-L87
+      label: docs/documentation.rst L85-87
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/01_gene_mpo_on_both_embeddings.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/02_hover_shows_value_only.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/03_legend_selection_highlights_gallery.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/04_dblclick_selects_category_all_charts.jpg
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    - evidence/screens/gaps/capture2_cirrocumulus.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  slots:
+    mark: P
+    reason: >-
+      X, layers, obs and some obsm embeddings are reachable (varm only for marker tables); obsp and varp
+      are not, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Layers lists `counts`; Embeddings offers `X_umap` (selected) and `X_draw_graph_fa`. The file's `X_pca` and `X_diffusion` are not offered, and obsp is absent (column 1). So X, layers, obs and part of obsm are reachable: P holds. *Steps:* Open the Layers and Embeddings dropdowns. *Evidence:* [layers](screens/cirrocumulus/m04_slots_layers_menu.jpg), [embeddings](screens/cirrocumulus/m04_slots_embeddings_menu.jpg)
+
+      **Source and docs.** X, layers, obs and obsm are shown. `varm` is read only for marker/DE tables ([anndata_util.py#L62-L66](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_util.py#L62-L66)). obsp and varp are absent.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m04_slots_layers_menu.jpg
+      label: layers
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m04_slots_embeddings_menu.jpg
+      label: embeddings
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/anndata_util.py
+      lines: 62-66
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_util.py#L62-L66
+      label: anndata_util.py#L62-L66
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  remote:
+    mark: P
+    reason: >-
+      The server opens every path through fsspec (s3fs, gcsfs, adlfs) and static mode reads over HTTP;
+      not exercised in the GUI (no bucket at hand), so P rather than Y (re-score 5e7b4a0).
+    detail: |-
+      **Decided (5e7b4a0).** The re-test moved the mark from Y to P: remote reading rests on code and docs, and no bucket was at hand to open in the GUI.
+
+      **Checked in the running app (2026-10-04).** Not exercised in the GUI (no bucket at hand). It rests on the fsspec path handling cited in the Matrix row. *Evidence:* Not observed
+
+      **Source and docs.** The server opens every path through fsspec ([cirrocumulus/util.py#L44-L61](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/util.py#L44-L61)). The docs list s3fs, gcsfs and adlfs for cloud storage ([installation.rst L52-56](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/installation.rst#L52-L56)). Static mode reads over HTTP ([DirectAccessDataset.js#L46](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/DirectAccessDataset.js#L46)).
+    evidence:
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/util.py
+      lines: 44-61
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/util.py#L44-L61
+      label: cirrocumulus/util.py#L44-L61
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/installation.rst
+      lines: 52-56
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/installation.rst#L52-L56
+      label: installation.rst L52-56
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/DirectAccessDataset.js
+      lines: '46'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/DirectAccessDataset.js#L46
+      label: DirectAccessDataset.js#L46
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    - evidence/screens/gaps/capture_cirrocumulus.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  spatial:
+    mark: Y
+    reason: With --spatial, a Visium dataset gets a tissue_hires embedding drawn in tissue coordinates.
+    detail: |-
+      **Checked in the running app (2026-10-04).** With `--spatial`, the lymph node dataset gets an embedding `tissue_hires`, drawn in tissue coordinates. *Steps:* Start as above; Embeddings shows `tissue_hires` selected. *Evidence:* [m07 clusters](screens/cirrocumulus/m07_spatial_tissue_hires_clusters.jpg), [m07 menu](screens/cirrocumulus/m07_spatial_embeddings_menu.jpg)
+
+      **Source and docs.** Visium is loaded with `--spatial` ([README.rst L45-47](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/README.rst#L45-L47)). Xenium centroids go into `obsm["X_spatial"]` ([anndata_dataset.py#L42-L47](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_dataset.py#L42-L47)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m07_spatial_tissue_hires_clusters.jpg
+      label: m07 clusters
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m07_spatial_embeddings_menu.jpg
+      label: m07 menu
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: README.rst
+      lines: 45-47
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/README.rst#L45-L47
+      label: README.rst L45-47
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/anndata_dataset.py
+      lines: 42-47
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_dataset.py#L42-L47
+      label: anndata_dataset.py#L42-L47
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  selection:
+    reason: a legend selection or double-click highlights the cells in every gallery chart
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/03_legend_selection_highlights_gallery.jpg
+      label: cirrocumulus/03
+    - kind: docs
+      url: https://cirrocumulus.readthedocs.io/en/latest/documentation.html
+      label: 'Gallery view: ''when you select cells, all plots have these cells highlighted'''
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/documentation.rst
+      lines: 76-87
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L76-L87
+      label: documentation source of the Gallery view paragraph
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/GalleryImage.js
+      lines: 93-96
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/GalleryImage.js#L93-L96
+      label: each gallery chart is drawn with the shared selection
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/ThreeUtil.js
+      lines: 306-311
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/ThreeUtil.js#L306-L311
+      label: unselected cells get the unselected opacity and point size
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: running app
+    detail: a legend selection or double-click highlights the cells in every gallery chart
+    mark: Y
+    reproduce:
+    - evidence/screens/gaps/capture2_cirrocumulus.py
+  annot:
+    mark: Y
+    reason: >-
+      Right-click > Annotate renames a category in the legend, and the server writes the label to the
+      dataset's annotation JSON.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Right-click on `Monocyte` in the highres_celltype legend > Annotate > `Monocyte_matrixcheck` > OK renames the category in the legend. The server wrote `_data/bm_demo.json` (209 bytes, `"categories": {"highres_celltype": {"Monocyte": {..., "new": "Monocyte_matrixcheck"}}}`). *Steps:* As described; then `cat $DEMO_ROOT/_data/bm_demo.json` (delete it afterwards to restore the demo). *Evidence:* [m09](screens/cirrocumulus/m09_annotation_legend_renamed.jpg)
+
+      **Source and docs.** "Collaboratively annotate cell types in real time" ([README.rst L15](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/README.rst#L15)) and the annotate GIF ([documentation.rst L44-46](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L44-L46)). This is gated by `SERVER_CAPABILITY_RENAME_CATEGORIES`, which is on by default ([abstract_db.py#L23-L24](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/abstract_db.py#L23-L24); [src/actions/index.js#L1011](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/actions/index.js#L1011)). It is **off in static mode**: there the capability set is empty ([actions/index.js#L195-L196](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/actions/index.js#L195-L196)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m09_annotation_legend_renamed.jpg
+      label: m09
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: README.rst
+      lines: '15'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/README.rst#L15
+      label: README.rst L15
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/documentation.rst
+      lines: 44-46
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L44-L46
+      label: documentation.rst L44-46
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/abstract_db.py
+      lines: 23-24
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/abstract_db.py#L23-L24
+      label: abstract_db.py#L23-L24
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/actions/index.js
+      lines: '1011'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/actions/index.js#L1011
+      label: src/actions/index.js#L1011
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/actions/index.js
+      lines: 195-196
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/actions/index.js#L195-L196
+      label: actions/index.js#L195-L196
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  de:
+    mark: Y
+    reason: >-
+      ANALYZE > Differential Expression runs a Welch t-test on the server and lists the top features per
+      group.
+    detail: |-
+      **Checked in the running app (2026-10-04).** ANALYZE > Differential Expression, Compare "One vs. Rest", Metadata Categories `Age`, GO, name the job, Submit. Results tab: `matrix_check_age_one_vs_rest`, a dot plot of the top features per group (29 of 16,285 features shown, e.g. Eps8l1, Gdf3, H2-Q7, B2m, Banp, Hmga2, Hsph1). The result was saved as `_data/results/<uuid>.json.gz` (558,696 bytes). *Steps:* As described; wait about 20 s; open the Results tab and click the job. *Evidence:* [m10](screens/cirrocumulus/m10_de_results.jpg)
+
+      **Source and docs.** A Welch t-test on the server ([diff_exp.py#L139](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/diff_exp.py#L139)). The docs show "Run differential expression analysis" ([documentation.rst L129-139](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L129-L139)). It is gated by `SERVER_CAPABILITY_JOBS` ([src/JobPanel.js#L207](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/JobPanel.js#L207)), so it is **off in static mode**.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m10_de_results.jpg
+      label: m10
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/diff_exp.py
+      lines: '139'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/diff_exp.py#L139
+      label: diff_exp.py#L139
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/documentation.rst
+      lines: 129-139
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L129-L139
+      label: documentation.rst L129-139
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/JobPanel.js
+      lines: '207'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/JobPanel.js#L207
+      label: src/JobPanel.js#L207
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    - evidence/screens/gaps/capture2_cirrocumulus.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  image:
+    mark: Y
+    reason: The Visium H&E image is drawn under the spots, with gene colouring on top.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The H&E `tissue_hires_image.png` is drawn under the spots; CR2 colouring sits on top, in the primary view and the gallery. *Steps:* Lymph node instance; type `CR2` in Genes/Features. *Evidence:* [m11](screens/cirrocumulus/m11_image_cr2_spots_on_he.jpg)
+
+      **Source and docs.** The Visium `tissue_hires_image.png` and scalefactors are loaded ([io_util.py#L14-L15](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/io_util.py#L14-L15)) and drawn under the points ([src/ImageChart.js#L59](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/ImageChart.js#L59)). The docs show a spatial overlay ([documentation.rst L22-24](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L22-L24)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m11_image_cr2_spots_on_he.jpg
+      label: m11
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/io_util.py
+      lines: 14-15
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/io_util.py#L14-L15
+      label: io_util.py#L14-L15
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/ImageChart.js
+      lines: '59'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/ImageChart.js#L59
+      label: src/ImageChart.js#L59
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/documentation.rst
+      lines: 22-24
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L22-L24
+      label: documentation.rst L22-24
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  share:
+    mark: Y
+    reason: >-
+      "Copy Link" puts the view state (embedding, camera, active gene) in the URL, and opening it restores
+      the view.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The top-right menu has "Copy Link". The copied link is `http://127.0.0.1:8901/#q={"dataset":...,"embeddings":[{"name":"X_umap"...}],"camera":{...},"activeFeature":{"name":"Mpo",...},...}` (357 characters). Opened in a new tab, it restores X_umap, Mpo as the active colouring, and the gallery. *Steps:* Colour by Mpo; menu (three dots, top right) > Copy Link; paste into a new tab. *Evidence:* [menu](screens/cirrocumulus/m12_share_menu_copy_link.jpg), [reopened](screens/cirrocumulus/m12_share_link_reopened.jpg)
+
+      **Source and docs.** "Copy Link" puts the JSON state in `#q=` ([src/AppHeader.js#L127-L133](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/AppHeader.js#L127-L133), menu item at [L391-L392](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/AppHeader.js#L391-L392)). The docs mention it at [documentation.rst L164](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L164). The menu item is not gated by a capability, so it also exists in static mode.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m12_share_menu_copy_link.jpg
+      label: menu
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m12_share_link_reopened.jpg
+      label: reopened
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/AppHeader.js
+      lines: 127-133
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/AppHeader.js#L127-L133
+      label: src/AppHeader.js#L127-L133
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/AppHeader.js
+      lines: 391-392
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/AppHeader.js#L391-L392
+      label: L391-L392
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/documentation.rst
+      lines: '164'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L164
+      label: documentation.rst L164
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-020-0905-x
+      label: Li et al. 2020 (Cumulus), Nature Methods 17:793-798
+      where: >-
+        Results, 'Interactive data visualization, post hoc analysis and data deposition in the Cumulus
+        ecosystem'
+      quote: a serverless application that enables interactive data visualization and sharing
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: '''Sharing'' is not specified; nothing says a link or file restores the view.'
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  export:
+    mark: Y
+    reason: The chart toolbar's "Save Image" downloads the plot as PNG or SVG.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The image icon in the chart toolbar ("Save Image") offers PNG and SVG; PNG saved `Mpo.png`, 129,069 bytes. *Steps:* Click the image icon, then PNG. *Evidence:* [m13](screens/cirrocumulus/m13_export_save_image_menu.jpg)
+
+      **Source and docs.** The toolbar's "Save Image" offers PNG and SVG ([src/ChartToolbar.js#L250-L271](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/ChartToolbar.js#L250-L271)); see also [documentation.rst L73](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L73).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m13_export_save_image_menu.jpg
+      label: m13
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/ChartToolbar.js
+      lines: 250-271
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/ChartToolbar.js#L250-L271
+      label: src/ChartToolbar.js#L250-L271
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/documentation.rst
+      lines: '73'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L73
+      label: documentation.rst L73
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  desktop:
+    mark: N
+    reason: Installs with pip or Docker, or runs as a server; there is no application bundle.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show. Searched installation.rst, PyPI and the repo for an app bundle; it is pip, Docker or a server. *Evidence:* Observation
+
+      **Source and docs.** It installs with pip or Docker, or is deployed as a server ([installation.rst](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/installation.rst)). There is no application bundle.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-020-0905-x
+      label: Li et al. 2020 (Cumulus), Nature Methods 17:793-798
+      where: Online Methods, 'Cirrocumulus implementation'
+      quote: can be run in standalone mode on a personal computer
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Local run, which the definition does not score; no downloadable application.
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/installation.rst
+      lines: 5-9
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/installation.rst#L5-L9
+      label: 'docs/installation.rst L5-9: install using pip'
+    na:
+      visual: No desktop application exists
+      so there is no GUI place in which its absence could be shown.: null
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  hosted:
+    mark: Y
+    reason: >-
+      The documented server mode serves multiple users and datasets with MongoDB and Okta or Google sign-in;
+      no public instance was available to observe.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Not observable: no public instance exists (Demos), and the only live deployment is login-gated. The mark rests on the documented server mode. *Evidence:* Observation (Demos table)
+
+      **Source and docs.** "`server` mode in order to serve multiple users and datasets securely", with MongoDB and Okta or Google auth ([installation.rst L22-62](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/installation.rst#L22-L62)). The Cumulus paper Methods describe Google App Engine hosting "for collaborative use".
+    evidence:
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/installation.rst
+      lines: 22-62
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/installation.rst#L22-L62
+      label: installation.rst L22-62
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-020-0905-x
+      label: Li et al. 2020 (Cumulus), Nature Methods 17:793-798
+      where: Online Methods, 'Cirrocumulus implementation'
+      quote: It can be hosted on Google App Engine application for collaborative use
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    - evidence/screens/gaps/capture_cirrocumulus.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  static:
+    mark: Y
+    reason: >-
+      A static build (REACT_APP_STATIC plus prepare_data --format jsonl) runs with no backend, but the
+      pip wheel's client is not built that way; not run here.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The pip wheel ships a client built without `REACT_APP_STATIC` (`cirrocumulus/client/static/js/main.f3957c8b.js` has the static branch, but its env object lacks the flag). A static site needs `REACT_APP_STATIC=true yarn build` from source plus `prepare_data --format jsonl`, which I did not run. *Steps:* `grep -o 'REACT_APP_STATIC' .venv/lib/python*/site-packages/cirrocumulus/client/static/js/main.*.js` *Evidence:* Observation
+
+      **Source and docs.** This mark rests on the docs, not the paper: the Cumulus paper calls Cirrocumulus a "serverless application", but its own Methods describe "a server component implemented in Python". `REACT_APP_STATIC=true yarn build` plus `prepare_data --format jsonl`, hosted on S3 or GCS ([installation.rst L94-141](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/installation.rst#L94-L141)). The static build turns off DE, annotation, saved links and feature sets because the capability set is empty ([actions/index.js#L195-L196](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/actions/index.js#L195-L196)). It also needs a JS build from source, not a pip command.
+    evidence:
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/installation.rst
+      lines: 94-141
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/installation.rst#L94-L141
+      label: installation.rst L94-141
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/actions/index.js
+      lines: 195-196
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/actions/index.js#L195-L196
+      label: actions/index.js#L195-L196
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-020-0905-x
+      label: Li et al. 2020 (Cumulus), Nature Methods 17:793-798
+      where: >-
+        Results, 'Interactive data visualization, post hoc analysis and data deposition in the Cumulus
+        ecosystem'
+      quote: users can visualize their results instantly using Cirrocumulus, a serverless application
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Contradicted within the same paper by the Methods (next entry); 'serverless' likely means no user-managed
+        server (App Engine), not static files.
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-020-0905-x
+      label: Li et al. 2020 (Cumulus), Nature Methods 17:793-798
+      where: Online Methods, 'Cirrocumulus implementation'
+      quote: >-
+        Cirrocumulus consists of a client-side component implemented in JavaScript and a server component
+        implemented in Python.
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: The 2020 design has a Python server; the static build the mark rests on is from later docs.
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    - evidence/screens/gaps/capture_cirrocumulus.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  lazy:
+    mark: Y
+    reason: >-
+      Prepared data (cirro prepare_data: zarr, parquet or jsonl) are read one feature at a time; `cirro
+      launch` on a plain h5ad holds it in memory. A preparation step counts under reading B, so Y.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Adding Mpo sends one POST `/api/data` for that feature. In `cirro launch` on an h5ad the server holds the whole AnnData in memory, so this is per-feature transfer, not lazy disk reads. Lazy reads need a `prepare_data` zarr or parquet dataset, which I did not build here. *Steps:* Network tab while adding a gene. *Evidence:* Observation (request log in matrix_check.py output)
+
+      **Source and docs.** Applies to prepared data. `prepare_data` output "allows efficient partial dataset retrieval over a network ... using limited memory" ([docs/installation.rst L147-148](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/installation.rst#L147-L148)). Zarr is read one gene at a time ([zarr_dataset.py#L22-L23](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/zarr_dataset.py#L22-L23)) and Parquet one file per key ([parquet_dataset.py#L67-L68](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/parquet_dataset.py#L67-L68)). In static mode the browser fetches one key at a time with HTTP Range requests ([src/DirectAccessDataset.js#L33-L50](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/DirectAccessDataset.js#L33-L50)). **Caveat:** `cirro launch x.h5ad` reads the whole h5ad into server memory, because `AnndataDataset()` is built without `backed` ([launch.py#L42](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/launch.py#L42); [anndata_dataset.py#L114-L128](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_dataset.py#L114-L128), [#L185-L192](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_dataset.py#L185-L192)).
+
+      **Scale group.** **It depends on the mode.** (a) `cirro launch file.h5ad`: the whole AnnData lives in **server** memory (X converted to CSC), and the browser fetches per-feature columns over the REST API. (b) A prepared zarr or parquet dataset: the server reads one gene or key at a time. (c) Static site: the **browser** fetches one key at a time with HTTP Range from a single JSONL file. In every mode the browser holds the full per-cell vectors (coordinates and each viewed feature) for all n cells. Evidence: [launch.py#L42](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/launch.py#L42), [anndata_dataset.py#L185-L192](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_dataset.py#L185-L192), [zarr_dataset.py#L22-L23](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/zarr_dataset.py#L22-L23), [DirectAccessDataset.js#L33-L80](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/DirectAccessDataset.js#L33-L80)
+
+      Qualified by evidence-curator's gap capture (2026-10-04, shot g05, evidence/screens/gaps/cirro_audit_launch.py): on a `prepare_data --format zarr` copy of the demo, `cirro launch` opened every chunk of X/data and X/indices (129 each) and layers/counts (263) while the dataset loaded, and later gene requests opened no file. Called directly, ZarrDataset.read_dataset reads one gene from 2 of 128 data chunks (cirro_reader_check.py). The reader is lazy (reading B: Y); launch mode loads the whole matrix (reading A: N or P). Static and serve modes were not tested.
+
+      Ruled by comparison-auditor (ccdc64c, 2026-10-04): Y under the 'can' reading (B), N under the 'by default' reading (A). The mark shown follows columns.yaml scored_under for lazy (B).
+    evidence:
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/installation.rst
+      lines: 147-148
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/installation.rst#L147-L148
+      label: docs/installation.rst L147-148
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/zarr_dataset.py
+      lines: 22-23
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/zarr_dataset.py#L22-L23
+      label: zarr_dataset.py#L22-L23
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/parquet_dataset.py
+      lines: 67-68
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/parquet_dataset.py#L67-L68
+      label: parquet_dataset.py#L67-L68
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/DirectAccessDataset.js
+      lines: 33-50
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/DirectAccessDataset.js#L33-L50
+      label: src/DirectAccessDataset.js#L33-L50
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/launch.py
+      lines: '42'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/launch.py#L42
+      label: launch.py#L42
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/anndata_dataset.py
+      lines: 114-128
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_dataset.py#L114-L128
+      label: anndata_dataset.py#L114-L128
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/anndata_dataset.py
+      lines: 185-192
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/anndata_dataset.py#L185-L192
+      label: '#L185-L192'
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/DirectAccessDataset.js
+      lines: 33-80
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/DirectAccessDataset.js#L33-L80
+      label: DirectAccessDataset.js#L33-L80
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-020-0905-x
+      label: Li et al. 2020 (Cumulus), Nature Methods 17:793-798
+      where: >-
+        Results, 'Interactive data visualization, post hoc analysis and data deposition in the Cumulus
+        ecosystem'
+      quote: >-
+        Since Cirrocumulus only downloads to the browser those data that are necessary for visualization
+        (Methods), it is scalable to millions of cells.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-020-0905-x
+      label: Li et al. 2020 (Cumulus), Nature Methods 17:793-798
+      where: Online Methods, 'Cirrocumulus implementation'
+      quote: slice variables from a dataset stored as a folder of JSON and PARQUET files
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    - evidence/screens/gaps/capture_cirrocumulus.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    by_reading:
+      A: N
+      B: Y
+  every_cell:
+    mark: Y
+    reason: The scatter-gl embedding is given every cell's coordinates; no user-facing downsampling exists.
+    detail: >-
+      **Scale group.** **Every cell is drawn.** The main embedding is a vendored scatter-gl (three.js
+      WebGL sprites) given the full coordinate arrays ([src/ThreeUtil.js#L1-L6](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/ThreeUtil.js#L1-L6)).
+      A client-side 2D binning ("density") path exists ([src/util.js#L316-L352](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/util.js#L316-L352),
+      used at [actions/index.js#L2432](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/actions/index.js#L2432)
+      when `embedding.mode` is set). I found no UI that sets `embedding.mode`, and the server-side binning
+      that the Cumulus paper describes is commented out ([data_processing.py#L448-L450](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/data_processing.py#L448-L450)).
+      So there is no documented, user-facing downsampling. Evidence: grep `embedding.mode`, `nbins`, `density`
+      in `src/` and `cirrocumulus/`
+    evidence:
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/ThreeUtil.js
+      lines: 1-6
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/ThreeUtil.js#L1-L6
+      label: src/ThreeUtil.js#L1-L6
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/util.js
+      lines: 316-352
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/util.js#L316-L352
+      label: src/util.js#L316-L352
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/actions/index.js
+      lines: '2432'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/actions/index.js#L2432
+      label: actions/index.js#L2432
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/data_processing.py
+      lines: 448-450
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/data_processing.py#L448-L450
+      label: data_processing.py#L448-L450
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-020-0905-x
+      label: Li et al. 2020 (Cumulus), Nature Methods 17:793-798
+      where: Online Methods, 'Cirrocumulus implementation'
+      quote: >-
+        can optionally generate statistical summaries on an n-dimensional grid, thus enabling plotting
+        of millions of cells
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Optional server-side binning; default not stated. The notes report this path is commented out
+        at cae75c9, so the Y rests on code, not the paper.
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture2_cirrocumulus.py
+  subset:
+    mark: P
+    reason: >-
+      Filtered Marker Opacity at 0 hides the unselected cells, but every cell is still fetched and drawn
+      (invisibly).
+    detail: |-
+      **Scale group.** **Partial.** The user can select or filter cells (lasso, brush, value filters) and dim or shrink the rest with the "unselected" opacity and point-size controls ([src/SideBar.js#L103](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/SideBar.js#L103)). Selected cell ids can be downloaded for subsetting in Python ([documentation.rst L110-115](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L110-L115)). There is no subset-and-recompute, no downsample slider and no "show only selection" view. Evidence: grep `subset\|downsample\|sample` in `src/`: none relevant
+
+      Verdict Y (comparison auditor, 2026-10-04), from the 18:00 observation: the opacity slider's range is 0-1. Caveat: the control is a styling slider (opacity, plus a size slider), not a labelled 'show only selection' command; Y because the outcome matches UCSC's Y.
+
+      **Re-scored under X8 (2026-10-04)**: Filtered Marker Opacity at 0 hides the unselected cells, but every cell is still fetched and drawn (invisibly).
+    evidence:
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/SideBar.js
+      lines: '103'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/SideBar.js#L103
+      label: src/SideBar.js#L103
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/documentation.rst
+      lines: 110-115
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L110-L115
+      label: documentation.rst L110-115
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture2_cirrocumulus.py
+  auto_subset:
+    na:
+      visual: no automatic subsetting in source or docs; a demo-size shot cannot show its absence at scale
+    reason: >-
+      The embedding draws every cell; the client-side density path has no UI and the server-side binning
+      is commented out.
+    detail: >-
+      **New column (user X8, 2026-10-04).** The embedding draws every cell; the client-side density path
+      has no UI and the server-side binning is commented out. Evidence is the same as for every cell drawn,
+      which shows how the default view is drawn.
+    evidence:
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/ThreeUtil.js
+      lines: 1-6
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/ThreeUtil.js#L1-L6
+      label: src/ThreeUtil.js#L1-L6
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/util.js
+      lines: 316-352
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/util.js#L316-L352
+      label: src/util.js#L316-L352
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/actions/index.js
+      lines: '2432'
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/actions/index.js#L2432
+      label: actions/index.js#L2432
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: cirrocumulus/data_processing.py
+      lines: 448-450
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/cirrocumulus/data_processing.py#L448-L450
+      label: data_processing.py#L448-L450
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-020-0905-x
+      label: Li et al. 2020 (Cumulus), Nature Methods 17:793-798
+      where: Online Methods, 'Cirrocumulus implementation'
+      quote: >-
+        can optionally generate statistical summaries on an n-dimensional grid, thus enabling plotting
+        of millions of cells
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Optional server-side binning; default not stated. The notes report this path is commented out
+        at cae75c9, so the Y rests on code, not the paper.
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: N
+retired_cells:
+  filters:
+    mark: Y
+    reason: >-
+      Legend clicks and value filters become filter chips, combinable with AND/OR, that dim the other
+      cells in every gallery chart.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Clicking `Young` in the Age legend adds a filter chip "Age" under FILTERS, and the header reads "2,917 / 8,090 cells". All gallery charts dim the other cells. An AND/OR "Combine" switch sits above the chips. (I did not get a second chip in the run.) *Steps:* Cell Metadata > add Age; click the Age gallery chart; click `Young` in the legend. *Evidence:* [m08](screens/cirrocumulus/m08_filters_age_young_chip.jpg)
+
+      **Source and docs.** Saved AND/OR filters, with provenance kept ([documentation.rst L107-L110](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L107-L110)). Distribution plots get a "(selection)" panel computed on the filtered cells ([src/DistributionGroup.js#L330-L343](https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/DistributionGroup.js#L330-L343)). The filters live in the embedding legend and side bar, not in a data table.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cirrocumulus/m08_filters_age_young_chip.jpg
+      label: m08
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: docs/documentation.rst
+      lines: 107-110
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/docs/documentation.rst#L107-L110
+      label: documentation.rst L107-L110
+    - kind: code
+      repo: lilab-bcb/cirrocumulus
+      commit: cae75c9a2dd164dda07eaae5693e28ea0408f8b2
+      path: src/DistributionGroup.js
+      lines: 330-343
+      url: >-
+        https://github.com/lilab-bcb/cirrocumulus/blob/cae75c9a2dd164dda07eaae5693e28ea0408f8b2/src/DistributionGroup.js#L330-L343
+      label: src/DistributionGroup.js#L330-L343
+    reproduce:
+    - notes/comparison/demos/cirrocumulus/matrix_check.sh
+    - notes/comparison/demos/cirrocumulus/matrix_check.py
+    - notes/comparison/demos/cirrocumulus/matrix_check_spatial.py
+    - notes/comparison/demos/cirrocumulus/matrix_check2.py
+    - notes/comparison/demos/cirrocumulus/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app

@@ -1,0 +1,219 @@
+# Columns of the Fig. 1c feature matrix, in figure order.
+#
+# id          stable key used in matrix/tools/<tool>.yaml and in page anchors
+# group       figure group header
+# label       figure column header (\n is the line break in the figure)
+# definition  what a Y means; the scoring rule every tool is held to. Final
+#             definitions are figures/COMPARISON_NOTES.md "Columns" (2026-10-03).
+# audit_label the row label used in notes/comparison/<tool>.md "Matrix row" tables
+# status      final | proposed (definition still under decision; see decision)
+#
+# Mark scale, all columns: Y documented and working in the GUI; P partial, or
+# reachable only by writing code; N searched (docs and source), not found;
+# ? not verified.
+
+# Visual proof (every mark; coordinator rules 2026-10-04, published on the Columns page):
+#   GUI columns: an annotated screenshot of the running app. For N, the menu, list or
+#     panel where the feature would be, shown without it.
+#   desktop, hosted, static: an annotated screenshot of the tool's documentation counts,
+#     and for a static build so does a terminal shot of the deploy step (e.g. a listing of
+#     the built folder with no server code). The caption says which kind it is.
+#   lazy, remote: an annotated DevTools Network panel or request-log view showing the
+#     partial or ranged reads, or the remote URL being read. Server-side lazy reads: a terminal
+#     or log view of the server's reads or memory, with and without the lazy option (coordinator,
+#     2026-10-04; accepted only when the difference is large and clear).
+#   Loupe Browser (no app without a 10x account): documentation screenshots, captioned
+#     "docs, not the app"; na: visual only where the documentation says nothing.
+#   Boxes come from the DOM when a driver can record them (source: dom); otherwise they are
+#     read off the image (source: manual, with image_sha256). One sidecar per image.
+
+visual_proof_rules:
+  - "GUI columns: an annotated screenshot of the running app; for N, the menu, list or panel where the feature would be, shown without it."
+  - "desktop, hosted, static: an annotated documentation screenshot counts, and for a static build a terminal shot of the deploy step (e.g. a listing of the built folder, no server code); the caption says which."
+  - "lazy, remote: an annotated DevTools Network panel or request log showing the partial or ranged reads, or the remote URL being read. Server-side lazy reads (a server reading a local file): a terminal or log view of the server's reads or memory, with and without the lazy option; accepted only when the difference is large and clear."
+  - "Loupe Browser: documentation screenshots captioned 'docs, not the app' (the app needs a 10x account); na: visual only where the documentation says nothing."
+  - "Boxes are recorded from the page (source: dom) where a driver can; otherwise read off the image (source: manual) and pinned to it by image_sha256. One sidecar per image; the build fails on two."
+
+# Columns no longer in Fig. 1c. Sidecars may still prove them (kept as history); tool
+# files keep the old cells under retired_cells.
+retired_columns:
+  filters: "table filters mask plots; replaced by `selection` in Fig. 1c 5e7b4a0"
+
+columns:
+  - id: cells
+    group: Relationships
+    label: "cell × cell matrix as color or axis"
+    audit_label: "cell × cell matrix as color or axis"
+    definition: >-
+      A stored cells × cells matrix (AnnData obsp, SingleCellExperiment
+      colPairs) can be shown in the GUI as a colour or an axis.
+    status: final
+
+  - id: genes
+    group: Relationships
+    label: "gene × gene matrix as color or axis"
+    audit_label: "gene × gene matrix as color or axis"
+    definition: >-
+      A stored genes × genes matrix (varp, rowPairs) can be shown in the GUI
+      as a colour or an axis.
+    status: final
+
+  - id: focus
+    group: Relationships
+    label: "focused cell/gene drives linked panels"
+    audit_label: "focused cell/gene drives linked panels"
+    definition: >-
+      Strict: a focused cell or gene, through its stored pairwise row,
+      re-drives every linked panel. Gene feature colouring that reaches
+      several views does not count.
+    status: final
+
+  - id: slots
+    group: Data
+    label: "all AnnData slots incl. obsp/varp/varm"
+    audit_label: "all AnnData slots incl. obsp/varp/varm"
+    definition: "X, layers, obs, var, obsm, varm, obsp, varp all reachable in the GUI."
+    status: final
+
+  - id: remote
+    group: Data
+    label: "remote stores (S3, GCS, HTTP)"
+    audit_label: "remote stores (S3, GCS, HTTP)"
+    definition: "Reads data from object storage or HTTP."
+    status: final
+
+  - id: spatial
+    group: Data
+    label: "spatial coordinates"
+    audit_label: "spatial coordinates"
+    definition: "Spatial positions shown as plot axes."
+    status: final
+
+  - id: selection
+    group: Work
+    label: "selection or filter restricts linked views"
+    audit_label: "selection or filter restricts linked views"
+    definition: >-
+      A selection or filter made in one view highlights or restricts the same
+      cells in other linked views, in the GUI. Replaced "table filters mask
+      plots" (user decision, Fig. 1c 5e7b4a0).
+    status: final
+
+  - id: annot
+    group: Work
+    label: "annotation editing"
+    audit_label: "annotation editing"
+    definition: "User labels written back."
+    status: final
+
+  - id: de
+    group: Work
+    label: "on-the-fly DE"
+    audit_label: "on-the-fly DE"
+    definition: "Differential expression computed in the session."
+    status: final
+
+  - id: image
+    group: Work
+    label: "tissue image underlay"
+    audit_label: "tissue image underlay"
+    definition: "A histology or image layer under spatial points."
+    status: final
+
+  - id: share
+    group: Sharing
+    label: "shareable view state"
+    audit_label: "shareable view state"
+    definition: "A link or file restores the view."
+    status: final
+
+  - id: export
+    group: Sharing
+    label: "plot export"
+    audit_label: "plot export"
+    definition: "The user downloads a plot from the GUI as an image (PNG, SVG or other image/PDF), without writing code."
+    status: final
+
+  - id: desktop
+    group: Deploy
+    label: "desktop app"
+    audit_label: "desktop app"
+    definition: "A downloadable application; no server setup by the user (every tool can run locally, so \"local\" alone is not scored)."
+    status: final
+
+  - id: hosted
+    group: Deploy
+    label: "hosted multi-user"
+    audit_label: "hosted multi-user"
+    definition: "One deployment serves many users."
+    status: final
+
+  - id: static
+    group: Deploy
+    label: "static site, no server"
+    audit_label: "static site, no server"
+    definition: "Works as static files with no backend process."
+    status: final
+
+  - id: lazy
+    group: Scale
+    label: "lazy chunked reads"
+    audit_label: "lazy chunked reads"
+    definition: >-
+      Data read in slices on demand rather than loaded whole. Same open
+      question as every_cell: (A) by default, or (B) possible at all (e.g.
+      Cirrocumulus reads lazily only after `cirro prepare_data`; `cirro
+      launch` on an h5ad holds it in server memory). The audit scored B
+      here (Cirrocumulus Y) but A for every_cell; one rule should decide both.
+    readings:
+      A: "reads lazily by default"
+      B: "can read lazily (possibly after a preparation step)"
+    scored_under: B
+    status: final
+    decided: "reading B: what the GUI can do, also after a user choice or preparation step; code only = P (user X1, Fig. 1c a536479, 2026-10-04)"
+
+  - id: every_cell
+    group: Scale
+    label: "every cell drawn"
+    audit_label: "S2"
+    definition: >-
+      The GUI can draw every cell of the dataset in one plot, possibly after the user asks
+      for it (reading B, decided by the user, X1). Reading A, "by default" (opening a dataset
+      draws every cell with no user action), is not the definition. Under B, AnnZarro is Y
+      (above 200,000 cells it opens a 100,000-cell subset by default, and every cell on request)
+      and Single Cell Portal ("100k or all") is Y.
+    readings:
+      A: "draws every cell by default, without downsampling"
+      B: "can draw every cell of the dataset in one plot"
+    scored_under: B
+    status: final
+    decided: "reading B: what the GUI can do, also after a user choice or preparation step; code only = P (user X1, Fig. 1c a536479, 2026-10-04)"
+
+  - id: subset
+    group: Scale
+    label: "user picks a subset of cells"
+    audit_label: "S4"
+    definition: >-
+      The user can pick a subset of cells in the GUI, and the tool then loads
+      and draws only those cells. Y: the subset reduces what the tool fetches
+      or reads and what it draws. P: the subset only changes what is drawn
+      (cells hidden, greyed or filtered out of data that is already loaded),
+      or a reducing subset needs code. N: no subset.
+    status: final
+    decided: "stricter reading: only subsets that reduce what is loaded and drawn count; view-only hiding is P (user X8, 2026-10-04)"
+
+  - id: auto_subset
+    group: Scale
+    label: "automatic subset for large data"
+    audit_label: "auto subset"
+    definition: >-
+      When a dataset is too large to draw whole, the tool by default shows a
+      subset of its cells (a sample or subsample), without the user asking,
+      so that the dataset still opens; the user can still reach the rest.
+      Y: documented or observed default subsetting by cell count. P: an
+      automatic reduction that applies only to some element types or views,
+      or that is fixed when the data are prepared rather than chosen at
+      viewing time. N: the tool always loads and draws every cell (it may
+      fail or slow down instead).
+    status: final
+    decided: "new column requested by the user (X8, 2026-10-04)"

@@ -1,0 +1,56 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_200000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_noguard_run_200000000_r1",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 0.19,
+ "peaks": {
+  "client": {
+   "fp_peak": 0,
+   "fp_lifetime_sum": 0,
+   "rss_peak": 0,
+   "n_proc_max": 0
+  },
+  "server": {
+   "fp_peak": 0,
+   "fp_lifetime_sum": 0,
+   "rss_peak": 0,
+   "n_proc_max": 0
+  },
+  "harness": {
+   "fp_peak": 0,
+   "fp_lifetime_sum": 0,
+   "rss_peak": 0,
+   "n_proc_max": 0
+  },
+  "total": {
+   "fp_peak": 0,
+   "rss_peak": 0,
+   "fp_lifetime_sum": 0
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-06T08:27:10-0700\nmemorystatus_level=89 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n49536  89728  97.6 .venv/bin/python\n57113 2629440  11.1 $HOME/.local/bin/claude\n84235 194624   3.3 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n47413 431584   1.4 /Applications/cmux.app/Contents/MacOS/cmux\n  641 183360   0.9 /usr/libexec/airportd\n 4725 689856   0.8 claude\n  734  50896   0.8 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n93323 588688   0.4 $HOME/.local/bin/claude\n92291  30288   0.4 .venv/bin/python\n80005 373392   0.4 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

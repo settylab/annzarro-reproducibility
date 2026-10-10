@@ -1,0 +1,196 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "scanpy_task.py",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first11900000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_backed_run_11900000_r2"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 60.3,
+ "peaks": {
+  "proc": {
+   "fp_peak": 14553099256,
+   "fp_lifetime_sum": 14553099256,
+   "rss_peak": 14861090816,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 14553099256,
+   "rss_peak": 14861090816,
+   "fp_lifetime_sum": 14553099256
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8700312
+  ],
+  [
+   1.48,
+   781698176
+  ],
+  [
+   2.93,
+   1759037384
+  ],
+  [
+   4.35,
+   2081229032
+  ],
+  [
+   5.78,
+   2284767608
+  ],
+  [
+   7.2,
+   2505804344
+  ],
+  [
+   8.64,
+   2653833880
+  ],
+  [
+   10.1,
+   2969357192
+  ],
+  [
+   11.54,
+   4121890488
+  ],
+  [
+   12.98,
+   4121890488
+  ],
+  [
+   14.42,
+   4121890488
+  ],
+  [
+   15.87,
+   4121890488
+  ],
+  [
+   17.3,
+   4121890488
+  ],
+  [
+   18.75,
+   4121890488
+  ],
+  [
+   20.19,
+   4121890488
+  ],
+  [
+   21.65,
+   4121890488
+  ],
+  [
+   23.09,
+   4121890488
+  ],
+  [
+   24.52,
+   4121890488
+  ],
+  [
+   25.95,
+   4121890488
+  ],
+  [
+   27.37,
+   4121890488
+  ],
+  [
+   28.8,
+   4121890488
+  ],
+  [
+   30.24,
+   4121890488
+  ],
+  [
+   31.7,
+   4132212408
+  ],
+  [
+   33.21,
+   4144877240
+  ],
+  [
+   34.65,
+   11278230216
+  ],
+  [
+   36.1,
+   14553099256
+  ],
+  [
+   37.55,
+   4173926120
+  ],
+  [
+   38.99,
+   5329736216
+  ],
+  [
+   40.45,
+   5329736216
+  ],
+  [
+   41.88,
+   5329736216
+  ],
+  [
+   43.3,
+   5329736216
+  ],
+  [
+   44.76,
+   5329736216
+  ],
+  [
+   46.18,
+   5329736216
+  ],
+  [
+   47.62,
+   5329736216
+  ],
+  [
+   49.06,
+   5329736216
+  ],
+  [
+   50.52,
+   5329736216
+  ],
+  [
+   51.98,
+   5329736216
+  ],
+  [
+   53.4,
+   5329736216
+  ],
+  [
+   54.83,
+   5329736216
+  ],
+  [
+   56.29,
+   5329736216
+  ],
+  [
+   57.74,
+   5329736216
+  ],
+  [
+   59.17,
+   5329736216
+  ]
+ ],
+ "ps_before": "2026-10-04T03:34:37-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n10205 268976  84.7 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 534528  19.8 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n10234  20432   7.5 benchmark/tool_ceiling/.venv/bin/python\n10232  19488   6.3 benchmark/tool_ceiling/.venv/bin/python\n57113 1699968   2.4 $HOME/.local/bin/claude\n72627 440896   1.6 $HOME/.local/bin/claude\n 4725 551344   1.0 claude\n92291  30784   0.9 .venv/bin/python\n10235   2064   0.9 /bin/sh\n97977 187488   0.7 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n"
+}

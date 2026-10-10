@@ -1,0 +1,42 @@
+# AnnZarro memory guard defaults at v0.4.0 (tag v0.4.0, commit 49e2a19), the build the paper reports.
+# Excerpts copied verbatim with git show; source of the margin and usable-heap claims in Supp. Note 1 and Anticipated results.
+# Unchanged from 120f322 (notes/sources/annzarro_120f322_memory_guard.txt): git diff 120f322 v0.4.0 -- static/js/utils/memory-guard.js is empty, and ui.memory in base.yaml is identical.
+
+## annzarro/config/base.yaml (ui.memory)
+  memory:
+    # off: never refuse; warn: say so beside the control and let it run;
+    # block: disable the control and say why.
+    enforce: block
+    # JS heap the tab may use, in GB. null: what the browser reports
+    # (Chrome: 4.4 GB on a 64-bit desktop), or 4.4 where it reports nothing.
+    heap_gb: null
+    # Everything the tab may hold (JS heap, typed arrays), in GB. null: no
+    # limit, except half the device's memory on devices with 4 GB or less.
+    total_gb: null
+    # Predictions are multiplied by 1 + margin before they are compared.
+    margin: 0.2
+
+## static/js/utils/memory-guard.js L36-50
+/** Defaults of ui.memory (annzarro/config/base.yaml). */
+export const DEFAULT_SETTINGS = Object.freeze({
+    enforce: 'block',
+    heapGb: null,      // null: the browser's own limit (Chrome reports it), else FALLBACK_HEAP_GB
+    totalGb: null,     // null: no limit, except on small devices (navigator.deviceMemory)
+    margin: 0.2
+});
+
+/**
+ * The V8 heap a tab may fill, as a share of jsHeapSizeLimit: the benchmark's
+ * tab crashed with 4,027,182,277 bytes used and a limit of 4,395,630,592
+ * (benchmark/scale/results/heapcap_rerun.jsonl).
+ */
+export const HEAP_USABLE_SHARE = 4027182277 / 4395630592;
+/** The heap ceiling where the browser reports none (Firefox, Safari): Chrome's, which is the tightest known. */
+
+## static/js/utils/memory-guard.js L450-455 (check: need multiplied by 1 + margin)
+ */
+export function check(need, held, limits, settings = DEFAULT_SETTINGS, opts = {}) {
+    const k = 1 + settings.margin;
+    let held2 = held;
+    const measured = opts.observed > 0 && opts.observed > held.heap + held.off;
+    if (measured) {

@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "image": "m11_image_explorer_myh7_on_tissue.jpg",
+ "tool": "cellxgene",
+ "software": "CZ CELLxGENE Discover Explorer (hosted, as served 2026-10-04)",
+ "data": "Visium Spatial of Human muscle in Healthy control_2 (4,992 spots x 35,476 genes)",
+ "url": "https://cellxgene.cziscience.com/e/85585f3f-d16a-412d-b93a-406d52721221.cxg/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene_explorer.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "image",
+   "mark": "Y",
+   "caption": "Explorer (hosted) (2026-10-04): the Visium H&E image is drawn under the spots, with MYH7 colouring on top",
+   "row": "cellxgene-explorer"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    362,
+    52,
+    676,
+    848
+   ],
+   "label": "H&E tissue under the MYH7-coloured spots",
+   "selector": "[data-cap='emb']"
+  },
+  {
+   "n": 2,
+   "box": [
+    1362,
+    131,
+    32,
+    32
+   ],
+   "label": "MYH7 chosen as colour",
+   "selector": "[data-testid='colorby-MYH7']"
+  }
+ ]
+}

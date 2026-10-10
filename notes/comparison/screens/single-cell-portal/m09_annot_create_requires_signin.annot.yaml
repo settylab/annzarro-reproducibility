@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m09_annot_create_requires_signin.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP383, 10X 1.3M brain cells E18 (1,306,127 cells)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP383/10x-1-3-million-brain-cells-from-e18-mice?genes=Sox2#study-visualize",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/single-cell-portal/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "annot",
+   "mark": "Y",
+   "caption": "'+' next to Annotation: 'You must sign in to create custom annotations' (feature exists, login-gated; not exercised here)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1349,
+    158,
+    40,
+    30
+   ],
+   "label": "create annotation (+)",
+   "selector": "button[data-analytics-name=toggle-create-annotation-signedout]"
+  },
+  {
+   "n": 2,
+   "box": [
+    1265,
+    88,
+    135,
+    75
+   ],
+   "label": "sign-in required",
+   "selector": ".tooltip"
+  }
+ ]
+}

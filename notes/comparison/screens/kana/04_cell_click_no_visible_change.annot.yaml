@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "04_cell_click_no_visible_change.jpg",
+ "tool": "kana",
+ "software": "Kana v3.2.0 (live build, kanaverse.org)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "https://www.kanaverse.org/kana/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_kana.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Kana v3.2.0 (2026-10-04): a single-cell click under Pan on a dense GMP region: no visible change, no per-cell focus"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    112,
+    131,
+    795,
+    778
+   ],
+   "label": "clicked at a GMP cell: no change",
+   "selector": "canvas >> nth=0"
+  },
+  {
+   "n": 2,
+   "box": [
+    967,
+    51,
+    75,
+    38
+   ],
+   "label": "Pan mode",
+   "selector": "button:has-text('Pan')"
+  }
+ ]
+}

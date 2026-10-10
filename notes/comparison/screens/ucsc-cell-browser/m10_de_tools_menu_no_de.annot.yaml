@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m10_de_tools_menu_no_de.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "de",
+   "mark": "N",
+   "caption": "The Tools menu has no Differential expression item (DE UI is off by default and has no released backend)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    328,
+    29,
+    233,
+    98
+   ],
+   "label": "Tools menu: no DE item",
+   "selector": "a.dropdown-toggle:text-is('Tools') >> xpath=.. >> ul"
+  }
+ ]
+}

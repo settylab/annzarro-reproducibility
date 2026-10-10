@@ -1,0 +1,46 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "napari_task.py",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first1000000.zarr",
+  "benchmark/tool_ceiling/shots/napari_sub100k_run_1000000_r0",
+  "--n",
+  "1000000"
+ ],
+ "status": "error",
+ "rc": -6,
+ "wall_s": 5.21,
+ "peaks": {
+  "proc": {
+   "fp_peak": 6082172112,
+   "fp_lifetime_sum": 6082942304,
+   "rss_peak": 5643059200,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6082172112,
+   "rss_peak": 5643059200,
+   "fp_lifetime_sum": 6082942304
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8651160
+  ],
+  [
+   1.51,
+   215434248
+  ],
+  [
+   2.96,
+   906561384
+  ],
+  [
+   4.41,
+   2343390112
+  ]
+ ],
+ "ps_before": "2026-10-05T00:29:03-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 3799  29440  80.7 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n33029 199968   6.1 /System/Library/CoreServices/ReportCrash\n 1240  48848   4.8 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  627  40000   3.8 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd\n 3790  14224   3.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n47413 662592   3.4 /Applications/cmux.app/Contents/MacOS/cmux\n  626 513952   3.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n91512  18624   2.5 /usr/libexec/trustd\n 4725 641072   2.2 claude\n  687  70032   2.2 /usr/libexec/syspolicyd\n",
+ "others_at_start": []
+}

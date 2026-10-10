@@ -1,0 +1,96 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_150000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_sub1m_run_150000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 23.67,
+ "peaks": {
+  "client": {
+   "fp_peak": 3431884856,
+   "fp_lifetime_sum": 3472616248,
+   "rss_peak": 3045982208,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 4929360864,
+   "fp_lifetime_sum": 4997862896,
+   "rss_peak": 4962369536,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 129189288,
+   "fp_lifetime_sum": 132990424,
+   "rss_peak": 164511744,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5757989968,
+   "rss_peak": 6205079552,
+   "fp_lifetime_sum": 8470479144
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.22,
+   958686088
+  ],
+  [
+   4.49,
+   1040148032
+  ],
+  [
+   6.74,
+   1937451208
+  ],
+  [
+   9.04,
+   2150017728
+  ],
+  [
+   11.33,
+   3008605536
+  ],
+  [
+   13.68,
+   3726634864
+  ],
+  [
+   15.99,
+   3042422496
+  ],
+  [
+   18.33,
+   4151505040
+  ],
+  [
+   20.63,
+   4264866488
+  ],
+  [
+   22.91,
+   5671908264
+  ]
+ ],
+ "ps_before": "2026-10-05T00:19:45-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 2884176   5.8 $HOME/.local/bin/claude\n 1012  18000   3.6 /usr/libexec/pboard\n  629 241312   2.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  626 513824   2.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  633  30976   2.0 /usr/libexec/runningboardd\n  596  30912   2.0 /System/Library/CoreServices/launchservicesd\n  557 567664   1.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 1240  48912   1.7 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n86901 572992   1.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n93323 1098816   0.9 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

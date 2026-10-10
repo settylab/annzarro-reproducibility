@@ -1,0 +1,47 @@
+{
+ "store": "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+ "gene": "MALAT1",
+ "n_cells": 95624334,
+ "nonzero": 95621315,
+ "cap": 400.0,
+ "pct_at_or_below_cap": 97.91,
+ "percentiles": {
+  "50": 70.0,
+  "90": 208.0,
+  "99": 509.0
+ },
+ "zoom": {
+  "view": "tahoe95M_malat1_zoom_all_gene.view.json",
+  "range_xy": [
+   8.142055934718101,
+   9.775644065281899,
+   1.6535,
+   2.4479
+  ],
+  "n_cells": 574309,
+  "median": 83.0,
+  "top_cell_lines": [
+   [
+    "CVCL_0320",
+    549760
+   ],
+   [
+    "CVCL_1731",
+    4825
+   ],
+   [
+    "CVCL_0334",
+    1770
+   ],
+   [
+    "CVCL_1381",
+    1681
+   ],
+   [
+    "CVCL_1285",
+    1597
+   ]
+  ],
+  "top_share_pct": 95.7
+ }
+}

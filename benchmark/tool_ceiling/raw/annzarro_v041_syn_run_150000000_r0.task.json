@@ -1,0 +1,56 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale_ceiling/syn_150000000.zarr",
+ "n_obs": 150000000,
+ "checks": {
+  "gene": {
+   "status": "ok",
+   "guard": [],
+   "console": [
+    "info: Large cell plot: 150000000 points in 1514 traces; load 1964 ms, build 1757 ms, draw 4996 ms"
+   ],
+   "n_drawn": 150000000,
+   "seconds": 9.46827441547066,
+   "all_cells": true,
+   "renderer_rss": 10526916608,
+   "gpu_rss": 2786754560,
+   "server_rss": 6166183936
+  },
+  "cat": {
+   "status": "ok",
+   "guard": [],
+   "console": [
+    "info: Large cell plot: 150000000 points in 1575 traces; load 812 ms, build 1343 ms, draw 5060 ms"
+   ],
+   "n_drawn": 150000050,
+   "seconds": 7.317608666606247,
+   "all_cells": true,
+   "renderer_rss": 10986176512,
+   "gpu_rss": 2786983936,
+   "server_rss": 7756480512
+  }
+ },
+ "versions": {
+  "annzarro": "78c9da6",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "ok",
+   "seconds": 9.46827441547066,
+   "n_points": 150000000
+  },
+  {
+   "event": "recolour_cat",
+   "status": "ok",
+   "seconds": 7.317608666606247,
+   "n_points": 150000050
+  }
+ ],
+ "ok": true
+}

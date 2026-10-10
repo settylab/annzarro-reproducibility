@@ -1,0 +1,88 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_160000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_noguard_run_160000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 23.38,
+ "peaks": {
+  "client": {
+   "fp_peak": 14694750792,
+   "fp_lifetime_sum": 16983761664,
+   "rss_peak": 15034499072,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 7515674936,
+   "fp_lifetime_sum": 7573035800,
+   "rss_peak": 7534837760,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 133056104,
+   "fp_lifetime_sum": 133056104,
+   "rss_peak": 167690240,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 22210327424,
+   "rss_peak": 21576744960,
+   "fp_lifetime_sum": 24556797464
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.5,
+   3471715464
+  ],
+  [
+   5.14,
+   9529377784
+  ],
+  [
+   7.71,
+   13510185216
+  ],
+  [
+   10.32,
+   18741603160
+  ],
+  [
+   12.94,
+   17897515576
+  ],
+  [
+   15.56,
+   19479884888
+  ],
+  [
+   18.14,
+   13611490512
+  ],
+  [
+   20.81,
+   20237530344
+  ]
+ ],
+ "ps_before": "2026-10-06T00:15:13-0700\nmemorystatus_level=89 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n59322  97024  86.1 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n 7890 265216  28.7 /System/Library/ExtensionKit/Extensions/TGOnDeviceInferenceProviderService.appex/Contents/MacOS/TGOnDeviceInferenceProviderService\n  863  22320  17.4 /System/Library/PrivateFrameworks/ModelCatalogRuntime.framework/Versions/A/modelcatalogd\n18100  59776  13.0 /System/Library/PrivateFrameworks/GenerativeExperiencesRuntime.framework/Versions/A/generativeexperiencesd\n47413 543152  10.8 /Applications/cmux.app/Contents/MacOS/cmux\n57113 2938928  10.2 $HOME/.local/bin/claude\n  557  44784   7.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 1012  15872   6.2 /usr/libexec/pboard\n  626 385808   5.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n37026 116016   4.7 $HOME/Projects/investments/.venv/bin/python3\n",
+ "others_at_start": []
+}

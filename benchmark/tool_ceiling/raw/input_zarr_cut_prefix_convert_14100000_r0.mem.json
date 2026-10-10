@@ -1,0 +1,68 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "benchmark/scale/ceiling/cut_prefix.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "$DATA_ROOT/tool_ceiling_data/zarr",
+  "14100000"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 13.7,
+ "peaks": {
+  "proc": {
+   "fp_peak": 5207216496,
+   "fp_lifetime_sum": 5299900880,
+   "rss_peak": 5217140736,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5207216496,
+   "rss_peak": 5217140736,
+   "fp_lifetime_sum": 5299900880
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9093528
+  ],
+  [
+   1.49,
+   3880324480
+  ],
+  [
+   2.99,
+   4267576992
+  ],
+  [
+   4.48,
+   5039575240
+  ],
+  [
+   5.99,
+   5027369160
+  ],
+  [
+   7.53,
+   4959785136
+  ],
+  [
+   9.04,
+   4959785136
+  ],
+  [
+   10.6,
+   4959785136
+  ],
+  [
+   12.13,
+   4535144336
+  ],
+  [
+   13.67,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-03T21:40:35-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 1888704   8.8 $HOME/.local/bin/claude\n 4725 640672   6.2 claude\n 1012  16816   3.4 /usr/libexec/pboard\n  629 154176   2.8 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  557 651680   2.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  626 486912   2.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  596  30112   2.3 /System/Library/CoreServices/launchservicesd\n28559  20672   2.2 benchmark/tool_ceiling/.venv/bin/python\n47413 607616   1.8 /Applications/cmux.app/Contents/MacOS/cmux\n  633  30784   1.7 /usr/libexec/runningboardd\n"
+}

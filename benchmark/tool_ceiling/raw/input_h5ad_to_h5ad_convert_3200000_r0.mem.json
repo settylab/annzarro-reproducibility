@@ -1,0 +1,89 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "3200000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first3200000.h5ad"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 17.83,
+ "peaks": {
+  "proc": {
+   "fp_peak": 12658781512,
+   "fp_lifetime_sum": 12670053704,
+   "rss_peak": 12755877888,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 12658781512,
+   "rss_peak": 12755877888,
+   "fp_lifetime_sum": 12670053704
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8831384
+  ],
+  [
+   1.45,
+   463586528
+  ],
+  [
+   2.87,
+   1142900896
+  ],
+  [
+   4.33,
+   8128241752
+  ],
+  [
+   5.76,
+   8330354920
+  ],
+  [
+   7.19,
+   8538481016
+  ],
+  [
+   8.61,
+   8538481016
+  ],
+  [
+   10.04,
+   9361908688
+  ],
+  [
+   11.47,
+   11844119232
+  ],
+  [
+   12.91,
+   9669568112
+  ],
+  [
+   14.34,
+   9801524944
+  ],
+  [
+   15.75,
+   9801524944
+  ],
+  [
+   17.19,
+   10063914896
+  ]
+ ],
+ "ps_before": "2026-10-04T14:15:46-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n77736 146608  52.2 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n  626 508160  50.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  641 107616  27.1 /usr/libexec/airportd\n28094 239744  17.8 (Google Chrome fo)\n77769 898304  12.4 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n28182  77520   8.8 (Google Chrome fo)\n28183  92352   7.3 (Google Chrome fo)\n 1012  17424   6.7 /usr/libexec/pboard\n80373 121520   6.5 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n28184  20656   6.3 benchmark/tool_ceiling/.venv/bin/python\n",
+ "others_at_start": [
+  "27027 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1790895733153-mick9a.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "27029 /opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m pytest -q -p no:cacheprovider an",
+  "27030 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1790895733153-mick9a.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "27923 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disa",
+  "27928 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=gpu-process --no-sandbox --d",
+  "27929 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=utility --utility-sub-type=n",
+  "27932 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=renderer --headless=old --no"
+ ]
+}

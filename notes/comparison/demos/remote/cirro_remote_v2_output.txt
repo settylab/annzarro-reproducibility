@@ -1,0 +1,16 @@
+== s3://lamindata/.lamindb/CFcQxNjzSRzWZrVh.anndata.zarr
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2026-10-04 05:05:54,934] ERROR in app: Exception on /api/schema [GET]
+    rv = self.handle_user_exception(e)
+    raise PathNotFoundError(path)
+== https://lamindata.s3.amazonaws.com/.lamindb/CFcQxNjzSRzWZrVh.anndata.zarr
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2026-10-04 05:05:57,113] ERROR in app: Exception on /api/schema [GET]
+    rv = self.handle_user_exception(e)
+TypeError: ClientSession._request() got an unexpected keyword argument 's3_additional_kwargs'
+== gs://vitessce-demo-data/habib-2017/habib17.processed.h5ad.zarr
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Could not determine bucket type for bucket name vitessce-demo-data: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication
+Could not determine bucket type for bucket name vitessce-demo-data: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication
+Could not determine bucket type for bucket name vitessce-demo-data: Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication
+2026-10-04T12:05:52 2026-10-04T12:08:00 rc=143 cmd=sh notes/comparison/demos/remote/cirro_remote_v overlapped_timed=none

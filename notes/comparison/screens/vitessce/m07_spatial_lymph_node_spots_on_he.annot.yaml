@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "image": "m07_spatial_lymph_node_spots_on_he.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (hosted app at vitessce.io, 2026-10-04)",
+ "data": "human-lymph-node-10x-visium (Vitessce demo, remote zarr)",
+ "url": "https://vitessce.io/#?dataset=human-lymph-node-10x-visium",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/vitessce/recap_a.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "spatial",
+   "mark": "Y",
+   "caption": "Lymph node demo: 3,861 spots in tissue coordinates in two Spatial views"
+  },
+  {
+   "column": "image",
+   "mark": "Y",
+   "caption": "H&E image drawn under the spots; Spatial Layers has an Image layer toggle"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    147,
+    315,
+    544,
+    351
+   ],
+   "label": "Spatial view 1: spots on H&E",
+   "selector": "canvas >> nth=0"
+  },
+  {
+   "n": 2,
+   "box": [
+    700,
+    315,
+    544,
+    351
+   ],
+   "label": "Spatial view 2: spots on H&E",
+   "selector": "canvas >> nth=1"
+  },
+  {
+   "n": 3,
+   "box": [
+    146,
+    678,
+    187,
+    222
+   ],
+   "label": "Spatial Layers: Image layer",
+   "selector": "[data-recap='layers']"
+  }
+ ]
+}

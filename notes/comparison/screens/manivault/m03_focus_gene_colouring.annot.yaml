@@ -1,0 +1,24 @@
+version: 1
+image: m03_focus_gene_colouring.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0 (macOS universal, start page reads 1.5.0-dev)
+data: bm_demo.h5ad (8,090 cells x 16,285 genes; obsp kept)
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/manivault_checklist.md (run by hand in a computer-use desktop session; log: notes/comparison/demos/manivault/session_notes.txt)'
+source: manual
+image_sha256: ff2aa46069d6b38d25e617f8d5985ef8ac86403f7a4821cc3fa3b958c1ce99e1
+proves:
+- column: focus
+  mark: N
+  caption: 'Colouring by a gene (Mpo, from X) is feature colouring; a single click on one cell changed nothing (session
+    log, step 8). F2 export: colours in this PNG differ from the screen (red and blue swapped), see m12.'
+callouts:
+- n: 1
+  box:
+  - 60
+  - 145
+  - 300
+  - 36
+  label: 'Color by: bm_demo (X), dimension Mpo'

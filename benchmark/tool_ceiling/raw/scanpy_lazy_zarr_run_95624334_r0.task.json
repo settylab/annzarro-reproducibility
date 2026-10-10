@@ -1,0 +1,16 @@
+{
+ "variant": "lazy_zarr",
+ "path": "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+ "versions": {
+  "scanpy": "1.12.4",
+  "anndata": "0.13.4",
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.3",
+  "h5py": "3.16.0",
+  "zarr": "3.4.0"
+ },
+ "phases": {
+  "import": 1.14
+ },
+ "checks": {}
+}

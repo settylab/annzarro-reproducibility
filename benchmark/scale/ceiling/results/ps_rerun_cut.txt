@@ -1,0 +1,7 @@
+# Process snapshots taken during the benchmark. The export keeps the benchmark's own processes (pid, elapsed time, rss in kB, command) and omits the unrelated ones; see the count below.
+Sat Oct  3 10:55:31 PDT 2026
+pid=7522 etime=10:57:55 rss_kb=8329424 cmd=$ANNZARRO_SRC/venv/bin/python -m annzarro.cli start --host 127.0.0.1 --port 8800 --data-dir $DATA_ROOT/tahoe_scale/sto
+pid=7523 etime=10:57:55 rss_kb=130400 cmd=$ANNZARRO_SRC/venv/bin/python -m annzarro.cli start --host 127.0.0.1 --port 8801 --data-dir $ANNZARRO_SRC-pa
+pid=9114 etime=10:56:47 rss_kb=17712 cmd=$ANNZARRO_SRC/venv/bin/python -c from multiprocessing.resource_tracker import main;main(11)
+pid=11336 etime=10:55:24 rss_kb=17824 cmd=$ANNZARRO_SRC/venv/bin/python -c from multiprocessing.resource_tracker import main;main(12)
+# omitted: 27 process lines unrelated to the benchmark

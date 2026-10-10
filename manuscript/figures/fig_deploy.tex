@@ -1,0 +1,68 @@
+% Deployment modes: where browser, server and data live, and what crosses
+% between machines. Same visual language as Fig. 1.
+\begingroup
+\definecolor{dpaccent}{HTML}{2F6FD6}
+\definecolor{dpedge}{HTML}{A8A89C}
+\definecolor{dpquiet}{HTML}{5F5F5A}
+\definecolor{dpband}{HTML}{F4F3EF}
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+  font=\sffamily\small,
+  machine/.style={draw=dpedge, dashed, rounded corners=6pt, line width=0.7pt, fill=dpband},
+  mlabel/.style={font=\sffamily\footnotesize, text=dpquiet, anchor=south west},
+  comp/.style={draw=dpedge, rounded corners=3pt, line width=0.7pt, fill=white, align=center,
+               minimum width=3.6cm, minimum height=0.85cm},
+  srv/.style={comp, draw=dpaccent, line width=1.1pt},
+  data/.style={cylinder, shape border rotate=90, aspect=0.22, draw=dpedge, line width=0.7pt,
+               fill=white, minimum width=2.4cm, minimum height=1.05cm, align=center},
+  arr/.style={-{Stealth[length=2.2mm]}, draw=dpedge, line width=0.7pt},
+  lbl/.style={font=\sffamily\footnotesize, text=dpquiet, align=center},
+  title/.style={font=\sffamily\small\bfseries, anchor=south},
+  foot/.style={font=\sffamily\footnotesize, align=center, text width=4.6cm, anchor=north,
+               execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+]
+  % ---------------- desktop app
+  \node[title] at (2.6,-0.15) {Desktop app};
+  \draw[machine] (0.2,-0.4) rectangle (5.0,-7.0);
+  \node[mlabel] at (0.3,-6.95) {laptop};
+  \node[comp] (b1) at (2.6,-1.35) {AnnZarro window};
+  \node[srv]  (s1) at (2.6,-3.4) {bundled server};
+  \node[data] (d1) at (2.6,-5.6) {zarr / h5ad};
+  \draw[arr] (s1) -- node[lbl, right] {one vector} (b1);
+  \draw[arr] (d1) -- node[lbl, right] {chunks} (s1);
+  \node[foot] at (2.6,-7.25) {One user, no installation of a server; nothing leaves the laptop.};
+
+  % ---------------- personal server
+  \node[title] at (8.2,-0.15) {Personal server};
+  \draw[machine] (5.8,-0.4) rectangle (10.6,-2.3);
+  \node[mlabel] at (5.9,-2.25) {laptop};
+  \node[comp] (b2) at (8.2,-1.35) {browser};
+  \draw[machine] (5.8,-3.3) rectangle (10.6,-7.0);
+  \node[mlabel] at (5.9,-6.95) {workstation or HPC node};
+  \node[srv]  (s2) at (8.2,-4.25) {annzarro start};
+  \node[data] (d2) at (8.2,-5.95) {large stores};
+  \draw[arr] (s2) -- (b2);
+  \node[lbl, anchor=west] at (8.3,-2.8) {one vector, SSH tunnel};
+  \draw[arr] (d2) -- node[lbl, right] {chunks} (s2);
+  \node[foot] at (8.2,-7.25) {Data stay on the cluster; only the vector on screen crosses the network.};
+
+  % ---------------- lab server
+  \node[title] at (13.8,-0.15) {Lab server};
+  \draw[machine] (11.4,-0.4) rectangle (16.2,-2.3);
+  \node[mlabel, anchor=north west] at (11.5,-0.45) {lab members};
+  \node[comp, minimum width=1.25cm] (b3a) at (12.35,-1.5) {browser};
+  \node[comp, minimum width=1.25cm] (b3b) at (13.8,-1.5) {browser};
+  \node[comp, minimum width=1.25cm] (b3c) at (15.25,-1.5) {browser};
+  \draw[machine] (11.4,-3.3) rectangle (16.2,-7.0);
+  \node[mlabel] at (11.5,-6.95) {institutional server};
+  \node[srv, align=center, minimum width=4.2cm] (s3) at (13.8,-4.25) {AnnZarro behind TLS proxy\\[-1pt]{\footnotesize\color{dpquiet}login, read-only}};
+  \node[data, minimum width=2.0cm] (d3) at (12.85,-5.95) {datasets};
+  \node[comp, minimum width=1.6cm, minimum height=0.75cm, align=center] (p3) at (15.15,-5.95) {{\footnotesize panel sets}};
+  \draw[arr] (b3a |- s3.north) -- (b3a);
+  \draw[arr] (b3b |- s3.north) -- (b3b);
+  \draw[arr] (b3c |- s3.north) -- (b3c);
+  \draw[arr] (d3) -- (d3 |- s3.south);
+  \draw[arr, {Stealth[length=2.2mm]}-{Stealth[length=2.2mm]}] (p3) -- (p3 |- s3.south);
+  \node[foot] at (13.8,-7.25) {Datasets shared without write or compute access; views shared as panel sets.};
+\end{tikzpicture}}
+\endgroup

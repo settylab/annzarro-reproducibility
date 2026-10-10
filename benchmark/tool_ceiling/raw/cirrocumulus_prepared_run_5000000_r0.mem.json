@@ -1,0 +1,125 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "prepared",
+  "$DATA_ROOT/tool_ceiling_data/cirro/first5000000.zarr",
+  "benchmark/tool_ceiling/shots/cirrocumulus_prepared_run_5000000_r0",
+  "--n",
+  "5000000",
+  "--port",
+  "8934"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 40.34,
+ "peaks": {
+  "client": {
+   "fp_peak": 3091572648,
+   "fp_lifetime_sum": 3236555696,
+   "rss_peak": 2876817408,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 7400970480,
+   "fp_lifetime_sum": 7402789368,
+   "rss_peak": 7451705344,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 120828600,
+   "fp_lifetime_sum": 120828600,
+   "rss_peak": 155484160,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 9997401952,
+   "rss_peak": 9833725952,
+   "fp_lifetime_sum": 10639345064
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.2,
+   1815275288
+  ],
+  [
+   4.34,
+   5301350640
+  ],
+  [
+   6.45,
+   7645296536
+  ],
+  [
+   8.55,
+   7974091080
+  ],
+  [
+   10.75,
+   7755167952
+  ],
+  [
+   12.88,
+   8071936448
+  ],
+  [
+   14.99,
+   8220474344
+  ],
+  [
+   17.15,
+   9483599112
+  ],
+  [
+   19.28,
+   8732900592
+  ],
+  [
+   21.37,
+   8481111328
+  ],
+  [
+   23.43,
+   8480554272
+  ],
+  [
+   25.49,
+   8471559456
+  ],
+  [
+   27.68,
+   9397894552
+  ],
+  [
+   29.81,
+   8767864312
+  ],
+  [
+   31.93,
+   9021652712
+  ],
+  [
+   34.0,
+   9005956888
+  ],
+  [
+   36.07,
+   9019375384
+  ],
+  [
+   38.15,
+   9011429144
+  ],
+  [
+   40.21,
+   6970105200
+  ]
+ ],
+ "ps_before": "2026-10-03T22:36:51-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n86901 499248   2.5 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n84235 255264   2.0 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n57113 1902992   1.7 $HOME/.local/bin/claude\n80588 617008   1.2 $HOME/.local/bin/claude\n 4725 642576   1.1 claude\n92291  30816   0.7 .venv/bin/python\n34972 494384   0.6 $HOME/.local/bin/claude\n24117   1232   0.4 sleep\n24115   1232   0.4 sleep\n24114   1232   0.4 sleep\n"
+}

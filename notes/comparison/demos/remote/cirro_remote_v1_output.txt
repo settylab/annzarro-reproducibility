@@ -1,0 +1,14 @@
+== s3://lamindata/.lamindb/CFcQxNjzSRzWZrVh.anndata.zarr
+server did not answer
+  File "$DEMO_ROOT/cirrocumulus/.venv/lib/python3.11/site-packages/s3fs/core.py", line 169, in _error_wrapper
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (InvalidAccessKeyId) when calling the CreateBucket operation: The AWS Access Key Id you provided does not exist in our records.
+== https://lamindata.s3.amazonaws.com/.lamindb/CFcQxNjzSRzWZrVh.anndata.zarr
+server did not answer
+TypeError: ClientSession._request() got an unexpected keyword argument 's3_additional_kwargs'
+== gs://vitessce-demo-data/habib-2017/habib17.processed.h5ad.zarr
+server did not answer
+_request non-retriable exception: Anonymous caller does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource '//storage.googleapi
+    raise HttpError({"code": status, **error})
+gcsfs.retry.HttpError: Anonymous caller does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource '//storage.googleapis.com/proje
+2026-10-04T11:04:21 2026-10-04T11:08:56 rc=1 cmd=sh notes/comparison/demos/remote/cirro_remote.s overlapped_timed=none

@@ -1,0 +1,183 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "napari_task.py",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first5000000.zarr",
+  "benchmark/tool_ceiling/shots/napari_allpoints_run_5000000_r0",
+  "--n",
+  "5000000",
+  "--all-points"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 52.93,
+ "peaks": {
+  "proc": {
+   "fp_peak": 33664623480,
+   "fp_lifetime_sum": 33664623480,
+   "rss_peak": 32924090368,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 33664623480,
+   "rss_peak": 32924090368,
+   "fp_lifetime_sum": 33664623480
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9027992
+  ],
+  [
+   1.42,
+   199869376
+  ],
+  [
+   2.82,
+   849496056
+  ],
+  [
+   4.21,
+   2977287840
+  ],
+  [
+   5.61,
+   6862051664
+  ],
+  [
+   7.02,
+   9043877760
+  ],
+  [
+   8.41,
+   9364086992
+  ],
+  [
+   9.81,
+   20594426104
+  ],
+  [
+   11.22,
+   13537471864
+  ],
+  [
+   12.61,
+   18495748688
+  ],
+  [
+   14.04,
+   22530524488
+  ],
+  [
+   15.44,
+   24719100912
+  ],
+  [
+   16.85,
+   19048070168
+  ],
+  [
+   18.25,
+   18895829992
+  ],
+  [
+   19.64,
+   20715830992
+  ],
+  [
+   21.04,
+   23047259608
+  ],
+  [
+   22.45,
+   24928996264
+  ],
+  [
+   23.85,
+   25090165624
+  ],
+  [
+   25.26,
+   33664623480
+  ],
+  [
+   26.67,
+   33433936760
+  ],
+  [
+   28.07,
+   27218774880
+  ],
+  [
+   29.46,
+   27213319008
+  ],
+  [
+   30.83,
+   27213319008
+  ],
+  [
+   32.23,
+   27213319008
+  ],
+  [
+   33.64,
+   27213302624
+  ],
+  [
+   35.12,
+   27213302624
+  ],
+  [
+   36.56,
+   24823909216
+  ],
+  [
+   37.96,
+   27793575256
+  ],
+  [
+   39.35,
+   25565449776
+  ],
+  [
+   40.74,
+   25705877232
+  ],
+  [
+   42.15,
+   25744625416
+  ],
+  [
+   43.56,
+   26280855888
+  ],
+  [
+   44.97,
+   25842518520
+  ],
+  [
+   46.37,
+   19466534512
+  ],
+  [
+   47.77,
+   22343696056
+  ],
+  [
+   49.18,
+   25997299920
+  ],
+  [
+   50.58,
+   28054214304
+  ],
+  [
+   51.99,
+   24247536456
+  ]
+ ],
+ "ps_before": "2026-10-05T11:43:04-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n50474  35712  72.2 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n  626 522608  18.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n73194 196752   8.0 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n93323 1100768   7.8 $HOME/.local/bin/claude\n86901 577328   7.4 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n37026 123664   6.1 $HOME/Projects/investments/.venv/bin/python3\n97961 877904   4.8 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n57113 2904784   3.9 $HOME/.local/bin/claude\n  855 2022480   3.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  629 286016   3.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n",
+ "others_at_start": []
+}

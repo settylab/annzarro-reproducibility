@@ -1,0 +1,2 @@
+g200: 1000000 cells, 200 genes, 1000000 unique barcodes; cells with MALAT1 > 0: 999966; cells with MALAT1 = 0: 34; cells with no stored value at all: 0; max MALAT1 count 1824, log2(1+max) 10.83
+g2000: 1000000 cells, 2000 genes, 1000000 unique barcodes; cells with MALAT1 > 0: 999966; cells with MALAT1 = 0: 34; cells with no stored value at all: 0; max MALAT1 count 1824, log2(1+max) 10.83

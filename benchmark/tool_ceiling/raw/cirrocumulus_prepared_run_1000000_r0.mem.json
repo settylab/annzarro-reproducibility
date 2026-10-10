@@ -1,0 +1,77 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "prepared",
+  "$DATA_ROOT/tool_ceiling_data/cirro/first1000000.zarr",
+  "benchmark/tool_ceiling/shots/cirrocumulus_prepared_run_1000000_r0",
+  "--n",
+  "1000000",
+  "--port",
+  "8934"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 15.2,
+ "peaks": {
+  "client": {
+   "fp_peak": 1612456840,
+   "fp_lifetime_sum": 1693673528,
+   "rss_peak": 1707786240,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1422641168,
+   "fp_lifetime_sum": 1443727736,
+   "rss_peak": 1476460544,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 121467864,
+   "fp_lifetime_sum": 121467864,
+   "rss_peak": 155779072,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3007245088,
+   "rss_peak": 3127787520,
+   "fp_lifetime_sum": 3137401264
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.16,
+   1338533320
+  ],
+  [
+   4.28,
+   2656659992
+  ],
+  [
+   6.53,
+   2092149272
+  ],
+  [
+   8.64,
+   2522622608
+  ],
+  [
+   10.78,
+   2372758256
+  ],
+  [
+   12.89,
+   2962140032
+  ],
+  [
+   15.0,
+   2871962472
+  ]
+ ],
+ "ps_before": "2026-10-03T22:20:39-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n97730 271024  81.8 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 632656  23.7 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n 6219  58672   5.5 $HOME/Projects/investments/.venv/bin/python3\n  605  49824   5.0 /usr/libexec/dasd\n57113 1902912   4.4 $HOME/.local/bin/claude\n 4725 642256   1.7 claude\n31621 382160   1.5 $HOME/.local/bin/claude\n  618  65840   1.5 /usr/sbin/bluetoothd\n92291  30816   0.9 .venv/bin/python\n90797 371568   0.8 $HOME/.local/bin/claude\n"
+}

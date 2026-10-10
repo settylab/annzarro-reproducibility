@@ -1,0 +1,19 @@
+version: 1
+image: m16_server_stopped_page_greys_out.jpg
+tool: shinycell
+software: ShinyCell 2.1.0 (local app)
+data: bone marrow SCE (8,090 cells)
+url: http://127.0.0.1:8907
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/shinycell/matrix_check.py
+source: manual
+image_sha256: 2d106da1ef1ec10c295eac34bcffebe93f8e10b8e97e207227a7b28e2b82b285
+proves:
+- column: static
+  mark: N
+  caption: 'ShinyCell 2.1.0: with the R process stopped the page greys out; the plots need the server.'
+callouts:
+- n: 1
+  box: [2, 2, 1396, 896]
+  label: whole page greyed by Shiny's disconnected overlay

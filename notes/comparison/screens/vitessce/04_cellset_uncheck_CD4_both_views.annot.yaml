@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "image": "04_cellset_uncheck_CD4_both_views.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (hosted app at vitessce.io, @vitessce 4.0.10)",
+ "data": "bm_demo.zarr (8,090 cells), served on 127.0.0.1:8904",
+ "url": "https://vitessce.io/#?url=http://127.0.0.1:8904/config.json",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_vitessce.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "Vitessce @vitessce 4.0.10 (2026-10-04): unticking CD4 T cell (40 cells) in Cell Sets drops it from both scatterplots and the heatmap"
+  },
+  {
+   "column": "filters",
+   "mark": "P",
+   "caption": "a cell-set checkbox restricts every view, but cells are greyed, not hidden, and there is no table filter"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1059,
+    127,
+    311,
+    773
+   ],
+   "label": "CD4 T cell unticked",
+   "selector": "li.rc-tree-treenode:has(button:text-is('CD4 T cell'))"
+  },
+  {
+   "n": 2,
+   "box": [
+    6,
+    86,
+    580,
+    486
+   ],
+   "label": "UMAP",
+   "selector": "[data-cap='umap']"
+  },
+  {
+   "n": 3,
+   "box": [
+    583,
+    86,
+    465,
+    486
+   ],
+   "label": "FA",
+   "selector": "[data-cap='fa']"
+  },
+  {
+   "n": 4,
+   "box": [
+    6,
+    871,
+    1378,
+    23
+   ],
+   "label": "heatmap: cells selected",
+   "selector": "[data-cap='hmfoot2']"
+  }
+ ]
+}

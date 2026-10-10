@@ -1,0 +1,128 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_1500000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub_run_1500000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 44.96,
+ "peaks": {
+  "client": {
+   "fp_peak": 1577460520,
+   "fp_lifetime_sum": 1704961768,
+   "rss_peak": 1388019712,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 12871100568,
+   "fp_lifetime_sum": 13304982376,
+   "rss_peak": 12896026624,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 132106096,
+   "fp_lifetime_sum": 132106096,
+   "rss_peak": 175489024,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 13270125192,
+   "rss_peak": 14010400768,
+   "fp_lifetime_sum": 15009944144
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.43,
+   963044256
+  ],
+  [
+   4.96,
+   962978744
+  ],
+  [
+   7.48,
+   515269560
+  ],
+  [
+   9.88,
+   613262360
+  ],
+  [
+   12.36,
+   927032584
+  ],
+  [
+   14.79,
+   927819016
+  ],
+  [
+   17.34,
+   928408840
+  ],
+  [
+   19.79,
+   929162504
+  ],
+  [
+   22.28,
+   930014472
+  ],
+  [
+   24.75,
+   930751752
+  ],
+  [
+   27.2,
+   931489032
+  ],
+  [
+   29.59,
+   1151542704
+  ],
+  [
+   32.06,
+   968926640
+  ],
+  [
+   34.6,
+   966272432
+  ],
+  [
+   36.95,
+   966993328
+  ],
+  [
+   39.69,
+   9403252648
+  ],
+  [
+   42.4,
+   1478617600
+  ],
+  [
+   44.86,
+   1691540080
+  ]
+ ],
+ "ps_before": "2026-10-06T00:29:26-0700\nmemorystatus_level=88 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n79975  53344 100.0 .venv/bin/python\n79784 271856  72.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n47413 428736  59.2 /Applications/cmux.app/Contents/MacOS/cmux\n97961 679952  18.8 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n 6219  53120  11.0 $HOME/Projects/investments/.venv/bin/python3\n  557  37136  10.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n80005 347920  10.1 $HOME/.local/bin/claude\n 1012  14880   6.6 /usr/libexec/pboard\n57113 2587808   6.3 $HOME/.local/bin/claude\n  855 1243680   6.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n",
+ "others_at_start": []
+}

@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "image": "h03_share_script_is_the_state.jpg",
+ "tool": "scanpy-seurat",
+ "software": "scanpy 1.11.5, anndata 0.12.19 (code; Scanpy has no GUI)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "file://$TMPDIR/evidence/gap-capture-2/work/share",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_code.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "P",
+   "caption": "code output, scanpy 1.11.5 (2026-10-04): the only view state is the script; re-running it gives a byte-identical figure, there is no link or state file, so P"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    83,
+    1376,
+    183
+   ],
+   "label": "the script is the whole view state",
+   "selector": "#code0"
+  },
+  {
+   "n": 2,
+   "box": [
+    22,
+    338,
+    352,
+    24
+   ],
+   "label": "two runs, identical md5",
+   "selector": "[id^=hl1_] >> nth=0"
+  },
+  {
+   "n": 3,
+   "box": [
+    12,
+    519,
+    422,
+    340
+   ],
+   "label": "the reproduced view",
+   "selector": "#img2"
+  },
+  {
+   "n": 4,
+   "box": [
+    12,
+    873,
+    1376,
+    23
+   ],
+   "label": "share = send the script and the data",
+   "selector": "#note"
+  }
+ ]
+}

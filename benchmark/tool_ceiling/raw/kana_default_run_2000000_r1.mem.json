@@ -1,0 +1,68 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "kana",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+  "benchmark/tool_ceiling/shots/kana_default_run_2000000_r1",
+  "--n",
+  "2000000"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 11.22,
+ "peaks": {
+  "client": {
+   "fp_peak": 9593621752,
+   "fp_lifetime_sum": 10204057904,
+   "rss_peak": 10387914752,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 0,
+   "fp_lifetime_sum": 0,
+   "rss_peak": 0,
+   "n_proc_max": 0
+  },
+  "harness": {
+   "fp_peak": 116552160,
+   "fp_lifetime_sum": 116552160,
+   "rss_peak": 151273472,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 9593621752,
+   "rss_peak": 10387914752,
+   "fp_lifetime_sum": 10204057904
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.19,
+   1945973552
+  ],
+  [
+   4.31,
+   5414157816
+  ],
+  [
+   6.51,
+   5728665872
+  ],
+  [
+   8.72,
+   6790120512
+  ],
+  [
+   10.86,
+   8175405008
+  ]
+ ],
+ "ps_before": "2026-10-05T02:43:02-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47413 662816  15.5 /Applications/cmux.app/Contents/MacOS/cmux\n 1012  17968   6.6 /usr/libexec/pboard\n86901 573584   5.5 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n72627 495248   5.5 $HOME/.local/bin/claude\n98631 487504   4.5 $HOME/.local/bin/claude\n  626 514224   4.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  629 241424   3.3 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n57113 2885680   3.2 $HOME/.local/bin/claude\n 1240  48912   1.7 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n92291  30992   1.0 .venv/bin/python\n",
+ "others_at_start": []
+}

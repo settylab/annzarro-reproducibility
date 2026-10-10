@@ -1,0 +1,20 @@
+version: 1
+image: m10_violin_tab_no_de.jpg
+tool: shinycell
+software: ShinyCell 2.1.0 (local app)
+data: bone marrow SCE (8,090 cells)
+url: http://127.0.0.1:8907
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/shinycell/matrix_check.py
+source: manual
+image_sha256: df8f80946b948136df34eb3bae87f7799655cc37e293402560c6fed98a992a77
+proves:
+- column: de
+  mark: N
+  caption: 'ShinyCell 2.1.0: the violin tab has only plot inputs (x, y, plot type, subset, graphics); no test or
+    gene ranking.'
+callouts:
+- n: 1
+  box: [26, 300, 310, 340]
+  label: all violin-tab controls; nothing computes DE

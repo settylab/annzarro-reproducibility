@@ -1,0 +1,71 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/cirrocumulus/.venv/bin/cirro",
+  "prepare_data",
+  "--format",
+  "zarr",
+  "--no-auto-groups",
+  "--out",
+  "$DATA_ROOT/tool_ceiling_data/cirro/first10000000.zarr",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first10000000.h5ad"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 13.75,
+ "peaks": {
+  "proc": {
+   "fp_peak": 32494821088,
+   "fp_lifetime_sum": 32852828328,
+   "rss_peak": 32775651328,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 32494821088,
+   "rss_peak": 32775651328,
+   "fp_lifetime_sum": 32852828328
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8552904
+  ],
+  [
+   1.47,
+   4526968552
+  ],
+  [
+   2.9,
+   9566657808
+  ],
+  [
+   4.33,
+   10552631432
+  ],
+  [
+   5.79,
+   10898514296
+  ],
+  [
+   7.24,
+   19676330528
+  ],
+  [
+   8.7,
+   29602307808
+  ],
+  [
+   10.17,
+   11084489728
+  ],
+  [
+   11.65,
+   13419539352
+  ],
+  [
+   13.12,
+   14576479944
+  ]
+ ],
+ "ps_before": "2026-10-03T22:39:26-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47413 607760  25.1 /Applications/cmux.app/Contents/MacOS/cmux\n86901 499136   2.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 4725 642640   1.5 claude\n80588 617008   1.0 $HOME/.local/bin/claude\n57113 1902928   1.0 $HOME/.local/bin/claude\n92291  30816   0.8 .venv/bin/python\n  626 488416   0.7 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 6219  58672   0.5 $HOME/Projects/investments/.venv/bin/python3\n34972 494384   0.4 $HOME/.local/bin/claude\n  855 1699472   0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n"
+}

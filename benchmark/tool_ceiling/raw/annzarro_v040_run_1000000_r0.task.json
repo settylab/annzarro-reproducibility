@@ -1,0 +1,52 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first1000000.zarr",
+ "n_obs": 1000000,
+ "checks": {
+  "gene": {
+   "status": "ok",
+   "guard": [],
+   "console": [],
+   "n_drawn": 1000000,
+   "seconds": 6.533939500339329,
+   "all_cells": true,
+   "renderer_rss": 2332934144,
+   "gpu_rss": 242450432,
+   "server_rss": 335167488
+  },
+  "cat": {
+   "status": "ok",
+   "guard": [],
+   "console": [],
+   "n_drawn": 1000050,
+   "seconds": 0.3745203334838152,
+   "all_cells": true,
+   "renderer_rss": 2332934144,
+   "gpu_rss": 252772352,
+   "server_rss": 337002496
+  }
+ },
+ "versions": {
+  "annzarro": "3bdeb09",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "ok",
+   "seconds": 6.533939500339329,
+   "n_points": 1000000
+  },
+  {
+   "event": "recolour_cat",
+   "status": "ok",
+   "seconds": 0.3745203334838152,
+   "n_points": 1000050
+  }
+ ],
+ "ok": true
+}

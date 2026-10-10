@@ -1,0 +1,118 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "napari_task.py",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first5000000.zarr",
+  "benchmark/tool_ceiling/shots/napari_sub100k_run_5000000_r0",
+  "--n",
+  "5000000"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 31.38,
+ "peaks": {
+  "proc": {
+   "fp_peak": 27384943520,
+   "fp_lifetime_sum": 27404948384,
+   "rss_peak": 27186069504,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 27384943520,
+   "rss_peak": 27186069504,
+   "fp_lifetime_sum": 27404948384
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9601432
+  ],
+  [
+   1.46,
+   214205424
+  ],
+  [
+   2.93,
+   2180647768
+  ],
+  [
+   4.38,
+   5758063944
+  ],
+  [
+   5.89,
+   8933138112
+  ],
+  [
+   7.32,
+   9004572592
+  ],
+  [
+   8.79,
+   12619901608
+  ],
+  [
+   10.24,
+   18406193936
+  ],
+  [
+   11.71,
+   18200164968
+  ],
+  [
+   13.18,
+   18946833240
+  ],
+  [
+   14.67,
+   18612026152
+  ],
+  [
+   16.14,
+   18959252456
+  ],
+  [
+   17.58,
+   18550455128
+  ],
+  [
+   19.04,
+   19513621768
+  ],
+  [
+   20.51,
+   24017881832
+  ],
+  [
+   22.0,
+   18319178632
+  ],
+  [
+   23.46,
+   19786645272
+  ],
+  [
+   24.9,
+   24508582992
+  ],
+  [
+   26.36,
+   22850897944
+  ],
+  [
+   27.85,
+   23577577520
+  ],
+  [
+   29.31,
+   23272851696
+  ],
+  [
+   30.76,
+   23688890632
+  ]
+ ],
+ "ps_before": "2026-10-05T03:23:37-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n36477 270144  84.4 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 873504  15.6 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n 1012  17952   6.3 /usr/libexec/pboard\n  629 241312   4.2 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30960   4.1 /System/Library/CoreServices/launchservicesd\n  626 514288   3.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1240  48928   2.9 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n57113 2886976   2.7 $HOME/.local/bin/claude\n  557 567664   2.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n47413 662912   1.9 /Applications/cmux.app/Contents/MacOS/cmux\n",
+ "others_at_start": []
+}

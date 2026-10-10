@@ -1,0 +1,8 @@
+n_cells	store	build_s	check_s	apparent_bytes
+1000000	$SCRATCH/annzarro-scale/stores/n1M/tahoe_1M.zarr	120	21	3721994538
+2000000	$SCRATCH/annzarro-scale/stores/n2M/tahoe_2M.zarr	190	43	7682069248
+5000000	$SCRATCH/annzarro-scale/stores/n5M/tahoe_5M.zarr	423	11	21070218684
+10000000	$SCRATCH/annzarro-scale/stores/n10M/tahoe_10M.zarr	801	10	42411846702
+20000000	$SCRATCH/annzarro-scale/stores/n20M/tahoe_20M.zarr	1736	13	88722790824
+50000000	$SCRATCH/annzarro-scale/stores/n50M/tahoe_50M.zarr	4169	11	212778217838
+95624334	$SCRATCH/annzarro-scale/stores/n95.6M/tahoe_95.6M.zarr	9017	13	410892598870

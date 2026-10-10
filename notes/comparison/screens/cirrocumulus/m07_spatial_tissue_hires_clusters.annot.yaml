@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m07_spatial_tissue_hires_clusters.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "V1_Human_Lymph_Node.h5ad (3,962 spots, Cirrocumulus repository example)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_spatial.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "spatial",
+   "mark": "Y",
+   "caption": "Spots drawn in tissue coordinates (tissue_hires)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    244,
+    60,
+    1128,
+    738
+   ],
+   "label": "spots in tissue coordinates",
+   "selector": "[data-recap='p0']"
+  }
+ ]
+}

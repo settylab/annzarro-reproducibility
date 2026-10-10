@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "image": "m04_slots_annotation_tab.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "cells",
+   "mark": "N",
+   "caption": "The Annotation tab lists obs fields only; no obsp matrix anywhere"
+  },
+  {
+   "column": "genes",
+   "mark": "N",
+   "caption": "No varp anywhere; the Gene tab searches genes of X only"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    28,
+    258,
+    872
+   ],
+   "label": "Annotation tab: obs fields only",
+   "selector": "#tpLeftSidebar, #tpLeftTabs"
+  }
+ ]
+}

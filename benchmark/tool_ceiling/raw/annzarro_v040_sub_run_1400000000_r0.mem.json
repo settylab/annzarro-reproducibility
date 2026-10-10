@@ -1,0 +1,120 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_1400000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub_run_1400000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 41.75,
+ "peaks": {
+  "client": {
+   "fp_peak": 1579770616,
+   "fp_lifetime_sum": 1689592616,
+   "rss_peak": 1388199936,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 12403910400,
+   "fp_lifetime_sum": 12819507664,
+   "rss_peak": 12425641984,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 137725640,
+   "fp_lifetime_sum": 142903152,
+   "rss_peak": 172670976,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 12803721480,
+   "rss_peak": 13540409344,
+   "fp_lifetime_sum": 14509100280
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.53,
+   959194112
+  ],
+  [
+   4.98,
+   963961856
+  ],
+  [
+   7.48,
+   514679808
+  ],
+  [
+   9.94,
+   612738120
+  ],
+  [
+   12.34,
+   926606648
+  ],
+  [
+   14.8,
+   927294776
+  ],
+  [
+   17.18,
+   928032056
+  ],
+  [
+   19.75,
+   928965944
+  ],
+  [
+   22.24,
+   929785144
+  ],
+  [
+   24.62,
+   930522424
+  ],
+  [
+   27.07,
+   931292472
+  ],
+  [
+   29.54,
+   1151411680
+  ],
+  [
+   31.91,
+   959210976
+  ],
+  [
+   34.48,
+   956933600
+  ],
+  [
+   37.54,
+   12167153448
+  ],
+  [
+   40.0,
+   1489136080
+  ]
+ ],
+ "ps_before": "2026-10-06T00:27:33-0700\nmemorystatus_level=88 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n59322  97008  87.7 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n  557  37024   7.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 1012  14832   6.2 /usr/libexec/pboard\n  855 1220720   4.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  626 305616   4.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n37026 107840   4.0 $HOME/Projects/investments/.venv/bin/python3\n  629 198880   3.9 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  25216   3.7 /System/Library/CoreServices/launchservicesd\n 1240  41840   3.3 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  582  69264   2.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n",
+ "others_at_start": []
+}

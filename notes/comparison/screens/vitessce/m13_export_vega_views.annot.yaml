@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m13_export_vega_views.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (hosted app at vitessce.io, 2026-10-04)",
+ "data": "bm_demo.zarr (8,090 cells), served on 127.0.0.1:8904",
+ "url": "https://vitessce.io/#?url=http://127.0.0.1:8904/config_matrix.json",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/vitessce/recap_b.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "export",
+   "mark": "P",
+   "caption": "The Vega views (Cell Set Sizes, Histogram, Expression by Cell Set) carry a '...' export menu; the deck.gl scatterplot has none"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    19,
+    609,
+    435,
+    272
+   ],
+   "label": "Cell Set Sizes",
+   "selector": ".vega-embed >> nth=0"
+  },
+  {
+   "n": 2,
+   "box": [
+    481,
+    609,
+    436,
+    272
+   ],
+   "label": "Histogram (Mpo)",
+   "selector": ".vega-embed >> nth=1"
+  }
+ ]
+}

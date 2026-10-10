@@ -1,0 +1,28 @@
+version: 1
+image: m04_slots_obsm_layers_obsp_by_code.jpg
+tool: scanpy-seurat
+software: scanpy 1.11.5, anndata 0.12.19 (code output; Seurat not run)
+data: bm_demo.h5ad (8,090 cells)
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/scanpy-seurat/matrix_check.py
+source: manual
+image_sha256: 7769e66e74f6b0393976ce42fac1f96980940da6ccb39eb795d26b68000cb4f2
+proves:
+- column: slots
+  mark: P
+  caption: 'By code only (scanpy): one figure reads obsm[''X_draw_graph_fa''], layers[''counts''] and an obsp row;
+    no GUI reaches them.'
+- column: cells
+  mark: P
+  caption: 'By code only (scanpy): obsp[''connectivities''] row 4236 drawn as a colour on UMAP.'
+callouts:
+- n: 1
+  box: [92, 4, 218, 24]
+  label: obsm['X_draw_graph_fa'] as the axes
+- n: 2
+  box: [467, 4, 228, 24]
+  label: layers['counts'], gene Mpo, as colour
+- n: 3
+  box: [842, 4, 264, 24]
+  label: obsp['connectivities'] row 4236 as colour (sparse kNN row, nearly all 0)

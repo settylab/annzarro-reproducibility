@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m08_filters_compare_page.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (scope.aertslab.org)",
+ "data": "Wouters_Human_Melanoma / 10_Baselines_filteredRegulons.loom (4,322 cells)",
+ "url": "https://scope.aertslab.org/#/Wouters_Human_Melanoma/Wouters_Human_Melanoma%2F10_Baselines_filteredRegulons.loom/compare",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/scope/matrix_check_fix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "filters",
+   "mark": "P",
+   "caption": "Compare page: annotation categories (cell_line, state, experiment) to drag onto up to 4 displays, OR/AND superposition; categorical only. Drag not completed headless"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    258,
+    39,
+    1068,
+    95
+   ],
+   "label": "displays / superposition",
+   "selector": "text=Number of displays: >> xpath=.."
+  },
+  {
+   "n": 2,
+   "box": [
+    444,
+    297,
+    277,
+    20
+   ],
+   "label": "drop zone",
+   "selector": "text=Drag and drop here the annotations you want to compare. >> nth=0"
+  }
+ ]
+}

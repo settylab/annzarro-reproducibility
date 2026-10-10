@@ -1,0 +1,101 @@
+{
+ "cmd": [
+  "$ENVS_ROOT/rceiling/bin/Rscript",
+  "seurat_task.R",
+  "bpcells",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "benchmark/tool_ceiling/shots/seurat_bpcells_run_1000000_r0",
+  "$DATA_ROOT/tool_ceiling_data/bpcells/first1000000"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 25.79,
+ "peaks": {
+  "proc": {
+   "fp_peak": 1360808312,
+   "fp_lifetime_sum": 1360808312,
+   "rss_peak": 3388260352,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1360808312,
+   "rss_peak": 3388260352,
+   "fp_lifetime_sum": 1360808312
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   1016024
+  ],
+  [
+   1.47,
+   384730120
+  ],
+  [
+   2.89,
+   720848216
+  ],
+  [
+   4.33,
+   745522688
+  ],
+  [
+   5.77,
+   787334752
+  ],
+  [
+   7.22,
+   769115744
+  ],
+  [
+   8.67,
+   776947296
+  ],
+  [
+   10.17,
+   786384504
+  ],
+  [
+   11.62,
+   830441152
+  ],
+  [
+   13.08,
+   938100704
+  ],
+  [
+   14.55,
+   966395920
+  ],
+  [
+   15.98,
+   1236207896
+  ],
+  [
+   17.44,
+   1182223000
+  ],
+  [
+   18.87,
+   1252887240
+  ],
+  [
+   20.3,
+   1163676480
+  ],
+  [
+   21.75,
+   1118489576
+  ],
+  [
+   23.2,
+   1116327008
+  ],
+  [
+   24.65,
+   1046285456
+  ]
+ ],
+ "ps_before": "2026-10-03T22:39:00-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  629 154208  11.9 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n57113 1903072   5.1 $HOME/.local/bin/claude\n86901 499408   2.4 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  626 488416   2.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n80588 617008   1.9 $HOME/.local/bin/claude\n72627 493264   1.1 $HOME/.local/bin/claude\n47413 607760   1.0 /Applications/cmux.app/Contents/MacOS/cmux\n 4725 642640   1.0 claude\n34972 494384   0.8 $HOME/.local/bin/claude\n92291  30816   0.6 .venv/bin/python\n"
+}

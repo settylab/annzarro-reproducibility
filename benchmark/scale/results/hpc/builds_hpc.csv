@@ -1,0 +1,8 @@
+job_id,step,commands,node,cpus,req_mem,start,end,elapsed,max_rss_kib
+10000196,download,"run_site.sh download + metadata parquets + footer check",hpc-node-42,8,8G,2026-10-02T18:26:51,2026-10-02T18:49:13,00:22:22,232336
+10000646,A1,"build_tahoe.py obs; umap_tahoe.py sample; build_tahoe.py refit",hpc-node-02,16,96G,2026-10-02T19:12:03,2026-10-02T19:30:53,00:18:50,38623672
+10000650,A2,"build_tahoe.py master --n-pcs 50 --detect-at; panel; panel-master",hpc-node-02,16,200G,2026-10-02T19:30:55,2026-10-02T22:57:50,03:26:55,45148464
+10000651,B,"build_tahoe.py store --genes + check for 1M..95.6M",hpc-node-02,16,320G,2026-10-02T22:59:01,2026-10-03T02:45:15,03:46:14,265008120
+10000652,C,"umap_tahoe.py fit; place; validate",hpc-node-45,24,128G,2026-10-02T23:23:03,2026-10-03T00:32:31,01:09:28,30938976
+10000653,D,"umap_tahoe.py write x7; tahoe_umap_95M.f32.npy",hpc-node-03,4,16G,2026-10-03T02:45:26,2026-10-03T02:48:51,00:03:25,85408
+10008693,F,"build_tahoe.py plot-copy (slim 95.6M)",hpc-node-33,4,32G,2026-10-03T02:49:27,2026-10-03T02:58:02,00:08:35,2912472

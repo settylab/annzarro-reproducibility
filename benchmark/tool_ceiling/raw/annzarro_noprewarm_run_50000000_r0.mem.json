@@ -1,0 +1,66 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "noprewarm",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first50000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_noprewarm_run_50000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-test/bin/annzarro"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 13.44,
+ "peaks": {
+  "client": {
+   "fp_peak": 11500671328,
+   "fp_lifetime_sum": 11899702952,
+   "rss_peak": 9824010240,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 2706426688,
+   "fp_lifetime_sum": 2725317824,
+   "rss_peak": 2728558592,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 162362808,
+   "fp_lifetime_sum": 162428344,
+   "rss_peak": 213090304,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 14204394656,
+   "rss_peak": 12549881856,
+   "fp_lifetime_sum": 14625020776
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.22,
+   1144235368
+  ],
+  [
+   4.55,
+   7634124712
+  ],
+  [
+   6.92,
+   10923577552
+  ],
+  [
+   9.21,
+   9897105920
+  ],
+  [
+   11.53,
+   12476732896
+  ]
+ ],
+ "ps_before": "2026-10-03T19:35:03-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n36283  20592   7.1 benchmark/tool_ceiling/.venv/bin/python\n36287  19184   5.0 .venv/bin/python\n86901 508576   3.7 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n47413 613264   2.0 /Applications/cmux.app/Contents/MacOS/cmux\n80588 616160   1.6 $HOME/.local/bin/claude\n57113 2027280   1.2 $HOME/.local/bin/claude\n31621 379904   1.0 $HOME/.local/bin/claude\n34972 494288   0.8 $HOME/.local/bin/claude\n92291  30832   0.5 .venv/bin/python\n84235 259264   0.4 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n"
+}

@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "image": "01_loaded_umap_celltype.jpg",
+ "tool": "kana",
+ "software": "Kana v3.2.0 (live build, kanaverse.org)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "https://www.kanaverse.org/kana/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_kana.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Kana v3.2.0 (2026-10-04): embedding tabs offer only obsm keys and 'Choose annotation' only obs columns; no obsp (connectivities, distances, diffusion_distance) can be chosen as a focus"
+  },
+  {
+   "column": "cells",
+   "mark": "N",
+   "caption": "no obsp (cell x cell) matrix is offered as a colour or an axis: tabs are obsm keys, annotations obs columns"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    62,
+    51,
+    365,
+    33
+   ],
+   "label": "embedding tabs: obsm keys only",
+   "selector": "button:has-text('X_diffusion') >> xpath=.."
+  },
+  {
+   "n": 2,
+   "box": [
+    969,
+    362,
+    163,
+    38
+   ],
+   "label": "Choose annotation: obs columns only",
+   "selector": "select >> nth=0"
+  },
+  {
+   "n": 3,
+   "box": [
+    112,
+    131,
+    795,
+    778
+   ],
+   "label": "the one live embedding",
+   "selector": "canvas >> nth=0"
+  }
+ ]
+}

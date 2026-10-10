@@ -1,0 +1,12 @@
+# run=j5_v041 copied=2026-10-08T09:43:48-07:00 host=hpc-demo-node sources=$SCRATCH/annzarro-scale/results_j5 $SCRATCH/annzarro-scale/logs/j5_v041.log $SCRATCH/annzarro-scale/jobs/j5_v041.sh $SCRATCH/annzarro-scale/jobs/j5_slow1m.txt
+path	bytes	sha256	source
+j5_slow1m.txt	2	87428fc522803d31065e7bce3cf03fe475096631e5e07bbd7a0fde60c4cf25c7	$SCRATCH/annzarro-scale/jobs/j5_slow1m.txt
+j5_v041.log	15895	d9918bd61f00dd6fc8ae0b0244e08cbce071e8768bea6426535c130ad5d2d5f0	$SCRATCH/annzarro-scale/logs/j5_v041.log
+j5_v041.sh	6941	5f87261e9662e182e58cc9a8518a47f6a35bbcdb7c2016767181b3817826b1a5	$SCRATCH/annzarro-scale/jobs/j5_v041.sh
+results_j5/annzarro_pin.json	627	e8e190b6fd3359a2d5cf39b3e91242d40880a6e7cfb46413114a2b5cb067dfc0	$SCRATCH/annzarro-scale/results_j5/annzarro_pin.json
+results_j5/canary.csv	5833	701a61feba57ff7d868235c557f673af88840ca122e8dfa3181591cec5221d2e	$SCRATCH/annzarro-scale/results_j5/canary.csv
+results_j5/http_hpc_filerwarm.csv	221684	c0d5939a0373ecc3ac409d57a119a2e1bc0165fa6415608fa5adbe8b1a8d363a	$SCRATCH/annzarro-scale/results_j5/http_hpc_filerwarm.csv
+results_j5/http_hpc_filerwarm_environment.json	1075	b37279b1dd3e564a6a9b999f50e8c1c604d0cf2d122c51f77d5e0a84ae6dca6f	$SCRATCH/annzarro-scale/results_j5/http_hpc_filerwarm_environment.json
+results_j5/warmcheck.tsv	2172	d683a4ab72feb700b487f7823830f128e682f22602b615eb3c33075fec610961	$SCRATCH/annzarro-scale/results_j5/warmcheck.tsv
+results_j5/warmup.tsv	620	7edebba76abe18744a162ef86dfe319c41854f2f9982bec84b0f59653dc7d6aa	$SCRATCH/annzarro-scale/results_j5/warmup.tsv
+results_j5/cold_protocol.json	1719	3c5e58da36346e058b0427adcedf3638ee73dc0ac85871de579d0dd2a5f920bc	$SCRATCH/annzarro-scale/results_j5/cold_protocol.json (added 2026-10-08 by annzscale2)

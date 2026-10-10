@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m08_filters_marker_table_sliders.jpg",
+ "tool": "kana",
+ "software": "Kana v3.2.0 (live build, kanaverse.org)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "https://www.kanaverse.org/kana/",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/kana/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "filters",
+   "mark": "P",
+   "caption": "Marker-table sliders (Log-FC, delta-detected, expression) filter table rows only; the plot is unchanged"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1166,
+    720,
+    44,
+    24
+   ],
+   "label": "marker filters",
+   "selector": "text=Log-FC >> nth=-1"
+  },
+  {
+   "n": 2,
+   "box": [
+    112,
+    131,
+    795,
+    778
+   ],
+   "label": "plot unchanged",
+   "selector": "canvas"
+  }
+ ]
+}

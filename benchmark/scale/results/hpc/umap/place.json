@@ -1,0 +1,31 @@
+{
+ "k": 15,
+ "weights": "1/(L2 distance + 1e-3)",
+ "index": "IVFFlat nlist=4096",
+ "nprobe": 32,
+ "recall_at_k_vs_exact": 0.9970520000000002,
+ "recall_by_nprobe": [
+  {
+   "nprobe": 32,
+   "recall": 0.9970520000000002,
+   "s_per_100k": 1.7924907207489014
+  }
+ ],
+ "target_recall": 0.9,
+ "recall_queries": 100000,
+ "build_s": 11.373950004577637,
+ "place_s": 1858.7688801288605,
+ "n_cells": 95624334,
+ "threads": 24,
+ "versions": {
+  "umap-learn": "0.5.12",
+  "pynndescent": "0.6.0",
+  "faiss-cpu": "1.15.1",
+  "numpy": "2.4.6",
+  "numba": "0.68.0",
+  "scikit-learn": "1.9.1",
+  "zarr": "3.1.6",
+  "python": "3.11.6",
+  "machine": "x86_64 36 cores"
+ }
+}

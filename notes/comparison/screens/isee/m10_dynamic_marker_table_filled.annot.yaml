@@ -1,0 +1,26 @@
+version: 1
+image: m10_dynamic_marker_table_filled.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3) + iSEEu 1.18.0, scran 1.34.0
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: b24bda4bbe0cce6e087d480cf241d916227e83ce42981e62143a1e68383ed21f
+proves:
+- column: de
+  mark: P
+  caption: 'iSEE 2.18.0 with iSEEu 1.18.0: the Dynamic marker table, a panel added in code, ranks 16,285 genes for the
+    selection received from Reduced dimension plot 1.'
+callouts:
+- n: 1
+  box: [10, 55, 908, 455]
+  label: ranked genes with p.value, FDR and logFC (top Cd79a, Cd79b, Ighm)
+- n: 2
+  box: [6, 522, 212, 28]
+  label: Showing 1 to 10 of 16,285 entries
+- n: 3
+  box: [8, 718, 302, 24]
+  label: Receiving selection from Reduced dimension plot 1

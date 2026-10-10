@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "image": "04_filter_macrophage_off_both_scatters.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP1671, human lactation (49,310 cells; All Cells UMAP)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP1671/cellular-and-transcriptional-diversity-over-the-course-of-human-lactation?genes=CD74&facets=cell_type__ontology_label--group--study%3Amacrophage",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_scp.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "SCP 1.20.0 (2026-10-04): 'Filter plotted cells', macrophage unticked, greys those cells in both the CD74 scatter and the cluster scatter at once"
+  },
+  {
+   "column": "subset",
+   "mark": "Y",
+   "caption": "the facet filter restricts what every plot shows to the chosen cells (view only)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1170,
+    292,
+    21,
+    21
+   ],
+   "label": "Cell type: macrophage unticked",
+   "selector": "[data-cap='macro']"
+  },
+  {
+   "n": 2,
+   "box": [
+    6,
+    269,
+    557,
+    658
+   ],
+   "label": "CD74 scatter: macrophages greyed",
+   "selector": "[data-cap='plot0']"
+  },
+  {
+   "n": 3,
+   "box": [
+    595,
+    269,
+    557,
+    387
+   ],
+   "label": "cluster scatter: same cells greyed",
+   "selector": "[data-cap='plot1']"
+  },
+  {
+   "n": 4,
+   "box": [
+    932,
+    572,
+    76,
+    28
+   ],
+   "label": "legend: --Filtered--",
+   "selector": "[data-cap='filtered']"
+  }
+ ]
+}

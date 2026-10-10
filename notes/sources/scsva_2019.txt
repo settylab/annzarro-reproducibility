@@ -1,0 +1,40 @@
+# scSVA (Tabaka, Gould & Regev), sources for the Comparison sentence in body.tex.
+# git clone --depth 1 https://github.com/klarman-cell-observatory/scSVA.git on 2026-10-07T21:45Z; excerpts with sed -n; Crossref and Europe PMC records by API.
+
+## git log -1 --format='%H %ci'
+c9e8fd6b280910eadf9daba35badcf6933c7f353 2019-03-26 12:26:08 -0400
+
+## README.md lines 12-15
+**scSVA** is able to visualize and explore interactively hundreds of millions of cells on a laptop 
+or a billion cells on a moderate desktop computer. 
+As a back-end it uses [VaeX](https://github.com/maartenbreddels/vaex), 
+a fast python library for vector data processing on a grid and uses [Shiny](https://shiny.rstudio.com) for its user interface. 
+
+## README.md line 25
+Visualization of 100 Million cells (FLE up-sampled  for demonstration purposes from 274,000 human bone marrow cells (https://preview.data.humancellatlas.org) 
+
+## docs/index.md lines 129-136
+#### **2D**
+
+The default plot is a density plot, where for a given grid resolution,
+it shows the number of cells within a square. The grid resolution can be
+modified by a scroll bar below the plot. The default resolution is 512
+which means that a plot consists of 512x512=262144 square cells. Users
+can increase the resolution of the grid to produce higher quality
+figures but this results in increasing the plot refreshing time as more
+
+## docs/index.md lines 201-205
+"Reset Group" button will unselect cells. To plot gene expression values
+on 2D or 3D embedding, select a gene in right-hand panel. By default,
+the mean expression values are plotted on the grid but users can change
+the statistic by selecting "Select Statistic". Three options are
+supported: mean, median (the slowest), and maximal expression value. The
+
+## Crossref https://api.crossref.org/works/10.1101/512582 (title; authors; posted; type)
+scSVA: an interactive tool for big data visualization and exploration in single-cell omics
+Tabaka, Marcin; Gould, Joshua; Regev, Aviv
+posted [2019, 1, 6]
+type posted-content
+
+## Europe PMC abstract (DOI:10.1101/512582)
+We present scSVA (single-cell Scalable Visualization and Analytics), a lightweight R package for interactive two- and three-dimensional visualization and exploration of massive single-cell omics data. Building in part of methods originally developed for astronomy datasets, scSVA is memory efficient for more than hundreds of millions of cells, can be run locally or in a cloud, and generates high-quality figures. In particular, we introduce a numerically efficient method for single-cell data embedding in 3D which combines an optimized implementation of diffusion maps with a 3D force-directed layout, enabling generation of 3D data visualizations at the scale of a million cells. To facilitate reproducible research, scSVA supports interactive analytics in a cloud with containerized tools. scSVA is available online at  https://github.com/klarman-cell-observatory/scSVA .

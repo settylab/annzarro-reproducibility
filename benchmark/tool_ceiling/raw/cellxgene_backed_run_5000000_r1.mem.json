@@ -1,0 +1,77 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first5000000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_backed_run_5000000_r1",
+  "--n",
+  "5000000",
+  "--port",
+  "8939"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 16.99,
+ "peaks": {
+  "client": {
+   "fp_peak": 2730863080,
+   "fp_lifetime_sum": 2811522688,
+   "rss_peak": 2860908544,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 11458159520,
+   "fp_lifetime_sum": 11536901912,
+   "rss_peak": 11633606656,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 121615080,
+   "fp_lifetime_sum": 121615080,
+   "rss_peak": 159252480,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 13629689056,
+   "rss_peak": 14356267008,
+   "fp_lifetime_sum": 14348424600
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.15,
+   729752408
+  ],
+  [
+   4.28,
+   1895950080
+  ],
+  [
+   6.4,
+   4480053752
+  ],
+  [
+   8.5,
+   5106988040
+  ],
+  [
+   10.66,
+   4423267336
+  ],
+  [
+   12.85,
+   13189008608
+  ],
+  [
+   14.98,
+   9114550688
+  ]
+ ],
+ "ps_before": "2026-10-03T21:40:18-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n84235 255280  12.4 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n28062  20640   5.0 benchmark/tool_ceiling/.venv/bin/python\n57113 1888688   4.4 $HOME/.local/bin/claude\n  557 651696   4.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  627  34192   2.9 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd\n  855 1691008   2.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  629 154160   2.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  687  48720   2.2 /usr/libexec/syspolicyd\n  596  30144   2.2 /System/Library/CoreServices/launchservicesd\n86901 498768   1.9 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n"
+}

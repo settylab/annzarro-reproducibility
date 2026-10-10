@@ -1,0 +1,15 @@
+=== sources: orig
+update rc=100
+Err:4 http://deb.debian.org/debian buster Release
+Err:5 http://security.debian.org/debian-security buster/updates Release
+Err:6 http://deb.debian.org/debian buster-updates Release
+E: The repository 'http://deb.debian.org/debian buster Release' does not have a Release file.
+E: The repository 'http://security.debian.org/debian-security buster/updates Release' does not have a Release file.
+simulate rc=100
+E: Unable to locate package curl
+E: Package 'bzip2' has no installation candidate
+E: Unable to locate package git
+=== sources: archive
+update rc=0
+simulate rc=0
+19 upgraded, 141 newly installed, 0 to remove and 61 not upgraded.

@@ -1,0 +1,11 @@
+{
+ "run": "J3, job 10100751, hpc-node-27, 2026-10-06 08:09:52-11:41:43 PDT, AnnZarro v0.4.0 (commit 3bdeb09, tree bb2ace6 = tag v0.4.0 49e2a19)",
+ "definition": "node-cold: compute-node page cache evicted for the store's files + a fresh annzarro server process per cold repeat; the file server's cache is NOT controlled",
+ "store_location": "$SCRATCH/annzarro-scale/stores/n<N>/tahoe_<N>.zarr, read in place (NFS4, nfs-scratch-filer:/temp/lab/user); Tahoe-100M-derived (public, CC0-1.0)",
+ "eviction": "annzarro-reproducibility bfd7cd0 benchmark/scale/bench_http.py make_cold(mode='fadvise'): os.posix_fadvise(fd, 0, 0, POSIX_FADV_DONTNEED) on EVERY file of the store (os.walk), before each cold repeat; per-file OSError is ignored",
+ "verification": "none per repeat in this harness (its CSV has no residency column; 'cold prep N s' in the startup note is the eviction time). Indirect: warmcheck.py evicted and checked 60 sampled chunk files per check with mincore: resident_after_evict 0.0 at every check",
+ "server": "a fresh `annzarro start` process per cold repeat (bench_http.py)",
+ "not_evicted": "kernel dentry/inode caches, the NFS client attribute cache, the file server cache",
+ "filer_state": "each store read once from the filer before its rung (warmread.py, warmup.tsv); filer speed sampled pre/post_warm/post_measure (warmcheck.tsv): 175-240 MB/s throughout, the warm-up had no measurable effect",
+ "privileges": "unprivileged (no drop_caches)"
+}

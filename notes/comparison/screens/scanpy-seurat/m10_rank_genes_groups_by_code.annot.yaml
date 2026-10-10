@@ -1,0 +1,22 @@
+version: 1
+image: m10_rank_genes_groups_by_code.jpg
+tool: scanpy-seurat
+software: scanpy 1.11.5, anndata 0.12.19 (code output; Seurat not run)
+data: bm_demo.h5ad (8,090 cells)
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/scanpy-seurat/matrix_check.py
+source: manual
+image_sha256: ad7bb8e322f2260b348e7c0c915691189ec20d6e616f4a46dab119dd25a7ca41
+proves:
+- column: de
+  mark: P
+  caption: 'By code only (scanpy): sc.tl.rank_genes_groups(method=''wilcoxon'') ranks genes for my_region vs other
+    (top Ighm, H3f3a, Ebf1).'
+callouts:
+- n: 1
+  box: [196, 4, 179, 24]
+  label: my_region vs. other
+- n: 2
+  box: [52, 28, 446, 330]
+  label: ranked genes by score

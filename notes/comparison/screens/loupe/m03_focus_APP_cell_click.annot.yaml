@@ -1,0 +1,25 @@
+version: 1
+image: m03_focus_APP_cell_click.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: 9a821f5afdda6651356477c4f59b6bf11c6c58e7b2b422c0fb8cc4c45bbd7e7f
+proves:
+- column: focus
+  mark: N
+  caption: 'after a click on one cell: no detail box, no change in any panel (still ''2879 barcodes found'')'
+callouts:
+- n: 1
+  box:
+  - 270
+  - 57
+  - 655
+  - 327
+  label: UMAP after a single-cell click

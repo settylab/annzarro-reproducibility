@@ -1,0 +1,66 @@
+{
+ "metadata": {
+  "upload_type": "dataset",
+  "title": "A UMAP of every cell of Tahoe-100M (95,624,334 cells)",
+  "creators": [
+   {
+    "name": "Otto, Dominik J.",
+    "affiliation": "Fred Hutchinson Cancer Center"
+   },
+   {
+    "name": "Baasri, Siddharth",
+    "affiliation": "University of Washington"
+   },
+   {
+    "name": "Setty, Manu",
+    "affiliation": "Fred Hutchinson Cancer Center"
+   }
+  ],
+  "description": "<p>Two-dimensional UMAP coordinates for all 95,624,334 cells of Tahoe-100M (Tahoe Therapeutics and the Arc Institute; Zhang et al., Cell 2026), keyed by the release's cell identifier BARCODE_SUB_LIB_ID and by row in the Hugging Face release's shard order, plus the ids of the reference cells the UMAP was fitted on.</p><p>Method: 50 principal components of log-normalised counts (2,000 most variable genes), every cell projected exactly; UMAP (umap-learn; n_neighbors=15, min_dist=0.3, euclidean, random_state=0) fitted on a reference sample of up to 1,430 cells from every plate x cell line stratum; every other cell placed at the inverse-distance-weighted mean of its 15 nearest reference cells in PC space (faiss IVF-Flat, recall 0.997 against exact search). The placed cells are an out-of-sample projection, not a joint UMAP of all cells.</p><p>Made for the AnnZarro manuscript (Otto, Baasri and Setty), which draws every cell of Tahoe-100M in a web browser. Scripts: github.com/settylab/annzarro-reproducibility, benchmark/scale/umap_tahoe.py and benchmark/scale/zenodo_umap.py. See README.md for file layout, checksums and how to join with Tahoe-100M.</p><p>The coordinates are released under CC BY 4.0; Tahoe-100M itself is CC0 1.0.</p>",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+   "single-cell RNA-seq",
+   "Tahoe-100M",
+   "UMAP",
+   "embedding",
+   "perturbation atlas",
+   "AnnZarro",
+   "visualization",
+   "large-scale"
+  ],
+  "related_identifiers": [
+   {
+    "identifier": "10.1016/j.cell.2026.08.035",
+    "relation": "isDerivedFrom",
+    "resource_type": "publication-article",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "https://huggingface.co/datasets/tahoebio/Tahoe-100M",
+    "relation": "isDerivedFrom",
+    "resource_type": "dataset",
+    "scheme": "url"
+   },
+   {
+    "identifier": "10.5281/zenodo.15587768",
+    "relation": "isSupplementedBy",
+    "resource_type": "dataset",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "https://github.com/settylab/annzarro-reproducibility",
+    "relation": "isSupplementTo",
+    "resource_type": "software",
+    "scheme": "url"
+   },
+   {
+    "identifier": "https://github.com/settylab/annzarro",
+    "relation": "isSupplementTo",
+    "resource_type": "software",
+    "scheme": "url"
+   }
+  ],
+  "version": "1.0"
+ }
+}

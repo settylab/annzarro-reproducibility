@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "01_annotate_mpo_colours_embedding_and_scatter.jpg",
+ "tool": "cellxgene",
+ "software": "CELLxGENE Annotate 1.3.0 (local)",
+ "data": "bm_demo.h5ad (8,090 cells; obsp holds connectivities, distances, diffusion_distance; one counts layer)",
+ "url": "http://127.0.0.1:8903/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Annotate 1.3.0 (2026-10-04): feature colouring, not a focus: Mpo (one column of X) colours the UMAP and the Elane vs Mpo scatterplot together"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    362,
+    0,
+    676,
+    900
+   ],
+   "label": "UMAP coloured by Mpo",
+   "selector": "[data-testid='layout-graph']"
+  },
+  {
+   "n": 2,
+   "box": [
+    432,
+    528,
+    348,
+    288
+   ],
+   "label": "Elane vs Mpo scatterplot, coloured by Mpo",
+   "selector": "[data-testid='scatterplot']"
+  },
+  {
+   "n": 3,
+   "box": [
+    1362,
+    101,
+    32,
+    32
+   ],
+   "label": "colour by Mpo",
+   "selector": "[data-testid='colorby-Mpo']"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "napari_task.py",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first1000000.zarr",
+  "benchmark/tool_ceiling/shots/napari_allpoints_run_1000000_r0",
+  "--n",
+  "1000000",
+  "--all-points"
+ ],
+ "status": "error",
+ "rc": -6,
+ "wall_s": 6.11,
+ "peaks": {
+  "proc": {
+   "fp_peak": 6101308552,
+   "fp_lifetime_sum": 6102242608,
+   "rss_peak": 5647597568,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6101308552,
+   "rss_peak": 5647597568,
+   "fp_lifetime_sum": 6102242608
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8602008
+  ],
+  [
+   1.47,
+   183092136
+  ],
+  [
+   2.93,
+   295371856
+  ],
+  [
+   4.36,
+   2000538120
+  ],
+  [
+   5.85,
+   5995517208
+  ]
+ ],
+ "ps_before": "2026-10-05T00:28:57-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 3645  56384  95.9 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n98631 483984   7.7 $HOME/.local/bin/claude\n57113 2884272   5.6 $HOME/.local/bin/claude\n93323 1098928   3.3 $HOME/.local/bin/claude\n 3640  14224   3.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  774   6160   3.0 /usr/libexec/sysmond\n92291  30992   1.6 .venv/bin/python\n 6219  59392   1.5 $HOME/Projects/investments/.venv/bin/python3\n86901 573136   0.9 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 4725 641072   0.9 claude\n",
+ "others_at_start": []
+}

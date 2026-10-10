@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "image": "m04_slots_annotation_menu_SCP2510.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP2510 (1,459,214 cells)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP2510/human-lung-cancer-harbors-spatially-organized-stem-immunity-hubs-that-associate-with-response-to-immunotherapy#study-visualize",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/single-cell-portal/matrix_check_fix2.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "slots",
+   "mark": "P",
+   "caption": "Annotation menu = cell metadata columns (OPTIONS, biosample_id, donor_id, library, ntx, ngene, hubType, type_lvl1, type_lvl2, sex, hubID (Too many values), species (Only one value), species__ontology_label (Only one value), disease (Only one value), disease__ontology_label (Only one value), organ (Only one value), organ__ontology_label (Only one value), library_preparation_protocol (Only one value)); Clustering = embeddings; no obsp/varp/varm/uns"
+  },
+  {
+   "column": "cells",
+   "mark": "N",
+   "caption": "No pairwise cell x cell entry in Clustering, Spatial groups or Annotation menus"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1179,
+    361,
+    210,
+    308
+   ],
+   "label": "annotation menu",
+   "selector": "div[class*=menu]"
+  },
+  {
+   "n": 2,
+   "box": [
+    1179,
+    145,
+    210,
+    66
+   ],
+   "label": "clustering = embeddings",
+   "selector": "text=Clustering"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "image": "g03_annot_image_visual_parameters_all_sections.jpg",
+ "tool": "isee",
+ "software": "iSEE 2.18.0 (Bioc 3.20, R 4.4.3)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8902",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_isee.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "annot",
+   "mark": "N",
+   "caption": "iSEE 2.18.0 (Bioc 3.20, R 4.4.3) (2026-10-04): Visual parameters with every section on (Color, Shape, Size, Point, Facet, Text): colour, shape, size, point, facet, text and other settings; no control writes a label to colData"
+  },
+  {
+   "column": "image",
+   "mark": "N",
+   "caption": "iSEE 2.18.0 (Bioc 3.20, R 4.4.3) (2026-10-04): no image or tissue layer among the Visual parameters of the plot"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    10,
+    0,
+    447,
+    1400
+   ],
+   "label": "Visual parameters, all sections shown",
+   "selector": "[data-gap='visual']"
+  },
+  {
+   "n": 2,
+   "box": [
+    26,
+    49,
+    415,
+    30
+   ],
+   "label": "sections: Color, Shape, Size, Point, Facet, Text",
+   "selector": "input[name=ReducedDimensionPlot1_VisualChoices] >> xpath=ancestor::div[contains(@class,'shiny-input-checkboxgroup')][1]"
+  }
+ ]
+}

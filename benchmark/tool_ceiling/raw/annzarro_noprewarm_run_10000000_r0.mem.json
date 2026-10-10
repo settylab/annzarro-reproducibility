@@ -1,0 +1,50 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "noprewarm",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first10000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_noprewarm_run_10000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-test/bin/annzarro"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 4.16,
+ "peaks": {
+  "client": {
+   "fp_peak": 4171492968,
+   "fp_lifetime_sum": 4861505992,
+   "rss_peak": 2886123520,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 871941536,
+   "fp_lifetime_sum": 871941536,
+   "rss_peak": 894828544,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 163624064,
+   "fp_lifetime_sum": 163656832,
+   "rss_peak": 214597632,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 5043401736,
+   "rss_peak": 3780919296,
+   "fp_lifetime_sum": 5733447528
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.33,
+   4016435368
+  ]
+ ],
+ "ps_before": "2026-10-03T18:24:36-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1042400 221.2 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n42097 302896  81.5 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  855 1535120  61.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n97961 699328  20.1 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n47413 619856  12.6 /Applications/cmux.app/Contents/MacOS/cmux\n  626 527488   9.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 2100576   9.3 $HOME/.local/bin/claude\n37964 1746240   6.3 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n 1012  17456   6.3 /usr/libexec/pboard\n97977 254064   6.0 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n"
+}

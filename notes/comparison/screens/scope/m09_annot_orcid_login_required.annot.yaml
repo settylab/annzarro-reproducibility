@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m09_annot_orcid_login_required.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (scope.aertslab.org)",
+ "data": "Wouters_Human_Melanoma / 10_Baselines_filteredRegulons.loom (4,322 cells)",
+ "url": "https://scope.aertslab.org/#/Wouters_Human_Melanoma/Wouters_Human_Melanoma%2F10_Baselines_filteredRegulons.loom/gene",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/scope/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "annot",
+   "mark": "Y",
+   "caption": "Cluster annotation and voting need ORCID login (button shown); not exercised without an account"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    702,
+    5,
+    166,
+    40
+   ],
+   "label": "ORCID login",
+   "selector": "text=Authenticate with ORCID"
+  }
+ ]
+}

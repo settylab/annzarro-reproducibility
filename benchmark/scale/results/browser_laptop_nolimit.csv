@@ -1,0 +1,4 @@
+site,store,n_cells,mode,rep,event,seq,gene,status,seconds,n_points,js_heap,renderer_rss,server_rss_peak,note,timestamp
+laptop,tahoe_5M.zarr,5000000,all,0,first_plot,0,MALAT1,ok,39.455687708221376,5000000,4172784157,5101191168,2034974720," | gl: ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",1790990144.988841
+laptop,tahoe_5M.zarr,5000000,all,0,recolour,0,TANC1,crash,38.68062016647309,5000000,4193517012,5732155392,2042101760,,1790990184.230557
+laptop,tahoe_10M.zarr,10000000,all,0,first_plot,0,MALAT1,crash,51.26337220799178,-1,1956584834,5179621376,3773366272," | gl: ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",1790990243.487914

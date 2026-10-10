@@ -1,0 +1,92 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_200000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_sub_run_200000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 20.41,
+ "peaks": {
+  "client": {
+   "fp_peak": 1677960120,
+   "fp_lifetime_sum": 1803020104,
+   "rss_peak": 1403043840,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 6072801016,
+   "fp_lifetime_sum": 6193207560,
+   "rss_peak": 6105169920,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 128222488,
+   "fp_lifetime_sum": 128222488,
+   "rss_peak": 163561472,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6485784808,
+   "rss_peak": 7228178432,
+   "fp_lifetime_sum": 7996227664
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.19,
+   954033248
+  ],
+  [
+   4.43,
+   907519600
+  ],
+  [
+   6.77,
+   950347640
+  ],
+  [
+   9.04,
+   1659267512
+  ],
+  [
+   11.33,
+   2361011120
+  ],
+  [
+   13.58,
+   3023154600
+  ],
+  [
+   15.86,
+   3704729480
+  ],
+  [
+   18.12,
+   5758760664
+  ],
+  [
+   20.41,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-05T00:20:09-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n91118  46784  86.5 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n  855 1978048  43.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n84235 361840  12.1 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n  629 241504   3.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30912   2.5 /System/Library/CoreServices/launchservicesd\n  626 513872   2.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 2884176   2.2 $HOME/.local/bin/claude\n 1012  17904   2.1 /usr/libexec/pboard\n  557 567648   1.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n34762 376416   1.7 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

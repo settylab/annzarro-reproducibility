@@ -1,0 +1,50 @@
+# scSVA (klarman-cell-observatory/scSVA @ c9e8fd6, 2019-03-26) runtime environment.
+# Period-pinned to R 3.6 / Python 3.7 (scSVA README: R >= 3.4.3, Python 3.6, vaex pre-4.x).
+name: scsva
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  - python=3.7
+  - numpy=1.17
+  - vaex-core=2.6
+  - vaex-hdf5
+  - pyopengl
+  - h5py
+  - r-base=3.6
+  - r-remotes
+  - r-reticulate
+  - bioconductor-rhdf5
+  - r-matrix
+  - r-ggplot2
+  - r-cairo
+  - r-mass
+  - r-rcolorbrewer
+  - r-colorramps
+  - r-dichromat
+  - r-viridis
+  - r-colourpicker
+  - r-shiny
+  - r-shinydashboard
+  - r-shinythemes
+  - r-shinyfiles
+  - r-shinybs
+  - r-shinyjqui
+  - r-shinyace
+  - r-scales
+  - r-sp
+  - r-extrafont
+  - r-plyr
+  - r-dplyr
+  - r-ggrepel
+  - r-plotly
+  - r-plot3d
+  - r-dt
+  - r-data.table
+  - r-tablehtml
+  - r-future
+  - r-future.apply
+  - r-gridextra
+  - r-magick
+  - r-googlecomputeenginer

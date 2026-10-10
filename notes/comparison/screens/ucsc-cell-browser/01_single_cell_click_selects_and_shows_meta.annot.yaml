@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "01_single_cell_click_selects_and_shows_meta.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "A click selects that one cell and lists its own metadata; no neighbour, distance or other relation is shown"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    200,
+    255,
+    700
+   ],
+   "label": "clicked cell's own metadata",
+   "selector": "#tpMetaPanel"
+  },
+  {
+   "n": 2,
+   "box": [
+    1046,
+    883,
+    151,
+    17
+   ],
+   "label": "1 cell selected",
+   "selector": "#tpCellCount"
+  }
+ ]
+}

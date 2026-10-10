@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m13_export_save_image_menu.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_matrix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "export",
+   "mark": "Y",
+   "caption": "Save Image offers PNG and SVG"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    369,
+    87,
+    73,
+    96
+   ],
+   "label": "PNG / SVG",
+   "selector": "[role=menu] >> visible=true"
+  },
+  {
+   "n": 2,
+   "box": [
+    369,
+    63,
+    32,
+    32
+   ],
+   "label": "Save Image button",
+   "selector": "[aria-label='Save Image'] >> nth=0"
+  }
+ ]
+}

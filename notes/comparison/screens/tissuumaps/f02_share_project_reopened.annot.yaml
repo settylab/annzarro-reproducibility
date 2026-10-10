@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "f02_share_project_reopened.jpg",
+ "tool": "tissuumaps",
+ "software": "TissUUmaps 3.2.1.11 (server build, pip; TU4 is beta)",
+ "data": "bm_demo_csc.h5ad (8,090 cells x 16,285 genes)",
+ "url": "http://127.0.0.1:8908/comparison_check.tmap?path=.",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/tissuumaps/followup_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "P",
+   "caption": "Reopened comparison_check.tmap (saved from the server build): the dataset and its marker menus come back, but the colouring chosen before saving is not restored; the .tmap stores the menu definitions and one region"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    37,
+    941,
+    863
+   ],
+   "label": "reopened project",
+   "selector": ".openseadragon-container"
+  },
+  {
+   "n": 2,
+   "box": [
+    942,
+    83,
+    450,
+    238
+   ],
+   "label": "restored marker settings",
+   "selector": "#markers-iss-gui"
+  }
+ ]
+}

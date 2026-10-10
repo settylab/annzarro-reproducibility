@@ -1,0 +1,117 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first20000000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_backed_run_20000000_r1",
+  "--n",
+  "20000000",
+  "--port",
+  "8939"
+ ],
+ "status": "cap",
+ "rc": -9,
+ "wall_s": 38.42,
+ "peaks": {
+  "client": {
+   "fp_peak": 7406795848,
+   "fp_lifetime_sum": 7556120824,
+   "rss_peak": 7776436224,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 46488274664,
+   "fp_lifetime_sum": 46569441768,
+   "rss_peak": 47050194944,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 120631608,
+   "fp_lifetime_sum": 123515288,
+   "rss_peak": 159694848,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 52408615800,
+   "rss_peak": 54791471104,
+   "fp_lifetime_sum": 54125562592
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.22,
+   723182352
+  ],
+  [
+   4.36,
+   2360649640
+  ],
+  [
+   6.52,
+   3903516312
+  ],
+  [
+   8.64,
+   3760139904
+  ],
+  [
+   10.75,
+   4297142272
+  ],
+  [
+   12.86,
+   5460587264
+  ],
+  [
+   14.94,
+   7697709408
+  ],
+  [
+   17.07,
+   12497668720
+  ],
+  [
+   19.21,
+   13634441304
+  ],
+  [
+   21.4,
+   14366888960
+  ],
+  [
+   23.47,
+   16049461592
+  ],
+  [
+   25.59,
+   16497433736
+  ],
+  [
+   27.66,
+   16639450824
+  ],
+  [
+   29.75,
+   16680476408
+  ],
+  [
+   31.89,
+   16653721384
+  ],
+  [
+   34.06,
+   18111799896
+  ],
+  [
+   36.27,
+   30539925080
+  ]
+ ],
+ "ps_before": "2026-10-03T21:47:20-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  629 154176   2.9 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30176   2.4 /System/Library/CoreServices/launchservicesd\n57113 1898000   1.9 $HOME/.local/bin/claude\n  626 486736   1.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n80588 616816   0.6 $HOME/.local/bin/claude\n47413 607696   0.6 /Applications/cmux.app/Contents/MacOS/cmux\n92291  30816   0.5 .venv/bin/python\n72627 491920   0.4 $HOME/.local/bin/claude\n40340   1232   0.4 sleep\n40338   1232   0.4 sleep\n"
+}

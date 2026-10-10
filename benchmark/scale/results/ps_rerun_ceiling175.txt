@@ -1,0 +1,22 @@
+# Process snapshots taken during the benchmark. The export keeps the benchmark's own processes (pid, elapsed time, rss in kB, command) and omits the unrelated ones; see the count below.
+2026-10-03 13:47:58
+13:47  up 110 days, 12:32, 27 users, load averages: 1.86 2.04 2.12
+91
+pid=7522 etime=13:50:22 rss_kb=6712752 cmd=$ANNZARRO_SRC/venv/bin/python -m annzarro.cli start --host 127.0.0.1 --port 8800 --data-dir $DATA_ROOT/tahoe_scale/stores --no-browser --a
+pid=7523 etime=13:50:22 rss_kb=130400 cmd=$ANNZARRO_SRC/venv/bin/python -m annzarro.cli start --host 127.0.0.1 --port 8801 --data-dir data --no-browse
+pid=9114 etime=13:49:14 rss_kb=17712 cmd=$ANNZARRO_SRC/venv/bin/python -c from multiprocessing.resource_tracker import main;main(11)
+pid=11336 etime=13:47:51 rss_kb=17824 cmd=$ANNZARRO_SRC/venv/bin/python -c from multiprocessing.resource_tracker import main;main(12)
+pid=11779 etime=01:00:11 rss_kb=98528 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m annzarro.cli start --host 
+pid=12161 etime=59:54 rss_kb=93088 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m annzarro.cli start --host 
+pid=12571 etime=59:35 rss_kb=91904 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m annzarro.cli start --host 
+pid=16774 etime=56:26 rss_kb=92720 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m annzarro.cli start --host 
+pid=19250 etime=54:38 rss_kb=93424 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m annzarro.cli start --host 
+pid=19814 etime=54:13 rss_kb=93376 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m annzarro.cli start --host 
+pid=21476 etime=53:00 rss_kb=94160 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m annzarro.cli start --host 
+pid=22061 etime=52:33 rss_kb=93552 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m annzarro.cli start --host 
+pid=25972 etime=49:44 rss_kb=93488 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m annzarro.cli start --host 
+pid=26510 etime=49:22 rss_kb=93360 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m annzarro.cli start --host 
+pid=47558 etime=33:45 rss_kb=93616 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python $ANNZARRO_SRC/.c
+pid=67736 etime=21:19 rss_kb=89760 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python .venv-test/bin/annzarro start
+pid=95647 etime=00:01 rss_kb=2160 cmd=/bin/bash benchmark/scale/ceiling/queue_rerun5.sh
+# omitted: 30 process lines unrelated to the benchmark

@@ -1,0 +1,93 @@
+{
+ "cmd": [
+  "$ENVS_ROOT/rceiling/bin/Rscript",
+  "seurat_task.R",
+  "bpcells_write",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+  "benchmark/tool_ceiling/shots/seurat_bpcells_write_convert_2000000_r0",
+  "$DATA_ROOT/tool_ceiling_data/bpcells/first2000000"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 23.24,
+ "peaks": {
+  "proc": {
+   "fp_peak": 853378848,
+   "fp_lifetime_sum": 853378848,
+   "rss_peak": 1127661568,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 853378848,
+   "rss_peak": 1127661568,
+   "fp_lifetime_sum": 853378848
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   508096
+  ],
+  [
+   1.48,
+   380011672
+  ],
+  [
+   2.95,
+   825787976
+  ],
+  [
+   4.39,
+   843253368
+  ],
+  [
+   5.84,
+   795362984
+  ],
+  [
+   7.28,
+   795362984
+  ],
+  [
+   8.77,
+   795362984
+  ],
+  [
+   10.19,
+   795362984
+  ],
+  [
+   11.66,
+   795362984
+  ],
+  [
+   13.11,
+   795362984
+  ],
+  [
+   14.55,
+   795362984
+  ],
+  [
+   16.02,
+   795477696
+  ],
+  [
+   17.48,
+   795477696
+  ],
+  [
+   18.92,
+   795477696
+  ],
+  [
+   20.38,
+   795477696
+  ],
+  [
+   21.84,
+   795477696
+  ]
+ ],
+ "ps_before": "2026-10-03T22:40:21-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47413 607824  15.1 /Applications/cmux.app/Contents/MacOS/cmux\n 4725 642640   4.5 claude\n57113 1902912   3.3 $HOME/.local/bin/claude\n  596  30208   2.1 /System/Library/CoreServices/launchservicesd\n91505  22560   2.0 /usr/libexec/trustd\n 1012  16912   2.0 /usr/libexec/pboard\n23101 418224   1.8 /Applications/OneDrive.app/Contents/MacOS/OneDrive\n  629 154112   1.8 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n86901 499072   1.6 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 6219  58672   1.4 $HOME/Projects/investments/.venv/bin/python3\n"
+}

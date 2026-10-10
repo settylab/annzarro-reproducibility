@@ -1,0 +1,152 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "scanpy_task.py",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first8400000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_default_run_8400000_r2"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 44.23,
+ "peaks": {
+  "proc": {
+   "fp_peak": 17782207736,
+   "fp_lifetime_sum": 17782207736,
+   "rss_peak": 18088624128,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 17782207736,
+   "rss_peak": 18088624128,
+   "fp_lifetime_sum": 17782207736
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8733080
+  ],
+  [
+   1.48,
+   1513850560
+  ],
+  [
+   2.92,
+   8127666512
+  ],
+  [
+   4.36,
+   8794659848
+  ],
+  [
+   5.8,
+   9167920376
+  ],
+  [
+   7.28,
+   9341869448
+  ],
+  [
+   8.72,
+   9644334712
+  ],
+  [
+   10.18,
+   10372603968
+  ],
+  [
+   11.61,
+   10372603968
+  ],
+  [
+   13.02,
+   10372603968
+  ],
+  [
+   14.47,
+   10372603968
+  ],
+  [
+   15.92,
+   10372603968
+  ],
+  [
+   17.37,
+   10372603968
+  ],
+  [
+   18.78,
+   10372603968
+  ],
+  [
+   20.27,
+   10372603968
+  ],
+  [
+   21.73,
+   10372603968
+  ],
+  [
+   23.17,
+   10372603968
+  ],
+  [
+   24.68,
+   10378911832
+  ],
+  [
+   26.13,
+   10406092912
+  ],
+  [
+   27.57,
+   17782207736
+  ],
+  [
+   29.03,
+   11250819808
+  ],
+  [
+   30.48,
+   11250819808
+  ],
+  [
+   31.92,
+   11250819808
+  ],
+  [
+   33.37,
+   11250819808
+  ],
+  [
+   34.79,
+   11250819808
+  ],
+  [
+   36.24,
+   11250819808
+  ],
+  [
+   37.7,
+   11250819808
+  ],
+  [
+   39.14,
+   11250819808
+  ],
+  [
+   40.64,
+   11250819808
+  ],
+  [
+   42.09,
+   11250819808
+  ],
+  [
+   43.5,
+   11250819808
+  ]
+ ],
+ "ps_before": "2026-10-04T03:40:06-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47413 563056   6.3 /Applications/cmux.app/Contents/MacOS/cmux\n57113 1705008   1.9 $HOME/.local/bin/claude\n18019  19488   1.6 benchmark/tool_ceiling/.venv/bin/python\n92291  30784   0.6 .venv/bin/python\n34972 470848   0.6 $HOME/.local/bin/claude\n  734  49408   0.6 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n86901 506096   0.5 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n25891  64848   0.5 .venv/bin/python\n80588 582272   0.4 $HOME/.local/bin/claude\n37026 110000   0.4 $HOME/Projects/investments/.venv/bin/python3\n"
+}

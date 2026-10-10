@@ -1,0 +1,20 @@
+# Benchmark environment. The server package is installed from settylab/annzarro
+# at the commit pinned in ANNZARRO_COMMIT (scripts/env.sh), not from PyPI.
+# zarr 3.x matches the live pilot instance (zarr 3.1.6, numcodecs 0.16.5, numpy 2.4.6).
+flask
+flask-cors
+zarr==3.1.6
+numcodecs==0.16.5
+numpy==2.4.6
+pandas
+matplotlib
+werkzeug
+pyjwt
+cryptography
+numba
+psutil
+pyyaml
+h5py==3.12.1  # 3.16 ships no wheel for glibc 2.27 (login + HPC nodes); h5py is unused on the zarr read path
+scipy
+gunicorn
+requests

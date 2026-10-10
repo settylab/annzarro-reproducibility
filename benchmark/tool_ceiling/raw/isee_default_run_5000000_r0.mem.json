@@ -1,0 +1,205 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "isee",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/sce/first5000000.rds",
+  "benchmark/tool_ceiling/shots/isee_default_run_5000000_r0",
+  "--n",
+  "5000000",
+  "--port",
+  "8935"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 80.0,
+ "peaks": {
+  "client": {
+   "fp_peak": 836689960,
+   "fp_lifetime_sum": 900228216,
+   "rss_peak": 1076707328,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 11292535584,
+   "fp_lifetime_sum": 11462079328,
+   "rss_peak": 13914521600,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 138294256,
+   "fp_lifetime_sum": 138294256,
+   "rss_peak": 172605440,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 11672996752,
+   "rss_peak": 14964785152,
+   "fp_lifetime_sum": 12362307544
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.07,
+   794665432
+  ],
+  [
+   4.1,
+   1083220944
+  ],
+  [
+   6.11,
+   1298867680
+  ],
+  [
+   8.1,
+   1485203080
+  ],
+  [
+   10.13,
+   1669343000
+  ],
+  [
+   12.14,
+   1746413408
+  ],
+  [
+   14.17,
+   1906632664
+  ],
+  [
+   16.2,
+   4149997088
+  ],
+  [
+   18.23,
+   4482543352
+  ],
+  [
+   20.25,
+   7744878632
+  ],
+  [
+   22.28,
+   9507191880
+  ],
+  [
+   24.3,
+   9271442672
+  ],
+  [
+   26.31,
+   9756081752
+  ],
+  [
+   28.31,
+   9398337232
+  ],
+  [
+   30.35,
+   9227075760
+  ],
+  [
+   32.37,
+   9507423128
+  ],
+  [
+   34.36,
+   9620079872
+  ],
+  [
+   36.36,
+   9620112640
+  ],
+  [
+   38.37,
+   9620342016
+  ],
+  [
+   40.36,
+   9620456704
+  ],
+  [
+   42.37,
+   9620686080
+  ],
+  [
+   44.37,
+   9620849920
+  ],
+  [
+   46.37,
+   9621062912
+  ],
+  [
+   48.4,
+   9621243136
+  ],
+  [
+   50.4,
+   9621505280
+  ],
+  [
+   52.4,
+   9611429144
+  ],
+  [
+   54.4,
+   10439509632
+  ],
+  [
+   56.41,
+   9349957032
+  ],
+  [
+   58.44,
+   11672996752
+  ],
+  [
+   60.5,
+   10760226720
+  ],
+  [
+   62.51,
+   10810329040
+  ],
+  [
+   64.49,
+   10810378192
+  ],
+  [
+   66.49,
+   10809837520
+  ],
+  [
+   68.5,
+   10809853904
+  ],
+  [
+   70.48,
+   10810001360
+  ],
+  [
+   72.46,
+   10810066896
+  ],
+  [
+   74.47,
+   10810263504
+  ],
+  [
+   76.47,
+   10810410960
+  ],
+  [
+   78.49,
+   10810705872
+  ]
+ ],
+ "ps_before": "2026-10-03T17:52:23-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n94829 323024  50.8 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n47413 617728   5.3 /Applications/cmux.app/Contents/MacOS/cmux\n  626 522736   5.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 2055056   4.4 $HOME/.local/bin/claude\n94868  20656   4.3 benchmark/tool_ceiling/.venv/bin/python\n97961 692064   3.5 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n94873  19200   2.2 .venv/bin/python\n80588 616816   2.2 $HOME/.local/bin/claude\n94828 179280   1.7 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97977 247984   1.5 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n"
+}

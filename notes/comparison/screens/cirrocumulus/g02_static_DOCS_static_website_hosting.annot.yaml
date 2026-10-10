@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "g02_static_DOCS_static_website_hosting.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 documentation (cirrocumulus.readthedocs.io/en/latest, read 2026-10-04)",
+ "data": "docs page: https://cirrocumulus.readthedocs.io/en/latest/installation.html",
+ "url": "https://cirrocumulus.readthedocs.io/en/latest/installation.html",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_cirrocumulus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "static",
+   "mark": "Y",
+   "caption": "docs page, Cirrocumulus 1.1.61 installation docs (read 2026-10-04): the Static Website build (REACT_APP_STATIC=true yarn build) is hosted on a static file host such as S3 or GCS"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    372,
+    422,
+    680,
+    56
+   ],
+   "label": "docs page: \"Host the build directory on your static website hosting service\"",
+   "selector": "[data-gap-phrase='1']"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    0,
+    1400,
+    42
+   ],
+   "label": "docs page, with its URL",
+   "selector": "#gapbanner"
+  }
+ ]
+}

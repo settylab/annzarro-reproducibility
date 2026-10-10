@@ -1,0 +1,32 @@
+version: 1
+image: f1_annot_clustering_popup.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0-dev (official 'ManiVault 1.5.0 macOS installer', manivault_1.5.0_mac.dmg)
+data: bm_demo.h5ad (8,090 cells), project bm_demo.mv
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: '$DEMO_ROOT/manivault/DESKTOP_PROMPT.md follow-up F1-F6 (computer-use desktop session); log: notes/comparison/demos/manivault/session_notes.txt'
+source: manual
+image_sha256: 8905591fad3d8b0d8c39faecf238f9aaad0c982ed80a69fe009028b824dc6dab
+proves:
+- column: annot
+  mark: Y
+  caption: The scatterplot's Clustering popup (2x2-grid toolbar icon) takes a cluster name, a colour and a target
+    cluster dataset, then 'Add cluster' turns the current lasso selection (red, lower left) into a named cluster.
+    Fields stay disabled until a target dataset is chosen.
+callouts:
+- n: 1
+  box:
+  - 348
+  - 176
+  - 812
+  - 320
+  label: 'Clustering popup: Cluster name, Cluster color, Target clusters dataset, Add cluster'
+- n: 2
+  box:
+  - 210
+  - 1105
+  - 150
+  - 180
+  label: lasso selection

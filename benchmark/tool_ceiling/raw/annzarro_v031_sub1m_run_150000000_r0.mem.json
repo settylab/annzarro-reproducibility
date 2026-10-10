@@ -1,0 +1,92 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_150000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_sub1m_run_150000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 23.17,
+ "peaks": {
+  "client": {
+   "fp_peak": 3052283552,
+   "fp_lifetime_sum": 3283774168,
+   "rss_peak": 2858893312,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 4852126568,
+   "fp_lifetime_sum": 4989588904,
+   "rss_peak": 4885118976,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 126284376,
+   "fp_lifetime_sum": 126415448,
+   "rss_peak": 164806656,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5437633256,
+   "rss_peak": 6130581504,
+   "fp_lifetime_sum": 8273363072
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.44,
+   968368936
+  ],
+  [
+   5.0,
+   1210705400
+  ],
+  [
+   7.55,
+   1979541656
+  ],
+  [
+   10.03,
+   2319755968
+  ],
+  [
+   12.52,
+   3251105312
+  ],
+  [
+   14.99,
+   4344508920
+  ],
+  [
+   17.51,
+   3250695928
+  ],
+  [
+   20.03,
+   4703252624
+  ],
+  [
+   22.53,
+   4739101272
+  ]
+ ],
+ "ps_before": "2026-10-05T15:52:41-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 507104  36.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  629 209344   5.9 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  639 129520   4.7 /usr/sbin/coreaudiod\n  596  30336   4.1 /System/Library/CoreServices/launchservicesd\n 1012  17136   3.6 /usr/libexec/pboard\n47477 395200   3.3 $HOME/.local/bin/claude\n49293 461168   2.8 $HOME/.local/bin/claude\n98631 464288   2.5 $HOME/.local/bin/claude\n93226 236096   2.4 /System/Applications/Notes.app/Contents/MacOS/Notes\n47413 649104   1.6 /Applications/cmux.app/Contents/MacOS/cmux\n",
+ "others_at_start": []
+}

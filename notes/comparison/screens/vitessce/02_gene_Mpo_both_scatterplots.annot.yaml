@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "02_gene_Mpo_both_scatterplots.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (hosted app at vitessce.io, 2026-10-04)",
+ "data": "bm_demo.zarr (8,090 cells), served on 127.0.0.1:8904",
+ "url": "https://vitessce.io/#?url=http://127.0.0.1:8904/config.json",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/vitessce/recap_a.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Feature colouring (a2, not a relation focus): Mpo recolours both the UMAP and the FA scatterplot"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1045,
+    328,
+    349,
+    245
+   ],
+   "label": "Mpo chosen in Gene List",
+   "selector": "[data-recap='genelist']"
+  },
+  {
+   "n": 2,
+   "box": [
+    6,
+    86,
+    580,
+    486
+   ],
+   "label": "UMAP by Mpo",
+   "selector": "[data-recap='umap']"
+  },
+  {
+   "n": 3,
+   "box": [
+    583,
+    86,
+    465,
+    486
+   ],
+   "label": "FA by Mpo",
+   "selector": "[data-recap='fa']"
+  }
+ ]
+}

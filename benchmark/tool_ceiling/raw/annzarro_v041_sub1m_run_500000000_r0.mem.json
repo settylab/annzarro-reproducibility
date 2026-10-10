@@ -1,0 +1,95 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_500000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_sub1m_run_500000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 25.87,
+ "peaks": {
+  "client": {
+   "fp_peak": 2523735592,
+   "fp_lifetime_sum": 2604803624,
+   "rss_peak": 2195488768,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 4273655720,
+   "fp_lifetime_sum": 4333097352,
+   "rss_peak": 4294983680,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 130762560,
+   "fp_lifetime_sum": 134416240,
+   "rss_peak": 166035456,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5251789280,
+   "rss_peak": 5543804928,
+   "fp_lifetime_sum": 6937900976
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.57,
+   2238031784
+  ],
+  [
+   5.29,
+   1885005808
+  ],
+  [
+   7.97,
+   2035656832
+  ],
+  [
+   10.65,
+   2309335360
+  ],
+  [
+   13.29,
+   3171920816
+  ],
+  [
+   15.86,
+   4083396176
+  ],
+  [
+   18.39,
+   4096667216
+  ],
+  [
+   20.95,
+   4960088304
+  ],
+  [
+   24.03,
+   4526420328
+  ]
+ ],
+ "ps_before": "2026-10-07T16:25:55-0700\nmemorystatus_level=90 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n 5549 321584 109.4 /System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/MacOS/Safari\n 5597 450320 101.9 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n 5556  74752  94.4 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking\n  626 422976  52.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1240  47984  20.5 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n 5604 387696  17.4 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n 1486  20128  10.3 /System/Cryptexes/App/usr/libexec/SafariNotificationAgent\n 1191 1138608   9.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/corespotlightd\n16956  22896   8.2 /usr/libexec/assetsubscriptiond\n73194 134992   6.7 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n",
+ "others_at_start": [
+  "5699 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "5700 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/synth/synth_tahoe_200000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_synth_run_200000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 47.31,
+ "peaks": {
+  "client": {
+   "fp_peak": 888725832,
+   "fp_lifetime_sum": 923428008,
+   "rss_peak": 1105559552,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 151258216,
+   "fp_lifetime_sum": 281036840,
+   "rss_peak": 186351616,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 115683616,
+   "fp_lifetime_sum": 115683616,
+   "rss_peak": 154320896,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1039934896,
+   "rss_peak": 1291862016,
+   "fp_lifetime_sum": 1204464848
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.23,
+   998417816
+  ],
+  [
+   4.51,
+   838903216
+  ],
+  [
+   6.8,
+   558179760
+  ],
+  [
+   9.16,
+   547317168
+  ],
+  [
+   11.47,
+   547595696
+  ],
+  [
+   13.76,
+   542565808
+  ],
+  [
+   16.02,
+   542844336
+  ],
+  [
+   18.32,
+   542975408
+  ],
+  [
+   20.59,
+   543221168
+  ],
+  [
+   22.83,
+   544007600
+  ],
+  [
+   25.08,
+   544007600
+  ],
+  [
+   27.34,
+   544073136
+  ],
+  [
+   29.55,
+   544351664
+  ],
+  [
+   31.81,
+   529147384
+  ],
+  [
+   34.08,
+   526362104
+  ],
+  [
+   36.34,
+   526575096
+  ],
+  [
+   38.62,
+   526738936
+  ],
+  [
+   40.89,
+   526902776
+  ],
+  [
+   43.16,
+   527197688
+  ],
+  [
+   45.42,
+   527345144
+  ]
+ ],
+ "ps_before": "2026-10-04T21:54:16-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n83794  19808   6.6 .venv/bin/python\n83796  20544   5.8 benchmark/tool_ceiling/.venv/bin/python\n  626 528624   4.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n80005 425920   3.4 $HOME/.local/bin/claude\n57113 2881296   3.4 $HOME/.local/bin/claude\n34762 365008   2.0 $HOME/.local/bin/claude\n86901 570624   1.4 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n47413 660912   1.2 /Applications/cmux.app/Contents/MacOS/cmux\n  557 567792   1.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  734  50560   1.0 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n",
+ "others_at_start": []
+}

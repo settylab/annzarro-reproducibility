@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "image": "h01_subset_filtered_marker_opacity_size.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cirrocumulus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "subset",
+   "mark": "Y",
+   "caption": "Filtered Marker Opacity goes to 0 (slider 0-1), so the unselected cells become invisible and only the selection is shown; a view-only subset, nothing recomputed (Cirrocumulus 1.1.61, 2026-10-04)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    127,
+    9,
+    125,
+    30
+   ],
+   "label": "selection:  687 / 8,090 cells",
+   "selector": "[data-recap='count']"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    758,
+    239,
+    492
+   ],
+   "label": "Filtered Marker Opacity",
+   "selector": "[data-recap='fop']"
+  },
+  {
+   "n": 3,
+   "box": [
+    0,
+    951,
+    224,
+    48
+   ],
+   "label": "Filtered Marker Size",
+   "selector": "[data-recap='fsz']"
+  },
+  {
+   "n": 4,
+   "box": [
+    244,
+    60,
+    1156,
+    892
+   ],
+   "label": "unselected cells dimmed, still drawn",
+   "selector": "[data-recap='p0']"
+  }
+ ]
+}

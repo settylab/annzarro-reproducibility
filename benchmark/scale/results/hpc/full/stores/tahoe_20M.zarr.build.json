@@ -1,0 +1,13 @@
+{
+ "n_cells": 20000000,
+ "n_genes": 62710,
+ "genes": "all",
+ "nnz": 30108451781,
+ "obsm": [],
+ "master": "master.zarr",
+ "seconds": 1732.101561307907,
+ "chunk": 2097152,
+ "compressor": "blosc zstd clevel 3",
+ "zarr": "3.1.6",
+ "anndata": "0.12.19"
+}

@@ -1,0 +1,51 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/_mamba/envs/rtools/bin/Rscript",
+  "to_sce.R",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/sce/first1000000.rds"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 8.03,
+ "peaks": {
+  "proc": {
+   "fp_peak": 2042366400,
+   "fp_lifetime_sum": 2042497472,
+   "rss_peak": 2296070144,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2042366400,
+   "rss_peak": 2296070144,
+   "fp_lifetime_sum": 2042497472
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   1114328
+  ],
+  [
+   1.46,
+   396248096
+  ],
+  [
+   2.91,
+   612402472
+  ],
+  [
+   4.37,
+   740885992
+  ],
+  [
+   5.81,
+   1991313808
+  ],
+  [
+   7.31,
+   1997621648
+  ]
+ ],
+ "ps_before": "2026-10-03T16:59:28-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 2059664   7.3 $HOME/.local/bin/claude\n  626 555328   3.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1240  51824   2.1 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n68627 449664   1.8 $HOME/.local/bin/claude\n80588 628400   1.4 $HOME/.local/bin/claude\n98631 480144   0.8 $HOME/.local/bin/claude\n92291  30832   0.7 .venv/bin/python\n72627 500560   0.6 $HOME/.local/bin/claude\n  627  34256   0.6 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd\n14499   1232   0.5 sleep\n"
+}

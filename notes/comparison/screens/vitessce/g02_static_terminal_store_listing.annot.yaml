@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "g02_static_terminal_store_listing.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce web app at vitessce.io (@vitessce 4.0.10) reading local static files",
+ "data": "$DEMO_ROOT/vitessce/store (config.json, bm_demo.zarr)",
+ "url": "file://$DEMO_ROOT/vitessce/store",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_vitessce.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "static",
+   "mark": "Y",
+   "caption": "terminal, Vitessce (vitessce.io, @vitessce 4.0.10; listing 2026-10-04): the deployment is a JSON config plus zarr chunk files on a static file server, no server code"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    98,
+    1376,
+    890
+   ],
+   "label": "folder listing: config.json + bm_demo.zarr",
+   "selector": "#pre"
+  },
+  {
+   "n": 2,
+   "box": [
+    12,
+    990,
+    1376,
+    23
+   ],
+   "label": "no server code",
+   "selector": "#note"
+  }
+ ]
+}

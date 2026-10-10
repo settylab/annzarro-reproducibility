@@ -1,0 +1,14 @@
+# Python backend for scSVA @ c9e8fd6 (2019-03-26). DESCRIPTION: Python >= 3.6.3, numpy >= 1.13.3, vaex >= 1.0.0-beta.7, pyopengl.
+# vaex-core 2.0.3 is the last 2.x on conda-forge for py36 (2019 era, pre-4.x as the README requires).
+name: scsva-py
+channels: [conda-forge, nodefaults]
+dependencies:
+  - python=3.6
+  - numpy=1.16
+  - vaex-core=2.0.3
+  - vaex-hdf5
+  - pyopengl
+  - h5py
+  # noarch python-utils >= 3 uses := (py3.8+) yet installs under py3.6; vaex 2 -> progressbar2 -> python-utils
+  - python-utils=2.5.6
+  - progressbar2=3.55

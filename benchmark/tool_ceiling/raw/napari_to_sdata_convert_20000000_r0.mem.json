@@ -1,0 +1,128 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "to_sdata.py",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first20000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first20000000.zarr"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 35.61,
+ "peaks": {
+  "proc": {
+   "fp_peak": 27558352640,
+   "fp_lifetime_sum": 27558401792,
+   "rss_peak": 28712042496,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 27558352640,
+   "rss_peak": 28712042496,
+   "fp_lifetime_sum": 27558401792
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8716696
+  ],
+  [
+   1.48,
+   3187493768
+  ],
+  [
+   2.99,
+   12450309480
+  ],
+  [
+   4.5,
+   18985891688
+  ],
+  [
+   5.97,
+   19422083256
+  ],
+  [
+   7.45,
+   20431764720
+  ],
+  [
+   8.93,
+   21719761168
+  ],
+  [
+   10.39,
+   22163145264
+  ],
+  [
+   11.84,
+   22231368288
+  ],
+  [
+   13.27,
+   22638429056
+  ],
+  [
+   14.73,
+   21511831800
+  ],
+  [
+   16.2,
+   22253683464
+  ],
+  [
+   17.71,
+   22663988648
+  ],
+  [
+   19.19,
+   24142776800
+  ],
+  [
+   20.66,
+   24566696944
+  ],
+  [
+   22.12,
+   21527938280
+  ],
+  [
+   23.56,
+   22112732872
+  ],
+  [
+   25.0,
+   22810528032
+  ],
+  [
+   26.46,
+   23513893752
+  ],
+  [
+   27.91,
+   24235232720
+  ],
+  [
+   29.38,
+   24949297168
+  ],
+  [
+   30.86,
+   25614160440
+  ],
+  [
+   32.32,
+   26949801488
+  ],
+  [
+   33.82,
+   27204441616
+  ],
+  [
+   35.25,
+   27558352640
+  ]
+ ],
+ "ps_before": "2026-10-05T00:18:53-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1043168  97.4 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n    1  34688  35.9 /sbin/launchd\n 1250 188864  11.6 /System/Library/CoreServices/NotificationCenter.app/Contents/MacOS/NotificationCenter\n89420  20672   7.4 benchmark/tool_ceiling/.venv/bin/python\n89418  19824   6.0 .venv/bin/python\n37026 118592   3.6 $HOME/Projects/investments/.venv/bin/python3\n86901 573184   3.3 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  582 111552   2.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  855 1975696   2.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  626 513904   1.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n",
+ "others_at_start": []
+}

@@ -1,0 +1,27 @@
+syn_5000000.zarr color=gene mode=total ready 37.7s  js_heap 2.59 GB (517 B/pt)  renderer RSS now 3.38 GB peak 4.54 GB (908 B/pt)  gpu peak 0.42 GB
+total sampled 60891 MB = 12178.1 B/pt
+   3718.8 MB   743.8 B/pt  Uint8Array   <- (anon) plot-update.js:1192
+   2495.4 MB   499.1 B/pt  parse plotly-2.20.0.min.js:134684   <- drawPlot panel-surface.js:277
+   2492.1 MB   498.4 B/pt  parse plotly-2.20.0.min.js:134684   <- applyLogColorbar plot-make.js:1250
+   2487.3 MB   497.5 B/pt  Uint8Array   <- sortTracesByColor plot-make.js:1202
+   2482.7 MB   496.5 B/pt  Uint8Array   <- applyLogColorbar plot-make.js:1250
+   2479.7 MB   495.9 B/pt  parse plotly-2.20.0.min.js:134684   <- sortTracesByColor plot-make.js:1202
+   2475.7 MB   495.1 B/pt  parse plotly-2.20.0.min.js:134684   <- (anon) plot-update.js:1192
+   2463.8 MB   492.8 B/pt  Uint8Array   <- drawPlot panel-surface.js:277
+   1737.6 MB   347.5 B/pt  sort plotly-2.20.0.min.js:124733   <- (anon) plot-update.js:1192
+   1729.6 MB   345.9 B/pt  sort plotly-2.20.0.min.js:124733   <- applyLogColorbar plot-make.js:1250
+   1720.6 MB   344.1 B/pt  sort plotly-2.20.0.min.js:124733   <- sortTracesByColor plot-make.js:1202
+   1719.4 MB   343.9 B/pt  sort plotly-2.20.0.min.js:124733   <- drawPlot panel-surface.js:277
+   1513.8 MB   302.8 B/pt  normalize plotly-2.20.0.min.js:134582   <- drawPlot panel-surface.js:277
+   1299.4 MB   259.9 B/pt  exec   <- (anon) plot-update.js:1192
+   1289.3 MB   257.9 B/pt  exec   <- applyLogColorbar plot-make.js:1250
+   1268.2 MB   253.6 B/pt  rgba plotly-2.20.0.min.js:134844   <- applyLogColorbar plot-make.js:1250
+   1260.5 MB   252.1 B/pt  exec   <- drawPlot panel-surface.js:277
+   1252.9 MB   250.6 B/pt  rgba plotly-2.20.0.min.js:134844   <- (anon) plot-update.js:1192
+   1249.8 MB   250.0 B/pt  rgba plotly-2.20.0.min.js:134844   <- sortTracesByColor plot-make.js:1202
+   1217.2 MB   243.4 B/pt  exec   <- sortTracesByColor plot-make.js:1202
+   1100.7 MB   220.1 B/pt  formatColor plotly-2.20.0.min.js:25417   <- (anon) plot-update.js:1192
+   1099.8 MB   220.0 B/pt  formatColor plotly-2.20.0.min.js:25417   <- applyLogColorbar plot-make.js:1250
+   1098.0 MB   219.6 B/pt  formatColor plotly-2.20.0.min.js:25417   <- sortTracesByColor plot-make.js:1202
+   1095.1 MB   219.0 B/pt  formatColor plotly-2.20.0.min.js:25417   <- drawPlot panel-surface.js:277
+    794.7 MB   158.9 B/pt  split   <- (anon) plot-update.js:1192

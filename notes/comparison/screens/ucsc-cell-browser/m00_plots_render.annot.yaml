@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m00_plots_render.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "static",
+   "mark": "Y",
+   "caption": "The local static build of bm_demo (plain file server, no backend) renders all 8,090 cells"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    246,
+    56,
+    958,
+    834
+   ],
+   "label": "UMAP of bm_demo, 8,090 cells",
+   "selector": "#mpCanvas, canvas"
+  },
+  {
+   "n": 2,
+   "box": [
+    1139,
+    883,
+    58,
+    17
+   ],
+   "label": "cell count",
+   "selector": "#tpCellCount"
+  }
+ ]
+}

@@ -1,0 +1,1399 @@
+# Papers behind the Fig. 1c marks, per tool, with the section or figure that speaks to each
+# matrix column (ids from columns.yaml). Loaded by evidence/tools/refs.py (paper_refs, papers_for).
+#
+# sections.<column>: [{where, quote, indicates, note?}]
+#   where      section heading as printed and/or figure panel or legend
+#   quote      verbatim, at most 25 words ("..." marks an elision); every quote was checked
+#              by script against the full text named in `fulltext` (2026-10-04)
+#   indicates  what this passage alone indicates under the column definition: Y, P or N
+# A column absent under a paper means the paper says nothing about it. Nothing is inferred.
+# archive: closest Wayback snapshot of the landing page (read-only lookup, from archive.yaml).
+# contradictions: places where a paper's text disagrees with notes/comparison/<tool>.md or a mark.
+checked: '2026-10-04'
+tools:
+  cellxgene:
+    papers:
+    - key: megill2021
+      cite: Megill et al. 2021
+      role: primary
+      doi: 10.1101/2021.04.05.438318
+      url: https://doi.org/10.1101/2021.04.05.438318
+      title: 'cellxgene: a performant, scalable exploration platform for high dimensional sparse matrices'
+      year: 2021
+      venue: bioRxiv
+      program: Annotate era (pre-Discover cellxgene)
+      landing_page: https://www.biorxiv.org/content/10.1101/2021.04.05.438318v1
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: bioRxiv PDF v1 (posted 2021-04-06), pdftotext -layout
+      sections:
+        focus:
+        - where: Common uses in single-cell biology
+          quote: painting the scatterplot by a variable automatically renders its conditional distribution across each other variable
+          indicates: N
+          note: Colouring by a variable propagates to the histograms; this is feature/metadata colouring, which the strict definition excludes. No pairwise row is involved.
+        slots:
+        - where: Core features and functionality
+          quote: The tool ingests (1) matrix-form datasets ... (2) continuous or categorical metadata in the same format; (3) a pre-computed, initial embedding
+          indicates: N
+          note: Inputs named are X, obs and an embedding; no layers, varm, obsp or varp.
+        spatial:
+        - where: Core features and functionality
+          quote: a pre-computed, initial embedding of the cells in a low-dimensional space (e.g., PCA, tSNE, UMAP, or spatial coordinates)
+          indicates: Y
+        - where: Core features and functionality
+          quote: The primary visualization is a scatterplot of cells embedded in two dimensions based on their gene expression values or spatial coordinates.
+          indicates: Y
+        - where: Abstract
+          quote: a highly generalizable, web-based interface for exploring high dimensional datasets along categorical, continuous and spatial dimensions
+          indicates: Y
+        filters:
+        - where: Core features and functionality
+          quote: Users can filter these visualizations by interacting with facets based ... on gene expression, metadata, and the embedding itself.
+          indicates: P
+          note: Facet/histogram cross-filtering; no table of cells or genes is described.
+        - where: Implementation and architecture
+          quote: Most affordances in the interface affect other visualizations and controls (for example, filtering by metadata emphasizes corresponding items in an embedding).
+          indicates: P
+          note: Filtered items are emphasised, not masked; no table.
+        annot:
+        - where: Common uses in single-cell biology
+          quote: insights about cells (observations) can be annotated within the application to export and share with collaborators and other researchers.
+          indicates: Y
+        de:
+        - where: Common uses in single-cell biology
+          quote: use cellxgene’s interactive computation capabilities to calculate differential expression (e.g., t-tests) between any arbitrary set of cells
+          indicates: Y
+        share:
+        - where: Core features and functionality
+          quote: Findings can be recorded and shared via exportable annotations.
+          indicates: N
+          note: What is shared is the annotation data (labels), not a view state; consistent with the notes' proposed N, and it is the only basis for the current P.
+        hosted:
+        - where: Figure 1 legend
+          quote: cellxgene is frequently used to host published and unpublished datasets for public exploration.
+          indicates: Y
+        - where: Implementation and architecture
+          quote: cellxgene’s flexible infrastructure has enabled deployment inside of intranet environments by various institutions for large, private collaborations
+          indicates: Y
+        static:
+        - where: Implementation and architecture
+          quote: cellxgene’s architecture consists of a Python server and a JavaScript client.
+          indicates: N
+        lazy:
+        - where: Implementation and architecture
+          quote: Data ingress and egress is accomplished by lazy loading of metadata, facilitated by a REST API.
+          indicates: P
+          note: Lazy client-server transfer of metadata; says nothing about slicing the stored matrix.
+        every_cell:
+        - where: Implementation and architecture
+          quote: To accomplish this with millions of observations in client side JavaScript, we used a combination of D3 [1] WebGL
+          indicates: P
+          note: Implies client-side WebGL rendering of millions of observations; does not state that every cell is drawn without downsampling.
+        subset:
+        - where: Core features and functionality
+          quote: The combinatorial nature of these affordances facilitates arbitrary exploration, cross-filtering, subsetting, coloring, and computationally re-embedding subpopulations of the data.
+          indicates: Y
+        - where: Core features and functionality
+          quote: users can then probe interesting facets of the data by subsetting, computing differential expression (e.g., t-tests), and re-embedding subpopulations of cells.
+          indicates: Y
+    - key: czi2025
+      cite: CZI Cell Science Program et al. 2025
+      role: later
+      doi: 10.1093/nar/gkae1142
+      url: https://doi.org/10.1093/nar/gkae1142
+      title: 'CZ CELLxGENE Discover: a single-cell data platform for scalable exploration, analysis and modeling of aggregated data'
+      year: 2025
+      venue: Nucleic Acids Research 53(D1):D886-D900
+      program: Discover / Explorer
+      landing_page: https://academic.oup.com/nar/article/53/D1/D886/7912032
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+      archive_timestamp: '20260727020852'
+      fulltext: PMC11701654 (PMC-derived plain text)
+      sections:
+        focus:
+        - where: Figure 3 legend, panel A
+          quote: UMAPs can be visualized based on metadata categories, including cell type and other metadata categories, or by the expression of one or multiple genes
+          indicates: N
+          note: Feature/metadata colouring only; excluded by the strict definition.
+        remote:
+        - where: Results, 'Census provides efficient programmatic access to CZ CELLxGENE data for flexible exploration and reanalysis'
+          quote: Census offers efficient, low-latency access for larger-than-memory slices of CZ CELLxGENE data, which users can access through Python and R APIs
+          indicates: P
+          note: Census (code API on S3), not the Explorer GUI; nothing says Explorer reads user-supplied remote stores.
+        - where: Materials and methods, 'TileDB-SOMA development for census'
+          quote: As the Census is currently hosted on AWS S3, access to its data is effectively limited only by a user’s network bandwidth and compute resources.
+          indicates: P
+          note: Census, code access only.
+        spatial:
+        - where: Discussion
+          quote: ongoing work in both CZ CELLxGENE Explorer as well as Census seeks to support these efforts and technologies
+          indicates: P
+          note: Refers to spatial information; as written (methods dated October 2023), Explorer spatial support is presented as ongoing work, not shipped.
+        filters:
+        - where: Results, 'Explorer allows interactive exploration and analysis of individual single-cell datasets up to 4 M cells'
+          quote: Users can facet these visualizations based on gene expression, metadata and the embedding itself.
+          indicates: P
+          note: Facet cross-filtering, no table.
+        annot:
+        - where: Introduction
+          quote: CZ CELLxGENE Discover builds on the earlier work CZ CELLxGENE Annotate that enabled exploration, analysis and annotation of large-scale single-cell datasets
+          indicates: Y
+          note: Annotation editing is attributed to Annotate; Discover is described as 'optimized for dissemination and reanalysis'.
+        - where: Results, 'Submission workflow'
+          quote: CZ CELLxGENE does not include any alignment, cluster or annotation pipeline so all requirements, including cell population labels, must be provided by the contributor
+          indicates: N
+          note: About the curation pipeline, not user labelling in the GUI; relevant only in that Discover itself does not produce labels.
+        de:
+        - where: Results, 'Explorer allows interactive exploration and analysis of individual single-cell datasets up to 4 M cells'
+          quote: performing differential gene expression (Welch’s t-test)
+          indicates: Y
+        - where: Materials and methods, 'Performant visualization and analysis for up to 4 million cells via explorer'
+          quote: allow for the interactive comparison of populations of up to 1.5 million cells in under 60 s.
+          indicates: Y
+        hosted:
+        - where: Abstract
+          quote: Available via a free-to-use online data portal, CZ CELLxGENE hosts a growing corpus of community-contributed data of over 93 million unique cells.
+          indicates: Y
+        - where: Introduction
+          quote: Features within CZ CELLxGENE, such as ‘Explorer and Gene Expression’, provide easy-to-use no-code web-based visualizations of data from a given dataset or collection
+          indicates: Y
+        static:
+        - where: Materials and methods, 'Performant visualization and analysis for up to 4 million cells via explorer'
+          quote: This algorithm and numerous other optimizations in the backend allow for the interactive comparison of populations
+          indicates: N
+          note: Explorer depends on a backend.
+        lazy:
+        - where: Materials and methods, 'Performant visualization and analysis for up to 4 million cells via explorer'
+          quote: At the heart of its memory efficiency lies the use of TileDB Embedded ... as its data storage engine, a powerful, out-of-core solution
+          indicates: Y
+        - where: Materials and methods, 'TileDB-SOMA development for census'
+          quote: CZI’s single-cell team had previously employed TileDB technology for other CZ CELLxGENE applications, including Explorer and Gene Expression.
+          indicates: Y
+        every_cell:
+        - where: Materials and methods, 'Performant visualization and analysis for up to 4 million cells via explorer'
+          quote: we built a custom renderer in WebGL, a JavaScript API for rendering high-performance graphics, to efficiently render millions of points in the cell embeddings
+          indicates: Y
+        - where: Figure 3 legend, panel A
+          quote: A UMAP of all 483 152 cells in the Tabula Sapiens dataset available on Explorer
+          indicates: Y
+        subset:
+        - where: Results, 'Explorer allows interactive exploration and analysis of individual single-cell datasets up to 4 M cells'
+          quote: The combinatorial nature of these affordances facilitates arbitrary comparisons through cross-filtering, subsetting and coloring subpopulations of the data (Figure 3A).
+          indicates: Y
+          note: Unlike the 2021 preprint, re-embedding is no longer listed.
+    contradictions:
+    - column: subset
+      note_claim: 'S4: "Yes, both ... View only: the subset keeps the stored embedding coordinates, nothing is recomputed." (notes/comparison/cellxgene.md, Scale group S4; YAML subset detail)'
+      paper: The combinatorial nature of these affordances facilitates arbitrary exploration, cross-filtering, subsetting, coloring, and computationally re-embedding subpopulations of the data.
+      key: megill2021
+      where: Core features and functionality
+      note: Mark Y is not affected, but the primary paper claims subset-and-re-embed; the notes should say the 2021 paper described re-embedding and the current programs do not offer it (NAR 2025 no longer
+        lists it).
+    - column: hosted
+      note_claim: YAML mark P (old reason "curated data only"); notes propose Y
+      paper: cellxgene is frequently used to host published and unpublished datasets for public exploration.
+      key: megill2021
+      where: Figure 1 legend
+      note: Both papers (also NAR Abstract, 'free-to-use online data portal') support the proposed Y, not the current P.
+    - column: spatial
+      note_claim: 'YAML mark Y: "Explorer only: README ''Spatial Mode with Deep Zoom'' (Visium, Slide-seq V2)"'
+      paper: ongoing work in both CZ CELLxGENE Explorer as well as Census seeks to support these efforts and technologies
+      key: czi2025
+      where: Discussion
+      note: 'Soft. Timing only: the NAR text presents Explorer spatial support as ongoing; the mark rests on later code and the live Visium demo, so do not cite NAR for spatial Y.'
+  vitessce:
+    papers:
+    - key: keller2025
+      cite: Keller et al. 2025
+      role: primary
+      doi: 10.1038/s41592-024-02436-x
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      title: 'Vitessce: integrative visualization of multimodal and spatially resolved single-cell data'
+      year: 2025
+      venue: Nature Methods 22(1):63-67
+      landing_page: https://www.nature.com/articles/s41592-024-02436-x?error=cookies_not_supported&code=5b69894d-9f8c-4113-a7e2-974a13eebe3b
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: PMC11725496 (PMC-derived plain text)
+      sections:
+        focus:
+        - where: Main, 'Integrate and explore multimodal data with coordinated multiple views'
+          quote: enabling interactions such as selection of genes and cell types to be reflected in multiple visualizations
+          indicates: N
+          note: Gene selection propagating to all coordinated views is feature colouring, excluded by the strict definition; no pairwise row.
+        slots:
+        - where: Methods, 'Data organization'
+          quote: AnnData objects, which may contain multiple observation-by-feature matrices, dimensionality reductions and spatial coordinates, can be configured using a higher-level joint file type
+          indicates: P
+          note: X/layers and obsm; obsp, varp and varm are not mentioned.
+        remote:
+        - where: Main (paragraph on supported data)
+          quote: Vitessce can access files stored on static web servers and cloud object storage
+          indicates: Y
+        - where: Main, 'Deploy and share interactive visualizations'
+          quote: Vitessce loads data from static files stored on standard web servers or cloud object storage systems including Google Cloud Storage and Amazon Web Services S3.
+          indicates: Y
+        spatial:
+        - where: Fig. 2d legend
+          quote: Schematic of supported visualization layers in the spatial view of Vitessce, namely, points, spots, segmentations and images
+          indicates: Y
+        filters:
+        - where: Main, 'Integrate and explore multimodal data with coordinated multiple views'
+          quote: enabling interactions such as selection of genes and cell types to be reflected in multiple visualizations
+          indicates: P
+          note: Cell-type selection propagates across views; the paper does not describe a table filter or say whether unselected cells are masked.
+        de:
+        - where: Main (closing paragraphs)
+          quote: Future directions for Vitessce include comparative analysis support, increased scalability and additional visualization types
+          indicates: N
+          note: Comparative analysis is future work as of the paper.
+        - where: Main (paragraph on supported data)
+          quote: Data (pre)processing (for example, dimensionality reduction and cell segmentation) must be performed outside of Vitessce or through plugins
+          indicates: N
+          note: Computation is outside the viewer; DE is not named specifically.
+        image:
+        - where: Fig. 2a legend
+          quote: Visualization of a single-molecule FISH experiment containing multiplexed images, spatially resolved RNA molecules and cell segmentations
+          indicates: Y
+        - where: Extended Data Fig. 4 legend
+          quote: by hiding the cell segmentation masks in the spatial plot, uncovering the underlying image data
+          indicates: Y
+        share:
+        - where: Main, 'Integrate and explore multimodal data with coordinated multiple views'
+          quote: Configurations can be saved and shared via uniform resource locator (URL), making the interactive visualization reproducible and trackable
+          indicates: Y
+        export:
+        - where: Main, 'Explore visualizations in different computational environments'
+          quote: Export functions are included in the APIs to simplify remote data hosting.
+          indicates: N
+          note: Data export from the Python/R APIs, not plot image export; the paper says nothing about downloading plots.
+        desktop:
+        - where: Fig. 1a legend
+          quote: Vitessce can be used as a JavaScript component in a web browser or a widget in Python and R analysis environments.
+          indicates: N
+          note: Forms listed (also Methods, 'Using Vitessce') include no downloadable application.
+        hosted:
+        - where: Main (closing paragraphs)
+          quote: Usage of the framework in the data portals for the Human BioMolecular Atlas Program (HuBMAP)38 and Kidney Precision Medicine Project (KPMP)39
+          indicates: P
+          note: Multi-user via host portals; Vitessce has no deployment of its own ('38', '39' are reference numbers in the PMC text).
+        static:
+        - where: Main, 'Deploy and share interactive visualizations'
+          quote: Implemented as a client-side web application without server-side requirements
+          indicates: Y
+        - where: Main
+          quote: including in static websites, web applications, data portals, Jupyter Notebooks, RStudio and R Shiny apps
+          indicates: Y
+        lazy:
+        - where: Methods, 'On-demand loading of data subsets'
+          quote: 'To scale to large datasets, data loading is deferred in multiple cases: multiscale images, multiscale bitmask-based segmentations, genome-mapped data and per-feature subsets of observation-by-feature
+            matrices.'
+          indicates: Y
+        - where: Methods, 'On-demand loading of data subsets'
+          quote: performance is optimized when many observations and few features are stored in each chunk
+          indicates: Y
+        every_cell:
+        - where: Main, 'Tailor visualizations to problem-specific data and biological questions'
+          quote: the scatterplots can display millions of cells and the heatmaps can display tens of thousands of features
+          indicates: Y
+          note: Does not explicitly rule out downsampling; the heatmap aggregates on the GPU (Methods, 'Implementation of custom deck.gl layers'), which concerns features x cells, not the embedding.
+    contradictions: []
+  cirrocumulus:
+    papers:
+    - key: li2020
+      cite: Li et al. 2020 (Cumulus)
+      role: primary
+      doi: 10.1038/s41592-020-0905-x
+      url: https://doi.org/10.1038/s41592-020-0905-x
+      title: Cumulus provides cloud-based data analysis for large-scale single-cell and single-nucleus RNA-seq
+      year: 2020
+      venue: Nature Methods 17:793-798
+      note: No dedicated Cirrocumulus paper; Cirrocumulus is the visualisation component of Cumulus. Only Cirrocumulus passages recorded.
+      landing_page: https://www.nature.com/articles/s41592-020-0905-x?error=cookies_not_supported&code=20dab3d7-fe55-408f-9464-a926436fe496
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: PMC7437817 via NCBI BioC (plain text)
+      sections:
+        share:
+        - where: Results, 'Interactive data visualization, post hoc analysis and data deposition in the Cumulus ecosystem'
+          quote: a serverless application that enables interactive data visualization and sharing
+          indicates: P
+          note: '''Sharing'' is not specified; nothing says a link or file restores the view.'
+        desktop:
+        - where: Online Methods, 'Cirrocumulus implementation'
+          quote: can be run in standalone mode on a personal computer
+          indicates: N
+          note: Local run, which the definition does not score; no downloadable application.
+        hosted:
+        - where: Online Methods, 'Cirrocumulus implementation'
+          quote: It can be hosted on Google App Engine application for collaborative use
+          indicates: Y
+        static:
+        - where: Results, 'Interactive data visualization, post hoc analysis and data deposition in the Cumulus ecosystem'
+          quote: users can visualize their results instantly using Cirrocumulus, a serverless application
+          indicates: P
+          note: Contradicted within the same paper by the Methods (next entry); 'serverless' likely means no user-managed server (App Engine), not static files.
+        - where: Online Methods, 'Cirrocumulus implementation'
+          quote: Cirrocumulus consists of a client-side component implemented in JavaScript and a server component implemented in Python.
+          indicates: N
+          note: The 2020 design has a Python server; the static build the mark rests on is from later docs.
+        lazy:
+        - where: Results, 'Interactive data visualization, post hoc analysis and data deposition in the Cumulus ecosystem'
+          quote: Since Cirrocumulus only downloads to the browser those data that are necessary for visualization (Methods), it is scalable to millions of cells.
+          indicates: Y
+        - where: Online Methods, 'Cirrocumulus implementation'
+          quote: slice variables from a dataset stored as a folder of JSON and PARQUET files
+          indicates: Y
+        every_cell:
+        - where: Online Methods, 'Cirrocumulus implementation'
+          quote: can optionally generate statistical summaries on an n-dimensional grid, thus enabling plotting of millions of cells
+          indicates: P
+          note: Optional server-side binning; default not stated. The notes report this path is commented out at cae75c9, so the Y rests on code, not the paper.
+    contradictions:
+    - column: static
+      note_claim: '"The Results describe it as ''a serverless application that enables interactive data visualization and sharing ...''" (notes/comparison/cirrocumulus.md, What it is)'
+      paper: Cirrocumulus consists of a client-side component implemented in JavaScript and a server component implemented in Python.
+      key: li2020
+      where: Online Methods, 'Cirrocumulus implementation'
+      note: Quote is accurate, but the paper is internally inconsistent; do not cite 'serverless' as support for static Y. The static Y must rest on installation.rst, not the paper.
+  isee:
+    papers:
+    - key: ruealbrecht2018
+      cite: Rue-Albrecht et al. 2018
+      role: primary
+      doi: 10.12688/f1000research.14966.1
+      url: https://doi.org/10.12688/f1000research.14966.1
+      title: 'iSEE: Interactive SummarizedExperiment Explorer'
+      year: 2018
+      venue: F1000Research 7:741
+      landing_page: https://f1000research.com/articles/7-741/v1
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      archive_timestamp: '20260802032036'
+      fulltext: PMC6013759 (PMC-derived plain text, includes the three open referee reports)
+      sections:
+        cells:
+        - where: Figure 1 legend (A); 'Using a multi-panel layout' panel-type list
+          quote: Panel types are available to visualise sample-based reduced dimensionality embeddings (iii), sample-level metadata (iv), and experimental observations across samples for each feature (v).
+          indicates: N
+          note: Enumeration of panel types; none takes a sample x sample matrix. Absence, not an explicit refutation.
+        genes:
+        - where: Figure 1 legend (A); 'Using a multi-panel layout' panel-type list
+          quote: Other panel types include row statistics tables (vi), to facilitate searching across features and their metadata; heatmaps (vii) ... and feature-level metadata plots.
+          indicates: N
+          note: No panel takes a feature x feature matrix. Absence only.
+        focus:
+        - where: Figure 1 legend (B)
+          quote: feature X in the row statistics table determines the y-axis of the feature assay plot, and colours the samples ... by the expression of X
+          indicates: N
+          note: Feature colouring/axis from a single selection, which the strict definition excludes; supports the proposed N.
+        slots:
+        - where: Interface implementation, 'Using a multi-panel layout'
+          quote: All data aspects stored in a SummarizedExperiment can be simultaneously examined in the multi-panel layout of the iSEE interface
+          indicates: P
+          note: The listed panels cover assays, colData, rowData and reducedDim only; no pairwise slot is named.
+        filters:
+        - where: Interface implementation, 'Dynamic linking between panels'
+          quote: selections in transmitting panels control the inclusion and appearance of the corresponding data points in receiving panels
+          indicates: Y
+        - where: Interface implementation, 'Dynamic linking between panels'
+          quote: Row statistics tables can also transmit to various plot types ... by defining a subset of features to visualise in a heatmap.
+          indicates: P
+          note: Table to heatmap only; search-field filters masking every plot are not described in the paper.
+        annot:
+        - where: Referee report 1 (open peer review appended to the article)
+          quote: it would be very useful to enable users to fill new columns of colData based on the interactive grouping of samples
+          indicates: N
+          note: Reviewer request, so absent in v1; reviewer text, not the authors'.
+        de:
+        - where: Referee report 1
+          quote: In the context of single-cell or large-scale analyses, it would be helpful to implement tools for differential abundance analyses and gene set enrichment analyses.
+          indicates: N
+          note: Reviewer request; absent in v1. The current P rests on the later iSEEu DynamicMarkerTable.
+        share:
+        - where: Interface implementation, 'Code tracking and reproducibility'
+          quote: the code required to reproduce the current state of the interface can also be reported ... used in startup scripts to launch an iSEE instance
+          indicates: P
+          note: State is restored by code at launch, not by a link or file in the GUI.
+        export:
+        - where: Interface implementation, 'Code tracking and reproducibility'
+          quote: iSEE automatically memorises the exact R code that was used to generate every plot
+          indicates: P
+          note: Plots reproducible by running code; the paper does not mention image download.
+        desktop:
+        - where: Referee report 3
+          quote: requires that the colleague either have R, iSEE, and all its dependencies installed, or that you have a server running all necessary packages
+          indicates: N
+        hosted:
+        - where: Referee report 3
+          quote: or that you have a server running all necessary packages that you can point the colleague to
+          indicates: Y
+          note: Reviewer text.
+        - where: Conclusion
+          quote: we also anticipate that public instances of iSEE will accompany publications to enable authors to showcase important aspects of their data
+          indicates: P
+          note: Anticipated, not a documented deployment.
+        static:
+        - where: Introduction
+          quote: iSEE is implemented in R using the Shiny framework
+          indicates: N
+          note: 'Needs a live R/Shiny process (also referee report 3: ''a function of how Shiny works'').'
+        every_cell:
+        - where: Interface implementation, 'Additional functionalities'
+          quote: For large data sets, points can be downsampled in a density-dependent manner to accelerate rendering of the plots
+          indicates: P
+          note: Optional downsampling; the paper does not say what the default is (the Y rests on Downsample = FALSE in code).
+        subset:
+        - where: Figure 1 legend (B)
+          quote: Selection of points in the reduced dimension plot ... also determines the samples that are shown in the column data ... plot
+          indicates: Y
+    - key: benedetti2025
+      cite: Benedetti et al. 2025
+      role: later
+      doi: 10.1093/bioadv/vbaf107
+      url: https://doi.org/10.1093/bioadv/vbaf107
+      title: 'iSEEtree: interactive explorer for hierarchical data'
+      year: 2025
+      venue: Bioinformatics Advances 5:vbaf107
+      landing_page: https://academic.oup.com/bioinformaticsadvances/article/doi/10.1093/bioadv/vbaf107/8125648
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: PMC12095132 (PMC-derived plain text)
+      sections:
+        filters:
+        - where: 3.1 Use cases
+          quote: a selection of samples or features can be simultaneously shared across panels without having to subset the original TreeSE object
+          indicates: P
+          note: Selection sharing; no table filter described.
+        export:
+        - where: 2.2 Operative framework
+          quote: Once the desired plots are achieved, they can be downloaded to report and publish findings.
+          indicates: Y
+        - where: 2.3 App functionality
+          quote: our app inherits the complete set of functionality from this foundation, including ... code tracking for reproducibility and downloadable results
+          indicates: Y
+          note: States the download feature is inherited from iSEE itself.
+        desktop:
+        - where: 4.1 Limitations
+          quote: it is still necessary to build TreeSE objects and launch the app either from R or RStudio
+          indicates: N
+        lazy:
+        - where: 4.1 Limitations
+          quote: store the assays of the TreeSE object as out-of-memory matrices provided by the HDF5Matrix class, which accesses data from an HDF5 file
+          indicates: P
+          note: Assays only, server side; matches the current P.
+        subset:
+        - where: 2.2 Operative framework
+          quote: provides several parameters to transform data (Data parameters), control aesthetics (Visual parameters), and subset the data (Selection parameters)
+          indicates: Y
+    contradictions:
+    - column: share
+      note_claim: 'YAML mark Y: "''Display panel settings'' offers ''Download RDS'' of the panel list ... Shiny URL bookmarking can launch a state ''by simply clicking a link''"'
+      paper: the code required to reproduce the current state of the interface can also be reported ... used in startup scripts to launch an iSEE instance
+      key: ruealbrecht2018
+      where: Interface implementation, 'Code tracking and reproducibility'
+      note: The paper describes state restoration by code at launch only, which supports the notes' in-app finding (proposed P), not the YAML Y.
+    - column: largest_documented (figure label, not a matrix column)
+      note_claim: '"The F1000 paper''s examples are smaller (Allen ~379 cells, PBMC 4k)." (notes/comparison/isee.md, Scale group S1; figure label 68.6k)'
+      paper: we explored a mass cytometry study involving more than 170,000 PBMCs from multiple donors before and after stimulation
+      key: ruealbrecht2018
+      where: Use cases, 'Mass cytometry'
+      note: 'Inaccurate note: the paper''s largest example is >170,000 cells (CyTOF), larger than the 68,579-cell vignette; the notes also omit the 7,706-sample TCGA case. The 68.6k label needs revisiting
+        (or a stated reason to exclude CyTOF).'
+  ucsc-cell-browser:
+    papers:
+    - key: speir2021
+      cite: Speir et al. 2021
+      role: primary
+      doi: 10.1093/bioinformatics/btab503
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      title: 'UCSC Cell Browser: visualize your single-cell data'
+      year: 2021
+      venue: Bioinformatics 37(23):4578-4580
+      landing_page: https://academic.oup.com/bioinformatics/article/37/23/4578/6318386
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: PMC8652023 (PMC-derived plain text, texts/ucsc.txt); supplementary figures not read
+      sections:
+        focus:
+        - where: 2 Features; Fig. 1 legend
+          quote: The right side shows the same cells colored by their expression of the gene HES1
+          indicates: N
+          note: Gene feature colouring in a split pane; no stored pairwise row. The strict definition excludes this.
+        slots:
+        - where: 2 Features
+          quote: As a single dataset may produce several x, y coordinates, scientists can switch between different layouts.
+          indicates: P
+          note: Several embeddings (obsm), plus annotations (obs) and expression (X) for colouring; nothing on layers, varm, obsp or varp.
+        - where: 2 Features
+          quote: Cells can be colored based on provided annotations (e.g. cell type, age) or by gene expression using several built-in color palettes.
+          indicates: P
+          note: obs and X only.
+        filters:
+        - where: 2 Features
+          quote: Cells can be selected, either by visually selecting groups or by combining one or more metadata-based filters (Edit > Find Cells).
+          indicates: P
+          note: Metadata filters produce a selection on the one scatter plot; no table.
+        annot:
+        - where: 5 Recent developments and future work
+          quote: During the next few months, we plan to further improve ATAC-seq support and custom annotations.
+          indicates: P
+          note: Names custom annotations as a feature under development; does not describe writing labels back.
+        de:
+        - where: 2 Features
+          quote: violin plots comparing the expression of a gene in the selection against all other cells in the dataset or user-defined ‘background’ cells
+          indicates: N
+          note: One-gene comparison plot, no test.
+        - where: 5 Recent developments and future work
+          quote: Over the next year, we intend to add support for running analysis algorithms on selected cells on-the-fly.
+          indicates: N
+          note: 'Future work as of 2021: no in-session analysis at publication.'
+        image:
+        - where: 5 Recent developments and future work; Supplementary Fig. S3 (not read)
+          quote: We have added the ability to associate large microscopy images with a dataset (Supplementary Fig. S3).
+          indicates: P
+          note: Images associated with a dataset; the main text does not say they are drawn under spatial points.
+        hosted:
+        - where: Availability and implementation
+          quote: We provide the UCSC Cell Browser as a free website where scientists can explore a growing collection of single-cell datasets
+          indicates: Y
+        - where: 3 Comparison to other available tools
+          quote: the ability to host many datasets on a single instance arranged as a hierarchy
+          indicates: Y
+        static:
+        - where: 3 Comparison to other available tools
+          quote: a simple installation procedure that requires no special server infrastructure (e.g. Flask, Shiny)
+          indicates: Y
+        - where: Availability and implementation
+          quote: a freely available python package for scientists to create stable, self-contained visualizations for their own single-cell datasets
+          indicates: Y
+        subset:
+        - where: 2 Features
+          quote: Cells can be selected, either by visually selecting groups or by combining one or more metadata-based filters (Edit > Find Cells).
+          indicates: P
+          note: Selection is described; the paper does not mention hiding or showing only the selection (Hide selected / Only show selected, on which the Y mark rests).
+    contradictions:
+    - column: de
+      note_claim: 'YAML mark P: "Wilcoxon test on a server compute backend (`docs/ui/diffexp.rst` L1-8); not available on a plain static deployment."'
+      paper: Over the next year, we intend to add support for running analysis algorithms on selected cells on-the-fly.
+      key: speir2021
+      where: 5 Recent developments and future work
+      note: 'The paper supports the notes'' later proposal P -> N (DE off by default, absent on the portal). Not a hard contradiction: the paper predates the DE code.'
+  shinycell:
+    papers:
+    - key: ouyang2021
+      cite: Ouyang et al. 2021
+      role: primary
+      doi: 10.1093/bioinformatics/btab209
+      url: https://doi.org/10.1093/bioinformatics/btab209
+      title: 'ShinyCell: simple and sharable visualization of single-cell gene expression data'
+      year: 2021
+      venue: Bioinformatics 37(19):3374-3376
+      landing_page: https://academic.oup.com/bioinformatics/article/37/19/3374/6198103
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: not opened (OUP returned a Cloudflare challenge); sections are recorded against the preprint ouyang2020
+      sections: {}
+    - key: ouyang2020
+      cite: Ouyang et al. 2020 (preprint)
+      role: preprint-of:ouyang2021
+      doi: 10.1101/2020.10.25.354100
+      url: https://doi.org/10.1101/2020.10.25.354100
+      title: 'ShinyCell: Simple and sharable visualisation of single-cell gene expression data'
+      year: 2020
+      venue: bioRxiv
+      landing_page: https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+      archive_timestamp: '20221226151858'
+      fulltext: bioRxiv PDF v1 (posted 2020-10-26), pdftotext -layout (texts/shinycell_pre.txt); two-column layout, quotes reassembled per column
+      sections:
+        focus:
+        - where: 2.2 Visualisation in ShinyCell interactive interface
+          quote: two reduced dimension plots coloured by different information are displayed beside each other (Figure 1a).
+          indicates: N
+          note: Two independently coloured plots for visual comparison; nothing links a focused cell or gene across panels.
+        slots:
+        - where: 2.2 Visualisation in ShinyCell interactive interface
+          quote: Either the cell metadata (e.g. library or cluster membership) or gene expression can be plotted on reduced dimensions (Figure 1b,c)
+          indicates: P
+          note: obs, X and embeddings only; inputs are Seurat or SCE objects (2.1, 2.3).
+        annot:
+        - where: 2.4 Advanced usage
+          quote: The aesthetics and contents of the Shiny app can be customised by modifying the ShinyCell configuration.
+          indicates: N
+          note: Label and palette changes are build-time configuration, not user labels written back from the GUI.
+        export:
+        - where: 2.1 Key features of ShinyCell
+          quote: users can export the plots generated in the Shiny app as PDF or PNG images, which can be used for presentation or publication purposes.
+          indicates: Y
+        - where: Fig. 1 legend (a)
+          quote: different visualisation of single-cell data (in different tabs, highlighted in blue) that can be exported into PDF / PNG images (export buttons in grey).
+          indicates: Y
+        desktop:
+        - where: 2.3 Basic usage
+          quote: The Shiny app can then be opened locally via RStudio (Team and Others, 2020) or be hosted online.
+          indicates: N
+          note: Local run of a generated Shiny app through RStudio, not a downloadable application.
+        hosted:
+        - where: 2.1 Key features of ShinyCell
+          quote: the web interfaces generated by ShinyCell are designed to be memory efficient so that multiple users can access the app simultaneously.
+          indicates: Y
+        - where: 2.1 Key features of ShinyCell
+          quote: the Shiny platform allows for easy sharing on online platforms such as shinyapps.io or be hosted via Shiny Server.
+          indicates: Y
+        lazy:
+        - where: 2.1 Key features of ShinyCell
+          quote: The gene expression data is stored using the hdf5 file format on disk and only the expression of genes that are plotted are loaded
+          indicates: Y
+        - where: 2.1 Key features of ShinyCell
+          quote: We also optimised the chunking in the hdf5 file such that the expression data of each gene is stored contiguously
+          indicates: Y
+    - key: chen2025
+      cite: Chen et al. 2025 (preprint)
+      role: later
+      doi: 10.1101/2025.04.22.650045
+      url: https://doi.org/10.1101/2025.04.22.650045
+      title: 'ShinyCell2: An extended library for simple and sharable visualisation of spatial, peak-based and multi-omic single-cell data'
+      year: 2025
+      venue: bioRxiv
+      landing_page: https://www.biorxiv.org/lookup/doi/10.1101/2025.04.22.650045
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: bioRxiv PDF v1 (posted 2025-04-23), pdftotext -layout (texts/shinycell2.txt)
+      sections:
+        slots:
+        - where: Main (untitled body text)
+          quote: Relevant observations and metadata are extracted from analysis-specific file formats e.g. Seurat objects, indexed, and stored on disk for efficient retrieval.
+          indicates: P
+          note: Only selected parts of the object are carried into the app; inputs include h5ad (Online Methods, 'ShinyCell2 App Generation Workflow and Supported Filetypes').
+        spatial:
+        - where: Main (untitled body text); Fig. 2a legend
+          quote: New features include spatial plots to elucidate gene expression within tissue architecture (Figure 2a)
+          indicates: Y
+        - where: Online Methods, 'Spatial scRNA-seq Visualisation'
+          quote: Spatial scRNA-seq data can be visualised through the "Zoom-enabled Spatial" and "Side-by-side Spatial" tabs.
+          indicates: Y
+        de:
+        - where: Online Methods, 'Enhanced Visualisation Features'
+          quote: the "Violin / Boxplot" tab integrates statistical testing, supporting both global and pairwise comparisons across groups
+          indicates: P
+          note: Per-gene group tests (ANOVA/kruskal, wilcox/t) computed in the app; no gene ranking. Notes score this N (not DE).
+        - where: Main (untitled body text)
+          quote: built-in statistical testing, such as global ANOVA or pairwise comparisons, enable rigorous quantitative analyses between cell populations.
+          indicates: P
+          note: As above.
+        image:
+        - where: Online Methods, 'Spatial scRNA-seq Visualisation'
+          quote: The Zoom-enabled Spatial tab allows users to overlay cell metadata or gene expression data onto tissue images
+          indicates: Y
+          note: ShinyCell2 only; the matrix row is labelled ShinyCell, hence the current P.
+        export:
+        - where: Online Methods, 'Enhanced Visualisation Features'
+          quote: allows users to export the main plots and legends as separate PNG or PDF files for flexible post-processing.
+          indicates: Y
+        desktop:
+        - where: Main (untitled body text)
+          quote: ShinyCell2 allows straightforward local deployment and is tightly integrated with R/Bioconductor workflows (Figure 1b).
+          indicates: N
+          note: Local deployment of an R/Shiny app, not a downloadable application.
+        hosted:
+        - where: Code and Data Availability
+          quote: An example web app showcasing the visualisation of spatial transcriptomics, scATAC-seq, and CITE-seq datasets can be accessed at https://shinycell.ouyanglab.com/
+          indicates: Y
+        - where: Main (untitled body text)
+          quote: supports seamless deployment for both local and web-based platforms.
+          indicates: Y
+          note: Said of ShinyCell (the predecessor).
+        lazy:
+        - where: Online Methods, 'ShinyCell2 App File Structure'
+          quote: Assay expression matrices are saved in HDF5 format, enabling on-demand loading of only the genes or features specified by the user.
+          indicates: Y
+        - where: Online Methods, 'ShinyCell2 Overview'
+          quote: it leverages the hdf5r R package to read only the necessary data e.g. user-specified cell metadata and assay expression from HDF5 files
+          indicates: Y
+    - key: moore2025
+      cite: Moore et al. 2025
+      role: related
+      doi: 10.12688/f1000research.161076.1
+      url: https://doi.org/10.12688/f1000research.161076.1
+      title: 'ShinyCellPlus: an improved ShinyCell application for the interactive visualization of single cell data'
+      year: 2025
+      venue: F1000Research 14:338
+      landing_page: https://f1000research.com/articles/14-338/v1
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20251204041823/https://f1000research.com/articles/14-338/v1
+      archive_timestamp: '20251204041823'
+      fulltext: not read (not by the ShinyCell authors; listed as related only)
+      sections: {}
+    contradictions:
+    - column: lazy
+      note_claim: 'YAML mark P (current figure string); notes: "lazy chunked reads | P | **Y**"'
+      paper: The gene expression data is stored using the hdf5 file format on disk and only the expression of genes that are plotted are loaded
+      key: ouyang2020
+      where: 2.1 Key features of ShinyCell
+      note: Paper supports the notes' proposed Y against the current P. ShinyCell2 says the same (chen2025, 'ShinyCell2 App File Structure').
+    - column: de
+      note_claim: No marker or DE code. ShinyCell2 offers a p-value overlay on violin/box plots ... one gene at a time; no gene ranking.
+      paper: built-in statistical testing, such as global ANOVA or pairwise comparisons, enable rigorous quantitative analyses between cell populations.
+      key: chen2025
+      where: Main (untitled body text); Online Methods, 'Enhanced Visualisation Features'
+      note: 'Soft: the notes acknowledge the feature and judge it not DE. A reviewer reading the ShinyCell2 paper could read it as in-session DE for one gene; consider P with that caveat, or state the reasoning
+        in the legend.'
+    - column: spatial
+      note_claim: 'ShinyCell: none. ShinyCell2: `sc2Dspat` plots `imagecol`/`imagerow` as X/Y'
+      paper: New features include spatial plots to elucidate gene expression within tissue architecture (Figure 2a)
+      key: chen2025
+      where: Main (untitled body text)
+      note: Not a contradiction of the notes; the ShinyCell2 paper states spatial (and image underlay) as Y. The P marks stand only because the row is labelled ShinyCell.
+  scanpy-seurat:
+    papers:
+    - key: wolf2018
+      cite: Wolf et al. 2018
+      role: primary
+      doi: 10.1186/s13059-017-1382-0
+      url: https://doi.org/10.1186/s13059-017-1382-0
+      title: 'SCANPY: large-scale single-cell gene expression data analysis'
+      year: 2018
+      venue: Genome Biology 19:15
+      landing_page: https://link.springer.com/article/10.1186/s13059-017-1382-0
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: PMC5802054 (PMC-derived plain text, texts/scanpy.txt)
+      sections:
+        cells:
+        - where: Results, 'SCANPY introduces efficient modular implementation choices'
+          quote: SCANPY introduces a class for representing a graph of neighborhood relations among data points.
+          indicates: P
+          note: The stored cells x cells graph exists and is reachable by code; showing a row as colour is not described.
+        slots:
+        - where: Results, 'SCANPY introduces efficient modular implementation choices'
+          quote: 'stores a data matrix with the most general annotations possible: annotations of observations (samples, cells) and variables (features, genes), and unstructured annotations.'
+          indicates: P
+          note: '2018 AnnData: X, obs, var, uns; no obsp/varp yet. All by code.'
+        de:
+        - where: Results, 'SCANPY integrates canonical analysis methods in a scalable way'
+          quote: identification of marker genes for clusters via differential expression tests
+          indicates: P
+          note: Library function called from code.
+        - where: Fig. 1a legend
+          quote: Ranking differentially expressed genes in clusters identifies the MS4A1 marker gene for B cells in cluster 7
+          indicates: P
+          note: By code.
+        desktop:
+        - where: Availability and requirements
+          quote: SCANPY and ANNDATA are released via the Python packaging index
+          indicates: N
+          note: Python packages, no application.
+        lazy:
+        - where: Results, 'SCANPY introduces efficient modular implementation choices'
+          quote: This allows operating on an ANNDATA object without fully loading it into memory—the functionality is offered via ANNDATA’s backed mode
+          indicates: P
+          note: HDF5 backed mode, opt-in by code.
+        every_cell:
+        - where: Results, 'SCANPY is benchmarked in comparisons with established packages'; Fig. 1c legend
+          quote: we demonstrate the feasibility of analyzing 1.3 million cells without subsampling
+          indicates: Y
+          note: 'Analysis without subsampling; Fig. 1c legend: ''Visualizing and clustering 1.3 million cells''. Says nothing about a plotting default.'
+    - key: virshup2024
+      cite: Virshup et al. 2024
+      role: primary
+      doi: 10.21105/joss.04371
+      url: https://doi.org/10.21105/joss.04371
+      title: 'anndata: Access and store annotated data matrices'
+      year: 2024
+      venue: Journal of Open Source Software 9(101):4371
+      landing_page: https://joss.theoj.org/papers/10.21105/joss.04371
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: JOSS PDF, pdftotext -layout (texts/anndata_joss.txt)
+      sections:
+        cells:
+        - where: Fig. 1d legend
+          quote: A k-nearest neighbor graph of any desired representation is stored as a sparse adjacency matrix of pairwise relationships among observations in obsp.
+          indicates: P
+          note: Storage only; display by code.
+        genes:
+        - where: The ecosystem
+          quote: Relations between the variables of different modalities can then be stored as graphs in varp
+          indicates: P
+          note: Storage only; display by code.
+        slots:
+        - where: The AnnData object; Fig. 1a legend
+          quote: Multi-dimensional annotations are stored in obsm and varm. Pairwise relationships are stored in obsp and varp.
+          indicates: P
+          note: All slots exist and are reachable, by code only (the row's P rule).
+        remote:
+        - where: Outlook
+          quote: The anndata project is under active development towards more advanced out-of-core access, better cloud & relational database integration
+          indicates: P
+          note: Roadmap; no remote reader described. The proposed P rests on read_lazy (anndata 0.12, after this paper).
+        spatial:
+        - where: The ecosystem; Fig. 3a legend
+          quote: Squidpy (Palla et al., 2021) uses AnnData to model their data by storing spatial coordinates as an array (obsm)
+          indicates: P
+          note: Storage, via Squidpy; plotting not described.
+        annot:
+        - where: The data structure
+          quote: one builds an understanding of the data matrix by annotating observations and variables using AnnData’s fields (Figure 1)
+          indicates: P
+          note: By code.
+        image:
+        - where: The ecosystem; Fig. 3a legend
+          quote: values from the high-dimensional transcriptomic measurement can be overlaid on an image of the sampled tissue, where an image array (reference) is stored in uns.
+          indicates: P
+          note: By code (Squidpy).
+        share:
+        - where: The AnnData object
+          quote: AnnData offers a native on-disk format that allows sharing data with analysis results in form of learned annotations.
+          indicates: P
+          note: Shares data, not a view; relevant to the current Y (proposed P).
+        lazy:
+        - where: Data access principles
+          quote: anndata offers sparse data support, out of core conversions between dense and sparse data, lazy subsetting (“views”) ... and a backed out-of-memory mode.
+          indicates: P
+          note: By code.
+        subset:
+        - where: The data analysis workflow; Fig. 1e legend
+          quote: Subsetting the data by observations produces a memory-efficient view of AnnData (Figure 1e).
+          indicates: P
+          note: By code.
+    - key: virshup2021
+      cite: Virshup et al. 2021 (preprint)
+      role: preprint-of:virshup2024
+      doi: 10.1101/2021.12.16.473007
+      url: https://doi.org/10.1101/2021.12.16.473007
+      title: 'anndata: Annotated data'
+      year: 2021
+      venue: bioRxiv
+      landing_page: https://www.biorxiv.org/lookup/doi/10.1101/2021.12.16.473007
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: bioRxiv PDF v1 (posted 2021-12-19), pdftotext -layout (texts/anndata_pre.txt)
+      sections:
+        cells:
+        - where: Fig. 1d legend
+          quote: A k-nearest neighbor graph of any desired representation is stored as a sparse adjacency matrix of pairwise relationships among observations in obsp.
+          indicates: P
+        slots:
+        - where: The AnnData object; Fig. 1a legend
+          quote: Multi-dimensional annotations are stored in obsm and varm. Pairwise relationships are stored in obsp and varp.
+          indicates: P
+          note: Same text as the JOSS version.
+        remote:
+        - where: Outlook
+          quote: The anndata project is under active development towards more advanced out-of-core access, better cloud & relational database integration
+          indicates: P
+          note: Roadmap only.
+        image:
+        - where: The ecosystem; Fig. 3a legend
+          quote: values from the high-dimensional transcriptomic measurement can be overlaid on an image of the sampled tissue, where an image array (reference) is stored in uns.
+          indicates: P
+        lazy:
+        - where: The efficiency of data operations
+          quote: anndata offers sparse data support, out of core conversions between dense and sparse data, lazy subsetting (“views”) ... and a backed out-of-memory mode.
+          indicates: P
+          note: Section renamed 'Data access principles' in the JOSS version.
+    - key: hao2024
+      cite: Hao et al. 2024
+      role: primary
+      doi: 10.1038/s41587-023-01767-y
+      url: https://doi.org/10.1038/s41587-023-01767-y
+      title: Dictionary learning for integrative, multimodal and scalable single-cell analysis
+      year: 2024
+      venue: Nature Biotechnology 42(2):293-304
+      landing_page: https://www.nature.com/articles/s41587-023-01767-y?error=cookies_not_supported&code=fe3f3cab-ae20-4be4-9be9-3dcc6bb1933f
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: 'texts/seurat5.txt (nature.com HTML) is paywalled: abstract and figure titles only. Body read from the NIH author manuscript PMC10928517 (PMC HTML via proxy); quotes below are from the author
+        manuscript and may differ in wording from the version of record.'
+      sections:
+        de:
+        - where: Results, 'Community-scale integration for human lung scRNA-seq'
+          quote: We grouped cells by both sample replicate and cell type identity, and performed differential expression on the resulting pseudobulk profiles
+          indicates: P
+          note: By code.
+        every_cell:
+        - where: Fig. 5 legend (d)
+          quote: 200,000 cells are shown in each visualization to alleviate overplotting.
+          indicates: P
+          note: The authors downsampled for this figure by hand; says nothing about the DimPlot default. Does not contradict the Y mark.
+        subset:
+        - where: Results, 'Utilizing dictionary learning for massively scalable integration'
+          quote: We first select a representative sketch of cells (i.e. 5,000 cells) from each dataset, and treat these cells as atoms in a dictionary
+          indicates: P
+          note: Sketch subset chosen by code (SketchData).
+        - where: Abstract (version of record, texts/seurat5.txt)
+          quote: we demonstrate how dictionary learning can be combined with sketching techniques to improve computational scalability
+          indicates: P
+    contradictions: []
+  single-cell-portal:
+    papers:
+    - key: tarhan2023
+      cite: Tarhan et al. 2023 (preprint)
+      role: primary
+      doi: 10.1101/2023.07.13.548886
+      url: https://doi.org/10.1101/2023.07.13.548886
+      title: 'Single Cell Portal: an interactive home for single-cell genomics data'
+      year: 2023
+      venue: bioRxiv
+      landing_page: https://www.biorxiv.org/lookup/doi/10.1101/2023.07.13.548886
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: bioRxiv PDF v1 (posted 2023-07-17), pdftotext -layout (texts/scp.txt)
+      sections:
+        focus:
+        - where: How SCP supports single-cell research, 'Exploring Data'
+          quote: each point is colored according to the measured expression for a gene that the user has searched for ... viewed side-by-side with cell cluster plots
+          indicates: N
+          note: Gene feature colouring; the strict definition excludes it.
+        remote:
+        - where: Storing Data in the Cloud
+          quote: All data uploaded to SCP are stored on cloud servers as a part of the Terra Platform.
+          indicates: N
+          note: Uploaded into SCP's own storage; no reading from a user's object store or URL.
+        spatial:
+        - where: How SCP supports single-cell research, 'Exploring Data'; Fig. 4b legend
+          quote: SCP also supports plots of spatial transcriptomics data (e.g., slide-seq; Rodrigues et al., 2019; Figure 4b). These plots show a spatial map of the data
+          indicates: Y
+        filters:
+        - where: How SCP supports single-cell research, 'Exploring Data'
+          quote: Users can focus on a specific subset of the data by showing or hiding cells with specific annotation labels
+          indicates: P
+          note: Annotation-label show/hide, no table; linking across plots not stated.
+        de:
+        - where: How SCP supports single-cell research, 'Exploring Data'
+          quote: SCP’s studies include results from exploratory differential expression analyses. These are either computed by the Portal ... or provided by the study owners
+          indicates: P
+          note: Computed by the portal, but the text does not say in the session; the notes find it runs at ingest.
+        share:
+        - where: How SCP supports single-cell research, after Fig. 4 legend
+          quote: sharing a link to a specific, user-generated plot.
+          indicates: Y
+        - where: Sharing Data with Reviewers
+          quote: Researchers can grant anonymous, view-only access to their SCP study via a URL that a journal editor can pass on to reviewers
+          indicates: P
+          note: A link to the study, not to a view state.
+        export:
+        - where: How SCP supports single-cell research, after Fig. 4 legend
+          quote: saving a plot as an image file
+          indicates: Y
+        hosted:
+        - where: Introduction
+          quote: SCP (https://singlecell.broadinstitute.org/single_cell) is an open-access, web-based portal for sharing and exploring single-cell genomics data.
+          indicates: Y
+        - where: Publishing Data on SCP
+          quote: In 2022, approximately 96,500 users visited the Portal.
+          indicates: Y
+        static:
+        - where: Introduction
+          quote: SCP is supported by a performant computational infrastructure, which allows visualizations to scale with growing datasets.
+          indicates: N
+          note: Server infrastructure.
+        subset:
+        - where: How SCP supports single-cell research, 'Exploring Data'
+          quote: Users can focus on a specific subset of the data by showing or hiding cells with specific annotation labels
+          indicates: Y
+    contradictions: []
+  scope:
+    papers:
+    - key: davie2018
+      cite: Davie et al. 2018
+      role: primary
+      doi: 10.1016/j.cell.2018.05.057
+      url: https://doi.org/10.1016/j.cell.2018.05.057
+      title: A Single-Cell Transcriptome Atlas of the Aging Drosophila Brain
+      year: 2018
+      venue: Cell 174(4):982-998.e20
+      landing_page: https://linkinghub.elsevier.com/retrieve/pii/S0092867418307207
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: PMC6086935 via Europe PMC (texts/davie.txt)
+      sections:
+        focus:
+        - where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases'''
+          quote: Different analyses are available such as simultaneous display of up to three genes, with optional log and CPM normalizations
+          indicates: N
+          note: Gene colouring (RGB up to three genes), which the strict definition excludes.
+        slots:
+        - where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases''; Fig. 7A legend'
+          quote: a HDF5-based data file that contains a raw or normalized gene expression matrix for a dataset with t-SNE coordinates but can contain extra annotation
+          indicates: P
+          note: Loom, not AnnData; matrix plus embeddings, annotations, clusters, regulons. No pairwise slots mentioned.
+        filters:
+        - where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases''; Fig. 7B'
+          quote: Datasets can be compared within dataset; between annotations such as genotype, replicate, or age; and between dataset, including cross-species plotting of orthologous genes
+          indicates: P
+          note: Describes the Compare page (split by annotation), not table filters; matches the notes' P.
+        de:
+        - where: Results, 'Single-Cell RNA-Seq of the Adult Brain Identifies Discrete Cell Types'
+          quote: We provide all clustering information, and markers for each cluster, through an online resource called SCope.
+          indicates: N
+          note: Markers are precomputed (Seurat, STAR Methods 'Seurat') and served, not computed in the session.
+        - where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases'''
+          quote: Finally, gene sets can be provided that are scored with AUCell (Aibar et al., 2017) to visualize which cells are enriched for the gene set.
+          indicates: N
+          note: In-session gene-set scoring, not differential expression.
+        desktop:
+        - where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases''; Fig. 7A legend'
+          quote: SCope can also be easily installed on a local computer, server, or cloud-based infrastructure using a Singularity container (Kurtzer et al., 2017).
+          indicates: N
+          note: Local install is a server container, i.e. server setup by the user. The paper never mentions the Electron build on which the notes' P rests.
+        hosted:
+        - where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases'''
+          quote: The single-cell atlas of the Drosophila brain, as presented here, is available through a user-friendly online application called SCope (http://scope.aertslab.org).
+          indicates: Y
+        - where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases'''
+          quote: In addition, users can also upload their own .loom files.
+          indicates: Y
+          note: Uploads into the public deployment; supports one deployment serving many users. Not a remote-store read.
+        - where: Discussion
+          quote: the provided containers make it easy for groups and institutions to deploy this platform using their own servers or cloud-computing solutions.
+          indicates: Y
+    - key: li2022
+      cite: Li et al. 2022 (Fly Cell Atlas)
+      role: dataset-source
+      doi: 10.1126/science.abk2432
+      url: https://doi.org/10.1126/science.abk2432
+      title: 'Fly Cell Atlas: A single-nucleus transcriptomic atlas of the adult fruit fly'
+      year: 2022
+      venue: Science 375(6584):eabk2432
+      landing_page: https://www.science.org/doi/10.1126/science.abk2432
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: PMC8944923 (author manuscript) via Europe PMC (texts/fca.txt)
+      sections:
+        annot:
+        - where: '''Crowd-based cell type annotation by tissue experts'''
+          quote: We developed a consensus-voting strategy within the SCope web application (https://flycellatlas.org/scope), where curators annotated clusters at multiple resolutions
+          indicates: Y
+        - where: Discussion
+          quote: the development of a crowd-annotation platform with voting, comments and references via SCope (https://flycellatlas.org/scope)
+          indicates: Y
+        hosted:
+        - where: Data and materials availability
+          quote: All data are available for user-friendly querying via https://flycellatlas.org/scope and for custom analyses at https://flycellatlas.org/asap.
+          indicates: Y
+    contradictions:
+    - column: de
+      note_claim: The only in-session computation is AUCell gene-set scoring (Davie et al. 2018, Fig. 7 text)
+      paper: Finally, gene sets can be provided that are scored with AUCell (Aibar et al., 2017) to visualize which cells are enriched for the gene set.
+      key: davie2018
+      where: 'Results, ''SCope: Cloud-Based Exploration of Single-Cell Atlases'' (body text, not the Fig. 7 legend)'
+      note: Pointer imprecision only; the claim itself holds.
+    - column: null
+      note_claim: 'Fly Cell Atlas ... Abstract: 580,000 nuclei; data served through SCope and ASAP.'
+      paper: All data and annotations can be accessed through multiple visualization and analysis portals from https://flycellatlas.org (fig. S1–S3).
+      key: li2022
+      where: Abstract says only '580k nuclei'; SCope/ASAP appear in the introduction, 'Crowd-based cell type annotation' and Data and materials availability, not in the abstract
+      note: 'Misattributed to the abstract. Also useful for S1: the text says ''we also retained the original Relaxed dataset of 570k cells'' (''Sampling single cells across the entire adult fly''), consistent
+        with the 567,950 cells counted in the demo.'
+  kana:
+    papers:
+    - key: lun2023
+      cite: Lun & Kancherla 2023
+      role: primary
+      doi: 10.21105/joss.05603
+      url: https://doi.org/10.21105/joss.05603
+      title: Powering single-cell analyses in the browser with WebAssembly
+      year: 2023
+      venue: Journal of Open Source Software 8(89):5603
+      landing_page: https://joss.theoj.org/papers/10.21105/joss.05603
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: JOSS PDF via pdftotext -layout (texts/kana_joss.txt)
+      sections:
+        focus:
+        - where: Usage (Fig. 2 description)
+          quote: One panel contains a scatter plot for the low-dimensional embeddings, where each cell is a point that is colored by cluster identity or gene expression.
+          indicates: N
+          note: Gene colouring only, excluded by the strict definition.
+        slots:
+        - where: Usage
+          quote: kana’s “explore-only” mode ... to load RDS or H5AD files containing pre-computed clusterings and low-dimensional embeddings.
+          indicates: N
+          note: Only clusterings (obs) and embeddings (obsm) are named; no varm/obsp/varp.
+        remote:
+        - where: Usage
+          quote: Users can supply data in several formats, such as Matrix Market files ... or datasets from public repositories like Bioconductor’s ExperimentHub
+          indicates: P
+          note: Curated public datasets only; no user URL or object store mentioned.
+        filters:
+        - where: Usage (Fig. 2 description)
+          quote: potential marker genes are ranked and filtered according to the magnitude of upregulation over other clusters
+          indicates: N
+          note: Filters the marker table only, not plots.
+        de:
+        - where: Summary
+          quote: The application provides a streamlined one-click workflow ... starting from a count matrix and finishing with marker detection.
+          indicates: Y
+        share:
+        - where: Statement of need
+          quote: Once finished, users can save their analysis and results for later examination or sharing with collaborators.
+          indicates: P
+          note: Restores the analysis, not the view.
+        - where: Usage
+          quote: The exported results can be quickly reloaded in a new browser session, allowing users or their collaborators to explore existing results without repeating the computation.
+          indicates: P
+        desktop:
+        - where: Usage
+          quote: this is achieved via the browser and does not require installation of additional software like, e.g., the 10X Genomics Loupe browser.
+          indicates: N
+          note: Web app by design; also independent confirmation that Loupe is an installed desktop application.
+        hosted:
+        - where: Further comments
+          quote: No funding is required for a centralized backend, ... kana can be used by anyone for free.
+          indicates: P
+          note: One public deployment, but every visitor computes on their own machine with their own data; matches the notes' P.
+        static:
+        - where: Summary
+          quote: kana leverages web technologies such as WebAssembly ... avoiding the need to provision and maintain a backend service.
+          indicates: Y
+        - where: Further comments
+          quote: No dependency on a backend server, which greatly simplifies application deployment and maintenance for developers.
+          indicates: Y
+        every_cell:
+        - where: Usage (Fig. 2 description)
+          quote: One panel contains a scatter plot for the low-dimensional embeddings, where each cell is a point
+          indicates: Y
+          note: No downsampling mentioned; consistent with notes S2.
+    - key: lun2022
+      cite: Lun & Kancherla 2022 (preprint)
+      role: preprint-of:lun2023
+      doi: 10.1101/2022.03.02.482701
+      url: https://doi.org/10.1101/2022.03.02.482701
+      title: Powering single-cell analyses in the browser with WebAssembly
+      year: 2022
+      venue: bioRxiv
+      version: v1, posted 2022-03-04, then titled 'Single-cell data analysis in the browser'; v2 (2023-05-15) carries the current title. Quotes and sections are from v1.
+      landing_page: https://www.biorxiv.org/lookup/doi/10.1101/2022.03.02.482701
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: bioRxiv PDF v1 (posted 2022-03-04) via pdftotext -layout (texts/kana_pre.txt); title as printed in v1
+      sections:
+        cells:
+        - where: 2 Application overview, step 6
+          quote: community detection on a shared nearest neighbor (SNN) graph where each cell is a node and edges connect neighboring cells
+          indicates: N
+          note: Cell graph computed internally for clustering; never described as shown as colour or axis.
+        focus:
+        - where: 4.1 Interlinked graphics
+          quote: For example, we can color the embeddings according to the expression of a gene selected from the marker table.
+          indicates: N
+          note: Gene colouring of the embedding, excluded by the strict definition.
+        remote:
+        - where: 2 Application overview, step 1
+          quote: We import a gene-by-cell count matrix from the user’s machine
+          indicates: N
+          note: v1 has local files only; ExperimentHub appears in the JOSS version.
+        filters:
+        - where: 2 Application overview
+          quote: potential marker genes are ranked and filtered according to the magnitude of upregulation over other clusters
+          indicates: N
+          note: Table-only filter.
+        annot:
+        - where: 4.1 Interlinked graphics
+          quote: Users can create a custom selection by brushing on regions of interest in the embedding panel.
+          indicates: P
+          note: Selections, not user-typed labels.
+        - where: 4.1 Interlinked graphics
+          quote: Each custom selection and its statistics are treated as part of the analysis state and are saved during export.
+          indicates: P
+        de:
+        - where: 2 Application overview, step 7
+          quote: Each cluster is characterized through differential expression analyses to detect its marker genes.
+          indicates: Y
+        - where: 4.1 Interlinked graphics
+          quote: If this selection is saved, kana will perform a differential expression analysis to detect upregulation inside the selection compared to all other cells.
+          indicates: Y
+        share:
+        - where: 4.3 Exporting and reloading
+          quote: files exported by one user can be reloaded by other users on different machines, allowing users to easily share their analyses
+          indicates: P
+          note: Analysis state, not view state.
+        - where: 4.1 Interlinked graphics
+          quote: users can save specific views of the embeddings for later perusal.
+          indicates: N
+          note: In-app gallery within the session, not a link or file.
+        desktop:
+        - where: 5 Discussion
+          quote: This eliminates the difficulties of software installation and makes the analysis accessible to a non-programming audience.
+          indicates: N
+          note: Browser app; no desktop build.
+        hosted:
+        - where: 5 Discussion
+          quote: the former automatically distributes analyses of many datasets across any number of machines at no cost and with no configuration.
+          indicates: P
+          note: Compute is per client; no shared server state.
+        static:
+        - where: 1 Introduction
+          quote: Most obviously, we do not need a scalable backend server to perform any of the calculations, simplifying deployment and reducing costs.
+          indicates: Y
+        - where: 3.2 Parallelization with web workers
+          quote: when hosting on institutional sites or public sites such as GitHub Pages. Instead, we use a service worker to cache and re-serve kana
+          indicates: Y
+        lazy:
+        - where: 3.3 Creating layered sparse matrices
+          quote: a dataset with 30,000 genes and 100,000 cells at 5% density requires around 500 MB of memory in this data structure.
+          indicates: N
+          note: Whole count matrix held in memory (layered sparse).
+        - where: 3.4 Examining memory usage
+          quote: This limit is a consequence of the use of 32-bit pointers in the current Wasm specification
+          indicates: N
+          note: 4 GB Wasm heap cap on in-memory data; Table 3 gives 2480.81 MB for Zilionis (173,954 cells).
+        every_cell:
+        - where: 2 Application overview
+          quote: where each cell is a point that is colored by cluster identity or gene expression.
+          indicates: Y
+    contradictions:
+    - column: null
+      note_claim: I quote memory figures from that file [kana-paper main.tex]; I did not diff it against the bioRxiv PDF.
+      paper: Importantly, kana’s memory usage lies below Wasm’s hard limit of 4 giga- bytes of addressable memory.
+      key: lun2022
+      where: 3.4 Examining memory usage; Table 3 (Zilionis 173954 cells, 2480.81 MB)
+      note: 'Not a contradiction: bioRxiv v1 already has the memory table and the 4 GB sentence, so the scale claim can cite the preprint instead of an unpublished .tex. The quote keeps the PDF line-break
+        hyphen. Preprint Table 2 prints Zilionis kana runtime as ''272.265 ± 4.22'' (JOSS: 272.26).'
+  napari-spatialdata:
+    papers:
+    - key: marconato2025
+      cite: Marconato et al. 2025
+      role: primary
+      doi: 10.1038/s41592-024-02212-x
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      title: 'SpatialData: an open and universal data framework for spatial omics'
+      year: 2025
+      venue: Nature Methods 22:58-62
+      landing_page: https://www.nature.com/articles/s41592-024-02212-x?error=cookies_not_supported&code=c8375ac9-39bf-4edc-92f9-0b9d0178d0fc
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: PMC11725494 via Europe PMC (texts/spatialdata.txt)
+      sections:
+        slots:
+        - where: Extended Data Fig. 3 legend
+          quote: Embeddings of molecular profiles (for example, t-SNE, UMAP) can be interactively queried via the scatter plot widget.
+          indicates: P
+          note: 'With the ''associated annotations (such as gene expression, cluster annotations etc.)'' sentence: X, obs, obsm; no pairwise slots mentioned.'
+        remote:
+        - where: Main text
+          quote: thereby offering performant, interoperable access for both traditional file system- and cloud-based storage
+          indicates: P
+          note: Property of the format/library (code); the plugin GUI is not addressed.
+        - where: Methods, 'SpatialData framework'
+          quote: Each dataset can be downloaded in full (.zip) or even directly accessed from the cloud (public S3 storage).
+          indicates: P
+          note: Sample data on S3, reached from code.
+        - where: Main text, closing paragraph (ongoing developments)
+          quote: support cloud-based data access both programmatically and via the visualization tool Vitessce
+          indicates: N
+          note: Names Vitessce, not napari-spatialdata, as the GUI route to cloud data, and frames it as ongoing work.
+        spatial:
+        - where: Extended Data Fig. 3 legend
+          quote: Napari-spatialdata enables the interactive visualization of SpatialElements (Images, Labels, Points, Shapes) together with associated annotations (such as gene expression, cluster annotations
+            etc.).
+          indicates: Y
+        - where: Extended Data Fig. 7b legend
+          quote: Screenshot of the visualization of all Visium datasets for one of the tissue samples in the context of the whole tissue coordinate system using napari-spatialdata.
+          indicates: Y
+        filters:
+        - where: Extended Data Fig. 3a legend
+          quote: interactive selection with a lasso from the UMAP plot computed from the cell gene expression and colored by Leiden clusters
+          indicates: N
+          note: 'N under the current ''table filters'' definition. Under the proposed ''selection restricts linked views'' definition this is P: ''The annotation can be visualized in space'' means it reaches
+            the spatial view only as an annotation, matching the notes'' P.'
+        annot:
+        - where: Main text; Fig. 1d
+          quote: The napari-spatialdata plugin can be used for the interactive definition of spatial annotations such as drawing regions of interest
+          indicates: Y
+        - where: Extended Data Fig. 3 legend
+          quote: Spatial annotations can be interactively created via drawing of regions in the napari viewer. The corresponding annotations are then exported into the underlying SpatialData
+          indicates: Y
+          note: Says 'exported into the underlying SpatialData' and does not distinguish the in-memory object from the zarr store; see contradictions.
+        - where: Extended Data Fig. 3a legend
+          quote: The lasso tool in the scatterplot windows is used to annotate a set of cells.
+          indicates: Y
+        - where: Methods, 'ROI selection with napari-spatialdata'
+          quote: four ROIs were selected based on the H&E image from the Visium dataset using the napari-spatial data plugin
+          indicates: Y
+        image:
+        - where: Extended Data Fig. 6b legend
+          quote: Multimodal visualization of the H&E image from the Visium data, ... the Visium array capture locations colored by gene expression (showed with transparency)
+          indicates: Y
+        - where: Extended Data Fig. 7c legend
+          quote: napari-spatialdata allows to view and interactively explore all of the large images (15 images, ≈ 580 megapixels each) aligned together with the spatial gene expression.
+          indicates: Y
+        export:
+        - where: Fig. 1d legend
+          quote: SpatialData provides functionality for the generation of both interactive and static plots.
+          indicates: P
+          note: Static plots come from the spatialdata-plot code library ('Static figures and graphics can be created using the spatialdata-plot library'). The paper does not mention napari's GUI screenshot
+            export, on which the notes' Y rests.
+        desktop:
+        - where: Methods, 'SpatialData framework dependencies'
+          quote: pip can be used readily to install the software and all its dependent libraries. Conda support is in preparation.
+          indicates: P
+          note: Python package install; the napari bundle installer route used for the notes' Y is not mentioned.
+        lazy:
+        - where: Methods, 'Alignment to create common coordinate systems'
+          quote: Dask’s lazy-loading and Zarr’s multiscale representation made it possible to performantly explore and zoom the datasets, even in a low-memory device like a standard laptop.
+          indicates: Y
+          note: Said of images explored in napari-spatialdata; silent on the table, which the notes find is read whole (hence P).
+        - where: Main text (citing Fig. 1b)
+          quote: The SpatialData Python library represents this format as SpatialData objects in memory, which supports lazy loading of larger-than-memory data (Fig. 1b).
+          indicates: Y
+          note: Library-level claim, not the plugin specifically.
+        subset:
+        - where: Extended Data Fig. 1 legend
+          quote: The spatial query interface allows users to request the data contained in a query region
+          indicates: P
+          note: Library API; the legend says 'Shown are code excerpts from the spatial query tutorial'. Not a plugin GUI feature.
+    - key: sofroniew_napari
+      cite: napari contributors (Zenodo)
+      role: related
+      doi: 10.5281/zenodo.3555620
+      url: https://doi.org/10.5281/zenodo.3555620
+      title: 'napari: a multi-dimensional image viewer for Python'
+      year: null
+      venue: Zenodo (software, versioned concept DOI)
+      landing_page: https://zenodo.org/records/23047950
+      checked: '2026-10-04'
+      archive: null
+      archive_timestamp: null
+      fulltext: none (software record, not a paper); key departs from firstauthor+year because the concept DOI spans versions
+      sections: {}
+    contradictions:
+    - column: annot
+      note_claim: Arguably Y if "written back" means into the live object; P under a strict "persisted" reading.
+      paper: Spatial annotations can be interactively created via drawing of regions in the napari viewer. The corresponding annotations are then exported into the underlying SpatialData
+      key: marconato2025
+      where: Extended Data Fig. 3 legend
+      note: Soft tension, not a hard contradiction. The paper reads as Y and does not mention that persisting to disk needs code. The proposed P is defensible only under the strict 'persisted' reading,
+        and the caption should say which reading is used.
+    - column: lazy
+      note_claim: paper Fig. 1b "lazy loading of larger-than-memory data"
+      paper: The SpatialData Python library represents this format as SpatialData objects in memory, which supports lazy loading of larger-than-memory data (Fig. 1b).
+      key: marconato2025
+      where: Main text (the Fig. 1b legend itself does not contain the phrase)
+      note: Quote is accurate but sits in the main text that cites Fig. 1b, not in the Fig. 1b legend. The abstract says 'lazy representation of larger-than-memory data'.
+  loupe:
+    papers: []
+    none: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics'' (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software:
+      Loupe Browser v9.1.0, 10x Genomics, 2026.'

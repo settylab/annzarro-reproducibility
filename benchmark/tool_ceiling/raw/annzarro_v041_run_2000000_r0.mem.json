@@ -1,0 +1,57 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first2000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_run_2000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 3.61,
+ "peaks": {
+  "client": {
+   "fp_peak": 1898046488,
+   "fp_lifetime_sum": 2048206616,
+   "rss_peak": 1546436608,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 857687288,
+   "fp_lifetime_sum": 905430744,
+   "rss_peak": 880295936,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 123237144,
+   "fp_lifetime_sum": 123237144,
+   "rss_peak": 161546240,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2755733776,
+   "rss_peak": 2426732544,
+   "fp_lifetime_sum": 2953637360
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.31,
+   1748412016
+  ]
+ ],
+ "ps_before": "2026-10-07T16:19:39-0700\nmemorystatus_level=90 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n  855 1229952  89.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n47413 694960  18.9 /Applications/cmux.app/Contents/MacOS/cmux\n    1  33520  17.4 /sbin/launchd\n  626 422192  14.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n92535  19728   6.0 .venv/bin/python\n92574  21104   5.9 $TMPDIR/sw_v041/benchmark/tool_ceiling/.venv/bin/python\n57113 2345984   5.7 $HOME/.local/bin/claude\n  629 189200   4.3 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n73194 135040   3.5 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n97961 739456   2.2 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n",
+ "others_at_start": [
+  "92536 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "92537 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

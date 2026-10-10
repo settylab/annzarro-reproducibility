@@ -1,0 +1,40 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_prep.py",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/annzarro_prep/first1000000.zarr"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 3.02,
+ "peaks": {
+  "proc": {
+   "fp_peak": 3668037208,
+   "fp_lifetime_sum": 3668135512,
+   "rss_peak": 3717169152,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3668037208,
+   "rss_peak": 3717169152,
+   "fp_lifetime_sum": 3668135512
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9306520
+  ],
+  [
+   1.45,
+   103039528
+  ],
+  [
+   2.88,
+   3668037208
+  ]
+ ],
+ "ps_before": "2026-10-05T12:18:55-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 3031   6192 100.0 ugrep\n  626 529328  43.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 5287 294624  15.0 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n 6219  59792  11.2 $HOME/Projects/investments/.venv/bin/python3\n73194 196800   7.8 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n  639 148000   4.0 /usr/sbin/coreaudiod\n  774   6144   3.6 /usr/libexec/sysmond\n  629 245456   3.2 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n 3392 390512   2.8 /System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/MacOS/Safari\n 6905  53120   2.6 /System/Library/PrivateFrameworks/AuthKitUI.framework/PlugIns/AKAppSSOExtension_macOS.appex/Contents/MacOS/AKAppSSOExtension_macOS\n",
+ "others_at_start": []
+}

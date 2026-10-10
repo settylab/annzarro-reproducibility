@@ -1,0 +1,29 @@
+version: 1
+image: 02_regulon_pick_recolours_three_viewers.jpg
+tool: scope
+software: SCope 1.8.2 (scope.aertslab.org)
+data: Wouters_Human_Melanoma / 10_Baselines_filteredRegulons.loom (4,322 cells)
+url: https://scope.aertslab.org/#/Wouters_Human_Melanoma/Wouters_Human_Melanoma%2F10_Baselines_filteredRegulons.loom/regulon
+captured: '2026-10-03'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: headless Playwright session of 2026-10-03, script not kept (see notes/comparison/scope.md, Focus section)
+source: manual
+image_sha256: 408529f5a795a5a4b3b1f5ee014e08559a5443169cfa68e899d013b7d7aad535
+proves:
+- column: focus
+  mark: N
+  caption: 'SCope 1.8.2: MITF_motif_regulon re-drives three viewers, but it is a per-cell AUC column (feature colouring),
+    not a relation row of a focused cell or gene.'
+callouts:
+- n: 1
+  box: [270, 50, 258, 38]
+  label: regulon MITF_motif_regulon picked
+- n: 2
+  box: [334, 292, 458, 608]
+  label: Regulon AUC values
+- n: 3
+  box: [804, 292, 254, 362]
+  label: Cells passing thresholds (2475 / 4322)
+- n: 4
+  box: [804, 664, 254, 236]
+  label: Expression levels

@@ -1,0 +1,121 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first5000000.h5ad",
+  "benchmark/tool_ceiling/shots/cirrocumulus_default_run_5000000_r0",
+  "--n",
+  "5000000",
+  "--port",
+  "8934"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 39.84,
+ "peaks": {
+  "client": {
+   "fp_peak": 3087640704,
+   "fp_lifetime_sum": 3216862344,
+   "rss_peak": 2866036736,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 15805067432,
+   "fp_lifetime_sum": 16420614672,
+   "rss_peak": 15960276992,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 120435120,
+   "fp_lifetime_sum": 120435120,
+   "rss_peak": 155189248,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 16462385552,
+   "rss_peak": 16993320960,
+   "fp_lifetime_sum": 19637477016
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.19,
+   2856773808
+  ],
+  [
+   4.32,
+   6366999320
+  ],
+  [
+   6.57,
+   11399364904
+  ],
+  [
+   8.7,
+   11535614560
+  ],
+  [
+   10.81,
+   11612521176
+  ],
+  [
+   12.94,
+   11460674312
+  ],
+  [
+   15.16,
+   11792713008
+  ],
+  [
+   17.33,
+   13037815424
+  ],
+  [
+   19.46,
+   12029937280
+  ],
+  [
+   21.57,
+   12034393752
+  ],
+  [
+   23.7,
+   12020827800
+  ],
+  [
+   25.79,
+   12030740120
+  ],
+  [
+   27.9,
+   10613457048
+  ],
+  [
+   29.99,
+   9895477496
+  ],
+  [
+   32.08,
+   10019504664
+  ],
+  [
+   34.16,
+   9988882968
+  ],
+  [
+   36.28,
+   10004578864
+  ],
+  [
+   38.45,
+   9994142256
+  ]
+ ],
+ "ps_before": "2026-10-03T21:41:43-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 1897584  17.2 $HOME/.local/bin/claude\n  734  52016   6.0 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n47413 607632   3.5 /Applications/cmux.app/Contents/MacOS/cmux\n 6219  58688   1.4 $HOME/Projects/investments/.venv/bin/python3\n  626 486896   1.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n92291  30816   0.8 .venv/bin/python\n98631 477168   0.5 $HOME/.local/bin/claude\n84235 255296   0.3 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n80588 616784   0.3 $HOME/.local/bin/claude\n72627 492016   0.3 $HOME/.local/bin/claude\n"
+}

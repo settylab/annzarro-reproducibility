@@ -1,0 +1,82 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_1000000_r1",
+  "--server-url",
+  "http://hpc-node-36:8790",
+  "--proxy",
+  "socks5://127.0.0.1:8767",
+  "--n",
+  "1000000",
+  "--probe-store",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "--version-label",
+  "606f0bc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 16.74,
+ "peaks": {
+  "client": {
+   "fp_peak": 3245303744,
+   "fp_lifetime_sum": 3287559112,
+   "rss_peak": 2752430080,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1818888,
+   "fp_lifetime_sum": 1818888,
+   "rss_peak": 3768320,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 123122312,
+   "fp_lifetime_sum": 123138696,
+   "rss_peak": 161169408,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3245303744,
+   "rss_peak": 2752430080,
+   "fp_lifetime_sum": 3289378000
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.15,
+   0
+  ],
+  [
+   4.24,
+   0
+  ],
+  [
+   6.47,
+   846127456
+  ],
+  [
+   8.66,
+   870162880
+  ],
+  [
+   10.94,
+   1806148584
+  ],
+  [
+   13.25,
+   2671208048
+  ],
+  [
+   15.56,
+   3043469128
+  ]
+ ],
+ "ps_before": "2026-10-04T01:23:34-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1118880 169.0 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n96300 114832 100.0 $TMPDIR/evidence/venv/bin/python\n47413 615312  22.7 /Applications/cmux.app/Contents/MacOS/cmux\n  582 110128  16.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n96495  13472  12.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n96141  25936   5.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n96047  25600   5.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n57113 2065152   4.7 $HOME/.local/bin/claude\n  557 652080   4.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n    1  35680   4.6 /sbin/launchd\n"
+}

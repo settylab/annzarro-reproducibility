@@ -1,0 +1,54 @@
+{
+ "tool": "ucsc",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/ucsc/html_10000000",
+ "n": 10000000,
+ "phases": {
+  "server_ready": 1.14,
+  "first_plot": 4.43,
+  "plot_cat": 4.54,
+  "plot_gene": 24.24,
+  "done": 24.48
+ },
+ "checks": {
+  "cat": {
+   "gl": {
+    "crit": "call",
+    "drawn": 10000000,
+    "frame_max": {
+     "pts": 20000000,
+     "inst": 0
+    },
+    "call_max": 10000000
+   },
+   "stated": 10000000,
+   "png": "benchmark/tool_ceiling/shots/ucsc_default_run_10000000_r1_cat.png",
+   "all_cells": true
+  },
+  "gene": {
+   "gl": {
+    "crit": "call",
+    "drawn": 10000000,
+    "frame_max": {
+     "pts": 20000000,
+     "inst": 0
+    },
+    "call_max": 10000000
+   },
+   "stated": 10000000,
+   "png": "benchmark/tool_ceiling/shots/ucsc_default_run_10000000_r1_gene.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "cellbrowser": "1.2.20"
+ },
+ "console": [
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)"
+ ],
+ "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
+ "crashed": false,
+ "ok": true
+}

@@ -1,0 +1,497 @@
+# TissUUmaps 3.2.1.11: marks and evidence (comparison-auditor, 2026-10-05); schema: evidence/README.md.
+id: tissuumaps
+name: TissUUmaps 3.2.1.11
+# Out of scope (operator 2026-10-06: spatial-specific tool, removed from the paper); kept in git, not in Fig. 1c.
+figure: null
+out_of_scope: operator 2026-10-06, spatial-specific tool removed from the paper
+notes: notes/comparison/tissuumaps.md
+largest_documented: 163k cells (HDCA lung demo)
+cells:
+  cells:
+    reason: 'The one obsp key read, spatial_connectivities, can only be drawn as edges between markers; no obsp
+      row becomes a colour or an axis. Footnote: draws the stored spatial neighbour graph as edges.'
+    detail: 'The one obsp key read, spatial_connectivities, can only be drawn as edges between markers; no obsp
+      row becomes a colour or an axis. Footnote: draws the stored spatial neighbour graph as edges.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m01_cells_obsp_edges_zoom.jpg
+      label: spots; edges are an option, not a colour
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/read_h5ad.py
+      lines: 277-278
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/read_h5ad.py#L277-L278
+      label: only obsp/spatial_connectivities, as an edges column
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: N
+  genes:
+    reason: varp is never read.
+    detail: varp is never read.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m04_slots_obs_categorical_list.jpg
+      label: 'marker sources: obs and X genes'
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/read_h5ad.py
+      lines: 62-82
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/read_h5ad.py#L62-L82
+      label: h5ad reader lists var names and obs columns only
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    na:
+      visual: absence of a varp option; the marker-source lists in m04 show what is offered
+    mark: N
+  focus:
+    reason: Picking a gene colours the markers by its expression (feature colouring); nothing can be focused.
+    detail: Picking a gene colours the markers by its expression (feature colouring); nothing can be focused.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m03_focus_gene_mpo.jpg
+      label: gene colouring
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/read_h5ad.py
+      lines: 457-477
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/read_h5ad.py#L457-L477
+      label: 'each gene is a colour setting (cb_col = /X;index): feature colouring, no pairwise row'
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: N
+  slots:
+    reason: obs (numerical and categorical) and X genes are offered, obsm gives coordinates, one obsp key can be
+      edges; layers, varm, varp and uns are not offered.
+    detail: obs (numerical and categorical) and X genes are offered, obsm gives coordinates, one obsp key can be
+      edges; layers, varm, varp and uns are not offered.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m04_slots_obs_categorical_list.jpg
+      label: obs categorical list
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/read_h5ad.py
+      lines: 162-170
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/read_h5ad.py#L162-L170
+      label: coordinates from obsm
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: P
+  remote:
+    reason: The browser worker can read an h5ad over https by Range when a project file references it, but the GUI
+      opens local files only; not tested.
+    detail: The browser worker can read an h5ad over https by Range when a project file references it, but the GUI
+      opens local files only; not tested.
+    evidence:
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/static/js/utils/h5Utils.js
+      lines: 33-39
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/static/js/utils/h5Utils.js#L33-L39
+      label: worker loads http(s) URLs
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: source and docs
+    na:
+      visual: remote reading is only reachable through a project file's URL, not a GUI control; not exercised
+    mark: P
+  spatial:
+    reason: Visium spots placed by obsm/spatial.
+    detail: Visium spots placed by obsm/spatial.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m07_m11_spatial_spots_over_image.jpg
+      label: spots at tissue coordinates
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/read_h5ad.py
+      lines: 155-170
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/read_h5ad.py#L155-L170
+      label: coordinates from obsm, 'spatial' first
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/read_h5ad.py
+      lines: 239-274
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/read_h5ad.py#L239-L274
+      label: spatial coordinates scaled to the image (scalefactors)
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: Y
+  selection:
+    reason: Regions act on the single main view; linked spatial/UMAP views need the Feature Space plugin (not part
+      of the core app).
+    detail: Regions act on the single main view; linked spatial/UMAP views need the Feature Space plugin (not part
+      of the core app).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/f01_regions_rectangle.jpg
+      label: region in the one view
+    - kind: paper
+      url: https://doi.org/10.1016/j.heliyon.2023.e15306
+      label: Pielawski et al. 2023, TissUUmaps 3, Heliyon 9:e15306
+      where: sec. 3.3.2 Plugin for 2D feature space exploration
+      indicates: N
+      checked: '2026-10-05'
+      note: linked spatial and feature-space views come from a plugin, not the core viewer
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: N
+  annot:
+    reason: A drawn region gets an editable class and name and can be exported; it labels an area, not individual
+      cells.
+    detail: A drawn region gets an editable class and name and can be exported; it labels an area, not individual
+      cells.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/f01_regions_rectangle.jpg
+      label: region class and name
+    - kind: docs
+      url: https://tissuumaps.github.io/TissUUmaps-docs/docs/starting/regions.html
+      label: Regions docs
+      checked: '2026-10-05'
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: P
+  de:
+    reason: No DE in the core app; the official DGE plugin only displays a precomputed scanpy rank_genes_groups
+      result.
+    detail: No DE in the core app; the official DGE plugin only displays a precomputed scanpy rank_genes_groups
+      result.
+    evidence:
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: plugins_repo/latest/DGE.yml
+      lines: 7-14
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/plugins_repo/latest/DGE.yml#L7-L14
+      label: 'DGE plugin: displays precomputed rank_genes_groups'
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: source and docs
+    na:
+      visual: no DE control exists in the core app to show
+    mark: N
+  image:
+    reason: The uns/spatial image is drawn under the spots, with layer controls.
+    detail: The uns/spatial image is drawn under the spots, with layer controls.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m07_m11_spatial_spots_over_image.jpg
+      label: spots over the image
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m11_image_layers_tab.jpg
+      label: Layers tab
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/read_h5ad.py
+      lines: 187-206
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/read_h5ad.py#L187-L206
+      label: uns/spatial images become DZI image layers
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: Y
+  share:
+    reason: Save project writes a .tmap; reopening restored the dataset and marker menus but not the chosen colouring
+      (server build).
+    detail: Save project writes a .tmap; reopening restored the dataset and marker menus but not the chosen colouring
+      (server build).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m12_share_save_project_dialog.jpg
+      label: save dialog
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/f02_share_project_reopened.jpg
+      label: reopened project
+    - kind: docs
+      url: https://tissuumaps.github.io/TissUUmaps-docs/docs/starting/projects.html
+      label: Projects docs
+      checked: '2026-10-05'
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: P
+  export:
+    reason: Capture viewport with a resolution factor downloaded a 2.2 MB PNG.
+    detail: Capture viewport with a resolution factor downloaded a 2.2 MB PNG.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m13_export_capture_dialog.jpg
+      label: capture dialog
+    - kind: docs
+      url: https://tissuumaps.github.io/TissUUmaps-docs/docs/starting/capture.html
+      label: Exporting screenshots docs
+      checked: '2026-10-05'
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: Y
+  desktop:
+    reason: 'Desktop build: installers for Windows, macOS and Ubuntu; the pip GUI (PySide6) ran on this Mac and
+      served the same page (observed over CDP; the Qt menu bar is not in the shots; not the .dmg).'
+    detail: 'Desktop build: installers for Windows, macOS and Ubuntu; the pip GUI (PySide6) ran on this Mac and
+      served the same page (observed over CDP; the Qt menu bar is not in the shots; not the .dmg).'
+    evidence:
+    - kind: docs
+      url: https://tissuumaps.github.io/TissUUmaps-docs/docs/intro/installation.html
+      label: Installation docs
+      checked: '2026-10-05'
+    - kind: note
+      path: notes/comparison/tissuumaps.md#matrix-row-proposed
+      label: desktop run over CDP
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    na:
+      visual: the desktop window itself could not be captured from this terminal; the embedded page was captured
+        over CDP (not kept as a column shot)
+    mark: Y
+  hosted:
+    reason: A Docker instance serving the web app is documented, with optional sftp multi-user access.
+    detail: A Docker instance serving the web app is documented, with optional sftp multi-user access.
+    evidence:
+    - kind: docs
+      url: https://tissuumaps.github.io/TissUUmaps-docs/docs/sharing/docker.html
+      label: Docker container (sftp multi-user access optional)
+      checked: '2026-10-05'
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: source and docs
+    na:
+      visual: deployment fact; docs page cited
+    mark: Y
+  static:
+    reason: The desktop build's Export to static webpage writes index.html, static/ and data/ (the h5ad and DZI
+      image tiles); served by a plain static server it opens and draws the image and marker panel with no backend.
+    detail: The desktop build's Export to static webpage writes index.html, static/ and data/ (the h5ad and DZI
+      image tiles); served by a plain static server it opens and draws the image and marker panel with no backend.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/g01_static_DOCS_export_to_static_webpage.jpg
+      label: static export docs
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/views.py
+      lines: 905-1027
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/views.py#L905-L1027
+      label: exportToStatic
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/gui.py
+      lines: 288-288
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/gui.py#L288
+      label: menu item Export to static webpage
+    - kind: docs
+      url: https://tissuumaps.github.io/TissUUmaps-docs/docs/sharing/apache.html
+      label: static export docs
+      checked: '2026-10-05'
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: Y
+  lazy:
+    reason: 'The browser reads the h5ad by HTTP Range (1 MB chunks): the server logged 17 HTTP 206 responses for
+      the 476 MB file in one session.'
+    detail: 'The browser reads the h5ad by HTTP Range (1 MB chunks): the server logged 17 HTTP 206 responses for
+      the 476 MB file in one session.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/l01_lazy_request_log.jpg
+      label: request log (rendered)
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/static/js/utils/h5Utils.js
+      lines: 18-39
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/static/js/utils/h5Utils.js#L18-L39
+      label: 1 MB chunked worker reads
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/views.py
+      lines: 820-853
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/views.py#L820-L853
+      label: 'send_file_partial: 206 Partial Content'
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: Y
+  every_cell:
+    reason: All 8,090 cells drawn in one WebGL call; the paper's rendering benchmark draws up to 16.7 M markers
+      without sub-sampling.
+    detail: All 8,090 cells drawn in one WebGL call; the paper's rendering benchmark draws up to 16.7 M markers
+      without sub-sampling.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m00_every_cell_bm_umap_celltype.jpg
+      label: 8,090 points
+    - kind: paper
+      url: https://doi.org/10.1016/j.heliyon.2023.e15306
+      label: Pielawski et al. 2023, TissUUmaps 3, Heliyon 9:e15306
+      where: sec. 1.2 Our contribution; sec. 3.2.3 Rendering time (datasets of 65k, 1.0 M and 16.7 M points)
+      checked: '2026-10-05'
+      quote: without relying on data sub-sampling
+      note: points are spatial mRNA markers, not cells; the benchmark draws all of them
+      indicates: Y
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: Y
+  subset:
+    reason: Per-category visibility checkboxes hide cells from the view; data are not loaded less.
+    detail: Per-category visibility checkboxes hide cells from the view; data are not loaded less.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m07_m11_spatial_spots_over_image.jpg
+      label: category checkboxes
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/static/js/utils/interfaceUtils.js
+      lines: '2342'
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/static/js/utils/interfaceUtils.js#L2342
+      label: per-category visibility checkbox
+    - kind: code
+      repo: TissUUmaps/TissUUmaps3
+      commit: 618b97caf0767bae5b2fc8580c9a29e203607fd8
+      path: tissuumaps/static/js/utils/glUtils.js
+      lines: 1546-1559
+      url: https://github.com/TissUUmaps/TissUUmaps3/blob/618b97caf0767bae5b2fc8580c9a29e203607fd8/tissuumaps/static/js/utils/glUtils.js#L1546-L1559
+      label: hidden categories get alpha 0 in the colour LUT; data stay loaded
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    mark: P
+  auto_subset:
+    reason: 'No default subset: TU3 draws every marker (the TU1 quad-tree subsampling is gone).'
+    detail: 'No default subset: TU3 draws every marker (the TU1 quad-tree subsampling is gone).'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/tissuumaps/m00_every_cell_bm_umap_celltype.jpg
+      label: whole dataset drawn
+    - kind: paper
+      url: https://doi.org/10.1016/j.heliyon.2023.e15306
+      label: Pielawski et al. 2023, TissUUmaps 3, Heliyon 9:e15306
+      where: sec. 1.2 Our contribution; sec. 3.2.3 Rendering time (datasets of 65k, 1.0 M and 16.7 M points)
+      checked: '2026-10-05'
+      quote: without relying on data sub-sampling
+      note: points are spatial mRNA markers, not cells; the benchmark draws all of them
+      indicates: Y
+    reproduce:
+    - notes/comparison/demos/tissuumaps/matrix_check.py
+    - notes/comparison/demos/tissuumaps/followup_check.py
+    - notes/comparison/demos/tissuumaps/desktop_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (server build in headless Chromium; desktop build via CDP)
+    na:
+      visual: a demo-size shot cannot show the absence at scale; the paper's 16.7M benchmark is the at-scale reference
+    mark: N

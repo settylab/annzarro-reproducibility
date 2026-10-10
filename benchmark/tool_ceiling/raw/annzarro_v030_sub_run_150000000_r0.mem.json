@@ -1,0 +1,84 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_150000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_sub_run_150000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 16.25,
+ "peaks": {
+  "client": {
+   "fp_peak": 1654940408,
+   "fp_lifetime_sum": 1776854640,
+   "rss_peak": 1399996416,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 4924330880,
+   "fp_lifetime_sum": 5003761400,
+   "rss_peak": 4957306880,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 132614072,
+   "fp_lifetime_sum": 132614072,
+   "rss_peak": 167395328,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5337331008,
+   "rss_peak": 6084755456,
+   "fp_lifetime_sum": 6780616040
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.22,
+   955294696
+  ],
+  [
+   4.5,
+   906274320
+  ],
+  [
+   6.8,
+   1751902312
+  ],
+  [
+   9.07,
+   1987979872
+  ],
+  [
+   11.32,
+   2815601968
+  ],
+  [
+   13.57,
+   3487444752
+  ],
+  [
+   16.1,
+   3887607592
+  ]
+ ],
+ "ps_before": "2026-10-05T00:19:29-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1076080  69.6 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n 1192 193840  60.1 /usr/libexec/textunderstandingd\n90185  20608   7.2 benchmark/tool_ceiling/.venv/bin/python\n86901 572992   3.0 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  582 111568   2.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n57113 2884272   2.1 $HOME/.local/bin/claude\n  855 1977248   1.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n 4725 640944   1.6 claude\n80588 621232   1.5 $HOME/.local/bin/claude\n80005 427520   0.7 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

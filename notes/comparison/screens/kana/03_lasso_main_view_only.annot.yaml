@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "03_lasso_main_view_only.jpg",
+ "tool": "kana",
+ "software": "Kana v3.2.0 (live build, kanaverse.org)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "https://www.kanaverse.org/kana/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_kana.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "P",
+   "caption": "Kana v3.2.0 (2026-10-04): a lasso greys the cells outside it in the one embedding; the gallery snapshots stay unchanged"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    112,
+    131,
+    795,
+    778
+   ],
+   "label": "lasso in the embedding",
+   "selector": "canvas >> nth=0"
+  },
+  {
+   "n": 3,
+   "box": [
+    1496,
+    46,
+    304,
+    904
+   ],
+   "label": "gallery unchanged",
+   "selector": "[data-recap='gal']"
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale_ceiling/syn_225000000.zarr",
+ "n_obs": 225000000,
+ "checks": {
+  "gene": {
+   "status": "ok",
+   "guard": [],
+   "console": [
+    "info: Large cell plot: 225000000 points in 2263 traces; load 2459 ms, build 2602 ms, draw 8844 ms"
+   ],
+   "n_drawn": 225000000,
+   "seconds": 14.603306707926095,
+   "all_cells": true,
+   "renderer_rss": 14878638080,
+   "gpu_rss": 4082581504,
+   "server_rss": 8250769408
+  },
+  "cat": {
+   "status": "alloc_failed",
+   "guard": [],
+   "console": [
+    "error: Error loading plot data: RangeError: Array buffer allocation failed\n    at new ArrayBuffer (<anonymous>)\n    at new Float32Array (<anonymous>)\n    at groupByKey (http://127.0.0.1:8933/static/js/panels/plot-utilities/large-plot.js:166:41)\n    at _drawLargePlot (http://127.0.0.1:8933/static/js/panels/"
+   ],
+   "n_drawn": 225000000,
+   "seconds": 3.2589794164523482,
+   "all_cells": false,
+   "renderer_rss": 14974779392,
+   "gpu_rss": 4087496704,
+   "server_rss": 8781643776
+  }
+ },
+ "versions": {
+  "annzarro": "78c9da6",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "ok",
+   "seconds": 14.603306707926095,
+   "n_points": 225000000
+  },
+  {
+   "event": "recolour_cat",
+   "status": "error",
+   "seconds": 3.2589794164523482,
+   "n_points": 225000000
+  }
+ ],
+ "heap": {
+  "file": "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_225000000_r1.heap.jsonl",
+  "samples": 50,
+  "last_pm": {
+   "t": 19.397,
+   "src": "performance.memory",
+   "n": 225000000,
+   "used": 11735858707,
+   "limit": 4395630592
+  },
+  "last_cdp": {
+   "t": 21.008,
+   "src": "Runtime.getHeapUsage",
+   "used": 28372452,
+   "total": 30015488,
+   "backing": 13731074433
+  },
+  "peak_used_pm": 13972813172,
+  "peak_used_cdp": 40707712
+ },
+ "ok": false
+}

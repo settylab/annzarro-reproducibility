@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m04_slots_obs_categorical_list.jpg",
+ "tool": "tissuumaps",
+ "software": "TissUUmaps 3.2.1.11 (server build, pip; TU4 is beta)",
+ "data": "bm_demo_csc.h5ad (8,090 cells x 16,285 genes)",
+ "url": "http://127.0.0.1:8908/bm_demo_csc.h5ad",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/tissuumaps/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "slots",
+   "mark": "P",
+   "caption": "Marker sources for an h5ad: obs columns (5 numerical, 8 categorical, listed) and the 16,285 X genes; obsm gives the coordinates; layers, varm, varp and uns are not offered"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    943,
+    199,
+    424,
+    208
+   ],
+   "label": "categorical obs columns",
+   "selector": ".select2-results"
+  },
+  {
+   "n": 2,
+   "box": [
+    942,
+    210,
+    137,
+    26
+   ],
+   "label": "X genes (16,285)",
+   "selector": "text=Gene expression"
+  }
+ ]
+}

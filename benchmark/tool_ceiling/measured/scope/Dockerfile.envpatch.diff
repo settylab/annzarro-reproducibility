@@ -1,0 +1,34 @@
+diff --git a/Dockerfile b/Dockerfile
+index c50ab85..b24af8b 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -1,4 +1,10 @@
+-FROM debian:latest
++FROM debian:bullseye
++
++# Build environment patch (ceiling-benchmarker, operator decision 2026-10-06; SCope code unchanged at 9ae5207):
++# Debian 11's packages are served from archive.debian.org, and Node.js 14 comes from the official
++# nodejs.org release tarball, pinned by version and sha256, because NodeSource no longer serves it.
++RUN printf 'deb http://archive.debian.org/debian bullseye main\ndeb http://archive.debian.org/debian bullseye-updates main\ndeb http://archive.debian.org/debian-security bullseye-security main\n' > /etc/apt/sources.list && \
++    printf 'Acquire::Check-Valid-Until "false";\n' > /etc/apt/apt.conf.d/99archive
+ 
+ ARG SCOPE_PORT=80
+ 
+@@ -10,9 +16,14 @@ RUN apt-get install -y \
+     unzip \
+     git
+ 
+-# Node js
+-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+-RUN apt-get install -y nodejs
++# Node js (patched: official v14.21.3 linux-x64 tarball, sha256 from nodejs.org SHASUMS256.txt)
++ARG NODE_VERSION=14.21.3
++ARG NODE_SHA256=05c08a107c50572ab39ce9e8663a2a2d696b5d262d5bd6f98d84b997ce932d9a
++RUN apt-get install -y xz-utils && \
++    curl -fsSLO https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz && \
++    echo "${NODE_SHA256}  node-v${NODE_VERSION}-linux-x64.tar.xz" | sha256sum -c - && \
++    tar -xJf node-v${NODE_VERSION}-linux-x64.tar.xz -C /usr/local --strip-components=1 && \
++    rm node-v${NODE_VERSION}-linux-x64.tar.xz && node --version && npm --version
+ RUN apt-get install -y build-essential
+ 
+ # Conda

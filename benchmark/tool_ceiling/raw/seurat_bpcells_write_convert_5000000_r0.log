@@ -1,0 +1,7 @@
+During startup - Warning message:
+package ‘colorout’ in options("defaultPackages") was not found 
+Warning: Matrix compression performs poorly with non-integers.
+• Consider calling convert_matrix_type if a compressed integer matrix is intended.
+This message is displayed once every 8 hours.
+[    54.6s] write_matrix_dir
+{"status": "ok", "rc": 0, "wall_s": 57.31} fp_peak=1.17GB lifetime=1.25GB

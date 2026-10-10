@@ -1,0 +1,136 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_500000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_sub_run_500000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 46.29,
+ "peaks": {
+  "client": {
+   "fp_peak": 1664475848,
+   "fp_lifetime_sum": 1765941984,
+   "rss_peak": 1401798656,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 13111945896,
+   "fp_lifetime_sum": 13196996128,
+   "rss_peak": 13141016576,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 115601720,
+   "fp_lifetime_sum": 115601720,
+   "rss_peak": 154566656,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 13498092648,
+   "rss_peak": 14250328064,
+   "fp_lifetime_sum": 14962938112
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.24,
+   945087392
+  ],
+  [
+   4.51,
+   894854600
+  ],
+  [
+   6.88,
+   934094520
+  ],
+  [
+   9.14,
+   933177016
+  ],
+  [
+   11.38,
+   935159480
+  ],
+  [
+   13.62,
+   932554448
+  ],
+  [
+   15.94,
+   1565141216
+  ],
+  [
+   18.19,
+   2167089832
+  ],
+  [
+   20.43,
+   2863721608
+  ],
+  [
+   22.8,
+   3555831424
+  ],
+  [
+   25.05,
+   4211929184
+  ],
+  [
+   27.29,
+   4881166888
+  ],
+  [
+   29.55,
+   5774783760
+  ],
+  [
+   31.8,
+   6459193120
+  ],
+  [
+   34.04,
+   7123384624
+  ],
+  [
+   36.29,
+   7767948048
+  ],
+  [
+   38.64,
+   8525823264
+  ],
+  [
+   40.91,
+   9652338912
+  ],
+  [
+   43.32,
+   12789385816
+  ],
+  [
+   45.62,
+   6803404480
+  ]
+ ],
+ "ps_before": "2026-10-05T00:24:08-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  582 115760  89.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n96620  20400  16.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n96621  20432  15.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n96618  20432  14.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  557 567648  14.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n96622  20384  13.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n96623  20464  12.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n93984  26352  12.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n93961  20464  11.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n96619  20432  11.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

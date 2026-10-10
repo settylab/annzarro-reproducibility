@@ -1,0 +1,55 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/cirrocumulus/.venv/bin/cirro",
+  "prepare_data",
+  "--format",
+  "zarr",
+  "--no-auto-groups",
+  "--out",
+  "$DATA_ROOT/tool_ceiling_data/cirro/first5000000.zarr",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first5000000.h5ad"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 7.53,
+ "peaks": {
+  "proc": {
+   "fp_peak": 16034164904,
+   "fp_lifetime_sum": 16421122672,
+   "rss_peak": 16187015168,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 16034164904,
+   "rss_peak": 16187015168,
+   "fp_lifetime_sum": 16421122672
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8503752
+  ],
+  [
+   1.49,
+   4543106792
+  ],
+  [
+   2.95,
+   5394387408
+  ],
+  [
+   4.42,
+   13992997032
+  ],
+  [
+   5.92,
+   11128824808
+  ],
+  [
+   7.38,
+   9798088
+  ]
+ ],
+ "ps_before": "2026-10-03T22:36:17-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n23163  20464   3.7 benchmark/tool_ceiling/.venv/bin/python\n68627 421776   3.1 $HOME/.local/bin/claude\n57113 1903088   2.9 $HOME/.local/bin/claude\n 6219  58672   2.5 $HOME/Projects/investments/.venv/bin/python3\n80588 617056   2.1 $HOME/.local/bin/claude\n47413 607808   2.1 /Applications/cmux.app/Contents/MacOS/cmux\n86901 499104   1.9 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n72627 493248   1.6 $HOME/.local/bin/claude\n23168  19360   1.2 .venv/bin/python\n92291  30816   0.6 .venv/bin/python\n"
+}

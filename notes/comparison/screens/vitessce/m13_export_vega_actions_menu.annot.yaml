@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m13_export_vega_actions_menu.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (hosted app at vitessce.io, 2026-10-04)",
+ "data": "bm_demo.zarr (8,090 cells), served on 127.0.0.1:8904",
+ "url": "https://vitessce.io/#?url=http://127.0.0.1:8904/config_matrix.json",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/vitessce/recap_b.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "export",
+   "mark": "P",
+   "caption": "Vega '...' menu: Save as SVG, Save as PNG, View Source, View Compiled Vega, Open in Vega Editor"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    279,
+    644,
+    178,
+    211
+   ],
+   "label": "Save as SVG / PNG",
+   "selector": ".vega-actions"
+  },
+  {
+   "n": 2,
+   "box": [
+    412,
+    609,
+    36,
+    36
+   ],
+   "label": "'...' button",
+   "selector": ".vega-embed summary >> nth=0"
+  }
+ ]
+}

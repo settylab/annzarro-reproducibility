@@ -1,0 +1,32 @@
+{
+ "tool": "tissuumaps",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first1000000_csc.h5ad",
+ "n": 1000000,
+ "phases": {
+  "server_ready": 1.13,
+  "first_plot": 1.34,
+  "plot_cat": 1751.75
+ },
+ "checks": {
+  "cat": {
+   "gl": {
+    "crit": "call",
+    "drawn": 65536,
+    "frame_max": {
+     "pts": 0,
+     "inst": 1000000
+    },
+    "call_max": 65536
+   },
+   "stated": null,
+   "png": "benchmark/tool_ceiling/shots/tissuumaps_default_run_1000000_r0_cat.png",
+   "all_cells": false
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "tissuumaps": "3.2.1.11"
+ },
+ "console": []
+}

@@ -1,0 +1,26 @@
+{
+  "title": "AnnZarro: evidence site and benchmark code",
+  "upload_type": "software",
+  "description": "Evidence site, claims ledger, benchmark results and code, figure scripts and data-preparation scripts behind the AnnZarro paper. Draft; completed at the release.",
+  "creators": [
+    {
+      "name": "Otto, Dominik J.",
+      "orcid": "0009-0009-3295-1234",
+      "affiliation": "Fred Hutchinson Cancer Center, Seattle WA, USA"
+    },
+    {
+      "name": "Baasri, Siddharth",
+      "affiliation": "Fred Hutchinson Cancer Center, Seattle WA, USA; University of Washington, Seattle WA, USA"
+    },
+    {
+      "name": "Setty, Manu",
+      "orcid": "0000-0002-0344-2627",
+      "affiliation": "Fred Hutchinson Cancer Center, Seattle WA, USA"
+    }
+  ],
+  "license": "MIT",
+  "related_identifiers": [
+    {"relation": "isDocumentedBy", "identifier": "https://settylab.github.io/annzarro-reproducibility/", "scheme": "url"},
+    {"relation": "isSupplementTo", "identifier": "https://github.com/settylab/annzarro", "scheme": "url"}
+  ]
+}

@@ -1,0 +1,62 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_1000000_r0",
+  "--server-url",
+  "http://hpc-node-36:8790",
+  "--proxy",
+  "socks5://127.0.0.1:8767",
+  "--n",
+  "1000000",
+  "--probe-store",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "--version-label",
+  "606f0bc"
+ ],
+ "status": "error",
+ "rc": 1,
+ "wall_s": 5.06,
+ "peaks": {
+  "client": {
+   "fp_peak": 0,
+   "fp_lifetime_sum": 0,
+   "rss_peak": 0,
+   "n_proc_max": 0
+  },
+  "server": {
+   "fp_peak": 0,
+   "fp_lifetime_sum": 0,
+   "rss_peak": 0,
+   "n_proc_max": 0
+  },
+  "harness": {
+   "fp_peak": 63739976,
+   "fp_lifetime_sum": 63739976,
+   "rss_peak": 100532224,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 0,
+   "rss_peak": 0,
+   "fp_lifetime_sum": 0
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.25,
+   0
+  ],
+  [
+   4.41,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-04T01:19:02-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47413 615344  39.6 /Applications/cmux.app/Contents/MacOS/cmux\n  855 1791824  23.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n85440   9184  18.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n85441   9472  18.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n85439   9456  18.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n85438   9328  17.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n85437   9488  15.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n57113 2064976  13.6 $HOME/.local/bin/claude\n85444   9248  13.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n85446   9264  13.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n"
+}

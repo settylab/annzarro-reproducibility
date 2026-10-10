@@ -1,0 +1,182 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "isee",
+  "hdf5",
+  "$DATA_ROOT/tool_ceiling_data/sce_h5/first5000000.rds",
+  "benchmark/tool_ceiling/shots/isee_hdf5_run_5000000_r0",
+  "--n",
+  "5000000",
+  "--port",
+  "8948"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 77.12,
+ "peaks": {
+  "client": {
+   "fp_peak": 825925792,
+   "fp_lifetime_sum": 899081432,
+   "rss_peak": 1078493184,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 12516094816,
+   "fp_lifetime_sum": 12663061288,
+   "rss_peak": 16899014656,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 133591880,
+   "fp_lifetime_sum": 133591880,
+   "rss_peak": 168001536,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 12887479392,
+   "rss_peak": 17945968640,
+   "fp_lifetime_sum": 13562142720
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.43,
+   844489680
+  ],
+  [
+   4.76,
+   1438410088
+  ],
+  [
+   7.1,
+   1415292576
+  ],
+  [
+   9.4,
+   1602971464
+  ],
+  [
+   11.71,
+   1754539944
+  ],
+  [
+   13.99,
+   1974822992
+  ],
+  [
+   16.26,
+   2020550784
+  ],
+  [
+   18.66,
+   3014519680
+  ],
+  [
+   20.95,
+   2663164992
+  ],
+  [
+   23.26,
+   2700291280
+  ],
+  [
+   25.56,
+   2839195432
+  ],
+  [
+   27.84,
+   3004395688
+  ],
+  [
+   30.18,
+   3020878088
+  ],
+  [
+   32.46,
+   3011408160
+  ],
+  [
+   34.82,
+   3011637536
+  ],
+  [
+   37.09,
+   3011883296
+  ],
+  [
+   39.3,
+   3012210976
+  ],
+  [
+   41.58,
+   3464278640
+  ],
+  [
+   43.87,
+   5369231784
+  ],
+  [
+   46.11,
+   6484442664
+  ],
+  [
+   48.35,
+   6947389376
+  ],
+  [
+   50.7,
+   8954955776
+  ],
+  [
+   52.89,
+   10130131784
+  ],
+  [
+   55.08,
+   10329590720
+  ],
+  [
+   57.28,
+   12864705632
+  ],
+  [
+   59.48,
+   11616653976
+  ],
+  [
+   61.7,
+   10937619096
+  ],
+  [
+   63.92,
+   4798971840
+  ],
+  [
+   66.25,
+   4904632304
+  ],
+  [
+   68.43,
+   4930420720
+  ],
+  [
+   70.64,
+   4930322416
+  ],
+  [
+   72.82,
+   4930535408
+  ],
+  [
+   75.02,
+   4930633712
+  ]
+ ],
+ "ps_before": "2026-10-05T12:55:16-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n51440  96080  31.6 /System/Library/PrivateFrameworks/IntelligencePlatformCore.framework/Versions/A/knowledgeconstructiond\n    1  34144  30.9 /sbin/launchd\n  855 2056928  27.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n74971 1113392  18.9 /Applications/Microsoft Teams.app/Contents/Helpers/Microsoft Teams WebView.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/149.0.4022.96/Helpers/Microsoft Teams WebView Helper (Renderer).app/Contents/MacOS/Microsoft Teams WebView Helper (Renderer)\n66247 2915344  13.5 /Library/Apple/System/Library/CoreServices/XProtect.app/Contents/MacOS/XProtectRemediatorPirrit\n74797  18608  13.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n74796  12960  12.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n74799  18352  12.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n74798  13008  12.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n74795  10176  12.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

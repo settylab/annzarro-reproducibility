@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "g01_desktop_DOCS_release_macos_installer.jpg",
+ "tool": "manivault",
+ "software": "ManiVault Studio docs (documentation pages, not the app)",
+ "data": null,
+ "url": "https://github.com/ManiVaultStudio/Releases/releases/tag/manivault_1.5.0_mac",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/manivault/docs_shots.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "desktop",
+   "mark": "Y",
+   "caption": "Docs, not the app: the official ManiVault 1.5.0 macOS installer (dmg) on the project's releases page"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    146,
+    541,
+    183,
+    25
+   ],
+   "label": "macOS installer asset",
+   "selector": "text=manivault_1.5.0_mac.dmg"
+  }
+ ]
+}

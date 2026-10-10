@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "h02_lazy_request_log_exprmatrix_range_206.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo&gene=Mpo",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_ucsc.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "lazy",
+   "mark": "Y",
+   "caption": "request log, UCSC Cell Browser cellbrowser 1.2.20 (2026-10-04): choosing Mpo fetches 11728 bytes of the 111,110,566-byte exprMatrix.bin by HTTP Range (206)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    258,
+    1375,
+    35
+   ],
+   "label": "exprMatrix.bin, Range bytes=70955997-70967724: 206, 11728 bytes",
+   "selector": "#r5"
+  },
+  {
+   "n": 2,
+   "box": [
+    12,
+    588,
+    1376,
+    23
+   ],
+   "label": "partial read of the matrix file",
+   "selector": "#note"
+  }
+ ]
+}

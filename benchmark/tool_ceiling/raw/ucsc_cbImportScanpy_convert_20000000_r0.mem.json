@@ -1,0 +1,91 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/ucsc-cell-browser/.venv/bin/cbImportScanpy",
+  "-i",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first20000000.h5ad",
+  "-o",
+  "$DATA_ROOT/tool_ceiling_data/ucsc/in_20000000",
+  "-n",
+  "first20000000",
+  "--clusterField=cell_line_id",
+  "--skipMarkers",
+  "-f",
+  "mtx"
+ ],
+ "status": "cap",
+ "rc": -9,
+ "wall_s": 20.16,
+ "peaks": {
+  "proc": {
+   "fp_peak": 51808760808,
+   "fp_lifetime_sum": 51901215768,
+   "rss_peak": 52452818944,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 51808760808,
+   "rss_peak": 52452818944,
+   "fp_lifetime_sum": 51901215768
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   7422408
+  ],
+  [
+   1.5,
+   129417912
+  ],
+  [
+   3.0,
+   2905705136
+  ],
+  [
+   4.5,
+   11947811888
+  ],
+  [
+   5.99,
+   18965575648
+  ],
+  [
+   7.5,
+   19413874992
+  ],
+  [
+   8.99,
+   20453195064
+  ],
+  [
+   10.44,
+   21259321280
+  ],
+  [
+   11.93,
+   21564276888
+  ],
+  [
+   13.43,
+   22105014808
+  ],
+  [
+   14.9,
+   22105637400
+  ],
+  [
+   16.37,
+   39970108408
+  ],
+  [
+   17.85,
+   40690719216
+  ],
+  [
+   19.34,
+   49954287968
+  ]
+ ],
+ "ps_before": "2026-10-04T15:42:58-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n11978  56608  93.0 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n77736 141648   8.1 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n93323 904656   7.6 $HOME/.local/bin/claude\n77769 942624   4.9 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n  626 515216   4.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n47413 604672   4.4 /Applications/cmux.app/Contents/MacOS/cmux\n  629 237184   4.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n 1012  17808   3.6 /usr/libexec/pboard\n  596  30704   2.9 /System/Library/CoreServices/launchservicesd\n 6219  59360   2.3 $HOME/Projects/investments/.venv/bin/python3\n",
+ "others_at_start": []
+}

@@ -1,0 +1,26 @@
+version: 1
+image: m04_slots_APP_clusterings.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: 08501c8cb45d879d07e0ce7bd7c73268208a72a26766cd99246501c6d2ed7857
+proves:
+- column: slots
+  mark: N
+  caption: 'what the .cloupe carries: eight categorical groups under ''LoupeR Analysis groups''; numeric metadata,
+    graphs and other AnnData slots do not reach Loupe'
+callouts:
+- n: 1
+  box:
+  - 65
+  - 92
+  - 195
+  - 320
+  label: 8 LoupeR groups

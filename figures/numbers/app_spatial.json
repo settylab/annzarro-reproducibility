@@ -1,0 +1,38 @@
+{
+ "n_spots": 2693,
+ "n_genes": 2000,
+ "n_leiden": 20,
+ "connectivities_nnz_per_row_median": 18.0,
+ "walk_t": 5,
+ "walk_n_eff_median": 110.10660781829635,
+ "spot": {
+  "name": "TGCAAGAATGACGTAA-1",
+  "leiden": "18",
+  "walk_n_eff": 194.5558236855693,
+  "walk_mass_own_leiden": 0.8869491204823134,
+  "spatial_kernel_mass_own_leiden": 0.8070538311148994,
+  "spatial_kernel_n_leiden_clusters_with_mass_gt_1pct": 3
+ },
+ "clicks": [
+  {
+   "tag": "row4",
+   "spot": "TGCAAGAATGACGTAA-1",
+   "focused": "TGCAAGAATGACGTAA-1",
+   "data_requests": 2,
+   "obsp_rows": {
+    "expression_walk_t5": 1,
+    "spatial_kernel": 1
+   }
+  },
+  {
+   "tag": "row3",
+   "spot": "TGCAAGAATGACGTAA-1",
+   "focused": "TGCAAGAATGACGTAA-1",
+   "data_requests": 2,
+   "obsp_rows": {
+    "expression_walk_t5": 1,
+    "spatial_kernel": 1
+   }
+  }
+ ]
+}

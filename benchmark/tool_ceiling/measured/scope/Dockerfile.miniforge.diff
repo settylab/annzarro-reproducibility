@@ -1,0 +1,47 @@
+diff --git a/Dockerfile b/Dockerfile
+index c50ab85..54cd9af 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -1,4 +1,10 @@
+-FROM debian:latest
++FROM debian:bullseye
++
++# Build environment patch (ceiling-benchmarker, operator decision 2026-10-06; SCope code unchanged at 9ae5207):
++# Debian 11's packages are served from archive.debian.org, and Node.js 14 comes from the official
++# nodejs.org release tarball, pinned by version and sha256, because NodeSource no longer serves it.
++RUN printf 'deb http://archive.debian.org/debian bullseye main\ndeb http://archive.debian.org/debian bullseye-updates main\ndeb http://archive.debian.org/debian-security bullseye-security main\n' > /etc/apt/sources.list && \
++    printf 'Acquire::Check-Valid-Until "false";\n' > /etc/apt/apt.conf.d/99archive
+ 
+ ARG SCOPE_PORT=80
+ 
+@@ -10,15 +16,25 @@ RUN apt-get install -y \
+     unzip \
+     git
+ 
+-# Node js
+-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+-RUN apt-get install -y nodejs
++# Node js (patched: official v14.21.3 linux-x64 tarball, sha256 from nodejs.org SHASUMS256.txt)
++ARG NODE_VERSION=14.21.3
++ARG NODE_SHA256=05c08a107c50572ab39ce9e8663a2a2d696b5d262d5bd6f98d84b997ce932d9a
++RUN apt-get install -y xz-utils && \
++    curl -fsSLO https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz && \
++    echo "${NODE_SHA256}  node-v${NODE_VERSION}-linux-x64.tar.xz" | sha256sum -c - && \
++    tar -xJf node-v${NODE_VERSION}-linux-x64.tar.xz -C /usr/local --strip-components=1 && \
++    rm node-v${NODE_VERSION}-linux-x64.tar.xz && node --version && npm --version
+ RUN apt-get install -y build-essential
+ 
+-# Conda
+-RUN wget --quiet --content-disposition http://bit.ly/miniconda3 -O ~/miniconda.sh && \
++# Conda (patched: Miniforge 26.7.2-0 in place of Miniconda, conda-forge only, no Anaconda channels or
++# Terms of Service; installer pinned by version and sha256 from its GitHub release)
++ARG MINIFORGE_VERSION=26.7.2-0
++ARG MINIFORGE_SHA256=281b0ac7d550802efc81af633225a5e6116d29ae72f3ab4eae7168c3931a4c05
++RUN wget --quiet https://github.com/conda-forge/miniforge/releases/download/${MINIFORGE_VERSION}/Miniforge3-${MINIFORGE_VERSION}-Linux-x86_64.sh -O ~/miniconda.sh && \
++    echo "${MINIFORGE_SHA256}  /root/miniconda.sh" | sha256sum -c - && \
+     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
+     rm ~/miniconda.sh && \
++    printf 'channels:\n  - conda-forge\n  - nodefaults\nchannel_priority: strict\n' > /opt/conda/.condarc && \
+     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
+     echo "conda activate base" >> ~/.bashrc

@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m13_export_plotly_download.jpg",
+ "tool": "vizit",
+ "software": "VizIt v1.0.0 as deployed at pd5d.yale.edu (Parkinson's Cell Atlas)",
+ "data": "PD5D_MTG_snRNAseq (snRNA-seq, 94 samples), hosted",
+ "url": "https://pd5d.yale.edu/views/geneview?dataset=PD5D_MTG_snRNAseq&gene=SNCA&sample=all&color=MajorCellTypes&group=MajorCellTypes",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/vizit/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "export",
+   "mark": "Y",
+   "caption": "The plot toolbar's 'Download plot' saved UMAP.SNCA.MajorCellTypes.all.svg (9,723,792 bytes); the page also has Download CSV, Export SVG and Export PNG"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    839,
+    228,
+    32,
+    33
+   ],
+   "label": "download button",
+   "selector": ".modebar-btn[data-title*='Download'] >> nth=0"
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+run,event,request,ttfb_s,total_s,bytes
+annzarro_v040_sub1m_run_1000000000_r0,first_plot,subset,4.8,4.8,269
+annzarro_v040_sub1m_run_1000000000_r0,first_plot,cell names,19.5,19.5,22900216
+annzarro_v040_sub1m_run_1000000000_r0,first_plot,X_umap column,3.0,3.0,4000000
+annzarro_v040_sub1m_run_1000000000_r0,first_plot,X_umap column,3.0,3.0,4000000
+annzarro_v040_sub1m_run_1000000000_r0,first_plot,X column,4.5,4.5,3713320
+annzarro_v040_sub1m_run_1000000000_r0,recolour_cat,obs column,0.4,0.4,1000504
+annzarro_v040_sub_run_1000000000_r0,first_plot,subset,4.7,4.7,267
+annzarro_v040_sub_run_1000000000_r0,first_plot,cell names,19.1,19.1,2290156
+annzarro_v040_sub_run_1000000000_r0,first_plot,X_umap column,2.3,2.3,400000
+annzarro_v040_sub_run_1000000000_r0,first_plot,X_umap column,2.3,2.3,400000
+annzarro_v040_sub_run_1000000000_r0,first_plot,X column,3.9,3.9,370152
+annzarro_v040_sub_run_1000000000_r0,recolour_cat,obs column,0.2,0.2,100504
+annzarro_v041_sub_run_1000000000_r0,first_plot,fingerprint,0.0,0.0,509
+annzarro_v041_sub_run_1000000000_r0,first_plot,subset,7.8,7.8,267
+annzarro_v041_sub_run_1000000000_r0,first_plot,cell names,27.1,27.1,2290156
+annzarro_v041_sub_run_1000000000_r0,first_plot,subset locate,0.0,0.0,24
+annzarro_v041_sub_run_1000000000_r0,first_plot,X_umap column,3.1,3.1,400000
+annzarro_v041_sub_run_1000000000_r0,first_plot,X_umap column,3.1,3.1,400000
+annzarro_v041_sub_run_1000000000_r0,first_plot,X column,2.8,2.8,370152
+annzarro_v041_sub_run_1000000000_r0,recolour_cat,obs column,0.3,0.3,100504
+annzarro_v041_sub1m_run_1000000000_r0,first_plot,fingerprint,0.0,0.0,509
+annzarro_v041_sub1m_run_1000000000_r0,first_plot,subset,8.3,8.3,269
+annzarro_v041_sub1m_run_1000000000_r0,first_plot,cell names,27.1,27.1,22900216
+annzarro_v041_sub1m_run_1000000000_r0,first_plot,subset locate,0.0,0.0,23
+annzarro_v041_sub1m_run_1000000000_r0,first_plot,X_umap column,3.0,3.0,4000000
+annzarro_v041_sub1m_run_1000000000_r0,first_plot,X_umap column,3.0,3.0,4000000
+annzarro_v041_sub1m_run_1000000000_r0,first_plot,X column,2.6,2.6,3713320
+annzarro_v041_sub1m_run_1000000000_r0,first_plot,fingerprint,0.0,0.0,509
+annzarro_v041_sub1m_run_1000000000_r0,recolour_cat,obs column,0.3,0.3,1000504

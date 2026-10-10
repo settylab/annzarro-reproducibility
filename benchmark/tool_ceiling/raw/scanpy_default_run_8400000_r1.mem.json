@@ -1,0 +1,156 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "scanpy_task.py",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first8400000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_default_run_8400000_r1"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 45.9,
+ "peaks": {
+  "proc": {
+   "fp_peak": 17776178472,
+   "fp_lifetime_sum": 17776178472,
+   "rss_peak": 18086330368,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 17776178472,
+   "rss_peak": 18086330368,
+   "fp_lifetime_sum": 17776178472
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8339864
+  ],
+  [
+   1.44,
+   1049298312
+  ],
+  [
+   2.91,
+   8001542384
+  ],
+  [
+   4.37,
+   8773639056
+  ],
+  [
+   5.84,
+   8963267712
+  ],
+  [
+   7.26,
+   9306266992
+  ],
+  [
+   8.72,
+   9572228656
+  ],
+  [
+   10.18,
+   10369572952
+  ],
+  [
+   11.63,
+   10369572952
+  ],
+  [
+   13.07,
+   10369572952
+  ],
+  [
+   14.52,
+   10369572952
+  ],
+  [
+   15.95,
+   10369572952
+  ],
+  [
+   17.42,
+   10369572952
+  ],
+  [
+   18.86,
+   10369572952
+  ],
+  [
+   20.3,
+   10369572952
+  ],
+  [
+   21.76,
+   10369572952
+  ],
+  [
+   23.21,
+   10369572952
+  ],
+  [
+   24.65,
+   10369572952
+  ],
+  [
+   26.08,
+   10374668376
+  ],
+  [
+   27.5,
+   15197662704
+  ],
+  [
+   28.93,
+   10400096392
+  ],
+  [
+   30.37,
+   11244757752
+  ],
+  [
+   31.8,
+   11244757752
+  ],
+  [
+   33.22,
+   11244757752
+  ],
+  [
+   34.64,
+   11244757752
+  ],
+  [
+   36.07,
+   11244757752
+  ],
+  [
+   37.57,
+   11244757752
+  ],
+  [
+   38.99,
+   11244757752
+  ],
+  [
+   40.42,
+   11244757752
+  ],
+  [
+   41.87,
+   11244757752
+  ],
+  [
+   43.3,
+   11244757752
+  ],
+  [
+   44.76,
+   11244757752
+  ]
+ ],
+ "ps_before": "2026-10-04T03:39:20-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47413 562960   8.7 /Applications/cmux.app/Contents/MacOS/cmux\n80588 582272   2.5 $HOME/.local/bin/claude\n72627 444096   1.8 $HOME/.local/bin/claude\n57113 1702864   1.8 $HOME/.local/bin/claude\n86901 506096   0.7 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n84235 250496   0.7 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n31621 361280   0.7 $HOME/.local/bin/claude\n98631 445616   0.6 $HOME/.local/bin/claude\n92291  30784   0.6 .venv/bin/python\n 6219  56640   0.5 $HOME/Projects/investments/.venv/bin/python3\n"
+}

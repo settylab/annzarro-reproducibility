@@ -1,0 +1,94 @@
+{
+  "name": "protocol_D_locked_vs_focused_cell",
+  "timestamp": "2026-10-06T16:31:48.403843+00:00",
+  "dataset": "bm_aging.zarr",
+  "datasetName": "bm_aging",
+  "constants": {
+    "focusedCell": "Mature_Young_2#TCAATTCAGTGAGGCT-1",
+    "focusedGene": "S100a9",
+    "taxonomyId": "10090"
+  },
+  "panelConfigs": {
+    "gene-plot-D1": {
+      "id": "gene-plot-D1",
+      "type": "gene-plot",
+      "title": "D | fold change: locked HSC (x) vs focused cell (y)",
+      "config": {
+        "id": "gene-plot-D1",
+        "title": "D | fold change: locked HSC (x) vs focused cell (y)",
+        "x": {
+          "type": "layer",
+          "key": "kompot_de_Young_to_Old_fold_change",
+          "column": "HSPC_Old_1#GAAGCCCGTGGCTCTG-1",
+          "locked": true
+        },
+        "y": {
+          "type": "layer",
+          "key": "kompot_de_Young_to_Old_fold_change",
+          "column": "Mature_Young_2#TCAATTCAGTGAGGCT-1",
+          "locked": false
+        },
+        "z": null,
+        "color": {
+          "type": "varp",
+          "key": "spearman_fold_change",
+          "column": "S100a9",
+          "locked": false
+        },
+        "pointSize": 5,
+        "pointOpacity": 0.8,
+        "colorScale": "RdBu",
+        "hoverInfo": [
+          {
+            "type": "var",
+            "key": "_index"
+          }
+        ],
+        "colorMin": -1,
+        "colorMax": 1,
+        "lockColorRange": true
+      },
+      "isSelectionTile": false
+    },
+    "cell-plot-D2": {
+      "id": "cell-plot-D2",
+      "type": "cell-plot",
+      "title": "D | cell types (locate the two cells)",
+      "config": {
+        "id": "cell-plot-D2",
+        "title": "D | cell types (locate the two cells)",
+        "x": {
+          "type": "obsm",
+          "key": "X_umap",
+          "column": "0"
+        },
+        "y": {
+          "type": "obsm",
+          "key": "X_umap",
+          "column": "1"
+        },
+        "z": null,
+        "color": {
+          "type": "obs",
+          "key": "highres_celltype",
+          "column": ""
+        },
+        "pointSize": 3,
+        "pointOpacity": 0.8,
+        "colorScale": "Viridis",
+        "highlightFocusedCell": true,
+        "hoverInfo": [
+          {
+            "type": "obs",
+            "key": "_index"
+          },
+          {
+            "type": "obs",
+            "key": "highres_celltype"
+          }
+        ]
+      },
+      "isSelectionTile": false
+    }
+  }
+}

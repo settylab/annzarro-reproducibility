@@ -1,0 +1,15 @@
+{
+ "tool": "cirrocumulus",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first20000000.h5ad",
+ "n": 20000000,
+ "phases": {
+  "server_ready": 1.62
+ },
+ "checks": {},
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "cirrocumulus": "1.1.61"
+ },
+ "console": []
+}

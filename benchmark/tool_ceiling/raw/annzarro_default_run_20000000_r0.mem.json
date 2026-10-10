@@ -1,0 +1,58 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first20000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_default_run_20000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-test/bin/annzarro"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 7.19,
+ "peaks": {
+  "client": {
+   "fp_peak": 6695712496,
+   "fp_lifetime_sum": 7373813968,
+   "rss_peak": 4600627200,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 3075492960,
+   "fp_lifetime_sum": 3078360520,
+   "rss_peak": 3097362432,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 161838208,
+   "fp_lifetime_sum": 161887384,
+   "rss_peak": 212926464,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 9122611712,
+   "rss_peak": 7366262784,
+   "fp_lifetime_sum": 10452174488
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.31,
+   2350950888
+  ],
+  [
+   4.72,
+   8283962224
+  ],
+  [
+   7.02,
+   2426899216
+  ]
+ ],
+ "ps_before": "2026-10-03T17:17:07-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1220816 135.2 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n  855 1587136  69.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n46212  29680  44.7 /usr/libexec/biomesyncd\n 1015  21648  25.3 /System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent\n  626 553792  12.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n46128  26672   7.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n 1040  27712   6.8 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/ContextStoreAgent\n57113 2094512   5.8 $HOME/.local/bin/claude\n42484 255680   4.1 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n 1012  14752   3.7 /usr/libexec/pboard\n"
+}

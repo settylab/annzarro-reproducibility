@@ -1,0 +1,32 @@
+version: 1
+image: m04_slots_cellinfo_dropdown.jpg
+tool: shinycell
+software: ShinyCell 2.1.0 (local app)
+data: bone marrow SCE (8,090 cells)
+url: http://127.0.0.1:8907
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/shinycell/matrix_check.py
+source: manual
+image_sha256: b65b1da6619cbcb4c5408d5b6b7590053ac8468396dd2e8fb04336b0250d536c
+proves:
+- column: cells
+  mark: N
+  caption: 'ShinyCell 2.1.0: Cell information lists obs columns (Age, Sample, ..., leiden, phase); no cell x cell
+    matrix is offered.'
+- column: genes
+  mark: N
+  caption: 'ShinyCell 2.1.0: Gene name takes a single gene and no tab offers a gene x gene matrix.'
+- column: slots
+  mark: P
+  caption: 'ShinyCell 2.1.0: obs columns and genes of X are reachable; obsp, varp, varm, uns and layers are not.'
+callouts:
+- n: 1
+  box: [28, 556, 304, 240]
+  label: 'Cell information list: obs columns only'
+- n: 2
+  box: [712, 554, 305, 38]
+  label: 'Gene name: one gene (Mpo)'
+- n: 3
+  box: [28, 112, 1262, 52]
+  label: the seven tabs; none reads a pairwise matrix

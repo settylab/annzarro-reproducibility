@@ -1,0 +1,211 @@
+{
+ "attach_name": "Loupe Browser 9",
+ "pids_at_start": [
+  77370,
+  77418,
+  77419,
+  77423,
+  77444
+ ],
+ "status": "ok",
+ "ended_by": [
+  "$DEMO_ROOT/loupe/session_v031/drawn_500000_1"
+ ],
+ "wall_s": 95.67,
+ "peaks": {
+  "app": {
+   "fp_peak": 1583257648,
+   "fp_lifetime_sum": 1767364632,
+   "rss_peak": 1274707968,
+   "n_proc_max": 5
+  },
+  "total": {
+   "fp_peak": 1583257648,
+   "rss_peak": 1274707968,
+   "fp_lifetime_sum": 1767364632
+  }
+ },
+ "trace": [
+  [
+   0.08,
+   242586928
+  ],
+  [
+   2.24,
+   242554160
+  ],
+  [
+   4.45,
+   242554160
+  ],
+  [
+   6.67,
+   242423088
+  ],
+  [
+   8.88,
+   243684680
+  ],
+  [
+   11.14,
+   248223048
+  ],
+  [
+   13.35,
+   247240008
+  ],
+  [
+   15.58,
+   235640136
+  ],
+  [
+   17.84,
+   235754824
+  ],
+  [
+   20.04,
+   235754824
+  ],
+  [
+   22.25,
+   235656520
+  ],
+  [
+   24.49,
+   974804608
+  ],
+  [
+   26.66,
+   983111512
+  ],
+  [
+   28.87,
+   956503896
+  ],
+  [
+   31.09,
+   928356184
+  ],
+  [
+   33.33,
+   928814936
+  ],
+  [
+   35.59,
+   929060696
+  ],
+  [
+   37.8,
+   929503064
+  ],
+  [
+   40.01,
+   929912664
+  ],
+  [
+   42.22,
+   882448240
+  ],
+  [
+   44.42,
+   1292998512
+  ],
+  [
+   46.63,
+   1294243696
+  ],
+  [
+   48.82,
+   1250793328
+  ],
+  [
+   51.01,
+   830986048
+  ],
+  [
+   53.22,
+   822318912
+  ],
+  [
+   55.4,
+   822122304
+  ],
+  [
+   57.56,
+   822171456
+  ],
+  [
+   59.71,
+   822302528
+  ],
+  [
+   61.92,
+   1410848720
+  ],
+  [
+   64.12,
+   999675856
+  ],
+  [
+   66.34,
+   1536399408
+  ],
+  [
+   68.54,
+   1012095024
+  ],
+  [
+   70.8,
+   1470552064
+  ],
+  [
+   73.01,
+   952506368
+  ],
+  [
+   75.22,
+   952539136
+  ],
+  [
+   77.44,
+   936957952
+  ],
+  [
+   79.67,
+   936974336
+  ],
+  [
+   81.92,
+   936335360
+  ],
+  [
+   84.09,
+   936302592
+  ],
+  [
+   86.29,
+   923244568
+  ],
+  [
+   88.52,
+   921393176
+  ],
+  [
+   90.73,
+   875485160
+  ],
+  [
+   92.93,
+   874469352
+  ],
+  [
+   95.14,
+   863639528
+  ]
+ ],
+ "ps_before": "2026-10-05T20:35:27-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n77510 197568 203.5 $TMPDIR/venv/bin/python\n68470 8214960  99.2 $DEMO_ROOT/_mamba/envs/loupe/lib/R/bin/exec/R\n 5081 144336  55.9 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n  626 530368  54.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  557 526912  28.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n57113 3305264  16.3 $HOME/.local/bin/claude\n  582 126976  10.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  855 2260464   8.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n47413 680352   7.5 /Applications/cmux.app/Contents/MacOS/cmux\n22504 123168   7.3 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n",
+ "others_at_start": [
+  "77304 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1790895733153-mick9a.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "77510 $TMPDIR/venv/bin/python -m pytest -q -p no:cacheprovider annzarro/tes"
+ ]
+}

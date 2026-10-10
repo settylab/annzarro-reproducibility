@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "03_annotate_lasso_highlights_in_scatter.jpg",
+ "tool": "cellxgene",
+ "software": "CELLxGENE Annotate 1.3.0 (local)",
+ "data": "bm_demo.h5ad (8,090 cells; obsp holds connectivities, distances, diffusion_distance; one counts layer)",
+ "url": "http://127.0.0.1:8903/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "Annotate 1.3.0 (2026-10-04): a lasso in the UMAP highlights the same cells in the linked Elane vs Mpo scatterplot (umap: 1996 out of 8090 cells)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    362,
+    0,
+    676,
+    900
+   ],
+   "label": "lasso around the top arm of the UMAP",
+   "selector": "[data-testid='layout-graph']"
+  },
+  {
+   "n": 2,
+   "box": [
+    432,
+    528,
+    348,
+    288
+   ],
+   "label": "Elane vs Mpo: selected cells large, the rest small",
+   "selector": "[data-testid='scatterplot']"
+  },
+  {
+   "n": 3,
+   "box": [
+    403,
+    865,
+    169,
+    24
+   ],
+   "label": "umap: 1996 out of 8090 cells",
+   "selector": "text=/out of 8090 cells/ >> nth=0"
+  }
+ ]
+}

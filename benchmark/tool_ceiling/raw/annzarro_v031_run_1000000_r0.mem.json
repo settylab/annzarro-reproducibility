@@ -1,0 +1,82 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first1000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_run_1000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 20.58,
+ "peaks": {
+  "client": {
+   "fp_peak": 3329042392,
+   "fp_lifetime_sum": 3816533104,
+   "rss_peak": 3252797440,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 395314568,
+   "fp_lifetime_sum": 442730656,
+   "rss_peak": 430587904,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 121992008,
+   "fp_lifetime_sum": 121992008,
+   "rss_peak": 159907840,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3722751328,
+   "rss_peak": 3681599488,
+   "fp_lifetime_sum": 4259263760
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.25,
+   40976912
+  ],
+  [
+   4.53,
+   55132688
+  ],
+  [
+   6.73,
+   58933776
+  ],
+  [
+   8.93,
+   59785744
+  ],
+  [
+   11.13,
+   71533096
+  ],
+  [
+   13.47,
+   1016047024
+  ],
+  [
+   16.06,
+   2496555424
+  ],
+  [
+   18.63,
+   3582979304
+  ]
+ ],
+ "ps_before": "2026-10-05T15:45:07-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 987424 123.1 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n  626 506880  48.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  557 503488  18.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n41676   9280  13.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n41675   8960  13.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n41678   8992  13.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n57113 2445056  13.1 $HOME/.local/bin/claude\n41679  43760  10.9 gh\n  594  27072   7.1 /usr/libexec/opendirectoryd\n41662  33232   6.3 /opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python\n",
+ "others_at_start": []
+}

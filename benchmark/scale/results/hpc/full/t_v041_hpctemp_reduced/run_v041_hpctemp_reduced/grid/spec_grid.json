@@ -1,0 +1,163 @@
+{
+ "name": "grid",
+ "experiment": "grid",
+ "repeats": 5,
+ "warm_repeats": 5,
+ "seed": 20261001,
+ "annzarro_dir": "$SCRATCH/annzarro-scale/hpcbench/src_v041",
+ "cases": [
+  {
+   "case_id": "tahoe_dense_1M_1024x512:dense_layer_gene_col:lognorm_panel",
+   "kind": "dense_layer_gene_col",
+   "dataset": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_1024x512.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/layer/lognorm_panel",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 5000,
+   "chunk": 1024,
+   "evict": [
+    "layers/lognorm_panel"
+   ],
+   "expect_len": 1000000,
+   "seed_key": "tahoe_dense_1M:dense_layer_gene_col:lognorm_panel",
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_dense_1M_1024x512:dense_layer_cell_row:lognorm_panel",
+   "kind": "dense_layer_cell_row",
+   "dataset": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_1024x512.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/layer/lognorm_panel",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 1000000,
+   "chunk": 1024,
+   "evict": [
+    "layers/lognorm_panel"
+   ],
+   "expect_len": 5000,
+   "seed_key": "tahoe_dense_1M:dense_layer_cell_row:lognorm_panel",
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_dense_1M_8192x64:dense_layer_gene_col:lognorm_panel",
+   "kind": "dense_layer_gene_col",
+   "dataset": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_8192x64.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/layer/lognorm_panel",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 5000,
+   "chunk": 1024,
+   "evict": [
+    "layers/lognorm_panel"
+   ],
+   "expect_len": 1000000,
+   "seed_key": "tahoe_dense_1M:dense_layer_gene_col:lognorm_panel",
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_dense_1M_8192x64:dense_layer_cell_row:lognorm_panel",
+   "kind": "dense_layer_cell_row",
+   "dataset": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_8192x64.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/layer/lognorm_panel",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 1000000,
+   "chunk": 1024,
+   "evict": [
+    "layers/lognorm_panel"
+   ],
+   "expect_len": 5000,
+   "seed_key": "tahoe_dense_1M:dense_layer_cell_row:lognorm_panel",
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_dense_1M_allx4:dense_layer_gene_col:lognorm_panel",
+   "kind": "dense_layer_gene_col",
+   "dataset": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_allx4.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/layer/lognorm_panel",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 5000,
+   "chunk": 1024,
+   "evict": [
+    "layers/lognorm_panel"
+   ],
+   "expect_len": 1000000,
+   "seed_key": "tahoe_dense_1M:dense_layer_gene_col:lognorm_panel",
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_dense_1M_allx4:dense_layer_cell_row:lognorm_panel",
+   "kind": "dense_layer_cell_row",
+   "dataset": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_allx4.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/layer/lognorm_panel",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 1000000,
+   "chunk": 1024,
+   "evict": [
+    "layers/lognorm_panel"
+   ],
+   "expect_len": 5000,
+   "seed_key": "tahoe_dense_1M:dense_layer_cell_row:lognorm_panel",
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_dense_1M_allx64:dense_layer_gene_col:lognorm_panel",
+   "kind": "dense_layer_gene_col",
+   "dataset": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_allx64.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/layer/lognorm_panel",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 5000,
+   "chunk": 1024,
+   "evict": [
+    "layers/lognorm_panel"
+   ],
+   "expect_len": 1000000,
+   "seed_key": "tahoe_dense_1M:dense_layer_gene_col:lognorm_panel",
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_dense_1M_allx64:dense_layer_cell_row:lognorm_panel",
+   "kind": "dense_layer_cell_row",
+   "dataset": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_allx64.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/layer/lognorm_panel",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 1000000,
+   "chunk": 1024,
+   "evict": [
+    "layers/lognorm_panel"
+   ],
+   "expect_len": 5000,
+   "seed_key": "tahoe_dense_1M:dense_layer_cell_row:lognorm_panel",
+   "wire": "f32"
+  }
+ ],
+ "wire": "f32"
+}

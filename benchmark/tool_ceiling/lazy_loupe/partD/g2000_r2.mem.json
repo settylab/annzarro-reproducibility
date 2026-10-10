@@ -1,0 +1,154 @@
+{
+ "attach_name": "Loupe Browser 9",
+ "pids_at_start": [
+  66729,
+  66751,
+  66752,
+  66755
+ ],
+ "status": "ok",
+ "ended_by": [
+  "$DEMO_ROOT/loupe/lazy/partD/g2000_r2.done"
+ ],
+ "wall_s": 74.74,
+ "peaks": {
+  "app": {
+   "fp_peak": 2325256624,
+   "fp_lifetime_sum": 2615826984,
+   "rss_peak": 1994670080,
+   "n_proc_max": 5
+  },
+  "total": {
+   "fp_peak": 2325256624,
+   "rss_peak": 1994670080,
+   "fp_lifetime_sum": 2615826984
+  }
+ },
+ "trace": [
+  [
+   0.21,
+   133043072
+  ],
+  [
+   2.46,
+   278189336
+  ],
+  [
+   4.59,
+   271848728
+  ],
+  [
+   6.75,
+   660559128
+  ],
+  [
+   8.94,
+   249681176
+  ],
+  [
+   11.11,
+   245323032
+  ],
+  [
+   13.18,
+   245241112
+  ],
+  [
+   15.32,
+   245241112
+  ],
+  [
+   17.85,
+   1539807184
+  ],
+  [
+   20.29,
+   1392154792
+  ],
+  [
+   22.49,
+   1391433896
+  ],
+  [
+   24.67,
+   1366808744
+  ],
+  [
+   26.84,
+   1367300264
+  ],
+  [
+   28.96,
+   1367677096
+  ],
+  [
+   31.16,
+   1365448896
+  ],
+  [
+   33.35,
+   1365891264
+  ],
+  [
+   35.55,
+   1366137024
+  ],
+  [
+   37.74,
+   1366595776
+  ],
+  [
+   39.88,
+   1367021760
+  ],
+  [
+   42.55,
+   1367578816
+  ],
+  [
+   45.09,
+   1939413280
+  ],
+  [
+   47.76,
+   1528027424
+  ],
+  [
+   50.02,
+   1501649184
+  ],
+  [
+   52.96,
+   2241190344
+  ],
+  [
+   56.55,
+   1664866784
+  ],
+  [
+   59.12,
+   1652677088
+  ],
+  [
+   61.44,
+   1643616736
+  ],
+  [
+   64.17,
+   1650514424
+  ],
+  [
+   68.76,
+   1595857328
+  ],
+  [
+   72.47,
+   1595152816
+  ]
+ ],
+ "ps_before": "2026-10-08T22:10:51-0700\nmemorystatus_level=92 swap=total = 5120.00M  used = 3928.19M  free = 1191.81M  (encrypted)\n  626 543312  74.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n30480 135296  51.7 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n66729  91520  35.2 /Applications/Loupe Browser 9.app/Contents/MacOS/Loupe Browser 9\n30522 852480  33.4 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n30725 497632  20.3 $HOME/Library/Application Support/Claude/claude-code/2.1.293/8433d0d9cd0d/claude.app/Contents/MacOS/claude\n 1015  20448  17.8 /System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent\n86901 612432  17.0 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 6219  61136  14.1 $HOME/Projects/investments/.venv/bin/python3\n 1584 472448   8.5 /System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight\n57739 121600   6.5 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n",
+ "others_at_start": [
+  "66732 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "66738 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

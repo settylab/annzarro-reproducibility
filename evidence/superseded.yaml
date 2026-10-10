@@ -1,0 +1,92 @@
+# Which sources are current and which are superseded, for build.py --check (evidence/tools/superseded.py).
+#
+# A claim whose status is ok (green on the claims page) may rest only on current sources:
+#   - no source may match a `superseded` entry;
+#   - a source that is an AnnZarro measurement (`annzarro_measurements`) must match a `current` entry.
+# Claims marked interim or unsourced are not checked here; their status already says they wait.
+# At a release, move the previous release's selectors from `current` to `superseded` in the same
+# commit that adds the new ones: the check then lists every green claim still on the old release.
+#
+# Entries: {file: glob} matches a source path; {csv: path, where: {col: value | [values]}} matches a
+# table source whose selected rows include any row matching `where` (or, for `current`, all of whose
+# selected rows match it). Automatic entries (not listed here): every variant in
+# benchmark/tool_ceiling/summarize.py SUPERSEDED (results.csv rows), ceilings_superseded.csv and
+# conversions_superseded.csv.
+
+release:
+  annzarro: {version: v0.4.1, commit: 78c9da657ecbff30163fd29055f0e6b10e915c5c}   # tree 661a454f; the v0.4.1 series run on the tag itself (benchmark/scale/results/v041_build.json)
+
+annzarro_measurements:              # sources that measure AnnZarro itself
+  - {file: "benchmark/scale/results/*"}
+  - {file: "benchmark/scale/ceiling/results/*"}
+  - {file: "benchmark/scale/NOTES.md"}
+  - {file: "figures/scale/*.view.json"}
+  - {file: "benchmark/results/*"}
+  - {file: "benchmark/hpc/results/*"}
+  - {file: "benchmark/tool_ceiling/server_profile_1b.csv"}
+  - {file: "benchmark/tool_ceiling/subset_request_times.csv"}
+  - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro}}
+  - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro}}
+  - {file: "notes/sources/annzarro_*"}
+
+current:                            # v0.4.1 series as they land; a v0.4.0 series stays here until its v0.4.1 rerun replaces it
+  - {csv: benchmark/scale/results/browser_v041_events.csv, where: {tag: [endpoint_v041, all_v041, sub_v041, ceil_v041, conf95_v041, conf95auto_v041, guard175_v041]}}   # steps 1 and 6 on v0.4.1
+  - {csv: benchmark/scale/results/browser_v041_summary.csv, where: {tag: [endpoint_v041, all_v041, sub_v041, ceil_v041, conf95_v041, conf95auto_v041, guard175_v041]}}
+  - {file: "notes/sources/annzarro_v0.4.1_refresh.*"}   # refresh check on the v0.4.1 tag (correctness record, not a timing)
+  - {file: "benchmark/scale/results/prewarm50M_v041*"}   # step 3 on v0.4.1
+  - {file: "benchmark/scale/results/http_v041*"}   # step 5 HTTP on v0.4.1
+  - {file: "benchmark/results/*_v041*"}   # step 5 Performance figure laptop series on v0.4.1
+  - {file: "benchmark/scale/results/heapcap_v041*"}   # step 8: tab heap and buffer caps, Chromium 153 (not an AnnZarro measurement)
+  - {csv: benchmark/tool_ceiling/results.csv, where: {variant: [v041, v041_syn, v041_sub, v041_sub1m, v041_noguard, v041_noguard_edge]}}   # step 2 on v0.4.1; the guard-off edge 205-240M
+  - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: [v041, v041_noguard, v041_noguard_edge]}}
+  - {csv: benchmark/tool_ceiling/server_profile_1b.csv, where: {build: "v0.4.1 78c9da6 (the tag, tree 661a454f)"}}
+  - {csv: benchmark/tool_ceiling/subset_request_times.csv, where: {run: [annzarro_v041_sub_run_1000000000_r0, annzarro_v041_sub1m_run_1000000000_r0]}}
+  - {file: "benchmark/tool_ceiling/raw/annzarro_v041_*"}
+  # v0.4.0 series not yet rerun on v0.4.1 (tag 49e2a19; ran on RC 3bdeb09, the same tree)
+  - {file: "benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/*"}   # HPC worker T on v0.4.1 (job 10163488), $SCRATCH, node-cold
+  - {file: "benchmark/scale/results/hpc/full/j5_v041/*"}   # HPC worker J5 on v0.4.1 (job 10163489): the J3 Tahoe ladder repeated
+  - {file: "benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/*"}   # HPC worker T2 on v0.4.1 (job 10195427): the cases T did not cover, $SCRATCH
+  - {file: "figures/scale/tahoe95M_umap*.view.json"}   # Scale a-d shots, re-shot on v0.4.1 (commands.txt, *.view_environment.json)
+  - {file: "figures/scale/tahoe95M_malat1*"}   # Scale b and c by MALAT1 (the operator's view), shot on v0.4.1
+  - {file: "benchmark/scale/NOTES.md"}
+  - {file: "notes/sources/annzarro_v0.4.0_tag.txt"}
+  - {file: "notes/sources/annzarro_v0.4.0_memory_guard.txt"}   # same constants as 120f322
+  - {file: "notes/sources/annzarro_v0.4.1_tag.txt"}   # v0.4.1 tag, PyPI and Zenodo record: the version the paper cites (Table 1, Code availability); not a measurement, so it is current before the v0.4.1 remeasure moves the release
+  - {file: "notes/sources/annzarro_v0.4.1_behaviour.txt"}   # v0.4.1 code excerpts behind the Procedure and Limitations (read from the tag, not a measurement)
+
+superseded:
+  - {file: "benchmark/scale/results/hpc/full/j3_v040/*", why: "HPC worker J3 on v0.4.0; repeated on v0.4.1 as J5 (j5_v041)"}
+  - {file: "benchmark/results/*_v040*", why: "v0.4.0 Performance figure laptop series; rerun on v0.4.1 (*_v041)"}
+  - {csv: benchmark/scale/results/browser_v040_events.csv, where: {tag: [sub_v040]}, why: "v0.4.0 default-subset series; rerun on v0.4.1 (sub_v041)"}
+  - {csv: benchmark/scale/results/browser_v040_summary.csv, where: {tag: [sub_v040]}, why: "v0.4.0 default-subset series; rerun on v0.4.1 (sub_v041)"}
+  - {file: "benchmark/scale/results/heapcap_v040*", why: "v0.4.0-era heap-cap run; rerun with the v0.4.1 series (heapcap_v041*)"}
+  - {file: "benchmark/scale/results/http_v040*", why: "v0.4.0 HTTP series; rerun on v0.4.1 (http_v041*)"}
+  - {file: "benchmark/scale/results/prewarm50M_v040*", why: "v0.4.0 name-index check; rerun on v0.4.1 (prewarm50M_v041*)"}
+  - {csv: benchmark/tool_ceiling/results.csv, where: {variant: [v040, v040_syn, v040_sub, v040_sub1m, v040_noguard]}, why: "v0.4.0 ceiling-benchmarker ladder; rerun on v0.4.1 (v041*)"}
+  - {csv: benchmark/tool_ceiling/server_profile_1b.csv, where: {build: "v0.4.0 3bdeb09 (tag 49e2a19, tree bb2ace6d)"}, why: "v0.4.0 1B server profile; rerun on v0.4.1"}
+  - {csv: benchmark/tool_ceiling/subset_request_times.csv, where: {run: [annzarro_v040_sub_run_1000000000_r0, annzarro_v040_sub1m_run_1000000000_r0]}, why: "v0.4.0 1B request times; rerun on v0.4.1"}
+  - {file: "benchmark/tool_ceiling/raw/annzarro_v040_*", why: "v0.4.0 ceiling-benchmarker raw records; rerun on v0.4.1"}
+  - {csv: benchmark/scale/results/browser_v040_events.csv, where: {tag: [endpoint_v040, all_v040, ceil_v040, conf95_v040, conf95auto_v040, guard175_v040]}, why: "v0.4.0 every-cell series; rerun on v0.4.1 (browser_v041_events.csv)"}
+  - {csv: benchmark/scale/results/browser_v040_summary.csv, where: {tag: [endpoint_v040, all_v040, ceil_v040, conf95_v040, conf95auto_v040, guard175_v040]}, why: "v0.4.0 every-cell series; rerun on v0.4.1 (browser_v041_summary.csv)"}
+  - {file: "notes/sources/annzarro_v0.4.0_refresh.*", why: "v0.4.0 refresh check; rerun on v0.4.1 (annzarro_v0.4.1_refresh.*)"}
+  - {file: "benchmark/scale/results/browser_rerun*", why: "pre-tag branch runs (dominik/release-0.3)"}
+  - {file: "benchmark/scale/results/http_rerun*", why: "pre-tag branch runs"}
+  - {file: "benchmark/scale/results/ceiling_rerun.csv", why: "pre-tag browser ceiling (d5be664)"}
+  - {file: "benchmark/scale/results/heapcap_rerun*", why: "pre-tag heap-cap runs"}
+  - {file: "benchmark/scale/results/browser_laptop*", why: "before large-plot mode"}
+  - {file: "benchmark/scale/results/http_laptop*", why: "before large-plot mode"}
+  - {file: "notes/sources/annzarro_v0.3.1_refresh.*", why: "v0.3.1 refresh check; the v0.4.0 rerun is annzarro_v0.4.0_refresh.*"}
+  - {file: "benchmark/scale/results/browser_v030*", why: "v0.3.0 scale series; the paper cites v0.4.0 (browser_v040*)"}
+  - {file: "benchmark/scale/results/browser_v031*", why: "v0.3.1 scale series, superseded by v0.4.0"}
+  - {file: "benchmark/scale/results/http_v030*", why: "v0.3.0 HTTP series; the paper cites http_v040*"}
+  - {file: "benchmark/scale/results/http_v031*", why: "v0.3.1 HTTP series, superseded by v0.4.0"}
+  - {file: "notes/sources/annzarro_v0.3.0_tag.txt", why: "v0.3.0 tag; the paper cites v0.4.0 (annzarro_v0.4.0_tag.txt)"}
+  - {file: "benchmark/results/scale.csv", why: "AnnZarro 0.1.1 laptop series; the paper states no 0.1.1 value (scale_v040.csv)"}
+  - {file: "benchmark/results/sweep.csv", why: "AnnZarro 0.1.1 chunk sweep (sweep_v040.csv pending)"}
+  - {file: "benchmark/results/sparse.csv", why: "AnnZarro 0.1.1 (sparse_v040.csv)"}
+  - {file: "benchmark/hpc/results/*", why: "AnnZarro 0.1.1 HPC series (58030e1); the paper reads the v0.4.1 $SCRATCH runs (T, J5, T2)"}
+
+exempt:                             # green claims whose AnnZarro source is not a measurement of a release
+  - {claim: fig8.genes, why: "the number of genes in the benchmark store (5,000), a property of the data"}
+  - {claim: supp1.budget.rule, why: "the method's server budget (32 GiB), read across every ceilings.csv row to check it is the same for all tools; not a measurement of AnnZarro"}
+  - {claim: cmp.server_budget, why: "the method's server budget (32 GiB), read across every ceilings.csv row to check it is the same for all tools; not a measurement of AnnZarro"}

@@ -1,0 +1,14 @@
+{
+ "reference_pool5000": 0.48054666666666673,
+ "reference_pool5000_median_row": 47976861,
+ "placed_pool5000": 0.4530533333333333,
+ "placed_pool5000_median_row": 47682583,
+ "reference_pool10000": 0.37326,
+ "reference_pool10000_median_row": 47156220,
+ "placed_pool10000": 0.35577333333333333,
+ "placed_pool10000_median_row": 48206301,
+ "reference_pool100000": 0.11487999999999997,
+ "reference_pool100000_median_row": 47030751,
+ "placed_pool100000": 0.11101333333333332,
+ "placed_pool100000_median_row": 48027802
+}

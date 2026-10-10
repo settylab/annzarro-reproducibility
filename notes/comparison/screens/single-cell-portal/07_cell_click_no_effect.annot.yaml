@@ -1,0 +1,20 @@
+version: 1
+image: 07_cell_click_no_effect.jpg
+tool: single-cell-portal
+software: Single Cell Portal (singlecell.broadinstitute.org; build of 2026-10-03)
+data: SCP1671, human lactation (49,310 cells; All Cells UMAP 48,478 drawn)
+url: https://singlecell.broadinstitute.org/single_cell/study/SCP1671
+captured: '2026-10-03'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: headless Playwright session of 2026-10-03, script not kept (see notes/comparison/single-cell-portal.md,
+  Focus section)
+source: manual
+image_sha256: 46f93c69cb850264e5ba1f8a856064e9ebe1cfc7d4551a7b81bf9b43778243f8
+proves:
+- column: focus
+  mark: N
+  caption: 'Single Cell Portal: clicking a cell leaves the URL and plots unchanged; only the hover label appears.'
+callouts:
+- n: 1
+  box: [308, 488, 222, 58]
+  label: label of the clicked cell BM05_6dpp_r1_ACTGGAGCCAGA; no other change

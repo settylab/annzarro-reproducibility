@@ -1,0 +1,36 @@
+version: 1
+image: g01_de_plugins_menu.png
+tool: napari-spatialdata
+software: napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (PyQt6)
+data: SpatialData sandbox Visium example (ST8059048, H&E + spots)
+url: null
+captured: '2026-10-04'
+by: evidence-curator
+driver: evidence/screens/gaps/capture_napari.py
+source: manual
+note: "Captured on the native Qt platform (a window was on screen for about 15 s) because napari segfaults under QT_QPA_PLATFORM=offscreen; boxes computed from Qt widget geometry."
+image_sha256: c658a2e6de71f46604adb8e4002ecb58886aba6d7f59781ba822fbce33fc8157
+coordinates: computed by the driver from Qt widget geometry (QMenu.actionGeometry, QWidget.mapTo), not
+  read off the image
+proves:
+- column: de
+  mark: N
+  caption: 'napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (PyQt6) (2026-10-04): the Plugins
+    menu and the napari-spatialdata submenu offer Scatter, View, Annotation widgets; none computes differential
+    expression'
+callouts:
+- n: 1
+  box:
+  - 0
+  - 0
+  - 516
+  - 150
+  label: 'Plugins menu: Install/Uninstall Plugins...; napari Matplotlib; napari spatialdata; Features
+    table widget (napari builtins)'
+- n: 2
+  box:
+  - 514
+  - 46
+  - 194
+  - 132
+  label: 'napari-spatialdata widgets: Scatter; View; Annotation'

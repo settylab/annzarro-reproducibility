@@ -1,0 +1,153 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first10000000.h5ad",
+  "benchmark/tool_ceiling/shots/cirrocumulus_default_run_10000000_r0",
+  "--n",
+  "10000000",
+  "--port",
+  "8934"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 55.37,
+ "peaks": {
+  "client": {
+   "fp_peak": 3903007520,
+   "fp_lifetime_sum": 4278366040,
+   "rss_peak": 3546038272,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 32536141584,
+   "fp_lifetime_sum": 32852205592,
+   "rss_peak": 32817217536,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 117649768,
+   "fp_lifetime_sum": 117666152,
+   "rss_peak": 152158208,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 33173209392,
+   "rss_peak": 33855799296,
+   "fp_lifetime_sum": 37130571632
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.16,
+   2736269752
+  ],
+  [
+   4.29,
+   10696540144
+  ],
+  [
+   6.43,
+   11356668704
+  ],
+  [
+   8.65,
+   23239048992
+  ],
+  [
+   10.81,
+   20312562800
+  ],
+  [
+   12.92,
+   13192562928
+  ],
+  [
+   15.04,
+   13291276648
+  ],
+  [
+   17.15,
+   13400541664
+  ],
+  [
+   19.25,
+   12826527792
+  ],
+  [
+   21.38,
+   13022791872
+  ],
+  [
+   23.61,
+   13272123728
+  ],
+  [
+   25.74,
+   12923112024
+  ],
+  [
+   27.9,
+   14066060752
+  ],
+  [
+   30.05,
+   16313913528
+  ],
+  [
+   32.17,
+   15025721408
+  ],
+  [
+   34.28,
+   14737526848
+  ],
+  [
+   36.35,
+   14563037248
+  ],
+  [
+   38.47,
+   14596788288
+  ],
+  [
+   40.64,
+   14609207360
+  ],
+  [
+   42.74,
+   14302318464
+  ],
+  [
+   44.83,
+   14336577408
+  ],
+  [
+   46.9,
+   14339133312
+  ],
+  [
+   48.95,
+   14281183104
+  ],
+  [
+   51.05,
+   15429210080
+  ],
+  [
+   53.2,
+   15084638488
+  ],
+  [
+   55.38,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-03T21:45:59-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 1897568   4.3 $HOME/.local/bin/claude\n47413 607648   3.1 /Applications/cmux.app/Contents/MacOS/cmux\n  641 155728   0.9 /usr/libexec/airportd\n92291  30816   0.7 .venv/bin/python\n 4725 640864   0.6 claude\n  626 486912   0.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  734  52016   0.5 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n  565  18256   0.5 /usr/libexec/configd\n84235 255296   0.4 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n38064   1232   0.4 sleep\n"
+}

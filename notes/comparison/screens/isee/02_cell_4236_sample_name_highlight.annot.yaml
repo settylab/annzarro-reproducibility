@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "02_cell_4236_sample_name_highlight.jpg",
+ "tool": "isee",
+ "software": "iSEE 2.18.0 (Bioconductor 3.20)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8902/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_portal_isee.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Clicking the cell's row sends it to plot 3 (Color by Sample name): an identity highlight of that one cell, no relation values"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    10,
+    179,
+    1390,
+    64
+   ],
+   "label": "cell Mature_Young_2#TCAATTCAGTGAGGCT-1",
+   "selector": "#ColumnDataTable1 tbody tr.selected"
+  },
+  {
+   "n": 2,
+   "box": [
+    477,
+    46,
+    447,
+    508
+   ],
+   "label": "plot 3: that one cell marked",
+   "selector": "#ReducedDimensionPlot3"
+  }
+ ]
+}

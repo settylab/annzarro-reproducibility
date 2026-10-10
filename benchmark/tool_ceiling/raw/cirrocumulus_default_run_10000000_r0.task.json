@@ -1,0 +1,51 @@
+{
+ "tool": "cirrocumulus",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first10000000.h5ad",
+ "n": 10000000,
+ "phases": {
+  "server_ready": 1.61,
+  "first_plot": 29.1,
+  "plot_cat": 32.49,
+  "plot_gene": 54.99,
+  "done": 55.24
+ },
+ "checks": {
+  "cat": {
+   "gl": {
+    "crit": "call",
+    "drawn": 10000000,
+    "frame_max": {
+     "pts": 20000000,
+     "inst": 0
+    },
+    "call_max": 10000000
+   },
+   "stated": null,
+   "png": "benchmark/tool_ceiling/shots/cirrocumulus_default_run_10000000_r0_cat.png",
+   "all_cells": true
+  },
+  "gene": {
+   "gl": {
+    "crit": "call",
+    "drawn": 10000000,
+    "frame_max": {
+     "pts": 30000000,
+     "inst": 0
+    },
+    "call_max": 10000000
+   },
+   "stated": null,
+   "png": "benchmark/tool_ceiling/shots/cirrocumulus_default_run_10000000_r0_gene.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "cirrocumulus": "1.1.61"
+ },
+ "console": [],
+ "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
+ "crashed": false,
+ "ok": true
+}

@@ -1,0 +1,62 @@
+{
+ "version": 1,
+ "image": "m08_selection_APP_regulon_lasso_linked_3_viewers.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (9ae5207), local Docker image scope:1.8.2-9ae5207-final, frontend http://127.0.0.1:55850/; Google Chrome 155.0.8059.39 driven through the Claude in Chrome extension",
+ "data": "SCope_Test.loom (100 cells, local)",
+ "url": "http://127.0.0.1:55850/",
+ "captured": "2026-10-09",
+ "by": "selection-test session (headed Chrome)",
+ "driver": "notes/comparison/demos/scope/selection/record.txt",
+ "source": "manual",
+ "image_sha256": "868474471eda66c3a8feab05e62edbc07fc6e3181578e8a32eec76b7ee607bb3",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "After release: \"Selection 1 (25 cells)\" and the same 25 cells recolored green in all three viewers; overlap table (Cluster set 0 / Unannotated Cluster 2 = 25)."
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    405,
+    535,
+    85,
+    80
+   ],
+   "label": "selected cells, green"
+  },
+  {
+   "n": 2,
+   "box": [
+    895,
+    415,
+    50,
+    55
+   ],
+   "label": "same cells, Cells passing thresholds"
+  },
+  {
+   "n": 3,
+   "box": [
+    895,
+    705,
+    50,
+    55
+   ],
+   "label": "same cells, Expression levels"
+  },
+  {
+   "n": 4,
+   "box": [
+    1148,
+    345,
+    285,
+    240
+   ],
+   "label": "Selection 1 (25 cells), overlap table"
+  }
+ ]
+}

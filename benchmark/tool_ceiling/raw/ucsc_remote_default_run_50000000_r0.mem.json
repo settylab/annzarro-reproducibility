@@ -1,0 +1,148 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "none",
+  "benchmark/tool_ceiling/shots/ucsc_remote_default_run_50000000_r0",
+  "--n",
+  "50000000",
+  "--server-url",
+  "http://hpc-node-24:8791/",
+  "--proxy",
+  "socks5://localhost:1080"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 52.29,
+ "peaks": {
+  "client": {
+   "fp_peak": 8050488592,
+   "fp_lifetime_sum": 9632168984,
+   "rss_peak": 6945456128,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 3015016,
+   "fp_lifetime_sum": 3015016,
+   "rss_peak": 14499840,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 146835024,
+   "fp_lifetime_sum": 150800000,
+   "rss_peak": 182304768,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 8050488592,
+   "rss_peak": 6945456128,
+   "fp_lifetime_sum": 9635184000
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.3,
+   1034379736
+  ],
+  [
+   4.51,
+   2116412800
+  ],
+  [
+   6.74,
+   1624909016
+  ],
+  [
+   8.96,
+   1722541464
+  ],
+  [
+   11.18,
+   1813128792
+  ],
+  [
+   13.42,
+   1862543296
+  ],
+  [
+   15.69,
+   1749018680
+  ],
+  [
+   17.92,
+   1901193512
+  ],
+  [
+   20.16,
+   5013549992
+  ],
+  [
+   22.39,
+   4764807960
+  ],
+  [
+   24.6,
+   4764840728
+  ],
+  [
+   26.81,
+   6648280504
+  ],
+  [
+   29.06,
+   6104970680
+  ],
+  [
+   31.5,
+   6099318248
+  ],
+  [
+   33.79,
+   6082311656
+  ],
+  [
+   36.1,
+   6083900904
+  ],
+  [
+   38.43,
+   3818958824
+  ],
+  [
+   40.74,
+   3819057128
+  ],
+  [
+   43.03,
+   4296536040
+  ],
+  [
+   45.25,
+   3912265728
+  ],
+  [
+   47.58,
+   4778275368
+  ],
+  [
+   49.82,
+   5525074928
+  ],
+  [
+   52.04,
+   5776799064
+  ]
+ ],
+ "ps_before": "2026-10-05T22:12:07-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  557  43184 124.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n78218 989584  60.3 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n  855 1450592  53.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n 1192 138336  27.7 /usr/libexec/textunderstandingd\n86901 488832  16.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  582 113840  15.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n47413 541040   3.5 /Applications/cmux.app/Contents/MacOS/cmux\n57113 2876880   3.0 $HOME/.local/bin/claude\n93323 531344   2.7 $HOME/.local/bin/claude\n80588 584064   2.4 $HOME/.local/bin/claude\n",
+ "others_at_start": [
+  "19752 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1790895733153-mick9a.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "19813 /usr/bin/lockf -k $HOME/.annzarro-bench.lock $TMPDIR/geneset/p",
+  "19814 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1790895733153-mick9a.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>"
+ ]
+}

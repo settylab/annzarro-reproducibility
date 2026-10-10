@@ -1,0 +1,441 @@
+scSVA RENDERING CLASS: EVIDENCE (code at c9e8fd6b280910eadf9daba35badcf6933c7f353, the last commit)
+=====================================================================================================
+EVERY MARK IS A GRID BIN DRAWN AT THE BIN CENTRE, NOT A CELL. NO MARK CARRIES CELL IDENTITY. A SINGLE CELL
+CANNOT BE HOVERED OR PICKED, AND A SELECTION'S CELLS CANNOT BE LISTED OR EXPORTED (a lasso returns only a
+count and summary statistics).
+A bin that happens to hold ONE cell is drawn as one mark that depicts that cell, snapped to the bin centre and
+with no identity. At small N or deep zoom most marks are such single-cell bins (measured below: 6,803 of
+7,422 marks at 8,090 cells; 145 of 145 in the zoomed screenshot). So "a mark per cell" can occur by
+coincidence of density; "a cell as an addressable, identifiable mark" never occurs.
+(One residual item is NOT VERIFIED in a browser: the 3-D plotly default tooltip, Q2b. By code it can only
+show a voxel centre's x/y/z (and at most the voxel aggregate), because the plotted table holds voxel indices and
+aggregates, never a cell row.)
+
+VERDICTS
+  Q1 Rendering modes: every view of the embedding is a vaex grid aggregate drawn as one mark per non-empty
+     bin, at the bin centre (a one-cell bin yields a snapped, anonymous mark for that cell). 2-D grid 128..5,120 (default 512); 3-D grid 100..512 (default 200). There is no small-N
+     path, no "points"/"raw" option and no zoom-dependent switch.
+  Q2 Single-cell hover/click/select: none. No hover input exists; click places a label or a polygon vertex;
+     brush and lasso select bins (overlay) or return a COUNT and summary statistics (cell level, but never
+     listed). No export of a selection's cell IDs exists; the app never loads a cell ID column.
+  Q3 Zoom: brush + double-click re-bins the brushed window at the SAME grid. There is no lower bound on the
+     window. A bin can reach one cell, but the mark is still the bin centre with a count/statistic and no
+     identity.
+  Q4 Bin colour: gene = per-bin Mean (default) | Median (approximate) | Max; density = cell count (log10 by
+     default); category = the colour of whichever group's layer is drawn LAST at that bin (not mode, not
+     count).
+  Q5 Per-cell drawing: no code path draws from a cell row; only bin rows. Highlights, group overlays, polygons, annotations and group labels are bins or
+     user-placed or group-level marks.
+
+Abbreviations: S = inst/scSVA/server.R, U = inst/scSVA/ui.R. Line numbers below are the clone's, at the sha.
+The app's R code is global.R, server.R, ui.R (inst/scSVA) and R/scSVA.R (a launcher). There is no Python in
+the app; the examples/ scripts only prepare input files.
+
+Q1. EVERY RENDERING PATH (all 13 renderPlot/renderPlotly/renderImage calls in server.R, L928 L1433 L1450 L1467 L1487 L1529 L1564 L1753 L1814 L2380 L2559 L2584 L2891; global.R and R/scSVA.R contain none)
+
+  Data loaded into the vaex frame: only x, y (z for 3-D), 'Gene', 'clusters'. The frame is created from one array:
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L292-L292
+        292|       ds <<- vaex$from_arrays(x=numpy$array(h5read(vals$inputFiles$XY, input$X_coord)))})
+
+  1a. Main 2-D plot. plot1..plot4 are ONE renderPlot, so the server renders an image and sends it (measured: 755x700 PNG).
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L928-L930
+        928|   output$plot1 <- output$plot2 <- output$plot3 <- output$plot4 <- renderPlot(res = 72,{
+        929|   plotInput()
+        930|   })
+
+  1b. Density branch: count per (grid x grid) bin.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L652-L656
+        652|       if(vals$plot.ID  ==  1){
+        653|         xycounts  =  ds$count(binby  =  tuple(ds$x,ds$y),
+        654|                               limits =  tuple(tuple(vals$X[1],vals$X[2]),tuple(vals$Y[1],vals$Y[2])),
+        655|                               shape  =  tuple(input$grid,input$grid),selection=FALSE)
+        656|         vals$data <- summary(as(py_to_r(xycounts),'dgTMatrix'))
+
+  1c. Gene branch: per-bin statistic (see Q4).
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L663-L668
+        663|         if(input$select_method  ==  "Mean"){
+        664|         xycounts = ds$mean('Gene',
+        665|                            binby  =  tuple(ds$x,ds$y),
+        666|                            limits =  tuple(tuple(vals$X[1],vals$X[2]),tuple(vals$Y[1],vals$Y[2])),
+        667|                            shape  =  tuple(input$grid,input$grid),selection=FALSE)
+        668|         }
+
+  1d. Group branch: per-group count per bin, one layer per group.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L697-L708
+        697|         withProgress(message = 'Getting groups', value = 0, {
+        698|         for(l in 1:vals$N.clusters){
+        699|           ds$select(paste0("clusters==",l,""))
+        700|           cluster_grids<-py_to_r(ds$count('clusters',
+        701|                                           selection=T,
+        702|                                           binby   =  tuple(ds$x,ds$y),
+        703|                                           limits  =  tuple(tuple(vals$X[1],vals$X[2]),tuple(vals$Y[1],vals$Y[2])),
+        704|                                           shape   =  tuple(input$grid,input$grid)))
+        705|           cluster_grids   <-  summary(as(cluster_grids,'dgTMatrix'))
+        706|           cluster_grids   <-  cluster_grids[complete.cases(cluster_grids),]
+        707|           cluster_grids   <-  cbind(cluster_grids,Cluster_ID=rep(l,nrow(cluster_grids)))
+        708|           vals$cluster_df <- rbind(vals$cluster_df,cluster_grids)
+
+  1e. Bin index -> bin CENTRE coordinate; these centres are what geom_point draws.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L720-L723
+        720|       range_X       =  (vals$X[2]-vals$X[1])/input$grid
+        721|       range_Y       =  (vals$Y[2]-vals$Y[1])/input$grid
+        722|       vals$data$i   <- vals$X[1]+range_X*(vals$data$i-.5)
+        723|       vals$data$j   <- vals$Y[1]+range_Y*(vals$data$j-.5)
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L760-L763
+        760|      }else{
+        761|       geom_point(size   =  input$ps,
+        762|                  alpha  =  input$transparency,
+        763|                  shape  =  ifelse(input$point_shape,15,19))
+
+  1f. Grid slider (2-D).
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/ui.R#L117-L123
+        117|                          sliderInput("grid",
+        118|                          "Grid Resolution:",
+        119|                          min   = 128,
+        120|                          max   = 5120,
+        121|                          value = 512,
+        122|                          step  = 1
+        123|                          ),
+
+  1g. 3-D view: plotly scatter3d of VOXEL centres (count/mean/median/max on an N x N x N grid).
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1819-L1826
+       1819|       N=input$grid_plot3D
+       1820|       withProgress(message = 'Processing on the grid',value = 0.5, {
+       1821|       if(input$display_feature=="Density"){
+       1822|       xycounts = ds$count(binby=tuple(ds$x3d,ds$y3d,ds$z3d), 
+       1823|                           limits=tuple(tuple(vals$X_3d[1],vals$X_3d[2]),
+       1824|                                        tuple(vals$Y_3d[1],vals$Y_3d[2]),
+       1825|                                        tuple(vals$Z_3d[1],vals$Z_3d[2])),
+       1826|                           shape=tuple(N,N,N),selection = FALSE)
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1890-L1892
+       1890|       vals$data_3d$h   <- vals$X_3d[1]+range_X*(vals$data_3d$h-.5)
+       1891|       vals$data_3d$i   <- vals$Y_3d[1]+range_Y*(vals$data_3d$i-.5)
+       1892|       vals$data_3d$j   <- vals$Z_3d[1]+range_Z*(vals$data_3d$j-.5)
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1954-L1958
+       1954|     vals$p_3d<-plot_ly(vals$data_3d,
+       1955|                        x      = ~h,
+       1956|                        y      = ~i,
+       1957|                        z      = ~j, 
+       1958|                        marker = list(size = input$ps_3d, 
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1973-L1973
+       1973|                        type = "scatter3d") %>%
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/ui.R#L248-L254
+        248|                     sliderInput("grid_plot3D",
+        249|                                 "Grid Resolution:",
+        250|                                 min   = 100,
+        251|                                 max   = 512,
+        252|                                 value = 200,
+        253|                                 step  = 1
+        254|                     ),
+
+  1h. 3-D -> 2-D projection: projects the same voxel table.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L2380-L2385
+       2380|   output$plot3dto2d <- renderPlot({
+       2381|     tmp<-scatter3D( vals$data_3d$h, 
+       2382|                      vals$data_3d$i, 
+       2383|                      vals$data_3d$j,
+       2384|                      phi = input$phi,
+       2385|                      theta = input$theta)
+
+  1i. Analysis tab: Group A/B histograms (plotly bar over 40 expression bins), not embeddings.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1433-L1441
+       1433|   output$plot_GEDistGroupA <- renderPlotly({
+       1434|     if(input$plot_expression & !is.null(vals$group_Adist)){
+       1435|       df  =  data.frame(Expression  =  seq(vals$rangeE[1], vals$rangeE[2], length.out  =  40),
+       1436|                         Cell_Number =  vals$group_Adist)
+       1437|       plot_ly(df,
+       1438|               x      = ~Expression,
+       1439|               y      = ~Cell_Number,
+       1440|               type   = "bar",
+       1441|               marker = list(color = "#FF7A00")) %>%
+
+  1j. Analysis tab: per-group Density / ECDF / Violin are 40-bin expression histograms of the group (same count call in each).
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1495-L1498
+       1495|           distCl[[i]]  =  py_to_r(ds$count(binby      =  tuple(ds$Gene),
+       1496|                                            limits     =  tuple(vals$rangeE[1],vals$rangeE[2]),
+       1497|                                            shape      =  tuple(40L),
+       1498|                                            selection  =  TRUE))
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1537-L1540
+       1537|           distCl[[i]]  =  py_to_r(ds$count(binby      =  tuple(ds$Gene),
+       1538|                                            limits     =  tuple(vals$rangeE[1],vals$rangeE[2]),
+       1539|                                            shape      =  tuple(40L),
+       1540|                                            selection  =  TRUE))
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1572-L1575
+       1572|           distCl[[i]]  =  py_to_r(ds$count(binby      =  tuple(ds$Gene),
+       1573|                                            limits     =  tuple(vals$rangeE[1],vals$rangeE[2]),
+       1574|                                            shape      =  tuple(40L),
+       1575|                                            selection  =  TRUE))
+
+  1k. Analysis tab: Census = pie of cells per group.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1472-L1476
+       1472|         plot_ly(vals$cluster_stat, 
+       1473|                 labels = ~ID, 
+       1474|                 values = ~Ncells,
+       1475|                 marker = list(colors = vals$cluster_colors,
+       1476|                               line = list(color = '#FFFFFF', width = 1)),
+
+  1l. Cloud (FLE) panels: convergence line + progress bar; FLE coordinates downloaded from the VM are loaded into the same frame and shown by the same binned 2-D/3-D paths.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L2559-L2565
+       2559|   output$plot_FLE_dist = renderPlotly({
+       2560|     if(vals$FLE_dist){
+       2561|     p  =  plot_ly()
+       2562|     p  =  plot_ly(FLE_dist,
+       2563|                    x      =  ~step,
+       2564|                    y      =  ~log10(distance),
+       2565|                    type = 'scatter', 
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L2614-L2621
+       2614|           ds <<- vaex$from_arrays(x=numpy$array(tmp$x))
+       2615|           ds$add_virtual_column("x3d", "x")
+       2616|         } else {
+       2617|           ds$add_column('x3d',data = numpy$array(tmp$x)) 
+       2618|         }
+       2619|   ds$add_column('y',data = numpy$array(tmp$y))
+       2620|   ds$add_virtual_column("y3d", "y")
+       2621|   ds$add_column('z3d',data = numpy$array(tmp$z))
+
+  1m. Remaining outputs: colour-palette preview and a stitched image of saved main-plot PNGs.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1753-L1755
+       1753|   output$PlotPalette <- renderPlot({
+       1754|     plot_palette(vals$ColPalette)
+       1755|   })
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L2878-L2880
+       2878| observeEvent(input$collect_plots,{
+       2879|   file=paste0(tempfile(tmpdir = tmpdir),".png")
+       2880|   ggsave(file,
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L2891-L2893
+       2891| output$multiplot <- renderImage({
+       2892|   input$collect_plots
+       2893|   ImageVec<-magick::image_read(vals$list_plots[[1]])
+
+  Small-N path: none. plotInput() has exactly three branches (plot.ID 1/2/3), with no condition on N:
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L651-L652
+        651|     if(vals$trans){
+        652|       if(vals$plot.ID  ==  1){
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L657-L658
+        657|       }
+        658|       else if(vals$plot.ID  ==  2){
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L689-L690
+        689|       }
+        690|       else if(vals$plot.ID  ==  3){
+
+
+Q2. SINGLE-CELL HOVER / CLICK / SELECT / IDENTITY
+  2a. Hover: plotOutput declares click, dblclick and brush, and NO hover (the same for plot2/3/4 at U#L446, L1018, L1183).
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/ui.R#L109-L114
+        109|                          plotOutput("plot1",
+        110|                          height   = 700,
+        111|                          click    = "plot1_click",
+        112|                          dblclick = "plot1_dblclick",
+        113|                          brush    = brushOpts(id = "plot1_brush",resetOnNew = TRUE)
+        114|                        ),
+
+      Measured: the run registered no hover input (timings.json hover_input_exists: [] in jobs 10171777 and 10171780; screenshot 05).
+  2b. 3-D plotly: no text= or hoverinfo= is set (full plot_ly call S#L1954-L1973), so plotly's default tooltip shows the
+      x/y/z of a voxel centre (h,i,j). NOT VERIFIED in a browser.
+  2c. Click: a free text annotation or a polygon vertex at the click coordinate; no lookup of a cell.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1031-L1036
+       1031|   observeEvent(input$plot1_click, {
+       1032|     if(input$annotate){
+       1033|       vals$Annotation.data <- rbind(vals$Annotation.data,
+       1034|                                     data.frame(i                = input$plot1_click$x,
+       1035|                                                j                = input$plot1_click$y,
+       1036|                                                Annotation       = "Add text",
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1046-L1048
+       1046|       if(vals$polygon_init){
+       1047|         vals$polygon      <- data.frame(i = input$plot1_click$x,
+       1048|                                         j = input$plot1_click$y)
+
+  2d. Brush 'Select': brushedPoints over the BIN table (vals$data), toggling bins.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1014-L1017
+       1014|   observeEvent(input$select, {
+       1015|     res           <-  brushedPoints(vals$data, input$plot1_brush, allRows = TRUE)
+       1016|     vals$keeprows <-  xor(vals$keeprows, res$selected_)
+       1017|   })
+
+  2e. Group A/B by polygon: a cell-level vaex lasso, used only for a COUNT, then for histograms and summary stats.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1189-L1191
+       1189|       ds$select_lasso('x', 'y', numpy$array(vals$polygon$i), numpy$array(vals$polygon$j))
+       1190|       vals$GC_1            <-  (point.in.polygon(vals$data$i, vals$data$j, vals$polygon$i, vals$polygon$j)  !=  1)
+       1191|       vals$Ncells_Group_A  <-  py_to_r(ds$count(selection=T))
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1342-L1344
+       1342|         Summary_Stat.A<-data.frame(Mean   = py_to_r(ds$mean('Gene',selection=TRUE)),
+       1343|                                    Median = py_to_r(ds$median_approx('Gene',selection=TRUE)),
+       1344|                                    SD     = py_to_r(ds$std('Gene',selection=TRUE)))
+
+  2f. Group A/B by box: bins for the overlay, a count over the box for the number.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1198-L1203
+       1198|       res                 <- brushedPoints(vals$data, input$plot1_brush, allRows = TRUE)
+       1199|       vals$GC_1           <- xor(vals$GC_1, res$selected_)
+       1200|       vals$Ncells_Group_A <- sum(py_to_r(ds$count(binby=tuple(ds$x,ds$y),
+       1201|                                                   shape=1L,
+       1202|                                                   limits=tuple(tuple(vals$GC_1.X[1],vals$GC_1.X[2]),
+       1203|                                                                tuple(vals$GC_1.Y[1],vals$GC_1.Y[2]))
+
+  2g. Exports: only two download handlers exist, both for plot IMAGES (2-D plot, 3-D plot).
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1143-L1144
+       1143|   output$downloadPlot <- downloadHandler(
+       1144|     filename = function() { paste('plot.',input$filetype, sep='') },
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L2017-L2018
+       2017|   output$downloadPlot3D <- downloadHandler(
+       2018|     filename <- function() { paste('plot.',input$filetype_3d, sep='') },
+
+      There is no export of a selection's cell IDs, and no cell ID/barcode column is ever read (see 'Data loaded' above).
+
+Q3. ZOOM
+  Double-click on a brush sets the window to the brush and flags a re-bin (trans), with no minimum width:
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1019-L1028
+       1019|   observeEvent(input$plot1_dblclick, {
+       1020|     brush  <-  input$plot1_brush
+       1021|     if (!is.null(brush)) {
+       1022|       vals$X      <-  c(brush$xmin, brush$xmax)
+       1023|       vals$Y      <-  c(brush$ymin, brush$ymax)
+       1024|       vals$trans  <-  TRUE
+       1025|     } else {
+       1026|       vals$X      <-  NULL
+       1027|       vals$Y      <-  NULL
+       1028|     }
+
+  The re-bin uses the same input$grid over the new limits (1b). Bin width = window width / grid.
+  Initial view: 0.5% padding around the data range:
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L644-L648
+        644|     isolate({if(vals$initialize){
+        645|         vals$X[1]       <-  vals$X[1]-(vals$X[2]-vals$X[1])*0.005
+        646|         vals$X[2]       <-  vals$X[2]+(vals$X[2]-vals$X[1])*0.005
+        647|         vals$Y[1]       <-  vals$Y[1]-(vals$Y[2]-vals$Y[1])*0.005
+        648|         vals$Y[2]       <-  vals$Y[2]+(vals$Y[2]-vals$Y[1])*0.005
+
+
+Q4. BIN COLOUR
+  Gene statistic choices, default Mean:
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/ui.R#L491-L495
+        491|                            selectInput(inputId  = "select_method",
+        492|                              label    = "Select Statistic:",
+        493|                              choices  = c("Mean","Median","Max"),
+        494|                              selected = "Mean",
+        495|                              multiple = F),
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L669-L680
+        669|         else if(input$select_method=="Median"){
+        670|           xycounts = ds$median_approx('Gene',
+        671|                                       binby=tuple(ds$x,ds$y),
+        672|                                       limits=tuple(tuple(vals$X[1],vals$X[2]),tuple(vals$Y[1],vals$Y[2])),
+        673|                                       shape=tuple(input$grid,input$grid),selection=FALSE)
+        674|         }
+        675|         else if(input$select_method=="Max"){
+        676|           xycounts = ds$max('Gene',
+        677|                             binby  =  tuple('x','y'),
+        678|                             limits =  tuple(tuple(vals$X[1],vals$X[2]),tuple(vals$Y[1],vals$Y[2])),
+        679|                             shape  =  tuple(input$grid,input$grid),selection=FALSE)
+        680|         }
+
+  Bins with cells but no finite value are set to 0:
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L681-L687
+        681|         vals$data<-summary(as(py_to_r(xycounts),'dgTMatrix'))
+        682|         if(input$select_method  ==  "Max") {
+        683|           vals$data$x[!is.finite(vals$data$x)]  <-  NA
+        684|         }
+        685|         vals$data  <-  vals$data[complete.cases(vals$data),]
+        686|         zeros      <-  suppressMessages(dplyr::anti_join(allCells[,c(1,2)],vals$data[,c(1,2)]))
+        687|         zeros$x    <-  rep(0,nrow(zeros))
+
+  Density colour = count (log10 if dens_scale). Category colour = the group colour of each layer; the layers are rbind-ed in
+  group order (1d) and drawn in row order, so where groups share a bin the last drawn wins. 'Shuffle cells' shuffles BIN rows:
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L741-L741
+        741|     ggplot(vals$data, aes(x = i, y = j,colour = if(input$show_legend_clusters){as.factor(vals$cluster_df$Cluster_ID)}else{if(input$dens_scale){log10(x)} else{x}}))+
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L750-L758
+        750|         geom_point(data    =  vals$cluster_df,
+        751|                    size    =  input$ps,
+        752|                    alpha   =  input$transparency,
+        753|                    shape   =  ifelse(input$point_shape,15,19),
+        754|                    colour  =  if(input$dichromat  !=  "No"){
+        755|                                   dichromat(vals$cluster_colors[vals$cluster_df$Cluster_ID],
+        756|                                             input$dichromat)
+        757|                               }
+        758|                               else{vals$cluster_colors[vals$cluster_df$Cluster_ID]})
+
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1237-L1239
+       1237|   observeEvent(input$shuffle_cells, {
+       1238|     vals$cluster_df<-vals$cluster_df[sample(1:nrow(vals$cluster_df)),]
+       1239|   })
+
+
+Q5. ANYTHING DRAWN PER CELL: NO CODE PATH DRAWS FROM A CELL ROW (one-cell bins: see MEASURED NUMBERS)
+  Highlighted group = that group's bins at 5x size; Group A/B and Select overlays = bin subsets; polygon = user clicks.
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L765-L785
+        765|     {if(input$highlight_cluster) geom_point(data    =  vals$cluster_h,
+        766|                                             size    =  input$ps*5,
+        767|                                             alpha   =  input$transparency,
+        768|                                             shape   =  ifelse(input$point_shape,15,19),
+        769|                                             colour  =  vals$cluster_colors[input$cluster_id])
+        770|     }+
+        771|     geom_point(data   =  GC_1,
+        772|                shape  =  ifelse(input$point_shape,15,19),
+        773|                fill   =  "#FF7A00",
+        774|                color  =  "#FF7A00",
+        775|                size   =  0.75)+
+        776|     geom_point(data   =  GC_2,
+        777|                shape  =  ifelse(input$point_shape,15,19),
+        778|                fill   =  "#353839",
+        779|                color  =  "#353839",
+        780|                size   =  0.75)+
+        781|     geom_point(data   = keep,
+        782|                shape  = ifelse(input$point_shape,15,19),
+        783|                fill   = "#FF7A00",
+        784|                color  = "#FF7A00",
+        785|                size   = 0.75)+
+
+  Group labels sit at each group's mean x/y (one label per group):
+    https://github.com/klarman-cell-observatory/scSVA/blob/c9e8fd6b280910eadf9daba35badcf6933c7f353/inst/scSVA/server.R#L1281-L1285
+       1281|         ds$select(paste0("clusters==",l,""))
+       1282|         vals$cluster_labels <- rbind(vals$cluster_labels,
+       1283|                                      data.frame(i  =  py_to_r(ds$mean("x",selection=TRUE)),
+       1284|                                                 j  =  py_to_r(ds$mean("y",selection=TRUE)),
+       1285|                                                 ID =  as.character(l),
+
+
+MEASURED NUMBERS (each with its source)
+  - 95,624,334 cells, grid 512, density view: 153,749 non-empty bins (= marks drawn); max 18,243 cells in one bin.
+    Source: runs/probe_95624334_10168759/probe.json (scSVA's own ds$count call, run/backend_probe.R; Slurm job 10168759),
+    reproduced by runs/probe_95624334_10168523/probe.json (job 10168523). Also ladder/hpc_probe_backend.csv row 6.
+    Of those marks, a fraction 0.0847 hold exactly one cell (probe.json frac_bins_with_one_cell = mean over non-empty
+    bins, backend_probe.R L41), i.e. about 13,020 single-cell marks (13,015..13,030 given the 4-digit rounding).
+    Caveat: the probe (run/backend_probe.R L26-27) bins over the UNPADDED data min/max, whereas the app pads the
+    initial view by 0.5% (S#L644-648), so the app's own grid-512 view differs slightly from these counts.
+  - The image sent to the browser: one PNG, 755 x 700 px (naturalWidth x naturalHeight of #plot1 img).
+    Source: runs/<label>_<job>/timings.json "plot1_img_natural": [755, 700], all four GUI runs (10171777, 10171676,
+    10171779, 10171780).
+  - 8,090 cells (bm_aging), grid 512, initial view: 7,422 marks, of which 6,803 are single-cell bins (marks by
+    cells per bin: 1:6803 2:576 3:37 4:6); 1,287 cells share a bin with another cell; every cell is moved to its bin
+    centre (median 0.0199, max 0.0349 UMAP units; bin 0.0521 x 0.0474).
+  - The zoomed screenshot's window (x 3.925829..9.239898, y 2.467689..6.862822, grid 512): 145 cells -> 145 marks,
+    ALL single-cell bins. Source: evidence/snap_bm_aging_grid512_zoomwindow.json (same script, window arguments).
+    Source: evidence/snap_bm_aging_grid512.json, produced by evidence/snap_bm_aging.py, an offline REPLICATION of
+    S#L644-656 + L720-723 on inputs/bm_aging/coords.h5. This is NOT scSVA output; it reproduces scSVA's binning
+    arithmetic (vaex: idx = floor((v-lo)/(hi-lo)*grid)). The skeptic (req-001) re-derived 7,422 / 1,287 / max 4 /
+    6,803 / 145 with real vaex 2.0.3.
+  - ESTIMATE, not measured: at grid 5,120 over the same full 95.6M extent the densest region would hold ~182 cells per
+    bin (18,243 / 10^2, assuming uniform density within the grid-512 bin). Reaching ~1 cell per bin would need a further
+    ~13.5x zoom per axis. The plot panel is ~630 px wide inside the 755 px PNG, so any grid above ~630 puts several
+    bins in one pixel.
+
+NOT VERIFIED
+  - The 3-D plotly default tooltip (Q2b). Code only.
+  - The Analysis tab's plotly panels were not exercised in a browser: they froze headless Chromium 105 in run 10168843.
+    The verdicts in 1i-1k are code-only.
+  - The Diffusion Maps / NNG / FLE cloud tabs need Google Compute Engine and were not run. 1l is code-only.

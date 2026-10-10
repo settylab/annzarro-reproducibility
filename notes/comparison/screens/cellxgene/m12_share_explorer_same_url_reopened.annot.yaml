@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m12_share_explorer_same_url_reopened.jpg",
+ "tool": "cellxgene",
+ "software": "CZ CELLxGENE Discover Explorer (hosted, as served 2026-10-04)",
+ "data": "Visium Spatial of Human muscle in Healthy control_2 (4,992 spots x 35,476 genes)",
+ "url": "https://cellxgene.cziscience.com/e/85585f3f-d16a-412d-b93a-406d52721221.cxg/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene_explorer.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "N",
+   "caption": "Explorer (hosted) (2026-10-04): the dataset URL reopened after colouring by MYH7 shows uncoloured spots and an empty gene list"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    362,
+    52,
+    676,
+    848
+   ],
+   "label": "spots uncoloured; MYH7 colouring not restored",
+   "selector": "[data-cap='emb']"
+  },
+  {
+   "n": 2,
+   "box": [
+    706,
+    619,
+    113,
+    38
+   ],
+   "label": "gene list empty",
+   "selector": "[data-testid='gene-search']"
+  }
+ ]
+}

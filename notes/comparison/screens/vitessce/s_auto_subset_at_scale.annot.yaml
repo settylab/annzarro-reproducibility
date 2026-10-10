@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "image": "s_auto_subset_at_scale.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (vitessce.io hosted app)",
+ "data": "Salcher et al. 2022 LuCA, 1,283,972 cells (vitessce.io demo)",
+ "url": "https://vitessce.io/#?dataset=salcher-2022",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/autosubset/at_scale.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "auto_subset",
+   "mark": "N",
+   "caption": "LuCA demo, 1,283,972 cells: the UMAP draws all of them by default (WebGL hook: 1,283,972 points in the largest draw call); no subsetting step"
+  },
+  {
+   "column": "every_cell",
+   "mark": "Y",
+   "caption": "all 1,283,972 cells drawn in the UMAP scatterplot at once"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    147,
+    268,
+    728,
+    632
+   ],
+   "label": "embedding",
+   "selector": "canvas >> nth=0"
+  }
+ ]
+}

@@ -1,0 +1,190 @@
+{
+ "attach_name": "Loupe Browser 9",
+ "pids_at_start": [
+  63952,
+  63990,
+  63991,
+  63994
+ ],
+ "status": "ok",
+ "ended_by": [
+  "$DEMO_ROOT/loupe/lazy/partD/g200_r2.done"
+ ],
+ "wall_s": 82.99,
+ "peaks": {
+  "app": {
+   "fp_peak": 2276628960,
+   "fp_lifetime_sum": 2479299088,
+   "rss_peak": 1961230336,
+   "n_proc_max": 5
+  },
+  "total": {
+   "fp_peak": 2276628960,
+   "rss_peak": 1961230336,
+   "fp_lifetime_sum": 2479299088
+  }
+ },
+ "trace": [
+  [
+   0.1,
+   145003392
+  ],
+  [
+   2.31,
+   280139080
+  ],
+  [
+   4.42,
+   272487752
+  ],
+  [
+   6.61,
+   241898824
+  ],
+  [
+   8.86,
+   250402120
+  ],
+  [
+   11.05,
+   245863752
+  ],
+  [
+   13.18,
+   245863752
+  ],
+  [
+   15.37,
+   245814600
+  ],
+  [
+   17.56,
+   245650760
+  ],
+  [
+   19.75,
+   939300720
+  ],
+  [
+   21.95,
+   1406343336
+  ],
+  [
+   24.2,
+   1395906728
+  ],
+  [
+   26.45,
+   1368021160
+  ],
+  [
+   28.58,
+   1367791784
+  ],
+  [
+   30.78,
+   1365563560
+  ],
+  [
+   33.04,
+   1365924008
+  ],
+  [
+   35.25,
+   1366317224
+  ],
+  [
+   37.46,
+   1366562984
+  ],
+  [
+   39.67,
+   1258559656
+  ],
+  [
+   41.89,
+   1257953448
+  ],
+  [
+   44.03,
+   1258100904
+  ],
+  [
+   46.22,
+   1258379432
+  ],
+  [
+   48.43,
+   1258559656
+  ],
+  [
+   50.61,
+   1258641576
+  ],
+  [
+   52.69,
+   1258805416
+  ],
+  [
+   54.86,
+   1442617608
+  ],
+  [
+   57.02,
+   1453431048
+  ],
+  [
+   59.16,
+   1429297416
+  ],
+  [
+   61.28,
+   2024577432
+  ],
+  [
+   63.39,
+   1689295328
+  ],
+  [
+   65.54,
+   1663277536
+  ],
+  [
+   67.64,
+   1608636872
+  ],
+  [
+   69.82,
+   1609177544
+  ],
+  [
+   72.03,
+   1598036400
+  ],
+  [
+   74.23,
+   1597217200
+  ],
+  [
+   76.4,
+   1597168048
+  ],
+  [
+   78.59,
+   1597168048
+  ],
+  [
+   80.76,
+   1597168048
+  ],
+  [
+   82.91,
+   1597168048
+  ]
+ ],
+ "ps_before": "2026-10-08T22:09:03-0700\nmemorystatus_level=92 swap=total = 5120.00M  used = 3928.19M  free = 1191.81M  (encrypted)\n  626 543072  72.7 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n63700 270592  66.2 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n30480 135088  51.4 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n30522 840480  39.3 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n97961 796240  20.0 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n63952  84912  19.1 /Applications/Loupe Browser 9.app/Contents/MacOS/Loupe Browser 9\n30725 494496  18.3 $HOME/Library/Application Support/Claude/claude-code/2.1.293/8433d0d9cd0d/claude.app/Contents/MacOS/claude\n 1015  20448  18.2 /System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent\n47413 790336  15.6 /Applications/cmux.app/Contents/MacOS/cmux\n86901 611424  14.3 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n",
+ "others_at_start": [
+  "63971 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "63977 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "row4_tissue_leiden": {
+  "legend_left": 629,
+  "box": [
+   6,
+   8,
+   619,
+   590
+  ]
+ },
+ "row4_tissue_walk": {
+  "legend_left": null,
+  "box": [
+   6,
+   8,
+   728,
+   590
+  ]
+ },
+ "row4_umap_leiden": {
+  "legend_left": 629,
+  "box": [
+   6,
+   8,
+   610,
+   590
+  ]
+ },
+ "row4_umap_kernel": {
+  "legend_left": null,
+  "box": [
+   6,
+   8,
+   728,
+   590
+  ]
+ },
+ "row3_tissue_leiden": {
+  "legend_left": 625,
+  "box": [
+   6,
+   2,
+   615,
+   590
+  ]
+ },
+ "row3_tissue_walk": {
+  "legend_left": null,
+  "box": [
+   0,
+   0,
+   756,
+   590
+  ]
+ },
+ "row3_umap_kernel": {
+  "legend_left": null,
+  "box": [
+   6,
+   8,
+   732,
+   590
+  ]
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m00_plots_render.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cirrocumulus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "every_cell",
+   "mark": "Y",
+   "caption": "Cirrocumulus 1.1.61 (2026-10-04): bm_demo renders all 8,090 cells in the X_umap embedding; the header counts every cell"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    244,
+    60,
+    1156,
+    892
+   ],
+   "label": "X_umap, all cells drawn",
+   "selector": "[data-recap='p0']"
+  },
+  {
+   "n": 2,
+   "box": [
+    127,
+    9,
+    88,
+    30
+   ],
+   "label": "8,090 cells",
+   "selector": "[data-recap='count']"
+  }
+ ]
+}

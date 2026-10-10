@@ -1,0 +1,184 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first10000000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_default_run_10000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 52.6,
+ "peaks": {
+  "proc": {
+   "fp_peak": 21299134184,
+   "fp_lifetime_sum": 21299134184,
+   "rss_peak": 21605367808,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 21299134184,
+   "rss_peak": 21605367808,
+   "fp_lifetime_sum": 21299134184
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8946072
+  ],
+  [
+   1.39,
+   726713448
+  ],
+  [
+   2.77,
+   9484705016
+  ],
+  [
+   4.16,
+   10570096800
+  ],
+  [
+   5.55,
+   10612924672
+  ],
+  [
+   6.93,
+   10977239560
+  ],
+  [
+   8.3,
+   11037991480
+  ],
+  [
+   9.69,
+   11383202624
+  ],
+  [
+   11.06,
+   12506572376
+  ],
+  [
+   12.42,
+   12506572376
+  ],
+  [
+   13.8,
+   12506572376
+  ],
+  [
+   15.17,
+   12506572376
+  ],
+  [
+   16.55,
+   12506572376
+  ],
+  [
+   17.92,
+   12506572376
+  ],
+  [
+   19.29,
+   12506572376
+  ],
+  [
+   20.67,
+   12506572376
+  ],
+  [
+   22.07,
+   12506572376
+  ],
+  [
+   23.46,
+   12506572376
+  ],
+  [
+   24.83,
+   12506572376
+  ],
+  [
+   26.22,
+   12506572376
+  ],
+  [
+   27.63,
+   12506572376
+  ],
+  [
+   29.01,
+   12511077976
+  ],
+  [
+   30.44,
+   12521383512
+  ],
+  [
+   31.83,
+   21299134184
+  ],
+  [
+   33.21,
+   12531443288
+  ],
+  [
+   34.6,
+   13202581584
+  ],
+  [
+   35.98,
+   13202581584
+  ],
+  [
+   37.36,
+   13202581584
+  ],
+  [
+   38.75,
+   13202581584
+  ],
+  [
+   40.14,
+   13202581584
+  ],
+  [
+   41.51,
+   13202581584
+  ],
+  [
+   42.89,
+   13202581584
+  ],
+  [
+   44.26,
+   13202581584
+  ],
+  [
+   45.64,
+   13202581584
+  ],
+  [
+   47.02,
+   13202581584
+  ],
+  [
+   48.4,
+   13202581584
+  ],
+  [
+   49.78,
+   13202581584
+  ],
+  [
+   51.16,
+   13202581584
+  ],
+  [
+   52.54,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-03T17:02:28-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n62843  43040  10.6 /Applications/Reeder.app/Contents/PlugIns/macOS-WidgetExtension.appex/Contents/MacOS/macOS-WidgetExtension\n57113 2059856  10.2 $HOME/.local/bin/claude\n  626 553936   8.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1245  77408   6.9 /System/Library/PrivateFrameworks/ChronoCore.framework/Support/chronod\n 1346  15184   5.4 /System/Library/Frameworks/ExtensionFoundation.framework/Versions/A/XPCServices/extensionkitservice.xpc/Contents/MacOS/extensionkitservice\n47413 638816   5.2 /Applications/cmux.app/Contents/MacOS/cmux\n 1012  14880   5.1 /usr/libexec/pboard\n  596  30576   5.0 /System/Library/CoreServices/launchservicesd\n 1419  27536   4.7 /System/Library/CoreServices/Batteries.app/Contents/PlugIns/BatteriesAvocadoWidgetExtension.appex/Contents/MacOS/BatteriesAvocadoWidgetExtension\n  633  30848   4.0 /usr/libexec/runningboardd\n"
+}

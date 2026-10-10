@@ -1,0 +1,53 @@
+{
+ "version": 1,
+ "image": "m01_every_cell_subsampling_menu_SCP383.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP383, 10X 1.3M brain cells E18 (1,306,127 cells)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP383/10x-1-3-million-brain-cells-from-e18-mice#study-visualize",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/single-cell-portal/matrix_check_fix2.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "every_cell",
+   "mark": "P",
+   "caption": "1,306,127 cells; default draws a 100,000 subsample; menu offers OPTIONS | 100000 | All Cells"
+  },
+  {
+   "column": "subset",
+   "mark": "Y",
+   "caption": "User picks the subsample size (OPTIONS | 100000 | All Cells), coarse"
+  },
+  {
+   "column": "auto_subset",
+   "mark": "Y",
+   "caption": "Default Subsampling of 100,000 for SCP383 (1,306,127 cells): the cluster opens on a subsample unless All Cells is chosen."
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1179,
+    419,
+    210,
+    88
+   ],
+   "label": "Subsampling menu",
+   "selector": "div[class*=menu]"
+  },
+  {
+   "n": 2,
+   "box": [
+    1172,
+    8,
+    128,
+    26
+   ],
+   "label": "total cells",
+   "selector": "text=/1306127 total cells/"
+  }
+ ]
+}

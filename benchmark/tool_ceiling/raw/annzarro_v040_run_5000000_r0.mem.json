@@ -1,0 +1,54 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first5000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_run_5000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 3.66,
+ "peaks": {
+  "client": {
+   "fp_peak": 2521425520,
+   "fp_lifetime_sum": 2574477848,
+   "rss_peak": 1932050432,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1102644712,
+   "fp_lifetime_sum": 1163446240,
+   "rss_peak": 1125089280,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 124842440,
+   "fp_lifetime_sum": 124842440,
+   "rss_peak": 162955264,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3623513248,
+   "rss_peak": 3056566272,
+   "fp_lifetime_sum": 3737924088
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.41,
+   2223466600
+  ]
+ ],
+ "ps_before": "2026-10-06T00:08:12-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  855 1473360  91.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n59322  92464  90.8 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n47413 543152   8.2 /Applications/cmux.app/Contents/MacOS/cmux\n  629 205200   5.8 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  25024   4.3 /System/Library/CoreServices/launchservicesd\n  626 385888   4.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1012  15856   3.6 /usr/libexec/pboard\n  557  44752   3.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 6219  56368   3.0 $HOME/Projects/investments/.venv/bin/python3\n 1240  45568   2.8 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n",
+ "others_at_start": []
+}

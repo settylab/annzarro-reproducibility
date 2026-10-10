@@ -1,0 +1,95 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_225000000.zarr",
+  "$TMPDIR/wt-ceiling-max/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_225000000_r3",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 22.24,
+ "peaks": {
+  "client": {
+   "fp_peak": 19137446240,
+   "fp_lifetime_sum": 19616138576,
+   "rss_peak": 19668123648,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 9979879608,
+   "fp_lifetime_sum": 10026623640,
+   "rss_peak": 9997910016,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 135431928,
+   "fp_lifetime_sum": 135431928,
+   "rss_peak": 170901504,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 28722880592,
+   "rss_peak": 29045489664,
+   "fp_lifetime_sum": 29642762216
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.11,
+   884171512
+  ],
+  [
+   4.4,
+   9870919272
+  ],
+  [
+   6.62,
+   13122310376
+  ],
+  [
+   8.84,
+   16135396992
+  ],
+  [
+   11.06,
+   18851410552
+  ],
+  [
+   13.34,
+   23471294496
+  ],
+  [
+   15.64,
+   28080168680
+  ],
+  [
+   17.9,
+   25338222248
+  ],
+  [
+   20.2,
+   26949967328
+  ]
+ ],
+ "ps_before": "2026-10-09T19:13:41-0700\nmemorystatus_level=93 swap=total = 5120.00M  used = 3904.19M  free = 1215.81M  (encrypted)\n47413 854080  11.7 /Applications/cmux.app/Contents/MacOS/cmux\n 2191 475712   6.6 $HOME/.local/bin/claude\n  626 522432   5.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n49293 1181568   4.5 $HOME/.local/bin/claude\n86901 625536   4.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n28847 1183392   3.6 $HOME/.local/bin/claude\n80588 772944   2.3 $HOME/.local/bin/claude\n40934   2128   1.2 /bin/bash\n92291  30848   1.0 .venv/bin/python\n 4725 825776   1.0 claude\n",
+ "others_at_start": [
+  "40937 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "40938 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

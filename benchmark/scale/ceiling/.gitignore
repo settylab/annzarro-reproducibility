@@ -1,0 +1,14 @@
+# local environments, server homes, scratch
+.venv*/
+home/
+__pycache__/
+dbg*.py
+# third-party bundle fetched for profiling (plotly.js-dist 2.20.0, unminified)
+plotly-2.20.0.js
+# large artefacts: screenshots (except the ones kept below) and churn profiles
+shots/*
+!shots/h_cat_c1e5_typed_syn_95624334.png
+!shots/pc_v2_syn_95624334_cat_r0.png
+!shots/pc_v2_syn_95624334_gene_r0.png
+!shots/base_chromium_syn_5000000_gene_r0.png
+*_total.heapprofile

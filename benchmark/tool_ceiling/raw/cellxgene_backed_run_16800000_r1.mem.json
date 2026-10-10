@@ -1,0 +1,130 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first16800000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_backed_run_16800000_r1",
+  "--n",
+  "16800000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 41.83,
+ "peaks": {
+  "client": {
+   "fp_peak": 6563100616,
+   "fp_lifetime_sum": 6815480472,
+   "rss_peak": 6316343296,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 36653739056,
+   "fp_lifetime_sum": 36797935192,
+   "rss_peak": 37240029184,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 115454192,
+   "fp_lifetime_sum": 115454192,
+   "rss_peak": 157122560,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 40918344336,
+   "rss_peak": 43077238784,
+   "fp_lifetime_sum": 43613415664
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.15,
+   698131096
+  ],
+  [
+   4.23,
+   2096162488
+  ],
+  [
+   6.3,
+   3571297680
+  ],
+  [
+   8.39,
+   3149196496
+  ],
+  [
+   10.49,
+   3690638904
+  ],
+  [
+   12.58,
+   5098828352
+  ],
+  [
+   14.66,
+   10139206120
+  ],
+  [
+   16.79,
+   11255957528
+  ],
+  [
+   18.9,
+   12432985192
+  ],
+  [
+   20.97,
+   12679286704
+  ],
+  [
+   23.07,
+   14170428704
+  ],
+  [
+   25.11,
+   13410194456
+  ],
+  [
+   27.17,
+   14668289120
+  ],
+  [
+   29.24,
+   13340382304
+  ],
+  [
+   31.33,
+   20195583824
+  ],
+  [
+   33.46,
+   40916132496
+  ],
+  [
+   35.53,
+   40911266448
+  ],
+  [
+   37.6,
+   11846783280
+  ],
+  [
+   39.69,
+   13745984056
+  ],
+  [
+   41.83,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-04T16:16:14-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n84235 405680  72.8 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n 6219  58864  10.9 $HOME/Projects/investments/.venv/bin/python3\n  626 519008   9.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n67551  19536   3.9 benchmark/tool_ceiling/.venv/bin/python\n72627 470912   3.8 $HOME/.local/bin/claude\n  557 566832   2.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n90797 376880   2.1 $HOME/.local/bin/claude\n  855 1930928   1.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  596  30704   1.8 /System/Library/CoreServices/launchservicesd\n  601  42928   1.6 /usr/libexec/locationd\n",
+ "others_at_start": []
+}

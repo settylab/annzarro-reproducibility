@@ -1,0 +1,196 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "none",
+  "benchmark/tool_ceiling/shots/ucsc_remote_default_run_95624334_r0",
+  "--n",
+  "95624334",
+  "--server-url",
+  "http://hpc-node-22:8791/",
+  "--proxy",
+  "socks5://localhost:1080"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 81.94,
+ "peaks": {
+  "client": {
+   "fp_peak": 12904793176,
+   "fp_lifetime_sum": 15250656744,
+   "rss_peak": 12453773312,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 3031400,
+   "fp_lifetime_sum": 3031400,
+   "rss_peak": 14516224,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 147670392,
+   "fp_lifetime_sum": 150308240,
+   "rss_peak": 183517184,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 12904793176,
+   "rss_peak": 12453773312,
+   "fp_lifetime_sum": 15253688144
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.32,
+   945103152
+  ],
+  [
+   4.57,
+   1079517728
+  ],
+  [
+   6.82,
+   1114464992
+  ],
+  [
+   9.03,
+   2905729224
+  ],
+  [
+   11.26,
+   2286544736
+  ],
+  [
+   13.5,
+   2386225208
+  ],
+  [
+   15.71,
+   2486200568
+  ],
+  [
+   17.94,
+   2589370808
+  ],
+  [
+   20.19,
+   2696440464
+  ],
+  [
+   22.48,
+   2799692648
+  ],
+  [
+   24.7,
+   2540711384
+  ],
+  [
+   26.91,
+   2689412640
+  ],
+  [
+   29.13,
+   2837262000
+  ],
+  [
+   31.38,
+   2980310944
+  ],
+  [
+   33.59,
+   3125489760
+  ],
+  [
+   35.81,
+   5916048120
+  ],
+  [
+   38.0,
+   8083013952
+  ],
+  [
+   40.21,
+   8886109056
+  ],
+  [
+   42.4,
+   8886109056
+  ],
+  [
+   44.58,
+   8886109056
+  ],
+  [
+   46.75,
+   8886109056
+  ],
+  [
+   48.96,
+   8886125440
+  ],
+  [
+   51.15,
+   11854923656
+  ],
+  [
+   53.34,
+   11408181128
+  ],
+  [
+   55.57,
+   11409426312
+  ],
+  [
+   57.77,
+   11392763784
+  ],
+  [
+   59.98,
+   6726761136
+  ],
+  [
+   62.2,
+   6708886192
+  ],
+  [
+   64.42,
+   6710000328
+  ],
+  [
+   66.63,
+   7116290664
+  ],
+  [
+   68.86,
+   6734641792
+  ],
+  [
+   71.06,
+   6945913688
+  ],
+  [
+   73.26,
+   8275279376
+  ],
+  [
+   75.43,
+   8456355464
+  ],
+  [
+   77.64,
+   8106671800
+  ],
+  [
+   79.84,
+   12901008472
+  ]
+ ],
+ "ps_before": "2026-10-06T13:34:00-0700\nmemorystatus_level=89 swap=total = 3072.00M  used = 2226.25M  free = 845.75M  (encrypted)\n 8509 420784  98.4 lualatex\n  626 360576  32.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n47413 571424  11.4 /Applications/cmux.app/Contents/MacOS/cmux\n57113 2854112   7.6 $HOME/.local/bin/claude\n56470 107744   6.2 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking\n49293 831808   5.1 $HOME/.local/bin/claude\n  687  71984   4.8 /usr/libexec/syspolicyd\n95814 674272   3.7 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  734  52080   2.9 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n23835 723024   2.7 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n",
+ "others_at_start": []
+}

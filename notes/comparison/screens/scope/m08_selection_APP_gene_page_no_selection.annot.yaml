@@ -1,0 +1,27 @@
+{
+ "version": 1,
+ "image": "m08_selection_APP_gene_page_no_selection.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (9ae5207), local Docker image scope:1.8.2-9ae5207-final, frontend http://127.0.0.1:55850/; Google Chrome 155.0.8059.39 driven through the Claude in Chrome extension",
+ "data": "SCope_Test.loom (100 cells, local)",
+ "url": "http://127.0.0.1:55850/",
+ "captured": "2026-10-09",
+ "by": "selection-test session (headed Chrome)",
+ "driver": "notes/comparison/demos/scope/selection/record.txt",
+ "source": "manual",
+ "image_sha256": "a8db753547b57a04cddbb2510ecd94a4f4e546d60fe2b8dab575eea680e0c39d",
+ "proves": [],
+ "note": "Gene page: no selection listed (selections are kept per page).",
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    690,
+    85,
+    170,
+    75
+   ],
+   "label": "No user's lasso selections on the Gene page"
+  }
+ ]
+}

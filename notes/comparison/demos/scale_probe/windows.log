@@ -1,0 +1,6 @@
+2026-10-04T08:06:47 2026-10-04T08:07:09 rc=0 cmd=.venv/bin/python probe_web.py ucsc_pansci https://cells.ucsc.edu/?ds=mouse-pansc overlapped_timed=none
+2026-10-04T08:08:23 2026-10-04T08:08:46 rc=0 cmd=.venv/bin/python probe_web.py ucsc_pansci https://cells.ucsc.edu/?ds=mouse-pansc overlapped_timed=none
+2026-10-04T08:08:56 2026-10-04T08:09:19 rc=0 cmd=.venv/bin/python probe_web.py ucsc_pansci https://cells.ucsc.edu/?ds=mouse-pansc overlapped_timed=none
+2026-10-04T08:11:38 2026-10-04T08:13:11 rc=0 cmd=.venv/bin/python probe_web.py cxg_mouse_embryo_11M https://cellxgene.cziscience. overlapped_timed=none
+2026-10-04T08:15:17 2026-10-04T08:16:43 rc=0 cmd=.venv/bin/python probe_web.py cxg_mouse_embryo_11M https://cellxgene.cziscience. overlapped_timed=none
+2026-10-04T08:18:43 2026-10-04T08:20:07 rc=0 cmd=.venv/bin/python probe_web.py cxg_mouse_embryo_11M https://cellxgene.cziscience. overlapped_timed=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $HOME/tool_ceiling_data/PAUSE ] || [ -e /User

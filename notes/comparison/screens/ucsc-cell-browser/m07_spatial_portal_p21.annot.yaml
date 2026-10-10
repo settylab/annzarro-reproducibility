@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "image": "m07_spatial_portal_p21.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser (cells.ucsc.edu portal)",
+ "data": "brain-spatial-omics/p21, Mouse P21 spatial RNA+ATAC (2,373 spots)",
+ "url": "https://cells.ucsc.edu/?ds=brain-spatial-omics+p21",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_portal_isee.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "spatial",
+   "mark": "Y",
+   "caption": "Portal p21: the Spots layout places 2,373 spots in tissue coordinates"
+  },
+  {
+   "column": "image",
+   "mark": "Y",
+   "caption": "The tissue image is drawn grey under the spots"
+  },
+  {
+   "column": "hosted",
+   "mark": "Y",
+   "caption": "cells.ucsc.edu opened the dataset anonymously, no login or install"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    246,
+    56,
+    958,
+    834
+   ],
+   "label": "spots on the tissue image",
+   "selector": "#mpCanvas, canvas"
+  }
+ ]
+}

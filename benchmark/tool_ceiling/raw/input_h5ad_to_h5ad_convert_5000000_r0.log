@@ -1,0 +1,5 @@
+2,000,000 rows, 206,977,670 nnz, 11s
+4,000,000 rows, 431,323,688 nnz, 20s
+5,000,000 rows, 545,537,954 nnz, 25s
+{"src": "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr", "n": 5000000, "out": "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first5000000.h5ad", "nnz": 545537954, "nnz_per_cell": 109.1075908, "bytes": 4846115512, "seconds": 24.6, "seconds_meta": 2.1, "anndata": "0.11.4", "h5py": "3.16.0"}
+{"status": "ok", "rc": 0, "wall_s": 25.4} fp_peak=15.12GB lifetime=15.28GB

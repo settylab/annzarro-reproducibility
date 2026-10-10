@@ -1,0 +1,110 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scope_task.py",
+  "$DATA_ROOT/tool_ceiling_data/loom/tahoe_first2000000.loom",
+  "$TMPDIR/tc-wt-final/benchmark/tool_ceiling/shots/scope_default_run_2000000_r1",
+  "--n",
+  "2000000",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 36.22,
+ "peaks": {
+  "client": {
+   "fp_peak": 5073170336,
+   "fp_lifetime_sum": 5819380816,
+   "rss_peak": 5727748096,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 25232488,
+   "fp_lifetime_sum": 190784296,
+   "rss_peak": 56590336,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 266372832,
+   "fp_lifetime_sum": 289485472,
+   "rss_peak": 297385984,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5073170336,
+   "rss_peak": 5755731968,
+   "fp_lifetime_sum": 6010165112
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.28,
+   12386880
+  ],
+  [
+   4.52,
+   0
+  ],
+  [
+   6.76,
+   12075608
+  ],
+  [
+   9.05,
+   0
+  ],
+  [
+   11.34,
+   0
+  ],
+  [
+   13.69,
+   11829824
+  ],
+  [
+   15.96,
+   0
+  ],
+  [
+   18.18,
+   12288576
+  ],
+  [
+   20.45,
+   12108352
+  ],
+  [
+   22.71,
+   0
+  ],
+  [
+   24.96,
+   12321320
+  ],
+  [
+   27.26,
+   950788400
+  ],
+  [
+   29.55,
+   1672832048
+  ],
+  [
+   32.03,
+   4619710584
+  ],
+  [
+   34.4,
+   5073170336
+  ]
+ ],
+ "ps_before": "2026-10-08T01:27:25-0700\nmemorystatus_level=93 swap=total = 5120.00M  used = 3960.19M  free = 1159.81M  (encrypted)\n96336  58160  30.3 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService\n57113 3391920   9.9 $HOME/.local/bin/claude\n65068  19824   9.3 .venv/bin/python\n47413 715744   6.6 /Applications/cmux.app/Contents/MacOS/cmux\n65078  20944   3.5 $TMPDIR/tc-wt-final/benchmark/tool_ceiling/.venv/bin/python\n  687  65776   3.5 /usr/libexec/syspolicyd\n91512  17728   3.3 /usr/libexec/trustd\n86901 578880   3.2 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 4725 753552   3.1 claude\n84235 362000   2.5 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n",
+ "others_at_start": [
+  "65069 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "65070 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first5000000.zarr",
+ "n_obs": 5000000,
+ "checks": {
+  "gene": {
+   "status": "ok",
+   "guard": [],
+   "console": [
+    "info: Large cell plot: 5000000 points in 87 traces; load 385 ms, build 114 ms, draw 231 ms",
+    "info: Large cell plot: 5000000 points in 87 traces; load 0 ms, build 97 ms, draw 228 ms"
+   ],
+   "n_drawn": 5000000,
+   "seconds": 1.2181692915037274,
+   "all_cells": true,
+   "renderer_rss": 1000062976,
+   "gpu_rss": 262160384,
+   "server_rss": 1188364288
+  },
+  "cat": {
+   "status": "ok",
+   "guard": [],
+   "console": [
+    "info: Large cell plot: 5000000 points in 125 traces; load 81 ms, build 38 ms, draw 225 ms"
+   ],
+   "n_drawn": 5000050,
+   "seconds": 0.34834570810198784,
+   "all_cells": true,
+   "renderer_rss": 1018527744,
+   "gpu_rss": 268500992,
+   "server_rss": 1350549504
+  }
+ },
+ "versions": {
+  "annzarro": "120f322",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "ok",
+   "seconds": 1.2181692915037274,
+   "n_points": 5000000
+  },
+  {
+   "event": "recolour_cat",
+   "status": "ok",
+   "seconds": 0.34834570810198784,
+   "n_points": 5000050
+  }
+ ],
+ "ok": true
+}

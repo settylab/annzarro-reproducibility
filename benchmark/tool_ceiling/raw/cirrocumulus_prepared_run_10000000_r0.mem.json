@@ -1,0 +1,153 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "prepared",
+  "$DATA_ROOT/tool_ceiling_data/cirro/first10000000.zarr",
+  "benchmark/tool_ceiling/shots/cirrocumulus_prepared_run_10000000_r0",
+  "--n",
+  "10000000",
+  "--port",
+  "8934"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 56.16,
+ "peaks": {
+  "client": {
+   "fp_peak": 3901254096,
+   "fp_lifetime_sum": 4134727176,
+   "rss_peak": 3436789760,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 14743875056,
+   "fp_lifetime_sum": 14785523568,
+   "rss_peak": 14790934528,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 119501424,
+   "fp_lifetime_sum": 119501424,
+   "rss_peak": 153894912,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 18292135536,
+   "rss_peak": 17781063680,
+   "fp_lifetime_sum": 18920250744
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.23,
+   1696966016
+  ],
+  [
+   4.31,
+   4821266528
+  ],
+  [
+   6.41,
+   8076376608
+  ],
+  [
+   8.47,
+   11697357888
+  ],
+  [
+   10.57,
+   13293734128
+  ],
+  [
+   12.65,
+   14725942424
+  ],
+  [
+   14.74,
+   14689013008
+  ],
+  [
+   16.91,
+   15116914224
+  ],
+  [
+   18.99,
+   14819577176
+  ],
+  [
+   21.11,
+   14887816584
+  ],
+  [
+   23.19,
+   14787022240
+  ],
+  [
+   25.29,
+   15356759984
+  ],
+  [
+   27.38,
+   17250505632
+  ],
+  [
+   29.55,
+   16036058016
+  ],
+  [
+   31.67,
+   15586972960
+  ],
+  [
+   33.87,
+   15057359632
+  ],
+  [
+   35.98,
+   15134348528
+  ],
+  [
+   38.07,
+   15145030896
+  ],
+  [
+   40.16,
+   15122928904
+  ],
+  [
+   42.24,
+   15121814792
+  ],
+  [
+   44.31,
+   14887015520
+  ],
+  [
+   46.37,
+   14838617160
+  ],
+  [
+   48.54,
+   14864159864
+  ],
+  [
+   50.61,
+   14886081656
+  ],
+  [
+   52.74,
+   14593397520
+  ],
+  [
+   54.83,
+   14346638624
+  ]
+ ],
+ "ps_before": "2026-10-03T22:40:45-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 1903024   4.0 $HOME/.local/bin/claude\n86901 499568   1.4 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n47413 607776   1.1 /Applications/cmux.app/Contents/MacOS/cmux\n31238   3440   1.0 perl\n  582 104288   1.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n92291  30816   0.7 .venv/bin/python\n  855 1703584   0.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n80588 617024   0.5 $HOME/.local/bin/claude\n  626 488464   0.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  605  49840   0.5 /usr/libexec/dasd\n"
+}

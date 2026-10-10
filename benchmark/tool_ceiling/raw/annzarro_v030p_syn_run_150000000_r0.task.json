@@ -1,0 +1,58 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale_ceiling/syn_150000000.zarr",
+ "n_obs": 150000000,
+ "checks": {
+  "gene": {
+   "status": "guard_refusal",
+   "guard": [
+    "GUARD: Not drawn: browser memory",
+    "warning: GUARD: Not drawn: browser memory"
+   ],
+   "console": [
+    "info: Large cell plot: 150000000 points in 1514 traces; load 14343 ms, build 2490 ms, draw 6199 ms",
+    "warning: GUARD: Not drawn: browser memory"
+   ],
+   "n_drawn": 9000000000000000,
+   "seconds": 23.825907708145678,
+   "all_cells": false,
+   "renderer_rss": 10472964096,
+   "gpu_rss": 2788442112,
+   "server_rss": 6329434112
+  },
+  "cat": {
+   "status": "guard_refusal",
+   "guard": [],
+   "console": [],
+   "n_drawn": 9000000000000000,
+   "seconds": 1750.0543948747218,
+   "all_cells": false,
+   "renderer_rss": 10472964096,
+   "gpu_rss": 2788442112,
+   "server_rss": 18635685888
+  }
+ },
+ "versions": {
+  "annzarro": "12f93f8",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "ok",
+   "seconds": 23.825907708145678,
+   "n_points": 9000000000000000
+  },
+  {
+   "event": "recolour_cat",
+   "status": "timeout",
+   "seconds": 1750.0543948747218,
+   "n_points": 9000000000000000
+  }
+ ],
+ "ok": false
+}

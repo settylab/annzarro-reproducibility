@@ -1,0 +1,3 @@
+{"store": "tahoe95_first2000000.zarr", "color": "gene", "rep": 0, "event": "first_plot", "status": "ok", "seconds": 12.355322250165045, "n_points": 2000000, "js_heap": 2612435280, "renderer_rss": 3111337984, "gpu_rss": 310214656}
+{"store": "tahoe95_first2000000.zarr", "color": "gene", "rep": 0, "event": "recolour_cat", "status": "ok", "seconds": 0.8537837499752641, "n_points": 2000050, "js_heap": 735770444, "renderer_rss": 3549478912, "gpu_rss": 402898944}
+{"status": "ok", "rc": 0, "wall_s": 14.66} fp_peak=5.73GB lifetime=5.92GB

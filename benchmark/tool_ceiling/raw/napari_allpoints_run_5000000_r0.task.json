@@ -1,0 +1,44 @@
+{
+ "tool": "napari-spatialdata",
+ "n": 5000000,
+ "phases": {
+  "read": 7.03,
+  "screen_lock": 7.59,
+  "first_plot": 36.83,
+  "plot_cat": 43.74,
+  "plot_gene": 47.53,
+  "done": 47.53
+ },
+ "checks": {
+  "cat": {
+   "n_drawn": 5000000,
+   "all_cells": true,
+   "expected_drawn": 5000000,
+   "colored_by": "Color by: cell_line_id",
+   "png": "benchmark/tool_ceiling/shots/napari_allpoints_run_5000000_r0_cat.png"
+  },
+  "gene": {
+   "n_drawn": 5000000,
+   "all_cells": true,
+   "expected_drawn": 5000000,
+   "colored_by": "Color by: MALAT1",
+   "png": "benchmark/tool_ceiling/shots/napari_allpoints_run_5000000_r0_gene.png"
+  }
+ },
+ "versions": {
+  "napari": "0.9.2",
+  "napari-spatialdata": "0.7.2",
+  "spatialdata": "0.8.0",
+  "anndata": "0.13.4",
+  "PyQt6": "6.11.0"
+ },
+ "modules": {
+  "napari": "$DEMO_ROOT/napari-spatialdata/.venv/lib/python3.12/site-packages/napari/__init__.py",
+  "napari_spatialdata": "$DEMO_ROOT/napari-spatialdata/.venv/lib/python3.12/site-packages/napari_spatialdata/__init__.py"
+ },
+ "shim": "AnnData._get_X restored for napari-spatialdata 0.7.2 (anndata >= 0.12)",
+ "point_threshold_default": 100000,
+ "point_threshold": 5000001,
+ "expect_drawn": 5000000,
+ "ok": true
+}

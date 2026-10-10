@@ -1,0 +1,125 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first16800000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_default_run_16800000_r0",
+  "--n",
+  "16800000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 41.9,
+ "peaks": {
+  "client": {
+   "fp_peak": 5790233896,
+   "fp_lifetime_sum": 7253523648,
+   "rss_peak": 6548799488,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 38500954216,
+   "fp_lifetime_sum": 38582645680,
+   "rss_peak": 39086309376,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 122171944,
+   "fp_lifetime_sum": 122171944,
+   "rss_peak": 161103872,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 43435288480,
+   "rss_peak": 45389512704,
+   "fp_lifetime_sum": 45836169328
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.14,
+   698917384
+  ],
+  [
+   4.26,
+   6752023368
+  ],
+  [
+   6.42,
+   16137391880
+  ],
+  [
+   8.51,
+   17182593688
+  ],
+  [
+   10.58,
+   17905456536
+  ],
+  [
+   12.66,
+   18037429752
+  ],
+  [
+   14.72,
+   26385476968
+  ],
+  [
+   16.87,
+   20294573024
+  ],
+  [
+   19.0,
+   24805632472
+  ],
+  [
+   21.1,
+   26222048224
+  ],
+  [
+   23.15,
+   27108406936
+  ],
+  [
+   25.22,
+   27323628048
+  ],
+  [
+   27.27,
+   27371043440
+  ],
+  [
+   29.3,
+   28805283448
+  ],
+  [
+   31.43,
+   28264332800
+  ],
+  [
+   33.63,
+   43435288480
+  ],
+  [
+   35.73,
+   43152730016
+  ],
+  [
+   37.81,
+   28404792952
+  ],
+  [
+   39.89,
+   27924626704
+  ]
+ ],
+ "ps_before": "2026-10-03T22:39:39-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  582 110832  89.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n29405 269472  20.5 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n29456  20608  18.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n29417  20592  17.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n29416  20608  16.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n29424  20624  15.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n29419  20592  15.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n29423  20608  15.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n28489  25392  14.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n29429  20624  14.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n"
+}

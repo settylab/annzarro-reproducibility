@@ -1,0 +1,57 @@
+% Procedure overview: the stages of the protocol with their step numbers.
+% Same visual language as the deployment figure (fig_deploy.tex).
+\begingroup
+\definecolor{pcaccent}{HTML}{2F6FD6}
+\definecolor{pcedge}{HTML}{A8A89C}
+\definecolor{pcquiet}{HTML}{5F5F5A}
+\definecolor{pcband}{HTML}{F4F3EF}
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+  font=\sffamily\small,
+  stage/.style={draw=pcedge, rounded corners=3pt, line width=0.7pt, fill=white, align=center,
+                minimum width=4.0cm, minimum height=1.25cm, text width=3.8cm,
+                execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+  key/.style={stage, draw=pcaccent, line width=1.1pt},
+  opt/.style={stage, dashed},
+  ex/.style={draw=pcedge, rounded corners=3pt, line width=0.7pt, fill=white, align=left,
+             minimum width=6.0cm, minimum height=0.62cm, text width=5.8cm, font=\sffamily\footnotesize,
+             execute at begin node={\hyphenpenalty=10000\exhyphenpenalty=10000}},
+  band/.style={draw=pcedge, dashed, rounded corners=6pt, line width=0.7pt, fill=pcband},
+  arr/.style={-{Stealth[length=2.2mm]}, draw=pcedge, line width=0.7pt},
+  lbl/.style={font=\sffamily\footnotesize, text=pcquiet, align=center},
+  stepno/.style={font=\sffamily\footnotesize, text=pcquiet},
+]
+  % ---------------- set-up row
+  \node[stage] (inst)  at (0,0)    {\textbf{Installation}\\[-1pt]{\footnotesize (A) Python package\\[-2pt](B) desktop app}};
+  \node[stage] (prep)  at (5.0,0)  {\textbf{Data preparation}\\[-1pt]{\footnotesize Kompot, kernel in obsp,\\[-2pt]correlations in varp}};
+  \node[stage] (start) at (10.0,0)  {\textbf{Starting AnnZarro}\\[-1pt]{\footnotesize server, dataset, panels}};
+  \node[stepno, above=1pt of inst]  {Steps 1--2};
+  \node[stepno, above=1pt of prep]  {Steps 3--10};
+  \node[stepno, above=1pt of start] {Steps 11--13};
+  \draw[arr] (inst) -- (prep);
+  \draw[arr] (prep) -- node[lbl, above] {zarr} node[lbl, below] {store} (start);
+
+  % ---------------- worked examples
+  \draw[band] (6.75,-1.55) rectangle (13.25,-6.15);
+  \node[lbl, anchor=north west] at (6.85,-1.6) {\textbf{Worked examples 1--5}, bone marrow};
+  \node[ex] (e1) at (10.0,-2.45) {1\enspace diffusion walk (obsp)\hfill 14--17};
+  \node[ex] (e2) at (10.0,-3.2)  {2\enspace co-regulated genes (varp)\hfill 18--21};
+  \node[ex] (e3) at (10.0,-3.95) {3\enspace from a gene to cells (layers)\hfill 22--24};
+  \node[ex] (e4) at (10.0,-4.7)  {4\enspace two cell states (layers)\hfill 25--27};
+  \node[ex] (e5) at (10.0,-5.45) {5\enspace table filters mask plots\hfill 28--31};
+  \draw[arr] (start) -- (10.0,-1.55);
+
+  \node[key] (big) at (2.3,-3.95) {\textbf{Worked example 6}\\[-1pt]{\footnotesize millions of cells:\\[-2pt]subset, parts, every cell}};
+  \node[stepno, below=1pt of big] {Steps 32--36, Tahoe-100M};
+  \draw[arr] ($(start.south)+(-1.2,0)$) |- (2.3,-1.1) -- (big.north);
+
+  % ---------------- saving and hosting
+  \node[stage] (save) at (10.0,-7.6) {\textbf{Saving, sharing}\\[-1pt]{\footnotesize panel sets, links, export}};
+  \node[opt]   (host) at (5.0,-7.6) {\textbf{(Optional) Hosting}\\[-1pt]{\footnotesize for a lab}};
+  \node[stepno, below=1pt of save] {Steps 37--41};
+  \node[stepno, below=1pt of host] {Steps 42--44};
+  \draw[arr] (10.0,-6.15) -- (save);
+  \draw[draw=pcedge, line width=0.7pt] ($(big.south)+(0,-0.45)$) |- (10.0,-6.6);
+  \draw[arr] (save) -- (host);
+\end{tikzpicture}}
+\endgroup

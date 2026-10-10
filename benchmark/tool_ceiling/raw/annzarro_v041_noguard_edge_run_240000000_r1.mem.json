@@ -1,0 +1,155 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_240000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_240000000_r1",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 60.55,
+ "peaks": {
+  "client": {
+   "fp_peak": 19536463400,
+   "fp_lifetime_sum": 19729615456,
+   "rss_peak": 20225966080,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 8005245456,
+   "fp_lifetime_sum": 8092687344,
+   "rss_peak": 8023883776,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 134743512,
+   "fp_lifetime_sum": 134743512,
+   "rss_peak": 170213376,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 27526930464,
+   "rss_peak": 28235104256,
+   "fp_lifetime_sum": 27822302800
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.35,
+   2152786216
+  ],
+  [
+   4.94,
+   12651155592
+  ],
+  [
+   7.33,
+   14142412568
+  ],
+  [
+   9.9,
+   17680739760
+  ],
+  [
+   12.43,
+   21753037344
+  ],
+  [
+   14.99,
+   27526930464
+  ],
+  [
+   17.46,
+   23159919936
+  ],
+  [
+   19.88,
+   23160165696
+  ],
+  [
+   22.3,
+   23155873088
+  ],
+  [
+   24.84,
+   23156135232
+  ],
+  [
+   27.19,
+   23157265728
+  ],
+  [
+   29.66,
+   23157593408
+  ],
+  [
+   32.13,
+   9411620080
+  ],
+  [
+   34.49,
+   9404935384
+  ],
+  [
+   36.96,
+   9405213912
+  ],
+  [
+   39.43,
+   9405410520
+  ],
+  [
+   41.89,
+   9405705432
+  ],
+  [
+   44.33,
+   9405852888
+  ],
+  [
+   46.74,
+   9405885656
+  ],
+  [
+   49.22,
+   9405902040
+  ],
+  [
+   51.56,
+   9406000344
+  ],
+  [
+   54.03,
+   9406082264
+  ],
+  [
+   56.51,
+   9406082264
+  ],
+  [
+   58.98,
+   9405967576
+  ]
+ ],
+ "ps_before": "2026-10-08T01:13:23-0700\nmemorystatus_level=93 swap=total = 5120.00M  used = 3960.19M  free = 1159.81M  (encrypted)\n47413 715728  14.2 /Applications/cmux.app/Contents/MacOS/cmux\n 4725 753600   5.1 claude\n57113 3391808   3.6 $HOME/.local/bin/claude\n 1066 139120   2.5 /System/Library/PrivateFrameworks/IMCore.framework/imagent.app/Contents/MacOS/imagent\n14980 6856448   2.1 /System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine\n92291  30816   1.9 .venv/bin/python\n  626 460048   1.7 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n72627 547472   1.4 $HOME/.local/bin/claude\n47477 402416   1.4 $HOME/.local/bin/claude\n 2191 416096   1.4 $HOME/.local/bin/claude\n",
+ "others_at_start": [
+  "35669 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "43047 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

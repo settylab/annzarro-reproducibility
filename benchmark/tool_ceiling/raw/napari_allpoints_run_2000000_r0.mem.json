@@ -1,0 +1,91 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "napari_task.py",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first2000000.zarr",
+  "benchmark/tool_ceiling/shots/napari_allpoints_run_2000000_r0",
+  "--n",
+  "2000000",
+  "--all-points"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 20.69,
+ "peaks": {
+  "proc": {
+   "fp_peak": 16637521272,
+   "fp_lifetime_sum": 16649219472,
+   "rss_peak": 13825327104,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 16637521272,
+   "rss_peak": 13825327104,
+   "fp_lifetime_sum": 16649219472
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9027992
+  ],
+  [
+   1.42,
+   203899888
+  ],
+  [
+   2.82,
+   849905368
+  ],
+  [
+   4.23,
+   2814119104
+  ],
+  [
+   5.66,
+   3681112096
+  ],
+  [
+   7.1,
+   9771164048
+  ],
+  [
+   8.52,
+   11296023720
+  ],
+  [
+   9.94,
+   12135392928
+  ],
+  [
+   11.33,
+   13644475264
+  ],
+  [
+   12.73,
+   13830482888
+  ],
+  [
+   14.14,
+   13830482888
+  ],
+  [
+   15.54,
+   13776219080
+  ],
+  [
+   16.96,
+   16276761784
+  ],
+  [
+   18.36,
+   13594520688
+  ],
+  [
+   19.77,
+   16207752568
+  ]
+ ],
+ "ps_before": "2026-10-05T11:42:23-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  557 586464 118.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  582 119104  59.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  855 2023008  33.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n49772 269264  29.7 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n86901 577312  15.5 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  592  20432  12.5 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored\n49841  20880   9.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n97961 866912   8.6 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n49852  20832   8.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n49859  20976   8.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

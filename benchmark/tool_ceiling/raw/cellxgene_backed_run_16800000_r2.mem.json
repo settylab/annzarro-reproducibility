@@ -1,0 +1,59 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first16800000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_backed_run_16800000_r2",
+  "--n",
+  "16800000",
+  "--port",
+  "8940"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 2.25,
+ "peaks": {
+  "client": {
+   "fp_peak": 784408736,
+   "fp_lifetime_sum": 814982312,
+   "rss_peak": 972455936,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 82477608,
+   "fp_lifetime_sum": 164808000,
+   "rss_peak": 112001024,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 102575408,
+   "fp_lifetime_sum": 102575408,
+   "rss_peak": 137641984,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 866886344,
+   "rss_peak": 1057226752,
+   "fp_lifetime_sum": 979790312
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.18,
+   627446272
+  ]
+ ],
+ "ps_before": "2026-10-04T16:16:56-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n69003 275040  81.2 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell\n68915 400000  40.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  626 519008  24.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n97961 688144  22.4 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n98025 210960  16.2 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n 6219  58864  10.5 $HOME/Projects/investments/.venv/bin/python3\n97977 364176   9.8 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n73194 195648   5.9 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n69006 123280   5.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n68999 135856   4.7 $TMPDIR/fo-venv/lib/python3.13/site-packages/playwright/driver/node\n",
+ "others_at_start": [
+  "69000 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disa",
+  "69001 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=gpu-process --no-sandbox --d",
+  "69002 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=utility --utility-sub-type=n",
+  "69003 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=renderer --headless=old --no"
+ ]
+}

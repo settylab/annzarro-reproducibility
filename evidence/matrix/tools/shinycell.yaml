@@ -1,0 +1,947 @@
+# ShinyCell: Fig. 1c marks and their evidence.
+# Seeded by evidence/tools/import_notes.py from notes/comparison/shinycell.md and
+# figures/fig_comparison.py; edit this file from now on (schema: evidence/README.md).
+id: shinycell
+name: ShinyCell
+figure:
+  row: 9
+  label: ShinyCell2
+  largest_documented: 162k
+notes: notes/comparison/shinycell.md
+cells:
+  cells:
+    mark: N
+    reason: >-
+      The builder reads X (or one layer), obs and obsm only; "Cell information" lists obs columns and
+      embedding coordinates, with no pairwise entry.
+    detail: |-
+      **Checked in the running app (2026-10-04).** "Cell information" lists only obs columns (`Age` … `diffusion_distance_to_4236`) plus the embedding coordinates; no pairwise entry. *Steps:* Open the Cell information dropdown. *Evidence:* [screens/shinycell/m04_slots_cellinfo_dropdown.jpg](screens/shinycell/m04_slots_cellinfo_dropdown.jpg)
+
+      **Source and docs.** Builder reads X (or a layer), `obs` and `obsm` only: SC [`R/makeShinyFiles.R#L111-L130`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L111-L130), [`#L270-L271`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L270-L271). `grep -rn "obsp\|colPairs" R/` is empty in both repos.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/m04_slots_cellinfo_dropdown.jpg
+      label: screens/shinycell/m04_slots_cellinfo_dropdown.jpg
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/makeShinyFiles.R
+      lines: 111-130
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L111-L130
+      label: '`R/makeShinyFiles.R#L111-L130`'
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/makeShinyFiles.R
+      lines: 270-271
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L270-L271
+      label: '`#L270-L271`'
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  genes:
+    mark: N
+    reason: No varp or rowPairs is read in ShinyCell or ShinyCell2; the gene list holds genes only.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Gene name lists genes only; nothing gene × gene in any tab. *Steps:* as column 1 *Evidence:* same screenshot
+
+      **Source and docs.** Same; `grep -rn "varp\|rowPairs" R/` empty in both repos.
+    evidence:
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/makeShinyFiles.R
+      lines: 111-130
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L111-L130
+      label: '`R/makeShinyFiles.R#L111-L130`'
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/makeShinyFiles.R
+      lines: 270-271
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L270-L271
+      label: '`#L270-L271`'
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  focus:
+    mark: N
+    reason: >-
+      There is no focus of any kind; each tab has its own gene and metadata inputs, and a gene choice
+      reaches only its own plot.
+    detail: |-
+      **Focus, checked in the running app.** No focus of any kind: no relation slice, no click, and a gene choice reaches only its own plot.
+
+      **Source and docs.** Each tab has its own gene and metadata inputs; nothing selected in one plot re-drives another. ShinyCell2's brush only zooms the same plot ([SC2 `R/writer1.R#L157-L159`](https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer1.R#L157-L159)). Demo: open shinycell1, change the gene in "CellInfo vs GeneExpr"; no other tab changes.
+    evidence:
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/writer1.R
+      lines: 157-159
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer1.R#L157-L159
+      label: SC2 `R/writer1.R#L157-L159`
+    - kind: paper
+      url: https://doi.org/10.1101/2020.10.25.354100
+      label: Ouyang et al. 2020 (preprint), bioRxiv
+      where: 2.2 Visualisation in ShinyCell interactive interface
+      quote: >-
+        two reduced dimension plots coloured by different information are displayed beside each other
+        (Figure 1a).
+      indicates: N
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+      note: >-
+        Two independently coloured plots for visual comparison; nothing links a focused cell or gene across
+        panels.
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/01_tab1_celltype_vs_Mpo.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/02_tab3_genes_unchanged.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/03_stored_row_4236_and_click.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/04_subset_per_plot.jpg
+    reproduce:
+    - notes/comparison/demos/shinycell/focus_check.py
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  slots:
+    mark: P
+    reason: >-
+      X (as genes), obs and obsm embeddings are reachable; obsp, varp, varm, uns and layer choice are
+      not, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Reachable: X (gene names), obs (12 columns), obsm (Dimension Reduction X/Y = `UMAP1`, `UMAP2`, `X0` … `X4`). The embedding columns also reappear as "cell information". No obsp, varp, varm, uns or layer choice. *Steps:* Open the X-axis and Cell information dropdowns. *Evidence:* [m04_slots_dimred_dropdown.jpg](screens/shinycell/m04_slots_dimred_dropdown.jpg), [m04_slots_cellinfo_dropdown.jpg](screens/shinycell/m04_slots_cellinfo_dropdown.jpg)
+
+      **Source and docs.** X or one layer, `obs`, `obsm` embeddings (SC [`R/makeShinyFiles.R#L23-L25`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L23-L25), [`#L270-L271`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L270-L271)); no `varm`, `obsp`, `varp`, `uns`. ShinyCell2 adds multiple assays, still no pairwise slots ([SC2 `R/makeShinyFilesGEX.R#L152`](https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/makeShinyFilesGEX.R#L152)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/m04_slots_dimred_dropdown.jpg
+      label: m04_slots_dimred_dropdown.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/m04_slots_cellinfo_dropdown.jpg
+      label: m04_slots_cellinfo_dropdown.jpg
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/makeShinyFiles.R
+      lines: 23-25
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L23-L25
+      label: '`R/makeShinyFiles.R#L23-L25`'
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/makeShinyFiles.R
+      lines: 270-271
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L270-L271
+      label: '`#L270-L271`'
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/makeShinyFilesGEX.R
+      lines: '152'
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/makeShinyFilesGEX.R#L152
+      label: SC2 `R/makeShinyFilesGEX.R#L152`
+    - kind: paper
+      url: https://doi.org/10.1101/2020.10.25.354100
+      label: Ouyang et al. 2020 (preprint), bioRxiv
+      where: 2.2 Visualisation in ShinyCell interactive interface
+      quote: >-
+        Either the cell metadata (e.g. library or cluster membership) or gene expression can be plotted
+        on reduced dimensions (Figure 1b,c)
+      indicates: P
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+      note: obs, X and embeddings only; inputs are Seurat or SCE objects (2.1, 2.3).
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Main (untitled body text)
+      quote: >-
+        Relevant observations and metadata are extracted from analysis-specific file formats e.g. Seurat
+        objects, indexed, and stored on disk for efficient retrieval.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Only selected parts of the object are carried into the app; inputs include h5ad (Online Methods,
+        'ShinyCell2 App Generation Workflow and Supported Filetypes').
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  remote:
+    mark: N
+    reason: >-
+      The app reads an HDF5 file and RDS files in its own directory; URLs appear only in the example-data
+      downloader.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; the app reads files in its own directory.
+
+      **Source and docs.** `H5File$new(inpH5, mode = "r")` on a local path in the app directory (SC `R/writer.R#L166`). URLs appear only in the example downloader (SC [`R/getExampleData.R#L22-L26`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/getExampleData.R#L22-L26)).
+    evidence:
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/getExampleData.R
+      lines: 22-26
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/getExampleData.R#L22-L26
+      label: '`R/getExampleData.R#L22-L26`'
+    na:
+      visual: A ShinyCell app has no data-loading screen; data are baked into the app directory at build
+        time
+      so there is no GUI place to show a missing remote source.: null
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  spatial:
+    mark: Y
+    reason: >-
+      Spatial coordinates are drawn only by ShinyCell2 (Visium spots at tissue coordinates in its showcase);
+      the ShinyCell row's own package has none, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** ShinyCell (local): none. ShinyCell2 showcase, Spatial Data > Side-by-side Spatial: Visium spots placed at tissue coordinates. *Steps:* Showcase: Spatial Data menu > Side-by-side Spatial (allow about 20 s). *Evidence:* [screens/shinycell/m07_m11_shinycell2_spatial_image_underlay.jpg](screens/shinycell/m07_m11_shinycell2_spatial_image_underlay.jpg)
+
+      **Source and docs.** ShinyCell: none. ShinyCell2: `sc2Dspat` plots `imagecol`/`imagerow` as X/Y (SC2 [`R/writer0.R#L855-L870`](https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer0.R#L855-L870)); demo shinycell.ouyanglab.com, "Side-by-side Spatial" tab.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/m07_m11_shinycell2_spatial_image_underlay.jpg
+      label: screens/shinycell/m07_m11_shinycell2_spatial_image_underlay.jpg
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/writer0.R
+      lines: 855-870
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer0.R#L855-L870
+      label: '`R/writer0.R#L855-L870`'
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Main (untitled body text); Fig. 2a legend
+      quote: >-
+        New features include spatial plots to elucidate gene expression within tissue architecture (Figure
+        2a)
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Online Methods, 'Spatial scRNA-seq Visualisation'
+      quote: >-
+        Spatial scRNA-seq data can be visualised through the "Zoom-enabled Spatial" and "Side-by-side
+        Spatial" tabs.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  selection:
+    reason: no selection; there is a per-tab subset form
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/04_subset_per_plot.jpg
+      label: shinycell/04
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 1242-1249
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L1242-L1249
+      label: >-
+        the only cell filter is a per-tab 'Toggle to subset cells' form (inputs prefixed a1, one tab),
+        no selection shared between plots
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: running app
+    detail: no selection; there is a per-tab subset form
+    mark: N
+  annot:
+    mark: N
+    reason: Metadata are edited only at build time; no control in the app writes a label.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; searched every tab of the local app and the showcase for a label or edit field.
+
+      **Source and docs.** Metadata is edited only at build time (`R/modMetaName.R`, `R/addMeta.R`); no generated server code writes labels (searched `R/writer*.R` for `write`, `saveRDS`, `fwrite`: none in app code).
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1101/2020.10.25.354100
+      label: Ouyang et al. 2020 (preprint), bioRxiv
+      where: 2.4 Advanced usage
+      quote: >-
+        The aesthetics and contents of the Shiny app can be customised by modifying the ShinyCell configuration.
+      indicates: N
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+      note: Label and palette changes are build-time configuration, not user labels written back from
+        the GUI.
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: README.md
+      lines: 22-37
+      url: https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/README.md#L22-L37
+      label: 'README L22-37: ShinyCell''s key features (no annotation editing)'
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  de:
+    mark: N
+    reason: >-
+      No gene ranking is computed; ShinyCell2 adds p-values for one gene's violins (kruskal/anova, wilcox/t-test),
+      which is not DE.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Local ShinyCell violin tab: only plot controls, no test. ShinyCell2 showcase violin tab: "Perform global test: none, kruskal.test, anova" and "Perform pairwise test: none, wilcox.test, t.test", which put p-values on one gene's violins. No gene ranking, so N holds. *Steps:* Local: Violinplot / Boxplot. Showcase: Spatial Data > Violinplot / Boxplot. *Evidence:* [m10_violin_tab_no_de.jpg](screens/shinycell/m10_violin_tab_no_de.jpg), [m10_shinycell2_violin_test_option.jpg](screens/shinycell/m10_shinycell2_violin_test_option.jpg)
+
+      **Source and docs.** ShinyCell2 says it offers "global ANOVA or pairwise comparisons ... between cell populations". Those are per-gene tests drawn as p-values on one gene's violin, with no gene ranking or marker table, so they are not differential expression across genes. For ShinyCell2 that is at most P; ShinyCell itself has none. No marker or DE code. ShinyCell2 offers a p-value overlay on violin/box plots: "Perform pairwise test: none, wilcox.test, t.test" and kruskal/anova (SC2 [`R/writer2.R#L560-L564`](https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer2.R#L560-L564)), one gene at a time; no gene ranking.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/m10_violin_tab_no_de.jpg
+      label: m10_violin_tab_no_de.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/m10_shinycell2_violin_test_option.jpg
+      label: m10_shinycell2_violin_test_option.jpg
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/writer2.R
+      lines: 560-564
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer2.R#L560-L564
+      label: '`R/writer2.R#L560-L564`'
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Online Methods, 'Enhanced Visualisation Features'
+      quote: >-
+        the "Violin / Boxplot" tab integrates statistical testing, supporting both global and pairwise
+        comparisons across groups
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Per-gene group tests (ANOVA/kruskal, wilcox/t) computed in the app; no gene ranking. Notes score
+        this N (not DE).
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Main (untitled body text)
+      quote: >-
+        built-in statistical testing, such as global ANOVA or pairwise comparisons, enable rigorous quantitative
+        analyses between cell populations.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: As above.
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  image:
+    mark: Y
+    reason: >-
+      Only ShinyCell2 draws the H&E image under spatial spots; the ShinyCell row's own package has no
+      image layer, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** ShinyCell2 only: the same tab draws the H&E image under the spots (left by `seurat_clusters`, right by `Ttr`). *Steps:* as column 7 *Evidence:* [screens/shinycell/m07_m11_shinycell2_spatial_image_underlay.jpg](screens/shinycell/m07_m11_shinycell2_spatial_image_underlay.jpg)
+
+      **Source and docs.** ShinyCell2 only: `rasterGrob(inpImg[["bg_image"]])` under the spatial points (SC2 [`R/writer0.R#L863-L866`](https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer0.R#L863-L866)); image loaded from `image.rds` (SC2 [`R/writer1.R#L47`](https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer1.R#L47)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/m07_m11_shinycell2_spatial_image_underlay.jpg
+      label: screens/shinycell/m07_m11_shinycell2_spatial_image_underlay.jpg
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/writer0.R
+      lines: 863-866
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer0.R#L863-L866
+      label: '`R/writer0.R#L863-L866`'
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/writer1.R
+      lines: '47'
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer1.R#L47
+      label: '`R/writer1.R#L47`'
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Online Methods, 'Spatial scRNA-seq Visualisation'
+      quote: >-
+        The Zoom-enabled Spatial tab allows users to overlay cell metadata or gene expression data onto
+        tissue images
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: ShinyCell2 only; the matrix row is labelled ShinyCell, hence the current P.
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  share:
+    mark: N
+    reason: >-
+      The URL never changes and there is no bookmark, share or copy-link control; no Shiny bookmarking
+      is enabled in either repo.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation: the URL stayed `http://127.0.0.1:8907/` after changing inputs and tabs; no control matching bookmark, share or copy link (count 0). *Steps:* Change any input; read the address bar.
+
+      **Source and docs.** No Shiny bookmarking and no URL parsing: `grep -rni "bookmark\|parseQueryString" R/` empty in both repos.
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    - evidence/screens/gaps/capture_shinycell.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    evidence:
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: README.md
+      lines: 22-37
+      url: https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/README.md#L22-L37
+      label: 'README L22-37: ShinyCell''s key features (no shareable view state)'
+  export:
+    mark: Y
+    reason: Every plot has Download PDF and Download PNG buttons.
+    detail: |-
+      **Checked in the running app (2026-10-04).** "Download PDF" and "Download PNG" under the Mpo plot saved `sc1UMAP1_UMAP2_Mpo.pdf` (476,082 bytes) and `sc1UMAP1_UMAP2_Mpo.png` (518,169 bytes). *Steps:* Tab 1, buttons under the right plot. *Evidence:* [screens/shinycell/m13_download_buttons.jpg](screens/shinycell/m13_download_buttons.jpg)
+
+      **Source and docs.** PDF and PNG `downloadHandler` per plot via `ggsave` (SC [`R/writer.R#L705-L720`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L705-L720)); SC2 [`R/writer1.R#L191`](https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer1.R#L191). README: "export visualisations as PDF or PNG". Demo: shinycell1, "Download PDF" under the plot.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/m13_download_buttons.jpg
+      label: screens/shinycell/m13_download_buttons.jpg
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 705-720
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L705-L720
+      label: '`R/writer.R#L705-L720`'
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/writer1.R
+      lines: '191'
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer1.R#L191
+      label: '`R/writer1.R#L191`'
+    - kind: paper
+      url: https://doi.org/10.1101/2020.10.25.354100
+      label: Ouyang et al. 2020 (preprint), bioRxiv
+      where: 2.1 Key features of ShinyCell
+      quote: >-
+        users can export the plots generated in the Shiny app as PDF or PNG images, which can be used
+        for presentation or publication purposes.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+    - kind: paper
+      url: https://doi.org/10.1101/2020.10.25.354100
+      label: Ouyang et al. 2020 (preprint), bioRxiv
+      where: Fig. 1 legend (a)
+      quote: >-
+        different visualisation of single-cell data (in different tabs, highlighted in blue) that can
+        be exported into PDF / PNG images (export buttons in grey).
+      indicates: Y
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Online Methods, 'Enhanced Visualisation Features'
+      quote: >-
+        allows users to export the main plots and legends as separate PNG or PDF files for flexible post-processing.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  desktop:
+    mark: N
+    reason: A ShinyCell app runs in RStudio ("Run App") or on a server; there is no installer.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation: runs only as `Rscript -e 'shiny::runApp("app")'`.
+
+      **Source and docs.** Run in RStudio ("Run App") or deploy to a server; no installer (READMEs, Quick Start).
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1101/2020.10.25.354100
+      label: Ouyang et al. 2020 (preprint), bioRxiv
+      where: 2.3 Basic usage
+      quote: The Shiny app can then be opened locally via RStudio (Team and Others, 2020) or be hosted
+        online.
+      indicates: N
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+      note: Local run of a generated Shiny app through RStudio, not a downloadable application.
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Main (untitled body text)
+      quote: >-
+        ShinyCell2 allows straightforward local deployment and is tightly integrated with R/Bioconductor
+        workflows (Figure 1b).
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Local deployment of an R/Shiny app, not a downloadable application.
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: README.md
+      lines: 143-150
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/README.md#L143-L150
+      label: 'README L143-150: run the app in RStudio or deploy it to a server'
+    na:
+      visual: No desktop application exists
+      so there is no GUI place in which its absence could be shown.: null
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  hosted:
+    mark: Y
+    reason: >-
+      Apps deploy to shinyapps.io, AWS or Shiny Server and serve many visitors at once (the ShinyCell2
+      showcase is public).
+    detail: |-
+      **Checked in the running app (2026-10-04).** The ShinyCell2 showcase is served publicly (title "shinycell2 showcase", menus Spatial Data, scATAC-seq Data, scMultiOmics Data). *Steps:* Open https://shinycell.ouyanglab.com/. *Evidence:* [screens/shinycell/m15_hosted_shinycell2_showcase.jpg](screens/shinycell/m15_hosted_shinycell2_showcase.jpg)
+
+      **Source and docs.** "meant to be a heavy-duty app where multiple users can access the app simultaneously" (SC [`README.md#L193-L194`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/README.md#L193-L194)); shinyapps.io, AWS, Shiny Server (README L24-26; cloud tutorial). The three public demos are such deployments.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/m15_hosted_shinycell2_showcase.jpg
+      label: screens/shinycell/m15_hosted_shinycell2_showcase.jpg
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: README.md
+      lines: 193-194
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/README.md#L193-L194
+      label: '`README.md#L193-L194`'
+    - kind: paper
+      url: https://doi.org/10.1101/2020.10.25.354100
+      label: Ouyang et al. 2020 (preprint), bioRxiv
+      where: 2.1 Key features of ShinyCell
+      quote: >-
+        the web interfaces generated by ShinyCell are designed to be memory efficient so that multiple
+        users can access the app simultaneously.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+    - kind: paper
+      url: https://doi.org/10.1101/2020.10.25.354100
+      label: Ouyang et al. 2020 (preprint), bioRxiv
+      where: 2.1 Key features of ShinyCell
+      quote: >-
+        the Shiny platform allows for easy sharing on online platforms such as shinyapps.io or be hosted
+        via Shiny Server.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Code and Data Availability
+      quote: >-
+        An example web app showcasing the visualisation of spatial transcriptomics, scATAC-seq, and CITE-seq
+        datasets can be accessed at https://shinycell.ouyanglab.com/
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Main (untitled body text)
+      quote: supports seamless deployment for both local and web-based platforms.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: Said of ShinyCell (the predecessor).
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  static:
+    mark: N
+    reason: Every plot is rendered by an R process; stopping it greys the page out.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Stopping the local R process greyed the open page (Shiny's disconnected overlay). *Steps:* Stop the server with the page open. *Evidence:* [screens/shinycell/m16_server_stopped_page_greys_out.jpg](screens/shinycell/m16_server_stopped_page_greys_out.jpg)
+
+      **Source and docs.** Every plot is rendered by an R process (`renderPlot` + ggplot2).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/m16_server_stopped_page_greys_out.jpg
+      label: screens/shinycell/m16_server_stopped_page_greys_out.jpg
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: '696'
+      url: https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L696
+      label: 'SC R/writer.R L696: each plot is a Shiny renderPlot on the R server'
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  lazy:
+    mark: Y
+    reason: >-
+      Expression lives in HDF5 with one gene per chunk and is read one gene at a time per plot, so the
+      figure's P should be Y.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation: `app/sc1gexpr.h5` holds `grp/data` (8090 × 16285, float32, gzip) with chunks **(8090, 1)**, one gene per chunk; `server.R` opens it per request (`H5File$new(inpH5, mode = "r")`, 6 call sites). Metadata (`sc1meta.rds`, 701 kB) is read whole at start. *Steps:* `h5py.File("$DEMO_ROOT/shinycell/app/sc1gexpr.h5")["grp/data"].chunks`; `grep -n H5File app/server.R`
+
+      **Source and docs.** The paper agrees: "only the expression of genes that are plotted are loaded". The builder writes expression to HDF5 with one chunk per gene, `chunk_dims = c(1, ncells)` (SC [`R/makeShinyFiles.R#L314-L317`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L314-L317); SC2 [`R/makeH5fromAnndata.R#L27-L30`](https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/makeH5fromAnndata.R#L27-L30)). The app opens the file per request and reads only the plotted gene's row: `h5data$read(args = list(inpGene[inp2], quote(expr=)))` (SC [`R/writer.R#L166-L170`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L166-L170)). README: "Only the expression of genes that are plotted are loaded into memory" (SC [`README.md#L32-L34`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/README.md#L32-L34)). Metadata and embeddings are loaded whole (`readRDS`, [`R/writer.R#L24-L27`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L24-L27)). The old P cited build-time memory, which is a scale fact, not a read-path fact.
+
+      **Scale group.** **Server (R process)**: expression is lazy, one HDF5 row per plotted gene; metadata and embeddings are loaded whole into server RAM at app start. The browser receives a rendered PNG, never the data. The **build** step loads the whole object into RAM. Evidence: Expression read SC `R/writer.R#L166-L170`; `readRDS` of meta SC `R/writer.R#L24-L27`, SC2 `R/writer1.R#L31-L35`; build memory SC [`README.md#L199-L204`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/README.md#L199-L204).
+    evidence:
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/makeShinyFiles.R
+      lines: 314-317
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/makeShinyFiles.R#L314-L317
+      label: '`R/makeShinyFiles.R#L314-L317`'
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/makeH5fromAnndata.R
+      lines: 27-30
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/makeH5fromAnndata.R#L27-L30
+      label: '`R/makeH5fromAnndata.R#L27-L30`'
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 166-170
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L166-L170
+      label: '`R/writer.R#L166-L170`'
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: README.md
+      lines: 32-34
+      url: https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/README.md#L32-L34
+      label: '`README.md#L32-L34`'
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 24-27
+      url: https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L24-L27
+      label: '`R/writer.R#L24-L27`'
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: README.md
+      lines: 199-204
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/README.md#L199-L204
+      label: '`README.md#L199-L204`'
+    - kind: paper
+      url: https://doi.org/10.1101/2020.10.25.354100
+      label: Ouyang et al. 2020 (preprint), bioRxiv
+      where: 2.1 Key features of ShinyCell
+      quote: >-
+        The gene expression data is stored using the hdf5 file format on disk and only the expression
+        of genes that are plotted are loaded
+      indicates: Y
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+    - kind: paper
+      url: https://doi.org/10.1101/2020.10.25.354100
+      label: Ouyang et al. 2020 (preprint), bioRxiv
+      where: 2.1 Key features of ShinyCell
+      quote: >-
+        We also optimised the chunking in the hdf5 file such that the expression data of each gene is
+        stored contiguously
+      indicates: Y
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20221226151858/https://www.biorxiv.org/content/10.1101/2020.10.25.354100v1
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Online Methods, 'ShinyCell2 App File Structure'
+      quote: >-
+        Assay expression matrices are saved in HDF5 format, enabling on-demand loading of only the genes
+        or features specified by the user.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1101/2025.04.22.650045
+      label: Chen et al. 2025 (preprint), bioRxiv
+      where: Online Methods, 'ShinyCell2 Overview'
+      quote: >-
+        it leverages the hdf5r R package to read only the necessary data e.g. user-specified cell metadata
+        and assay expression from HDF5 files
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    - evidence/screens/gaps/capture2_code.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  every_cell:
+    mark: Y
+    reason: >-
+      Every cell is drawn by geom_point over all rows; the "Random" order option shuffles, it does not
+      subsample.
+    detail: >-
+      **Scale group.** **Every cell drawn**, by `geom_point` over all rows of `ggData`; no sampling, binning
+      or rasterising library (`grep -rn "scattermore\|ggrastr\|hex\|bin2d"` empty). `sample(nrow(ggData))`
+      is a *shuffle* for the "Random" plot-order option, not a subsample. Evidence: SC [`R/writer.R#L104-L111`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L104-L111)
+      (order options), [`#L122-L128`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L122-L128)
+      (`geom_point`); SC2 [`R/writer0.R#L96`](https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer0.R#L96),
+      [`#L122-L125`](https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer0.R#L122-L125).
+    evidence:
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 104-111
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L104-L111
+      label: '`R/writer.R#L104-L111`'
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 122-128
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L122-L128
+      label: '`#L122-L128`'
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/writer0.R
+      lines: '96'
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer0.R#L96
+      label: '`R/writer0.R#L96`'
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/writer0.R
+      lines: 122-125
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer0.R#L122-L125
+      label: '`#L122-L125`'
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture_shinycell.py
+  subset:
+    mark: P
+    reason: >-
+      'Toggle to subset cells' plots only the chosen groups (others grey), but the server holds all metadata
+      and reads each gene for all cells.
+    detail: |-
+      **Scale group.** **Yes, by metadata group**: every plot panel has "Toggle to subset cells", then "Cell information to subset" (a categorical field) and "Select which cells to show" (checkboxes, plus select/deselect all). Unselected cells are drawn grey in the background on embeddings. No random downsample, no subset-and-recompute, no subset-to-selection. Evidence: SC [`R/writer.R#L1242-L1249`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L1242-L1249) (UI), [`#L681-L684`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L681-L684) (checkbox group), [`#L100-L104`](https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L100-L104) (grey background cells); SC2 [`R/writer2.R#L97-L100`](https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer2.R#L97-L100). Demo: shinycell1, "CellInfo vs GeneExpr", click "Toggle to subset cells".
+
+      **Re-scored under X8 (2026-10-04)**: 'Toggle to subset cells' plots only the chosen groups (others grey), but the server holds all metadata and reads each gene for all cells.
+    evidence:
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 1242-1249
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L1242-L1249
+      label: '`R/writer.R#L1242-L1249`'
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 681-684
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L681-L684
+      label: '`#L681-L684`'
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 100-104
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L100-L104
+      label: '`#L100-L104`'
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/writer2.R
+      lines: 97-100
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer2.R#L97-L100
+      label: '`R/writer2.R#L97-L100`'
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture2_shinycell.py
+  auto_subset:
+    na:
+      visual: no automatic subsetting in source or docs; a demo-size shot cannot show its absence at scale
+    reason: geom_point draws every row; no sampling.
+    detail: >-
+      **New column (user X8, 2026-10-04).** geom_point draws every row; no sampling. Evidence is the same
+      as for every cell drawn, which shows how the default view is drawn.
+    evidence:
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 104-111
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L104-L111
+      label: '`R/writer.R#L104-L111`'
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 122-128
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L122-L128
+      label: '`#L122-L128`'
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/writer0.R
+      lines: '96'
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer0.R#L96
+      label: '`R/writer0.R#L96`'
+    - kind: code
+      repo: the-ouyang-lab/ShinyCell2
+      commit: 33bfc8ba232f0c829b6b23181cb83089d58e7879
+      path: R/writer0.R
+      lines: 122-125
+      url: >-
+        https://github.com/the-ouyang-lab/ShinyCell2/blob/33bfc8ba232f0c829b6b23181cb83089d58e7879/R/writer0.R#L122-L125
+      label: '`#L122-L125`'
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: N
+retired_cells:
+  filters:
+    mark: N
+    reason: >-
+      There is no table; the only filter is a per-plot "Toggle to subset cells" form that acts on its
+      own plot, not on linked plots.
+    detail: |-
+      **Checked in the running app (2026-10-04).** No table. The only filter is the per-tab "Toggle to subset cells" form (Focus section, 04). *Evidence:* [screens/shinycell/04_subset_per_plot.jpg](screens/shinycell/04_subset_per_plot.jpg)
+
+      **Source and docs.** No data table and no filter expressions. Each plot has its own "Toggle to subset cells" on one categorical field (S4 below), which applies to that plot only, not to linked plots. Arguable P if CELLxGENE's one-embedding cross-filter P is the bar; I keep N because nothing is linked.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/shinycell/04_subset_per_plot.jpg
+      label: screens/shinycell/04_subset_per_plot.jpg
+    - kind: code
+      repo: SGDDNB/ShinyCell
+      commit: 5c61db78cdd624636e161406d5d42aeb2c0f1205
+      path: R/writer.R
+      lines: 1242-1249
+      url: >-
+        https://github.com/SGDDNB/ShinyCell/blob/5c61db78cdd624636e161406d5d42aeb2c0f1205/R/writer.R#L1242-L1249
+      label: 'SC R/writer.R L1242-1249: per-plot Toggle to subset cells form'
+    reproduce:
+    - notes/comparison/demos/shinycell/matrix_check.py
+    - notes/comparison/demos/shinycell/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app

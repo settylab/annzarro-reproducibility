@@ -1,0 +1,1 @@
+{"n_cells": 95624334, "nnz": 139624620220, "shards_read": 3388, "seconds": 8378.44885802269, "n_pcs": 50, "fit_basis": "refit on --ref-idx (stratified plate x cell_line_id)", "fit_n": 999073}

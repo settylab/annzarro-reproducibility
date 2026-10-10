@@ -1,0 +1,154 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "prepared",
+  "$DATA_ROOT/tool_ceiling_data/cirro/first10000000.zarr",
+  "benchmark/tool_ceiling/shots/cirrocumulus_prepared_run_10000000_r1",
+  "--n",
+  "10000000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 57.27,
+ "peaks": {
+  "client": {
+   "fp_peak": 3897272544,
+   "fp_lifetime_sum": 4133137688,
+   "rss_peak": 3413901312,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 14367681768,
+   "fp_lifetime_sum": 14411542000,
+   "rss_peak": 14414921728,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 117649792,
+   "fp_lifetime_sum": 117649792,
+   "rss_peak": 152141824,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 17451225920,
+   "rss_peak": 16929832960,
+   "fp_lifetime_sum": 18544679688
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.25,
+   1569367160
+  ],
+  [
+   4.45,
+   4810960824
+  ],
+  [
+   6.61,
+   7247410928
+  ],
+  [
+   8.78,
+   10956734808
+  ],
+  [
+   10.97,
+   12463850968
+  ],
+  [
+   13.17,
+   14459587328
+  ],
+  [
+   15.35,
+   14475217808
+  ],
+  [
+   17.53,
+   14602324976
+  ],
+  [
+   19.72,
+   14800555136
+  ],
+  [
+   21.91,
+   14935919840
+  ],
+  [
+   24.13,
+   13790251536
+  ],
+  [
+   26.35,
+   14661258464
+  ],
+  [
+   28.56,
+   16547811536
+  ],
+  [
+   30.77,
+   15339327696
+  ],
+  [
+   32.98,
+   16201880192
+  ],
+  [
+   35.21,
+   15859994880
+  ],
+  [
+   37.41,
+   15895253656
+  ],
+  [
+   39.59,
+   15906296496
+  ],
+  [
+   41.74,
+   15884128944
+  ],
+  [
+   43.84,
+   15891698352
+  ],
+  [
+   45.93,
+   15640760792
+  ],
+  [
+   48.09,
+   15622967768
+  ],
+  [
+   50.24,
+   15629046256
+  ],
+  [
+   52.33,
+   15650771440
+  ],
+  [
+   54.47,
+   15728087416
+  ],
+  [
+   56.62,
+   15414891376
+  ]
+ ],
+ "ps_before": "2026-10-04T16:18:21-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n70413 118944  68.2 $TMPDIR/evidence/venv/bin/python\n  855 1938944  21.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n14440 192064  13.4 /Applications/Microsoft Teams.app/Contents/MacOS/MSTeams\n    1  34624  13.3 /sbin/launchd\n71676   9088  12.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n71675   9024  12.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n71678   9088  12.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n71679   8944  12.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n71677   8960  11.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  976  88784  11.0 /usr/libexec/secd\n",
+ "others_at_start": []
+}

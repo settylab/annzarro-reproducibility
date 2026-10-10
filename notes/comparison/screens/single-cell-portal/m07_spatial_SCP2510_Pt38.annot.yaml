@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "image": "m07_spatial_SCP2510_Pt38.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP2510, human lung cancer stem-immunity hubs (1,459,214 cells)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP2510/human-lung-cancer-harbors-spatially-organized-stem-immunity-hubs-that-associate-with-response-to-immunotherapy?spatialGroups=spatial_Pt38#study-visualize",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/single-cell-portal/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "spatial",
+   "mark": "Y",
+   "caption": "Spatial group spatial_Pt38 drawn as an X/Y scatter beside the UMAP"
+  },
+  {
+   "column": "image",
+   "mark": "N",
+   "caption": "Spatial plot is points only; no tissue image layer or image option in Options"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    604,
+    124,
+    566,
+    387
+   ],
+   "label": "spatial_Pt38 X/Y",
+   "selector": ".js-plotly-plot >> nth=-1"
+  },
+  {
+   "n": 2,
+   "box": [
+    1179,
+    220,
+    210,
+    66
+   ],
+   "label": "spatial group picker",
+   "selector": "text=Spatial groups"
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+INFO:root:Loading Scanpy libraries
+INFO:root:File name ends with .h5ad: Loading $DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad using sc.read
+INFO:root:Creating $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000
+WARNING:root:The option to export raw expression data is set, but the scanpy object has no 'raw' attribute. Exporting the processed scanpy matrix. Some genes may be missing.
+INFO:root:Matrix has size (1000000 cells, 5000 genes)
+INFO:root:Writing scanpy matrix (1000000 cells, 5000 genes) to $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000 in mtx.gz format
+INFO:root:Transposing matrix
+INFO:root:Writing $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/features.tsv.gz
+INFO:root:Writing $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/barcodes.tsv.gz
+INFO:root:Writing matrix to $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/matrix.mtx, type=float
+INFO:root:Compressing matrix to $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/matrix.mtx.gz
+INFO:root:These obsm entries were dropped, too many columns: []
+INFO:root:Writing UMAP coords to $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/umap_coords.tsv
+INFO:root:Writing pca_2d coords to $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/pca_2d_coords.tsv
+INFO:root:Wrote $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/cellbrowser.conf
+INFO:root:File doesn't exist, copying $DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad to $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/tahoe_first1000000.h5ad
+{"status": "ok", "rc": 0, "wall_s": 120.26} fp_peak=2.34GB lifetime=2.34GB

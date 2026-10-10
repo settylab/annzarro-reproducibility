@@ -1,0 +1,36 @@
+version: 1
+image: g03_subset_sdata_dock_elements.png
+tool: napari-spatialdata
+software: napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (PyQt6)
+data: SpatialData sandbox Visium example (ST8059048, H&E + spots)
+url: null
+captured: '2026-10-04'
+by: evidence-curator
+driver: evidence/screens/gaps/capture_napari.py
+source: manual
+note: "Captured on the native Qt platform (a window was on screen for about 15 s) because napari segfaults under QT_QPA_PLATFORM=offscreen; boxes computed from Qt widget geometry."
+image_sha256: f0757bd5dc7809f607577cfcd7afcfceddfc0ddd93f19441c5531f47b715f77d
+coordinates: computed by the driver from Qt widget geometry (QMenu.actionGeometry, QWidget.mapTo), not
+  read off the image
+proves:
+- column: subset
+  mark: P
+  caption: 'napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (PyQt6) (2026-10-04): the SpatialData
+    dock offers only a coordinate system (ST8059048, ST8059050) and, once one is clicked, the elements
+    to load; no control picks a subset of cells, which needs Python code before Interactive(...), so P'
+callouts:
+- n: 1
+  box:
+  - 24
+  - 1126
+  - 550
+  - 176
+  label: 'Coordinate System: ST8059048, ST8059050'
+- n: 2
+  box:
+  - 24
+  - 1374
+  - 550
+  - 176
+  label: 'Elements: filled after a coordinate system is clicked (empty here; the layers were added from
+    code)'

@@ -1,0 +1,171 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/_mamba/envs/rtools/bin/Rscript",
+  "to_sce.R",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first10000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/sce/first10000000.rds"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 48.95,
+ "peaks": {
+  "proc": {
+   "fp_peak": 15615996912,
+   "fp_lifetime_sum": 15615996912,
+   "rss_peak": 16654794752,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 15615996912,
+   "rss_peak": 16654794752,
+   "fp_lifetime_sum": 15615996912
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   999640
+  ],
+  [
+   1.39,
+   401523744
+  ],
+  [
+   2.79,
+   606061768
+  ],
+  [
+   4.18,
+   888276696
+  ],
+  [
+   5.57,
+   1252149408
+  ],
+  [
+   6.95,
+   1454360880
+  ],
+  [
+   8.34,
+   1603029416
+  ],
+  [
+   9.72,
+   1665894872
+  ],
+  [
+   11.11,
+   1889077888
+  ],
+  [
+   12.49,
+   1953385136
+  ],
+  [
+   13.88,
+   1980369608
+  ],
+  [
+   15.26,
+   1790937896
+  ],
+  [
+   16.66,
+   1798114232
+  ],
+  [
+   18.06,
+   1798196224
+  ],
+  [
+   19.45,
+   1878363208
+  ],
+  [
+   20.84,
+   2495286848
+  ],
+  [
+   22.24,
+   6270474480
+  ],
+  [
+   23.64,
+   10888799736
+  ],
+  [
+   25.04,
+   15374103176
+  ],
+  [
+   26.41,
+   15213195912
+  ],
+  [
+   27.79,
+   15214965384
+  ],
+  [
+   29.18,
+   15215047304
+  ],
+  [
+   30.55,
+   15215047304
+  ],
+  [
+   31.94,
+   15215047304
+  ],
+  [
+   33.35,
+   15215129224
+  ],
+  [
+   34.73,
+   15215145608
+  ],
+  [
+   36.13,
+   15215145608
+  ],
+  [
+   37.52,
+   15215145608
+  ],
+  [
+   38.92,
+   15215145608
+  ],
+  [
+   40.29,
+   15215145608
+  ],
+  [
+   41.67,
+   15215145608
+  ],
+  [
+   43.06,
+   15215145608
+  ],
+  [
+   44.44,
+   15215145608
+  ],
+  [
+   45.83,
+   15615898608
+  ],
+  [
+   47.21,
+   15615964144
+  ],
+  [
+   48.61,
+   15615964144
+  ]
+ ],
+ "ps_before": "2026-10-03T17:56:56-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n15970 121456  99.8 /usr/libexec/duetexpertd\n57113 2058096   2.7 $HOME/.local/bin/claude\n 4725 613056   2.3 claude\n  626 525776   1.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n98631 476816   1.5 $HOME/.local/bin/claude\n72627 489104   0.9 $HOME/.local/bin/claude\n47413 619072   0.9 /Applications/cmux.app/Contents/MacOS/cmux\n80588 616864   0.8 $HOME/.local/bin/claude\n  734  51632   0.8 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n92291  30832   0.4 .venv/bin/python\n"
+}

@@ -1,0 +1,71 @@
+{
+ "attach_name": "Loupe Browser 9",
+ "pids_at_start": [
+  69192,
+  69217,
+  69218,
+  69240,
+  69241
+ ],
+ "status": "ok",
+ "ended_by": [
+  "$DEMO_ROOT/loupe/lazy/partD/g200_r3.done"
+ ],
+ "wall_s": 127.86,
+ "peaks": {
+  "app": {
+   "fp_peak": 2291964312,
+   "fp_lifetime_sum": 2495814064,
+   "rss_peak": 2041102336,
+   "n_proc_max": 5
+  },
+  "total": {
+   "fp_peak": 2291964312,
+   "rss_peak": 2041102336,
+   "fp_lifetime_sum": 2495814064
+  }
+ },
+ "trace": [
+  [
+   0.48,
+   272602128
+  ],
+  [
+   18.16,
+   245011736
+  ],
+  [
+   53.52,
+   1375541248
+  ],
+  [
+   88.64,
+   1402099832
+  ],
+  [
+   105.98,
+   1666062696
+  ],
+  [
+   112.44,
+   1655150952
+  ],
+  [
+   116.7,
+   1657493864
+  ],
+  [
+   120.81,
+   1655675240
+  ],
+  [
+   127.89,
+   1656494440
+  ]
+ ],
+ "ps_before": "2026-10-08T22:12:27-0700\nmemorystatus_level=92 swap=total = 5120.00M  used = 3928.19M  free = 1191.81M  (encrypted)\n  626 543472  55.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n30480 134736  36.6 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n69192 102752  28.3 /Applications/Loupe Browser 9.app/Contents/MacOS/Loupe Browser 9\n86901 612512  23.8 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n30522 865856  23.8 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n30725 501424  17.5 $HOME/Library/Application Support/Claude/claude-code/2.1.293/8433d0d9cd0d/claude.app/Contents/MacOS/claude\n 1015  20464  10.2 /System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent\n57739 121600   4.9 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n 1584 472448   4.8 /System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight\n  596  36432   3.5 /System/Library/CoreServices/launchservicesd\n",
+ "others_at_start": [
+  "69201 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "69207 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

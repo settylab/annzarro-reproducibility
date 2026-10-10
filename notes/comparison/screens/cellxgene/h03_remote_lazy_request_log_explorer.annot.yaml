@@ -1,0 +1,61 @@
+{
+ "version": 1,
+ "image": "h03_remote_lazy_request_log_explorer.jpg",
+ "tool": "cellxgene",
+ "software": "CZ CELLxGENE Discover Explorer (hosted, as served 2026-10-04)",
+ "data": "Visium Spatial of Human muscle in Healthy control_2 (4,992 spots x 35,476 genes)",
+ "url": "https://cellxgene.cziscience.com/e/85585f3f-d16a-412d-b93a-406d52721221.cxg/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene_explorer.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "lazy",
+   "mark": "Y",
+   "caption": "request log, Explorer (hosted) (2026-10-04): adding MYH7 makes one data/var request of 10,112 bytes, one gene of the 4,992 x 35,476 matrix sliced from S3",
+   "row": "cellxgene-explorer"
+  },
+  {
+   "column": "remote",
+   "mark": "P",
+   "caption": "request log, Explorer (hosted) (2026-10-04): reads come from Discover's own S3 bucket (<!doctype html>\n<html lang=en>\n<title>404 Not Found</title>\n); a user cannot point Explorer at another store, and Annotate copies a remote file locally first, so P",
+   "row": "cellxgene-explorer"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    1235,
+    1375,
+    35
+   ],
+   "label": "one gene, one small request",
+   "selector": "#r27"
+  },
+  {
+   "n": 2,
+   "box": [
+    12,
+    1262,
+    1375,
+    54
+   ],
+   "label": "s3_uri: Discover's bucket",
+   "selector": "#r28"
+  },
+  {
+   "n": 3,
+   "box": [
+    12,
+    1318,
+    1376,
+    23
+   ],
+   "label": "sliced per request, own bucket only",
+   "selector": "#note"
+  }
+ ]
+}

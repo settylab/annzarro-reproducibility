@@ -1,0 +1,124 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_1250000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub1m_run_1250000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 44.17,
+ "peaks": {
+  "client": {
+   "fp_peak": 2842929040,
+   "fp_lifetime_sum": 3118099256,
+   "rss_peak": 2658074624,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 11506705480,
+   "fp_lifetime_sum": 11639498352,
+   "rss_peak": 11562483712,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 115994552,
+   "fp_lifetime_sum": 116027320,
+   "rss_peak": 155959296,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 11967235736,
+   "rss_peak": 12748488704,
+   "fp_lifetime_sum": 14757597608
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.43,
+   959439848
+  ],
+  [
+   5.08,
+   550822912
+  ],
+  [
+   7.67,
+   541058072
+  ],
+  [
+   10.09,
+   1033282968
+  ],
+  [
+   12.51,
+   1039639984
+  ],
+  [
+   14.96,
+   1046504880
+  ],
+  [
+   17.37,
+   1052517808
+  ],
+  [
+   19.83,
+   1056269744
+  ],
+  [
+   22.44,
+   825845072
+  ],
+  [
+   24.85,
+   833578344
+  ],
+  [
+   27.28,
+   1060382200
+  ],
+  [
+   29.77,
+   1068344824
+  ],
+  [
+   32.18,
+   2268555704
+  ],
+  [
+   35.0,
+   10800694096
+  ],
+  [
+   37.66,
+   1860791216
+  ],
+  [
+   40.14,
+   3568954840
+  ],
+  [
+   42.62,
+   3623431976
+  ]
+ ],
+ "ps_before": "2026-10-06T00:26:41-0700\nmemorystatus_level=88 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n59322  98656  91.1 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n 1012  14880   6.6 /usr/libexec/pboard\n  626 305616   4.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 2581120   4.5 $HOME/.local/bin/claude\n  582  69472   3.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  855 1216400   3.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  596  25200   3.8 /System/Library/CoreServices/launchservicesd\n  557  36992   3.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 1240  41840   3.2 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n47413 428576   1.9 /Applications/cmux.app/Contents/MacOS/cmux\n",
+ "others_at_start": []
+}

@@ -1,0 +1,64 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "lazy_zarr",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first2000000.zarr",
+  "benchmark/tool_ceiling/shots/scanpy_lazy_zarr_run_2000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 12.37,
+ "peaks": {
+  "proc": {
+   "fp_peak": 1990740200,
+   "fp_lifetime_sum": 1990740200,
+   "rss_peak": 2052653056,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1990740200,
+   "rss_peak": 2052653056,
+   "fp_lifetime_sum": 1990740200
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8995224
+  ],
+  [
+   1.48,
+   435160024
+  ],
+  [
+   2.97,
+   1650149368
+  ],
+  [
+   4.44,
+   1901578424
+  ],
+  [
+   5.94,
+   1901578424
+  ],
+  [
+   7.42,
+   1909508280
+  ],
+  [
+   8.87,
+   1990609128
+  ],
+  [
+   10.38,
+   1990609128
+  ],
+  [
+   11.83,
+   1990609128
+  ]
+ ],
+ "ps_before": "2026-10-03T21:09:40-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n71667 265424  77.6 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 632432  20.4 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n57113 1836784   9.6 $HOME/.local/bin/claude\n  774   6944   6.7 /usr/libexec/sysmond\n  629 153984   4.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n 1012  16768   3.6 /usr/libexec/pboard\n90797 370144   3.4 $HOME/.local/bin/claude\n  596  28064   2.7 /System/Library/CoreServices/launchservicesd\n  626 486928   2.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  557 651616   2.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n"
+}

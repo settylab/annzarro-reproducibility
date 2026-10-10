@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "image": "f01_regions_rectangle.jpg",
+ "tool": "tissuumaps",
+ "software": "TissUUmaps 3.2.1.11 (server build, pip; TU4 is beta)",
+ "data": "bm_demo_csc.h5ad (8,090 cells x 16,285 genes)",
+ "url": "http://127.0.0.1:8908/bm_demo_csc.h5ad?path=.",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/tissuumaps/followup_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "annot",
+   "mark": "P",
+   "caption": "A drawn rectangle becomes a region with an editable class and name (region1) in the Regions tab, exportable from Export; regions label an area, not individual cells"
+  },
+  {
+   "column": "selection",
+   "mark": "N",
+   "caption": "Regions act on the one main view; the core app has no second linked view for a selection to reach (linked spatial/UMAP views need the Feature Space plugin)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    37,
+    941,
+    863
+   ],
+   "label": "viewer with the drawn region",
+   "selector": ".openseadragon-container"
+  },
+  {
+   "n": 2,
+   "box": [
+    1035,
+    41,
+    100,
+    50
+   ],
+   "label": "Regions tab",
+   "selector": "#title-tab-regions"
+  }
+ ]
+}

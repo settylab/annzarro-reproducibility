@@ -1,0 +1,61 @@
+{
+ "tool": "vitessce",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/vitessce/first20000000",
+ "n": 20000000,
+ "phases": {
+  "server_ready": 1.16,
+  "first_plot": 1119.49,
+  "plot_cat": 1124.79,
+  "plot_gene": 1129.41,
+  "done": 1129.63
+ },
+ "checks": {
+  "cat": {
+   "gl": {
+    "crit": "call",
+    "drawn": 20000000,
+    "frame_max": {
+     "pts": 0,
+     "inst": 20000000
+    },
+    "call_max": 20000000
+   },
+   "stated": null,
+   "png": "benchmark/tool_ceiling/shots/vitessce_default_run_20000000_r2_cat.png",
+   "all_cells": true
+  },
+  "gene": {
+   "gl": {
+    "crit": "call",
+    "drawn": 20000000,
+    "frame_max": {
+     "pts": 0,
+     "inst": 20000000
+    },
+    "call_max": 20000000
+   },
+   "stated": null,
+   "png": "benchmark/tool_ceiling/shots/vitessce_default_run_20000000_r2_gene.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "vitessce": "https://vitessce.io/assets/js/runtime~main.bf0762b7.js"
+ },
+ "console": [
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "warning: deck: Layer has too many data objects. Picking might not be able to distinguish all objects.",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)"
+ ],
+ "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
+ "crashed": false,
+ "ok": true
+}

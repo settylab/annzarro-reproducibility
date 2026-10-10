@@ -1,0 +1,42 @@
+version: 1
+image: g05_lazy_image_dask_table_in_memory.png
+tool: napari-spatialdata
+software: napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (PyQt6)
+data: SpatialData sandbox Visium example (ST8059048, H&E + spots)
+url: null
+captured: '2026-10-04'
+by: evidence-curator
+driver: evidence/screens/gaps/capture_napari.py
+source: manual
+note: "Captured on the native Qt platform (a window was on screen for about 15 s) because napari segfaults under QT_QPA_PLATFORM=offscreen; boxes computed from Qt widget geometry."
+image_sha256: 394dc43212338704f950e1c46b5944637c6618c848fea4b18c1ad2f86d9602fb
+coordinates: computed by the driver from Qt widget geometry (QMenu.actionGeometry, QWidget.mapTo), not
+  read off the image
+proves:
+- column: lazy
+  mark: P
+  caption: 'terminal, napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (PyQt6) (2026-10-04):
+    image layers are dask arrays read lazily from zarr, but the table''s X is loaded into memory, so P'
+callouts:
+- n: 1
+  box:
+  - 16
+  - 748
+  - 566
+  - 146
+  label: 'layer list: ST8059048_hires_image (image) and the spots'
+- n: 2
+  box:
+  - 10
+  - 1980
+  - 963
+  - 32
+  label: 'image data: an xarray DataArray over a dask Array (checked: type(.data) is dask Array, chunks
+    (3, 2000, 1969)), read lazily'
+- n: 3
+  box:
+  - 10
+  - 2044
+  - 1002
+  - 32
+  label: 'table X: in memory'

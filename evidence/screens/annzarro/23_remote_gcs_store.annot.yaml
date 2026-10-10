@@ -1,0 +1,60 @@
+version: 1
+image: 23_remote_gcs_store.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install '[remote]' from that commit)
+data: gs://vitessce-demo-data/habib-2017/habib17.processed.h5ad.zarr (Vitessce public demo bucket on Google
+  Cloud Storage, anonymous; AnnData zarr v2, 13,067 cells x 25,587 genes, obsm/X_umap)
+url: http://127.0.0.1:8930/
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture_remote.py
+source: dom
+proves:
+- column: remote
+  mark: Y
+  caption: 'A public AnnData zarr store opened read-only and anonymously from gs:// (Google Cloud Storage,
+    gcsfs, token ''anon''): gs://vitessce-demo-data/habib-2017/habib17.processed.h5ad.zarr (Vitessce''s
+    public demo bucket `vitessce-demo-data` on Google Cloud Storage), typed into the Dataset picker; the
+    UMAP is coloured by obs/CellType, read from the bucket.'
+callouts:
+- n: 1
+  box:
+  - 140
+  - 28
+  - 217
+  - 46
+  label: 'Dataset picker: gs://vitessce-demo-data/habib-2017/habib17.processed.h5ad.zarr (Custom)'
+  selector: '#dataset-selector >> xpath=..'
+- n: 2
+  box:
+  - 0
+  - 75
+  - 1400
+  - 38
+  label: 'statistics bar: Cells 13,067, Genes 25587, Dataset Habib17.Processed.H5Ad; structure read in
+    7.1 s'
+  selector: '#dataset-stats'
+- n: 3
+  box:
+  - 69
+  - 165
+  - 394
+  - 36
+  label: X = obsm / X_umap / 0; Y = obsm / X_umap / 1
+  selector: .tile[data-tile-id="cell-plot-1791418984227"] .axis-type-select[data-axis="x"] >> xpath=..
+- n: 4
+  box:
+  - 69
+  - 229
+  - 394
+  - 36
+  label: Color = obs / CellType / N/A
+  selector: .tile[data-tile-id="cell-plot-1791418984227"] .axis-type-select[data-axis="color"] >> xpath=..
+- n: 5
+  box:
+  - 0
+  - 359
+  - 1400
+  - 520
+  label: 13,067 cells drawn, 5.0 s from adding the plot; 8 /api/v1/data requests to the local server
+  selector: .tile[data-tile-id="cell-plot-1791418984227"] .js-plotly-plot

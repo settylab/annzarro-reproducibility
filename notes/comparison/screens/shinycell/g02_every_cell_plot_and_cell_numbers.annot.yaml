@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "g02_every_cell_plot_and_cell_numbers.jpg",
+ "tool": "shinycell",
+ "software": "ShinyCell 2.1.0 (local app)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8907",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_shinycell.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "every_cell",
+   "mark": "Y",
+   "caption": "ShinyCell 2.1.0 (local app) (2026-10-04): the CellInfo plot draws every cell; the app's own cell-number table sums to 8,090 of 8,090 cells"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    26,
+    0,
+    661,
+    608
+   ],
+   "label": "UMAP, coloured by highres_celltype",
+   "selector": "#sc1a1oup1"
+  },
+  {
+   "n": 2,
+   "box": [
+    26,
+    839,
+    661,
+    861
+   ],
+   "label": "app's cell numbers per group",
+   "selector": "#sc1a1\\.dt"
+  },
+  {
+   "n": 3,
+   "box": [
+    8,
+    1667,
+    1121,
+    24
+   ],
+   "label": "total nCells",
+   "selector": "#tot"
+  }
+ ]
+}

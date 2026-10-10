@@ -1,0 +1,94 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$SCRATCH/annzarro-scale/stores_panel/n2M/tahoe_panel_2M.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_2000000_r1",
+  "--server-url",
+  "http://hpc-node-36:8790",
+  "--proxy",
+  "socks5://127.0.0.1:8767",
+  "--n",
+  "2000000",
+  "--probe-store",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "--version-label",
+  "606f0bc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 24.45,
+ "peaks": {
+  "client": {
+   "fp_peak": 5153287304,
+   "fp_lifetime_sum": 5398327608,
+   "rss_peak": 4520771584,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 0,
+   "fp_lifetime_sum": 0,
+   "rss_peak": 0,
+   "n_proc_max": 0
+  },
+  "harness": {
+   "fp_peak": 131729024,
+   "fp_lifetime_sum": 131729024,
+   "rss_peak": 166281216,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5153287304,
+   "rss_peak": 4520771584,
+   "fp_lifetime_sum": 5398327608
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.22,
+   0
+  ],
+  [
+   4.34,
+   0
+  ],
+  [
+   6.57,
+   870768896
+  ],
+  [
+   8.83,
+   837296384
+  ],
+  [
+   11.04,
+   1063182976
+  ],
+  [
+   13.3,
+   1368024208
+  ],
+  [
+   15.66,
+   2439964296
+  ],
+  [
+   17.89,
+   2323818624
+  ],
+  [
+   20.17,
+   3476416640
+  ],
+  [
+   22.46,
+   3625282216
+  ]
+ ],
+ "ps_before": "2026-10-04T01:23:52-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1119024 117.6 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n    1  35680  21.6 /sbin/launchd\n47413 615296   8.4 /Applications/cmux.app/Contents/MacOS/cmux\n97684  20608   8.3 benchmark/tool_ceiling/.venv/bin/python\n  582 109056   7.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  855 1844224   4.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  557 652096   3.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n57113 2065168   3.4 $HOME/.local/bin/claude\n86901 519888   2.9 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n80588 618704   2.4 $HOME/.local/bin/claude\n"
+}

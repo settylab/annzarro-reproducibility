@@ -1,0 +1,98 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "shinycell",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/shinycell/first2000000",
+  "benchmark/tool_ceiling/shots/shinycell_default_run_2000000_r2",
+  "--n",
+  "2000000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 26.42,
+ "peaks": {
+  "client": {
+   "fp_peak": 859283640,
+   "fp_lifetime_sum": 915072240,
+   "rss_peak": 1073872896,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 1326025632,
+   "fp_lifetime_sum": 1527763720,
+   "rss_peak": 3080290304,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 127317264,
+   "fp_lifetime_sum": 134018584,
+   "rss_peak": 161497088,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2174839944,
+   "rss_peak": 4134682624,
+   "fp_lifetime_sum": 2442835960
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.17,
+   767337328
+  ],
+  [
+   4.29,
+   1317250504
+  ],
+  [
+   6.4,
+   1565238920
+  ],
+  [
+   8.53,
+   1442310272
+  ],
+  [
+   10.65,
+   1610803568
+  ],
+  [
+   12.77,
+   1601300848
+  ],
+  [
+   14.86,
+   1517300464
+  ],
+  [
+   16.97,
+   1429990272
+  ],
+  [
+   19.07,
+   1430104960
+  ],
+  [
+   21.19,
+   1716268216
+  ],
+  [
+   23.42,
+   1437002912
+  ],
+  [
+   25.57,
+   1429335200
+  ]
+ ],
+ "ps_before": "2026-10-04T16:20:42-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n75828 175424 100.0 $TMPDIR/evidence/venv/bin/python\n76033 270976  77.5 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 670032  22.1 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n76172   8736  10.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n76174  20752   7.5 benchmark/tool_ceiling/.venv/bin/python\n  855 1978800   6.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n76171  19584   6.4 benchmark/tool_ceiling/.venv/bin/python\n 6219  58976   6.4 $HOME/Projects/investments/.venv/bin/python3\n  629 236176   5.5 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  626 519200   4.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n",
+ "others_at_start": []
+}

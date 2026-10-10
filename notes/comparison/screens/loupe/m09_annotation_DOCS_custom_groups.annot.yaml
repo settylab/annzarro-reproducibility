@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m09_annotation_DOCS_custom_groups.jpg",
+ "tool": "loupe",
+ "software": "Loupe Browser 9.1.0 DOCS PAGE (10x website), not the app",
+ "data": "10x documentation page",
+ "url": "https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/loupe/matrix_check_docs.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "annot",
+   "mark": "Y",
+   "caption": "10x docs (not the app): page states 'Custom groups can also be created'"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    328,
+    492,
+    742,
+    156
+   ],
+   "label": "docs phrase: Custom groups can also be created",
+   "selector": "[data-docs-phrase='1']"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    0,
+    1400,
+    56
+   ],
+   "label": "DOCS PAGE banner",
+   "selector": "#docsbanner"
+  }
+ ]
+}

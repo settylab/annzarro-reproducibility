@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "01_tab1_celltype_vs_Mpo.jpg",
+ "tool": "shinycell",
+ "software": "ShinyCell 2.1.0 (local Shiny app built by build.R)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8907",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/shinycell/recap_focus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Feature colouring stays in one plot: Gene name = Mpo recolours only the right-hand plot; the left keeps highres_celltype"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    711,
+    552,
+    308,
+    42
+   ],
+   "label": "Gene name: Mpo",
+   "selector": "#sc1a1inp2 + .selectize-control"
+  },
+  {
+   "n": 2,
+   "box": [
+    711,
+    601,
+    663,
+    608
+   ],
+   "label": "only this plot shows Mpo",
+   "selector": "#sc1a1oup2 img"
+  },
+  {
+   "n": 3,
+   "box": [
+    26,
+    601,
+    661,
+    608
+   ],
+   "label": "left plot keeps cell information",
+   "selector": "#sc1a1oup1 img"
+  }
+ ]
+}

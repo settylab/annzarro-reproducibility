@@ -1,0 +1,149 @@
+{
+ "attach_name": "ManiVault Studio",
+ "pids_at_start": [
+  42899
+ ],
+ "status": "ok",
+ "ended_by": [
+  "$DEMO_ROOT/manivault/session_v031/failed_250000_1"
+ ],
+ "wall_s": 66.53,
+ "peaks": {
+  "app": {
+   "fp_peak": 949520112,
+   "fp_lifetime_sum": 1126074048,
+   "rss_peak": 607715328,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 949520112,
+   "rss_peak": 607715328,
+   "fp_lifetime_sum": 1126074048
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   510805696
+  ],
+  [
+   2.3,
+   510822080
+  ],
+  [
+   4.51,
+   510822080
+  ],
+  [
+   6.75,
+   510772928
+  ],
+  [
+   8.96,
+   510772928
+  ],
+  [
+   11.25,
+   510772928
+  ],
+  [
+   13.49,
+   512526064
+  ],
+  [
+   15.85,
+   512526064
+  ],
+  [
+   18.2,
+   513443568
+  ],
+  [
+   20.41,
+   513132272
+  ],
+  [
+   22.93,
+   513132272
+  ],
+  [
+   25.16,
+   943752944
+  ],
+  [
+   27.46,
+   525829872
+  ],
+  [
+   29.64,
+   525829872
+  ],
+  [
+   31.93,
+   527206128
+  ],
+  [
+   34.23,
+   949405424
+  ],
+  [
+   36.46,
+   533530352
+  ],
+  [
+   38.81,
+   533497584
+  ],
+  [
+   41.28,
+   533432048
+  ],
+  [
+   43.75,
+   533432048
+  ],
+  [
+   46.16,
+   533432048
+  ],
+  [
+   48.48,
+   533432048
+  ],
+  [
+   50.87,
+   533432048
+  ],
+  [
+   53.3,
+   533432048
+  ],
+  [
+   55.6,
+   533432048
+  ],
+  [
+   57.83,
+   533432048
+  ],
+  [
+   60.04,
+   533432048
+  ],
+  [
+   62.27,
+   533432048
+  ],
+  [
+   64.61,
+   533235440
+  ]
+ ],
+ "ps_before": "2026-10-05T19:23:25-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n45009 272592  80.0 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  626 525152  76.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n90939 152848  46.5 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n97961 827264  23.7 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n30440 413424  13.2 $TMPDIR/refresh/venv/lib/python3.13/site-packages/playwright/driver/node\n47413 678096  12.0 /Applications/cmux.app/Contents/MacOS/cmux\n30217 1736400   8.7 $TMPDIR/refresh/venv/bin/python\n41556 121568   6.6 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n57113 2671488   5.7 $HOME/.local/bin/claude\n90972 860160   4.9 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n",
+ "others_at_start": [
+  "30453 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disa",
+  "30461 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=gpu-process --no-sandbox --d",
+  "30462 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=utility --utility-sub-type=n",
+  "44986 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=renderer --headless=old --no"
+ ]
+}

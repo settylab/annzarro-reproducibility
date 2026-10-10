@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "image": "m04_slots_feature_type_menu.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (scope.aertslab.org)",
+ "data": "Wouters_Human_Melanoma / 10_Baselines_filteredRegulons.loom (4,322 cells)",
+ "url": "https://scope.aertslab.org/#/Wouters_Human_Melanoma/Wouters_Human_Melanoma%2F10_Baselines_filteredRegulons.loom/gene",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/scope/matrix_check_fix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "slots",
+   "mark": "P",
+   "caption": "Query feature types: all features, gene, regulon, cluster (per-cell columns of the loom); no layers, no col/row graphs"
+  },
+  {
+   "column": "genes",
+   "mark": "N",
+   "caption": "No gene x gene relation among query types"
+  },
+  {
+   "column": "de",
+   "mark": "N",
+   "caption": "No DE query or 'compute markers' control; cluster markers are precomputed ClusterMarkers_* loom attributes"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    39,
+    268,
+    861
+   ],
+   "label": "query feature types",
+   "selector": ".visible.menu"
+  }
+ ]
+}

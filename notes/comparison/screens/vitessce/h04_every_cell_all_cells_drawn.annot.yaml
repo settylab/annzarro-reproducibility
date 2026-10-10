@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "image": "h04_every_cell_all_cells_drawn.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (hosted app at vitessce.io, @vitessce 4.0.10)",
+ "data": "bm_demo.zarr (8,090 cells), served on 127.0.0.1:8904",
+ "url": "https://vitessce.io/#?url=http://127.0.0.1:8904/config.json",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_vitessce.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "every_cell",
+   "mark": "Y",
+   "caption": "Vitessce @vitessce 4.0.10 (2026-10-04): both scatterplots draw every one of the 8,090 cells (one deck.gl ScatterplotLayer over the whole embedding, no downsampling)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    6,
+    86,
+    580,
+    486
+   ],
+   "label": "UMAP: all cells as points",
+   "selector": "[data-cap='umap']"
+  },
+  {
+   "n": 2,
+   "box": [
+    583,
+    86,
+    465,
+    486
+   ],
+   "label": "FA: all cells as points",
+   "selector": "[data-cap='fa']"
+  },
+  {
+   "n": 3,
+   "box": [
+    6,
+    871,
+    1378,
+    23
+   ],
+   "label": "8,090 cells × 16,285 genes",
+   "selector": "[data-cap='hmfoot']"
+  },
+  {
+   "n": 4,
+   "box": [
+    0,
+    76,
+    1400,
+    824
+   ],
+   "label": "Cell Sets with per-set counts",
+   "selector": "[data-cap='cellsets']"
+  }
+ ]
+}

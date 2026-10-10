@@ -1,0 +1,29 @@
+version: 1
+image: 01_loaded.jpg
+tool: scope
+software: SCope 1.8.2 (scope.aertslab.org)
+data: Wouters_Human_Melanoma / 10_Baselines_filteredRegulons.loom (4,322 cells)
+url: https://scope.aertslab.org/#/Wouters_Human_Melanoma/Wouters_Human_Melanoma%2F10_Baselines_filteredRegulons.loom/gene
+captured: '2026-10-03'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: headless Playwright session of 2026-10-03, script not kept (see notes/comparison/scope.md, Focus section)
+source: manual
+image_sha256: 9b896a401e761dcf61bbf07f770ccb2b2dbbc30d906a8c27036ab11055392efd
+proves:
+- column: focus
+  mark: N
+  caption: 'SCope 1.8.2: the three query boxes take a feature (gene, regulon, cluster, metric); none takes a cell
+    or gene as an index into a pairwise matrix.'
+callouts:
+- n: 1
+  box: [270, 52, 258, 36]
+  label: 'query 1: Search... / all features'
+- n: 2
+  box: [535, 52, 258, 36]
+  label: query 2
+- n: 3
+  box: [800, 52, 258, 36]
+  label: query 3
+- n: 4
+  box: [1064, 98, 260, 156]
+  label: 'Cell selections: No user''s lasso selections'

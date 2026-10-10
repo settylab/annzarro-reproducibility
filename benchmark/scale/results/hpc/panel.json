@@ -1,0 +1,31 @@
+{
+ "n_genes": 5000,
+ "n_hvg": 5000,
+ "extra": [
+  "MALAT1"
+ ],
+ "bench_top": 2008,
+ "bench_prefixes": [
+  "1000000",
+  "2000000",
+  "5000000",
+  "10000000",
+  "20000000",
+  "50000000",
+  "all"
+ ],
+ "n_hvg_only": 2871,
+ "n_detected_not_hvg": 0,
+ "ref_cells": 999073,
+ "kept_values_per_cell_ref": {
+  "median": 0.7529313232830821,
+  "mean": 0.751638932242823,
+  "p05": 0.6810982048574445,
+  "p95": 0.8163992869875223
+ },
+ "kept_umi_per_cell_ref": {
+  "median": 0.8172934557299378,
+  "mean": 0.8164522394449899
+ },
+ "kept_values_all_cells_pooled": 0.7404087771061441
+}

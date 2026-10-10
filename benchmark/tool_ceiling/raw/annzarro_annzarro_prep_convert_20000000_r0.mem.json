@@ -1,0 +1,84 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_prep.py",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first20000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/annzarro_prep/first20000000.zarr"
+ ],
+ "status": "cap",
+ "rc": -9,
+ "wall_s": 19.45,
+ "peaks": {
+  "proc": {
+   "fp_peak": 51796833376,
+   "fp_lifetime_sum": 51913946256,
+   "rss_peak": 52436860928,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 51796833376,
+   "rss_peak": 52436860928,
+   "fp_lifetime_sum": 51913946256
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   10912152
+  ],
+  [
+   1.47,
+   4906995672
+  ],
+  [
+   2.93,
+   13277456152
+  ],
+  [
+   4.38,
+   18932250352
+  ],
+  [
+   5.82,
+   19344029712
+  ],
+  [
+   7.27,
+   20373633904
+  ],
+  [
+   8.72,
+   20870233592
+  ],
+  [
+   10.16,
+   20938112552
+  ],
+  [
+   11.61,
+   21207957224
+  ],
+  [
+   13.05,
+   21749317736
+  ],
+  [
+   14.5,
+   29867513672
+  ],
+  [
+   15.93,
+   39613051512
+  ],
+  [
+   17.37,
+   42936622872
+  ],
+  [
+   18.82,
+   51796833376
+  ]
+ ],
+ "ps_before": "2026-10-05T12:20:47-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 3031   6192  99.1 ugrep\n  626 539184  47.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  639 147984   3.7 /usr/sbin/coreaudiod\n    1  34576   2.9 /sbin/launchd\n80588 629792   2.3 $HOME/.local/bin/claude\n47413 678816   2.1 /Applications/cmux.app/Contents/MacOS/cmux\n57113 3182048   1.6 $HOME/.local/bin/claude\n  734  54336   0.6 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n92291  31008   0.5 .venv/bin/python\n 1178  32768   0.5 /System/Library/PrivateFrameworks/CoreSpeech.framework/corespeechd\n",
+ "others_at_start": []
+}

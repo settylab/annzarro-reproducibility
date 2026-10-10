@@ -1,0 +1,22 @@
+version: 1
+image: m13_download_panel_output_dialog.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3)
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: 8cc8aafeef99e08534dd9f81395997547346545bcbfca1e1894e8b942dbc7776
+proves:
+- column: export
+  mark: Y
+  caption: 'iSEE 2.18.0: Download panel contents saves every ticked panel (plots as PDF, tables as CSV) in one zip.'
+callouts:
+- n: 1
+  box: [410, 100, 190, 125]
+  label: all five panels ticked
+- n: 2
+  box: [596, 237, 102, 34]
+  label: Download

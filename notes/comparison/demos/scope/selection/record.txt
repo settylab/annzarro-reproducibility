@@ -1,0 +1,54 @@
+browser=Google Chrome (driven through the Claude in Chrome extension; version not read)
+scope_url=http://127.0.0.1:55850/
+scope_version=1.8.2
+loom=SCope_Test.loom (100 cells)
+date=Fri Oct  9 2026, about 18:43 to 18:55 PDT
+method_note=screenshots via the extension (jpg, browser viewport, not screencapture). The lasso was drawn with synthetic PointerEvents dispatched on the viewer canvas (pointerdown, 16 pointermoves, pointerup), because the extension offers no mouse-down/move/up. Everything else was real clicks/drags. Both Compare drags were real left_click_drag and worked.
+
+step=S1
+action=Opened Regulon page
+saw=three viewers each show 3 dot groups (100 cells), right panel "No user's lasso selections"
+screenshot=s1_before_selection.jpg
+odd=none
+
+step=S2
+action=Lasso tool on, loop around left group of "Regulon AUC values" (synthetic pointer events), released
+saw=Selection 1 (25 cells). Same left group recoloured green in all three viewers (large, Cells passing thresholds, Expression levels). Overlap table: Cluster set 0 / Unannotated Cluster 2 = 25 cells; Cluster set 1 / Unannotated Cluster 2 = 7; Cluster set 1 / Unannotated Cluster 3 = 6 (page 1 of 2). Eye icon toggled: dots in all three viewers went black (hidden), toggled back: green again (second shot not saved).
+screenshot=s2_lasso_drawn.jpg s2_linked_after.jpg s2_toggle_hidden.jpg
+odd=none
+
+step=S3
+action=not done (second lasso in other viewer)
+
+step=S4
+action=Gene page, then Regulon again
+saw=Gene page: "No user's lasso selections", single viewer, no highlight. Back on Regulon: Selection 1 (25 cells) listed and green again. Selections are kept per page.
+screenshot=s4_gene_page_selections.jpg s4_regulon_return.jpg
+odd=none
+
+step=S5
+action=typed TrackRegulon_1 in red box and picked it
+saw=AUC threshold 0.3577 (matched points: 48 / 100). Cells passing thresholds: red for passing, grey for rest, no dots hidden. Large and expression viewers recoloured too (red/black scale), earlier green selection still faintly shown. Threshold handle not moved.
+screenshot=s5_regulon_pick_threshold.jpg
+odd=none
+
+step=S6
+action=Compare page, dragged First Half to display 1 (top left), First+Second half to display 3 (bottom left); then lasso in display 3 around left group (synthetic pointer events)
+saw=Display 1 (First half only) shows clearly fewer dots than display 3 (both halves), counts not read. Lasso in display 3: Selection 1 (25 cells); the left group is magenta in display 3 and the same group is magenta in display 1 (about 15 magenta dots there, estimate, only the first-half cells).
+screenshot=s6_compare_empty.jpg s6_compare_filtered_displays.jpg s6_compare_lasso.jpg
+odd=none
+
+step=S7
+action=magnifier next to Selection 1
+saw=Modal table with Cell ID, Gene expression, AUC values, Annotation (Half cells) and Clustering columns for the selected cells; "Clustering: select clustering" dropdown, Download and Close buttons. No sign-in prompt. Download not clicked, no clustering added.
+screenshot=s7_selection_metadata.jpg
+odd=none
+
+verdict=Y
+reason=A lasso of 25 cells in one viewer recoloured the same 25 cells in the other two Regulon-page viewers, and on Compare a lasso in the all-cells display highlighted the same first-half cells in the First-half-filtered display.
+route_lasso=Y: 25 cells, same group in 3 of 3 Regulon viewers; not carried to the Gene page (per-page selection list)
+route_threshold_filter=P: 48/100 passing; recolours (red/grey) in linked viewers, does not hide or restrict
+route_compare_filter=Y: annotation filter restricts a display to First half; a lasso elsewhere highlights the same cells there
+route_save_group=offered: metadata modal with "select clustering"; not used, sign-in not triggered
+
+browser_version=Google Chrome 155.0.8059.39 (read via navigator.userAgentData.getHighEntropyValues, from the driven tab; chrome://version is not reachable by the extension). Supersedes "version not read" in the header.

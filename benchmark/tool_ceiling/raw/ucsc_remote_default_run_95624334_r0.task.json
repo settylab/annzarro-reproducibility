@@ -1,0 +1,54 @@
+{
+ "tool": "ucsc",
+ "variant": "default",
+ "input": "none",
+ "n": 95624334,
+ "phases": {
+  "first_plot": 49.73,
+  "plot_cat": 50.63,
+  "plot_gene": 81.58,
+  "done": 81.8
+ },
+ "checks": {
+  "cat": {
+   "gl": {
+    "crit": "call",
+    "drawn": 95624334,
+    "frame_max": {
+     "pts": 191248668,
+     "inst": 0
+    },
+    "call_max": 95624334
+   },
+   "stated": 95624334,
+   "png": "benchmark/tool_ceiling/shots/ucsc_remote_default_run_95624334_r0_cat.png",
+   "all_cells": true
+  },
+  "gene": {
+   "gl": {
+    "crit": "call",
+    "drawn": 95624334,
+    "frame_max": {
+     "pts": 191248668,
+     "inst": 0
+    },
+    "call_max": 95624334
+   },
+   "stated": 95624334,
+   "png": "benchmark/tool_ceiling/shots/ucsc_remote_default_run_95624334_r0_gene.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "cellbrowser": "1.2.20"
+ },
+ "console": [
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)"
+ ],
+ "server_url": "http://hpc-node-22:8791/",
+ "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
+ "crashed": false,
+ "ok": true
+}

@@ -1,0 +1,19 @@
+{
+ "app_ready_s": 3.86,
+ "modal_visible_text": null,
+ "load_xy_s": 3.11,
+ "load_gene_list_s": 8.38,
+ "load_groups_s": 3.24,
+ "density_draw_s": 4.17,
+ "plot1_img_natural": [
+  755,
+  700
+ ],
+ "hover_input_exists": [],
+ "gene_draw_s": 3.1,
+ "brush_input": "{\"xmin\":3.925829137236,\"xmax\":9.2398980346063,\"ymin\":2.467688721988,\"ymax\":6.8628223740368,\"coords_css\":{\"xmin\":302,\"xmax\":415,\"ymin\":280,\"ymax\":385},\"coords_img\":{\"xmin\":302,\"xmax\":415,\"ymin\":280,\"ymax\":385},\"img_css_ratio\":{\"x\":1,\"y\":1},\"mapping\":{\"x\":\"i\",\"y\":\"j\",\"colour\":[\"if (input$show_legend_c",
+ "zoom_draw_s": 2.58,
+ "groups_draw_s": 4.68,
+ "total_s": 101.04,
+ "status": "ok"
+}

@@ -1,0 +1,29 @@
+version: 1
+image: m09_annotation_lasso_creates_set.jpg
+tool: vitessce
+software: Vitessce web app at vitessce.io (as served 2026-10-04; source checked at fed6719, @vitessce 4.0.10)
+data: bm_demo.zarr via config_matrix.json (8,090 cells; UMAP, cell sets, gene list, Vega views)
+url: https://vitessce.io/#?url=http://127.0.0.1:8904/config_matrix.json
+captured: 2026-10-04
+by: comparison-auditor (shots) / retrofit by evidence-curator
+driver: notes/comparison/demos/vitessce/matrix_check2.py
+source: manual
+image_sha256: ed84d32491baa5e1774c3352f7b89fbf3fa4db03afbe8558fbe284c6de68d6a9
+proves:
+  - column: annot
+    mark: P
+    caption: >-
+      In Vitessce a lasso creates the set My Selections > Selection 1 (about 2,200 cells); it lives in the view state, not in the data.
+callouts:
+  - n: 1
+    box: [60, 128, 38, 38]
+    label: lasso tool
+  - n: 2
+    box: [310, 118, 250, 155]
+    label: lassoed cells (top arm)
+  - n: 3
+    box: [716, 268, 140, 44]
+    label: "new set: My Selections"
+  - n: 4
+    box: [10, 575, 447, 315]
+    label: "Cell Set Sizes: Selection 1, about 2,200 cells"

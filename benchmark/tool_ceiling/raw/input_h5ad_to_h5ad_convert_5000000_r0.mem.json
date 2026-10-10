@@ -1,0 +1,100 @@
+{
+ "cmd": [
+  ".venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "5000000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first5000000.h5ad"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 25.4,
+ "peaks": {
+  "proc": {
+   "fp_peak": 16236558424,
+   "fp_lifetime_sum": 16407722072,
+   "rss_peak": 16400384000,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 16236558424,
+   "rss_peak": 16400384000,
+   "fp_lifetime_sum": 16407722072
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8634776
+  ],
+  [
+   1.45,
+   840091112
+  ],
+  [
+   2.9,
+   1081083896
+  ],
+  [
+   4.38,
+   8103026656
+  ],
+  [
+   5.82,
+   8205475856
+  ],
+  [
+   7.27,
+   8615141704
+  ],
+  [
+   8.7,
+   8615141704
+  ],
+  [
+   10.17,
+   9438569376
+  ],
+  [
+   11.62,
+   13968371736
+  ],
+  [
+   13.09,
+   12386840456
+  ],
+  [
+   14.53,
+   12602093616
+  ],
+  [
+   15.98,
+   12824899800
+  ],
+  [
+   17.41,
+   12824899800
+  ],
+  [
+   18.84,
+   13275787792
+  ],
+  [
+   20.3,
+   15058401056
+  ],
+  [
+   21.78,
+   10950863408
+  ],
+  [
+   23.22,
+   11174292160
+  ],
+  [
+   24.64,
+   11176487616
+  ]
+ ],
+ "ps_before": "2026-10-03T16:49:27-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 2059392  15.2 $HOME/.local/bin/claude\n 1040  27488   9.4 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/ContextStoreAgent\n 6219  58688   9.3 $HOME/Projects/investments/.venv/bin/python3\n  626 552992   8.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n99497  20560   7.5 benchmark/tool_ceiling/.venv/bin/python\n47413 638288   5.8 /Applications/cmux.app/Contents/MacOS/cmux\n37026 115968   4.2 $HOME/Projects/investments/.venv/bin/python3\n  629 222368   4.0 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30624   3.9 /System/Library/CoreServices/launchservicesd\n  619   7088   3.7 /usr/sbin/notifyd\n"
+}

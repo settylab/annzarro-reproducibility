@@ -1,0 +1,24 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale_ceiling/syn_200000000.zarr",
+ "n_obs": null,
+ "checks": {},
+ "versions": {
+  "annzarro": "3bdeb09",
+  "browser": null
+ },
+ "ceiling_rc": "refusing to run: benchmark scripts differ from commit 497949dcd32b; commit them first:\n   M benchmark/scale/summarize_rerun.py",
+ "server_url": null,
+ "network": null,
+ "events": [],
+ "heap": {
+  "file": "benchmark/tool_ceiling/shots/annzarro_v040_noguard_run_200000000_r1.heap.jsonl",
+  "samples": 0,
+  "last_pm": null,
+  "last_cdp": null,
+  "peak_used_pm": null,
+  "peak_used_cdp": null
+ },
+ "ok": false
+}

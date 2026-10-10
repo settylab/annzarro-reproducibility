@@ -1,0 +1,155 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_250000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_noguard_run_250000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 61.79,
+ "peaks": {
+  "client": {
+   "fp_peak": 19310904752,
+   "fp_lifetime_sum": 19361040752,
+   "rss_peak": 19802832896,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 8313133824,
+   "fp_lifetime_sum": 8394530016,
+   "rss_peak": 8331608064,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 134185976,
+   "fp_lifetime_sum": 134251512,
+   "rss_peak": 170049536,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 27609260184,
+   "rss_peak": 28119695360,
+   "fp_lifetime_sum": 27755570768
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.48,
+   1925900248
+  ],
+  [
+   5.6,
+   13825119472
+  ],
+  [
+   8.19,
+   14894078416
+  ],
+  [
+   10.77,
+   18181533680
+  ],
+  [
+   13.34,
+   21850080016
+  ],
+  [
+   16.23,
+   27609260184
+  ],
+  [
+   18.81,
+   23524792000
+  ],
+  [
+   21.37,
+   23520532160
+  ],
+  [
+   23.89,
+   23520728768
+  ],
+  [
+   26.35,
+   23521154752
+  ],
+  [
+   28.82,
+   23521449664
+  ],
+  [
+   31.27,
+   23520351960
+  ],
+  [
+   33.79,
+   9745232000
+  ],
+  [
+   36.29,
+   9745510528
+  ],
+  [
+   38.77,
+   9745821824
+  ],
+  [
+   41.28,
+   9746133120
+  ],
+  [
+   43.72,
+   9746362496
+  ],
+  [
+   46.22,
+   9746329728
+  ],
+  [
+   48.75,
+   9746329728
+  ],
+  [
+   51.25,
+   9746428032
+  ],
+  [
+   53.76,
+   9746624640
+  ],
+  [
+   56.27,
+   9746706560
+  ],
+  [
+   58.76,
+   9746264192
+  ],
+  [
+   61.23,
+   9735958656
+  ]
+ ],
+ "ps_before": "2026-10-07T16:33:46-0700\nmemorystatus_level=90 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n  626 434944  11.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n86901 506304   8.2 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n21192  19872   6.5 .venv/bin/python\n47413 696704   5.6 /Applications/cmux.app/Contents/MacOS/cmux\n 6219  59056   4.0 $HOME/Projects/investments/.venv/bin/python3\n94048 150992   3.0 /System/Library/Frameworks/AppKit.framework/Versions/C/XPCServices/com.apple.appkit.xpc.openAndSavePanelService.xpc/Contents/MacOS/com.apple.appkit.xpc.openAndSavePanelService\n 5549 490000   2.1 /System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/MacOS/Safari\n 1018  45184   1.5 /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Resources/AXVisualSupportAgent.app/Contents/MacOS/AXVisualSupportAgent\n  557  51712   1.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 6519 330752   1.4 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n",
+ "others_at_start": [
+  "21193 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "21194 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

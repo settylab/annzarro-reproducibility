@@ -1,0 +1,76 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale_ceiling/syn_175000000.zarr",
+ "n_obs": 175000000,
+ "checks": {
+  "gene": {
+   "status": "ok",
+   "guard": [],
+   "console": [
+    "info: Large cell plot: 175000000 points in 1763 traces; load 1918 ms, build 2038 ms, draw 8932 ms"
+   ],
+   "n_drawn": 175000000,
+   "seconds": 13.578683792613447,
+   "all_cells": true,
+   "renderer_rss": 11686936576,
+   "gpu_rss": 3222896640,
+   "server_rss": 6555631616
+  },
+  "cat": {
+   "status": "ok",
+   "guard": [],
+   "console": [
+    "info: Large cell plot: 175000000 points in 1825 traces; load 2442 ms, build 1346 ms, draw 8487 ms"
+   ],
+   "n_drawn": 175000050,
+   "seconds": 12.304638584144413,
+   "all_cells": true,
+   "renderer_rss": 12475088896,
+   "gpu_rss": 3223142400,
+   "server_rss": 8007958528
+  }
+ },
+ "versions": {
+  "annzarro": "3bdeb09",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "ok",
+   "seconds": 13.578683792613447,
+   "n_points": 175000000
+  },
+  {
+   "event": "recolour_cat",
+   "status": "ok",
+   "seconds": 12.304638584144413,
+   "n_points": 175000050
+  }
+ ],
+ "heap": {
+  "file": "benchmark/tool_ceiling/shots/annzarro_v040_noguard_run_175000000_r0.heap.jsonl",
+  "samples": 46,
+  "last_pm": {
+   "t": 28.668,
+   "src": "performance.memory",
+   "n": 175000050,
+   "used": 9856977918,
+   "limit": 4395630592
+  },
+  "last_cdp": {
+   "t": 28.669,
+   "src": "Runtime.getHeapUsage",
+   "used": 3534284460,
+   "total": 3623337984,
+   "backing": 6322754884
+  },
+  "peak_used_pm": 11406680591,
+  "peak_used_cdp": 3534284460
+ },
+ "ok": true
+}

@@ -1,0 +1,155 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_500000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_noguard_run_500000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 65.21,
+ "peaks": {
+  "client": {
+   "fp_peak": 17115247032,
+   "fp_lifetime_sum": 17249416640,
+   "rss_peak": 18283986944,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 18591627448,
+   "fp_lifetime_sum": 18649496216,
+   "rss_peak": 18605686784,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 136054208,
+   "fp_lifetime_sum": 136054208,
+   "rss_peak": 171507712,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 35647908464,
+   "rss_peak": 36830756864,
+   "fp_lifetime_sum": 35898912856
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.59,
+   2803690128
+  ],
+  [
+   6.5,
+   15774212096
+  ],
+  [
+   9.15,
+   23662279448
+  ],
+  [
+   11.77,
+   25663717560
+  ],
+  [
+   14.35,
+   28084062336
+  ],
+  [
+   17.06,
+   33083398952
+  ],
+  [
+   20.02,
+   35647842928
+  ],
+  [
+   22.57,
+   35203541616
+  ],
+  [
+   25.18,
+   35188370032
+  ],
+  [
+   27.77,
+   35188664944
+  ],
+  [
+   30.48,
+   31836758360
+  ],
+  [
+   33.1,
+   17603166920
+  ],
+  [
+   35.73,
+   17603412680
+  ],
+  [
+   38.33,
+   17603642056
+  ],
+  [
+   40.9,
+   12244382688
+  ],
+  [
+   43.49,
+   12244644832
+  ],
+  [
+   46.07,
+   12244759520
+  ],
+  [
+   48.66,
+   12244775904
+  ],
+  [
+   51.18,
+   8107943688
+  ],
+  [
+   53.78,
+   8108140296
+  ],
+  [
+   56.31,
+   8108189448
+  ],
+  [
+   58.85,
+   8108189448
+  ],
+  [
+   61.36,
+   8142317344
+  ],
+  [
+   63.93,
+   8142448416
+  ]
+ ],
+ "ps_before": "2026-10-07T16:35:52-0700\nmemorystatus_level=90 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n24653 125248  41.9 /System/Applications/Passwords.app/Contents/MacOS/Passwords\n  976 107232  25.1 /usr/libexec/secd\n  626 425584  15.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  629 185936  13.7 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n86901 505408  12.6 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  596  36928  11.1 /System/Library/CoreServices/launchservicesd\n24896  28032   7.4 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.EnhancedSecurity.xpc/Contents/MacOS/com.apple.WebKit.WebContent.EnhancedSecurity\n 5549 492608   6.9 /System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/MacOS/Safari\n24921  19888   6.6 .venv/bin/python\n57113 2343056   6.5 $HOME/.local/bin/claude\n",
+ "others_at_start": [
+  "24922 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "24923 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

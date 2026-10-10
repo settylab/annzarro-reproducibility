@@ -1,0 +1,81 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first20000000.h5ad",
+  "benchmark/tool_ceiling/shots/cirrocumulus_default_run_20000000_r0",
+  "--n",
+  "20000000",
+  "--port",
+  "8934"
+ ],
+ "status": "cap",
+ "rc": -9,
+ "wall_s": 17.77,
+ "peaks": {
+  "client": {
+   "fp_peak": 887152824,
+   "fp_lifetime_sum": 929031360,
+   "rss_peak": 1038909440,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 51461043080,
+   "fp_lifetime_sum": 51464041712,
+   "rss_peak": 51995148288,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 112865520,
+   "fp_lifetime_sum": 113570080,
+   "rss_peak": 147406848,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 52092179568,
+   "rss_peak": 53034057728,
+   "fp_lifetime_sum": 52393073072
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.15,
+   2619156512
+  ],
+  [
+   4.37,
+   19302143720
+  ],
+  [
+   6.47,
+   20127308264
+  ],
+  [
+   8.58,
+   22844105400
+  ],
+  [
+   10.69,
+   22186680584
+  ],
+  [
+   12.81,
+   22729073288
+  ],
+  [
+   14.95,
+   40536413264
+  ],
+  [
+   17.07,
+   48486059224
+  ]
+ ],
+ "ps_before": "2026-10-03T21:52:57-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n49657  20624   5.1 benchmark/tool_ceiling/.venv/bin/python\n 6219  58672   4.0 $HOME/Projects/investments/.venv/bin/python3\n80588 616816   2.2 $HOME/.local/bin/claude\n57113 1898016   2.0 $HOME/.local/bin/claude\n49662  19392   1.2 .venv/bin/python\n72627 492064   1.0 $HOME/.local/bin/claude\n49656   3456   0.8 perl\n86901 498896   0.7 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n92291  30816   0.6 .venv/bin/python\n47413 607760   0.5 /Applications/cmux.app/Contents/MacOS/cmux\n"
+}

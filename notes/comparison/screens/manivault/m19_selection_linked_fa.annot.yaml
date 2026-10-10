@@ -1,0 +1,24 @@
+version: 1
+image: m19_selection_linked_fa.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0 (macOS universal, start page reads 1.5.0-dev)
+data: bm_demo.h5ad (8,090 cells x 16,285 genes; obsp kept)
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/manivault_checklist.md (run by hand in a computer-use desktop session; log: notes/comparison/demos/manivault/session_notes.txt)'
+source: manual
+image_sha256: 7059d10e4277356299558fb15dc6393b68122c17c11f72c4f8be3575aef65c3a
+proves:
+- column: selection
+  mark: Y
+  caption: 'The force-directed view highlights the same 1,376 cells at once (lower-left branch, outlined): the selection
+    is shared. F2 export: colours in this PNG differ from the screen (red and blue swapped), see m12.'
+callouts:
+- n: 1
+  box:
+  - 40
+  - 850
+  - 260
+  - 320
+  label: same cells highlighted in the FA view

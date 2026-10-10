@@ -1,0 +1,81 @@
+{
+ "version": 1,
+ "image": "04_dblclick_selects_category_all_charts.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cirrocumulus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Cirrocumulus 1.1.61 (2026-10-04): double-click selects the cell's whole category (no per-cell value); the selection then highlights in all charts"
+  },
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "the category selection highlights in every gallery chart"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    127,
+    9,
+    125,
+    30
+   ],
+   "label": "category selected:  280 / 8,090 cells",
+   "selector": "[data-recap='count']"
+  },
+  {
+   "n": 2,
+   "box": [
+    244,
+    60,
+    1156,
+    892
+   ],
+   "label": "double-clicked plot",
+   "selector": "[data-recap='p0']"
+  },
+  {
+   "n": 4,
+   "box": [
+    247,
+    957,
+    308,
+    293
+   ],
+   "label": "gallery chart, selection highlighted",
+   "selector": "[data-recap='p2']"
+  },
+  {
+   "n": 6,
+   "box": [
+    553,
+    957,
+    308,
+    293
+   ],
+   "label": "gallery chart, selection highlighted",
+   "selector": "[data-recap='p3']"
+  },
+  {
+   "n": 7,
+   "box": [
+    859,
+    957,
+    308,
+    293
+   ],
+   "label": "gallery chart, selection highlighted",
+   "selector": "[data-recap='p4']"
+  }
+ ]
+}

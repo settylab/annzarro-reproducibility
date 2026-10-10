@@ -1,0 +1,872 @@
+# Loupe Browser: Fig. 1c marks and their evidence.
+# Seeded by evidence/tools/import_notes.py from notes/comparison/loupe.md and
+# figures/fig_comparison.py; edit this file from now on (schema: evidence/README.md).
+id: loupe
+name: Loupe Browser
+figure:
+  row: 12
+  label: Loupe Browser
+  largest_documented: '>1M (release notes)'
+notes: notes/comparison/loupe.md
+cells:
+  cells:
+    reason: 'No neighbour-graph, distance or similarity view in the running app: the View menu holds only Toggle Full Screen,
+      and the left rail offers Clusters, Features, Reanalyze, Advanced Selection and V(D)J Clonotypes.'
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** No neighbour-graph, distance
+      or similarity view in the running app: the View menu holds only Toggle Full Screen, and the left rail offers Clusters,
+      Features, Reanalyze, Advanced Selection and V(D)J Clonotypes. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Not run. No graph, neighbour or distance view in any docs page read; LoupeR
+      exports none. *Steps:* Docs: read the interface page; LoupeR `R/lib.R#L1-L5`. *Evidence:* N: nothing to show; searched
+      8 single-cell tutorial pages + LoupeR source
+
+
+      **Source and docs.** No pairwise or graph structure is ever shown. LoupeR exports no graphs (only counts, factor clusters,
+      2-D projections: [R/lib.R#L5](https://github.com/10xGenomics/loupeR/blob/b1cba07374f7326c6a69fddc2405e17157cb93de/R/lib.R#L5));
+      nothing in the docs pages listed under Validate.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m02_cells_APP_view_menu.jpg
+      label: View menu and left rail
+    - kind: code
+      repo: 10xGenomics/loupeR
+      commit: b1cba07374f7326c6a69fddc2405e17157cb93de
+      path: R/lib.R
+      lines: '5'
+      url: https://github.com/10xGenomics/loupeR/blob/b1cba07374f7326c6a69fddc2405e17157cb93de/R/lib.R#L5
+      label: R/lib.R#L5
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+      label: LB/tutorials/introduction/lb-sc-interface-and-navigation
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: N
+  genes:
+    reason: No gene x gene matrix or similarity view in the running app; the Features panel's Co-expression plots two feature
+      lists against each other per cell, which is not a stored pairwise matrix.
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** No gene x gene matrix or similarity
+      view in the running app; the Features panel''s Co-expression plots two feature lists against each other per cell, which
+      is not a stored pairwise matrix. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Not run. Same. *Steps:* As above. *Evidence:* N: nothing to show; searched
+      as above
+
+
+      **Source and docs.** As above; no gene-gene matrix in docs or LoupeR.'
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m15_genes_APP_feature_panel.jpg
+      label: Features panel, Co-expression
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+      label: LB/tutorials/introduction/lb-sc-interface-and-navigation
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: N
+  focus:
+    reason: Picking a gene (Mpo) colours the projection by its expression; clicking a single cell changes nothing in any panel.
+      Feature colouring only.
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** Picking a gene (Mpo) colours
+      the projection by its expression; clicking a single cell changes nothing in any panel. Feature colouring only. Session
+      log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Docs only: gene focus is (a2), projection plus violin, and no pairwise relation
+      exists in `.cloupe` as LoupeR writes it.
+
+
+      **Source and docs.** Selecting a gene colours the projection and fills the violin plot ([LB/tutorials/introduction/lb-sc-interface-and-navigation](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation),
+      "Clicking on the gene name"). That is plain gene colouring, which CELLxGENE also has and is scored N for. There is no
+      focused-entity row.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m03_focus_APP_gene_mpo.jpg
+      label: gene colouring
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m03_focus_APP_cell_click.jpg
+      label: 'single-cell click: no change'
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+      label: LB/tutorials/introduction/lb-sc-interface-and-navigation
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - evidence/screens/gaps/capture_loupe.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: N
+  slots:
+    reason: 'Loupe shows what the .cloupe carries: categorical groups and 2-D projections (here 8 groups and 4 projections from
+      LoupeR); numeric metadata, graphs and other AnnData slots do not reach it. No AnnData slot model.'
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** Loupe shows what the .cloupe
+      carries: categorical groups and 2-D projections (here 8 groups and 4 projections from LoupeR); numeric metadata, graphs
+      and other AnnData slots do not reach it. No AnnData slot model. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Not run. LoupeR passes counts, factor `meta.data` columns and 2-D reductions
+      only. *Steps:* Read [R/lib.R#L1-L5](https://github.com/10xGenomics/loupeR/blob/b1cba07374f7326c6a69fddc2405e17157cb93de/R/lib.R#L1-L5),
+      [R/util.R#L153](https://github.com/10xGenomics/loupeR/blob/b1cba07374f7326c6a69fddc2405e17157cb93de/R/util.R#L153). *Evidence:*
+      N: nothing to show (closed app; converter source)
+
+
+      **Source and docs.** Not an AnnData tool. LoupeR passes only "the active counts matrix, reductions, and factors found
+      in `meta.data`" ([R/lib.R#L1-L5](https://github.com/10xGenomics/loupeR/blob/b1cba07374f7326c6a69fddc2405e17157cb93de/R/lib.R#L1-L5));
+      only 2-column reductions ([R/util.R#L153](https://github.com/10xGenomics/loupeR/blob/b1cba07374f7326c6a69fddc2405e17157cb93de/R/util.R#L153));
+      numeric obs columns, layers, and graphs are dropped.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m04_slots_APP_clusterings.jpg
+      label: 8 LoupeR groups
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m04_slots_APP_projections.jpg
+      label: projection menu
+    - kind: code
+      repo: 10xGenomics/loupeR
+      commit: b1cba07374f7326c6a69fddc2405e17157cb93de
+      path: R/lib.R
+      lines: 1-5
+      url: https://github.com/10xGenomics/loupeR/blob/b1cba07374f7326c6a69fddc2405e17157cb93de/R/lib.R#L1-L5
+      label: R/lib.R#L1-L5
+    - kind: code
+      repo: 10xGenomics/loupeR
+      commit: b1cba07374f7326c6a69fddc2405e17157cb93de
+      path: R/util.R
+      lines: '153'
+      url: https://github.com/10xGenomics/loupeR/blob/b1cba07374f7326c6a69fddc2405e17157cb93de/R/util.R#L153
+      label: R/util.R#L153
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+      label: LB/tutorials/introduction/lb-sc-interface-and-navigation
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - evidence/screens/gaps/capture_loupe.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: N
+  remote:
+    reason: 'The File menu has New Window, Open File..., Save and Save As...: local files only, no URL, server or cloud entry.'
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** The File menu has New Window,
+      Open File..., Save and Save As...: local files only, no URL, server or cloud entry. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Not run. Docs only describe opening local `.cloupe` files. *Steps:* Download
+      Center, Cmd-F "double-clicking". *Evidence:* [docs m06](screens/loupe/m06_remote_DOCS_open_local_cloupe.jpg)
+
+
+      **Source and docs.** Opens local `.cloupe` files only ("double-clicking on a .cloupe file on your computer", [Download
+      Center, Installation](https://www.10xgenomics.com/support/software/loupe-browser/downloads)). No URL or cloud open found
+      in docs.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m06_remote_APP_file_menu.jpg
+      label: File menu
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m06_remote_DOCS_open_local_cloupe.jpg
+      label: docs m06
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/downloads
+      label: Download Center, Installation
+      checked: '2026-10-04'
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: N
+  spatial:
+    reason: The Spatial View Panel shows spots at tissue positions (docs only).
+    detail: |-
+      **Checked in the docs (2026-10-04).** Not run. Spatial View Panel documented. *Steps:* [LB/tutorials/introduction/lb-navigation-for-spatial](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial), Cmd-F "View Panel". *Evidence:* [docs m07](screens/loupe/m07_spatial_DOCS_spatial_view_panel.jpg)
+
+      **Source and docs.** Spatial view shows spots/bins at tissue positions ([LB/tutorials/introduction/lb-navigation-for-spatial](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial), "View Panel").
+    evidence:
+    - kind: docs
+      url: >-
+        https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial
+      label: LB/tutorials/introduction/lb-navigation-for-spatial
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20260117203630/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m07_spatial_DOCS_spatial_view_panel.jpg
+      label: docs m07
+    na:
+      paper: >-
+        Loupe Browser has no peer-reviewed or preprint description; a Crossref search for 'Loupe Browser
+        10x Genomics' (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software:
+        Loupe Browser v9.1.0, 10x Genomics, 2026.
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: docs
+    mark: Y
+  selection:
+    reason: A rectangle (or freehand) selection opens Save Barcodes at once; once saved as a group it carries into other projections
+      and the violin plot, but a live, unsaved selection could not be shown in another view (observed with the saved group only).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m18_selection_APP_lasso_umap.jpg
+      label: selection opens Save Barcodes
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m18_selection_APP_other_view.jpg
+      label: saved group in draw_graph_fa and violin
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+      label: 'Mouse selector tools: ''Lasso/rectangle selector : Select and label'' an area'
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-identify-cell-subtypes
+      label: highlighted barcodes are assigned to a named cluster ('Assign these 1008 barcodes ... name the cluster "mature"'),
+        then used for differential expression
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260618114158/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-identify-cell-subtypes
+    na:
+      paper: Loupe Browser has no peer-reviewed or preprint description (Crossref search, 2026-10-03).
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** A rectangle (or freehand) selection
+      opens Save Barcodes at once; once saved as a group it carries into other projections and the violin plot, but a live,
+      unsaved selection could not be shown in another view (observed with the saved group only). Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** a selection becomes a labelled group that other panels then use'
+    mark: P
+    reproduce:
+    - evidence/screens/gaps/capture2_docs.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+  annot:
+    reason: A selection was saved as cluster lasso1 in a new group audit, and the group survived Save As and reopening.
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** A selection was saved as cluster
+      lasso1 in a new group audit, and the group survived Save As and reopening. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Not run. *Steps:* [LB/tutorials/introduction/lb-sc-interface-and-navigation](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation),
+      Cmd-F "Custom groups can also be created", "save all customizations". *Evidence:* [docs m09](screens/loupe/m09_annotation_DOCS_custom_groups.jpg)
+
+
+      **Source and docs.** **Manuscript claim verified.** Custom groups "can also be created using the Loupe Browser interface
+      or imported as a CSV"; cluster names and colours are editable; "Use the save icon to save all customizations to your .cloupe
+      file" ([LB/tutorials/introduction/lb-sc-interface-and-navigation](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation));
+      lasso selections become clusters ([lb-navigation-for-spatial](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial),
+      "Click to edit name or color"). Written back into the `.cloupe`, not into the source h5/Seurat object.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m09_annotation_APP_new_category.jpg
+      label: 'Custom groups: audit > lasso1'
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m12_share_APP_reopened_with_category.jpg
+      label: group kept after reopening
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+      label: LB/tutorials/introduction/lb-sc-interface-and-navigation
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m09_annotation_DOCS_custom_groups.jpg
+      label: docs m09
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial
+      label: lb-navigation-for-spatial
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260117203630/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: Y
+  de:
+    reason: Run Differential Expression computed lasso1 vs the entire dataset in the app, with the result table in about 8 s
+      on 8,090 cells.
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** Run Differential Expression computed
+      lasso1 vs the entire dataset in the app, with the result table in about 8 s on 8,090 cells. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Not run. *Steps:* Interface page, Cmd-F "Run Differential Expression"; [LB/algorithms-overview/lb-sc-algorithms](https://www.10xgenomics.com/support/software/loupe-browser/latest/algorithms-overview/lb-sc-algorithms).
+      *Evidence:* [docs m10](screens/loupe/m10_de_DOCS_run_differential_expression.jpg)
+
+
+      **Source and docs.** **Manuscript claim verified.** "The Cluster Mode panel has a ''Run Differential Expression'' option",
+      with "Compare selected clusters to entire dataset", "Compare selected clusters", and pseudo-bulk "across multiple samples"
+      ([lb-sc-interface-and-navigation](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation)).
+      Test: exact negative binomial (sSeq), edgeR asymptotic for large counts ([LB/algorithms-overview/lb-sc-algorithms](https://www.10xgenomics.com/support/software/loupe-browser/latest/algorithms-overview/lb-sc-algorithms)).
+      Runs on user-made groups too (HD tutorial: "Create a new group ... and perform differential gene expression").'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m10_de_APP_lasso1_vs_rest.jpg
+      label: DE table
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/algorithms-overview/lb-sc-algorithms
+      label: LB/algorithms-overview/lb-sc-algorithms
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260511053856/https://www.10xgenomics.com/support/software/loupe-browser/latest/algorithms-overview/lb-sc-algorithms
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m10_de_DOCS_run_differential_expression.jpg
+      label: docs m10
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+      label: lb-sc-interface-and-navigation
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: Y
+  image:
+    reason: >-
+      The View Panel shows the H&E brightfield image under the spots, with a spot opacity slider (docs
+      only).
+    detail: |-
+      **Checked in the docs (2026-10-04).** Not run. *Steps:* lb-navigation-for-spatial, Cmd-F "H&E brightfield image". *Evidence:* [docs m11](screens/loupe/m11_image_DOCS_he_brightfield.jpg)
+
+      **Source and docs.** "the View Panel, showing an H&E brightfield image of the tissue section overlaid with spots"; spot opacity slider ([lb-navigation-for-spatial](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial)). Visium HD bins over the microscope image ([HD tutorial](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-hd-spatial-gene-expression)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m11_image_DOCS_he_brightfield.jpg
+      label: docs m11
+    - kind: docs
+      url: >-
+        https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial
+      label: lb-navigation-for-spatial
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20260117203630/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial
+    - kind: docs
+      url: >-
+        https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-hd-spatial-gene-expression
+      label: HD tutorial
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20260207172038/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-hd-spatial-gene-expression
+    na:
+      paper: >-
+        Loupe Browser has no peer-reviewed or preprint description; a Crossref search for 'Loupe Browser
+        10x Genomics' (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software:
+        Loupe Browser v9.1.0, 10x Genomics, 2026.
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: docs
+    mark: Y
+  share:
+    reason: 'Sharing is passing the self-contained .cloupe: Save As and reopen kept the custom group. There is no view link.'
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** Sharing is passing the self-contained
+      .cloupe: Save As and reopen kept the custom group. There is no view link. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Not run. Sharing = sending the `.cloupe` file. *Steps:* [LB/tutorials/assay-analysis/lb-sc-sharing](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-sharing),
+      Cmd-F "self-contained". *Evidence:* [docs m12](screens/loupe/m12_share_DOCS_send_cloupe_file.jpg)
+
+
+      **Source and docs.** "Loupe Browser files are self-contained, so if you want to share a dataset with a colleague, you
+      can send them the saved .cloupe file" ([LB/tutorials/assay-analysis/lb-sc-sharing](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-sharing)).
+      The saved workspace keeps custom groups, gene lists, filters, and reanalyses. It is a file (often GBs), not a link, and
+      the docs do not say the current view (selected gene, zoom, projection) is restored.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m12_share_APP_reopened_with_category.jpg
+      label: saved copy reopened
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-sharing
+      label: LB/tutorials/assay-analysis/lb-sc-sharing
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260116100816/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-sharing
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m12_share_DOCS_send_cloupe_file.jpg
+      label: docs m12
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: P
+  export:
+    reason: The Export menu offers plot to PNG or SVG and projection to CSV; a PNG was saved (87,893 bytes).
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** The Export menu offers plot to
+      PNG or SVG and projection to CSV; a PNG was saved (87,893 bytes). Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Not run. *Steps:* Interface page, Cmd-F "SVG (high resolution)". *Evidence:*
+      [docs m13](screens/loupe/m13_export_DOCS_svg_png.jpg)
+
+
+      **Source and docs.** "Export the scatter plot (UMAP, t-SNE, Feature Plot) in SVG (high resolution) or PNG (low resolution)"
+      ([lb-sc-interface-and-navigation](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation));
+      violin plots, heatmap, spatial view also exportable ([lb-sc-sharing](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-sharing),
+      [lb-navigation-for-spatial](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial)).'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m13_export_APP_export_options.jpg
+      label: Export menu
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m13_export_DOCS_svg_png.jpg
+      label: docs m13
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+      label: lb-sc-interface-and-navigation
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-sharing
+      label: lb-sc-sharing
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260116100816/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-sharing
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial
+      label: lb-navigation-for-spatial
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260117203630/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-navigation-for-spatial
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: Y
+  desktop:
+    reason: 'A native desktop application: About box Loupe Browser 9, Version 9.1.0.'
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** A native desktop application:
+      About box Loupe Browser 9, Version 9.1.0. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Not run. Installers for Windows and macOS listed. *Steps:* Download Center,
+      Cmd-F "Download for". *Evidence:* [docs m14](screens/loupe/m14_desktop_DOCS_download_center.jpg)
+
+
+      **Source and docs.** Windows .exe and macOS .dmg installers ([Download Center](https://www.10xgenomics.com/support/software/loupe-browser/downloads)).'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m14_desktop_APP_about.jpg
+      label: About box
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m14_desktop_DOCS_download_center.jpg
+      label: docs m14
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/downloads
+      label: Download Center
+      checked: '2026-10-04'
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: Y
+  hosted:
+    reason: A desktop application; nothing in the running app serves or opens a hosted view.
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** A desktop application; nothing
+      in the running app serves or opens a hosted view. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** No server or hosted mode in docs. *Steps:* Download Center and docs index.
+      *Evidence:* N: nothing to show; searched docs index
+
+
+      **Source and docs.** Desktop only; no server mode in docs. (10x Cloud Analysis runs pipelines and outputs `.cloupe` files
+      but does not host Loupe.)'
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      so there is no GUI place in which a missing hosted mode could be shown.: null
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m14_desktop_APP_about.jpg
+      label: desktop app
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/downloads
+      label: Download Center
+      checked: '2026-10-04'
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: N
+  static:
+    reason: A desktop application, not a web page.
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** A desktop application, not a
+      web page. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Not a web tool. *Evidence:* N: nothing to show
+
+
+      **Source and docs.** Not a web tool.'
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      so there is no GUI place in which a missing static mode could be shown.: null
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m14_desktop_APP_about.jpg
+      label: desktop app
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/downloads
+      label: Download Center
+      checked: '2026-10-04'
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: N
+  lazy:
+    reason: >-
+      Measured in the app (2026-10-08, Loupe Browser 9.1.0): the same 1,000,000 cells as a 200-gene (0.366 GiB) and a
+      2,000-gene (2.201 GiB) .cloupe, three fresh starts each. The memory after opening was the same, a median of 1.273
+      and 1.272 GiB, so the expression matrix is not loaded whole on opening.
+    detail: |-
+      **Checked in the running app (2026-10-08, Loupe Browser 9.1.0, two .cloupe files with the same 1,000,000 Tahoe-100M cells).** The files differ only in genes, 200 against 2,000 (393,358,341 and 2,363,578,797 bytes, 6-fold; 101.5 and 589.0 stored values per cell), and were built with LoupeR from the same h5ad inputs (`benchmark/tool_ceiling/lazy_loupe/inputs/`). Each file was opened three times, each in a freshly started app; memmon sampled the physical footprint of Loupe's whole process tree (macOS phys_footprint, what Activity Monitor calls Memory) every 2 s. The footprint after opening (last sample before the marker written about 10 s after the plot was drawn): g200 1.134, 1.273, 1.281 GiB, g2000 1.095, 1.272, 1.280 GiB; medians 1.273 and 1.272 GiB, difference -0.001 GiB, against 1.835 GiB of file-size difference. The rule fixed before the run (Y below 10% of the file-size difference, N from 50%) gives Y; the largest spread between the three repetitions of one file, 0.185 GiB, is about as large as the Y threshold (0.183 GiB), and the difference of the medians is far inside it. Coloring by cell_line_id left the footprint within -0.10 to +0.00 GiB of the opened value; coloring by MALAT1 raised the footprint by 0.09 to 0.34 GiB for both files, with no pattern by file. The peak while loading was 2.0 to 2.2 GiB for both files. Source: `benchmark/tool_ceiling/lazy_loupe/partD/readout.txt`, `lazy_results.csv`.
+
+      **What Y means here, and what it does not.** Memory after opening does not grow with the expression matrix at 1 million cells, so Loupe does not load the matrix whole on opening. That is not documented by 10x and the format is closed, so how Loupe reads the file (chunks, memory mapping, an index) was not established, and nothing was measured above 1 million cells or for other gene counts. Marked Y under reading B (what the GUI can do).
+
+      **Loupe showed 999,966 barcodes, not 1,000,000.** Both inputs hold 1,000,000 cells with unique names and the build log reports 1,000,000 cells. In both, exactly 34 cells have no MALAT1 count, and 1,000,000 - 34 = 999,966, so the legend under the gene coloring counts the cells with a nonzero value of the colored gene (not tested with another gene; the count under the cell_line_id coloring was not recorded). `benchmark/tool_ceiling/lazy_loupe/inputs/barcode_check.txt`.
+
+      **Deviations from the protocol (record.txt).** The markers, memmon and the record were run from Bash, because computer use cannot type into Terminal, so marker times lag the visual moment by seconds. Screenshots came from the desktop app's capture, not screencapture. The file was opened by path entry (Cmd+Shift+G) in the Open panel. g200 repetition 1 waited 470 s for the lock; in g2000 repetition 1 the gene marker came about 43 s after the cell-line marker (focus went to Finder, the steps were redone); g200 repetition 3 loaded slowly (10 to 18 s) and its memory trace has only 9 samples (memmon was starved), so its opened value is the sample 14 s before the marker.
+
+      **Documentation (secondary, 2026-10-04).** Not run at the time; closed format, docs silent. Only hint: 16 GB RAM minimum vs a 7.7 GB HD tutorial file. *Steps:* [Download Center](https://www.10xgenomics.com/support/software/loupe-browser/downloads), Cmd-F "16GB". *Evidence:* [docs m05](screens/loupe/m05_lazy_DOCS_system_requirements.jpg) (requirements only)
+
+      **Source and docs.** The `.cloupe` format and loader are closed. The docs give no statement either way.
+
+      **Scale group.** Not documented; closed format. Everything runs in the local desktop process. Requirements: 16 GB RAM minimum, SSD "highly recommended", and for "large single cell datasets (100k+ cells), 16GB RAM and a quad core processor are highly recommended". Evidence: [Download Center, System Requirements / Performance Notes](https://www.10xgenomics.com/support/software/loupe-browser/downloads)
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m05_lazy_APP_g200_r2_malat1.jpg
+      label: 'g200, repetition 2: 200 genes, opened 1.273 GiB'
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m05_lazy_APP_g2000_r2_malat1.jpg
+      label: 'g2000, repetition 2: 2,000 genes, opened 1.272 GiB'
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m05_lazy_APP_g200_r1_malat1.jpg
+      label: g200, repetition 1
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m05_lazy_APP_g200_r3_malat1.jpg
+      label: g200, repetition 3
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m05_lazy_APP_g2000_r1_malat1.jpg
+      label: g2000, repetition 1
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m05_lazy_APP_g2000_r3_malat1.jpg
+      label: g2000, repetition 3
+    - kind: script
+      path: benchmark/tool_ceiling/lazy_loupe/partD_readout.py
+      label: readout (reproduces partD/readout.txt)
+    - kind: note
+      path: benchmark/tool_ceiling/lazy_loupe/partD/readout.txt
+      label: table and verdict
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/downloads
+      label: Download Center
+      checked: '2026-10-04'
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m05_lazy_DOCS_system_requirements.jpg
+      label: docs m05
+    na:
+      paper: >-
+        Loupe Browser has no peer-reviewed or preprint description; a Crossref search for 'Loupe Browser
+        10x Genomics' (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software:
+        Loupe Browser v9.1.0, 10x Genomics, 2026.
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - benchmark/tool_ceiling/lazy_loupe/PROTOCOL.md
+    - benchmark/tool_ceiling/lazy_loupe/partD_readout.py
+    - benchmark/tool_ceiling/lazy_loupe/inputs/lazy_inputs.py
+    - benchmark/tool_ceiling/loupe_build.R
+    - notes/comparison/demos/loupe/redact_lazy_shots.py
+    checked:
+      date: '2026-10-08'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, tahoe_first1000000_g200 and _g2000 .cloupe; desktop session, Part D)
+    mark: Y
+  every_cell:
+    reason: 'At 8,090 cells every cell appears drawn: zoomed in, the points separate singly, with no sampling notice, ''N of
+      M'' label or density mode, and the group counts sum to 8,090. A visual judgement: a closed native app gives no draw count.'
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** At 8,090 cells every cell appears
+      drawn: zoomed in, the points separate singly, with no sampling notice, ''N of M'' label or density mode, and the group
+      counts sum to 8,090. A visual judgement: a closed native app gives no draw count. The Loupe ceiling ladder shows the same
+      at 1M, 2M and 5M cells: the UMAP is drawn with no sampling notice, and the 50 per-cluster counts sum to exactly 1,000,000,
+      2,000,000 and 5,000,000. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** Not documented. No downsampling, binning, or density mode is described; point
+      size auto-adjusts to window ("Adjust point size"). Soft limits instead: since 4.0.0 Loupe "will warn, but not prevent"
+      DE and SVG export above 100,000 cells. Evidence: [lb-sc-interface-and-navigation](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation);
+      release notes 4.0.0 "Lifted Limits"'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m01_plots_APP_umap_highres_celltype.jpg
+      label: whole demo drawn
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m16_every_cell_APP_zoomed_points.jpg
+      label: 'zoomed: single points'
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m16_every_cell_APP_ladder_1M.jpg
+      label: 'ceiling ladder 1M: cluster counts sum to the cell count'
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m16_every_cell_APP_ladder_2M.jpg
+      label: 'ceiling ladder 2M: cluster counts sum to the cell count'
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m16_every_cell_APP_ladder_5M.jpg
+      label: 'ceiling ladder 5M: cluster counts sum to the cell count'
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+      label: lb-sc-interface-and-navigation
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    - notes/comparison/demos/manivault/DESKTOP_PROMPT_v031.md
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    mark: Y
+    note: 'visual: single points at zoom, no sampling notice; Loupe reports no draw count'
+  subset:
+    reason: Reanalyze recomputes projections on a chosen barcode subset (up to 100,000; opened, not run); the feature filter
+      only highlights cells and leaves the rest drawn in grey. Whether a subset loads less was not observable.
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** Reanalyze recomputes projections
+      on a chosen barcode subset (up to 100,000; opened, not run); the feature filter only highlights cells and leaves the rest
+      drawn in grey. Whether a subset loads less was not observable. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** **Yes, subset and recompute.** Reanalyze takes a user-chosen barcode subset
+      (filters, clusters, UMI thresholds) and reruns PCA, clustering, t-SNE/UMAP in the app, with "a hard cap at 100,000 cells";
+      ~1 h near the cap. Evidence: [LB/tutorials/assay-analysis/lb-sc-recluster](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-recluster),
+      "hard cap at 100,000 cells"; also [spatial-reclustering](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/spatial-reclustering)
+
+
+      **Re-scored under X8 (2026-10-04)**: Reanalyze recomputes on a chosen barcode subset (cap 100,000 cells), but whether
+      the app then loads only those cells is not documented; docs only.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m17_subset_APP_reanalyze_dialog.jpg
+      label: Reanalyze wizard
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m08_filters_APP_filter_set.jpg
+      label: feature filter greys, does not drop
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-recluster
+      label: LB/tutorials/assay-analysis/lb-sc-recluster
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260617190612/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-recluster
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/spatial-reclustering
+      label: spatial-reclustering
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260517150626/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/spatial-reclustering
+    na:
+      paper: 'Loupe Browser has no peer-reviewed or preprint description; a Crossref search for ''Loupe Browser 10x Genomics''
+        (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software: Loupe Browser v9.1.0, 10x Genomics,
+        2026.'
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    reproduce:
+    - evidence/screens/gaps/capture_loupe.py
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    mark: P
+  auto_subset:
+    reason: 'No default subsetting in the running app: no sampling notice or setting at 8,090 cells; the only display setting
+      is marker size.'
+    detail: '**Checked in the running app (2026-10-05, Loupe Browser 9.1.0, bm_demo.cloupe).** No default subsetting in the
+      running app: no sampling notice or setting at 8,090 cells; the only display setting is marker size. Session log: notes/comparison/demos/loupe/session_notes.txt.
+
+
+      **Documentation (secondary, 2026-10-04).** The docs describe no default subsampling; above 100,000 cells Loupe ''will
+      warn, but not prevent'' DE and SVG export (docs only). Evidence is the same as for every cell drawn, which shows how the
+      default view is drawn.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m16_every_cell_APP_zoomed_points.jpg
+      label: no sampling notice
+    - kind: docs
+      url: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+      label: lb-sc-interface-and-navigation
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation
+    reproduce:
+    - notes/comparison/loupe_checklist.md
+    - notes/comparison/demos/loupe/DESKTOP_PROMPT_validation.md
+    - notes/comparison/demos/loupe/bm_build.R
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (Loupe Browser 9.1.0, bm_demo.cloupe; desktop session, Part C)
+    reviewed: null
+    mark: N
+retired_cells:
+  filters:
+    proposed: P
+    reason: >-
+      A rule builder highlights barcodes passing feature or UMI thresholds in the projection, without
+      a table that masks plots, so P (docs only).
+    detail: |-
+      **Checked in the docs (2026-10-04).** Not run. Rule builder highlights passing barcodes. *Steps:* [LB/tutorials/assay-analysis/lb-sc-identify-cell-subtypes](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-identify-cell-subtypes), Cmd-F "a barcode is highlighted". *Evidence:* [docs m08](screens/loupe/m08_filters_DOCS_barcode_highlighted.jpg)
+
+      **Source and docs.** Filter mode builds AND/OR rulesets over clusters and feature counts, and "a barcode is highlighted if all rulesets are true" ([LB/tutorials/assay-analysis/lb-sc-identify-cell-subtypes](https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-identify-cell-subtypes)). Passing barcodes are highlighted in the projection and can be saved as a cluster, but this is a rule builder, not a table, and it highlights rather than restricts linked plots. A reviewer could argue Y.
+    evidence:
+    - kind: docs
+      url: >-
+        https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-identify-cell-subtypes
+      label: LB/tutorials/assay-analysis/lb-sc-identify-cell-subtypes
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20260618114158/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/assay-analysis/lb-sc-identify-cell-subtypes
+    - kind: screenshot
+      path: notes/comparison/screens/loupe/m08_filters_DOCS_barcode_highlighted.jpg
+      label: docs m08
+    na:
+      paper: >-
+        Loupe Browser has no peer-reviewed or preprint description; a Crossref search for 'Loupe Browser
+        10x Genomics' (2026-10-03) returns only protocols.io walkthroughs, none by 10x. Cite as software:
+        Loupe Browser v9.1.0, 10x Genomics, 2026.
+      code: Loupe Browser is closed source; only the LoupeR exporter is public.
+    reproduce:
+    - notes/comparison/demos/loupe/matrix_check_docs.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: docs

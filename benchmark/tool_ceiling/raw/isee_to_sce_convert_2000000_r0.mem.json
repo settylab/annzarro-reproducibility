@@ -1,0 +1,63 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/_mamba/envs/rtools/bin/Rscript",
+  "to_sce.R",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/sce/first2000000.rds"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 11.85,
+ "peaks": {
+  "proc": {
+   "fp_peak": 3522088488,
+   "fp_lifetime_sum": 3522186792,
+   "rss_peak": 3777626112,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3522088488,
+   "rss_peak": 3777626112,
+   "fp_lifetime_sum": 3522186792
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   901336
+  ],
+  [
+   1.4,
+   385500192
+  ],
+  [
+   2.79,
+   595117328
+  ],
+  [
+   4.17,
+   854214216
+  ],
+  [
+   5.55,
+   919029464
+  ],
+  [
+   6.95,
+   3476999696
+  ],
+  [
+   8.35,
+   3481718288
+  ],
+  [
+   9.75,
+   3481816592
+  ],
+  [
+   11.13,
+   3522039336
+  ]
+ ],
+ "ps_before": "2026-10-03T17:10:35-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47413 639056  10.0 /Applications/cmux.app/Contents/MacOS/cmux\n 6219  58688   9.2 $HOME/Projects/investments/.venv/bin/python3\n  626 553904   4.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n86901 589712   2.0 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n80588 628688   1.9 $HOME/.local/bin/claude\n57113 2077424   1.0 $HOME/.local/bin/claude\n92291  30832   0.8 .venv/bin/python\n79623   5136   0.7 tmux\n  555  27296   0.5 /usr/libexec/UserEventAgent\n80005 383344   0.4 $HOME/.local/bin/claude\n"
+}

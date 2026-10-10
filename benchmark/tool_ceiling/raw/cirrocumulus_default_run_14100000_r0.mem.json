@@ -1,0 +1,219 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first14100000.h5ad",
+  "benchmark/tool_ceiling/shots/cirrocumulus_default_run_14100000_r0",
+  "--n",
+  "14100000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 89.18,
+ "peaks": {
+  "client": {
+   "fp_peak": 5093534832,
+   "fp_lifetime_sum": 5218692928,
+   "rss_peak": 4204822528,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 46495335952,
+   "fp_lifetime_sum": 46810630008,
+   "rss_peak": 46769324032,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 120631872,
+   "fp_lifetime_sum": 120631872,
+   "rss_peak": 158908416,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 47125079656,
+   "rss_peak": 47809331200,
+   "fp_lifetime_sum": 52029322936
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.22,
+   703308296
+  ],
+  [
+   4.36,
+   4089506736
+  ],
+  [
+   6.5,
+   13364610616
+  ],
+  [
+   8.63,
+   14247856344
+  ],
+  [
+   10.79,
+   15645543792
+  ],
+  [
+   12.94,
+   15994080888
+  ],
+  [
+   15.1,
+   20493540152
+  ],
+  [
+   17.27,
+   33979457352
+  ],
+  [
+   19.44,
+   46069409384
+  ],
+  [
+   21.62,
+   28899439272
+  ],
+  [
+   23.76,
+   18875471472
+  ],
+  [
+   25.91,
+   18863019632
+  ],
+  [
+   28.08,
+   19056400128
+  ],
+  [
+   30.23,
+   19188127584
+  ],
+  [
+   32.39,
+   19313579992
+  ],
+  [
+   34.55,
+   18610083344
+  ],
+  [
+   36.72,
+   18744956528
+  ],
+  [
+   38.9,
+   18880288464
+  ],
+  [
+   41.05,
+   18823714512
+  ],
+  [
+   43.19,
+   18279208344
+  ],
+  [
+   45.35,
+   18944677992
+  ],
+  [
+   47.53,
+   18728065176
+  ],
+  [
+   49.7,
+   21928009080
+  ],
+  [
+   51.86,
+   21459853120
+  ],
+  [
+   54.02,
+   21749686368
+  ],
+  [
+   56.17,
+   22001868944
+  ],
+  [
+   58.33,
+   20333698328
+  ],
+  [
+   60.49,
+   20860215128
+  ],
+  [
+   62.64,
+   20857200496
+  ],
+  [
+   64.79,
+   20865392520
+  ],
+  [
+   66.93,
+   20588699456
+  ],
+  [
+   69.1,
+   20601642816
+  ],
+  [
+   71.24,
+   20604706648
+  ],
+  [
+   73.39,
+   20618649432
+  ],
+  [
+   75.52,
+   20615339864
+  ],
+  [
+   77.68,
+   20624908120
+  ],
+  [
+   79.83,
+   20629790552
+  ],
+  [
+   81.99,
+   20637589336
+  ],
+  [
+   84.13,
+   20634132288
+  ],
+  [
+   86.28,
+   22515802280
+  ],
+  [
+   88.42,
+   22390350832
+  ]
+ ],
+ "ps_before": "2026-10-04T13:57:15-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n77736 143632  51.3 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n  626 499792  44.7 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n77769 792688   6.2 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n80373 121440   5.7 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n  596  30416   3.9 /System/Library/CoreServices/launchservicesd\n 1012  17280   3.6 /usr/libexec/pboard\n  629 189760   3.3 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n57113 2880144   3.0 $HOME/.local/bin/claude\n96706  20592   2.5 benchmark/tool_ceiling/.venv/bin/python\n  627  36672   2.2 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd\n",
+ "others_at_start": [
+  "95401 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disa",
+  "95402 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=gpu-process --no-sandbox --d",
+  "95403 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=utility --utility-sub-type=n",
+  "95404 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=renderer --headless=old --no"
+ ]
+}

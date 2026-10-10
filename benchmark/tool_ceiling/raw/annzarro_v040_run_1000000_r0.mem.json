@@ -1,0 +1,62 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first1000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_run_1000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 9.57,
+ "peaks": {
+  "client": {
+   "fp_peak": 3705432696,
+   "fp_lifetime_sum": 3818139216,
+   "rss_peak": 3321348096,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 314163968,
+   "fp_lifetime_sum": 366724680,
+   "rss_peak": 337002496,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 122991408,
+   "fp_lifetime_sum": 122991408,
+   "rss_peak": 160940032,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 4017925496,
+   "rss_peak": 3656515584,
+   "fp_lifetime_sum": 4184863896
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.42,
+   1080796472
+  ],
+  [
+   5.02,
+   2468473080
+  ],
+  [
+   7.63,
+   3642649736
+  ]
+ ],
+ "ps_before": "2026-10-05T23:36:16-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n80883  75072  99.1 .venv/bin/python\n59322  61568  99.1 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n47413 542912  12.7 /Applications/cmux.app/Contents/MacOS/cmux\n 6219  56352   3.9 $HOME/Projects/investments/.venv/bin/python3\n57113 2931648   2.0 $HOME/.local/bin/claude\n49293 804624   1.5 $HOME/.local/bin/claude\n  594  25456   1.4 /usr/libexec/opendirectoryd\n  734  56096   1.1 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n96336  48640   0.9 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService\n  619   6560   0.8 /usr/sbin/notifyd\n",
+ "others_at_start": []
+}

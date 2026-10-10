@@ -1,0 +1,134 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_160000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_tag_run_160000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030_3fb6826/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3fb6826",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 47.48,
+ "peaks": {
+  "client": {
+   "fp_peak": 887103696,
+   "fp_lifetime_sum": 923952128,
+   "rss_peak": 1102856192,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 234931376,
+   "fp_lifetime_sum": 424478472,
+   "rss_peak": 270057472,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 115847528,
+   "fp_lifetime_sum": 115847528,
+   "rss_peak": 154501120,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1092724048,
+   "rss_peak": 1353383936,
+   "fp_lifetime_sum": 1348430600
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.25,
+   1047160096
+  ],
+  [
+   4.52,
+   891725136
+  ],
+  [
+   6.89,
+   611411280
+  ],
+  [
+   9.17,
+   600204624
+  ],
+  [
+   11.49,
+   600450384
+  ],
+  [
+   13.69,
+   596813136
+  ],
+  [
+   15.99,
+   597026128
+  ],
+  [
+   18.28,
+   597173584
+  ],
+  [
+   20.54,
+   597402960
+  ],
+  [
+   22.89,
+   597697872
+  ],
+  [
+   25.16,
+   598254928
+  ],
+  [
+   27.42,
+   598271312
+  ],
+  [
+   29.68,
+   598582608
+  ],
+  [
+   31.92,
+   585262464
+  ],
+  [
+   34.22,
+   582329728
+  ],
+  [
+   36.54,
+   582591872
+  ],
+  [
+   38.84,
+   582772096
+  ],
+  [
+   41.12,
+   582886784
+  ],
+  [
+   43.4,
+   583181696
+  ],
+  [
+   45.64,
+   583296384
+  ]
+ ],
+ "ps_before": "2026-10-05T03:22:49-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n15970 126880  92.2 /usr/libexec/duetexpertd\n47413 662896   4.5 /Applications/cmux.app/Contents/MacOS/cmux\n 1012  17920   4.1 /usr/libexec/pboard\n  557 567680   3.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  596  30960   3.3 /System/Library/CoreServices/launchservicesd\n  629 241328   3.2 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  626 514304   3.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  855 1996032   2.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n57113 2887120   2.0 $HOME/.local/bin/claude\n  582 111424   1.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n",
+ "others_at_start": []
+}

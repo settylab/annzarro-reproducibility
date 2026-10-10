@@ -1,0 +1,77 @@
+{
+ "version": 1,
+ "image": "h01_lazy_hdf5_assay_read_on_demand.jpg",
+ "tool": "isee",
+ "software": "iSEE 2.18.0, HDF5Array 1.34.0 (Bioconductor 3.20), R 4.4.3",
+ "data": "bm_demo_sce.rds (8,090 cells), logcounts written to HDF5",
+ "url": "file://$TMPDIR/evidence/gap-capture-2/work",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_code.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "lazy",
+   "mark": "P",
+   "caption": "R console, iSEE 2.18.0 / HDF5Array 1.34.0 (2026-10-04): an HDF5-backed assay (2.5 kB in R) is read one gene row on demand; the user must build it in code, so P"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    83,
+    1376,
+    418
+   ],
+   "label": "the code: writeHDF5Array, then one gene",
+   "selector": "#code0"
+  },
+  {
+   "n": 2,
+   "box": [
+    22,
+    553,
+    596,
+    24
+   ],
+   "label": "assay is an HDF5Matrix",
+   "selector": "[id^=hl1_] >> nth=0"
+  },
+  {
+   "n": 3,
+   "box": [
+    22,
+    573,
+    420,
+    24
+   ],
+   "label": "2.5 kB in R, the matrix stays on disk",
+   "selector": "[id^=hl1_] >> nth=1"
+  },
+  {
+   "n": 4,
+   "box": [
+    22,
+    691,
+    386,
+    24
+   ],
+   "label": "one HDF5 read of row 10420 (Mpo)",
+   "selector": "[id^=hl1_] >> nth=-1"
+  },
+  {
+   "n": 5,
+   "box": [
+    12,
+    788,
+    1376,
+    23
+   ],
+   "label": "built in code, so P",
+   "selector": "#note"
+  }
+ ],
+ "note": "The audited demo's assay is an in-memory dgCMatrix; this shot builds the file-backed object of the bigdata vignette in an R console (HDF5Array built into a scratch library). The Shiny app was not started."
+}

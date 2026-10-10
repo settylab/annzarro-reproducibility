@@ -1,0 +1,12 @@
+set    rep   opened  cellline     gene     peak  status   (GiB, phys_footprint of Loupe's process tree)
+g200     1    1.134     1.136    1.220    2.005  ok
+g200     2    1.273     1.172    1.488    2.120  ok
+g200     3    1.281     1.281    1.542    2.135  ok
+g2000    1    1.095     1.096    1.439    2.202  ok
+g2000    2    1.272     1.274    1.537    2.166  ok
+g2000    3    1.280     1.282    1.490    2.086  ok
+
+median opened: g200 1.273 GiB, g2000 1.272 GiB; delta -0.001 GiB
+file sizes: g200 0.366 GiB, g2000 2.201 GiB; D_file 1.835 GiB
+largest spread of three opened values in one set: 0.185 GiB
+verdict: Y (flat)   (Y if delta < 0.183; N if delta >= 0.917)

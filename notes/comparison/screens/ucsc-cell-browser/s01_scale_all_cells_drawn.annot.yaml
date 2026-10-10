@@ -1,0 +1,35 @@
+version: 1
+image: s01_scale_all_cells_drawn.jpg
+tool: ucsc-cell-browser
+software: UCSC Cell Browser at cells.ucsc.edu (as served 2026-10-04)
+data: PanSci Organismal Aging, All (21,786,931 cells)
+url: https://cells.ucsc.edu/?ds=mouse-pansci+all
+captured: 2026-10-04
+by: comparison-auditor (shots) / retrofit by evidence-curator
+driver: notes/comparison/demos/scale_probe/probe_web.py
+source: manual
+image_sha256: 4bc879d577ed8287883249b7f391c29a9730ae7035294cba82639465a95fb1b9
+proves:
+- column: every_cell
+  mark: Y
+  caption: cells.ucsc.edu draws all 21,786,931 PanSci cells in one draw call; no sampling (status bar
+    "21786931 cells loaded").
+- column: auto_subset
+  mark: N
+  caption: the UCSC Cell Browser portal draws all 21,786,931 cells of PanSci 'All' by default, with no
+    automatic subset (2026-10-04)
+callouts:
+- n: 1
+  box:
+  - 250
+  - 884
+  - 140
+  - 16
+  label: 21786931 cells loaded
+- n: 2
+  box:
+  - 252
+  - 62
+  - 948
+  - 820
+  label: every cell drawn as a point

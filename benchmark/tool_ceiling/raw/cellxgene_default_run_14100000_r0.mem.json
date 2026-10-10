@@ -1,0 +1,109 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first14100000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_default_run_14100000_r0",
+  "--n",
+  "14100000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 34.57,
+ "peaks": {
+  "client": {
+   "fp_peak": 5876381064,
+   "fp_lifetime_sum": 6082951424,
+   "rss_peak": 5756534784,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 31834840272,
+   "fp_lifetime_sum": 31914680272,
+   "rss_peak": 32155336704,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 121123224,
+   "fp_lifetime_sum": 125186600,
+   "rss_peak": 159678464,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 36140388640,
+   "rss_peak": 37518721024,
+   "fp_lifetime_sum": 37997631696
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.17,
+   717578976
+  ],
+  [
+   4.4,
+   12951667968
+  ],
+  [
+   6.56,
+   13972293944
+  ],
+  [
+   8.65,
+   15361412608
+  ],
+  [
+   10.76,
+   15559708304
+  ],
+  [
+   12.94,
+   16234172792
+  ],
+  [
+   15.17,
+   18536109776
+  ],
+  [
+   17.31,
+   21473011152
+  ],
+  [
+   19.46,
+   22519245032
+  ],
+  [
+   21.57,
+   22360762864
+  ],
+  [
+   23.7,
+   23389744296
+  ],
+  [
+   25.89,
+   23739641408
+  ],
+  [
+   28.07,
+   35702444320
+  ],
+  [
+   30.31,
+   23533301456
+  ],
+  [
+   32.51,
+   23835586520
+  ]
+ ],
+ "ps_before": "2026-10-03T21:47:59-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 6219  58672   6.9 $HOME/Projects/investments/.venv/bin/python3\n  596  30176   3.3 /System/Library/CoreServices/launchservicesd\n57113 1897984   2.9 $HOME/.local/bin/claude\n  626 486752   2.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1240  50176   1.0 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n98631 477104   0.8 $HOME/.local/bin/claude\n79623   5200   0.7 tmux\n97961 632176   0.6 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n92291  30816   0.6 .venv/bin/python\n47413 607712   0.5 /Applications/cmux.app/Contents/MacOS/cmux\n"
+}

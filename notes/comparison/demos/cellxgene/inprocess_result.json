@@ -1,0 +1,50 @@
+{
+ "csr": {
+  "format": "csr",
+  "shape": [
+   8090,
+   16285
+  ],
+  "nnz": 25819999,
+  "X_in_memory_MiB": 197.1,
+  "Mpo": {
+   "s": 0.52,
+   "peak_MiB": 197.2,
+   "col_nnz": 2879
+  },
+  "Elane": {
+   "s": 0.511,
+   "peak_MiB": 197.1,
+   "col_nnz": 2185
+  },
+  "Cd74": {
+   "s": 0.511,
+   "peak_MiB": 197.1,
+   "col_nnz": 2330
+  }
+ },
+ "csc": {
+  "format": "csc",
+  "shape": [
+   8090,
+   16285
+  ],
+  "nnz": 25819999,
+  "X_in_memory_MiB": 197.1,
+  "Mpo": {
+   "s": 0.002,
+   "peak_MiB": 0.1,
+   "col_nnz": 2879
+  },
+  "Elane": {
+   "s": 0.001,
+   "peak_MiB": 0.1,
+   "col_nnz": 2185
+  },
+  "Cd74": {
+   "s": 0.001,
+   "peak_MiB": 0.1,
+   "col_nnz": 2330
+  }
+ }
+}

@@ -1,0 +1,64 @@
+# Claims parked with their text: the Key points and the abstract's time sentence are commented out
+# for the bioRxiv preprint (operator, 2026-10-08) and kept for a later Nature Protocols submission.
+# To restore: uncomment the text in manuscript/main.tex and sections/abstract.tex, move these entries
+# back under claims: in evidence/claims.yaml and put their %claim markers back.
+claims:
+  kp.tahoe.n:
+    text: 95.6 million
+    file: manuscript/main.tex
+    kind: number
+    source: *n95
+    compute: v[0] / 1e6
+    format: '{:.1f} million'
+    status: ok
+  kp.distinct:
+    text: "Only AnnZarro, among the viewers compared, lets a focused cell or gene choose the matrix row that every linked panel shows"
+    file: manuscript/main.tex
+    kind: comparison
+    source:
+      - {matrix: annzarro.focus, expect: Y}
+      - {matrix: cellxgene-explorer.focus, expect: N}
+      - {matrix: cellxgene-annotate.focus, expect: N}
+      - {matrix: vitessce.focus, expect: N}
+      - {matrix: cirrocumulus.focus, expect: N}
+      - {matrix: isee.focus, expect: N}
+      - {matrix: ucsc-cell-browser.focus, expect: N}
+      - {matrix: single-cell-portal.focus, expect: N}
+      - {matrix: shinycell.focus, expect: N}
+      - {matrix: kana.focus, expect: N}
+      - {matrix: scope.focus, expect: N}
+      - {matrix: loupe.focus, expect: N}
+      - {matrix: manivault.focus, expect: N}
+      - {matrix: vizit.focus, expect: N}
+      - {matrix: scanpy-seurat.focus, expect: P}
+    status: ok
+    note: Every graphical viewer row of Fig. 1c has focus N; the Scanpy / Seurat row is the code baseline (P, only by writing code), not a viewer.
+  kp.laptop_every_cell:
+    text: a laptop's browser shows all 95.6 million cells of Tahoe-100M, on a subset or in one plot
+    file: manuscript/main.tex
+    kind: number
+    source:
+      - *n95
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: max_n_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "v[0] / 1e6 if v[1] >= v[0] else float('nan')"
+    format: "a laptop's browser shows all {:.1f} million cells of Tahoe-100M, on a subset or in one plot"
+    status: ok
+    note: Every cell drawn in one plot within the 16 GiB client budget up to 175M (ceilings.csv annzarro/v041, final; tag v0.4.1); the subset view is the default.
+  abs.total_time:
+    text: the protocol takes about 1 h
+    file: manuscript/sections/abstract.tex
+    kind: number
+    source:
+      - {file: manuscript/body.tex, pattern: 'Steps 1-{1,2}2, installation: (\d+)-{1,2}\d+ min'}
+      - {file: manuscript/body.tex, pattern: 'Steps 1-{1,2}2, installation: \d+-{1,2}(\d+) min'}
+      - {file: manuscript/body.tex, pattern: 'Steps 3-{1,2}10, data preparation: about (\d+) min'}
+      - {file: manuscript/body.tex, pattern: 'Steps 11-{1,2}13, starting AnnZarro: (\d+) min'}
+      - {file: manuscript/body.tex, pattern: 'Steps 14-{1,2}31,[^:\n]*: about (\d+) min each'}
+      - {file: manuscript/body.tex, pattern: 'Steps 32-{1,2}36,[^:\n]*: (\d+) min'}
+      - {file: manuscript/body.tex, pattern: 'Steps 37-{1,2}41, saving and export: (\d+) min'}
+      - {file: manuscript/sections/abstract.tex, anchor: 'explores it in six worked examples'}
+    compute: "'about 1 h' if 45 <= v[0] + v[2] + v[3] + 5 * v[4] + v[5] + v[6] and v[1] + v[2] + v[3] + 5 * v[4] + v[5] + v[6] <= 75 else 'not about 1 h: %d-%d min' % (v[0] + v[2] + v[3] + 5 * v[4] + v[5] + v[6], v[1] + v[2] + v[3] + 5 * v[4] + v[5] + v[6])"
+    format: 'the protocol takes {}'
+    status: ok
+    note: Sum of the Timing list without lab hosting (Steps 42-44), Worked examples 1-5 at the per-example setup time and Worked example 6 (Steps 32-36) on its own (the abstract says "six worked examples"); currently 52-57 min. "About 1 h" holds while the sum stays within 45-75 min.

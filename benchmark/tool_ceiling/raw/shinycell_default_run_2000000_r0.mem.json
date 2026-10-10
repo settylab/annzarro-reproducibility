@@ -1,0 +1,97 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "shinycell",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/shinycell/first2000000",
+  "benchmark/tool_ceiling/shots/shinycell_default_run_2000000_r0",
+  "--n",
+  "2000000",
+  "--port",
+  "8936"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 25.85,
+ "peaks": {
+  "client": {
+   "fp_peak": 845226072,
+   "fp_lifetime_sum": 897344584,
+   "rss_peak": 1068449792,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 1338215256,
+   "fp_lifetime_sum": 1521308064,
+   "rss_peak": 3162750976,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 127988720,
+   "fp_lifetime_sum": 134067496,
+   "rss_peak": 162381824,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2183392176,
+   "rss_peak": 4224843776,
+   "fp_lifetime_sum": 2418652648
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.09,
+   913335056
+  ],
+  [
+   4.13,
+   1231627432
+  ],
+  [
+   6.12,
+   1051010456
+  ],
+  [
+   8.14,
+   1455712096
+  ],
+  [
+   10.17,
+   1586620664
+  ],
+  [
+   12.26,
+   1577822456
+  ],
+  [
+   14.3,
+   1390881208
+  ],
+  [
+   16.3,
+   1393076904
+  ],
+  [
+   18.32,
+   1393142440
+  ],
+  [
+   20.35,
+   1806773240
+  ],
+  [
+   22.36,
+   1367878672
+  ],
+  [
+   24.39,
+   1367944208
+  ]
+ ],
+ "ps_before": "2026-10-03T19:41:23-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n44615 323152  45.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n34972 494432   8.4 $HOME/.local/bin/claude\n97961 682816   3.4 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n44614 179248   2.0 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n    1  35472   1.4 /sbin/launchd\n97977 241376   1.2 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n 4725 613488   0.9 claude\n98631 478656   0.7 $HOME/.local/bin/claude\n92291  30832   0.7 .venv/bin/python\n80588 616176   0.7 $HOME/.local/bin/claude\n"
+}

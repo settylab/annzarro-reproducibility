@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "image": "h04_selection_mask_replotted_by_code.jpg",
+ "tool": "scanpy-seurat",
+ "software": "scanpy 1.11.5, anndata 0.12.19 (code; Scanpy has no GUI)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "file://$TMPDIR/evidence/gap-capture-2/work/select",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_code.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "P",
+   "caption": "code output, scanpy 1.11.5 (2026-10-04): a selection is a boolean mask typed in code and shows in the UMAP and FA plots only because the script re-plots both; Seurat's CellSelector likewise returns cell names used through code, so P"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    98,
+    1376,
+    379
+   ],
+   "label": "the selection is a mask written in code",
+   "selector": "#code0"
+  },
+  {
+   "n": 2,
+   "box": [
+    22,
+    510,
+    394,
+    24
+   ],
+   "label": "cells selected by the mask",
+   "selector": "[id^=hl1_] >> nth=0"
+  },
+  {
+   "n": 3,
+   "box": [
+    12,
+    710,
+    775,
+    340
+   ],
+   "label": "each view re-plotted by hand with the mask",
+   "selector": "#img2"
+  },
+  {
+   "n": 4,
+   "box": [
+    12,
+    1064,
+    1376,
+    38
+   ],
+   "label": "code only; Seurat CellSelector the same",
+   "selector": "#note"
+  }
+ ]
+}

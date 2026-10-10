@@ -1,0 +1,144 @@
+{
+ "name": "ladder_obs",
+ "experiment": "ladder_obs",
+ "repeats": 5,
+ "warm_repeats": 5,
+ "seed": 20261001,
+ "annzarro_dir": "$SCRATCH/annzarro-scale/hpcbench/src_v041",
+ "cases": [
+  {
+   "case_id": "tahoe_1M:obs_col:cell_line_id",
+   "kind": "obs_col",
+   "dataset": "$SCRATCH/annzarro-scale/stores/n1M/tahoe_1M.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "cell_line_id",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/cell_line_id"
+   ],
+   "expect_len": 1000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_2M:obs_col:cell_line_id",
+   "kind": "obs_col",
+   "dataset": "$SCRATCH/annzarro-scale/stores/n2M/tahoe_2M.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "cell_line_id",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/cell_line_id"
+   ],
+   "expect_len": 2000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_5M:obs_col:cell_line_id",
+   "kind": "obs_col",
+   "dataset": "$SCRATCH/annzarro-scale/stores/n5M/tahoe_5M.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "cell_line_id",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/cell_line_id"
+   ],
+   "expect_len": 5000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_10M:obs_col:cell_line_id",
+   "kind": "obs_col",
+   "dataset": "$SCRATCH/annzarro-scale/stores/n10M/tahoe_10M.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "cell_line_id",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/cell_line_id"
+   ],
+   "expect_len": 10000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_20M:obs_col:cell_line_id",
+   "kind": "obs_col",
+   "dataset": "$SCRATCH/annzarro-scale/stores/n20M/tahoe_20M.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "cell_line_id",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/cell_line_id"
+   ],
+   "expect_len": 20000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_50M:obs_col:cell_line_id",
+   "kind": "obs_col",
+   "dataset": "$SCRATCH/annzarro-scale/stores/n50M/tahoe_50M.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "cell_line_id",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/cell_line_id"
+   ],
+   "expect_len": 50000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_95.6M:obs_col:cell_line_id",
+   "kind": "obs_col",
+   "dataset": "$SCRATCH/annzarro-scale/stores/n95.6M/tahoe_95.6M.zarr",
+   "fs": "hpctemp",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "cell_line_id",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/cell_line_id"
+   ],
+   "expect_len": 95624334,
+   "wire": "f32"
+  }
+ ],
+ "wire": "f32"
+}

@@ -1,0 +1,30 @@
+version: 1
+image: m16_every_cell_APP_zoomed_points.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: acc2a559bbdea08bd0f45e3c72b9aebef9f3dbc701e65a1e14cb3195eeb115ab
+proves:
+- column: every_cell
+  mark: Y
+  caption: 'zoomed into the Neutrophil cluster: single round points, no sampling notice, no ''N of M'' label, no
+    density shading'
+- column: auto_subset
+  mark: N
+  caption: 'no default subsetting at 8,090 cells: no sampling notice or setting; the only display setting is marker
+    size'
+callouts:
+- n: 1
+  box:
+  - 270
+  - 57
+  - 655
+  - 327
+  label: 'zoomed: individual points'

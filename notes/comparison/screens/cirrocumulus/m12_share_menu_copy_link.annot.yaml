@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m12_share_menu_copy_link.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_matrix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "Y",
+   "caption": "The top-right menu offers Copy Link, a URL that carries the view state"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1173,
+    20,
+    111,
+    44
+   ],
+   "label": "Copy Link",
+   "selector": "[role=menuitem]:has-text('Copy Link')"
+  }
+ ]
+}

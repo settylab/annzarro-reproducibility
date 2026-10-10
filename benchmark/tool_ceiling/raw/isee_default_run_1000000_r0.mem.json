@@ -1,0 +1,93 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "isee",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/sce/first1000000.rds",
+  "benchmark/tool_ceiling/shots/isee_default_run_1000000_r0",
+  "--n",
+  "1000000",
+  "--port",
+  "8935"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 22.64,
+ "peaks": {
+  "client": {
+   "fp_peak": 855597168,
+   "fp_lifetime_sum": 896803936,
+   "rss_peak": 1092419584,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 2845838600,
+   "fp_lifetime_sum": 3017626496,
+   "rss_peak": 4114726912,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 132674256,
+   "fp_lifetime_sum": 132674256,
+   "rss_peak": 167329792,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3670650472,
+   "rss_peak": 5207146496,
+   "fp_lifetime_sum": 3914430432
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.09,
+   817292192
+  ],
+  [
+   4.12,
+   1334027480
+  ],
+  [
+   6.13,
+   1269179944
+  ],
+  [
+   8.13,
+   2531207632
+  ],
+  [
+   10.18,
+   2879318912
+  ],
+  [
+   12.29,
+   3053776344
+  ],
+  [
+   14.37,
+   3049811416
+  ],
+  [
+   16.47,
+   3517836808
+  ],
+  [
+   18.56,
+   3102338856
+  ],
+  [
+   20.61,
+   3102420776
+  ],
+  [
+   22.64,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-03T17:03:20-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  641 198928   2.3 /usr/libexec/airportd\n  626 554160   2.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1058  45200   1.9 /usr/libexec/networkserviceproxy\n34972 498592   1.3 $HOME/.local/bin/claude\n80588 628624   1.2 $HOME/.local/bin/claude\n57113 2059856   1.2 $HOME/.local/bin/claude\n  660  22464   1.1 /usr/libexec/symptomsd\n 1066 121616   1.0 /System/Library/PrivateFrameworks/IMCore.framework/imagent.app/Contents/MacOS/imagent\n  734  51744   0.8 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n92291  30832   0.6 .venv/bin/python\n"
+}

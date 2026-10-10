@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "03_stored_row_4236_and_click.jpg",
+ "tool": "shinycell",
+ "software": "ShinyCell 2.1.0 (local Shiny app built by build.R)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8907",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/shinycell/recap_focus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Only a precomputed colData column fixed to cell 4236 can be shown; no cell can be picked, and a click on the plot does nothing"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    26,
+    552,
+    308,
+    42
+   ],
+   "label": "Cell information: diffusion_distance_to_4236",
+   "selector": "#sc1a1inp1 + .selectize-control"
+  },
+  {
+   "n": 2,
+   "box": [
+    26,
+    601,
+    661,
+    608
+   ],
+   "label": "static PNG, click had no effect",
+   "selector": "#sc1a1oup1 img"
+  }
+ ]
+}

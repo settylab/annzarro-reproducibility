@@ -1,0 +1,33 @@
+version: 1
+image: m01_plots_APP_umap_highres_celltype.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: 2290f8bcb48b7a3f25d8c824a150b6fcc1bad3a219b74857480601d8517df0ee
+proves:
+- column: every_cell
+  mark: Y
+  caption: 'bm_demo opened in Loupe Browser 9.1.0: UMAP coloured by highres_celltype; Age counts Mid 2,057 + Old
+    3,116 + Young 2,917 = 8,090 cells, the whole demo'
+callouts:
+- n: 1
+  box:
+  - 270
+  - 57
+  - 655
+  - 327
+  label: UMAP, highres_celltype
+- n: 2
+  box:
+  - 65
+  - 232
+  - 195
+  - 280
+  label: cluster list with per-cluster counts

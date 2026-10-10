@@ -1,0 +1,52 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_prep.py",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first5000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/annzarro_prep/first5000000.zarr"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 8.17,
+ "peaks": {
+  "proc": {
+   "fp_peak": 15886659560,
+   "fp_lifetime_sum": 16318066664,
+   "rss_peak": 16031252480,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 15886659560,
+   "rss_peak": 16031252480,
+   "fp_lifetime_sum": 16318066664
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9585048
+  ],
+  [
+   1.47,
+   3941305608
+  ],
+  [
+   2.92,
+   5229007096
+  ],
+  [
+   4.36,
+   9768426936
+  ],
+  [
+   5.83,
+   11951612856
+  ],
+  [
+   7.29,
+   10111312080
+  ]
+ ],
+ "ps_before": "2026-10-05T12:20:15-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 3031   6192  98.1 ugrep\n 9022 242464  97.3 .venv/bin/python\n 3394 711200  69.9 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n  626 534544  57.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  855 2598160  50.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  582 115632  35.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  557 586672  26.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 3450 257264  24.4 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU\n73194 196784  21.6 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n 3397 274544  20.3 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking\n",
+ "others_at_start": []
+}

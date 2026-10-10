@@ -1,0 +1,23 @@
+version: 1
+image: m10_dynamic_marker_table_on_brush.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3) + iSEEu 1.18.0, scran 1.34.0
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: d419c6b71f8f59d90e604fc77cc49ff3fc2f5efb2b97b8bc80148fd1a4bd2ecc
+proves:
+- column: de
+  mark: P
+  caption: 'iSEE 2.18.0 with iSEEu 1.18.0: right after a live brush the marker table stayed empty, so the on-the-fly
+    update was not seen.'
+callouts:
+- n: 1
+  box: [10, 143, 908, 40]
+  label: No data available in table
+- n: 2
+  box: [8, 384, 302, 24]
+  label: Receiving selection from Reduced dimension plot 1

@@ -1,0 +1,58 @@
+{
+ "cmd": [
+  ".venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "1000000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first1000000_csc.h5ad",
+  "--csc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 9.44,
+ "peaks": {
+  "proc": {
+   "fp_peak": 6447502952,
+   "fp_lifetime_sum": 7098718232,
+   "rss_peak": 6504759296,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 6447502952,
+   "rss_peak": 6504759296,
+   "fp_lifetime_sum": 7098718232
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   9257368
+  ],
+  [
+   1.42,
+   2986740808
+  ],
+  [
+   2.83,
+   4674654480
+  ],
+  [
+   4.24,
+   4674654480
+  ],
+  [
+   5.66,
+   4674687248
+  ],
+  [
+   7.07,
+   4674769168
+  ],
+  [
+   8.47,
+   4903063992
+  ]
+ ],
+ "ps_before": "2026-10-05T10:09:00-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n81248 271216  76.3 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n96336  54336  28.6 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService\n97961 879040  23.8 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n47413 664704  13.6 /Applications/cmux.app/Contents/MacOS/cmux\n57113 2896176   8.3 $HOME/.local/bin/claude\n91512  18464   6.1 /usr/libexec/trustd\n  626 515040   6.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  855 2013728   6.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n86901 574880   5.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n81378   6080   4.6 /usr/bin/ssh\n",
+ "others_at_start": []
+}

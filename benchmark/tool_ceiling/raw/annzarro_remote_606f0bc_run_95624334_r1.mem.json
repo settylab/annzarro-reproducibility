@@ -1,0 +1,190 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$SCRATCH/annzarro-scale/stores_panel/n95.6M/tahoe_panel_95.6M.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_95624334_r1",
+  "--server-url",
+  "http://hpc-node-36:8790",
+  "--proxy",
+  "socks5://127.0.0.1:8767",
+  "--n",
+  "95624334",
+  "--probe-store",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "--version-label",
+  "606f0bc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 74.63,
+ "peaks": {
+  "client": {
+   "fp_peak": 13575676312,
+   "fp_lifetime_sum": 14005577120,
+   "rss_peak": 13167738880,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 3031400,
+   "fp_lifetime_sum": 3031400,
+   "rss_peak": 14516224,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 157091528,
+   "fp_lifetime_sum": 157091528,
+   "rss_peak": 192462848,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 13575676312,
+   "rss_peak": 13167738880,
+   "fp_lifetime_sum": 14008608520
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.16,
+   0
+  ],
+  [
+   4.37,
+   810312224
+  ],
+  [
+   6.55,
+   887743080
+  ],
+  [
+   8.73,
+   429318760
+  ],
+  [
+   10.9,
+   402023016
+  ],
+  [
+   13.09,
+   395715152
+  ],
+  [
+   15.28,
+   392127056
+  ],
+  [
+   17.43,
+   392340048
+  ],
+  [
+   19.67,
+   392618576
+  ],
+  [
+   21.82,
+   392815184
+  ],
+  [
+   23.98,
+   393044560
+  ],
+  [
+   26.12,
+   526672728
+  ],
+  [
+   28.18,
+   641754184
+  ],
+  [
+   30.28,
+   754836792
+  ],
+  [
+   32.4,
+   787228344
+  ],
+  [
+   34.57,
+   836314904
+  ],
+  [
+   36.79,
+   928605976
+  ],
+  [
+   38.88,
+   1031595944
+  ],
+  [
+   40.95,
+   1132029960
+  ],
+  [
+   43.08,
+   1237543016
+  ],
+  [
+   45.24,
+   1349462312
+  ],
+  [
+   47.34,
+   1460005352
+  ],
+  [
+   49.43,
+   1558702760
+  ],
+  [
+   51.66,
+   2123623632
+  ],
+  [
+   53.81,
+   3570856824
+  ],
+  [
+   55.96,
+   9911785408
+  ],
+  [
+   58.13,
+   10664155432
+  ],
+  [
+   60.24,
+   10879162664
+  ],
+  [
+   62.39,
+   11600877672
+  ],
+  [
+   64.5,
+   11508684952
+  ],
+  [
+   66.71,
+   10590134584
+  ],
+  [
+   69.07,
+   12602515120
+  ],
+  [
+   71.26,
+   12814475720
+  ],
+  [
+   73.39,
+   5298691536
+  ]
+ ],
+ "ps_before": "2026-10-04T01:26:58-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  855 1743168   7.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n80588 618688   3.7 $HOME/.local/bin/claude\n  582 104640   3.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  596  30480   3.4 /System/Library/CoreServices/launchservicesd\n57113 2065152   3.2 $HOME/.local/bin/claude\n  629 208336   3.0 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  594  28064   2.4 /usr/libexec/opendirectoryd\n86901 519936   1.8 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  619   7088   1.6 /usr/sbin/notifyd\n  633  32032   1.3 /usr/libexec/runningboardd\n"
+}

@@ -1,0 +1,33 @@
+version: 1
+image: m08_filters_APP_filter_set.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: cc13ed6058233e45e2bb00a9d2430699054b3e7064ded8b3f42986570eb79e31
+proves:
+- column: subset
+  mark: P
+  caption: 'feature filter (Mpo >= 5): 833 barcodes highlighted, the other cells stay drawn in grey; it marks cells,
+    it does not drop them'
+callouts:
+- n: 1
+  box:
+  - 760
+  - 177
+  - 160
+  - 125
+  label: 'Filter barcodes: 5-9, 833 found'
+- n: 2
+  box:
+  - 270
+  - 57
+  - 655
+  - 327
+  label: filtered cells purple, rest grey

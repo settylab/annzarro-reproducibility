@@ -1,0 +1,44 @@
+version: 1
+image: 12_subset_dialog.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:8920/?dataset_path=$DATA_DIR/bm_aging_showcase.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZENlbGwiOiJNYXR1cm...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: subset
+  mark: Y
+  caption: 'The statistics-bar badge opens a dialog to pick a reproducible subset: size, seed, balanced
+    across an obs column, and conditions on obs columns.'
+- column: every_cell
+  mark: Y
+  caption: The default for this 8,090-cell dataset is All cells; only datasets above 200,000 cells open
+    on a 100,000-cell subset (the threshold the dialog notes).
+callouts:
+- n: 1
+  box:
+  - 101
+  - 81
+  - 68
+  - 27
+  label: 'badge: All cells'
+  selector: '#subset-button'
+- n: 2
+  box:
+  - 345
+  - 140
+  - 710
+  - 262
+  label: number of cells, seed, Balanced across, Only cells where (AND conditions)
+  selector: '#subset-fields'
+- n: 3
+  box:
+  - 329
+  - 88
+  - 742
+  - 410
+  label: Cell subset dialog
+  selector: .subset-dialog

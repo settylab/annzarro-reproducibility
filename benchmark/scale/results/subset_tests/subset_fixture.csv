@@ -1,0 +1,38 @@
+site,store,n_cells,check,spec,rep,condition,endpoint,status,seconds,bytes,rss_before,rss_peak,n_returned,sha256,pass,detail,timestamp
+test,fixture_small.zarr,200,determinism,"{""n"":50,""seed"":0}",0,cold,/data/subset,200,0.018917792476713657,152,104923136,105316352,50,,,,1790999591.44608
+test,fixture_small.zarr,200,determinism,"{""n"":50,""seed"":0}",0,cold,/data/cells,200,0.019029333256185055,719,105316352,127451136,50,74cb763cf0850c72114dcdeb1cac538915bc308075890e6481671982521c6f5f,,,1790999591.51693
+test,fixture_small.zarr,200,determinism,"{""n"":50,""seed"":0}",0,warm,/data/subset,200,0.013546042144298553,152,127451136,127451136,50,,,,1790999591.585155
+test,fixture_small.zarr,200,determinism,"{""n"":50,""seed"":0}",0,warm,/data/cells,200,0.013277791440486908,719,127451136,127451136,50,74cb763cf0850c72114dcdeb1cac538915bc308075890e6481671982521c6f5f,,,1790999591.64195
+test,fixture_small.zarr,200,nesting,"{""n"":20,""seed"":0}",0,cold,/data/subset,200,0.013390874490141869,152,127451136,127451136,20,,,,1790999591.71121
+test,fixture_small.zarr,200,nesting,"{""n"":20,""seed"":0}",0,cold,/data/cells,200,0.013153375126421452,359,127451136,127451136,20,7254492139d3d99499554b8031e15cc2d466d36e790cdd6254a12341d2a1a98b,,,1790999591.778424
+test,fixture_small.zarr,200,nesting,"{""n"":50,""seed"":0}",0,warm,/data/subset,200,0.013363667763769627,152,127451136,127451136,50,,,,1790999591.8481169
+test,fixture_small.zarr,200,nesting,"{""n"":50,""seed"":0}",0,warm,/data/cells,200,0.013728667050600052,719,127451136,127451136,50,74cb763cf0850c72114dcdeb1cac538915bc308075890e6481671982521c6f5f,,,1790999591.917585
+test,fixture_small.zarr,200,nesting,"{""n"":100,""seed"":0}",0,cold,/data/subset,200,0.01347462460398674,155,127451136,127451136,100,,,,1790999591.985659
+test,fixture_small.zarr,200,nesting,"{""n"":100,""seed"":0}",0,cold,/data/cells,200,0.013163166120648384,1319,127451136,127451136,100,921a52d39f191e2b7cea3f02ab9f1112987561d16399f86a3b3ea7ae0f8a3cbc,,,1790999592.052858
+test,fixture_small.zarr,200,nesting,"{""n"":[20,50],""seed"":0}",,,(check),,,,,,20,,True,,1790999592.0652642
+test,fixture_small.zarr,200,nesting,"{""n"":[50,100],""seed"":0}",,,(check),,,,,,50,,True,,1790999592.06556
+test,fixture_small.zarr,200,nesting,"{""n"":20,""seed"":1}",0,cold,/data/subset,200,0.013325207866728306,152,127451136,127451136,20,,,,1790999592.1212401
+test,fixture_small.zarr,200,nesting,"{""n"":20,""seed"":1}",0,cold,/data/cells,200,0.013540291227400303,359,127451136,127451136,20,fd80ac2979e0ba2fb81e27a9457c6fe92857573b4d5f1b457a2bef7e1a72508d,,,1790999592.192194
+test,fixture_small.zarr,200,nesting,"{""n"":50,""seed"":1}",0,cold,/data/subset,200,0.014064875431358814,152,127451136,127451136,50,,,,1790999592.249752
+test,fixture_small.zarr,200,nesting,"{""n"":50,""seed"":1}",0,cold,/data/cells,200,0.013436000794172287,719,127451136,127451136,50,05d00603fa38a2036dcbc2a2a890934cb9b5655bc45fd16bab5329986ec3f127,,,1790999592.318939
+test,fixture_small.zarr,200,nesting,"{""n"":100,""seed"":1}",0,cold,/data/subset,200,0.013024792075157166,155,127451136,127451136,100,,,,1790999592.386672
+test,fixture_small.zarr,200,nesting,"{""n"":100,""seed"":1}",0,cold,/data/cells,200,0.01319237519055605,1319,127451136,127451136,100,0f1bcb685c91482f6072e2b408d5292a75a05d995c47f4a477def21d4a53cd31,,,1790999592.45404
+test,fixture_small.zarr,200,nesting,"{""n"":[20,50],""seed"":1}",,,(check),,,,,,20,,True,,1790999592.466409
+test,fixture_small.zarr,200,nesting,"{""n"":[50,100],""seed"":1}",,,(check),,,,,,50,,True,,1790999592.466502
+test,fixture_small.zarr,200,balance,"{""n"":50,""seed"":0,""balance"":""cell_type""}",0,cold,/data/subset,200,0.017066583037376404,320,127451136,127647744,50,,,,1790999592.5233128
+test,fixture_small.zarr,200,balance,"{""n"":50,""seed"":0,""balance"":""cell_type""}",0,cold,/data/cells,200,0.013392332941293716,719,127647744,127647744,50,f942d31091dae216f745c56bceda74aca6ea075c9e06315ff23e709303ddf675,,,1790999592.591276
+test,fixture_small.zarr,200,balance,"{""n"":50,""seed"":0,""balance"":""cell_type""}",0,cold,/data/obs,200,0.01597750000655651,817,127647744,127680512,50,,,,1790999592.6585011
+test,fixture_small.zarr,200,balance,"{""n"":50,""seed"":0,""balance"":""cell_type""}",,,(check),,,,,,50,,True,"3 groups, quota 16-17, max |returned - expected| = 0; server groups match",1790999592.672746
+test,fixture_small.zarr,200,balance,"{""n"":50,""seed"":0,""balance"":""leiden""}",0,cold,/data/subset,200,0.015804332681000233,345,127680512,127680512,50,,,,1790999592.72931
+test,fixture_small.zarr,200,balance,"{""n"":50,""seed"":0,""balance"":""leiden""}",0,cold,/data/cells,200,0.013422500342130661,719,127680512,127680512,50,bf4be4b28c0bd637669e158d6861803bedb4f3ecea5d92848e58acc80772e8ae,,,1790999592.7984571
+test,fixture_small.zarr,200,balance,"{""n"":50,""seed"":0,""balance"":""leiden""}",0,cold,/data/obs,200,0.016218625009059906,375,127680512,127680512,50,,,,1790999592.8681011
+test,fixture_small.zarr,200,balance,"{""n"":50,""seed"":0,""balance"":""leiden""}",,,(check),,,,,,50,,True,"5 groups, quota 10-10, max |returned - expected| = 0; server groups match",1790999592.881784
+test,fixture_small.zarr,200,where,"{""n"":50,""seed"":0,""where"":[{""col"":""cell_type"",""op"":""in"",""values"":[""Kupffer""]}]}",0,cold,/data/subset,200,0.005812625400722027,287,127680512,127680512,50,,,,1790999592.9401128
+test,fixture_small.zarr,200,where,"{""n"":50,""seed"":0,""where"":[{""col"":""cell_type"",""op"":""in"",""values"":[""Kupffer""]}]}",0,cold,/data/cells,200,0.013926333747804165,719,127680512,127680512,50,eeea72470bbb34954a1ddb5beca15aef74508e8c84b772a38e80bbc3341c62fb,,,1790999593.008391
+test,fixture_small.zarr,200,where,"{""n"":50,""seed"":0,""where"":[{""col"":""cell_type"",""op"":""in"",""values"":[""Kupffer""]}]}",0,cold,/data/obs,200,0.01634820830076933,698,127680512,127680512,50,,,,1790999593.077112
+test,fixture_small.zarr,200,where,"{""n"":50,""seed"":0,""where"":[{""col"":""cell_type"",""op"":""in"",""values"":[""Kupffer""]}]}",,,(check),,,,,,50,,True,"cell_type in [Kupffer]: 50 cells, expected 50; names match the recomputation",1790999593.090271
+test,fixture_small.zarr,200,determinism,"{""n"":50,""seed"":0}",1,cold,/data/subset,200,0.0193514171987772,152,105054208,105447424,50,,,,1790999593.887743
+test,fixture_small.zarr,200,determinism,"{""n"":50,""seed"":0}",1,cold,/data/cells,200,0.03078441694378853,719,105447424,127696896,50,74cb763cf0850c72114dcdeb1cac538915bc308075890e6481671982521c6f5f,,,1790999593.974506
+test,fixture_small.zarr,200,determinism,"{""n"":50,""seed"":0}",1,warm,/data/subset,200,0.013612667098641396,152,127696896,127696896,50,,,,1790999594.041965
+test,fixture_small.zarr,200,determinism,"{""n"":50,""seed"":0}",1,warm,/data/cells,200,0.013304833322763443,719,127696896,127696896,50,74cb763cf0850c72114dcdeb1cac538915bc308075890e6481671982521c6f5f,,,1790999594.109168
+test,fixture_small.zarr,200,determinism,"{""n"":50,""seed"":0}",,,(check),,,,,,,74cb763cf0850c72114dcdeb1cac538915bc308075890e6481671982521c6f5f,True,"4 answers, 1 distinct hashes; equals the recomputation",1790999594.1254668

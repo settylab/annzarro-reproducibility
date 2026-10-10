@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "m12_share_annotate_coloured_before_reload.jpg",
+ "tool": "cellxgene",
+ "software": "CELLxGENE Annotate 1.3.0 (local)",
+ "data": "bm_demo.h5ad (8,090 cells; obsp holds connectivities, distances, diffusion_distance; one counts layer)",
+ "url": "http://127.0.0.1:8903/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "N",
+   "caption": "Annotate 1.3.0 (2026-10-04), before: coloured by Mpo; the toolbar has no share, link or save-view control, and the URL stays http://127.0.0.1:8903/"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    161,
+    9,
+    163,
+    26
+   ],
+   "label": "toolbar: no share, link or save-view item",
+   "selector": "[data-testid='header']"
+  },
+  {
+   "n": 2,
+   "box": [
+    362,
+    0,
+    676,
+    900
+   ],
+   "label": "view state to share: coloured by Mpo",
+   "selector": "[data-testid='layout-graph']"
+  },
+  {
+   "n": 3,
+   "box": [
+    1362,
+    75,
+    32,
+    32
+   ],
+   "label": "Mpo in the gene list, colouring",
+   "selector": "[data-testid='colorby-Mpo']"
+  }
+ ]
+}

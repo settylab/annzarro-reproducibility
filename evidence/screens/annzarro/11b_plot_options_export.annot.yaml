@@ -1,0 +1,26 @@
+version: 1
+image: 11b_plot_options_export.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: spatial_demo.zarr (10x Visium mouse brain, 2,693 spots; annzarro docs/_tools/make_spatial_demo.py)
+url: http://127.0.0.1:8920/?dataset_path=$DATA_DIR/spatial_demo.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZENlbGwiOiJBQUFDQU...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: export
+  mark: Y
+  caption: Plot Options exports the plot as JPEG, SVG, WEBP or PNG at a chosen size; clicking PNG and
+    SVG downloaded plot_2026-10-08T00-21-04-160Z.png (347,178 bytes) and plot_2026-10-08T00-21-05-513Z.svg
+    (959,854 bytes).
+callouts:
+- n: 1
+  box:
+  - 947
+  - 940
+  - 304
+  - 237
+  label: 'Export section; downloads: plot_2026-10-08T00-21-04-160Z.png (347,178 bytes); plot_2026-10-08T00-21-05-513Z.svg
+    (959,854 bytes)'
+  selector: .aesthetics-menu-content .aesthetics-section:last-child

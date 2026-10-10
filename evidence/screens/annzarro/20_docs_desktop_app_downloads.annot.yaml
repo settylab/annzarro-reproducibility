@@ -1,0 +1,32 @@
+version: 1
+image: 20_docs_desktop_app_downloads.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: null
+url: https://annzarro.readthedocs.io/en/latest/getting-started/desktop-app.html
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: desktop
+  mark: Y
+  caption: 'Docs: standalone apps for macOS, Windows and Linux, with their own server inside and no Python
+    installation.'
+callouts:
+- n: 1
+  box:
+  - 320
+  - 24
+  - 760
+  - 58
+  label: Desktop app (Electron, its own server inside)
+  selector: article h1
+- n: 2
+  box:
+  - 331
+  - 305
+  - 744
+  - 497
+  label: download files per system
+  selector: article table

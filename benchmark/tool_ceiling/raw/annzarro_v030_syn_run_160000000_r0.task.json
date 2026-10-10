@@ -1,0 +1,35 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale_ceiling/syn_160000000.zarr",
+ "n_obs": 160000000,
+ "checks": {
+  "gene": {
+   "status": "stalled",
+   "guard": [],
+   "console": [],
+   "n_drawn": -1,
+   "seconds": 45.77107866667211,
+   "all_cells": false,
+   "renderer_rss": 259031040,
+   "gpu_rss": 149078016,
+   "server_rss": 240992256
+  }
+ },
+ "versions": {
+  "annzarro": "120f322",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "stalled",
+   "seconds": 45.77107866667211,
+   "n_points": -1
+  }
+ ],
+ "ok": false
+}

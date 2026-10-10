@@ -1,0 +1,1089 @@
+# CELLxGENE Annotate: Fig. 1c marks and their evidence. Split from cellxgene.yaml (one audit,
+# two figure rows since 5e7b4a0); proofs come from the 'cellxgene' sidecars (evidence_tool).
+id: cellxgene-annotate
+name: CELLxGENE Annotate
+figure:
+  row: 3
+  label: CELLxGENE Annotate
+  largest_documented: 1M (README claim)
+notes: notes/comparison/cellxgene.md
+cells:
+  cells:
+    mark: N
+    reason: >-
+      Neither Annotate nor Explorer offers any obsp matrix; the layout menu lists obsm embeddings and
+      the side panel obs columns only.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Neither program lists `obsp` anywhere. Annotate's embedding menu offers only `diffusion`, `draw_graph_fa`, `pca`, `umap`; the left panel has only obs columns. *Steps:* Annotate: click the layout button at the bottom left ("umap: 8090 out of 8090 cells"). *Evidence:* [m04 Annotate layouts](screens/cellxgene/m04_slots_annotate_layout_menu.jpg)
+
+      **Source and docs.** Neither server serves `obsp`. Annotate exposes X, obs, var and `obsm["X_*"]` only ([A/server/data_anndata/anndata_adaptor.py#L299-L309](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/data_anndata/anndata_adaptor.py#L299-L309)); Explorer's `.cxg` has X, obs, var, emb, uns (grep `obsp\|varp\|varm` in `E/server`: no hits).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m04_slots_annotate_layout_menu.jpg
+      label: m04 Annotate layouts
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: server/data_anndata/anndata_adaptor.py
+      lines: 299-309
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/data_anndata/anndata_adaptor.py#L299-L309
+      label: A/server/data_anndata/anndata_adaptor.py#L299-L309
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    - evidence/screens/gaps/capture2_cellxgene.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  genes:
+    mark: N
+    reason: >-
+      Neither program reads varp; the gene panel offers genes of X and gene sets, and the bivariate plot
+      is two X columns, not a stored matrix.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Same: no `varp` anywhere. The gene panel offers genes of X and gene sets only. *Steps:* As column 1; open the Genes panel. *Evidence:* [m04 Annotate layouts](screens/cellxgene/m04_slots_annotate_layout_menu.jpg)
+
+      **Source and docs.** Same grep, no `varp`. The bivariate gene plot is co-expression of two X columns, not a stored matrix.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m04_slots_annotate_layout_menu.jpg
+      label: m04 Annotate layouts
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: server/data_anndata/anndata_adaptor.py
+      lines: 299-309
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/data_anndata/anndata_adaptor.py#L299-L309
+      label: A/server/data_anndata/anndata_adaptor.py#L299-L309
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    - evidence/screens/gaps/capture2_cellxgene.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  focus:
+    mark: N
+    reason: >-
+      Nothing can be focused (a cell click does nothing) and a chosen gene is feature colouring, which
+      the strict definition excludes.
+    detail: |-
+      **Focus, checked in the running app.** both programs. Nothing can be focused: a cell click does nothing, and a gene is feature colouring. That gene colouring does reach a second view (the scatterplot or the side panel), which is (a2) and does not count for this column.
+
+      **Source and docs.** Choosing a gene recolours the embedding(s) and opens an NCBI info card; no second plot is re-driven by a focused cell or gene. Explorer can show two embeddings side by side (`E/client/src/reducers/panelEmbedding.ts`), but that is shared colouring and selection, not focus.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Common uses in single-cell biology
+      quote: >-
+        painting the scatterplot by a variable automatically renders its conditional distribution across
+        each other variable
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Colouring by a variable propagates to the histograms; this is feature/metadata colouring, which
+        the strict definition excludes. No pairwise row is involved.
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: Figure 3 legend, panel A
+      quote: >-
+        UMAPs can be visualized based on metadata categories, including cell type and other metadata categories,
+        or by the expression of one or multiple genes
+      indicates: N
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+      note: Feature/metadata colouring only; excluded by the strict definition.
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/01_annotate_mpo_colours_embedding_and_scatter.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/02_annotate_single_click_no_effect.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/03_annotate_lasso_highlights_in_scatter.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/04_explorer_mpo_on_main_and_side_panel.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/05_explorer_lasso_in_main_side_panel_unchanged.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/06_explorer_lasso_in_side_panel_sets_shared_count.jpg
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    - evidence/screens/gaps/capture2_cellxgene.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  slots:
+    mark: N
+    reason: Only X, obs and obsm embeddings are reachable; layers, varm, obsp and varp are not served,
+      so N.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Annotate: four `obsm` layouts, obs, X; the `counts` layer and the three `obsp` matrices in the file are not offered. Explorer: one embedding (`spatial`), obs, X. *Steps:* Annotate: layout menu as in column 1. Explorer: click the embedding dropdown ("spatial"). *Evidence:* [Annotate](screens/cellxgene/m04_slots_annotate_layout_menu.jpg), [Explorer](screens/cellxgene/m04_slots_explorer_embedding_menu.jpg)
+
+      **Source and docs.** Embeddings must be `obsm` keys starting `X_`, at most 30 ([A/server/data_anndata/anndata_adaptor.py#L305](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/data_anndata/anndata_adaptor.py#L305), `MAX_LAYOUTS = 30` [A/server/common/constants.py#L35](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/common/constants.py#L35)). Layers, obsp, varp, varm are not served.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m04_slots_annotate_layout_menu.jpg
+      label: Annotate
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m04_slots_explorer_embedding_menu.jpg
+      label: Explorer
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: server/data_anndata/anndata_adaptor.py
+      lines: '305'
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/data_anndata/anndata_adaptor.py#L305
+      label: A/server/data_anndata/anndata_adaptor.py#L305
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: server/common/constants.py
+      lines: '35'
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/common/constants.py#L35
+      label: A/server/common/constants.py#L35
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Core features and functionality
+      quote: >-
+        The tool ingests (1) matrix-form datasets ... (2) continuous or categorical metadata in the same
+        format; (3) a pre-computed, initial embedding
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Inputs named are X, obs and an embedding; no layers, varm, obsp or varp.
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    - evidence/screens/gaps/capture2_cellxgene.py
+    - evidence/screens/gaps/capture2_cellxgene_explorer.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  remote:
+    na:
+      visual: >-
+        remote input is a launch-time command-line argument (cellxgene launch <path or URL>), not a GUI
+        feature; nothing to show in the app
+    mark: N
+    reason: >-
+      Annotate copies a remote file (s3, gs, http) to a local temp file and loads it whole; downloading
+      the whole file and then loading it is not reading a remote store (rule, Supplementary Note 1, 5ec238b),
+      so N.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Explorer's `/s3_uri` endpoint returns `s3://hosted-cellxgene-prod/...cxg`: reads go to Discover's own bucket only. Annotate was not tried with a URL; the code copies a remote file locally first (Matrix row). *Steps:* `curl .../cellxgene/e/85585f3f-d16a-412d-b93a-406d52721221.cxg/api/v0.3/s3_uri` *Evidence:* Observation
+
+      **Source and docs.** Explorer reads its own S3 bucket lazily ([E/server/dataset/cxg_dataset.py#L33-L37](https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/server/dataset/cxg_dataset.py#L33-L37)), only for `.cxg` produced by the Discover pipeline. Annotate accepts an fsspec URL (s3, gs, http) but copies the file to a temp file and loads it ([A/server/common/utils/data_locator.py#L107-L116](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/common/utils/data_locator.py#L107-L116)): remote fetch, not remote reading.
+    evidence:
+    - kind: code
+      repo: chanzuckerberg/single-cell-explorer
+      commit: dbbcef32857a44f2f40eaa44b78c27a784e82671
+      path: server/dataset/cxg_dataset.py
+      lines: 33-37
+      url: >-
+        https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/server/dataset/cxg_dataset.py#L33-L37
+      label: E/server/dataset/cxg_dataset.py#L33-L37
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: server/common/utils/data_locator.py
+      lines: 107-116
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/common/utils/data_locator.py#L107-L116
+      label: A/server/common/utils/data_locator.py#L107-L116
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: >-
+        Results, 'Census provides efficient programmatic access to CZ CELLxGENE data for flexible exploration
+        and reanalysis'
+      quote: >-
+        Census offers efficient, low-latency access for larger-than-memory slices of CZ CELLxGENE data,
+        which users can access through Python and R APIs
+      indicates: P
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+      note: >-
+        Census (code API on S3), not the Explorer GUI; nothing says Explorer reads user-supplied remote
+        stores.
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: Materials and methods, 'TileDB-SOMA development for census'
+      quote: >-
+        As the Census is currently hosted on AWS S3, access to its data is effectively limited only by
+        a user’s network bandwidth and compute resources.
+      indicates: P
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+      note: Census, code access only.
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  spatial:
+    mark: N
+    reason: Explorer (not Annotate) opens Visium data in a spatial embedding with spots in tissue coordinates.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Explorer: the Visium dataset opens with the `spatial` embedding, with spots in tissue coordinates and a 1 mm scale bar. Annotate: no spatial mode. *Steps:* Open the Explorer link. *Evidence:* [m07](screens/cellxgene/m07_spatial_explorer_visium_default.jpg)
+
+      **Source and docs.** Explorer only: README "Spatial Mode with Deep Zoom" (Visium, Slide-seq V2), `isSpatialMode` [E/client/src/components/Graph/Graph.tsx#L269](https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/components/Graph/Graph.tsx#L269). Annotate has none.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m07_spatial_explorer_visium_default.jpg
+      label: m07
+    - kind: code
+      repo: chanzuckerberg/single-cell-explorer
+      commit: dbbcef32857a44f2f40eaa44b78c27a784e82671
+      path: client/src/components/Graph/Graph.tsx
+      lines: '269'
+      url: >-
+        https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/components/Graph/Graph.tsx#L269
+      label: E/client/src/components/Graph/Graph.tsx#L269
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Core features and functionality
+      quote: >-
+        a pre-computed, initial embedding of the cells in a low-dimensional space (e.g., PCA, tSNE, UMAP,
+        or spatial coordinates)
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Core features and functionality
+      quote: >-
+        The primary visualization is a scatterplot of cells embedded in two dimensions based on their
+        gene expression values or spatial coordinates.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Abstract
+      quote: >-
+        a highly generalizable, web-based interface for exploring high dimensional datasets along categorical,
+        continuous and spatial dimensions
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: Discussion
+      quote: >-
+        ongoing work in both CZ CELLxGENE Explorer as well as Census seeks to support these efforts and
+        technologies
+      indicates: P
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+      note: >-
+        Refers to spatial information; as written (methods dated October 2023), Explorer spatial support
+        is presented as ongoing work, not shipped.
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  selection:
+    reason: >-
+      Annotate: a lasso in the embedding highlights the cells in the gene-gene scatter; category and histogram
+      filters mask the embedding
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/03_annotate_lasso_highlights_in_scatter.jpg
+      label: cellxgene/03
+    - kind: docs
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene-documentation/blob/bd38aa9a9b5e3e482e022217c269bd3fc94060d7/explore-data/features.md#L3-L15
+      label: >-
+        CELLxGENE docs, Features (common to Desktop/Annotate and the Portal Explorer): 'Cross-filter cells
+        and color by metadata', select cells by one category value and see them across another metadata
+        field
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: client/src/components/graph/graph.js
+      lines: 135-144
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/client/src/components/graph/graph.js#L135-L144
+      label: the embedding flags selected cells from the shared state.obsCrossfilter (read at L72)
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: client/src/components/scatterplot/scatterplot.js
+      lines: 110-119
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/client/src/components/scatterplot/scatterplot.js#L110-L119
+      label: the gene-gene scatterplot flags the same selected cells from state.obsCrossfilter (read at
+        L42)
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: running app
+    detail: >-
+      Annotate: a lasso in the embedding highlights the cells in the gene-gene scatter; category and histogram
+      filters mask the embedding
+    mark: Y
+    reproduce:
+    - evidence/screens/gaps/capture2_cellxgene.py
+  annot:
+    mark: Y
+    reason: >-
+      Annotate creates categories and labels cells and writes them to a CSV; hosted Explorer has no annotation
+      editing.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Annotate: "Create new category" `matrix_check`, then a label `old_cells`. It took the current selection (Age Old, 3,116 cells) and was saved to `annotations/matrixcheck-cell-labels-<id>.csv` (344,492 bytes, 3,116 rows `old_cells`, with backups). I deleted the files afterwards. Public Explorer offers no category editing (config `annotations: false`). *Steps:* Create new category > name > "..." on the category > Add label; read the CSV in `$DEMO_ROOT/cellxgene/annotations/`. *Evidence:* [m09](screens/cellxgene/m09_annotation_annotate_category_and_label.jpg)
+
+      **Source and docs.** Annotate: create categories and label cells, saved to CSV (`--annotations-file`, `--user-generated-data-dir`, [A/server/cli/launch.py#L29-L39](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/cli/launch.py#L29-L39); docs 5_4 Annotating Data). Public Explorer: `"annotations": false`; the new authenticated workspace writes per-user annotation columns (`E/server/dataset/cxg_dataset.py` L220).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m09_annotation_annotate_category_and_label.jpg
+      label: m09
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: server/cli/launch.py
+      lines: 29-39
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/cli/launch.py#L29-L39
+      label: A/server/cli/launch.py#L29-L39
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Common uses in single-cell biology
+      quote: >-
+        insights about cells (observations) can be annotated within the application to export and share
+        with collaborators and other researchers.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: Introduction
+      quote: >-
+        CZ CELLxGENE Discover builds on the earlier work CZ CELLxGENE Annotate that enabled exploration,
+        analysis and annotation of large-scale single-cell datasets
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+      note: >-
+        Annotation editing is attributed to Annotate; Discover is described as 'optimized for dissemination
+        and reanalysis'.
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: Results, 'Submission workflow'
+      quote: >-
+        CZ CELLxGENE does not include any alignment, cluster or annotation pipeline so all requirements,
+        including cell population labels, must be provided by the contributor
+      indicates: N
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+      note: >-
+        About the curation pipeline, not user labelling in the GUI; relevant only in that Discover itself
+        does not produce labels.
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  de:
+    mark: Y
+    reason: >-
+      Two selections compared with a Welch t-test in the session (shown in Annotate; Explorer has the
+      same code).
+    detail: |-
+      **Checked in the running app (2026-10-04).** Annotate: set 1 = Age Young (2,917), set 2 = Age Old (3,116), then "See top differentially expressed genes". This gives two gene sets, "Pop1 high" and "Pop2 high"; Pop1 high lists Banp, Hsph1, Gm43305, Hmga2, Macf1, ... (the same top genes as Cirrocumulus's Age one-vs-rest run). *Steps:* Untick to leave Young, click "1: 0 cells"; leave Old, click "2"; click the DE button right of the two set buttons; expand "Pop1 high". *Evidence:* [m10 sets](screens/cellxgene/m10_de_annotate_young_vs_old.jpg), [m10 genes](screens/cellxgene/m10_de_annotate_pop1_high_genes.jpg)
+
+      **Source and docs.** Welch t-test between two selections, both programs: [A/server/common/compute/diffexp_generic.py#L6](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/common/compute/diffexp_generic.py#L6), [E/server/compute/diffexp_cxg.py#L11-L24](https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/server/compute/diffexp_cxg.py#L11-L24). Hosted Explorer caps a selection at 1.5M cells (Demos).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m10_de_annotate_young_vs_old.jpg
+      label: m10 sets
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m10_de_annotate_pop1_high_genes.jpg
+      label: m10 genes
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: server/common/compute/diffexp_generic.py
+      lines: '6'
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/common/compute/diffexp_generic.py#L6
+      label: A/server/common/compute/diffexp_generic.py#L6
+    - kind: code
+      repo: chanzuckerberg/single-cell-explorer
+      commit: dbbcef32857a44f2f40eaa44b78c27a784e82671
+      path: server/compute/diffexp_cxg.py
+      lines: 11-24
+      url: >-
+        https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/server/compute/diffexp_cxg.py#L11-L24
+      label: E/server/compute/diffexp_cxg.py#L11-L24
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Common uses in single-cell biology
+      quote: >-
+        use cellxgene’s interactive computation capabilities to calculate differential expression (e.g.,
+        t-tests) between any arbitrary set of cells
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: >-
+        Results, 'Explorer allows interactive exploration and analysis of individual single-cell datasets
+        up to 4 M cells'
+      quote: performing differential gene expression (Welch’s t-test)
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: >-
+        Materials and methods, 'Performant visualization and analysis for up to 4 million cells via explorer'
+      quote: allow for the interactive comparison of populations of up to 1.5 million cells in under 60
+        s.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    - evidence/screens/gaps/capture2_cellxgene.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  image:
+    mark: N
+    reason: >-
+      Explorer draws the Visium H&E image under the spots, with gene colouring on top; Annotate has no
+      image layer.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Explorer: the H&E image sits under the spots (image toggle next to the embedding dropdown), and MYH7 colouring is drawn over it. *Steps:* Open the Visium link; type MYH7 in Quick Gene Search; click its colour drop. *Evidence:* [m11](screens/cellxgene/m11_image_explorer_myh7_on_tissue.jpg)
+
+      **Source and docs.** Explorer only: `imageUnderlay` toggle and OpenSeadragon tiles ([E/client/src/components/Graph/Graph.tsx#L62](https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/components/Graph/Graph.tsx#L62), L320).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m11_image_explorer_myh7_on_tissue.jpg
+      label: m11
+    - kind: code
+      repo: chanzuckerberg/single-cell-explorer
+      commit: dbbcef32857a44f2f40eaa44b78c27a784e82671
+      path: client/src/components/Graph/Graph.tsx
+      lines: '62'
+      url: >-
+        https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/components/Graph/Graph.tsx#L62
+      label: E/client/src/components/Graph/Graph.tsx#L62
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  share:
+    mark: N
+    reason: >-
+      No link or file restores the view (the URL never changes and reopening shows default colours), so
+      the figure's P should be N.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Neither URL changes when the view changes. Annotate's URL stays `http://127.0.0.1:8903/` after colouring by Mpo, and reopening it shows default colours. Explorer's URL stays the dataset URL after colouring by MYH7; reopened, the spots are uncoloured. *Steps:* Colour by a gene, copy the address bar into a new tab. *Evidence:* [Annotate before](screens/cellxgene/m12_share_annotate_coloured_before_reload.jpg), [Annotate reopened](screens/cellxgene/m12_share_annotate_same_url_reopened.jpg), [Explorer reopened](screens/cellxgene/m12_share_explorer_same_url_reopened.jpg)
+
+      **Source and docs.** No link or file restores layout, colouring or selection. Explorer's only `pushState` swaps the dataset ([E/client/src/actions/index.ts#L593](https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/actions/index.ts#L593)); URL query parameters are read only for feature flags (`E/client/src/util/featureFlags/featureFlags.ts` L50-55). Annotate's annotation and gene set CSVs restore labels (data), not the view. The current P counts the CSV; judgement call, see Disagreements.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m12_share_annotate_coloured_before_reload.jpg
+      label: Annotate before
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m12_share_annotate_same_url_reopened.jpg
+      label: Annotate reopened
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m12_share_explorer_same_url_reopened.jpg
+      label: Explorer reopened
+    - kind: code
+      repo: chanzuckerberg/single-cell-explorer
+      commit: dbbcef32857a44f2f40eaa44b78c27a784e82671
+      path: client/src/actions/index.ts
+      lines: '593'
+      url: >-
+        https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/actions/index.ts#L593
+      label: E/client/src/actions/index.ts#L593
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Core features and functionality
+      quote: Findings can be recorded and shared via exportable annotations.
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        What is shared is the annotation data (labels), not a view state; consistent with the notes' proposed
+        N, and it is the only basis for the current P.
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    - evidence/screens/gaps/capture2_cellxgene.py
+    - evidence/screens/gaps/capture2_cellxgene_explorer.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  export:
+    mark: N
+    reason: Explorer's download menu saves "Current view (.png)"; Annotate has no image export.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Explorer: the download icon on the right of the plot offers "Current view (.png)", "Workflow-processed anndata (.h5ad)" (greyed), "Categories & label annotations (.csv)" and "Gene set annotations (.csv)". "Current view (.png)" saved `CELLxGENE_spatial_emb.png`, 1,090,301 bytes. Annotate: no export; its only menu (the info button) lists Documentation, Chat, Github, version, licence. *Steps:* Explorer: download icon > Current view (.png). Annotate: click the info button next to the title. *Evidence:* [Explorer](screens/cellxgene/m13_export_explorer_download_menu.jpg), [Annotate](screens/cellxgene/m13_export_annotate_menu_no_export.jpg)
+
+      **Source and docs.** Explorer only: Download menu, "Current view (.png)" ([E/client/src/components/MenuBar/components/Download/Download.tsx#L30-L31](https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/components/MenuBar/components/Download/Download.tsx#L30-L31), menu item L63-67). Annotate has no image export.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m13_export_explorer_download_menu.jpg
+      label: Explorer
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m13_export_annotate_menu_no_export.jpg
+      label: Annotate
+    - kind: code
+      repo: chanzuckerberg/single-cell-explorer
+      commit: dbbcef32857a44f2f40eaa44b78c27a784e82671
+      path: client/src/components/MenuBar/components/Download/Download.tsx
+      lines: 30-31
+      url: >-
+        https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/components/MenuBar/components/Download/Download.tsx#L30-L31
+      label: E/client/src/components/MenuBar/components/Download/Download.tsx#L30-L31
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    - evidence/screens/gaps/capture2_cellxgene.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  desktop:
+    mark: N
+    reason: No installer or app bundle exists; Annotate is a pip package that starts a local server.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show. Searched the 5_1 install docs and both repos for an installer or app bundle; Annotate is `pip install` plus a local server. *Evidence:* Observation
+
+      **Source and docs.** Annotate is a pip package that starts a local server ([5_1 docs](https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_1__Getting%20Started:%20Install,%20Launch,%20Quick%20Start)); no installer.
+    evidence:
+    - kind: docs
+      url: >-
+        https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_1__Getting%20Started:%20Install,%20Launch,%20Quick%20Start
+      label: 5_1 docs
+    na:
+      visual: No desktop application exists
+      so there is no GUI place in which its absence could be shown.: null
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  hosted:
+    mark: P
+    reason: >-
+      Annotate's self-host docs caution about multi-user or hosted environments but document no multi-user
+      deployment, so P (coordinator ruling, 5ec238b).
+    detail: |-
+      **Checked in the running app (2026-10-04).** Explorer on Discover opened a dataset anonymously, with no login and no install. *Steps:* Open any Discover `/e/` link. *Evidence:* [m07](screens/cellxgene/m07_spatial_explorer_visium_default.jpg)
+
+      **Source and docs.** The 2021 preprint agrees: "frequently used to host published and unpublished datasets for public exploration". Explorer on Discover is one deployment serving every visitor (any of 2,237 datasets, no login). Annotate documents multi-user self-hosting ([5_2 Self Host](https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_2__Self%20Host%20cellxgene): "special consideration in any multi-user or hosted environment"). The old P reasoned "curated data only", which is a limit on remote stores, not on multi-user.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m07_spatial_explorer_visium_default.jpg
+      label: m07
+    - kind: docs
+      url: >-
+        https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_2__Self%20Host%20cellxgene
+      label: 5_2 Self Host
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20260516121220/https://cellxgene.cziscience.com/docs/05__Annotate%20and%20Analyze%20Your%20Data/5_2__Self%20Host%20cellxgene
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Figure 1 legend
+      quote: cellxgene is frequently used to host published and unpublished datasets for public exploration.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Implementation and architecture
+      quote: >-
+        cellxgene’s flexible infrastructure has enabled deployment inside of intranet environments by
+        various institutions for large, private collaborations
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: Abstract
+      quote: >-
+        Available via a free-to-use online data portal, CZ CELLxGENE hosts a growing corpus of community-contributed
+        data of over 93 million unique cells.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: Introduction
+      quote: >-
+        Features within CZ CELLxGENE, such as ‘Explorer and Gene Expression’, provide easy-to-use no-code
+        web-based visualizations of data from a given dataset or collection
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    - evidence/screens/gaps/capture2_docs.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  static:
+    mark: N
+    reason: Every data access in both programs is a call to the Python server (schema, layout, data/var),
+      so N.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Every data access is an API call: `schema`, `config`, `layout/obs`, `annotations/obs`, `data/var`, `colors` (Annotate) and `s3_uri`, `dataset-metadata`, `celltypes`, `uns/meta` (Explorer). Nothing works without the Python server. *Steps:* Network tab on load. *Evidence:* Observation (request log)
+
+      **Source and docs.** Both need the Python server for every data request.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Implementation and architecture
+      quote: cellxgene’s architecture consists of a Python server and a JavaScript client.
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: >-
+        Materials and methods, 'Performant visualization and analysis for up to 4 million cells via explorer'
+      quote: >-
+        This algorithm and numerous other optimizations in the backend allow for the interactive comparison
+        of populations
+      indicates: N
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+      note: Explorer depends on a backend.
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    - evidence/screens/gaps/capture_cellxgene.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  lazy:
+    mark: P
+    by_reading:
+      A: N
+      B: P
+    reason: >-
+      With --backed only one of gene colouring and DE reads lazily, depending on how X is encoded: under
+      CSR (what scanpy writes) every gene request loads all of X; under CSC gene reads are column reads
+      but DE loads all of X. No encoding makes both lazy, and the docs mention neither.
+    detail: |-
+      **Measured (2026-10-05), cellxgene 1.3.0 (tag fd8b47b), anndata 0.11.4.** One 8,090 x 16,285 matrix (25.8M nonzeros, 197 MiB in memory), written once as CSR and once as CSC. `cellxgene launch <f> --backed --X-approximate-distribution normal`, then `GET /api/v0.2/data/var?var:name_0=<gene>` for Mpo, Elane, Cd74:
+
+      | X encoding | server RSS after load | after first gene | time per gene |
+      |---|---|---|---|
+      | CSR | 685 MiB | 888 MiB (+203) | 0.53-0.55 s |
+      | CSC | 677 MiB | 678 MiB (+1) | 0.02-0.03 s |
+
+      The exact call the server makes, run in-process (tracemalloc): CSR peaks at 197 MiB per gene (the whole matrix), CSC at 0.1 MiB.
+
+      **Why (source).** A gene request reaches `get_X_array(obs_mask=None, var_mask=[j])`, which indexes `self.data.X[slice(None), [j]]` ([anndata_adaptor.py#L339-L351](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/data_anndata/anndata_adaptor.py#L339-L351)). anndata's backed sparse `__getitem__` reads only the requested vectors when the minor-axis index is a slice; otherwise it runs `self.to_memory()[...]` ([sparse_dataset.py#L362-L370](https://github.com/scverse/anndata/blob/0.11.4/src/anndata/_core/sparse_dataset.py#L362-L370), [#L436-L459](https://github.com/scverse/anndata/blob/0.11.4/src/anndata/_core/sparse_dataset.py#L436-L459)). For a gene column that is the CSC case only. DE asks for the opposite shape, selected rows by all genes (`get_X_array(maskA, None)`, [diffexp_generic.py#L35-L36](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/common/compute/diffexp_generic.py#L35-L36)), which is lazy under CSR and loads all of X under CSC.
+
+      **Two further conditions.** `--backed` is off by default ([default_config.py#L33](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/default_config.py#L33)). The default `X_approximate_distribution: auto` ([#L70](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/default_config.py#L70)) is documented as incompatible with `--backed` but not rejected; it defers to the first DE call, which replaces the backed object with `self.data.to_memory()` ([anndata_adaptor.py#L353-L361](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/data_anndata/anndata_adaptor.py#L353-L361)), after which the whole file stays in memory.
+
+      **Why P and not Y.** Reading B allows a preparation step (Cirrocumulus Y after `cirro prepare_data`). Here no documented step gives lazy reads for the GUI as a whole: the launch flag plus an undocumented re-encoding makes gene colouring lazy at the cost of DE, and the scanpy default (CSR) makes every gene request read all of X. Not a capture: this install's werkzeug 3.1.9 then fails writing the body ("applications must write bytes"); the column is computed and Content-Length (32,464 B) set before that, so the reads measured are the ones the GUI would trigger.
+
+      *Steps:* `notes/comparison/demos/cellxgene/backed_check.py` (server RSS) and `inprocess_check.py` (the exact call); outputs `backed_result.json`, `inprocess_result.json`.
+
+      Measured (8,090 cells, cellxgene 1.3.0 --backed; notes/comparison/demos/cellxgene/backed_result.json, in-process check in inprocess_result.json): row-major (CSR) X: +203 MiB and 0.53 s per gene request, i.e. the whole matrix; column-major (CSC) X: +1 MiB and 0.02 s per gene request. Genes are read lazily only when X is column-major; the default row-major layout loads all of X on each gene request. Accepted by the coordinator (2026-10-05).
+    evidence:
+    - commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      kind: code
+      label: 'get_X_array: X[obs_mask, var_mask] on the backed AnnData'
+      lines: 339-351
+      path: server/data_anndata/anndata_adaptor.py
+      repo: chanzuckerberg/cellxgene
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/data_anndata/anndata_adaptor.py#L339-L351
+    - commit: 0.11.4
+      kind: code
+      label: 'is_sparse_indexing_overridden: minor axis must be a slice'
+      lines: 362-370
+      path: src/anndata/_core/sparse_dataset.py
+      repo: scverse/anndata
+      url: https://github.com/scverse/anndata/blob/0.11.4/src/anndata/_core/sparse_dataset.py#L362-L370
+    - commit: 0.11.4
+      kind: code
+      label: '__getitem__: falls to self.to_memory()[...] (L457)'
+      lines: 436-459
+      path: src/anndata/_core/sparse_dataset.py
+      repo: scverse/anndata
+      url: https://github.com/scverse/anndata/blob/0.11.4/src/anndata/_core/sparse_dataset.py#L436-L459
+    - commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      kind: code
+      label: 'DE: get_X_array(maskA, None), rows x all genes'
+      lines: 35-36
+      path: server/common/compute/diffexp_generic.py
+      repo: chanzuckerberg/cellxgene
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/common/compute/diffexp_generic.py#L35-L36
+    - commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      kind: code
+      label: 'auto distribution: self.data = self.data.to_memory()'
+      lines: 353-361
+      path: server/data_anndata/anndata_adaptor.py
+      repo: chanzuckerberg/cellxgene
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/data_anndata/anndata_adaptor.py#L353-L361
+    - commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      kind: code
+      label: 'backed: false'
+      lines: '33'
+      path: server/default_config.py
+      repo: chanzuckerberg/cellxgene
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/default_config.py#L33
+    - commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      kind: code
+      label: '''auto'' is incompatible with --backed (help text only)'
+      lines: 153-160
+      path: server/cli/launch.py
+      repo: chanzuckerberg/cellxgene
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/server/cli/launch.py#L153-L160
+    - kind: note
+      path: notes/comparison/demos/cellxgene/backed_result.json
+      label: server RSS per gene request, CSR vs CSC (2026-10-05)
+    - kind: note
+      path: notes/comparison/demos/cellxgene/inprocess_result.json
+      label: peak allocation of the exact call, CSR vs CSC (2026-10-05)
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Implementation and architecture
+      quote: Data ingress and egress is accomplished by lazy loading of metadata, facilitated by a REST
+        API.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Lazy client-server transfer of metadata; says nothing about slicing the stored matrix.
+    na:
+      visual: >-
+        a memory measurement, not a screen state; the numbers are in backed_result.json and inprocess_result.json
+    reproduce:
+    - notes/comparison/demos/cellxgene/backed_check.py
+    - notes/comparison/demos/cellxgene/inprocess_check.py
+    checked:
+      by: comparison-auditor
+      date: '2026-10-05'
+      how: measured on the running server, plus source
+  every_cell:
+    mark: Y
+    reason: Both programs draw every cell as a WebGL point with no downsampling, binning or density mode.
+    detail: >-
+      **Scale group.** **Every cell drawn**, both programs. WebGL draw call uses `count: annoMatrix.nObs`;
+      point size shrinks with density (`pointSize` clamped 0.5 to 5 px from nObs / viewport²). No downsampling,
+      binning or density mode. Evidence: [E/client/src/components/Graph/Graph.tsx#L1346](https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/components/Graph/Graph.tsx#L1346),
+      [E/client/src/util/glHelpers.ts#L55-L80](https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/util/glHelpers.ts#L55-L80);
+      Annotate [A/client/src/components/graph/graph.js#L819](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/client/src/components/graph/graph.js#L819),
+      same `glHelpers.js` L68.
+    evidence:
+    - kind: code
+      repo: chanzuckerberg/single-cell-explorer
+      commit: dbbcef32857a44f2f40eaa44b78c27a784e82671
+      path: client/src/components/Graph/Graph.tsx
+      lines: '1346'
+      url: >-
+        https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/components/Graph/Graph.tsx#L1346
+      label: E/client/src/components/Graph/Graph.tsx#L1346
+    - kind: code
+      repo: chanzuckerberg/single-cell-explorer
+      commit: dbbcef32857a44f2f40eaa44b78c27a784e82671
+      path: client/src/util/glHelpers.ts
+      lines: 55-80
+      url: >-
+        https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/util/glHelpers.ts#L55-L80
+      label: E/client/src/util/glHelpers.ts#L55-L80
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: client/src/components/graph/graph.js
+      lines: '819'
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/client/src/components/graph/graph.js#L819
+      label: A/client/src/components/graph/graph.js#L819
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Implementation and architecture
+      quote: >-
+        To accomplish this with millions of observations in client side JavaScript, we used a combination
+        of D3 [1] WebGL
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Implies client-side WebGL rendering of millions of observations; does not state that every cell
+        is drawn without downsampling.
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: >-
+        Materials and methods, 'Performant visualization and analysis for up to 4 million cells via explorer'
+      quote: >-
+        we built a custom renderer in WebGL, a JavaScript API for rendering high-performance graphics,
+        to efficiently render millions of points in the cell embeddings
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: Figure 3 legend, panel A
+      quote: A UMAP of all 483 152 cells in the Tabula Sapiens dataset available on Explorer
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture2_cellxgene.py
+    - evidence/screens/gaps/capture2_cellxgene_explorer.py
+  subset:
+    mark: P
+    reason: >-
+      'Subset to currently selected cells' only restricts the view: the server holds the whole h5ad and
+      the client keeps the loaded columns; nothing is fetched less.
+    detail: |-
+      **Scale group.** **Yes, both**: "Subset to currently selected cells and associated metadata" and "Undo subset" buttons. View only: the subset keeps the stored embedding coordinates, nothing is recomputed. The 2021 preprint describes "computationally re-embedding subpopulations of the data", but neither current repository has any re-embedding code (`grep -ri reembed` over Annotate at fd8b47b (tag 1.3.0) and Explorer at dbbcef3 finds nothing), so that feature is not in today's apps. No downsample control. Evidence: Explorer [E/client/src/components/MenuBar/components/Subset/Subset.tsx#L27](https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/components/MenuBar/components/Subset/Subset.tsx#L27), action `E/client/src/actions/viewStack.ts` L46-60 (pushes a subset view of `annoMatrix`). Annotate [A/client/src/components/menubar/subset.js#L17](https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/client/src/components/menubar/subset.js#L17), `A/client/src/actions/viewStack.js` L37.
+
+      **Re-scored under X8 (2026-10-04)**: 'Subset to currently selected cells' only restricts the view: the server holds the whole h5ad and the client keeps the loaded columns; nothing is fetched less.
+    evidence:
+    - kind: code
+      repo: chanzuckerberg/single-cell-explorer
+      commit: dbbcef32857a44f2f40eaa44b78c27a784e82671
+      path: client/src/components/MenuBar/components/Subset/Subset.tsx
+      lines: '27'
+      url: >-
+        https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/components/MenuBar/components/Subset/Subset.tsx#L27
+      label: E/client/src/components/MenuBar/components/Subset/Subset.tsx#L27
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: client/src/components/menubar/subset.js
+      lines: '17'
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/client/src/components/menubar/subset.js#L17
+      label: A/client/src/components/menubar/subset.js#L17
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Core features and functionality
+      quote: >-
+        The combinatorial nature of these affordances facilitates arbitrary exploration, cross-filtering,
+        subsetting, coloring, and computationally re-embedding subpopulations of the data.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Core features and functionality
+      quote: >-
+        users can then probe interesting facets of the data by subsetting, computing differential expression
+        (e.g., t-tests), and re-embedding subpopulations of cells.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: >-
+        Results, 'Explorer allows interactive exploration and analysis of individual single-cell datasets
+        up to 4 M cells'
+      quote: >-
+        The combinatorial nature of these affordances facilitates arbitrary comparisons through cross-filtering,
+        subsetting and coloring subpopulations of the data (Figure 3A).
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+      note: Unlike the 2021 preprint, re-embedding is no longer listed.
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture2_cellxgene.py
+  auto_subset:
+    na:
+      visual: no automatic subsetting in source or docs; a demo-size shot cannot show its absence at scale
+    reason: Every cell is loaded and drawn; no default subsample.
+    detail: >-
+      **New column (user X8, 2026-10-04).** Every cell is loaded and drawn; no default subsample. Evidence
+      is the same as for every cell drawn, which shows how the default view is drawn.
+    evidence:
+    - kind: code
+      repo: chanzuckerberg/single-cell-explorer
+      commit: dbbcef32857a44f2f40eaa44b78c27a784e82671
+      path: client/src/components/Graph/Graph.tsx
+      lines: '1346'
+      url: >-
+        https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/components/Graph/Graph.tsx#L1346
+      label: E/client/src/components/Graph/Graph.tsx#L1346
+    - kind: code
+      repo: chanzuckerberg/single-cell-explorer
+      commit: dbbcef32857a44f2f40eaa44b78c27a784e82671
+      path: client/src/util/glHelpers.ts
+      lines: 55-80
+      url: >-
+        https://github.com/chanzuckerberg/single-cell-explorer/blob/dbbcef32857a44f2f40eaa44b78c27a784e82671/client/src/util/glHelpers.ts#L55-L80
+      label: E/client/src/util/glHelpers.ts#L55-L80
+    - kind: code
+      repo: chanzuckerberg/cellxgene
+      commit: fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a
+      path: client/src/components/graph/graph.js
+      lines: '819'
+      url: >-
+        https://github.com/chanzuckerberg/cellxgene/blob/fd8b47b78ed9f9fa3ac9bb52897597a3e7fa549a/client/src/components/graph/graph.js#L819
+      label: A/client/src/components/graph/graph.js#L819
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Implementation and architecture
+      quote: >-
+        To accomplish this with millions of observations in client side JavaScript, we used a combination
+        of D3 [1] WebGL
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Implies client-side WebGL rendering of millions of observations; does not state that every cell
+        is drawn without downsampling.
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: >-
+        Materials and methods, 'Performant visualization and analysis for up to 4 million cells via explorer'
+      quote: >-
+        we built a custom renderer in WebGL, a JavaScript API for rendering high-performance graphics,
+        to efficiently render millions of points in the cell embeddings
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: Figure 3 legend, panel A
+      quote: A UMAP of all 483 152 cells in the Tabula Sapiens dataset available on Explorer
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: N
+evidence_tool: cellxgene
+retired_cells:
+  filters:
+    mark: P
+    reason: >-
+      Category checkboxes and histogram brushes mask the embedding, but there is no table of cells or
+      genes to filter, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Annotate: expanding Age and unticking Mid and Old leaves "umap: 2917 out of 8090 cells", and only Young cells are drawn at full size. Category checkboxes and histogram brushes, but no table and no AND/OR builder, so P stands. *Steps:* Expand Age in the left panel; untick Mid and Old. *Evidence:* [m08](screens/cellxgene/m08_filters_annotate_age_young_only.jpg)
+
+      **Source and docs.** Categorical checkboxes and histogram brushes cross-filter the embedding (both programs; Hosted Tutorials "Selecting and Subsetting Cells"). There is no row table and no AND/OR builder.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/cellxgene/m08_filters_annotate_age_young_only.jpg
+      label: m08
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Core features and functionality
+      quote: >-
+        Users can filter these visualizations by interacting with facets based ... on gene expression,
+        metadata, and the embedding itself.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Facet/histogram cross-filtering; no table of cells or genes is described.
+    - kind: paper
+      url: https://doi.org/10.1101/2021.04.05.438318
+      label: Megill et al. 2021, bioRxiv
+      where: Implementation and architecture
+      quote: >-
+        Most affordances in the interface affect other visualizations and controls (for example, filtering
+        by metadata emphasizes corresponding items in an embedding).
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Filtered items are emphasised, not masked; no table.
+    - kind: paper
+      url: https://doi.org/10.1093/nar/gkae1142
+      label: CZI Cell Science Program et al. 2025, Nucleic Acids Research 53(D1):D886-D900
+      where: >-
+        Results, 'Explorer allows interactive exploration and analysis of individual single-cell datasets
+        up to 4 M cells'
+      quote: Users can facet these visualizations based on gene expression, metadata and the embedding
+        itself.
+      indicates: P
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260727020852/https://academic.oup.com/nar/article/53/D1/D886/7912032
+      note: Facet cross-filtering, no table.
+    reproduce:
+    - notes/comparison/demos/cellxgene/matrix_check.py
+    - notes/comparison/demos/cellxgene/matrix_check2.py
+    - evidence/screens/gaps/capture2_cellxgene.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app

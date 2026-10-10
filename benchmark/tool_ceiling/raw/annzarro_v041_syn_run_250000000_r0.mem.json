@@ -1,0 +1,145 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_250000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_syn_run_250000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 52.7,
+ "peaks": {
+  "client": {
+   "fp_peak": 888545464,
+   "fp_lifetime_sum": 919856032,
+   "rss_peak": 1109688320,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 3393276856,
+   "fp_lifetime_sum": 3445034752,
+   "rss_peak": 3414622208,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 134448480,
+   "fp_lifetime_sum": 134448480,
+   "rss_peak": 169852928,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3790318704,
+   "rss_peak": 4524310528,
+   "fp_lifetime_sum": 4364890784
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.36,
+   1753523560
+  ],
+  [
+   4.7,
+   2098947792
+  ],
+  [
+   7.15,
+   1819879120
+  ],
+  [
+   9.5,
+   1809114832
+  ],
+  [
+   11.91,
+   1804625616
+  ],
+  [
+   14.25,
+   3782552688
+  ],
+  [
+   16.67,
+   3782749296
+  ],
+  [
+   19.07,
+   3782913136
+  ],
+  [
+   21.47,
+   3787074672
+  ],
+  [
+   23.84,
+   3787746416
+  ],
+  [
+   26.25,
+   3787762800
+  ],
+  [
+   28.63,
+   3788188784
+  ],
+  [
+   31.04,
+   3790318704
+  ],
+  [
+   33.44,
+   3772066976
+  ],
+  [
+   35.81,
+   3772198048
+  ],
+  [
+   38.25,
+   3772378272
+  ],
+  [
+   40.59,
+   3772574880
+  ],
+  [
+   43.01,
+   3772853408
+  ],
+  [
+   45.39,
+   3773000864
+  ],
+  [
+   47.79,
+   3773000864
+  ],
+  [
+   50.17,
+   3773017248
+  ],
+  [
+   52.56,
+   3772902560
+  ]
+ ],
+ "ps_before": "2026-10-07T16:23:16-0700\nmemorystatus_level=91 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n57113 2346080  99.1 $HOME/.local/bin/claude\n  855 1232432  95.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n 6219  59056  11.0 $HOME/Projects/investments/.venv/bin/python3\n  140  19792   6.6 .venv/bin/python\n74590 177328   3.6 /Applications/Microsoft Teams.app/Contents/MacOS/MSTeams\n  641 187488   3.6 /usr/libexec/airportd\n  626 420640   3.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n14980 6034672   2.7 /System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine\n 4725 749040   2.2 claude\n 1066 139232   2.2 /System/Library/PrivateFrameworks/IMCore.framework/imagent.app/Contents/MacOS/imagent\n",
+ "others_at_start": [
+  "141 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "142 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

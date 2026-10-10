@@ -1,0 +1,20 @@
+{
+ "version": 1,
+ "image": "g01_hosted_DOCS_install.jpg",
+ "tool": "vizit",
+ "software": "VizIt documentation (thedonglab.github.io/VizIt)",
+ "data": null,
+ "url": "https://thedonglab.github.io/VizIt/install/",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/vizit/visuals_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "hosted",
+   "mark": "Y",
+   "caption": "VizIt docs, Install: Docker or manual deployment of the web portal for 'most deployments'"
+  }
+ ],
+ "callouts": []
+}

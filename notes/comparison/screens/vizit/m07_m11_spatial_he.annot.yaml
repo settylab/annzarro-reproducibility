@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m07_m11_spatial_he.jpg",
+ "tool": "vizit",
+ "software": "VizIt v1.0.0 as deployed at pd5d.yale.edu (Parkinson's Cell Atlas)",
+ "data": "PD5D_MTG_VisiumST (Visium, hosted)",
+ "url": "https://pd5d.yale.edu/views/visiumview?dataset=PD5D_MTG_VisiumST&gene=SNCA&sample=BN2003&sample=BN1076&meta=smoothed_label_s5",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/vizit/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "spatial",
+   "mark": "Y",
+   "caption": "Spatial Tx View: Visium spots of two samples at their tissue coordinates, coloured by SNCA and by a layer label"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    349,
+    149,
+    528,
+    528
+   ],
+   "label": "spots (and H&E) plot",
+   "selector": ".js-plotly-plot >> nth=0"
+  },
+  {
+   "n": 2,
+   "box": [
+    53,
+    532,
+    136,
+    32
+   ],
+   "label": "H&E toggle",
+   "selector": "text=Show H&E image"
+  }
+ ]
+}

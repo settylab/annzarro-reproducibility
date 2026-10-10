@@ -1,0 +1,73 @@
+clean,source,tag,n_cells,color,rep,flags,status,seconds,v8_used_peak_gb,v8_backing_peak_gb,renderer_rss_peak_gb,gpu_rss_peak_gb,server_rss_peak_gb,clean_outcome
+True,ceiling.py,ceil_default,95624334,cat,0,--enable-precise-memory-info,ok,10.25,1.936,4.516,8.903,2.009,7.7,True
+True,ceiling.py,ceil_default,95624334,cat,1,--enable-precise-memory-info,ok,10.16,1.936,4.513,8.797,2.01,7.666,True
+False,ceiling.py,ceil_default,95624334,cat,2,--enable-precise-memory-info,ok,4.74,1.936,4.084,8.76,2.01,7.929,True
+True,ceiling.py,ceil_rerun,95624334,cat,0,--enable-precise-memory-info,ok,10.22,1.936,4.766,8.336,2.01,7.468,True
+True,ceiling.py,ceil_rerun,95624334,cat,1,--enable-precise-memory-info,ok,10.03,1.936,4.748,8.421,2.009,7.521,True
+True,ceiling.py,ceil_rerun,95624334,cat,2,--enable-precise-memory-info,ok,9.96,1.936,4.778,8.37,2.008,7.239,True
+True,ceiling.py,ceil_default,95624334,gene,0,--enable-precise-memory-info,ok,8.62,1.936,4.997,8.921,2.005,6.497,True
+True,ceiling.py,ceil_default,95624334,gene,1,--enable-precise-memory-info,ok,8.7,1.936,4.968,8.916,2.005,6.487,True
+True,ceiling.py,ceil_default,95624334,gene,2,--enable-precise-memory-info,ok,8.83,1.935,5.007,9.016,2.006,6.552,True
+True,ceiling.py,ceil_rerun,95624334,gene,0,--enable-precise-memory-info,ok,8.7,1.936,4.999,8.939,2.005,6.444,True
+True,ceiling.py,ceil_rerun,95624334,gene,1,--enable-precise-memory-info,ok,8.71,1.936,5.01,8.91,2.008,6.429,True
+True,ceiling.py,ceil_rerun,95624334,gene,2,--enable-precise-memory-info,ok,8.65,1.935,4.962,8.968,2.006,6.42,True
+False,ceiling.py,ceil_default,150000000,cat,0,--enable-precise-memory-info,ok,16.38,3.029,5.488,9.884,2.953,9.663,True
+False,ceiling.py,ceil_default,150000000,cat,1,--enable-precise-memory-info,ok,7.86,3.029,5.427,9.916,2.953,9.587,True
+False,ceiling.py,ceil_default,150000000,cat,2,--enable-precise-memory-info,ok,7.8,3.029,5.411,10.006,2.953,9.626,True
+True,ceiling.py,ceil_rerun,150000000,cat,0,--enable-precise-memory-info,ok,7.8,3.029,5.441,9.998,2.953,9.417,True
+True,ceiling.py,ceil_rerun,150000000,cat,1,--enable-precise-memory-info,ok,16.3,3.029,4.932,10.076,2.953,8.924,True
+True,ceiling.py,ceil_rerun,150000000,cat,2,--enable-precise-memory-info,ok,7.83,3.029,5.437,10.016,2.953,9.123,True
+False,ceiling.py,ceil_default,150000000,gene,0,--enable-precise-memory-info,ok,14.68,3.029,6.356,10.427,2.95,8.31,True
+False,ceiling.py,ceil_default,150000000,gene,1,--enable-precise-memory-info,ok,17.1,3.029,6.295,10.677,2.95,8.313,True
+False,ceiling.py,ceil_default,150000000,gene,2,--enable-precise-memory-info,ok,15.0,3.029,6.348,10.53,2.95,8.587,True
+True,ceiling.py,ceil_rerun,150000000,gene,0,--enable-precise-memory-info,ok,14.6,3.029,6.356,10.547,2.951,8.167,True
+True,ceiling.py,ceil_rerun,150000000,gene,1,--enable-precise-memory-info,ok,14.81,3.029,6.356,10.344,2.95,8.234,True
+True,ceiling.py,ceil_rerun,150000000,gene,2,--enable-precise-memory-info,ok,14.65,3.029,6.351,10.506,2.95,8.175,True
+False,ceiling.py,ceil_default_175,175000000,cat,0,--enable-precise-memory-info,ok,10.87,3.532,6.376,11.078,3.361,11.185,True
+False,ceiling.py,ceil_default_175,175000000,cat,1,--enable-precise-memory-info,ok,21.6,3.531,4.918,11.116,3.361,11.264,True
+False,ceiling.py,ceil_default_175,175000000,cat,2,--enable-precise-memory-info,ok,10.75,3.531,6.326,11.153,3.36,10.746,True
+True,ceiling.py,ceil_rerun,175000000,cat,0,--enable-precise-memory-info,ok,10.62,3.532,6.402,11.034,3.361,11.181,True
+True,ceiling.py,ceil_rerun,175000000,cat,1,--enable-precise-memory-info,ok,21.42,3.531,4.976,11.035,3.361,10.472,True
+True,ceiling.py,ceil_rerun,175000000,cat,2,--enable-precise-memory-info,ok,10.73,3.531,6.328,11.029,3.362,10.274,True
+False,ceiling.py,ceil_default_175,175000000,gene,0,--enable-precise-memory-info,ok,19.78,3.531,7.382,11.762,3.358,9.846,True
+False,ceiling.py,ceil_default_175,175000000,gene,1,--enable-precise-memory-info,ok,19.72,3.531,7.35,11.715,3.358,9.882,True
+False,ceiling.py,ceil_default_175,175000000,gene,2,--enable-precise-memory-info,ok,20.01,3.531,7.326,11.705,3.358,9.712,True
+True,ceiling.py,ceil_rerun,175000000,gene,0,--enable-precise-memory-info,ok,19.64,3.531,7.334,11.688,3.357,9.829,True
+True,ceiling.py,ceil_rerun,175000000,gene,1,--enable-precise-memory-info,ok,13.84,3.531,7.326,11.702,3.358,9.642,True
+True,ceiling.py,ceil_rerun,175000000,gene,2,--enable-precise-memory-info,ok,19.57,3.531,7.408,11.713,3.357,9.689,True
+False,probe.py,probe175_control,175000000,cat,,--enable-precise-memory-info,unresponsive,,,,11.05,3.511,20.797,True
+False,probe.py,probe175_control2,175000000,cat,,--enable-precise-memory-info,ok,,,,10.982,3.613,20.977,True
+False,probe.py,probe175_control,175000000,gene,,--enable-precise-memory-info,unresponsive,,,,11.75,3.584,22.667,True
+False,probe.py,probe175_control2,175000000,gene,,--enable-precise-memory-info,ok,,,,11.693,3.611,20.1,True
+True,probe.py,probe182_clean,182000000,cat,,--enable-precise-memory-info,crash,,,,7.808,0.077,4.752,True
+False,probe.py,probe182_r0,182000000,cat,0,--enable-precise-memory-info,crash,,,,7.915,0.077,4.73,True
+False,probe.py,probe182_r1,182000000,cat,1,--enable-precise-memory-info,crash,,,,7.776,0.077,4.781,True
+False,probe.py,probe182_r2,182000000,cat,2,--enable-precise-memory-info,crash,,,,7.77,0.077,4.733,True
+True,probe.py,probe182_clean,182000000,gene,,--enable-precise-memory-info,crash,,,,8.882,0.077,6.274,True
+False,probe.py,probe182_r0,182000000,gene,0,--enable-precise-memory-info,crash,,,,8.85,0.077,6.342,True
+False,probe.py,probe182_r1,182000000,gene,1,--enable-precise-memory-info,crash,,,,8.929,0.077,6.347,True
+False,probe.py,probe182_r2,182000000,gene,2,--enable-precise-memory-info,crash,,,,8.912,0.077,6.305,True
+False,probe.py,probe190_r0,190000000,cat,0,--enable-precise-memory-info,crash,,,,7.904,0.077,4.938,True
+False,probe.py,probe190_r1,190000000,cat,1,--enable-precise-memory-info,crash,,,,7.923,0.077,4.922,True
+False,probe.py,probe190_r2,190000000,cat,2,--enable-precise-memory-info,crash,,,,7.82,0.077,4.911,True
+False,probe.py,probe190_r0,190000000,gene,0,--enable-precise-memory-info,crash,,,,8.7,0.077,6.57,True
+False,probe.py,probe190_r1,190000000,gene,1,--enable-precise-memory-info,crash,,,,8.869,0.077,6.554,True
+False,probe.py,probe190_r2,190000000,gene,2,--enable-precise-memory-info,crash,,,,8.744,0.077,6.592,True
+False,probe.py,probe_heap16384_r0,200000000,cat,0,--enable-precise-memory-info --js-flags=--max-old-space-size=16384,crash,,,,7.88,0.077,5.129,True
+False,probe.py,probe_heap16384_r1,200000000,cat,1,--enable-precise-memory-info --js-flags=--max-old-space-size=16384,crash,,,,7.836,0.077,5.157,True
+False,probe.py,probe_heap16384_r2,200000000,cat,2,--enable-precise-memory-info --js-flags=--max-old-space-size=16384,crash,,,,7.899,0.077,5.119,True
+False,probe.py,probe_heap8192_r0,200000000,cat,0,--enable-precise-memory-info --js-flags=--max-old-space-size=8192,crash,,,,7.825,0.077,5.155,True
+False,probe.py,probe_heap8192_r1,200000000,cat,1,--enable-precise-memory-info --js-flags=--max-old-space-size=8192,crash,,,,7.87,0.077,5.086,True
+False,probe.py,probe_heap8192_r2,200000000,cat,2,--enable-precise-memory-info --js-flags=--max-old-space-size=8192,crash,,,,7.767,0.077,5.146,True
+False,probe.py,probe_r0,200000000,cat,0,--enable-precise-memory-info,crash,,,,7.772,0.077,5.128,True
+False,probe.py,probe_r1,200000000,cat,1,--enable-precise-memory-info,crash,,,,7.774,0.077,5.125,True
+False,probe.py,probe_r2,200000000,cat,2,--enable-precise-memory-info,crash,,,,7.758,0.077,5.141,True
+False,probe.py,probe_heap16384_r0,200000000,gene,0,--enable-precise-memory-info --js-flags=--max-old-space-size=16384,crash,,,,9.408,0.077,6.793,True
+False,probe.py,probe_heap16384_r1,200000000,gene,1,--enable-precise-memory-info --js-flags=--max-old-space-size=16384,crash,,,,9.347,0.077,6.829,True
+False,probe.py,probe_heap16384_r2,200000000,gene,2,--enable-precise-memory-info --js-flags=--max-old-space-size=16384,crash,,,,9.293,0.077,6.841,True
+False,probe.py,probe_heap8192_r0,200000000,gene,0,--enable-precise-memory-info --js-flags=--max-old-space-size=8192,crash,,,,9.288,0.077,6.816,True
+False,probe.py,probe_heap8192_r1,200000000,gene,1,--enable-precise-memory-info --js-flags=--max-old-space-size=8192,crash,,,,9.369,0.077,6.877,True
+False,probe.py,probe_heap8192_r2,200000000,gene,2,--enable-precise-memory-info --js-flags=--max-old-space-size=8192,crash,,,,9.381,0.077,6.847,True
+False,probe.py,probe_r0,200000000,gene,0,--enable-precise-memory-info,crash,,,,9.295,0.077,6.848,True
+False,probe.py,probe_r1,200000000,gene,1,--enable-precise-memory-info,crash,,,,9.362,0.077,6.848,True
+False,probe.py,probe_r2,200000000,gene,2,--enable-precise-memory-info,crash,,,,9.248,0.077,6.844,True

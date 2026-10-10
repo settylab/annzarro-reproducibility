@@ -1,0 +1,89 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "vitessce",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/vitessce/first10000000",
+  "benchmark/tool_ceiling/shots/vitessce_default_run_10000000_r0",
+  "--n",
+  "10000000",
+  "--port",
+  "8937"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 20.96,
+ "peaks": {
+  "client": {
+   "fp_peak": 11830821136,
+   "fp_lifetime_sum": 11904189792,
+   "rss_peak": 8418902016,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 15139296,
+   "fp_lifetime_sum": 17171248,
+   "rss_peak": 27983872,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 131740440,
+   "fp_lifetime_sum": 131740440,
+   "rss_peak": 166248448,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 11845960432,
+   "rss_peak": 8446885888,
+   "fp_lifetime_sum": 11921361040
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.13,
+   1199990216
+  ],
+  [
+   4.17,
+   2756865352
+  ],
+  [
+   6.27,
+   3583603240
+  ],
+  [
+   8.34,
+   4292703648
+  ],
+  [
+   10.37,
+   6237945168
+  ],
+  [
+   12.43,
+   7122632760
+  ],
+  [
+   14.49,
+   10195501184
+  ],
+  [
+   16.55,
+   7180452304
+  ],
+  [
+   18.59,
+   11845845744
+  ],
+  [
+   20.71,
+   7919272736
+  ]
+ ],
+ "ps_before": "2026-10-03T18:13:17-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 524688   5.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 2096336   3.5 $HOME/.local/bin/claude\n25343  20480   2.3 benchmark/tool_ceiling/.venv/bin/python\n86901 531120   1.9 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  596  30112   1.9 /System/Library/CoreServices/launchservicesd\n  629 189936   1.6 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n47413 619552   1.4 /Applications/cmux.app/Contents/MacOS/cmux\n34972 495440   1.0 $HOME/.local/bin/claude\n 1012  17312   1.0 /usr/libexec/pboard\n  855 1520400   0.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n"
+}

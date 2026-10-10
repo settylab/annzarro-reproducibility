@@ -1,0 +1,74 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/ucsc/html_5000000",
+  "benchmark/tool_ceiling/shots/ucsc_default_run_5000000_r2",
+  "--n",
+  "5000000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 9.85,
+ "peaks": {
+  "client": {
+   "fp_peak": 2117166152,
+   "fp_lifetime_sum": 2454005912,
+   "rss_peak": 1914732544,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 14434808,
+   "fp_lifetime_sum": 17728424,
+   "rss_peak": 27279360,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 137032616,
+   "fp_lifetime_sum": 137032616,
+   "rss_peak": 171507712,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2131600936,
+   "rss_peak": 1941979136,
+   "fp_lifetime_sum": 2471734336
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.17,
+   1209869216
+  ],
+  [
+   4.29,
+   1344283936
+  ],
+  [
+   6.46,
+   1463199008
+  ],
+  [
+   8.62,
+   2131568168
+  ]
+ ],
+ "ps_before": "2026-10-04T14:15:33-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n37026 114432  98.8 $HOME/Projects/investments/.venv/bin/python3\n  626 502848  49.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n77736 144112  48.4 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n75254 138000  16.0 /System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter\n77769 899680  11.4 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n27789  76704   7.2 (Google Chrome fo)\n27790  20768   7.0 benchmark/tool_ceiling/.venv/bin/python\n80373 121520   6.2 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n  627  37248   3.6 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd\n27134 248624   2.6 $HOME/.cache/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing\n",
+ "others_at_start": [
+  "27027 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1790895733153-mick9a.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "27029 /opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m pytest -q -p no:cacheprovider an",
+  "27030 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1790895733153-mick9a.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "27156 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disa",
+  "27159 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=gpu-process --no-sandbox --d",
+  "27160 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=utility --utility-sub-type=n",
+  "27162 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=renderer --headless=old --no"
+ ]
+}

@@ -1,0 +1,40 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale_ceiling/syn_160000000.zarr",
+ "n_obs": 160000000,
+ "checks": {
+  "gene": {
+   "status": "guard_refusal",
+   "guard": [
+    "GUARD: browser memory: not in this dataset (160,000,000 cells) -- Needs ~3.9 GB of browser JS memory; 3.9 GB free with 1 plot open (of 4.0 GB, estimated). Close a plot, or show fewer cells (a smaller subset).",
+    "warning: GUARD: browser memory: not in this dataset (160,000,000 cells) -- Needs ~3.9 GB of browser JS memory; 3.9 GB free with 1 plot open (of 4.0 GB, estimated). Close a plot, or show fewer cells (a smaller subset)."
+   ],
+   "console": [
+    "warning: GUARD: browser memory: not in this dataset (160,000,000 cells) -- Needs ~3.9 GB of browser JS memory; 3.9 GB free with 1 plot open (of 4.0 GB, estimated). Close a plot, or show fewer cells (a smaller subset)."
+   ],
+   "n_drawn": -1,
+   "seconds": 45.900909333489835,
+   "all_cells": false,
+   "renderer_rss": 257638400,
+   "gpu_rss": 149078016,
+   "server_rss": 365101056
+  }
+ },
+ "versions": {
+  "annzarro": "1391357",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "stalled",
+   "seconds": 45.900909333489835,
+   "n_points": -1
+  }
+ ],
+ "ok": false
+}

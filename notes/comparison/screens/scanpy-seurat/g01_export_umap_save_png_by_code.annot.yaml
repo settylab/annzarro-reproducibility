@@ -1,0 +1,39 @@
+version: 1
+image: g01_export_umap_save_png_by_code.jpg
+tool: scanpy-seurat
+software: scanpy 1.11.5, anndata 0.12.19 (code output; Seurat not run)
+data: bm_demo.h5ad (8,090 cells)
+captured: '2026-10-04'
+by: evidence-curator
+driver: evidence/screens/gaps/capture_scanpy_seurat.py
+source: manual
+image_sha256: d52726bb0ab7945ddb3ccbccb68f16b3e34d3587a4f425cecb12056c97deb40d
+coordinates: matplotlib Artist.get_window_extent of the code text, the output text and the image axes,
+  measured by the driver
+proves:
+- column: export
+  mark: P
+  caption: 'code output, scanpy 1.11.5 (2026-10-04): a plot is written to an image file only by code,
+    sc.pl.umap(..., save=...) or plt.savefig; there is no GUI, so P'
+callouts:
+- n: 1
+  box:
+  - 20
+  - 68
+  - 533
+  - 82
+  label: 'the export is a line of code: sc.pl.umap(..., save=''_compartment.png'')'
+- n: 2
+  box:
+  - 20
+  - 301
+  - 463
+  - 82
+  label: what it printed, and the file it wrote (97,352 bytes)
+- n: 3
+  box:
+  - 752
+  - 106
+  - 575
+  - 388
+  label: the written PNG, read back

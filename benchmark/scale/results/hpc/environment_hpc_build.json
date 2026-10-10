@@ -1,0 +1,85 @@
+{
+ "site": "hpc (Fred Hutch HPC, Slurm, inside agent-sandbox 0.14.0)",
+ "paper_commits": {
+  "build_and_umap_code_as_run": "be36092 + changes committed as 09496f7",
+  "bench_subset": "fc5eaab",
+  "plot_copy_rule_reference": "f5c01b7"
+ },
+ "annzarro": {
+  "version": "0.2.0",
+  "source": "PyPI"
+ },
+ "python": "3.11.6 (Linuxbrew CPython; pyarrow/faiss wheels need LD_LIBRARY_PATH=<linuxbrew>/lib/gcc/current)",
+ "packages": {
+  "annzarro": "0.2.0",
+  "anndata": "0.12.19",
+  "zarr": "3.1.6",
+  "numcodecs": "0.16.5",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "pandas": "2.3.3",
+  "pyarrow": "25.0.1",
+  "scikit-learn": "1.9.1",
+  "umap-learn": "0.5.12",
+  "pynndescent": "0.6.0",
+  "numba": "0.68.0",
+  "faiss-cpu": "1.15.1",
+  "matplotlib": "3.11.2"
+ },
+ "os": "Ubuntu 18.04.6 LTS, kernel 5.4.0-228-generic, glibc 2.27",
+ "scratch": {
+  "path": "$SCRATCH/annzarro-scale",
+  "fs": "nfs4 vers=4.1, rsize/wsize 1 MiB",
+  "server": "nfs-scratch-filer:/temp/lab/user",
+  "free_at_start": "460 TB",
+  "purge": "30 days after creation (expires ~2026-11-01)"
+ },
+ "nodes": {
+  "hpc-node-02": {
+   "cpu": "Intel(R) Xeon(R) Gold 6146 CPU @ 3.20GHz",
+   "logical_cpus": 24,
+   "mem_total_kib": 394870020,
+   "jobs": [
+    "A1 10000646",
+    "A2 10000650",
+    "B 10000651"
+   ]
+  },
+  "hpc-node-45": {
+   "cpu": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+   "logical_cpus": 36,
+   "mem_total_kib": 791221200,
+   "jobs": [
+    "C 10000652"
+   ]
+  },
+  "hpc-node-42": {
+   "cpu": "not measured (compute class)",
+   "jobs": [
+    "download 10000196"
+   ]
+  },
+  "hpc-node-03": {
+   "cpu": "not measured (gizmoj class)",
+   "jobs": [
+    "D 10000653"
+   ]
+  },
+  "hpc-node-33": {
+   "cpu": "not measured (compute class)",
+   "jobs": [
+    "F 10008693"
+   ]
+  },
+  "hpc-node-21": {
+   "cpu": "not measured (compute class; 36 cores, 777 GB per subset_hpc_environment.json)",
+   "jobs": [
+    "E 10008694"
+   ]
+  }
+ },
+ "cpu_source": "/proc/cpuinfo read by 1-CPU Slurm jobs 10010237/10010238 (lscpu fails: /sys hidden in the job sandbox)",
+ "gpu": "none used",
+ "exclusive_nodes": false,
+ "note": "Jobs shared nodes with other users (lab QOS near its 800-CPU cap), so wall times include co-tenant load."
+}

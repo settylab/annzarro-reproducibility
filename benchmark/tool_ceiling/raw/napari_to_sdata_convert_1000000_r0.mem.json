@@ -1,0 +1,40 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "to_sdata.py",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first1000000.zarr"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 4.09,
+ "peaks": {
+  "proc": {
+   "fp_peak": 1630963872,
+   "fp_lifetime_sum": 1667483832,
+   "rss_peak": 1746927616,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1630963872,
+   "rss_peak": 1746927616,
+   "fp_lifetime_sum": 1667483832
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   7356824
+  ],
+  [
+   1.48,
+   121062000
+  ],
+  [
+   2.95,
+   1373112048
+  ]
+ ],
+ "ps_before": "2026-10-05T00:17:28-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 1012  18064   3.6 /usr/libexec/pboard\n 6219  59392   3.5 $HOME/Projects/investments/.venv/bin/python3\n87460  19776   2.8 .venv/bin/python\n  629 241328   2.3 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  557 567664   2.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n86901 573024   2.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  633  31008   1.9 /usr/libexec/runningboardd\n  596  30960   1.9 /System/Library/CoreServices/launchservicesd\n  626 513888   1.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1240  48896   1.4 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n",
+ "others_at_start": []
+}

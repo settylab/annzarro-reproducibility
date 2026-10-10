@@ -1,0 +1,3157 @@
+# Claims ledger: every quantitative or comparative claim in the manuscript and its source.
+# Checked by evidence/tools/claims.py (schema in its docstring); shown on the site as claims.md.
+# Status: ok | interim (still moving) | unsourced (no file in this repo holds it).
+# Text is the exact tex phrase; `format` must turn the recomputed value(s) into that phrase.
+
+defs:
+  # where-blocks reused below (YAML anchors)
+  ev95_all: &ev95_all {clean: "True", tag: all_v041, n_cells: 95624334, event: first_plot, status: ok}
+  ev95_sub_gene: &ev95_sub_gene {clean: "True", tag: sub_v041, n_cells: 95624334, color: gene, status: ok}
+  ev95_sub_cat: &ev95_sub_cat {clean: "True", tag: sub_v041, n_cells: 95624334, color: cat, status: ok}
+  ceil_clean_ok: &ceil_clean_ok {clean: "True", tag: ceil_rerun, status: ok}
+  others_noviewer: &noviewer
+    - {matrix: cellxgene-explorer.cells, expect: [N, P]}
+    - {matrix: cellxgene-explorer.genes, expect: [N, P]}
+    - {matrix: vitessce.cells, expect: [N, P]}
+    - {matrix: vitessce.genes, expect: [N, P]}
+    - {matrix: ucsc-cell-browser.cells, expect: [N, P]}
+    - {matrix: ucsc-cell-browser.genes, expect: [N, P]}
+    - {matrix: single-cell-portal.cells, expect: [N, P]}
+    - {matrix: single-cell-portal.genes, expect: [N, P]}
+    - {matrix: cirrocumulus.cells, expect: [N, P]}
+    - {matrix: cirrocumulus.genes, expect: [N, P]}
+    - {matrix: scope.cells, expect: [N, P]}
+    - {matrix: scope.genes, expect: [N, P]}
+    - {matrix: shinycell.cells, expect: [N, P]}
+    - {matrix: shinycell.genes, expect: [N, P]}
+    - {matrix: kana.cells, expect: [N, P]}
+    - {matrix: kana.genes, expect: [N, P]}
+    - {matrix: isee.cells, expect: [N, P]}
+    - {matrix: isee.genes, expect: [N, P]}
+  src_n95: &n95 {csv: benchmark/scale/results/browser_v041_summary.csv, where: {tag: all_v041, event: first_plot, color: gene}, column: n_cells, agg: max}
+  src_threshold: &threshold {file: notes/sources/annzarro_v0.4.1_tag.txt, pattern: 'subset_threshold: (\d+)'}
+  src_subset_n: &subset_n {file: notes/sources/annzarro_v0.4.1_tag.txt, pattern: 'subset_size: (\d+)'}
+  src_large: &large {file: notes/sources/annzarro_v0.4.1_tag.txt, pattern: 'large_plot_points: (\d+)000000\n'}
+  src_heaplim: &heaplim {jsonl: benchmark/scale/results/heapcap_v041.jsonl, column: heap.last.0, pattern: 'lim (\d+)'}
+  src_bm_cells: &bm_cells {json: figures/numbers/fig2.json, key: n_cells}
+  src_bm_genes: &bm_genes {json: figures/numbers/fig3.json, key: n_genes}
+  src_atlas_cells: &atlas_cells {file: benchmark/deployment/hpc-demo-node_runtime_2026-10-01.md, pattern: 'atlas-1.17M-scvi\.zarr \| 78G \| ([\d,]+)'}
+  src_atlas_genes: &atlas_genes {file: benchmark/deployment/hpc-demo-node_runtime_2026-10-01.md, pattern: 'atlas-1.17M-scvi\.zarr \| 78G \| [\d,]+ \| ([\d,]+)'}
+  src_hpc_cells: &hpc_cells {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_allx4:dense_layer_gene_col:lognorm_panel', phase: cold}, column: n_values, agg: first}   # the public HPC layer's cells (a gene column's length)
+  src_hpc_genes: &hpc_genes {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_allx4:dense_layer_cell_row:lognorm_panel', phase: cold}, column: n_values, agg: first}   # its genes (a cell row's length)
+  src_fig2_rrows: &laptop {file: benchmark/scale/NOTES.md, anchor: 'Apple M3 Max (16 cores), 128 GB RAM'}   # installed RAM: sysctl hw.memsize 137,438,953,472 B = 128 GiB; the text says GiB
+
+claims:
+  # ======================================================================= abstract
+  abs.tahoe.n:
+    text: 95.6 million
+    file: manuscript/sections/abstract.tex
+    kind: number
+    source: *n95
+    compute: v[0] / 1e6
+    format: '{:.1f} million'
+    status: ok
+  abs.tahoe.every_cell_time:
+    text: about 5 to 7 s
+    file: manuscript/sections/abstract.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: all_v041, n_cells: 95624334, event: first_plot, status: ok}, column: seconds, agg: min}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: all_v041, n_cells: 95624334, event: first_plot, status: ok}, column: seconds, agg: max}
+    compute: "'{:.0f}'.format(v[0]) if round(v[0]) == round(v[1]) else '{:.0f} to {:.0f}'.format(v[0], v[1])"
+    format: 'about {} s'
+    status: ok
+    note: Clean first plots of every cell at 95.6M (all_v041, 3 cold reps per colouring), at the app's automatic size and opacity; tag v0.4.1 (78c9da6).
+  abs.tahoe.part_size:
+    text: 100,000-cell part
+    file: manuscript/sections/abstract.tex
+    kind: number
+    source: *subset_n
+    format: '{:,.0f}-cell part'
+    status: ok
+  abs.tahoe.part_open:
+    text: opens in 4 s
+    file: manuscript/sections/abstract.tex
+    kind: number
+    source: {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_sub_gene, event: first_plot}, column: seconds, agg: median}
+    format: 'opens in {:.0f} s'
+    status: ok
+    note: Median of 3 clean runs coloured by a gene (2.99 s); by cell line it is 2.5 s.
+  # ======================================================================= main.tex: key points
+  # ======================================================================= main.tex: Supplementary Note 1
+  supp1.annzarro.n:
+    text: 95,624,334 cells of Tahoe-100M
+    file: manuscript/supplement.tex
+    kind: number
+    source: *n95
+    format: '{:,.0f} cells of Tahoe-100M'
+    status: ok
+  supp1.annzarro.threshold:
+    text: above 200,000 cells the default view is a reproducible 100,000-cell subset
+    file: manuscript/supplement.tex
+    kind: number
+    source: [*threshold, *subset_n]
+    format: 'above {0:,.0f} cells the default view is a reproducible {1:,.0f}-cell subset'
+    status: ok
+  supp1.annzarro.scale_marks:
+    text: and one setting draws every cell in one plot
+    file: manuscript/supplement.tex
+    context: '\textbf{AnnZarro.}'
+    kind: comparison
+    source:
+      - {matrix: annzarro.every_cell, expect: Y}
+      - {matrix: annzarro.lazy, expect: Y}
+      - {matrix: annzarro.subset, expect: Y}
+      - {matrix: annzarro.auto_subset, expect: Y}
+    status: ok
+  supp1.cellxgene.filesize:
+    text: 50 GB
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/cellxgene.md, pattern: 'size for submissions to (\d+) GB'}
+    format: '{:.0f} GB'
+    status: ok
+  supp1.cellxgene.4_3M:
+    text: more than 4.3 million cells can be submitted
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/cellxgene.md, pattern: 'Documented: ([\d.]+)M cells'}
+    format: 'more than {:.1f} million cells can be submitted'
+    status: ok
+    note: notes record the NAR 2025 figure; the quoted guideline sentence and its line 31 are not in the notes.
+  supp1.cellxgene.docline:
+    text: line 31, section Scale Constraints; also at commit 9659d41
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source: {file: notes/comparison/cellxgene.md, anchor: 'at `main` and at commit `9659d41`'}
+    status: ok
+    note: Recorded in cellxgene.md "Discover submission guideline" (curl of the raw file at both refs, 2026-10-04).
+  supp1.cellxgene.paper:
+    text: up to 4.3 million cells in <1 min
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source: {file: notes/comparison/cellxgene.md, anchor: 'search "4.3 million"'}
+    status: ok
+    note: The notes cite the NAR 2025 sentence by search term; "<1 min" itself is not quoted there.
+  supp1.cellxgene.11M:
+    text: 11,441,407 cells, the mouse embryo timelapse
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/cellxgene.md, pattern: 'Observed: ([\d,]+) cells\*\* served by public Explorer \(mouse embryo timelapse\)'}
+    format: '{:,.0f} cells, the mouse embryo timelapse'
+    status: ok
+  supp1.cellxgene.scale_marks:
+    text: Every cell is drawn (WebGL draw count = number of cells)
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {matrix: cellxgene-explorer.every_cell, expect: Y}
+      - {matrix: cellxgene-explorer.lazy, expect: Y}
+      - {matrix: cellxgene-explorer.subset, expect: P}
+    status: ok
+  supp1.vitessce.n:
+    text: 1,283,972 cells (Salcher et al.\ 2022
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/vitessce.md, pattern: '\*\*([\d,]+) cells × [\d,]+ genes\*\* \(Salcher 2022'}
+    format: '{:,.0f} cells (Salcher et al.\ 2022'
+    status: ok
+  supp1.vitessce.scale_marks:
+    text: cell sets highlight but do not subset
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {matrix: vitessce.every_cell, expect: Y}
+      - {matrix: vitessce.lazy, expect: Y}
+      - {matrix: vitessce.subset, expect: N}
+    status: ok
+  supp1.cirrocumulus.n:
+    text: 1.3 million cells (documentation
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/cirrocumulus.md, pattern: '\*\*([\d.]+) million cells\*\*'}
+    format: '{:.1f} million cells (documentation'
+    status: ok
+  supp1.cirrocumulus.scale_marks:
+    text: selections dim or shrink the other cells
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {matrix: cirrocumulus.every_cell, expect: Y}
+      - {matrix: cirrocumulus.lazy, expect: Y}
+      - {matrix: cirrocumulus.subset, expect: P}
+    status: ok
+  supp1.isee.n:
+    text: 68,579 cells (10x PBMC 68k
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/isee.md, pattern: '\*\*([\d,]+) cells\*\* \(10x PBMC 68k'}
+    format: '{:,.0f} cells (10x PBMC 68k'
+    status: ok
+  supp1.isee.scale_marks:
+    text: HDF5-backed assays read on demand
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {matrix: isee.every_cell, expect: Y}
+      - {matrix: isee.lazy, expect: P}
+    status: ok
+    note: iSEE's lazy mark is P (HDF5-backed assays only).
+  supp1.ucsc.n:
+    text: 21,786,931 cells, PanSci
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/ucsc-cell-browser.md, pattern: '\*\*([\d,]+) cells\*\*, PanSci'}
+    format: '{:,.0f} cells, PanSci'
+    status: ok
+  supp1.ucsc.portal:
+    text: "``over 160 million cells'' across 1,600 datasets"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {file: notes/comparison/ucsc-cell-browser.md, pattern: '"[\d,]+ datasets covering over (\d+) million cells"'}
+      - {file: notes/comparison/ucsc-cell-browser.md, pattern: '"([\d,]+) datasets covering over \d+ million cells"'}
+    format: "``over {0:.0f} million cells'' across {1:,.0f} datasets"
+    status: ok
+  supp1.ucsc.scale_marks:
+    text: genes fetched by HTTP byte range from static files
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {matrix: ucsc-cell-browser.every_cell, expect: Y}
+      - {matrix: ucsc-cell-browser.lazy, expect: Y}
+      - {matrix: ucsc-cell-browser.subset, expect: P}
+    status: ok
+  supp1.shinycell.n:
+    text: 161,764 cells in the ShinyCell2 CITE-seq tutorial
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/shinycell.md, pattern: '\*\*([\d,]+) cells\*\* \(PBMC CITE-seq'}
+    format: '{:,.0f} cells in the ShinyCell2 CITE-seq tutorial'
+    status: ok
+  supp1.shinycell.ram_advice:
+    text: about 30,000 cells per 8 GiB of RAM
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/shinycell.md, pattern: '~(\d+)k cells per 8 GB RAM'}
+    compute: v[0] * 1000
+    format: 'about {:,.0f} cells per 8 GiB of RAM'
+    status: ok
+  supp1.shinycell.scale_marks:
+    text: one HDF5 chunk per gene read on demand
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {matrix: shinycell.every_cell, expect: Y}
+      - {matrix: shinycell.lazy, expect: Y}
+      - {matrix: shinycell.subset, expect: P}
+    status: ok
+    note: Lazy mark is P with an audit proposal to Y (ledger row B7).
+  supp1.scanpy.n:
+    text: 1.3 million cells (Scanpy paper
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/scanpy-seurat.md, pattern: '\*\*([\d.]+)M cells\*\* \(10x E18 mouse brain\)'}
+    format: '{:.1f} million cells (Scanpy paper'
+    status: ok
+  supp1.scanpy.dask:
+    text: plots about 1.4 million cells
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/scanpy-seurat.md, pattern: 'Scanpy dask tutorial uses \*\*([\d.]+)M cells'}
+    format: 'plots about {:.1f} million cells'
+    status: ok
+  supp1.seurat.raster:
+    text: rasterizes above 100,000 cells
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/scanpy-seurat.md, pattern: 'rasterizes\*\* \(not downsamples\) above ([\d,]+) cells'}
+    format: 'rasterizes above {:,.0f} cells'
+    status: ok
+  supp1.scanpy.scale_marks:
+    text: subsets by code
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {matrix: scanpy-seurat.every_cell, expect: Y}
+      - {matrix: scanpy-seurat.lazy, expect: P}
+      - {matrix: scanpy-seurat.subset, expect: P}
+    status: ok
+
+  # ======================================================================= body.tex: Introduction
+  intro.no_viewer:
+    text: existing interactive viewers rarely display these pairwise matrices
+    file: manuscript/body.tex
+    kind: comparison
+    source: *noviewer
+    status: ok
+  intro.tahoe.n:
+    text: all 95.6 million cells of Tahoe-100M
+    file: manuscript/body.tex
+    kind: number
+    source: *n95
+    compute: v[0] / 1e6
+    format: 'all {:.1f} million cells of Tahoe-100M'
+    status: ok
+    note: "Marker added in Manu's pass of 2026-10-09 (24cd1eb); entry added at the merge."
+  intro.datasets_100m:
+    text: single-cell datasets now reach nearly 100 million cells
+    file: manuscript/body.tex
+    kind: number
+    source: *n95
+    compute: round(v[0] / 1e7) * 10
+    format: 'single-cell datasets now reach nearly {:.0f} million cells'
+    status: ok
+    note: "Tahoe-100M, 95,624,334 cells (cited). Marker added in Manu's pass of 2026-10-09; entry added at the merge."
+  intro.kernel_size:
+    text: 100,000 cells holds $10^{10}$ values
+    file: manuscript/body.tex
+    kind: number
+    compute: (100000, round(math.log10(100000 ** 2)))
+    format: '{0:,.0f} cells holds $10^{{{1}}}$ values'
+    status: ok
+    note: Arithmetic, n squared.
+  dev.subset_threshold:
+    text: for datasets of more than 200,000 cells only their values
+    file: manuscript/body.tex
+    kind: number
+    source: *threshold
+    format: 'for datasets of more than {:,.0f} cells only their values'
+    status: ok
+
+  # ======================================================================= body.tex: fig:overview caption
+  fig1.lacks:
+    text: AnnZarro lacks annotation editing, on-the-fly differential expression, tissue image underlays and a static-site mode
+    file: manuscript/body.tex
+    kind: comparison
+    source:
+      - {matrix: annzarro.annot, expect: N}
+      - {matrix: annzarro.de, expect: N}
+      - {matrix: annzarro.image, expect: N}
+      - {matrix: annzarro.static, expect: N}
+    status: ok
+  fig1.distinct:
+    text: only AnnZarro reads genes~$\times$~genes matrices and lets a focused cell or gene choose the row
+    file: manuscript/body.tex
+    kind: comparison
+    source:
+      - {matrix: annzarro.cells, expect: Y}
+      - {matrix: annzarro.genes, expect: Y}
+      - {matrix: annzarro.focus, expect: Y}
+      - {matrix: cellxgene-explorer.cells, expect: [N, P]}
+      - {matrix: vitessce.cells, expect: [N, P]}
+      - {matrix: cirrocumulus.cells, expect: [N, P]}
+      - {matrix: isee.cells, expect: [N, P]}
+      - {matrix: ucsc-cell-browser.cells, expect: [N, P]}
+      - {matrix: shinycell.cells, expect: [N, P]}
+      - {matrix: scope.cells, expect: [N, P]}
+      - {matrix: scanpy-seurat.cells, expect: [N, P]}
+      - {matrix: cellxgene-explorer.focus, expect: [N, P]}
+      - {matrix: vitessce.focus, expect: [N, P]}
+      - {matrix: cirrocumulus.focus, expect: [N, P]}
+      - {matrix: isee.focus, expect: [N, P]}
+      - {matrix: ucsc-cell-browser.focus, expect: [N, P]}
+      - {matrix: shinycell.focus, expect: [N, P]}
+      - {matrix: scope.focus, expect: [N, P]}
+      - {matrix: scanpy-seurat.focus, expect: [N, P]}
+      - {matrix: manivault.genes, expect: N}
+      - {matrix: manivault.focus, expect: N}
+    status: ok
+  supp1.diamond_lower:
+    text: Where a source gives only a lower bound (``more than''), the diamond marks that bound
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: figures/fig_comparison.py, anchor: 'if lower and kind != "documented":   # documented sizes never carry an arrow'}
+    status: ok
+    note: iSEE (>170,000, cytometry) and Loupe (>1 million, release notes) are drawn as plain diamonds at the stated bound.
+  fig1.cellxgene_policy:
+    text: the largest observed on their public portals and drawn in full in a browser
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: notes/comparison/cellxgene.md, anchor: 'Scale check: the 11.4M-cell dataset in the hosted Explorer'}
+      - {file: notes/comparison/ucsc-cell-browser.md, anchor: 'Scale check'}
+    status: ok
+
+  # ======================================================================= body.tex: Comparison
+  cmp.no_other_viewer:
+    text: only ManiVault Studio colors an embedding by a stored cells~$\times$~cells row. The user selects the row by typing its index and is not shown which cell it belongs to
+    file: manuscript/body.tex
+    kind: comparison
+    source:
+      - {file: evidence/matrix/tools/manivault.yaml, anchor: 'one row at a time, but the row is picked by number,'}
+      - {matrix: manivault.cells, expect: P}
+      - {matrix: manivault.genes, expect: N}
+      - {matrix: manivault.focus, expect: N}
+      - {matrix: cellxgene-explorer.cells, expect: [N, P]}
+      - {matrix: cellxgene-annotate.cells, expect: [N, P]}
+      - {matrix: vitessce.cells, expect: [N, P]}
+      - {matrix: cirrocumulus.cells, expect: [N, P]}
+      - {matrix: isee.cells, expect: [N, P]}
+      - {matrix: ucsc-cell-browser.cells, expect: [N, P]}
+      - {matrix: single-cell-portal.cells, expect: [N, P]}
+      - {matrix: shinycell.cells, expect: [N, P]}
+      - {matrix: kana.cells, expect: [N, P]}
+      - {matrix: scope.cells, expect: [N, P]}
+      - {matrix: loupe.cells, expect: [N, P]}
+    status: ok
+  cmp.obsp_varp_code_only:
+    text: The other viewers either ignore obsp and varp or reach them only through code
+    file: manuscript/body.tex
+    kind: comparison
+    source: *noviewer
+    status: ok
+  cmp.focus_central:
+    text: is the central difference
+    file: manuscript/body.tex
+    kind: comparison
+    source:
+      - {matrix: annzarro.focus, expect: Y}
+      - {matrix: cellxgene-explorer.focus, expect: [N, P]}
+      - {matrix: vitessce.focus, expect: [N, P]}
+      - {matrix: ucsc-cell-browser.focus, expect: [N, P]}
+      - {matrix: single-cell-portal.focus, expect: [N, P]}
+      - {matrix: cirrocumulus.focus, expect: [N, P]}
+      - {matrix: scope.focus, expect: [N, P]}
+      - {matrix: shinycell.focus, expect: [N, P]}
+      - {matrix: kana.focus, expect: [N, P]}
+      - {matrix: isee.focus, expect: [N, P]}
+    status: ok
+    note: ledger row B5 re-scores the focus column.
+  cmp.annotations:
+    text: CELLxGENE, Cirrocumulus and Loupe edit annotations
+    file: manuscript/body.tex
+    kind: comparison
+    source:
+      - {matrix: cellxgene-annotate.annot, expect: Y}
+      - {matrix: cirrocumulus.annot, expect: Y}
+      - {matrix: loupe.annot, expect: Y}
+    status: ok
+  cmp.readonly:
+    text: AnnZarro is read-only by design
+    file: manuscript/body.tex
+    context: CELLxGENE, Cirrocumulus and Loupe edit annotations
+    kind: comparison
+    source: {matrix: annzarro.annot, expect: N}
+    status: ok
+  cmp.refresh_shows:
+    text: one refresh (Ctrl+R) shows them in the open views
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (a) zarr2 slice + ctrlr (within 60 s of the plot's load)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (a) zarr2 slice + dsbtn (within 60 s of the plot's load)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (a) zarr2 slice + panel (within 60 s of the plot's load)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (a) zarr2 write_elem + ctrlr (within 60 s of the plot's load)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (a) zarr2 write_elem + dsbtn (within 60 s of the plot's load)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (a) zarr2 write_elem + panel (within 60 s of the plot's load)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) zarr3 slice + ctrlr (within 60 s)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) zarr3 slice + panel (within 60 s)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) zarr3 write_elem + ctrlr (within 60 s)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) zarr3 write_elem + panel (within 60 s)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) h5ad slice + ctrlr (within 60 s)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) h5ad slice + panel (within 60 s)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) h5ad write_elem + ctrlr (within 60 s)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) h5ad write_elem + panel (within 60 s)"}
+    status: ok
+    note: v0.4.1 refresh check, run on the tag (78c9da6, tree 661a454f); a correctness record, not a timing. Refresh = the Refresh-dataset button (Ctrl+R) or a panel's Refresh; a browser reload alone misses in-place zarr changes within 60 s (FAIL rows, controls).
+  cmp.refresh_new_keys:
+    text: new obs columns, layers and pairwise matrices included
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (b) zarr2 consolidated: new obs/layer/obsp/varp in the source menus, menus after ctrlr"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (b) zarr2 consolidated: new elements, once listed, drawn with the written values"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) zarr3: new obs/layer/obsp/varp in the source menus, menus after ctrlr"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) zarr3: new elements, once listed, drawn with the written values"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) h5ad: new obs/layer/obsp/varp in the source menus, menus after ctrlr"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (c) h5ad: new elements, once listed, drawn with the written values"}
+    status: ok
+    note: v0.4.1 refresh check, run on the tag (78c9da6, tree 661a454f); a correctness record, not a timing. Pairwise matrices = obsp and varp. On consolidated zarr 2 and zarr 3 the consolidated metadata does not list the new keys; Ctrl+R still finds them.
+  cmp.refresh_keeps:
+    text: keeps the layout, the focus and locked colors
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (d) panel keeps layout, focus, lock, same page"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (d) ctrlr keeps layout, focus, lock, same page"}
+    status: ok
+    note: v0.4.1 refresh check, run on the tag (78c9da6, tree 661a454f); a correctness record, not a timing. The lock tested is a panel's colour lock (lockB); focus = focused gene and focused cell. A browser reload resets focus and lock (FAIL row).
+  cmp.refresh_readonly:
+    text: the server itself never writes the store
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "read-only: files of bm_aging.zarr created/changed/removed by the server while browsing and refreshing: 0"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (e) server never writes the store (browse + Ctrl+R, file mtimes)"}
+    status: ok
+    note: v0.4.1 refresh check, run on the tag (78c9da6, tree 661a454f); a correctness record, not a timing.
+  hosting.refresh_hosted:
+    text: "users see the new values with the refresh button next to the dataset menu (Ctrl+R); the browser's reload can keep showing old values"
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (a) zarr2 slice + dsbtn (within 60 s of the plot's load)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (a) zarr2 write_elem + dsbtn (within 60 s of the plot's load)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "(e) hosted: gunicorn 2 workers, login on, users admin (admin) and bob"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (e) Ctrl+R as non-admin shows data changed on disk"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (e) Ctrl+R as admin shows data changed on disk"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "16 direct GETs after bob's Ctrl+R | new values 16, old values 0"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "[zarr2] slice      reload        FAIL"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "(e) worker class: gthread"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (e) reload (F5) as non-admin keeps showing old values"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (e) Ctrl+R after reload as non-admin shows data changed on disk"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (e) reload (F5) as admin keeps showing old values"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (e) Ctrl+R after reload as admin shows data changed on disk"}
+    status: ok
+    note: v0.4.1 refresh check, run on the tag (78c9da6, tree 661a454f); a correctness record, not a timing. The refresh button is the fa-sync icon right of the dataset menu (#refresh-dataset); Ctrl+R clicks it. 'Users' holds for a non-admin (bob) and an admin, on gunicorn with 2 gthread workers and login on. After a chunk-only write a browser reload (F5) keeps showing old values (the ETag does not change) and Ctrl+R then shows the new ones.
+  design.collab_refresh:
+    text: "the refresh button next to the dataset menu shows them, and collaborators see them when they refresh their view"
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (a) zarr2 write_elem + dsbtn (within 60 s of the plot's load)"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "(e) hosted: gunicorn 2 workers, login on, users admin (admin) and bob"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "PASS   (e) Ctrl+R as non-admin shows data changed on disk"}
+      - {file: notes/sources/annzarro_v0.4.1_refresh.txt, anchor: "16 direct GETs after bob's Ctrl+R | new values 16, old values 0"}
+    status: ok
+    note: v0.4.1 refresh check, run on the tag (78c9da6, tree 661a454f); a correctness record, not a timing. Replaces design.admin_refresh (operator 2026-10-07; the admin's cache reset is not needed for collaborators to see new data, and the paper leaves it out). Any user's refresh shows data written on disk, a non-admin's included.
+  lim.repro_store:
+    text: 'names its store relative to the data directory and records which cells, genes and fields the store had'
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_behaviour.txt, anchor: "relative to the server's data directory when the store"}
+      - {file: notes/sources/annzarro_v0.4.1_behaviour.txt, anchor: 'says whether these are the same cells and'}
+    status: ok
+    note: "v0.4.1 code (view-store.js storeRecord and fingerprint tiers), read not run; the v0.4.1 remeasure may add a run."
+  lim.repro_figure:
+    text: 'With the same store and the same AnnZarro version a view gives the same figure'
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_behaviour.txt, anchor: 'The same store and the same AnnZarro version give the same figure'}
+    status: ok
+    note: "v0.4.1 annzarro/export.py docstring: SVG byte-identical, PNG pixel-identical (tested in the annzarro suite per annzarro-37)."
+  step.move_set:
+    text: 'It opens on any server whose data directory holds the same store'
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_behaviour.txt, anchor: '(opens on any server whose data'}
+    status: ok
+    note: "v0.4.1 view-store.js storeRecord; the card badge is panelset-load.js describeStatus."
+  step.load_set:
+    text: "opens the set's dataset and every panel that was open when it was saved, in its layout"
+    file: manuscript/sections/procedure_prep.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_behaviour.txt, anchor: "it switches to the set's dataset and opens every panel that was open when"}
+    status: ok
+    note: "v0.4.1 panelset-load.js header comment (modes full, current, add)."
+  hosting.arbitrary_paths:
+    text: 'Admins can also open datasets elsewhere on the server'
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_behaviour.txt, anchor: '* ``admins`` (default): admins of a shared server with login, every such'}
+    status: ok
+    note: "v0.4.1 server/confinement.py; default server.arbitrary_paths: admins (config/base.yaml)."
+  cmp.scsva_tahoe:
+    text: 95.6 million
+    file: manuscript/body.tex
+    kind: number
+    source: *n95
+    compute: v[0] / 1e6
+    format: '{:.1f} million'
+    status: ok
+  cmp.images:
+    text: "AnnZarro does not render tissue images, as Vitessce does"
+    file: manuscript/body.tex
+    kind: comparison
+    source:
+      - {matrix: vitessce.image, expect: Y}
+    status: ok
+  cmp.isee_code:
+    text: "export the exact code behind a view, as iSEE does"
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: notes/comparison/isee.md, anchor: 'Claim check: "iSEE exports the exact code behind a view".** Verified'}
+    status: ok
+  cmp.de:
+    text: Loupe and CELLxGENE run differential expression on demand
+    file: manuscript/body.tex
+    kind: comparison
+    source:
+      - {matrix: loupe.de, expect: Y}
+      - {matrix: cellxgene-annotate.de, expect: Y}
+    status: ok
+  cmp.others_scale:
+    text: CELLxGENE and Cirrocumulus show datasets of one million or more cells in their documentation and Vitessce millions of points
+    file: manuscript/body.tex
+    kind: comparison
+    source:
+      - {file: notes/comparison/cellxgene.md, pattern: 'Documented: ([\d.]+)M cells'}
+      - {file: notes/comparison/cirrocumulus.md, pattern: '\*\*([\d.]+) million cells\*\*'}
+      - {file: notes/comparison/vitessce.md, anchor: 'millions of points'}
+    compute: "'ok' if v[0] >= 1 and v[1] >= 1 else 'below one million'"
+    status: ok
+    note: notes/comparison/_summary.md calls "millions of points" a slogan; Vitessce's largest documented dataset is 1.28M cells. ledger row B13 asks for the served numbers instead.
+  cmp.annzarro_scale:
+    text: AnnZarro was measured on all 95.6 million cells
+    file: manuscript/body.tex
+    kind: number
+    source: *n95
+    compute: v[0] / 1e6
+    format: 'AnnZarro was measured on all {:.1f} million cells'
+    status: ok
+  cmp.vitessce_share:
+    text: Vitessce established declarative, URL-shareable view configurations
+    file: manuscript/body.tex
+    kind: comparison
+    source: {matrix: vitessce.share, expect: Y}
+    status: ok
+
+  # ======================================================================= body.tex: Limitations
+  lim.subset_threshold:
+    text: Above 200,000 cells AnnZarro therefore opens on a 100,000-cell subset
+    file: manuscript/body.tex
+    kind: number
+    source: [*threshold, *subset_n]
+    format: 'Above {0:,.0f} cells AnnZarro therefore opens on a {1:,.0f}-cell subset'
+    status: ok
+  lim.large_threshold:
+    text: above 1 million points it switches to large-plot mode
+    file: manuscript/body.tex
+    kind: number
+    source: *large
+    format: 'above {:.0f} million points it switches to large-plot mode'
+    status: ok
+    note: User decision R3 (2026-10-04); large_plot_points 1000000 in annzarro/config/base.yaml at the v0.4.1 tag (notes/sources/annzarro_v0.4.1_tag.txt).
+  # ======================================================================= body.tex: Experimental design
+  design.obsp_100k:
+    text: 100,000 cells in float32 is 40 GB
+    file: manuscript/body.tex
+    kind: number
+    compute: (100000, 4 * 100000 ** 2 / 1e9)
+    format: '{0:,} cells in float32 is {1:.0f} GB'
+    status: ok
+    note: Arithmetic, 4 n^2 bytes.
+  design.varp_16k:
+    text: over 16,000 genes is about 1 GB in float32
+    file: manuscript/body.tex
+    kind: number
+    compute: (16000, 4 * 16000 ** 2 / 1e9)
+    format: 'over {0:,} genes is about {1:.0f} GB in float32'
+    status: ok
+    note: Arithmetic, 4 n^2 bytes (1.02 GB).
+  design.chunk_target:
+    text: at about $5\times10^5$ values
+    file: manuscript/body.tex
+    kind: number
+    source: {file: manuscript/sections/procedure_prep.tex, pattern: 'def layer_chunks\(n_obs, n_vars, target=([\d.e]+)\)'}
+    compute: (v[0] / 1e5,)
+    format: 'at about ${0:.0f}\times10^5$ values'
+    status: ok
+    note: Matches the target of the Step 10 code in the manuscript itself.
+
+  # ======================================================================= body.tex: Equipment
+  equip.client_threshold:
+    text: above 200,000 cells only those of a 100,000-cell subset
+    file: manuscript/body.tex
+    kind: number
+    source: [*threshold, *subset_n]
+    format: 'above {0:,.0f} cells only those of a {1:,.0f}-cell subset'
+    status: ok
+  equip.laptop:
+    text: 128 GiB RAM (Apple M3 Max)
+    file: manuscript/body.tex
+    kind: qualitative
+    source: *laptop
+    status: ok
+  equip.tab_subset:
+    text: 'renderer process used 0.5 GiB at every dataset size up to 95.6 million cells'
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041}, column: renderer_rss_gb, group_by: n_cells, agg: max, then: min}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041}, column: renderer_rss_gb, group_by: n_cells, agg: max, then: max}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041}, column: n_cells, agg: max}
+    compute: (v[0] * 1e9 / 2**30 if round(v[0] * 1e9 / 2**30, 1) == round(v[1] * 1e9 / 2**30, 1) else float('nan'), v[2] / 1e6)
+    format: 'renderer process used {0:.1f} GiB at every dataset size up to {1:.1f} million cells'
+    status: ok
+    note: Peak renderer RSS per dataset size; the check fails if the per-size peaks do not all round to the same value.
+  equip.tab_all:
+    text: 'with every cell of Tahoe-100M in one plot 8.7 GiB'
+    file: manuscript/body.tex
+    kind: number
+    source: {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: all_v041, n_cells: 95624334}, column: renderer_rss_gb, agg: max}
+    compute: v[0] * 1e9 / 2**30
+    format: 'with every cell of Tahoe-100M in one plot {:.1f} GiB'
+    status: ok
+    note: Peak renderer RSS over the every-cell session at 95.6M (all events, clean rows).
+  equip.server_subset:
+    text: '(95.6 million cells) the server process used at most 1.7 GiB'
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - *n95
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041, n_cells: 95624334}, column: server_rss_gb, agg: max}
+    compute: (v[0] / 1e6, v[1] * 1e9 / 2**30)
+    format: '({0:.1f} million cells) the server process used at most {1:.1f} GiB'
+    status: ok
+  equip.server_all:
+    text: 'drawing and recoloring every cell in one plot took up to 7.0 GiB'
+    file: manuscript/body.tex
+    kind: number
+    source: {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: all_v041, n_cells: 95624334}, column: server_rss_gb, agg: max}
+    compute: v[0] * 1e9 / 2**30
+    format: 'drawing and recoloring every cell in one plot took up to {:.1f} GiB'
+    status: ok
+    note: Dominated by the cell-name prewarm (2.6 GB without it, NOTES "The prewarm is not the cause"); ledger row E3.
+
+  # ======================================================================= body.tex: Example data
+  data.zenodo_size:
+    text: (2.4 GB, CC-BY 4.0)
+    file: manuscript/body.tex
+    kind: number
+    source: {file: data_prep/VALIDATION.md, pattern: '4\.7 MB of ([\d,]+) B'}
+    compute: v[0] / 1e9
+    format: '({:.1f} GB, CC-BY 4.0)'
+    status: ok
+
+  # ======================================================================= body.tex: Procedure, Option F
+  optF.threshold:
+    text: any dataset of more than 200,000 cells
+    file: manuscript/body.tex
+    kind: number
+    source: *threshold
+    format: 'any dataset of more than {:,.0f} cells'
+    status: ok
+  optF.tahoe_n:
+    text: (95,624,334 cells
+    file: manuscript/body.tex
+    context: The times quoted are for Tahoe-100M
+    kind: number
+    source: *n95
+    format: '({:,.0f} cells'
+    status: ok
+  optF.subset_size:
+    text: a subset of 100,000 cells with seed 0
+    file: manuscript/body.tex
+    kind: number
+    source: *subset_n
+    format: 'a subset of {:,.0f} cells with seed 0'
+    status: ok
+  optF.balance:
+    text: applying it takes 3.3 s
+    file: manuscript/body.tex
+    kind: number
+    source: {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041, n_cells: 95624334, event: balance, status: ok}, column: seconds, agg: median}
+    format: 'applying it takes {:.1f} s'
+    status: ok
+  optF.n_parts:
+    text: in parts of 100,000 has 957
+    file: manuscript/body.tex
+    kind: number
+    source: [*subset_n, *n95]
+    compute: (v[0], math.ceil(v[1] / v[0]))
+    format: 'in parts of {0:,.0f} has {1}'
+    status: ok
+  optF.part_step:
+    text: Each step takes 2.8 s on Tahoe-100M
+    file: manuscript/body.tex
+    kind: number
+    source: {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041, n_cells: 95624334, event: part_step, status: ok}, column: seconds, agg: median}
+    format: 'Each step takes {:.1f} s on Tahoe-100M'
+    status: ok
+    note: Median of the 12 clean part steps at 95.6M (6 per colouring).
+  optF.large_threshold:
+    text: Above 1 million points a Cell Plot switches
+    file: manuscript/body.tex
+    kind: number
+    source: *large
+    format: 'Above {:.0f} million points a Cell Plot switches'
+    status: ok
+  optF.every_cell_size5:
+    text: every cell is drawn in 5-7 s at the automatic size and opacity
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: *ev95_all, column: seconds, agg: min}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: *ev95_all, column: seconds, agg: max}
+    compute: "'{:.0f}'.format(v[0]) if round(v[0]) == round(v[1]) else '{:.0f}-{:.0f}'.format(v[0], v[1])"
+    format: 'every cell is drawn in {} s at the automatic size and opacity'
+    status: ok
+  optF.every_cell_size1:
+    text: in 5-6 s at point size 1 and opacity 0.2
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: conf95_v041, n_cells: 95624334, event: first_plot, status: ok}, column: seconds, agg: min}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: conf95_v041, n_cells: 95624334, event: first_plot, status: ok}, column: seconds, agg: max}
+    compute: "'{:.0f}'.format(v[0]) if round(v[0]) == round(v[1]) else '{:.0f}-{:.0f}'.format(v[0], v[1])"
+    format: 'in {} s at point size 1 and opacity 0.2'
+    status: ok
+    note: conf95_v041 (tag v0.4.1, 78c9da6), 3 cold reps per colour.
+
+  # ======================================================================= body.tex: Troubleshooting
+  ts.cell_row_slow:
+    text: "takes many seconds (7.8 s at 1 million cells on HPC)"
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_allx4:dense_layer_cell_row:lognorm_panel', phase: cold}, column: latency_s, agg: median}
+      - *hpc_cells
+    compute: (v[0], v[1] / 1e6)
+    format: 'takes many seconds ({0:.1f} s at {1:g} million cells on HPC)'
+    status: ok
+    note: "One cell row of a whole-gene-chunked (all cells x 4 genes) dense Tahoe-100M layer, 1,000,000 cells x 5,000 genes; T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+  ts.large_threshold:
+    text: More than 1 million points are drawn
+    file: manuscript/body.tex
+    kind: number
+    source: *large
+    format: 'More than {:.0f} million points are drawn'
+    status: ok
+  ts.name_index:
+    text: (5.8-6.4 s at 50 million cells; 0.8 s once a local server has built it in the background)
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {jsonl: benchmark/scale/results/prewarm50M_v041.jsonl, where: {prewarm: false}, column: lookup_s, agg: min}
+      - {jsonl: benchmark/scale/results/prewarm50M_v041.jsonl, where: {prewarm: false}, column: lookup_s, agg: max}
+      - {jsonl: benchmark/scale/results/prewarm50M_v041.jsonl, where: {prewarm: true}, column: lookup_s, agg: max}
+    format: '({0:.1f}-{1:.1f} s at 50 million cells; {2:.1f} s once a local server has built it in the background)'
+    status: ok
+    note: "First search by name 30 s after the plot opened, 50M Tahoe store, without and with the server-side prewarm (3 reps each), tag v0.4.1 (prewarm50M_v041.jsonl)."
+
+  # ======================================================================= body.tex: Timing
+  timing.install:
+    text: 'Steps 1-2, installation: 5-10 min'
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: manuscript/body.tex, anchor: "the other times are the authors' estimates for a first run"}
+    status: ok
+    note: Protocol time estimate, stated as such in the Timing section; not timed.
+  timing.prep:
+    text: about 10 min on a 16-core workstation with 32 GiB RAM
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {file: data_prep/README.md, pattern: 'download \(16 range requests, network-bound\) \| 5 min (\d+) s'}
+      - {file: data_prep/README.md, pattern: '`run_kompot.py` total \| (\d+) s'}
+      - {file: data_prep/README.md, pattern: '`prepare_annzarro_store.py` total \| (\d+) s'}
+      - {file: data_prep/README.md, pattern: 'Plan for about (\d+) GB at this dataset size'}
+    compute: ((5 * 60 + v[0] + v[1] + v[2]) / 60, v[3])
+    format: 'about {0:.0f} min on a 16-core workstation with {1:.0f} GiB RAM'
+    tolerance: 3
+    status: ok
+    note: Measured on a 16-core Mac with 128 GB; 32 GB is the README's advice (peak RSS 29 GB). Sum 7.4 min.
+  timing.prep_parts:
+    text: download 5.5 min, Kompot 1 min, store preparation 1 min
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {file: data_prep/README.md, pattern: 'download \(16 range requests, network-bound\) \| 5 min (\d+) s'}
+      - {file: data_prep/README.md, pattern: '`run_kompot.py` total \| (\d+) s'}
+      - {file: data_prep/README.md, pattern: '`prepare_annzarro_store.py` total \| (\d+) s'}
+    compute: (5 + v[0] / 60, v[1] / 60, v[2] / 60)
+    format: 'download {0:.1f} min, Kompot {1:.0f} min, store preparation {2:.0f} min'
+    status: ok
+  timing.start:
+    text: 'Steps 11-13, starting AnnZarro: 2 min'
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: manuscript/body.tex, anchor: "the other times are the authors' estimates for a first run"}
+    status: ok
+    note: Protocol time estimate, stated as such in the Timing section; not timed.
+  timing.options:
+    text: about 5 min each to set up
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: manuscript/body.tex, anchor: "the other times are the authors' estimates for a first run"}
+    status: ok
+    note: Protocol time estimate, stated as such in the Timing section; not timed.
+  timing.optF:
+    text: 'Worked example 6, datasets of millions of cells: 5 min'
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: manuscript/body.tex, anchor: "the other times are the authors' estimates for a first run"}
+    status: ok
+    note: Protocol time estimate, stated as such in the Timing section; not timed.
+  timing.save:
+    text: 'Steps 37-41, saving and export: 5 min'
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: manuscript/body.tex, anchor: "the other times are the authors' estimates for a first run"}
+    status: ok
+    note: Protocol time estimate, stated as such in the Timing section; not timed.
+  timing.hosting:
+    text: 'Steps 42-44, lab hosting: 30 min'
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: manuscript/body.tex, anchor: "the other times are the authors' estimates for a first run"}
+    status: ok
+    note: Protocol time estimate, stated as such in the Timing section; not timed.
+
+  # ======================================================================= body.tex: Anticipated results, deployment
+  ar.memory_small:
+    text: "on the laptop, the server's peak resident memory while serving a gene column or a cell row stayed at 82--102 MiB for layers of 0.2 to 20 GB uncompressed, against 79 MiB idle"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: layer_gene, status: 200}, column: rss_peak_bytes, group_by: n_cells, agg: median, then: min}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: layer_gene, status: 200}, column: rss_peak_bytes, group_by: n_cells, agg: median, then: max}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: layer_cell, status: 200}, column: rss_peak_bytes, group_by: n_cells, agg: median, then: min}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: layer_cell, status: 200}, column: rss_peak_bytes, group_by: n_cells, agg: median, then: max}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: [layer_gene, layer_cell], status: 200}, column: n_cells, agg: min}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: [layer_gene, layer_cell], status: 200}, column: n_cells, agg: max}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: [layer_gene, layer_cell], status: 200}, column: n_genes, agg: first}
+      - {csv: benchmark/results/scale_v041.csv, where: {status: 200}, column: rss_base_bytes, agg: median}
+    compute: (min(v[0], v[2]) / 2**20, max(v[1], v[3]) / 2**20, v[4] * v[6] * 4 / 1e9, v[5] * v[6] * 4 / 1e9, v[7] / 2**20)
+    format: "on the laptop, the server's peak resident memory while serving a gene column or a cell row stayed at {0:.0f}--{1:.0f} MiB for layers of {2:.1f} to {3:.0f} GB uncompressed, against {4:.0f} MiB idle"
+    status: ok
+    note: Per-size medians of the server's peak RSS over cold layer reads (gene column and cell row), laptop v0.4.1 (scale_v041.csv); layer size = cells x genes x 4 B. Backs Fig. 9's title, 'memory stays flat'.
+  fig8.flat:
+    text: "On the laptop the server's peak stays at 82--102 MiB while the layer read grows a hundredfold, from 0.2 to 20 GB"
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: layer_gene, status: 200}, column: rss_peak_bytes, group_by: n_cells, agg: median, then: min}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: layer_gene, status: 200}, column: rss_peak_bytes, group_by: n_cells, agg: median, then: max}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: layer_cell, status: 200}, column: rss_peak_bytes, group_by: n_cells, agg: median, then: min}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: layer_cell, status: 200}, column: rss_peak_bytes, group_by: n_cells, agg: median, then: max}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: [layer_gene, layer_cell], status: 200}, column: n_cells, agg: min}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: [layer_gene, layer_cell], status: 200}, column: n_cells, agg: max}
+      - {csv: benchmark/results/scale_v041.csv, where: {condition: [cold, cold_new], interaction: [layer_gene, layer_cell], status: 200}, column: n_genes, agg: first}
+      - {csv: benchmark/results/scale_v041.csv, where: {status: 200}, column: rss_base_bytes, agg: median}
+    compute: (min(v[0], v[2]) / 2**20, max(v[1], v[3]) / 2**20, 'a hundredfold' if round(v[5] / v[4]) == 100 else 'not a hundredfold', v[4] * v[6] * 4 / 1e9, v[5] * v[6] * 4 / 1e9)
+    format: "On the laptop the server's peak stays at {0:.0f}--{1:.0f} MiB while the layer read grows {2}, from {3:.1f} to {4:.0f} GB"
+    status: ok
+    note: As ar.memory_small; backs the figure title's 'memory stays flat' (laptop v0.4.1, scale_v041.csv).
+  ar.deploy.demo_row:
+    text: a cell row of the fold-change layer is read from the store in 10 ms
+    file: manuscript/body.tex
+    kind: number
+    source: {file: data_prep/VALIDATION.md, pattern: '\| \(1024, 1024\) \| [\d.]+ ms \| ([\d.]+) ms \|'}
+    format: 'a cell row of the fold-change layer is read from the store in {:.0f} ms'
+    status: ok
+    note: Direct zarr read (9.8 ms). Through the server it is 21.5 ms cold (VALIDATION, API latency table).
+  # ======================================================================= body.tex: Anticipated results, HPC benchmarks
+  ar.hpc.node:
+    text: Xeon Gold 6254, a whole 36-CPU node
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {json: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_10163488_spec_tahoe_x.json, key: cpu.nproc_allowed}
+      - {file: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_10163488_spec_tahoe_x.json, anchor: 'Intel(R) Xeon(R) Gold 6254 CPU'}
+    compute: v[0]
+    format: 'Xeon Gold 6254, a whole {:.0f}-CPU node'
+    status: ok
+    note: "The v0.4.1 HPC jobs ran on whole exclusive nodes (cpu.model_name, cpu.nproc_allowed in the T environment record; J4's node has the same CPU model)."
+  ar.hpc.tahoe_j3:
+    text: "(36 CPUs, 755 GiB RAM; stores on $SCRATCH, an NFSv4.1 scratch filer; a fresh server and the node's page cache evicted before each cold request): with AnnZarro v0.4.1 the server returned the gene column of X for every cell in 0.16 s cold at 1 million cells and 2.8 s at 95.6 million, and in 2.2 s at 95.6 million for a gene detected in fewer cells (medians of 3 cold requests)"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {json: benchmark/scale/results/hpc/full/j5_v041/results_j5/http_hpc_filerwarm_environment.json, key: n_cpu}
+      - {json: benchmark/scale/results/hpc/full/j5_v041/results_j5/http_hpc_filerwarm_environment.json, key: ram_bytes}
+      - {json: benchmark/scale/results/hpc/full/j5_v041/results_j5/http_hpc_filerwarm_environment.json, key: packages.annzarro}
+      - {csv: benchmark/scale/results/hpc/full/j5_v041/results_j5/http_hpc_filerwarm.csv, where: {interaction: gene_high_all, condition: cold, n_cells: 1000000, status: '200'}, column: latency_s, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/j5_v041/results_j5/http_hpc_filerwarm.csv, where: {interaction: gene_high_all, condition: cold, n_cells: 95624334, status: '200'}, column: latency_s, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/j5_v041/results_j5/http_hpc_filerwarm.csv, where: {interaction: gene_mid_all, condition: cold, n_cells: 95624334, status: '200'}, column: latency_s, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/j5_v041/results_j5/http_hpc_filerwarm.csv, where: {interaction: gene_high_all, condition: cold, n_cells: 1000000, status: '200'}, column: latency_s, agg: count}
+      - {csv: benchmark/scale/results/hpc/full/j5_v041/results_j5/http_hpc_filerwarm.csv, where: {interaction: gene_high_all, condition: cold, n_cells: 95624334, status: '200'}, column: latency_s, agg: count}
+      - {csv: benchmark/scale/results/hpc/full/j5_v041/results_j5/http_hpc_filerwarm.csv, where: {interaction: gene_mid_all, condition: cold, n_cells: 95624334, status: '200'}, column: latency_s, agg: count}
+      - {file: benchmark/scale/results/hpc/full/j5_v041/results_j5/cold_protocol.json, anchor: 'fadvise'}
+    compute: "(v[0], v[1] / 2**30, v[3], v[4], v[5], 3) if v[2] == '0.4.1' and v[6] == v[7] == v[8] == 3 else float('nan')"
+    format: "({0:.0f} CPUs, {1:.0f} GiB RAM; stores on $SCRATCH, an NFSv4.1 scratch filer; a fresh server and the node's page cache evicted before each cold request): with AnnZarro v0.4.1 the server returned the gene column of X for every cell in {2:.2f} s cold at 1 million cells and {3:.1f} s at 95.6 million, and in {4:.1f} s at 95.6 million for a gene detected in fewer cells (medians of {5} cold requests)"
+    status: ok
+    note: "Nexus J5 (job 10163489), the Tahoe-100M per-click ladder on one HPC node, AnnZarro v0.4.1: node-cold, stores on $SCRATCH, MANIFEST sha256-checked (annzarro-reproducibility dominik/scale-hpc caca0aa). gene_high_all = the most-detected panel gene, gene_mid_all = detection rank 1000."
+  ar.hpc.kernel:
+    text: "took 0.29, 0.31 and 0.30 s cold for 50,000, 100,000 and 200,000 cells"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv, where: {case_id: 'tahoe_kernel_50000:obsp_dense_row:gaussian_kernel', phase: cold}, column: latency_s, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv, where: {case_id: 'tahoe_kernel_100000:obsp_dense_row:gaussian_kernel', phase: cold}, column: latency_s, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv, where: {case_id: 'tahoe_kernel_200000:obsp_dense_row:gaussian_kernel', phase: cold}, column: latency_s, agg: median}
+    format: 'took {0:.2f}, {1:.2f} and {2:.2f} s cold for 50,000, 100,000 and 200,000 cells'
+    status: ok
+    note: "One row of a dense cells x cells Gaussian kernel; T2 on v0.4.1 (job 10195427, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv)."
+  ar.hpc.dist:
+    text: "a row of a dense diffusion-distance matrix 0.31, 0.29 and 0.27 s"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv, where: {case_id: 'tahoe_dist_50000:obsp_dense_row:diffmap_distance', phase: cold}, column: latency_s, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv, where: {case_id: 'tahoe_dist_100000:obsp_dense_row:diffmap_distance', phase: cold}, column: latency_s, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: {case_id: 'tahoe_dist_200000:obsp_dense_row:diffmap_distance', phase: cold}, column: latency_s, agg: median}
+    format: 'a row of a dense diffusion-distance matrix {0:.2f}, {1:.2f} and {2:.2f} s'
+    status: ok
+    note: "50,000 and 100,000 cells from T2 on v0.4.1 (job 10195427, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv). 200,000 cells from T on v0.4.1 (job 10163488), the same protocol."
+  ar.hpc.largest:
+    text: "the largest matrix is 160 GB uncompressed"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: {case_id: 'tahoe_dist_200000:obsp_dense_row:diffmap_distance', phase: cold}, column: n_values, agg: first}
+    compute: 4 * v[0] ** 2 / 1e9
+    format: 'the largest matrix is {:.0f} GB uncompressed'
+    status: ok
+    note: "A row of the dense 200,000 x 200,000 float32 distance matrix has 200,000 values; T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+  ar.hpc.rss:
+    text: "stayed at 85--89 MiB across distance and correlation matrices of 1.6--160 GB, against 78 MiB idle"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: &pw_t {phase: cold, case_id: ['tahoe_corr_30000:varp_dense_row:gene_corr_pearson', 'tahoe_dist_200000:obsp_dense_row:diffmap_distance']}, column: server_hwm_mb, group_by: case_id, agg: median, then: min}
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv, where: &pw_t2 {phase: cold, case_id: ['tahoe_corr_20000:varp_dense_row:gene_corr_pearson', 'tahoe_dist_50000:obsp_dense_row:diffmap_distance', 'tahoe_dist_100000:obsp_dense_row:diffmap_distance']}, column: server_hwm_mb, group_by: case_id, agg: median, then: min}
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: *pw_t, column: server_hwm_mb, group_by: case_id, agg: median, then: max}
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv, where: *pw_t2, column: server_hwm_mb, group_by: case_id, agg: median, then: max}
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: *pw_t, column: server_baseline_rss_mb, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv, where: *pw_t2, column: server_baseline_rss_mb, agg: median}
+    compute: "(min(v[0], v[1]), max(v[2], v[3]), 4 * 20000 ** 2 / 1e9, 4 * 200000 ** 2 / 1e9, v[4]) if round(v[4]) == round(v[5]) else float('nan')"
+    format: 'stayed at {0:.0f}--{1:.0f} MiB across distance and correlation matrices of {2:.1f}--{3:.0f} GB, against {4:.0f} MiB idle'
+    status: ok
+    note: "Per case, the median server high-water mark (VmHWM) over its cold rows, then the smallest and largest of the five cases (correlation rows of 20,000 and 30,000 genes, distance rows of 50,000 to 200,000 cells); idle = the median baseline RSS, the same in both runs. Cases from T (30,000 genes, 200,000 cells; job 10163488) and T2 (the rest; job 10195427), $SCRATCH, node-cold."
+  ar.hpc.varp:
+    text: "A gene-by-gene correlation row for 30,000 genes took 0.24 s"
+    file: manuscript/supplement.tex
+    kind: number
+    source: {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: {case_id: 'tahoe_corr_30000:varp_dense_row:gene_corr_pearson', phase: cold}, column: latency_s, agg: median}
+    format: 'A gene-by-gene correlation row for 30,000 genes took {:.2f} s'
+    status: ok
+    note: "T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+  ar.hpc.atlas_n:
+    text: On a 1.17-million-cell prefix of Tahoe-100M
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/tahoe_x/http.csv, where: {case_id: 'tahoe_x_1.17M:X_gene_col', phase: cold}, column: n_values, agg: first}
+    compute: v[0] / 1e6
+    format: 'On a {:.2f}-million-cell prefix of Tahoe-100M'
+    status: ok
+    note: "A gene column's length is the store's cell count (1,170,000); T2 on v0.4.1 (job 10195427, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv)."
+  ar.hpc.atlas_gene:
+    text: "a gene column of X took 0.20 s cold and 0.01 s warm and a kNN row 0.21 s cold"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/tahoe_x/http.csv, where: {case_id: 'tahoe_x_1.17M:X_gene_col', phase: cold}, column: latency_s, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/tahoe_x/http.csv, where: {case_id: 'tahoe_x_1.17M:X_gene_col', phase: warm}, column: latency_s, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/tahoe_x/http.csv, where: {case_id: 'tahoe_x_1.17M:obsp_csr_row:connectivities', phase: cold}, column: latency_s, agg: median}
+    format: 'a gene column of X took {0:.2f} s cold and {1:.2f} s warm and a kNN row {2:.2f} s cold'
+    status: ok
+    note: "X is CSC; the kNN row is a row of obsp/connectivities (CSR). Warm = the same index again; T2 on v0.4.1 (job 10195427, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv)."
+  ar.hpc.whole_gene:
+    text: "One cell row of a 1-million-cell, 5,000-gene layer of Tahoe-100M with whole-gene chunks took 7.8 s cold, and 0.38 s after rechunking"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_allx4:dense_layer_cell_row:lognorm_panel', phase: cold}, column: latency_s, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_8192x64:dense_layer_cell_row:lognorm_panel', phase: cold}, column: latency_s, agg: median}
+      - *hpc_cells
+      - *hpc_genes
+    compute: (v[2] / 1e6, v[3], v[0], v[1])
+    format: 'One cell row of a {0:g}-million-cell, {1:,.0f}-gene layer of Tahoe-100M with whole-gene chunks took {2:.1f} s cold, and {3:.2f} s after rechunking'
+    status: ok
+    note: "Whole-gene chunks = all cells x 4 genes; rechunked = the Step 10 shape 8192 x 64 (ar.hpc.rule_shape); T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+  ar.hpc.rule_shape:
+    text: the Step 10 shape, $8192\times64$
+    file: manuscript/supplement.tex
+    kind: number
+    source: [*hpc_cells, *hpc_genes]
+    compute: (2 ** round(math.log2(math.sqrt(5e5 * v[0] / v[1]))), 2 ** round(math.log2(5e5 / 2 ** round(math.log2(math.sqrt(5e5 * v[0] / v[1]))))))
+    format: 'the Step 10 shape, ${0}\times{1}$'
+    status: ok
+    note: layer_chunks() of Step 10 applied to the measured public layer's shape (1,000,000 cells x 5,000 genes, from the T run's own records).
+
+  # ======================================================================= body.tex: Anticipated results, Tahoe-100M
+  ar.tahoe.n:
+    text: We used all 95,624,334 cells
+    file: manuscript/body.tex
+    kind: number
+    source: *n95
+    format: 'We used all {:,.0f} cells'
+    status: ok
+  ar.tahoe.laptop:
+    text: (Apple M3 Max, 128 GiB RAM, headless Chromium 153)
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - *laptop
+      - {file: figures/scale/README.md, anchor: 'headless Chromium 153.0.8010.12'}
+    status: ok
+  ar.tahoe.panel:
+    text: raw counts of a 200-gene panel in X
+    file: manuscript/body.tex
+    kind: number
+    source: {file: figures/scale/README.md, pattern: 'a (\d+)-gene panel in X \(raw counts\)'}
+    format: 'raw counts of a {:.0f}-gene panel in X'
+    status: ok
+  ar.tahoe.reference:
+    text: fitted on 999,073 reference cells
+    file: manuscript/body.tex
+    kind: number
+    source: {file: figures/scale/README.md, pattern: 'fit on a ([\d,]+)-cell reference'}
+    format: 'fitted on {:,.0f} reference cells'
+    status: ok
+  ar.tahoe.knn:
+    text: its 15 nearest reference cells
+    file: manuscript/body.tex
+    kind: number
+    source: {file: benchmark/scale/umap_tahoe.py, pattern: 'its k=(\d+) nearest reference cells'}
+    format: 'its {:.0f} nearest reference cells'
+    status: ok
+  ar.tahoe.recall:
+    text: recall 0.997 against exact search
+    file: manuscript/body.tex
+    kind: number
+    source: {file: figures/scale/README.md, pattern: 'recall ([\d.]+)'}
+    format: 'recall {:.3f} against exact search'
+    status: ok
+  ar.tahoe.part:
+    text: On the default 100,000-cell part of all 95.6 million cells
+    file: manuscript/body.tex
+    kind: number
+    source: [*subset_n, *n95]
+    compute: (v[0], v[1] / 1e6)
+    format: 'On the default {0:,.0f}-cell part of all {1:.1f} million cells'
+    status: ok
+  ar.tahoe.first_plot:
+    text: the first plot appeared 4.0 s after the page was opened (3.8 s colored by cell line)
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_sub_gene, event: first_plot}, column: seconds, agg: median}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_sub_cat, event: first_plot}, column: seconds, agg: median}
+    format: 'the first plot appeared {0:.1f} s after the page was opened ({1:.1f} s colored by cell line)'
+    status: ok
+  ar.tahoe.recolour:
+    text: "Recoloring by another gene then took 0.46 s"
+    file: manuscript/body.tex
+    kind: number
+    source: {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_sub_gene, event: recolour}, column: seconds, agg: median}
+    format: "Recoloring by another gene then took {:.2f} s"
+    status: ok
+  ar.tahoe.part_step:
+    text: stepping to the next of 957 parts 2.8 s
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - *subset_n
+      - *n95
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041, n_cells: 95624334, event: part_step, status: ok}, column: seconds, agg: median}
+    compute: (math.ceil(v[1] / v[0]), v[2])
+    format: 'stepping to the next of {0} parts {1:.1f} s'
+    status: ok
+  ar.tahoe.balance:
+    text: switching to a subset balanced across the 50 cell lines 3.3 s
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {file: benchmark/scale/NOTES.md, pattern: '`cell_line_id` \((\d+) categories\)'}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041, n_cells: 95624334, event: balance, status: ok}, column: seconds, agg: median}
+    format: 'switching to a subset balanced across the {0:.0f} cell lines {1:.1f} s'
+    status: ok
+  ar.tahoe.reps:
+    text: medians over 3 cold runs
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_sub_gene, event: first_plot}, agg: count}
+    format: 'medians over {0} cold runs'
+    status: ok
+  ar.tahoe.first_plot_1M:
+    text: the first plot took 0.9 s at one million cells
+    file: manuscript/body.tex
+    kind: number
+    source: {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041, n_cells: 1000000, color: gene, event: first_plot, status: ok}, column: seconds, agg: median}
+    format: 'the first plot took {:.1f} s at one million cells'
+    status: ok
+  ar.tahoe.memory_subset:
+    text: 'renderer process used 0.5 GiB at every dataset size and the server process at most 1.7 GiB'
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041}, column: renderer_rss_gb, group_by: n_cells, agg: max, then: min}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041}, column: renderer_rss_gb, group_by: n_cells, agg: max, then: max}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041}, column: server_rss_gb, agg: max}
+    compute: (v[0] * 1e9 / 2**30 if round(v[0] * 1e9 / 2**30, 1) == round(v[1] * 1e9 / 2**30, 1) else float('nan'), v[2] * 1e9 / 2**30)
+    format: 'renderer process used {0:.1f} GiB at every dataset size and the server process at most {1:.1f} GiB'
+    status: ok
+  ar.tahoe.every_cell_size1:
+    text: In large-plot mode the 95.6 million cells were drawn in 5-6 s at point size 1 and opacity 0.2
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - *n95
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: conf95_v041, n_cells: 95624334, event: first_plot, status: ok}, column: seconds, agg: min}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: conf95_v041, n_cells: 95624334, event: first_plot, status: ok}, column: seconds, agg: max}
+    compute: "(v[0] / 1e6, '{:.0f}'.format(v[1]) if round(v[1]) == round(v[2]) else '{:.0f}-{:.0f}'.format(v[1], v[2]))"
+    format: 'In large-plot mode the {0:.1f} million cells were drawn in {1} s at point size 1 and opacity 0.2'
+    status: ok
+    note: The conf95_v041 benchmark (3 cold reps per colouring), the same number as optF.every_cell_size1; the screenshot sessions' times stay in the scale figure's caption (fig:scale) only. One value when both ends round alike.
+  ar.tahoe.every_cell_size5:
+    text: At the automatic size and opacity the first plot took 6.1-7.1 s colored by a gene and 5.2-5.3 s by cell line
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_all, color: gene}, column: seconds, agg: min}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_all, color: gene}, column: seconds, agg: max}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_all, color: cat}, column: seconds, agg: min}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_all, color: cat}, column: seconds, agg: max}
+    format: 'At the automatic size and opacity the first plot took {0:.1f}-{1:.1f} s colored by a gene and {2:.1f}-{3:.1f} s by cell line'
+    status: ok
+  ar.tahoe.every_cell_reps:
+    text: ranges of 3 cold runs
+    file: manuscript/body.tex
+    kind: number
+    source: {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_all, color: gene}, agg: count}
+    format: 'ranges of {} cold runs'
+    status: ok
+  ar.tahoe.every_cell_memory:
+    text: "the tab's renderer process used up to 8.7 GiB and the server, recoloring included, 7.0 GiB"
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: all_v041, n_cells: 95624334}, column: renderer_rss_gb, agg: max}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: all_v041, n_cells: 95624334}, column: server_rss_gb, agg: max}
+    compute: (v[0] * 1e9 / 2**30, v[1] * 1e9 / 2**30)
+    format: "the tab's renderer process used up to {0:.1f} GiB and the server, recoloring included, {1:.1f} GiB"
+    status: ok
+  ar.tahoe.malat1_zoom_median:
+    text: median 83 in the region of
+    file: manuscript/body.tex
+    kind: number
+    source: {json: figures/scale/tahoe95M_malat1_stats.json, key: zoom.median}
+    format: 'median {:.0f} in the region of'
+    status: ok
+    note: "Median MALAT1 count of the 574,309 cells in Fig. 7c's drawn region (benchmark/scale/ceiling/gene_view_stats.py). Replaces ar.tahoe.fn1_cap and ar.tahoe.fn1_lines after b and c moved to MALAT1 (72f7986). 'Highest values on top' is prose from AnnZarro v0.4.1 static/js/panels/plot-utilities/large-plot.js:445-460 and utils/color-scales.js:87-96."
+  ar.ceiling.per_point:
+    text: "Large-plot mode keeps the points' positions off the JavaScript heap (0.02 GiB of heap at 95.6 million cells)"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: all_v041, n_cells: 95624334, event: first_plot, status: ok}, column: v8_used_peak_gb, agg: max}
+      - *n95
+    compute: (v[0] * 1e9 / v[1], v[0] * 1e9 / 2**30, v[1] / 1e6)
+    format: "Large-plot mode keeps the points' positions off the JavaScript heap ({1:.2f} GiB of heap at {2:.1f} million cells)"
+    status: ok
+    note: Peak V8 used heap (CDP usedSize) at the first every-cell plot at 95.6M (all_v041, tag v0.4.1); the positions are typed arrays outside it.
+  ar.ceiling.heap:
+    text: "Chromium caps the tab's heap at 4.1 GiB"
+    file: manuscript/supplement.tex
+    kind: number
+    source: *heaplim
+    compute: v[0] / 2**30
+    format: "Chromium caps the tab's heap at {:.1f} GiB"
+    status: ok
+    note: "The tab's jsHeapSizeLimit under default flags, headless Chromium 153 (heapcap_v041.jsonl, measured with the v0.4.1 series; a property of the Chromium build, not of AnnZarro)."
+  # ======================================================================= body.tex: Anticipated results, bone marrow
+  ar.bm.walk_mass:
+    text: (91\% of its mass)
+    file: manuscript/body.tex
+    kind: number
+    source: {json: figures/numbers/fig2.json, key: trajectory.0.mass_in_own_celltype}
+    compute: 100 * v[0]
+    format: '({:.0f}\% of its mass)'
+    status: ok
+  ar.bm.n_eff:
+    text: 517--559 effective cells
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig2.json, key: trajectory.1.n_eff}
+      - {json: figures/numbers/fig2.json, key: trajectory.2.n_eff}
+    format: '{0:.0f}--{1:.0f} effective cells'
+    status: ok
+  ar.bm.state_lfc:
+    text: 0.41 against 0.068
+    file: manuscript/body.tex
+    kind: comparison
+    source:
+      - {json: figures/numbers/fig4.json, key: panel_d.de_abs_fc_median_hsc}
+      - {json: figures/numbers/fig4.json, key: panel_d.de_abs_fc_median_mono}
+    format: '{0:.2f} against {1:.3f}'
+    status: ok
+  ar.bm.same_dir:
+    text: 129 of 190 differentially expressed genes
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig4.json, key: panel_d.n_de_same_direction}
+      - {json: figures/numbers/fig4.json, key: panel_d.n_de}
+    format: '{0} of {1} differentially expressed genes'
+    status: ok
+  ar.bm.partners_not_de:
+    text: Most of these partners are not themselves called differentially expressed
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {json: figures/numbers/fig3.json, key: rank_strips.H2-Q7.non_de_n_rho_gt_0.5}
+    compute: "'ok' if v[0] > 0 else 'no'"
+    status: ok
+    note: 30 of H2-Q7's 35 partners with rho > 0.5 are not DE.
+
+  # ======================================================================= figs_results.tex: fig:cellcell
+  fig2.plasma_rho:
+    text: (Spearman $\rho = 0.62$)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {json: figures/numbers/fig2.json, key: focus_bc.spearman_umap_vs_diffusion}
+    format: '(Spearman $\rho = {:.2f}$)'
+    status: ok
+  fig2.groups_def:
+    text: among its 5\% nearest cells on the UMAP but outside its 20\% nearest in diffusion space
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {file: figures/fig2_cell_by_cell.py, pattern: 'NEAR, FAR = ([\d.]+), [\d.]+'}
+      - {file: figures/fig2_cell_by_cell.py, pattern: 'NEAR, FAR = [\d.]+, ([\d.]+)'}
+    compute: (100 * v[0], 100 * v[1])
+    format: 'among its {0:.0f}\% nearest cells on the UMAP but outside its {1:.0f}\% nearest in diffusion space'
+    status: ok
+  fig2.groups_n:
+    text: '(265 cells); blue: the reverse (392 cells)'
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig2.json, key: focus_bc.nA_near_umap_far_diffusion}
+      - {json: figures/numbers/fig2.json, key: focus_bc.nB_far_umap_near_diffusion}
+    format: '({0} cells); blue: the reverse ({1} cells)'
+    status: ok
+  fig2.walk_mass:
+    text: receive 0.09\% of the plasma cell's walk mass; distant-looking naive and memory B cells receive 59.2\%
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig2.json, key: focus_bc.walk_mass_on_A}
+      - {json: figures/numbers/fig2.json, key: focus_bc.walk_mass_on_B}
+    compute: (100 * v[0], 100 * v[1])
+    format: "receive {0:.2f}\\% of the plasma cell's walk mass; distant-looking naive and memory B cells receive {1:.1f}\\%"
+    status: ok
+  fig2.dataset:
+    text: Across all 8,090 cells the UMAP preserves the global rank order of diffusion distances (median per-cell $\rho = 0.85$)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - *bm_cells
+      - {json: figures/numbers/fig2.json, key: dataset.spearman_umap_vs_diffusion_per_cell_median}
+    format: 'Across all {0:,} cells the UMAP preserves the global rank order of diffusion distances (median per-cell $\rho = {1:.2f}$)'
+    status: ok
+  fig2.knn:
+    text: (median 14 of 30 nearest neighbors shared)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {json: figures/numbers/fig2.json, key: dataset.knn30_shared_neighbours_median}
+    format: '(median {:.0f} of 30 nearest neighbors shared)'
+    status: ok
+  fig2.hsc_rho:
+    text: ($\rho = 0.95$ for the HSC)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {json: figures/numbers/fig2.json, key: hsc_example.spearman}
+    format: '($\rho = {:.2f}$ for the HSC)'
+    status: ok
+
+  # ======================================================================= figs_results.tex: fig:genegene
+  fig3.h2q7_partners:
+    text: H2-Q6 ($\rho = 0.82$), Tapbpl (0.73), H2-D1 (0.66) and B2m (0.60)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig3.json, key: H2-Q7.top_fold_change_partners.0.1}
+      - {json: figures/numbers/fig3.json, key: H2-Q7.top_fold_change_partners.1.1}
+      - {json: figures/numbers/fig3.json, key: H2-Q7.top_fold_change_partners.2.1}
+      - {json: figures/numbers/fig3.json, key: H2-Q7.top_fold_change_partners.5.1}
+    format: 'H2-Q6 ($\rho = {0:.2f}$), Tapbpl ({1:.2f}), H2-D1 ({2:.2f}) and B2m ({3:.2f})'
+    status: ok
+  fig3.only_h2q6_de:
+    text: only H2-Q6 is itself called differentially expressed
+    file: manuscript/sections/figs_results.tex
+    kind: qualitative
+    source:
+      - {json: figures/numbers/fig3.json, key: H2-Q7.top_fold_change_partners.0.2}
+      - {json: figures/numbers/fig3.json, key: H2-Q7.top_fold_change_partners.1.2}
+      - {json: figures/numbers/fig3.json, key: H2-Q7.top_fold_change_partners.2.2}
+      - {json: figures/numbers/fig3.json, key: H2-Q7.top_fold_change_partners.5.2}
+    compute: "'ok' if v[0] and not (v[1] or v[2] or v[3]) else 'no'"
+    status: ok
+  fig3.h2aa_partners:
+    text: H2-Eb1 0.93, H2-Ab1 0.88, Ciita 0.84, Cd74 0.81
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig3.json, key: H2-Aa.top_fold_change_partners.0.1}
+      - {json: figures/numbers/fig3.json, key: H2-Aa.top_fold_change_partners.1.1}
+      - {json: figures/numbers/fig3.json, key: H2-Aa.top_fold_change_partners.2.1}
+      - {json: figures/numbers/fig3.json, key: H2-Aa.top_fold_change_partners.3.1}
+    format: 'H2-Eb1 {0:.2f}, H2-Ab1 {1:.2f}, Ciita {2:.2f}, Cd74 {3:.2f}'
+    status: ok
+  fig3.n_de:
+    text: The 190 differentially expressed genes ranked
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {json: figures/numbers/fig3.json, key: n_de}
+    format: 'The {} differentially expressed genes ranked'
+    status: ok
+  fig3.silhouette:
+    text: ($k = 3$, the silhouette maximum; silhouette is flat at 0.23--0.25 for $k = 2$--6)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig3.json, key: clustering.k}
+      - {json: figures/numbers/fig3.json, key: clustering.silhouette_by_k.2}
+      - {json: figures/numbers/fig3.json, key: clustering.silhouette_by_k.3}
+      - {json: figures/numbers/fig3.json, key: clustering.silhouette_by_k.4}
+      - {json: figures/numbers/fig3.json, key: clustering.silhouette_by_k.5}
+      - {json: figures/numbers/fig3.json, key: clustering.silhouette_by_k.6}
+    compute: "(v[0] if v[0] == 2 + max(range(5), key=lambda i: v[1 + i]) else -1, min(v[1:]), max(v[1:]))"
+    format: '($k = {0}$, the silhouette maximum; silhouette is flat at {1:.2f}--{2:.2f} for $k = 2$--6)'
+    status: ok
+  fig3.module_mates:
+    text: 52 of its 86 module-mates have $\rho < 0.2$
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig3.json, key: rank_strips.H2-Q7.in_module_n_rho_lt_0.2}
+      - {json: figures/numbers/fig3.json, key: rank_strips.H2-Q7.module_size}
+    compute: (v[0], v[1] - 1)
+    format: '{0} of its {1} module-mates have $\rho < 0.2$'
+    status: ok
+  fig3.s100a9_partners:
+    text: Camp (0.72) and Ngp (0.61) fall outside its module
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig3.json, key: rank_strips.S100a9.out_module_top.0.1}
+      - {json: figures/numbers/fig3.json, key: rank_strips.S100a9.out_module_top.1.1}
+    format: 'Camp ({0:.2f}) and Ngp ({1:.2f}) fall outside its module'
+    status: ok
+  fig3.cell_state:
+    text: 204 genes share its cell-state pattern ($\rho > 0.7$, smoothed)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {json: figures/numbers/fig3.json, key: panel_d.n_smoothed_gt_0.7}
+    format: '{} genes share its cell-state pattern ($\rho > 0.7$, smoothed)'
+    status: ok
+  fig3.h2k1:
+    text: H2-K1 follows its expression pattern (0.90) but not its change with age (0.21)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig3.json, key: panel_d.lineage_top.0.1}
+      - {json: figures/numbers/fig3.json, key: panel_d.lineage_top.0.2}
+    format: 'H2-K1 follows its expression pattern ({0:.2f}) but not its change with age ({1:.2f})'
+    status: ok
+
+  # ======================================================================= figs_results.tex: fig:cellgene
+  fig4.s100a9_mean:
+    text: Its mean log$_2$ fold change is $-0.05$
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {json: figures/numbers/fig4.json, key: mean_lfc}
+    format: 'Its mean log$_2$ fold change is ${:.2f}$'
+    status: ok
+  fig4.s100a9_hsc:
+    text: (median $-1.35$; next lowest cell type $-0.21$)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig4.json, key: median_by_celltype.HSC.fc}
+      - {json: figures/numbers/fig4.json, key: median_by_celltype.Non Classical Monocyte.fc}
+    format: '(median ${0:.2f}$; next lowest cell type ${1:.2f}$)'
+    status: ok
+    note: The next lowest median is Non Classical Monocyte (-0.206); checked by eye against median_by_celltype.
+  fig4.s100a9_smoothed:
+    text: HSC median 1.74 in Young and 0.39 in Old
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig4.json, key: median_by_celltype.HSC.young}
+      - {json: figures/numbers/fig4.json, key: median_by_celltype.HSC.old}
+    format: 'HSC median {0:.2f} in Young and {1:.2f} in Old'
+    status: ok
+  fig4.directions:
+    text: (purple, 129) or opposite (amber, 61)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig4.json, key: panel_d.n_de_same_direction}
+      - {json: figures/numbers/fig4.json, key: panel_d.n_de_opposite_direction}
+    format: '(purple, {0}) or opposite (amber, {1})'
+    status: ok
+  fig4.beyond_sd:
+    text: only Apoe changes in opposite directions (up in the HSC, down in the monocyte), against 10 genes changing in the same direction
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/numbers/fig4.json, key: panel_d.de_opposite_beyond_1.96sd_both.0}
+      - {json: figures/numbers/fig4.json, key: panel_d.n_de_opposite_beyond_1.96sd_both}
+      - {json: figures/numbers/fig4.json, key: panel_d.n_de_same_beyond_1.96sd_both}
+    compute: "(v[0] if v[1] == 1 else 'more than one', v[2])"
+    format: 'only {0} changes in opposite directions (up in the HSC, down in the monocyte), against {1} genes changing in the same direction'
+    status: ok
+  fig4.rows_rho:
+    text: Spearman $\rho$ between the two rows is 0.53 over differentially expressed genes
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {json: figures/numbers/fig4.json, key: panel_d.spearman_rows_de_genes}
+    format: 'Spearman $\rho$ between the two rows is {:.2f} over differentially expressed genes'
+    status: ok
+
+  # ======================================================================= figs_results.tex: fig:performance
+  fig8.bytes:
+    text: At one million cells a 20 GB layer is shown through a 4 MB gene column, one part in 5,000
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    compute: (4 * 1e6 * 5000 / 1e9, 4 * 1e6 / 1e6, 5000)
+    format: 'At one million cells a {0:.0f} GB layer is shown through a {1:.0f} MB gene column, one part in {2:,}'
+    status: ok
+    note: Arithmetic, 4 bytes per float32 value, 5,000 genes.
+  fig8.laptop_gene:
+    text: Gene columns stay under 1 s to one million cells on the laptop
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {csv: benchmark/results/scale_v041.csv, where: {interaction: layer_gene, status: 200}, column: latency_s, group_by: n_cells, agg: median, then: max}
+    compute: "'under 1 s' if v[0] < 1 else 'over 1 s'"
+    format: 'Gene columns stay {} to one million cells on the laptop'
+    status: ok
+    note: "Largest per-size median latency of a dense-layer gene column, all conditions, on v0.4.1 (scale_v041.csv, binary wire)."
+  fig8.hpc_gene:
+    text: "(whole-gene chunks) takes 0.40 s cold at 1 million cells"
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_allx4:dense_layer_gene_col:lognorm_panel', phase: cold}, column: latency_s, agg: median}
+      - *hpc_cells
+    compute: (v[0], v[1] / 1e6)
+    format: '(whole-gene chunks) takes {0:.2f} s cold at {1:g} million cells'
+    status: ok
+    note: "A gene column of the dense Tahoe-100M layer, whole-gene chunks (all cells x 4 genes); T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+  fig8.pairwise:
+    text: "a row of a dense 200,000~$\\times$~200,000 matrix (160 GB uncompressed) 0.27 s cold"
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: {case_id: 'tahoe_dist_200000:obsp_dense_row:diffmap_distance', phase: cold}, column: n_values, agg: first}
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: {case_id: 'tahoe_dist_200000:obsp_dense_row:diffmap_distance', phase: cold}, column: latency_s, agg: median}
+    compute: (v[0], v[0], 4 * v[0] ** 2 / 1e9, v[1])
+    format: 'a row of a dense {0:,.0f}~$\times$~{1:,.0f} matrix ({2:.0f} GB uncompressed) {3:.2f} s cold'
+    status: ok
+    note: "T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+  fig8.peak_rss:
+    text: "A 160 GB pairwise matrix peaks at 89 MiB on HPC"
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: {case_id: 'tahoe_dist_200000:obsp_dense_row:diffmap_distance', phase: cold}, column: n_values, agg: first}
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: {case_id: 'tahoe_dist_200000:obsp_dense_row:diffmap_distance', phase: cold}, column: server_hwm_mb, agg: median}
+    compute: (4 * v[0] ** 2 / 1e9, v[1])
+    format: 'A {0:.0f} GB pairwise matrix peaks at {1:.0f} MiB on HPC'
+    status: ok
+    note: "Median server high-water mark (VmHWM, MiB) over the 200,000-cell distance matrix's cold rows; T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+  fig8.idle:
+    text: the idle laptop server uses 79 MiB
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {csv: benchmark/results/scale_v041.csv, where: {status: 200}, column: rss_base_bytes, agg: median}
+    compute: v[0] / 2**20
+    format: 'the idle laptop server uses {:.0f} MiB'
+    status: ok
+    note: Median server RSS before each request (rss_base_bytes), laptop v0.4.1 series.
+  fig8.version:
+    text: "Laptop series: AnnZarro 0.4.1 (the v0.4.1 tag, 78c9da6), vectors sent as binary float32"
+    file: manuscript/sections/figs_results.tex
+    kind: qualitative
+    source:
+      - {file: benchmark/results/scale_v041_environment.json, anchor: '78c9da657ecbff30163fd29055f0e6b10e915c5c'}
+      - {file: notes/sources/annzarro_v0.4.1_tag.txt, anchor: '661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d'}
+      - {csv: benchmark/results/scale_v041.csv, where: {interaction: [layer_gene, layer_cell]}, column: wire, agg: first, pattern: '^(binary)$'}
+    status: ok
+  fig8.whole_gene_laptop:
+    text: 2.9 s on the laptop at 1 million cells
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {csv: benchmark/results/sweep_v041.csv, where: {n_cells: 1000000, condition: cold, chunks: 1000000x64, interaction: layer_cell, status: 200}, column: latency_s, agg: median}
+      - {csv: benchmark/results/sweep_v041.csv, where: {n_cells: 1000000, condition: cold, chunks: 1000000x64, interaction: layer_cell, status: 200}, column: n_cells, agg: first}
+    compute: (v[0], v[1] / 1e6)
+    format: '{0:.1f} s on the laptop at {1:.0f} million cells'
+    status: ok
+    note: Median cold cell-row read with whole-gene chunks (n, 64), 1M x 5k layer, laptop v0.4.1 (sweep_v041.csv).
+  fig8.whole_gene:
+    text: "7.8 s on HPC"
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_allx4:dense_layer_cell_row:lognorm_panel', phase: cold}, column: latency_s, agg: median}
+    format: '{:.1f} s on HPC'
+    status: ok
+    note: "One cell row, whole-gene chunks, 1,000,000 cells; T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+  # ======================================================================= figs_results.tex: fig:scale
+  fig7.n:
+    text: All 95,624,334 cells of Tahoe-100M on a UMAP fitted to 999,073 reference cells
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - *n95
+      - {file: figures/scale/README.md, pattern: 'fit on a ([\d,]+)-cell reference'}
+    format: 'All {0:,.0f} cells of Tahoe-100M on a UMAP fitted to {1:,.0f} reference cells'
+    status: ok
+  fig7.machine:
+    text: Headless Chromium 153 on an Apple M3 Max laptop (128 GiB RAM)
+    file: manuscript/sections/figs_results.tex
+    kind: qualitative
+    source:
+      - *laptop
+      - {file: figures/scale/README.md, anchor: 'headless Chromium 153.0.8010.12'}
+    status: ok
+  fig7a.time:
+    text: drawn 6.8 s after the page was opened in its screenshot session
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {json: figures/scale/tahoe95M_umap_all_cat.view.json, key: ready_s}
+    format: 'drawn {:.1f} s after the page was opened in its screenshot session'
+    status: ok
+  fig7b.cap:
+    text: the color scale running from 0 to 400 counts, which 97.9\% of cells do not exceed (6.8 s in its screenshot session)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/scale/tahoe95M_malat1_stats.json, key: cap}
+      - {json: figures/scale/tahoe95M_malat1_stats.json, key: pct_at_or_below_cap}
+      - {json: figures/scale/tahoe95M_malat1_all_gene.view.json, key: ready_s}
+    format: 'the color scale running from 0 to {0:.0f} counts, which {1:.1f}\% of cells do not exceed ({2:.1f} s in its screenshot session)'
+    status: ok
+    note: MALAT1 over all 95,624,334 cells (gene_view_stats.py); the scale's top is the operator's view (colorMax 400).
+  fig7c.box:
+    text: $1.63 \times 0.79$ UMAP units at the edge of one cell line's island, where 96\% of the 574,309 cells belong to that line
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/scale/tahoe95M_malat1_stats.json, key: zoom.range_xy}
+      - {json: figures/scale/tahoe95M_malat1_stats.json, key: zoom.top_share_pct}
+      - {json: figures/scale/tahoe95M_malat1_stats.json, key: zoom.n_cells}
+    compute: (v[0][1] - v[0][0], v[0][3] - v[0][2], v[1], v[2])
+    format: "${0:.2f} \\times {1:.2f}$ UMAP units at the edge of one cell line's island, where {2:.0f}\\% of the {3:,} cells belong to that line"
+    status: ok
+    note: The drawn range of the zoom shot (equal aspect widens the link's x range to fill the plot); the line is CVCL_0320.
+  fig7c.time:
+    text: (drawn in 17.6 s in its screenshot session)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {json: figures/scale/tahoe95M_malat1_zoom_all_gene.view.json, key: ready_s}
+    format: '(drawn in {:.1f} s in its screenshot session)'
+    status: ok
+  fig7c.style:
+    text: at the automatic point size and opacity (2.35 px and 0.43)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: figures/scale/tahoe95M_malat1_zoom_all_gene.view.json, key: drawn.marker_size}
+      - {json: figures/scale/tahoe95M_malat1_zoom_all_gene.view.json, key: drawn.opacity}
+    format: 'at the automatic point size and opacity ({0:.2f} px and {1:.2f})'
+    status: ok
+  fig7d.part:
+    text: part 1 of 957 (100,000 cells)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: [*subset_n, *n95]
+    compute: (math.ceil(v[1] / v[0]), v[0])
+    format: 'part 1 of {0} ({1:,.0f} cells)'
+    status: ok
+  fig7e.range:
+    text: from 1 million cells (prefixes of Tahoe-100M) to all 95.6 million
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_summary.csv, where: {tag: sub_v041}, column: n_cells, agg: min}
+      - {csv: benchmark/scale/results/browser_v041_summary.csv, where: {tag: sub_v041}, column: n_cells, agg: max}
+    compute: (v[0] / 1e6, v[1] / 1e6)
+    format: 'from {0:.0f} million cells (prefixes of Tahoe-100M) to all {1:.1f} million'
+    status: ok
+  fig7e.lines:
+    text: a subset balanced across the 50 cell lines
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {file: benchmark/scale/NOTES.md, pattern: '`cell_line_id` \((\d+) categories\)'}
+    format: 'a subset balanced across the {:.0f} cell lines'
+    status: ok
+  fig7e.reps:
+    text: Medians over 3 cold runs (2 events per run for recolor and part step)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_sub_gene, event: first_plot}, agg: count}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_sub_gene, event: balance}, agg: count}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_sub_gene, event: recolour}, agg: count}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {<<: *ev95_sub_gene, event: part_step}, agg: count}
+    compute: "(v[0] if v[0] == v[1] else -1, v[2] // v[0] if v[2] == v[3] else -1)"
+    format: 'Medians over {0} cold runs ({1} events per run for recolor and part step)'
+    status: ok
+  fig7g.per_point:
+    text: large-plot mode keeps the positions off the heap (0.03 GiB at 150 million cells)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: ceil_v041, n_cells: 150000000, event: first_plot, status: ok}, column: v8_used_peak_gb, agg: max}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: ceil_v041, event: first_plot, status: ok}, column: n_cells, agg: max}
+    compute: (v[0] * 1e9 / 2**30, v[1] / 1e6)
+    format: 'large-plot mode keeps the positions off the heap ({0:.2f} GiB at {1:.0f} million cells)'
+    status: ok
+    note: Peak V8 used heap (CDP usedSize) at the first every-cell plot of the largest store panel g draws (ceil_v041, 150M synthetic, tag v0.4.1); the positions are typed arrays outside it.
+
+  # ======================================================================= figs_results.tex: fig:app
+  # ======================================================================= figs_results.tex: Fig. 2d (spatial row of fig:app)
+  figspatial.cortex_walk:
+    text: 88.7\% of its mass falls in the spot's Leiden cluster
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {json: figures/numbers/app_spatial.json, key: spot.walk_mass_own_leiden}
+    compute: v[0] * 100
+    format: '{:.1f}\% of its mass falls in the spot''s Leiden cluster'
+    status: ok
+  fig5.filter:
+    text: 290 of 8,090 cells
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {file: figures/SCREENSHOTS.md, pattern: 'of (\d+) entries \(filtered from'}
+      - *bm_cells
+    format: '{0:.0f} of {1:,} cells'
+    status: ok
+
+  # ======================================================================= procedure_prep.tex
+  prep.download:
+    text: data (2.4 GB) from Zenodo
+    file: manuscript/sections/procedure_prep.tex
+    kind: number
+    source: {file: data_prep/VALIDATION.md, pattern: '4\.7 MB of ([\d,]+) B'}
+    compute: v[0] / 1e9
+    format: 'data ({:.1f} GB) from Zenodo'
+    status: ok
+  prep.kompot_time:
+    text: about 1 min
+    file: manuscript/sections/procedure_prep.tex
+    kind: number
+    source: {file: data_prep/README.md, pattern: '`run_kompot.py` total \| (\d+) s'}
+    compute: v[0] / 60
+    format: 'about {:.0f} min'
+    status: ok
+  prep.h5ad_size:
+    text: The processed h5ad (5.6 GB)
+    file: manuscript/sections/procedure_prep.tex
+    kind: number
+    source: {file: data_prep/README.md, pattern: 'holding the ([\d.]+) GB h5ad in RAM'}
+    format: 'The processed h5ad ({:.1f} GB)'
+    status: ok
+  prep.knn_row:
+    text: covers only about 33 cells
+    file: manuscript/sections/procedure_prep.tex
+    kind: number
+    source: {file: data_prep/VALIDATION.md, pattern: 'row \(1/Σp²\) is \*\*(\d+) cells\*\*'}
+    format: 'covers only about {:.0f} cells'
+    status: ok
+  prep.dense_obsp:
+    text: (0.26 GB for 8,090 cells, 4 GB for 32,000)
+    file: manuscript/sections/procedure_prep.tex
+    kind: number
+    source: *bm_cells
+    compute: (4 * v[0] ** 2 / 1e9, v[0], 4 * 32000 ** 2 / 1e9, 32000)
+    format: '({0:.2f} GB for {1:,} cells, {2:.0f} GB for {3:,})'
+    status: ok
+  prep.dense_limit:
+    text: Above roughly 30,000 cells
+    file: manuscript/sections/procedure_prep.tex
+    kind: number
+    source: {file: data_prep/VALIDATION.md, pattern: 'Above roughly (\d+)k cells'}
+    compute: v[0] * 1000
+    format: 'Above roughly {:,.0f} cells'
+    status: ok
+  prep.varp_cost:
+    text: '(about 30 s and 4 GiB of RAM for 16,285 genes)'
+    file: manuscript/sections/procedure_prep.tex
+    kind: number
+    source:
+      - {file: data_prep/README.md, pattern: 'fold change: [\d.]+ s \+ [\d.]+ s\) \| ([\d.]+) s'}
+      - {file: data_prep/VALIDATION.md, pattern: '`rankdata` returns float64 \(([\d.]+) GB transient\)'}
+      - {file: data_prep/VALIDATION.md, pattern: 'R is ([\d.]+) GB'}
+      - {file: data_prep/VALIDATION.md, pattern: 'C is ([\d.]+) GB'}
+      - *bm_genes
+    compute: (v[0], (v[1] + v[2] + v[3]) * 1e9 / 2**30, v[4])
+    format: '(about {0:.0f} s and {1:.0f} GiB of RAM for {2:,} genes)'
+    status: ok
+    note: 30.5 s for both varp; RAM is the sum of the rank transient, R and C (4.2 GB).
+  prep.varp_size:
+    text: (about 1 GB each here)
+    file: manuscript/sections/procedure_prep.tex
+    kind: number
+    source: *bm_genes
+    compute: 4 * v[0] ** 2 / 1e9
+    format: '(about {:.0f} GB each here)'
+    status: ok
+  prep.chunks:
+    text: For the demonstration data (8,090 cells, 16,285 genes) this gives $512\times1024$ chunks for layers; for 1 million cells and 5,000 genes it gives $8192\times64$
+    file: manuscript/sections/procedure_prep.tex
+    kind: number
+    source: [*bm_cells, *bm_genes, *hpc_cells, *hpc_genes]
+    compute: >-
+      (v[0], v[1],
+       2 ** round(math.log2(math.sqrt(5e5 * v[0] / v[1]))),
+       2 ** round(math.log2(5e5 / 2 ** round(math.log2(math.sqrt(5e5 * v[0] / v[1]))))),
+       v[2] / 1e6, v[3],
+       2 ** round(math.log2(math.sqrt(5e5 * v[2] / v[3]))),
+       2 ** round(math.log2(5e5 / 2 ** round(math.log2(math.sqrt(5e5 * v[2] / v[3]))))))
+    format: 'For the demonstration data ({0:,} cells, {1:,} genes) this gives ${2}\times{3}$ chunks for layers; for {4:g} million cells and {5:,.0f} genes it gives ${6}\times{7}$'
+    status: ok
+    note: layer_chunks() of Step 10 applied to both shapes.
+  prep.whole_gene:
+    text: "7.8 s for 1 million cells, against 0.38 s"
+    file: manuscript/sections/procedure_prep.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_allx4:dense_layer_cell_row:lognorm_panel', phase: cold}, column: latency_s, agg: median}
+      - *hpc_cells
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_8192x64:dense_layer_cell_row:lognorm_panel', phase: cold}, column: latency_s, agg: median}
+    compute: (v[0], v[1] / 1e6, v[2])
+    format: '{0:.1f} s for {1:g} million cells, against {2:.2f} s'
+    status: ok
+    note: "As ar.hpc.whole_gene: whole-gene chunks (all cells x 4 genes) against the rule's 8192 x 64; T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+  prep.status_bar:
+    text: The status bar reports 8,090 cells and 16,285 genes
+    file: manuscript/sections/procedure_prep.tex
+    kind: number
+    source: [*bm_cells, *bm_genes]
+    format: 'The status bar reports {0:,} cells and {1:,} genes'
+    status: ok
+
+  # ======================================================================= added after the unmarked-number scan
+  fig3.fdr:
+    text: dashed line, 5\% FDR
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {file: figures/fig3_gene_by_gene.py, pattern: '"DE, FDR (\d+)%"'}
+    format: 'dashed line, {:.0f}\% FDR'
+    status: ok
+    note: The label in the figure script; the threshold itself is Kompot's (de_mahalanobis_threshold in fig3.json).
+  fig8.genes:
+    text: a cell row (5,000 genes)
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {csv: benchmark/results/scale_v041.csv, where: {interaction: layer_cell}, column: n_genes, agg: max}
+    format: 'a cell row ({:,.0f} genes)'
+    status: ok
+    note: "The number of genes in the benchmark store (5,000), a property of the data; read from scale_v041.csv."
+  fig8.bytes_per_value:
+    text: 4 bytes per float32 value
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {file: benchmark/scale/NOTES.md, anchor: 'f32 vectors are 4 bytes per cell'}
+    compute: 4
+    format: '{} bytes per float32 value'
+    status: ok
+  fig8.hpc_node:
+    text: Xeon Gold 6254, a whole 36-CPU node
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {json: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_10163488_spec_tahoe_x.json, key: cpu.nproc_allowed}
+      - {file: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_10163488_spec_tahoe_x.json, anchor: 'Intel(R) Xeon(R) Gold 6254 CPU'}
+    compute: v[0]
+    format: 'Xeon Gold 6254, a whole {:.0f}-CPU node'
+    status: ok
+    note: "The v0.4.1 HPC jobs ran on whole exclusive nodes (cpu.model_name, cpu.nproc_allowed in the T environment record; J4's node has the same CPU model)."
+  equip.gpu:
+    text: "the browser's GPU process added 0.2 GiB and 1.9 GiB"
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: sub_v041}, column: gpu_rss_gb, agg: max}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: {clean: "True", tag: all_v041, n_cells: 95624334}, column: gpu_rss_gb, agg: max}
+    compute: (v[0] * 1e9 / 2**30, v[1] * 1e9 / 2**30)
+    format: "the browser's GPU process added {0:.1f} GiB and {1:.1f} GiB"
+    status: ok
+    note: Peak GPU-process RSS, default subset (all sizes) and every cell at 95.6M; every cell from the v0.4.1 series (all_v041), the default subset from sub_v041 until its v0.4.1 rerun.
+  equip.server_burst:
+    text: '2.6 GiB under eight concurrent subset requests'
+    file: manuscript/body.tex
+    kind: number
+    source: {csv: benchmark/scale/results/http_v041_summary.csv, where: {n_cells: 95624334, interaction: burst8_sub, condition: cold}, column: server_rss_peak_max_gb, agg: max}
+    compute: v[0] * 1e9 / 2**30
+    format: '{:.1f} GiB under eight concurrent subset requests'
+    status: ok
+  equip.units:
+    text: Memory in this protocol is binary (1 GiB = $2^{30}$ bytes, 1 MiB = $2^{20}$ bytes), as are installed RAM and memory budgets; data sizes and transfers are decimal (1 GB = $10^9$ bytes, 1 MB = $10^6$ bytes)
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: benchmark/scale/summarize_rerun.py, anchor: 'GB = 1e9'}
+    status: ok
+    note: Laptop memory columns are decimal GB and are converted to GiB in each claim; tool_ceiling columns are GiB; HPC server_hwm_mb is MiB. Quoted app messages keep their own units.
+  ar.deploy.bench_layout:
+    text: "a cells~$\\times$~genes layer of Tahoe-100M (1 million cells, 5,000 genes) in chunks of all cells by 64 genes took 8.7 s cold for one cell row, against 0.38 s in the Step 10 shape for this layer, $8192\\times64$"
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - *hpc_cells
+      - *hpc_genes
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_allx64:dense_layer_cell_row:lognorm_panel', phase: cold}, column: latency_s, agg: median}
+      - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_8192x64:dense_layer_cell_row:lognorm_panel', phase: cold}, column: latency_s, agg: median}
+    compute: (v[0] / 1e6, v[1], 64, v[2], v[3], 2 ** round(math.log2(math.sqrt(5e5 * v[0] / v[1]))), 2 ** round(math.log2(5e5 / 2 ** round(math.log2(math.sqrt(5e5 * v[0] / v[1]))))))
+    format: 'a cells~$\times$~genes layer of Tahoe-100M ({0:g} million cells, {1:,.0f} genes) in chunks of all cells by {2:.0f} genes took {3:.1f} s cold for one cell row, against {4:.2f} s in the Step 10 shape for this layer, ${5}\times{6}$'
+    status: ok
+    note: "T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+  supp1.cellxgene.render:
+    text: the first full render taking 10.8--17.1 s
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: cxg_mouse_embryo_11M, status: ok}, column: t_full_render_s, agg: min}
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: cxg_mouse_embryo_11M, status: ok}, column: t_full_render_s, agg: max}
+    format: 'the first full render taking {0:.1f}--{1:.1f} s'
+    status: ok
+    note: comparison-auditor's headless-Chromium check, 3 runs, 2026-10-04 (cellxgene.md "Scale check").
+  supp1.cellxgene.readout:
+    text: 11441407 of 11441407 cells
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: cxg_mouse_embryo_11M, status: ok}, column: max_points_one_draw, agg: min}
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: cxg_mouse_embryo_11M, status: ok}, column: expect, agg: min}
+    format: '{0:.0f} of {1:.0f} cells'
+    status: ok
+    note: The UI readout is quoted in cellxgene.md; the point count of the largest single draw call equals it in every run.
+  supp1.cellxgene.policy_figure:
+    text: a lower figure, 4.3 million cells
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/cellxgene.md, pattern: 'datasets with more than ([\d.]+) million cells can be submitted'}
+    format: 'a lower figure, {:.1f} million cells'
+    status: ok
+  supp1.ucsc.drawn:
+    text: all 21,786,931 points were drawn in one draw call
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: ucsc_pansci, status: ok}, column: max_points_one_draw, agg: min}
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: ucsc_pansci, status: ok}, column: expect, agg: min}
+    compute: "v[0] if v[0] == v[1] else float('nan')"
+    format: 'all {:,.0f} points were drawn in one draw call'
+    status: ok
+  supp1.ucsc.render:
+    text: the first render taking 7.3--7.4 s
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: ucsc_pansci, status: ok}, column: t_full_render_s, agg: min}
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: ucsc_pansci, status: ok}, column: t_full_render_s, agg: max}
+    format: 'the first render taking {0:.1f}--{1:.1f} s'
+    status: ok
+  supp1.cellxgene.annotate:
+    text: whose README claims ``at least 1 million cells''
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/cellxgene.md, pattern: 'Annotate: "at least (\d+) million cells'}
+    format: "whose README claims ``at least {:.0f} million cells''"
+    status: ok
+  supp1.scp.n:
+    text: 3,177,310 cells, study SCP2805
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/single-cell-portal.md, pattern: 'S1 largest single dataset \| \*\*([\d,]+) cells\*\*, SCP2805'}
+    format: '{:,.0f} cells, study SCP2805'
+    status: ok
+  supp1.scp.default:
+    text: Above 100,000 cells the default view is a stratified 100,000-cell sample, and ``All Cells'' in the menu draws every cell
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {file: notes/comparison/single-cell-portal.md, anchor: 'Downsampled by default above 100k'}
+      - {matrix: single-cell-portal.every_cell, expect: Y}
+      - {matrix: single-cell-portal.subset, expect: Y}
+      - {matrix: single-cell-portal.auto_subset, expect: Y}
+    status: ok
+    note: every_cell Y under reading B (X1); subset and auto_subset Y under the X8 definitions.
+
+  supp1.rule.download_not_remote:
+    text: A tool that downloads a whole file before loading it does not read a remote store
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {matrix: cellxgene-annotate.remote, expect: N}
+      - {matrix: isee.remote, expect: N}
+    status: ok
+    note: The rule as applied; Annotate (temp-file copy) and iSEE (iSEEindex BiocFileCache) both download whole.
+  supp1.cellxgene.annotate_marks:
+    text: so ``hosted multi-user'' scores half
+    file: manuscript/supplement.tex
+    context: 'Annotate accepts an S3, GCS or HTTP URL'
+    kind: comparison
+    source:
+      - {matrix: cellxgene-annotate.remote, expect: N}
+      - {matrix: cellxgene-annotate.hosted, expect: P}
+    status: ok
+  supp1.kana.n:
+    text: 173,954 cells (Zilionis et al.\ 2019 lung data
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/kana.md, pattern: 'S1 largest single dataset documented \| \*\*([\d,]+) cells\*\*'}
+    format: '{:,.0f} cells (Zilionis et al.\ 2019 lung data'
+    status: ok
+  supp1.scope.n:
+    text: 567,950 cells drawn in the Fly Cell Atlas session
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/scope.md, pattern: 'S1 largest single dataset \| \*\*([\d,]+) cells\*\*'}
+    format: '{:,.0f} cells drawn in the Fly Cell Atlas session'
+    status: ok
+    note: Counted in the viewer's state on scope.aertslab.org (state.coord.x.length and mainLayer.children.length, 2026-10-03).
+  supp1.loupe.n:
+    text: datasets of more than 1 million cells
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/loupe.md, pattern: 'S1 largest single dataset documented \| \*\*More than (\d+) million cells'}
+    format: 'datasets of more than {:.0f} million cells'
+    status: ok
+  lim.threshold_reason:
+    text: at its default several of them fit in the browser's memory side by side
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: notes/APPROVALS.md, anchor: 'several plots with hover and click fit in memory'}
+    status: ok
+    note: 'The threshold is ui.defaults.large_plot_points in the server config (annzarro start --config), default 1000000; base.yaml at v0.4.1: "1M keeps several regular plots (400-900 B of browser heap per point) open side by side". Retexted 2026-10-06 (operator: the old wording read as if large plots kept hover and click).'
+  supp1.manivault.n:
+    text: The documented largest dataset is 15 million cells
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/manivault.md, pattern: 'The documented largest dataset is (\d+) million cells'}
+    format: 'The documented largest dataset is {:.0f} million cells'
+    status: ok
+  supp1.manivault.marks:
+    text: It loads obsp by default and colors an embedding by a stored obsp row, picked by its row number rather than by a focused cell, so the user cannot tell which cell the row belongs to
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {file: evidence/matrix/tools/manivault.yaml, anchor: 'one row at a time, but the row is picked by number,'}
+      - {matrix: manivault.cells, expect: P}
+      - {matrix: manivault.genes, expect: N}
+      - {matrix: manivault.focus, expect: N}
+      - {matrix: manivault.lazy, expect: N}
+    status: ok
+  supp1.isee.cytof:
+    text: More than 170,000 cells, a mass cytometry study of PBMCs
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/isee.md, pattern: 'more than ([\d,]+) PBMCs'}
+    format: 'More than {:,.0f} cells, a mass cytometry study of PBMCs'
+    status: ok
+
+  supp1.manivault.annot:
+    text: A lasso selection becomes a named cluster that is exported with its cells
+    file: manuscript/supplement.tex
+    kind: comparison
+    source: {matrix: manivault.annot, expect: Y}
+    note: Observed in the app (comparison-auditor 6b92408); manivault.yaml annot Y.
+    status: ok
+  fig1.budget:
+    text: 'within a 16 GiB client memory budget'
+    file: manuscript/body.tex
+    kind: number
+    source: {file: benchmark/tool_ceiling/README.md, pattern: 'the budget is (\d+) GiB'}
+    compute: v[0]
+    format: 'within a {:.0f} GiB client memory budget'
+    status: ok
+    note: A definition of the method (benchmark/tool_ceiling README/NOTES, operator rule 2026-10-05), not a measurement; nothing pending changes it. ceiling-benchmarker measures in GiB.
+    note: A definition of the method (benchmark/tool_ceiling README/NOTES, operator rule 2026-10-05), not a measurement; nothing pending changes it. ceiling-benchmarker measures in GiB.
+  fig1.server_rendered:
+    text: 'server-rendered: its server is measured instead'
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: benchmark/tool_ceiling/README.md, anchor: 'for them the'}
+    status: ok
+  supp1.ceiling.budget:
+    text: 'The value is the largest $N$ whose client peak stayed within 16 GiB'
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: benchmark/tool_ceiling/README.md, pattern: 'the budget is (\d+) GiB'}
+    compute: v[0]
+    format: 'The value is the largest $N$ whose client peak stayed within {:.0f} GiB'
+    status: ok
+    note: A definition of the method (benchmark/tool_ceiling README/NOTES, operator rule 2026-10-05), not a measurement; nothing pending changes it.
+  supp1.ceiling.title:
+    text: Measured glyphs (cells drawn within a 16 GiB client memory budget)
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: benchmark/tool_ceiling/README.md, pattern: 'the budget is (\d+) GiB'}
+    format: 'Measured glyphs (cells drawn within a {:.0f} GiB client memory budget)'
+    status: ok
+    note: A definition of the method (benchmark/tool_ceiling README/NOTES, operator rule 2026-10-05), not a measurement; nothing pending changes it.
+  supp1.ceiling.laptop:
+    text: Apple M3 Max, 128 GiB RAM, macOS
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source: {file: benchmark/tool_ceiling/README.md, anchor: 'Apple M3 Max (16 cores), 128 GB RAM'}
+    status: ok
+    note: sysctl hw.memsize 137,438,953,472 B = 128 GiB.
+  fig1.strip_range:
+    text: log scale, 100,000 to 10 billion cells
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: figures/fig_comparison.py, anchor: 'STRIP_W, STRIP_LO, STRIP_HI = 1.40, 5, 10'}
+    status: ok
+  supp1.ceiling.stop_rule:
+    text: The figure draws one glyph, the largest size a tool drew in full; what stopped it at the next size of the ladder is stated here
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source: {file: figures/fig_comparison.py, anchor: 'def stop_limit(r):'}
+    status: ok
+    note: stop_limit() and row_crashed() read kind_16gb and first_fail; the sentences below state what they classify, and the figure draws one glyph for all (reviewer, 2026-10-08).
+  supp1.ceiling.client_stop:
+    text: For Vitessce, Scanpy and Seurat the client's memory passed the budget
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: vitessce, variant: default}, column: kind_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: scanpy, variant: default}, column: kind_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: seurat, variant: default}, column: kind_16gb, agg: first}
+    compute: '"For Vitessce, Scanpy and Seurat the client''s memory passed the budget" if all(x == "ceiling" for x in v) else "not all three are ceilings: " + ", ".join(v)'
+    format: '{}'
+    status: ok
+  supp1.input.rule:
+    text: Each tool's input was prepared in the format it needs (a zarr store, an h5ad file, a built site, an app, a SingleCellExperiment); preparing it, by conversion or build, is not measured for any tool, AnnZarro included
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: benchmark/tool_ceiling/NOTES.md, anchor: 'recipe) is **not measured**, for any tool. Every tool''s input is assumed to exist'}
+      - {file: benchmark/tool_ceiling/README.md, anchor: 'Input rule: preparing a tool''s input (conversions, builds) is not measured;'}
+    status: ok
+  supp1.budget.rule:
+    text: Servers have a budget too, a flat 32 GiB of physical footprint (the concurrent peak of the process tree), applied to every tool, AnnZarro included; a tool whose server passed it stopped at that size
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, column: server_budget_gib, agg: max}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, column: server_budget_gib, agg: min}
+      - {file: benchmark/tool_ceiling/NOTES.md, anchor: '**Server budget: 32 GiB, flat**'}
+    compute: v[0] if v[0] == v[1] else float('nan')
+    format: 'Servers have a budget too, a flat {:.0f} GiB of physical footprint (the concurrent peak of the process tree), applied to every tool, AnnZarro included; a tool whose server passed it stopped at that size'
+    status: ok
+    note: A definition of the method (benchmark/tool_ceiling README/NOTES, operator rule 2026-10-05), not a measurement; nothing pending changes it. The check also requires every ceilings.csv row to carry the same 32 GiB.
+  supp1.input.lower_bounds:
+    text: UCSC drew every cell of Tahoe-100M, 95.6 million, the largest real dataset, where its ladder stops
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: ucsc, variant: default}, column: max_n_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: ucsc, variant: default}, column: kind_16gb, agg: first, pattern: '^lower bound: (largest N tested)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: ucsc, variant: default}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0] / 1e6) if v[0] == 95624334 and v[2] == 'final' else float('nan')"
+    format: 'UCSC drew every cell of Tahoe-100M, {:.1f} million, the largest real dataset, where its ladder stops'
+    status: ok
+    note: "ceilings.csv ucsc/default, final (ceiling-benchmarker): every cell of the 95.6M store drawn, client 12.02 GiB, server process tree 0.02 GiB (static site, HPC job 10100752); a lower bound, no synthetic sizes run."
+  supp1.ceiling.shinycell2:
+    text: ShinyCell2 drew 10 million cells, its server at 7.2 GiB (the HPC's process-tree resident memory); at 20 million its app builder, makeShinyApp, refuses the HDF5-backed input, which holds more than $2^{31}-1$ values, an input path limit
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: shinycell, variant: default}, column: max_n_server_budget, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: shinycell, variant: default}, column: server_gb_at_max_n_ok, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: shinycell, variant: default}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: shinycell, variant: default}, column: kind_16gb, agg: first, pattern: '(input path limit) at [\d,]+ \(makeShinyApp refuses'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: shinycell, variant: default}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: (v[0] / 1e6, v[1], v[2] / 1e6)
+    format: "ShinyCell2 drew {0:.0f} million cells, its server at {1:.1f} GiB (the HPC's process-tree resident memory); at {2:.0f} million its app builder, makeShinyApp, refuses the HDF5-backed input, which holds more than $2^{{31}}-1$ values, an input path limit"
+    status: ok
+  supp1.cirro_prepared:
+    text: "Cirrocumulus's prepared path drew 10 million cells; at 20 million its server passed the budget (33.9 GiB, the HPC's process-tree resident memory, the only measure there)"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: prepared}, column: max_n_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: prepared}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: prepared}, column: first_fail, agg: first, pattern: 'server_budget server ([\d.]+) GiB .*HPC worker: server process-tree RSS'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: prepared}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: (v[0] / 1e6, v[1] / 1e6, v[2])
+    format: "Cirrocumulus's prepared path drew {0:.0f} million cells; at {1:.0f} million its server passed the budget ({2:.1f} GiB, the HPC's process-tree resident memory, the only measure there)"
+    status: ok
+    note: Final row (33.851 GiB peak, job COMPLETED; a ShinyCell build sharing the node is not counted). The figure's Cirrocumulus row is cirrocumulus/default; this path is text only.
+  supp1.seurat.dgc_limit:
+    text: Seurat's default in-memory matrix (dgCMatrix) holds at most $2^{31}-1$ values, about 19.2 million cells on this panel, but reaches the 16 GiB budget at 2 million cells, long before that, so the limit sets no glyph; the BPCells variant keeps the matrix on disk and avoids it
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {file: benchmark/tool_ceiling/README.md, pattern: 'about ([\d.]+)M by the'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: seurat, variant: default}, column: max_n_16gb, agg: first}
+      - {file: benchmark/tool_ceiling/README.md, anchor: 'bpcells: on-disk BPCells matrix'}
+    compute: (v[0], v[1] / 1e6)
+    format: "Seurat's default in-memory matrix (dgCMatrix) holds at most $2^{{31}}-1$ values, about {0:.1f} million cells on this panel, but reaches the 16 GiB budget at {1:.0f} million cells, long before that, so the limit sets no glyph; the BPCells variant keeps the matrix on disk and avoids it"
+    status: ok
+  cmp.client_budget:
+    text: The client budget, 16 GiB, covers all browser processes
+    file: manuscript/body.tex
+    kind: number
+    source: {file: benchmark/tool_ceiling/README.md, pattern: 'the budget is (\d+) GiB'}
+    format: 'The client budget, {:.0f} GiB, covers all browser processes'
+    status: ok
+    note: A definition of the method (benchmark/tool_ceiling README/NOTES, operator rule 2026-10-05), not a measurement; nothing pending changes it.
+  cmp.server_budget:
+    text: the server budget is a flat 32 GiB for every tool, AnnZarro included
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, column: server_budget_gib, agg: max}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, column: server_budget_gib, agg: min}
+      - {file: benchmark/tool_ceiling/NOTES.md, anchor: '**Server budget: 32 GiB, flat**'}
+    compute: v[0] if v[0] == v[1] else float('nan')
+    format: 'the server budget is a flat {:.0f} GiB for every tool, AnnZarro included'
+    status: ok
+    note: A definition of the method (benchmark/tool_ceiling README/NOTES, operator rule 2026-10-05), not a measurement; nothing pending changes it. Every ceilings.csv row carries 32 GiB.
+  fig1.stop_in_sn1:
+    text: what stopped each tool at the next size (client or server memory, a crash, an unreadable input) is given in Supplementary Note~1
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: figures/fig_comparison.py, anchor: 'def stop_limit(r):'}
+      - {file: manuscript/supplement.tex, anchor: 'what stopped it at the next size of the ladder is stated here'}
+    status: ok
+    note: "Reviewer 2026-10-08: the stop shapes left Fig. 1c; the causes are stated in Supp. Note 1 (supp1.ceiling.stop_rule, supp1.budget.stops). The 32 GiB server budget stays claimed there (supp1.ceiling.budget); fig1.server_budget retired."
+  supp1.ceiling.triangle:
+    text: "Other tools failed at the next size within the budget: they crashed, as Kana's WebAssembly module and the renderers of SCope and Loupe Browser did, or could not read their input"
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: kana, variant: default}, column: first_fail, agg: first, pattern: '(crash)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: loupe, variant: default}, column: first_fail, agg: first, pattern: '(renderer process exited)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: shinycell, variant: default}, column: first_fail, agg: first, pattern: '^(input_limit)'}
+      - {file: figures/fig_comparison.py, anchor: 'kind = "input"           # a crash below the budget is a failure (Supp. Note 1'}
+    status: ok
+    note: "ceilings.csv first_fail: Kana's Wasm abort at 2M and Loupe's renderer exit at 10M (both below the 16 GiB budget), ShinyCell2's input_limit at 20M; fig_comparison draws all three as the triangle (operator 2026-10-06: one glyph for a failure)."
+  fig1.input_rule:
+    text: Each tool's input was prepared in its own format, and preparing it was not measured
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: benchmark/tool_ceiling/README.md, anchor: 'Input rule: preparing a tool''s input (conversions, builds) is not measured;'}
+    status: ok
+  supp1.ceiling.isee_hdf5:
+    text: iSEE, measured on its HDF5-backed SingleCellExperiment, drew 10 million cells with its server at 24.6 GiB; at 20 million its server passed the budget (49.5 GiB)
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: isee, variant: hdf5}, column: max_n_server_budget, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: isee, variant: hdf5}, column: server_gb_at_max_n_ok, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: isee, variant: hdf5}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: isee, variant: hdf5}, column: first_fail, agg: first, pattern: 'server_budget server ([\d.]+) GiB'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: isee, variant: hdf5}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: (v[0] / 1e6, v[1], v[2] / 1e6, v[3])
+    format: 'iSEE, measured on its HDF5-backed SingleCellExperiment, drew {0:.0f} million cells with its server at {1:.1f} GiB; at {2:.0f} million its server passed the budget ({3:.1f} GiB)'
+    status: ok
+  supp1.rule.cellxcell:
+    text: is full only when the user can tell which cell the shown row belongs to (for example by focusing that cell); a row picked by index scores half
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {matrix: annzarro.cells, expect: Y}
+      - {matrix: manivault.cells, expect: P}
+      - {matrix: scanpy-seurat.cells, expect: P}
+    status: ok
+    note: Operator decision 2026-10-05; ManiVault's row is picked by a number in a dimension field.
+  supp1.nm.vizit_sample:
+    text: VizIt draws a sample of 50,000 points fixed when the data are prepared
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: notes/comparison/vizit.md, pattern: 'hard-codes `sample_rows = (\d+) if n_rows > \d+ else n_rows`'}
+    format: 'VizIt draws a sample of {:,.0f} points fixed when the data are prepared'
+    status: ok
+    note: The note quotes VizIt a0aabb2 backend/funcs/scst_scripts/31_rename_meta_SC.py L170-172; the code itself is outside this repo.
+  supp1.manivault.ceiling:
+    text: it drew every cell up to 1 million within the client budget, at 12.7 GiB
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: manivault, variant: default}, column: max_n_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: manivault, variant: default, n: 1000000, status: ok}, column: fp_client_gb, agg: max}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: manivault, variant: default}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: (v[0] / 1e6, v[1])
+    format: 'it drew every cell up to {0:.0f} million within the client budget, at {1:.1f} GiB'
+    status: ok
+  supp1.manivault.over:
+    text: needed 24.4 GiB at 2 million
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: manivault, variant: default, n: 2000000}, column: fp_client_gb, agg: max}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: manivault, variant: default}, column: first_fail_n, agg: first}
+    compute: (v[0], v[1] / 1e6)
+    format: 'needed {0:.1f} GiB at {1:.0f} million'
+    status: ok
+  supp1.manivault.h5ad:
+    text: ManiVault 1.5.0 does not open h5ad files written by anndata 0.13 with pandas 3, which store the index as a group
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: notes/comparison/manivault.md, anchor: '### Compatibility note: h5ad from anndata 0.13 with pandas 3 does not open'}
+      - {file: notes/comparison/manivault.md, anchor: 'as `nullable-string-array` groups (`values` plus `mask`), not as string datasets.'}
+      - {file: notes/comparison/manivault.md, anchor: '- **Same data, older writer:** written with anndata 0.11.4 and pandas 2.3.3'}
+    status: ok
+    note: Format-version limit found in the ceiling-benchmarker desktop session (848b659); the measured inputs were written with anndata 0.11.4.
+  supp1.loupe.ceiling:
+    text: it drew every cell up to 5 million within the client budget, at 5.7 GiB
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: loupe, variant: default}, column: max_n_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: loupe, variant: default, n: 5000000, status: ok}, column: fp_client_gb, agg: max}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: loupe, variant: default}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: (v[0] / 1e6, v[1])
+    format: 'it drew every cell up to {0:.0f} million within the client budget, at {1:.1f} GiB'
+    status: ok
+  supp1.loupe.crash:
+    text: at 10 million it drew the cell lines, but the window went blank when coloring by a gene, because the renderer process exited at 4.0 GiB, well under the budget
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: loupe, variant: default}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: loupe, variant: default}, column: first_fail, agg: first, pattern: 'renderer process exited at ([\d.]+) GiB on gene colouring'}
+    compute: (v[0] / 1e6, v[1])
+    format: 'at {0:.0f} million it drew the cell lines, but the window went blank when coloring by a gene, because the renderer process exited at {1:.1f} GiB, well under the budget'
+    status: ok
+    note: ceilings.csv first_fail says the exit is consistent with a Chromium per-renderer V8 heap cap, not established; the app tree peaked at 8.18 GiB (results.csv loupe 10M r1).
+  supp1.loupe.lazy_files:
+    text: the same 1,000,000 cells and 200 or 2,000 genes (0.37 and 2.20 GiB)
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {json: benchmark/tool_ceiling/lazy_loupe/inputs/tahoe_first1000000_g200.h5ad.build.json, key: n_cells}
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, where: {set: g200}, column: file_bytes, agg: first}
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, where: {set: g2000}, column: file_bytes, agg: first}
+    compute: (v[0], v[1] / 2**30, v[2] / 2**30)
+    format: 'the same {0:,.0f} cells and 200 or 2,000 genes ({1:.2f} and {2:.2f} GiB)'
+    status: ok
+    note: Both inputs also say n_genes 200 and 2000 in their build.json files; file sizes are ls -l bytes of the .cloupe files (2^30 per GiB).
+  supp1.loupe.lazy_median:
+    text: a median of 1.27 GiB for both
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, where: {set: g200}, column: opened_gib, agg: median}
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, where: {set: g2000}, column: opened_gib, agg: median}
+    compute: round(v[0], 2) if round(v[0], 2) == round(v[1], 2) else None
+    format: 'a median of {:.2f} GiB for both'
+    status: ok
+    note: partD/readout.txt gives 1.273 and 1.272 GiB, difference -0.001 GiB, verdict Y (flat) by the rule fixed before the run.
+  supp1.loupe.lazy_spread:
+    text: a largest spread of 0.185 GiB between repetitions of one file
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, where: {set: g200}, column: opened_gib, agg: max}
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, where: {set: g200}, column: opened_gib, agg: min}
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, where: {set: g2000}, column: opened_gib, agg: max}
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, where: {set: g2000}, column: opened_gib, agg: min}
+    compute: round(max(v[0] - v[1], v[2] - v[3]), 3)
+    format: 'a largest spread of {:.3f} GiB between repetitions of one file'
+    status: ok
+  supp1.loupe.lazy_gene:
+    text: raised the footprint by 0.1 to 0.3 GiB
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, column: gene_minus_opened_gib, agg: min}
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, column: gene_minus_opened_gib, agg: max}
+    format: 'raised the footprint by {0:.1f} to {1:.1f} GiB'
+    status: ok
+    note: Per repetition, footprint at the gene marker minus footprint at the opened marker; the six values are 0.086 to 0.344 GiB, with no pattern by file.
+  supp1.loupe.lazy_peak:
+    text: the peak while loading was 2.0 to 2.2 GiB
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, column: peak_gib, agg: min}
+      - {csv: benchmark/tool_ceiling/lazy_loupe/lazy_results.csv, column: peak_gib, agg: max}
+    format: 'the peak while loading was {0:.1f} to {1:.1f} GiB'
+    status: ok
+    note: Peak phys_footprint of the whole run, six repetitions, 2.005 to 2.202 GiB (g200 2.005 to 2.135, g2000 2.086 to 2.202).
+  supp1.loupe.lazy_n:
+    text: not loaded whole at 1 million cells
+    file: manuscript/supplement.tex
+    kind: number
+    source: {json: benchmark/tool_ceiling/lazy_loupe/inputs/tahoe_first1000000_g2000.h5ad.build.json, key: n_cells}
+    compute: v[0] / 1e6
+    format: 'not loaded whole at {:.0f} million cells'
+    status: ok
+  supp1.loupe.barcodes:
+    text: 999,966 barcodes, not 1,000,000, and 34 cells have no
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {file: benchmark/tool_ceiling/lazy_loupe/partD/record.txt, anchor: 'points_seen=999966 barcodes found', pattern: 'points_seen=(\d+) barcodes found'}
+      - {file: benchmark/tool_ceiling/lazy_loupe/inputs/barcode_check.txt, anchor: 'cells with MALAT1 = 0: 34', pattern: 'g200: (\d+) cells'}
+      - {file: benchmark/tool_ceiling/lazy_loupe/inputs/barcode_check.txt, anchor: 'cells with MALAT1 = 0: 34', pattern: 'cells with MALAT1 = 0: (\d+)'}
+    compute: (v[0], v[1], v[2])
+    format: '{0:,.0f} barcodes, not {1:,.0f}, and {2:.0f} cells have no'
+    status: ok
+    note: Loupe's legend under the MALAT1 coloring says 999966 barcodes found in all six runs. Both inputs hold 1,000,000 unique cells; 34 of them have no MALAT1 count, so 1,000,000 minus 34 is 999,966 (barcode_check.txt). The count under the cell_line_id coloring was not recorded.
+  supp1.versions.loupe:
+    text: Loupe Browser 9.1.0
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: loupe, variant: default}, column: row_status, agg: first, pattern: '(Loupe Browser 9\.1\.0) desktop app'}
+    format: '{}'
+    status: ok
+  supp1.ceiling.kana:
+    text: Kana drew 1 million cells; at 2 million its WebAssembly module aborted in the browser
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: kana, variant: default}, column: max_n_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: kana, variant: default}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: kana, variant: default}, column: first_fail, agg: first, pattern: '(Aborted\(\))'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: kana, variant: default}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: (v[0] / 1e6, v[1] / 1e6)
+    format: 'Kana drew {0:.0f} million cells; at {1:.0f} million its WebAssembly module aborted in the browser'
+    status: ok
+    note: row_status final (ceiling-benchmarker 2201073); 1M at 10.6 GiB client, 2M abort on r1 (r0 was a harness miss).
+  supp1.ceiling.scope:
+    text: SCope drew 1 million cells; at 2 million its browser renderer crashed in both attempts, at 4.7 GiB of client memory, far below the budget
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: scope, variant: default}, column: max_n_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: scope, variant: default}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: scope, variant: default}, column: first_fail, agg: first, pattern: '(Target crashed)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: scope, variant: default}, column: row_status, agg: first, pattern: '^(final)'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: scope, variant: default, n: 2000000}, column: fp_client_gb, agg: count}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: scope, variant: default, n: 2000000}, column: fp_client_gb, agg: max}
+    compute: "(v[0] / 1e6, v[1] / 1e6, 'both' if v[4] == 2 else v[4], v[5]) if v[3] == 'final' else float('nan')"
+    format: 'SCope drew {0:.0f} million cells; at {1:.0f} million its browser renderer crashed in {2} attempts, at {3:.1f} GiB of client memory, far below the budget'
+    status: ok
+    note: "row_status final (ceiling-benchmarker, measured/scope); 1M every cell at 4.03 GiB client; 2M renderer crash in 2 of 2 attempts with 49.8 MB of JS heap at the last sample, so not the V8 heap cap (measured/scope/README.md)."
+  supp1.versions.new:
+    text: Kana 3.2.0 as served at kanaverse.org
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: benchmark/tool_ceiling/README.md, anchor: '| Kana v3.2.0 (live build at kanaverse.org/kana'}
+    status: ok
+  supp1.versions.manivault:
+    text: ManiVault Studio 1.5.0-dev
+    context: kanaverse.org, ManiVault Studio 1.5.0-dev, Loupe Browser 9.1.0
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: manivault, variant: default}, column: row_status, agg: first, pattern: '(ManiVault Studio 1\.5\.0-dev) desktop app'}
+    format: '{}'
+    status: ok
+  supp1.versions.loupe_engine:
+    text: Loupe Browser 9.1.0 (Electron 28.3.2, Chromium 120)
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: loupe, variant: default}, column: row_status, agg: first, pattern: '\(engine Electron (28\.3\.2), Chromium 120\.'}
+    compute: "'Loupe Browser 9.1.0 (Electron ' + v[0] + ', Chromium 120)'"
+    format: '{}'
+    status: ok
+    note: Loupe's own engine (Electron Framework CFBundleVersion and the binary's UA string; ceiling-benchmarker 6c81fd9), distinct from the headless Chromium 153 that drove the web tools.
+  supp1.ceiling.annzarro:
+    text: AnnZarro drew 175 million cells within the budget and every cell up to 200 million, where its client used 17.4 GiB; at 250 million cells its memory guard declined the first plot
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: max_n_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: max_n_ok, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail, agg: first, pattern: '(guard_refusal)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: v041_syn, n: 200000000, status: ok}, column: fp_client_gb, agg: max}
+    compute: "((v[0] / 1e6, v[1] / 1e6, v[5], v[2] / 1e6) if v[3] == 'guard_refusal' and v[1] == 2e8 else ('not a guard refusal at the tested cap', v[3])) if v[4] == 'final' else float('nan')"
+    format: 'AnnZarro drew {0:.0f} million cells within the budget and every cell up to {1:.0f} million, where its client used {2:.1f} GiB; at {3:.0f} million cells its memory guard declined the first plot'
+    status: ok
+    note: ceilings.csv annzarro/v041 (tag v0.4.1, 78c9da6), final. Three edges; the 16 GiB client budget is crossed between 175M (15.7 GiB) and 182M (16.1 GiB); every rung to 200M drew; the guard refuses 250M as above the largest plot tested.
+  supp1.ceiling.guard_text:
+    text: '250,000,000 points is above 200,000,000, the largest plot tested to draw'
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail_detail, agg: first, pattern: '([\d,]+) points is above [\d,]+, the largest plot tested to draw'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail_detail, agg: first, pattern: 'points is above ([\d,]+), the largest plot tested to draw'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0], v[1]) if v[2] == 'final' else float('nan')"
+    format: '{0:,.0f} points is above {1:,.0f}, the largest plot tested to draw'
+    status: ok
+    note: The guard's own text at 250M (first_fail_detail of annzarro/v041); quoted, not paraphrased.
+  supp1.subset.reach:
+    text: With a subset, AnnZarro opened and drew every store up to the largest tested, 1.5 billion cells, so 1.5 billion is a lower bound, not a limit
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: max_n_subset_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: subset_kind_16gb, agg: first, pattern: '(largest N tested)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0] / 1e9, v[0] / 1e9) if v[2] == 'final' else float('nan')"
+    format: 'With a subset, AnnZarro opened and drew every store up to the largest tested, {0:g} billion cells, so {1:g} billion is a lower bound, not a limit'
+    status: ok
+  supp1.subset.memory:
+    text: 'the client used at most 1.5 GiB and 2.4 GiB, respectively, at any size'
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: v041_sub, status: ok}, column: fp_client_gb, agg: max}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: v041_sub1m, status: ok}, column: fp_client_gb, agg: max}
+    compute: (v[0], v[1])
+    format: 'the client used at most {0:.1f} GiB and {1:.1f} GiB, respectively, at any size'
+    status: ok
+    note: Max client footprint (GiB) over all sizes, default subset then the 1M subset; v041_sub / v041_sub1m.
+  supp1.subset.sizes:
+    text: This held with its default subset (100,000 cells shown above 200,000) and with a 1,000,000-cell subset
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: subset_size, agg: first, pattern: 'default subset \(([\d,]+) cells above'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: subset_size, agg: first, pattern: 'cells above ([\d,]+)\)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: subset_size, agg: first, pattern: 'a ([\d,]+)-cell subset'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0], v[1], v[2]) if v[3] == 'final' else float('nan')"
+    format: 'This held with its default subset ({0:,.0f} cells shown above {1:,.0f}) and with a {2:,.0f}-cell subset'
+    status: ok
+  lim.guard:
+    text: "it allows one plot of every cell up to 200 million cells and declines it at 250 million; with a subset, every store tested opens, up to 1.5 billion cells"
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: max_n_ok, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail, agg: first, pattern: '(guard_refusal)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: max_n_subset_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "((v[0] / 1e6, v[1] / 1e6, v[3] / 1e9) if v[2] == 'guard_refusal' else ('not a guard refusal',)) if v[4] == 'final' else float('nan')"
+    format: "it allows one plot of every cell up to {0:.0f} million cells and declines it at {1:.0f} million; with a subset, every store tested opens, up to {2:g} billion cells"
+    status: ok
+  ar.guard.allowed:
+    text: every cell was drawn for stores up to 200 million cells
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: max_n_ok, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0] / 1e6) if v[1] == 'final' else float('nan')"
+    format: 'every cell was drawn for stores up to {:.0f} million cells'
+    status: ok
+  ar.guard.quote:
+    text: '250,000,000 points is above 200,000,000, the largest plot tested to draw'
+    context: at 250 million cells the guard declined the first plot
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail_detail, agg: first, pattern: '([\d,]+) points is above [\d,]+, the largest plot tested to draw'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail_detail, agg: first, pattern: 'points is above ([\d,]+), the largest plot tested to draw'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0], v[1]) if v[2] == 'final' else float('nan')"
+    format: '{0:,.0f} points is above {1:,.0f}, the largest plot tested to draw'
+    status: ok
+  ar.guard.declined:
+    text: at 250 million cells the guard declined the first plot before anything was drawn
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail, agg: first, pattern: '(guard_refusal)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0] / 1e6 if v[1] == 'guard_refusal' else 'not a guard refusal') if v[2] == 'final' else float('nan')"
+    format: 'at {:.0f} million cells the guard declined the first plot before anything was drawn'
+    status: ok
+  ar.subset.reach:
+    text: "every store tested opened and drew, up to the largest at 1.5 billion cells, with at most 2.4 GiB of client memory"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: max_n_subset_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: [v041_sub, v041_sub1m], status: ok}, column: fp_client_gb, agg: max}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "((v[0] / 1e9, v[1])) if v[2] == 'final' else float('nan')"
+    format: "every store tested opened and drew, up to the largest at {0:g} billion cells, with at most {1:.1f} GiB of client memory"
+    status: ok
+  ar.guard.off:
+    text: Without the guard, at 250 million cells the tab could not allocate the buffer for the positions
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041_noguard}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041_noguard}, column: first_fail, agg: first, pattern: '(alloc_failed)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041_noguard}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0] / 1e6 if v[1] == 'alloc_failed' else 'not an allocation failure') if v[2] == 'final' else float('nan')"
+    format: 'Without the guard, at {:.0f} million cells the tab could not allocate the buffer for the positions'
+    status: ok
+    note: ceiling-benchmarker annzarro/v041_noguard (ui.memory.enforce off; tag v0.4.1); context only (the reported ceiling is what the guard allows). At 250M, 300M and 500M the panel showed 'plot data failed to read -- Array buffer allocation failed' (RangeError), with the renderer at 14.4-15.9 GiB RSS.
+  fig7f.guard:
+    text: the dotted rule at 250 million marks where the memory guard declines the first plot at default settings
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: first_fail, agg: first, pattern: '(guard_refusal)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0] / 1e6 if v[1] == 'guard_refusal' else 'not a guard refusal') if v[2] == 'final' else float('nan')"
+    format: 'the dotted rule at {:.0f} million marks where the memory guard declines the first plot at default settings'
+    status: ok
+  ar.subset.sizes:
+    text: "With a subset of 100,000 cells (the default) or 1,000,000"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: subset_size, agg: first, pattern: 'default subset \(([\d,]+) cells above'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: subset_size, agg: first, pattern: 'a ([\d,]+)-cell subset'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0], v[1]) if v[2] == 'final' else float('nan')"
+    format: "With a subset of {0:,.0f} cells (the default) or {1:,.0f}"
+    status: ok
+  sw.annzarro_version:
+    text: AnnZarro & 0.4.1 (tag v0.4.1, commit 78c9da6)
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_tag.txt, anchor: 'version = "0.4.1"'}
+      - {file: notes/sources/annzarro_v0.4.1_tag.txt, pattern: 'rev-parse --short v0.4.1\^\{commit\}\n([0-9a-f]{7})'}
+    format: 'AnnZarro & 0.4.1 (tag v0.4.1, commit {1})'
+    status: ok
+  code.annzarro_version:
+    text: this protocol describes version 0.4.1 (tag v0.4.1, commit 78c9da6; Zenodo doi:10.5281/zenodo.23222217)
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_tag.txt, anchor: 'version = "0.4.1"'}
+      - {file: notes/sources/annzarro_v0.4.1_tag.txt, pattern: 'rev-parse --short v0.4.1\^\{commit\}\n([0-9a-f]{7})'}
+      - {file: notes/sources/annzarro_v0.4.1_tag.txt, pattern: '\ndoi (10\.5281/zenodo\.[0-9]+)\n'}
+    format: 'this protocol describes version 0.4.1 (tag v0.4.1, commit {1}; Zenodo doi:{2})'
+    status: ok
+  supp1.annzarro_version:
+    text: 'Versions: AnnZarro 0.4.1'
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: notes/sources/annzarro_v0.4.1_tag.txt, anchor: 'version = "0.4.1"'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    status: ok
+    note: ceiling-benchmarker's annzarro rows v041* ran on the tag v0.4.1 itself (78c9da6).
+  supp1.cellxgene.annotate_lazy:
+    text: '``Lazy chunked reads'''' scores half: with \texttt{--backed}, Annotate reads genes lazily only when X is stored column-major (CSC), and differential expression only when it is row-major (CSR), never both'
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {matrix: cellxgene-annotate.lazy, expect: P}
+    status: ok
+  supp1.cellxgene.annotate_lazy_numbers:
+    text: on an 8,090-cell matrix, each gene request took 0.53 s and added 203 MiB of server memory under the row-major layout scanpy writes by default, against 0.02 s and 1 MiB column-major
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {file: evidence/matrix/tools/cellxgene-annotate.yaml, pattern: 'One ([\d,]+) x [\d,]+ matrix'}
+      - {json: notes/comparison/demos/cellxgene/backed_result.json, key: csr.Mpo.s}
+      - {json: notes/comparison/demos/cellxgene/backed_result.json, key: csr.Elane.s}
+      - {json: notes/comparison/demos/cellxgene/backed_result.json, key: csr.Cd74.s}
+      - {json: notes/comparison/demos/cellxgene/backed_result.json, key: csr.Mpo.rss_MiB}
+      - {json: notes/comparison/demos/cellxgene/backed_result.json, key: csr.after_load_MiB}
+      - {json: notes/comparison/demos/cellxgene/backed_result.json, key: csc.Mpo.s}
+      - {json: notes/comparison/demos/cellxgene/backed_result.json, key: csc.Elane.s}
+      - {json: notes/comparison/demos/cellxgene/backed_result.json, key: csc.Cd74.s}
+      - {json: notes/comparison/demos/cellxgene/backed_result.json, key: csc.Mpo.rss_MiB}
+      - {json: notes/comparison/demos/cellxgene/backed_result.json, key: csc.after_load_MiB}
+    compute: (v[0], sorted(v[1:4])[1], v[4] - v[5], sorted(v[6:9])[1], v[9] - v[10])
+    format: 'on an {0:,.0f}-cell matrix, each gene request took {1:.2f} s and added {2:.0f} MiB of server memory under the row-major layout scanpy writes by default, against {3:.2f} s and {4:.0f} MiB column-major'
+    status: ok
+    note: Medians of the three genes (Mpo, Elane, Cd74); memory is the first request's RSS growth over the loaded server. cellxgene 1.3.0, anndata 0.11.4.
+  supp1.vizit.n:
+    text: 309,960 cells observed on its hosted PD5D atlas, of which the UMAP draws 50,000
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {file: notes/comparison/vizit.md, pattern: 'Largest observed:\*\* ([\d,]+) cells'}
+      - {file: notes/comparison/vizit.md, pattern: 'The Gene View UMAP draws ([\d,]+) of them'}
+    format: '{0:,.0f} cells observed on its hosted PD5D atlas, of which the UMAP draws {1:,.0f}'
+    status: ok
+  supp1.vizit.marks:
+    text: a random sample fixed in code at preparation
+    file: manuscript/supplement.tex
+    kind: comparison
+    source:
+      - {matrix: vizit.lazy, expect: Y}
+      - {matrix: vizit.every_cell, expect: N}
+      - {matrix: vizit.subset, expect: P}
+      - {matrix: vizit.auto_subset, expect: P}
+    status: ok
+  ar.tahoe.regular_1M:
+    text: "At 1 million cells, the most it draws, its first plot colored by a gene took 2.7 s and filled up to 0.9 GiB of the tab's 4.1 GiB JavaScript heap"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: &ev1g {clean: "True", tag: all_v041, n_cells: 1000000, color: gene, event: first_plot, status: ok}, column: seconds, agg: median}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: *ev1g, column: v8_used_peak_gb, agg: max}
+      - *heaplim
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: *ev1g, column: large_mode, agg: max}
+    compute: (1 if v[3] == 0 else float('nan'), v[0], v[1] * 1e9 / 2**30, v[2] / 2**30)
+    format: "At {0:.0f} million cells, the most it draws, its first plot colored by a gene took {1:.1f} s and filled up to {2:.1f} GiB of the tab's {3:.1f} GiB JavaScript heap"
+    status: ok
+    note: "Times and heap from all_v041 (tag v0.4.1, regular plot at 1M, large_mode 0); heap limit from heapcap_v041.jsonl (Chromium 153, default flags)."
+  ar.tahoe.large_2M:
+    text: "2 million cells took 0.87 s"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: &ev2g {clean: "True", tag: all_v041, n_cells: 2000000, color: gene, event: first_plot, status: ok}, column: seconds, agg: median}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: *ev2g, column: large_mode, agg: min}
+    compute: (v[0], 2 if v[1] == 1 else float('nan'))
+    format: "{1:.0f} million cells took {0:.2f} s"
+    status: ok
+  ar.tahoe.reps_1M2M:
+    text: 3 cold runs each
+    context: 'against 0.85 s for 2 million'
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: *ev1g, agg: count}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: *ev2g, agg: count}
+    compute: v[0] if v[0] == v[1] else float('nan')
+    format: '{:.0f} cold runs each'
+    status: ok
+  ar.release_rule:
+    text: "Large-plot mode therefore starts above 1 million points, so that several regular plots fit side by side"
+    file: manuscript/supplement.tex
+    kind: number
+    source: *large
+    format: "Large-plot mode therefore starts above {:.0f} million points, so that several regular plots fit side by side"
+    status: ok
+  fig7f.rule_1M:
+    text: 'The dotted rule at 1 million points marks the large-plot threshold: the plot at 1 million is regular'
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: *large
+    format: 'The dotted rule at {0:.0f} million points marks the large-plot threshold: the plot at {0:.0f} million is regular'
+    status: ok
+  supp1.budget.stops:
+    text: 'CELLxGENE Annotate drew 14.1 million cells within it and its server reached 35.9 GiB at 16.8 million (34.4 GiB in \texttt{--backed} mode, which also stopped at 14.1 million); Cirrocumulus drew 10 million, its server reaching 43.6 GiB at 14.1 million'
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cellxgene, variant: default}, column: max_n_server_budget, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cellxgene, variant: default}, column: first_fail, agg: first, pattern: 'server_budget server ([\d.]+) GiB'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cellxgene, variant: default}, column: first_fail_n, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cellxgene, variant: backed}, column: first_fail, agg: first, pattern: 'server_budget server ([\d.]+) GiB'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cellxgene, variant: backed}, column: max_n_server_budget, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: default}, column: max_n_server_budget, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: default}, column: first_fail, agg: first, pattern: 'server_budget server ([\d.]+) GiB'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: default}, column: first_fail_n, agg: first}
+    compute: (v[0] / 1e6, v[1], v[2] / 1e6, v[3], v[4] / 1e6, v[5] / 1e6, v[6], v[7] / 1e6)
+    format: 'CELLxGENE Annotate drew {0:.1f} million cells within it and its server reached {1:.1f} GiB at {2:.1f} million ({3:.1f} GiB in \texttt{{--backed}} mode, which also stopped at {4:.1f} million); Cirrocumulus drew {5:.0f} million, its server reaching {6:.1f} GiB at {7:.1f} million'
+    status: ok
+  supp1.budget.annzarro:
+    text: AnnZarro's server stayed within it at every size; its concurrent peak, 8.5 GiB, came with every cell of the 200-million-cell store
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: [v041, v041_syn, v041_sub, v041_sub1m], status: ok}, column: fp_server_gb, agg: max}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: v041_syn, n: 200000000, status: ok}, column: fp_server_gb, agg: max}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: server_budget_gib, agg: max}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: max_n_ok, agg: first}
+    compute: (v[1], v[3] / 1e6) if v[1] == v[0] and v[0] <= v[2] else float('nan')
+    format: "AnnZarro's server stayed within it at every size; its concurrent peak, {0:.1f} GiB, came with every cell of the {1:.0f}-million-cell store"
+    status: ok
+  fig1.ring_arrow_only:
+    text: arrow, a lower bound at the largest size tested
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {file: figures/fig_comparison.py, anchor: 'if kind.startswith("lower bound"):   # nothing stopped the tool yet'}
+      - {file: figures/fig_comparison.py, anchor: 'if subset_lower_bound(name):'}
+      - {file: figures/fig_comparison.py, anchor: 'if lower and kind != "documented":   # documented sizes never carry an arrow'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: subset_kind_16gb, agg: first, pattern: '^lower bound: (largest N tested)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    status: ok
+    note: "A glyph's arrow is drawn only for a row whose kind_16gb starts 'lower bound' (stop_limit), and the ring's only when subset_kind_16gb starts 'lower bound' (subset_lower_bound), as for AnnZarro at 1.5B. Diamonds (documented sizes) never carry an arrow; a documented 'more than' is stated in Supp. Note 1. "
+  supp1.ceiling.metric:
+    text: while the physical footprint of its processes (macOS phys\_footprint, what Activity Monitor calls Memory) was sampled
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source: {file: benchmark/tool_ceiling/README.md, anchor: '`phys_footprint` from `proc_pid_rusage` (what Activity Monitor calls Memory)'}
+    status: ok
+  supp1.subset.server_1b:
+    text: "Server memory at 1 billion cells is given two ways. Summed over the server's processes, each at its own maximum during the first plot, it was 4.0 GiB"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/server_profile_1b.csv, where: {build: "v0.4.1 78c9da6 (the tag, tree 661a454f)", run: "full task (browser default view, requests in parallel)"}, column: server_peak_gib, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: [v041_sub, v041_sub1m], n: 1000000000, status: ok}, column: n, agg: max}
+    compute: "(v[2] / 1e9, v[0]) if v[1] == 'final' else float('nan')"
+    format: "Server memory at {0:g} billion cells is given two ways. Summed over the server's processes, each at its own maximum during the first plot, it was {1:.1f} GiB"
+    status: ok
+    note: server_profile_1b.csv v0.4.1 full-task row (memmon lifetime maxima summed over the server's process tree), 1B store; AnnZarro v0.4.1 (the tag, 78c9da6).
+  supp1.subset.server_1b_concurrent:
+    text: at its highest moment, all processes together used 3.9 GiB, the value the 32 GiB budget limits
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: [v041_sub, v041_sub1m], n: 1000000000, status: ok}, column: fp_server_gb, agg: max}
+      - {csv: benchmark/tool_ceiling/server_profile_1b.csv, where: {build: "v0.4.1 78c9da6 (the tag, tree 661a454f)", run: "full task (browser default view, requests in parallel)"}, column: server_peak_gib, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: server_budget_gib, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0], v[2]) if v[0] <= v[1] and v[3] == 'final' else float('nan')"
+    format: at its highest moment, all processes together used {0:.1f} GiB, the value the {1:.0f} GiB budget limits
+    status: ok
+    note: Concurrent peak of the server process tree (results.csv fp_server_gb, GiB) over the two 1B subset runs; the compute checks it does not exceed the summed lifetime maxima (supp1.subset.server_1b), which bound it from above. AnnZarro v0.4.1 (the tag, 78c9da6).
+  supp1.subset.first_plot_1b:
+    text: The first plot of a 1-billion-cell store took 39 s with the default subset and 41 s with the 1,000,000-cell subset
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {json: benchmark/tool_ceiling/raw/annzarro_v041_sub_run_1000000000_r0.task.json, key: checks.gene.seconds}
+      - {json: benchmark/tool_ceiling/raw/annzarro_v041_sub1m_run_1000000000_r0.task.json, key: checks.gene.seconds}
+    format: 'The first plot of a 1-billion-cell store took {0:.0f} s with the default subset and {1:.0f} s with the 1,000,000-cell subset'
+    status: ok
+    note: First-plot seconds from the two 1B runs' task.json (checks.gene.seconds); AnnZarro v0.4.1 (the tag, 78c9da6).
+  supp1.subset.names_time:
+    text: Most of that time (27 s) went to listing the subset's cell names; each UMAP column took 3 s to its first byte
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {json: benchmark/tool_ceiling/raw/annzarro_v041_sub_run_1000000000_r0.task.json, key: checks.gene.seconds}
+      - {json: benchmark/tool_ceiling/raw/annzarro_v041_sub1m_run_1000000000_r0.task.json, key: checks.gene.seconds}
+      - {csv: benchmark/tool_ceiling/subset_request_times.csv, where: {run: [annzarro_v041_sub_run_1000000000_r0, annzarro_v041_sub1m_run_1000000000_r0], request: cell names}, column: ttfb_s, agg: min}
+      - {csv: benchmark/tool_ceiling/subset_request_times.csv, where: {run: [annzarro_v041_sub_run_1000000000_r0, annzarro_v041_sub1m_run_1000000000_r0], request: cell names}, column: ttfb_s, agg: max}
+      - {csv: benchmark/tool_ceiling/subset_request_times.csv, where: {run: [annzarro_v041_sub_run_1000000000_r0, annzarro_v041_sub1m_run_1000000000_r0], request: X_umap column}, column: ttfb_s, agg: min}
+      - {csv: benchmark/tool_ceiling/subset_request_times.csv, where: {run: [annzarro_v041_sub_run_1000000000_r0, annzarro_v041_sub1m_run_1000000000_r0], request: X_umap column}, column: ttfb_s, agg: max}
+    compute: "('{:.0f}'.format(v[2]) if round(v[2]) == round(v[3]) else '{:.0f}--{:.0f}'.format(v[2], v[3]), '{:.0f}'.format(v[4]) if round(v[4]) == round(v[5]) else '{:.0f}--{:.0f}'.format(v[4], v[5])) if v[2] > v[0] / 2 and v[3] > v[1] / 2 else float('nan')"
+    format: "Most of that time ({0} s) went to listing the subset's cell names; each UMAP column took {1} s to its first byte"
+    status: ok
+    note: Request times to first byte (subset_request_times.csv) in the two 1B runs; 'most' is checked (cell names longer than half of each run's first plot). AnnZarro v0.4.1 (the tag, 78c9da6).
+  ar.subset.server_1b:
+    text: "At 1 billion cells the server's processes, each counted at its own peak, used 4.0 GiB together, and the first plot took 39--41 s, most of it spent listing the subset's cell names"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/server_profile_1b.csv, where: {build: "v0.4.1 78c9da6 (the tag, tree 661a454f)", run: "full task (browser default view, requests in parallel)"}, column: server_peak_gib, agg: first}
+      - {json: benchmark/tool_ceiling/raw/annzarro_v041_sub_run_1000000000_r0.task.json, key: checks.gene.seconds}
+      - {json: benchmark/tool_ceiling/raw/annzarro_v041_sub1m_run_1000000000_r0.task.json, key: checks.gene.seconds}
+      - {csv: benchmark/tool_ceiling/subset_request_times.csv, where: {run: [annzarro_v041_sub_run_1000000000_r0, annzarro_v041_sub1m_run_1000000000_r0], request: cell names}, column: ttfb_s, agg: min}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0], '{:.0f}'.format(v[1]) if round(v[1]) == round(v[2]) else '{:.0f}--{:.0f}'.format(v[1], v[2])) if v[3] > max(v[1], v[2]) / 2 and v[4] == 'final' else float('nan')"
+    format: "At 1 billion cells the server's processes, each counted at its own peak, used {0:.1f} GiB together, and the first plot took {1} s, most of it spent listing the subset's cell names"
+    status: ok
+    note: As supp1.subset.server_1b and supp1.subset.first_plot_1b; AnnZarro v0.4.1 (the tag, 78c9da6).
+  ar.tahoe.large_5M:
+    text: "5 million 1.1 s"
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: &ev5g {clean: "True", tag: all_v041, n_cells: 5000000, color: gene, event: first_plot, status: ok}, column: seconds, agg: median}
+      - {csv: benchmark/scale/results/browser_v041_events.csv, where: *ev5g, column: large_mode, agg: min}
+    compute: (v[0], 5 if v[1] == 1 else float('nan'))
+    format: "{1:.0f} million {0:.1f} s"
+    status: ok
+  supp1.annzarro.doc_1b:
+    text: 1.5 billion cells opened and drawn on a subset, the largest store tested and so a lower bound (synthetic stores, this paper's measurement above)
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: max_n_subset_16gb, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0] / 1e9) if v[1] == 'final' else float('nan')"
+    format: "{:g} billion cells opened and drawn on a subset, the largest store tested and so a lower bound (synthetic stores, this paper's measurement above)"
+    status: ok
+  supp1.hang.rule:
+    text: A run counts as hung when client and server together use less than 2 CPU-seconds over 300 s; a size with at least 3 hung attempts is a client stop
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {file: benchmark/tool_ceiling/NOTES.md, pattern: 'less than (\d+) CPU-seconds over \d+ s of wall time'}
+      - {file: benchmark/tool_ceiling/NOTES.md, pattern: 'less than \d+ CPU-seconds over (\d+) s of wall time'}
+      - {file: benchmark/tool_ceiling/NOTES.md, pattern: 'A size with at least (\d+) hang'}
+    format: 'A run counts as hung when client and server together use less than {0:.0f} CPU-seconds over {1:.0f} s; a size with at least {2:.0f} hung attempts is a client stop'
+    status: ok
+  supp1.ceiling.docker:
+    text: Scanpy also fitted 8.4 million cells, so its 7.1 million is conservative by one step
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {file: benchmark/tool_ceiling/README.md, pattern: 'Scanpy default [\d.]+M pass, ([\d.]+)M pass'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: scanpy, variant: default}, column: max_n_16gb, agg: max}
+    compute: (v[0], v[1] / 1e6)
+    format: 'Scanpy also fitted {0:.1f} million cells, so its {1:.1f} million is conservative by one step'
+    status: ok
+  supp1.ceiling.local:
+    text: 'drawing all 95.6 million cells, recoloring included, took 11.3 GiB of client and 4.6 GiB of server memory'
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: v041, n: 95624334, status: ok}, column: fp_client_gb, agg: max}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: v041, n: 95624334, status: ok}, column: fp_server_gb, agg: max}
+    compute: (95.6, v[0], v[1])
+    format: 'drawing all {0:.1f} million cells, recoloring included, took {1:.1f} GiB of client and {2:.1f} GiB of server memory'
+    status: ok
+    note: results.csv fp_* columns are GiB. Variant v041 = AnnZarro v0.4.1 (the tag, 78c9da6), local server.
+  ar.local_app:
+    text: 'took 11.3 GiB of client and 4.6 GiB of server memory, 15.9 GiB together, close to what a 16 GiB laptop offers'
+    file: manuscript/body.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: v041, n: 95624334, status: ok}, column: fp_client_gb, agg: max}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: annzarro, variant: v041, n: 95624334, status: ok}, column: fp_server_gb, agg: max}
+    compute: (v[0], v[1], v[0] + v[1])
+    format: 'took {0:.1f} GiB of client and {1:.1f} GiB of server memory, {2:.1f} GiB together, close to what a 16 GiB laptop offers'
+    status: ok
+
+  supp1.ceiling.hard_limit:
+    text: under a hard 16 GiB limit in Docker (Linux)
+    file: manuscript/supplement.tex
+    kind: number
+    source: {file: benchmark/tool_ceiling/README.md, pattern: 'docker run --memory=(\d+)g --memory-swap'}
+    format: 'under a hard {:.0f} GiB limit in Docker (Linux)'
+    status: ok
+  fig7f.tahoe_range:
+    text: Datasets up to 95.6 million cells are Tahoe-100M and its prefixes
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: *n95
+    compute: v[0] / 1e6
+    format: 'Datasets up to {:.1f} million cells are Tahoe-100M and its prefixes'
+    status: ok
+  supp1.synthetic_stores:
+    text: stores above that are synthetic, built for these benchmarks
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: benchmark/tool_ceiling/NOTES.md, anchor: 'Synthetic stores past 95.6M cells'}
+      - {file: benchmark/scale/NOTES.md, anchor: 'Ceiling for drawing every cell (synthetic stores beyond 95.6M)'}
+    status: ok
+  supp1.tahoe_size:
+    text: Tahoe-100M has 95.6 million cells
+    file: manuscript/supplement.tex
+    kind: number
+    source: *n95
+    compute: v[0] / 1e6
+    format: 'Tahoe-100M has {:.1f} million cells'
+    status: ok
+
+  # ======================================================================= claim-link audit (2026-10-06): facts that had no marker
+  supp1.checked_dates:
+    text: checked between 3 and 6 October 2026
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: evidence/matrix/tools/cellxgene-explorer.yaml, anchor: "date: '2026-10-03'"}
+      - {file: evidence/matrix/tools/annzarro.yaml, anchor: "date: '2026-10-06'"}
+    status: ok
+    note: The checked dates of the matrix cells (evidence/matrix/tools/*.yaml) run from 2026-10-03 to 2026-10-06, none earlier or later; the anchors are the first and last date.
+  supp1.input.panel_density:
+    text: about 110 stored values per cell against about 1,470 in the full transcriptome
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {file: benchmark/tool_ceiling/README.md, pattern: '\(about (\d+) stored values per cell; real Tahoe-100M has about'}
+      - {file: benchmark/tool_ceiling/README.md, pattern: 'real Tahoe-100M has about ([\d,]+)\)'}
+    format: 'about {0:.0f} stored values per cell against about {1:,.0f} in the full transcriptome'
+    status: ok
+  supp1.versions.tools:
+    text: CELLxGENE Annotate 1.3.0, Cirrocumulus 1.1.61, UCSC Cell Browser 1.2.20, iSEE 2.18.0, ShinyCell 2.1.0, Scanpy 1.12.4, Seurat 5.5.1
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: cellxgene}, column: versions, agg: min, pattern: '"cellxgene": "\[cellxgene\] Version ([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: cellxgene}, column: versions, agg: max, pattern: '"cellxgene": "\[cellxgene\] Version ([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: cirrocumulus}, column: versions, agg: min, pattern: '"cirrocumulus": "([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: cirrocumulus}, column: versions, agg: max, pattern: '"cirrocumulus": "([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: ucsc}, column: versions, agg: min, pattern: '"cellbrowser": "([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: ucsc}, column: versions, agg: max, pattern: '"cellbrowser": "([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: isee, variant: hdf5}, column: versions, agg: min, pattern: '"iSEE": "([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: isee, variant: hdf5}, column: versions, agg: max, pattern: '"iSEE": "([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: shinycell}, column: versions, agg: min, pattern: '"ShinyCell": "([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: shinycell}, column: versions, agg: max, pattern: '"ShinyCell": "([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: scanpy}, column: versions, agg: min, pattern: '"scanpy": "([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: scanpy}, column: versions, agg: max, pattern: '"scanpy": "([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: seurat}, column: versions, agg: min, pattern: '"Seurat": "([\d.]+)"'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: seurat}, column: versions, agg: max, pattern: '"Seurat": "([\d.]+)"'}
+    compute: "(v[0], v[2], v[4], v[6], v[8], v[10], v[12]) if all(v[i] == v[i + 1] for i in range(0, 14, 2)) else nan"
+    format: 'CELLxGENE Annotate {0}, Cirrocumulus {1}, UCSC Cell Browser {2}, iSEE {3}, ShinyCell {4}, Scanpy {5}, Seurat {6}'
+    status: ok
+    note: The version each run recorded (results.csv versions); min and max agree, so every run of a tool used one version.
+  supp1.versions.browser:
+    text: headless Chromium 153 (driven by Playwright 1.63)
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: [cellxgene, cirrocumulus, ucsc, shinycell, vitessce]}, column: versions, agg: min, pattern: '"chromium": "(\d+)\.'}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: [cellxgene, cirrocumulus, ucsc, shinycell, vitessce]}, column: versions, agg: max, pattern: '"chromium": "(\d+)\.'}
+      - {file: benchmark/tool_ceiling/README.md, pattern: 'Headless Chromium \d+ \(Playwright ([\d.]+),'}
+    compute: "(v[0], v[2]) if v[0] == v[1] else nan"
+    format: 'headless Chromium {0:.0f} (driven by Playwright {1:.2f})'
+    status: ok
+  supp1.versions.scope:
+    text: SCope 1.8.2
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: benchmark/tool_ceiling/measured/scope/README.md, anchor: 'SCope 1.8.2 (9ae5207, the build its public site serves)'}
+      - {file: notes/comparison/scope.md, anchor: 'This is exactly the build the public site serves (`index.html` loads `assets/SCope-1.8.2.9ae5207.js`)'}
+    status: ok
+    note: Marked twice in main.tex, in the Measured glyphs paragraph and in the SCope item.
+  supp1.scope.build:
+    text: built locally from 1.8.2 (9ae5207) with nine build-environment changes and run with four run-time settings, among them its frontend served by a static file server and its database migration step skipped; SCope's code is unchanged
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: benchmark/tool_ceiling/measured/scope/README.md, anchor: "## Deviations from the as-published build (all in the build environment; SCope's code and lock files unchanged)"}
+      - {file: benchmark/tool_ceiling/measured/scope/README.md, anchor: 'The nine changes:'}
+      - {file: benchmark/tool_ceiling/measured/scope/README.md, anchor: 'Run-time configuration (not build changes):'}
+      - {file: benchmark/tool_ceiling/measured/scope/README.md, anchor: "served by Python's http.server"}
+      - {file: benchmark/tool_ceiling/measured/scope/README.md, anchor: "`start.sh`'s `alembic upgrade head` step skipped"}
+      - {file: notes/comparison/scope.md, anchor: 'with its code unchanged and conda-forge packages only (nine build-environment changes, all listed in the record'}
+      - {file: notes/comparison/scope.md, anchor: 'It ran with four run-time settings, also listed there'}
+    status: ok
+    note: The README lists nine numbered build-environment changes and four run-time settings (database URL, a config file with localHostAddress 0.0.0.0, the static frontend server, the skipped migration).
+  supp1.cellxgene.runs:
+    text: in three headless-Chromium runs on 4 October 2026
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: cxg_mouse_embryo_11M, status: ok}, agg: count}
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: cxg_mouse_embryo_11M, status: ok}, column: date, agg: min}
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: cxg_mouse_embryo_11M, status: ok}, column: date, agg: max}
+    compute: "(['one', 'two', 'three', 'four', 'five'][int(v[0]) - 1], int(v[1][8:10])) if v[1][:10] == v[2][:10] and v[1][:7] == '2026-10' else nan"
+    format: 'in {0} headless-Chromium runs on {1} October 2026'
+    status: ok
+  supp1.ucsc.runs:
+    text: in three headless-Chromium runs on 4 October 2026
+    file: manuscript/supplement.tex
+    context: all 21,786,931 points were drawn in one draw call
+    kind: number
+    source:
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: ucsc_pansci, status: ok}, agg: count}
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: ucsc_pansci, status: ok}, column: date, agg: min}
+      - {jsonl: notes/comparison/demos/scale_probe/results.jsonl, where: {label: ucsc_pansci, status: ok}, column: date, agg: max}
+    compute: "(['one', 'two', 'three', 'four', 'five'][int(v[0]) - 1], int(v[1][8:10])) if v[1][:10] == v[2][:10] and v[1][:7] == '2026-10' else nan"
+    format: 'in {0} headless-Chromium runs on {1} October 2026'
+    status: ok
+  supp1.scope.desktop_2019:
+    text: Its last desktop build is a 2019 prerelease that its maintainers describe as likely not to work
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: notes/comparison/scope.md, anchor: 'The newest binaries are the 2019-02-08 prerelease'}
+      - {file: notes/comparison/scope.md, anchor: 'these apps are likely to be non-functional'}
+    status: ok
+  supp1.loupe.input:
+    text: converted to .cloupe with LoupeR 1.1.5
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source: {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: loupe, variant: default}, column: row_status, agg: first, pattern: 'built by LoupeR ([\d.]+) create_loupe'}
+    format: 'converted to .cloupe with LoupeR {}'
+    status: ok
+  supp1.manivault.input:
+    text: written with anndata 0.11.4
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source: {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: manivault, variant: default}, column: row_status, agg: first, pattern: '\(anndata ([\d.]+)\)'}
+    format: 'written with anndata {}'
+    status: ok
+  supp1.manivault.cytosplore:
+    text: Cytosplore Viewer 5.0.0, a separate build on the same framework, was not examined
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: notes/comparison/manivault.md, anchor: 'Cytosplore Viewer 5.0.0 is a separate distribution on the same framework'}
+      - {file: notes/comparison/manivault.md, anchor: 'It was not examined.'}
+    status: ok
+  supp1.vizit.version:
+    text: VizIt 1.0.0, as deployed on pd5d.yale.edu
+    file: manuscript/supplement.tex
+    kind: qualitative
+    source:
+      - {file: evidence/matrix/tools/vizit.yaml, anchor: 'name: VizIt v1.0.0'}
+      - {file: notes/comparison/demos/vizit/followup_check.py, anchor: 'VizIt v1.0.0 as deployed at pd5d.yale.edu'}
+    status: ok
+  fig1.loupe_version:
+    text: Loupe Browser 9.1.0 was checked in the running app on demo data
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: loupe, variant: default}, column: row_status, agg: first, pattern: '(Loupe Browser 9\.1\.0) desktop app'}
+      - {file: evidence/matrix/tools/loupe.yaml, anchor: 'how: running app (Loupe Browser 9.1.0, bm_demo.cloupe'}
+    status: ok
+  equip.server_python:
+    text: Python 3.9 or later
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: notes/sources/annzarro_v0.4.1_tag.txt, pattern: 'requires-python = ">=([\d.]+)"'}
+    format: 'Python {:.1f} or later'
+    status: ok
+  sw.anndata:
+    text: tested 0.12.19
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: notes/sources/procedure_env.txt, pattern: '\nanndata ([\d.]+)\n'}
+    format: 'tested {}'
+    status: ok
+  sw.zarr:
+    text: tested 3.1.6
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: notes/sources/procedure_env.txt, pattern: '\nzarr ([\d.]+)\n'}
+    format: 'tested {}'
+    status: ok
+  sw.scanpy:
+    text: tested 1.11.5
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: notes/sources/procedure_env.txt, pattern: '\nscanpy ([\d.]+)\n'}
+    format: 'tested {}'
+    status: ok
+  sw.kompot:
+    text: tested 0.8.0
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: notes/sources/procedure_env.txt, pattern: '\nkompot ([\d.]+)\n'}
+    format: 'tested {}'
+    status: ok
+  sw.palantir:
+    text: tested 1.4.5
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: notes/sources/procedure_env.txt, pattern: '\npalantir ([\d.]+)\n'}
+    format: 'tested {}'
+    status: ok
+  sw.mellon:
+    text: tested 1.7.1
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: notes/sources/procedure_env.txt, pattern: '\nmellon ([\d.]+)\n'}
+    format: 'tested {}'
+    status: ok
+  sw.python:
+    text: tested with Python 3.11
+    file: manuscript/body.tex
+    kind: qualitative
+    source: {file: notes/sources/procedure_env.txt, pattern: '\npython (\d+\.\d+)\.\d+\n'}
+    format: 'tested with Python {:.2f}'
+    status: ok
+  fig4.sd_cut:
+    text: beyond 1.96 times Kompot's per-cell standard deviation in both cells
+    file: manuscript/sections/figs_results.tex
+    kind: number
+    source: {file: figures/fig4_cells_by_genes.py, pattern: 'opp_z = opp & \(np.abs\(zh\) > ([\d.]+)\) & \(np.abs\(zm\) > '}
+    format: "beyond {:.2f} times Kompot's per-cell standard deviation in both cells"
+    status: ok
+    note: The cut fig4_cells_by_genes.py applies to both cells for panel d's beyond-s.d. counts (fig4.beyond_sd).
+  data.zenodo_record:
+    text: published 3 June 2025; CC BY 4.0
+    file: manuscript/body.tex
+    kind: qualitative
+    source:
+      - {json: notes/sources/zenodo_15587768.json, key: metadata.publication_date}
+      - {json: notes/sources/zenodo_15587768.json, key: metadata.license.id}
+      - {json: notes/sources/zenodo_15587768.json, key: doi}
+    compute: "(int(v[0][8:10]), ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][int(v[0][5:7]) - 1], v[0][:4]) if v[1] == 'cc-by-4.0' and v[2] == '10.5281/zenodo.15587768' else nan"
+    format: 'published {0} {1} {2}; CC BY 4.0'
+    status: ok
+    note: The public Zenodo API record (notes/sources/zenodo_15587768.json; fetch date in zenodo_15587768.fetched.txt).
+

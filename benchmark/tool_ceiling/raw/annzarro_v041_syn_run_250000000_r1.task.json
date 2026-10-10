@@ -1,0 +1,40 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale_ceiling/syn_250000000.zarr",
+ "n_obs": 250000000,
+ "checks": {
+  "gene": {
+   "status": "guard_refusal",
+   "guard": [
+    "GUARD: browser memory: not in this dataset (250,000,000 cells) -- 250,000,000 points is above 200,000,000, the largest plot tested to draw. Show fewer cells (a smaller subset).",
+    "warning: GUARD: browser memory: not in this dataset (250,000,000 cells) -- 250,000,000 points is above 200,000,000, the largest plot tested to draw. Show fewer cells (a smaller subset)."
+   ],
+   "console": [
+    "warning: GUARD: browser memory: not in this dataset (250,000,000 cells) -- 250,000,000 points is above 200,000,000, the largest plot tested to draw. Show fewer cells (a smaller subset)."
+   ],
+   "n_drawn": -1,
+   "seconds": 45.68159120809287,
+   "all_cells": false,
+   "renderer_rss": 263372800,
+   "gpu_rss": 150716416,
+   "server_rss": 258392064
+  }
+ },
+ "versions": {
+  "annzarro": "78c9da6",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "stalled",
+   "seconds": 45.68159120809287,
+   "n_points": -1
+  }
+ ],
+ "ok": false
+}

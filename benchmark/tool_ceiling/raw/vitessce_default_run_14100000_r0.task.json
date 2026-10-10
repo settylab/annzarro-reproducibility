@@ -1,0 +1,59 @@
+{
+ "tool": "vitessce",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/vitessce/first14100000",
+ "n": 14100000,
+ "phases": {
+  "server_ready": 1.09,
+  "first_plot": 19.34,
+  "plot_cat": 23.68,
+  "plot_gene": 27.85,
+  "done": 29.24
+ },
+ "checks": {
+  "cat": {
+   "gl": {
+    "crit": "call",
+    "drawn": 14100000,
+    "frame_max": {
+     "pts": 0,
+     "inst": 14100000
+    },
+    "call_max": 14100000
+   },
+   "stated": null,
+   "png": "benchmark/tool_ceiling/shots/vitessce_default_run_14100000_r0_cat.png",
+   "all_cells": true
+  },
+  "gene": {
+   "gl": {
+    "crit": "call",
+    "drawn": 14100000,
+    "frame_max": {
+     "pts": 0,
+     "inst": 14100000
+    },
+    "call_max": 14100000
+   },
+   "stated": null,
+   "png": "benchmark/tool_ceiling/shots/vitessce_default_run_14100000_r0_gene.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "vitessce": "https://vitessce.io/assets/js/runtime~main.bf0762b7.js"
+ },
+ "console": [
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)"
+ ],
+ "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
+ "crashed": false,
+ "ok": true
+}

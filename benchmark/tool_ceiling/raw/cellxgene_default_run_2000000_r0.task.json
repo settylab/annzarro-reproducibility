@@ -1,0 +1,55 @@
+{
+ "tool": "cellxgene",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+ "n": 2000000,
+ "phases": {
+  "server_ready": 3.48,
+  "first_plot": 4.17,
+  "plot_cat": 8.44,
+  "gene_added": 8.49,
+  "plot_gene": 12.19,
+  "done": 12.32
+ },
+ "checks": {
+  "cat": {
+   "gl": {
+    "crit": "call",
+    "drawn": 2000000,
+    "frame_max": {
+     "pts": 2000000,
+     "inst": 0
+    },
+    "call_max": 2000000
+   },
+   "stated": 2000000,
+   "png": "benchmark/tool_ceiling/shots/cellxgene_default_run_2000000_r0_cat.png",
+   "all_cells": true
+  },
+  "gene": {
+   "gl": {
+    "crit": "call",
+    "drawn": 2000000,
+    "frame_max": {
+     "pts": 2000000,
+     "inst": 0
+    },
+    "call_max": 2000000
+   },
+   "stated": 2000000,
+   "png": "benchmark/tool_ceiling/shots/cellxgene_default_run_2000000_r0_gene.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "cellxgene": "[cellxgene] Version 1.3.0"
+ },
+ "console": [
+  "error: Failed to load resource: the server responded with a status of 404 (NOT FOUND)",
+  "error: Failed to load resource: the server responded with a status of 404 (NOT FOUND)"
+ ],
+ "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
+ "crashed": false,
+ "ok": true
+}

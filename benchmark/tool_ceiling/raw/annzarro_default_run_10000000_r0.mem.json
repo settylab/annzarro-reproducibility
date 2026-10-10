@@ -1,0 +1,50 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first10000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_default_run_10000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-test/bin/annzarro"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 4.12,
+ "peaks": {
+  "client": {
+   "fp_peak": 4439747936,
+   "fp_lifetime_sum": 4823215360,
+   "rss_peak": 3081863168,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1926777064,
+   "fp_lifetime_sum": 2037745920,
+   "rss_peak": 1949417472,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 161215808,
+   "fp_lifetime_sum": 161297728,
+   "rss_peak": 212107264,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 6366525000,
+   "rss_peak": 5031280640,
+   "fp_lifetime_sum": 6860961280
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.25,
+   4220923832
+  ]
+ ],
+ "ps_before": "2026-10-03T17:11:03-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  557 652384 127.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  582 111824  71.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  855 1587824  21.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n34128  20512  14.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n86901 589520  14.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n33932  20912  13.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n33934  20832  12.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n33595  27424  11.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  592  17792  11.8 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored\n33959  20688  11.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n"
+}

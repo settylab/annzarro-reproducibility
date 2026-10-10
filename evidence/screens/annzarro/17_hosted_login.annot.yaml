@@ -1,0 +1,24 @@
+version: 1
+image: 17_hosted_login.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:8921/login?next=/%3Fdataset_path%3D$DATA_DIR/bm_aging_showcase.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZENlbGwiOiJNYXR1cm...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: hosted
+  mark: Y
+  caption: 'With login on, the server asks every visitor to sign in: one deployment, many user accounts
+    (here alice and bob, made with `annzarro user add`).'
+callouts:
+- n: 1
+  box:
+  - 496
+  - 368
+  - 408
+  - 222
+  label: login form of the hosted server; the share link survives sign-in
+  selector: form

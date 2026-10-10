@@ -1,0 +1,41 @@
+version: 1
+image: 14_share_link_reopened.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:8920/?dataset_path=bm_aging_showcase.zarr#view=z1.7VhZb-M4Ev4rAedV7kjyJQvYB6-7OxnsZDrbSff2ThAIFFWSiVC...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: share
+  mark: Y
+  caption: The copied link, opened in a fresh browser context, restores the layout, both panels' settings
+    and the focused cell and gene.
+callouts:
+- n: 1
+  box:
+  - 669
+  - 28
+  - 154
+  - 46
+  label: 'restored cell Mature_Young_2#TCAATTCAGTGAGGCT-1 (copied: Mature_Young_2#TCAATTCAGTGAGGCT-1)'
+  selector: '#focused-cell'
+- n: 2
+  box:
+  - 436
+  - 28
+  - 154
+  - 46
+  label: 'restored gene Apoe (copied: Apoe)'
+  selector: '#focused-gene'
+- n: 3
+  box:
+  - 0
+  - 105
+  - 1400
+  - 795
+  label: 'restored tiles: [''UMAP, colour = obsp diffusion_distance row'', ''Volcano, colour = varp row
+    of H2-Q7'']'
+  selector: '#tile-container'

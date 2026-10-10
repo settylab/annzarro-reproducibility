@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "g05_genes_marker_panel_no_gene_pairs.jpg",
+ "tool": "kana",
+ "software": "Kana v3.2.0 (live build, kanaverse.org)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "https://www.kanaverse.org/kana/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_kana.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "genes",
+   "mark": "N",
+   "caption": "Kana v3.2.0 (live build, 2026-10-04): the gene side offers marker tables per cluster, gene sets and cell-type labels; no varp is read and no gene x gene matrix is offered as colour or axis"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1150,
+    163,
+    348,
+    38
+   ],
+   "label": "marker panel: annotation picker",
+   "selector": "select >> nth=2"
+  },
+  {
+   "n": 2,
+   "box": [
+    1152,
+    220,
+    344,
+    38
+   ],
+   "label": "cluster picker",
+   "selector": "select >> nth=3"
+  },
+  {
+   "n": 3,
+   "box": [
+    1159,
+    301,
+    112,
+    38
+   ],
+   "label": "marker table: one gene per row, no gene-pair view",
+   "selector": "[data-gap='markers']"
+  }
+ ]
+}

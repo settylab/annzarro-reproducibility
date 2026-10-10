@@ -1,0 +1,15 @@
+# run=j3_v040 copied=2026-10-06T13:37:18-07:00 host=hpc-demo-node sources=$SCRATCH/annzarro-scale/results_j3 $SCRATCH/annzarro-scale/logs/j3_filerwarm.log $SCRATCH/annzarro-scale/logs/j3_filerwarm.slurm.out $SCRATCH/annzarro-scale/jobs/j3_filerwarm.sh $SCRATCH/annzarro-scale/jobs/warmread.py $SCRATCH/annzarro-scale/jobs/warmcheck.py $SCRATCH/annzarro-scale/jobs/j3_slow1m.txt
+path	bytes	sha256	source
+j3_filerwarm.log	15871	8b660087202ab8a90441a584f0fc763f92822bd828d75811180e72707bce0e78	$SCRATCH/annzarro-scale/logs/j3_filerwarm.log
+j3_filerwarm.sh	6420	01d7eb321998acd83722289187ff6781188b4e64b2aabb57870f1688a9b65e15	$SCRATCH/annzarro-scale/jobs/j3_filerwarm.sh
+j3_slow1m.txt	2	87428fc522803d31065e7bce3cf03fe475096631e5e07bbd7a0fde60c4cf25c7	$SCRATCH/annzarro-scale/jobs/j3_slow1m.txt
+results_j3/annzarro_pin.json	633	b8b9628037c9d10f5b4193ab40e8e8023da84c86dd3074222957fa86fa341497	$SCRATCH/annzarro-scale/results_j3/annzarro_pin.json
+results_j3/canary.csv	5773	5baf667abca78f5ac48c0c397e5c554a03940940a83c1f7701b90809f9de5860	$SCRATCH/annzarro-scale/results_j3/canary.csv
+results_j3/cold_protocol.json	1478	485e4ce123409e67cbf50d251d844bfc9bd34fbc334f25db9eeaecfdea137f19	$SCRATCH/annzarro-scale/results_j3/cold_protocol.json
+results_j3/http_hpc_filerwarm.csv	222368	75e215abf4740eff7a26ddd6bc724c7627743063e3bc77d5a03b4d9a038633f5	$SCRATCH/annzarro-scale/results_j3/http_hpc_filerwarm.csv
+results_j3/http_hpc_filerwarm_environment.json	1075	43d9c019cdfbc2fc4e1252f6112a36cc9914dc0d9bf510c662b0f2c8d6c08f40	$SCRATCH/annzarro-scale/results_j3/http_hpc_filerwarm_environment.json
+results_j3/NOTES.md	7846	a2f63ff595dc359e9184b77f49896d62601dd1be9da4e7c1e5ca1cf63bc062ce	$SCRATCH/annzarro-scale/results_j3/NOTES.md
+results_j3/warmcheck.tsv	2169	1f6add55f00b3295c24cf1661cdfc3934d32773fa08891a271900757a282aa1c	$SCRATCH/annzarro-scale/results_j3/warmcheck.tsv
+results_j3/warmup.tsv	620	b918de8dff4e1d0a6f7bef016564184578fb1cef03a3564731f2cd9ec663d29a	$SCRATCH/annzarro-scale/results_j3/warmup.tsv
+warmcheck.py	2324	19891dad35db0529a22771b0d7d4d35bbb61388c22bb18d62ce3d8dfd3ddaa18	$SCRATCH/annzarro-scale/jobs/warmcheck.py
+warmread.py	1715	b7d2a6a71dbc105a26b44cb9f389a60b2ee337462aae6fa1279a7591630d66e4	$SCRATCH/annzarro-scale/jobs/warmread.py

@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "image": "f01_image_he_on.jpg",
+ "tool": "vizit",
+ "software": "VizIt v1.0.0 as deployed at pd5d.yale.edu (Parkinson's Cell Atlas)",
+ "data": "PD5D_MTG_VisiumST, sample BN2003 (hosted)",
+ "url": "https://pd5d.yale.edu/views/visiumview?dataset=PD5D_MTG_VisiumST&gene=SNCA&sample=BN2003&meta=smoothed_label_s5",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/vizit/followup_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "image",
+   "mark": "Y",
+   "caption": "With 'Show H&E image' on, the sample's H&E section is drawn under the spots"
+  },
+  {
+   "column": "subset",
+   "mark": "P",
+   "caption": "Only the chosen sample (BN2003) is drawn and its metadata fetched, but the gene's values arrive for all cells (getexprdata per gene)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    525,
+    194,
+    46
+   ],
+   "label": "H&E switch",
+   "selector": "label:has-text('Show H&E image')"
+  },
+  {
+   "n": 2,
+   "box": [
+    348,
+    148,
+    530,
+    479
+   ],
+   "label": "spots",
+   "selector": ".js-plotly-plot >> nth=0"
+  }
+ ]
+}

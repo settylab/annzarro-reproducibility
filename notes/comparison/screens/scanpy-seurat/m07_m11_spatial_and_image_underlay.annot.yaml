@@ -1,0 +1,24 @@
+version: 1
+image: m07_m11_spatial_and_image_underlay.jpg
+tool: scanpy-seurat
+software: scanpy 1.11.5, anndata 0.12.19 (code output; Seurat not run)
+data: 10x V1_Human_Lymph_Node (3,962 spots)
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/scanpy-seurat/matrix_check.py
+source: manual
+image_sha256: e1ddc8d077115126c430bc85cbab8c416e4005bacb04fd78d69f8f99e473d262
+proves:
+- column: spatial
+  mark: P
+  caption: 'By code only (scanpy): sc.pl.spatial(img_key=None) draws the spots at their tissue coordinates.'
+- column: image
+  mark: P
+  caption: 'By code only (scanpy): sc.pl.spatial(img_key=''hires'') draws the same spots over the H&E image.'
+callouts:
+- n: 1
+  box: [28, 26, 368, 418]
+  label: spots at obsm['spatial'] coordinates, no image
+- n: 2
+  box: [522, 26, 368, 418]
+  label: same spots over the hires H&E

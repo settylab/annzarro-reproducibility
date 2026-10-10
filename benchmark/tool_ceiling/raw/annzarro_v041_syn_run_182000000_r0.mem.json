@@ -1,0 +1,97 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_182000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_syn_run_182000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 26.03,
+ "peaks": {
+  "client": {
+   "fp_peak": 17332728800,
+   "fp_lifetime_sum": 18962249128,
+   "rss_peak": 16955211776,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 8546540624,
+   "fp_lifetime_sum": 8618712624,
+   "rss_peak": 8565243904,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 132908984,
+   "fp_lifetime_sum": 132908984,
+   "rss_peak": 168132608,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 25085054520,
+   "rss_peak": 24882495488,
+   "fp_lifetime_sum": 27580961752
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.31,
+   2419419552
+  ],
+  [
+   4.86,
+   10510174160
+  ],
+  [
+   7.26,
+   12422418568
+  ],
+  [
+   9.67,
+   17007078136
+  ],
+  [
+   12.19,
+   22496626648
+  ],
+  [
+   14.65,
+   20529791592
+  ],
+  [
+   17.21,
+   22552611832
+  ],
+  [
+   19.68,
+   14004140368
+  ],
+  [
+   22.2,
+   21480537672
+  ],
+  [
+   24.73,
+   22218952200
+  ]
+ ],
+ "ps_before": "2026-10-07T16:21:52-0700\nmemorystatus_level=90 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n  855 1231648  94.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  626 422288  25.7 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  621  16560  12.1 /usr/libexec/corebrightnessd\n75254 133840   6.7 /System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter\n97354  19760   6.4 .venv/bin/python\n12615   8176   3.3 /System/Library/PrivateFrameworks/AmbientDisplay.framework/Versions/A/XPCServices/com.apple.AmbientDisplayAgent.xpc/Contents/MacOS/com.apple.AmbientDisplayAgent\n  557  51792   2.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n57113 2345792   2.1 $HOME/.local/bin/claude\n85493  35424   1.6 /usr/libexec/PerfPowerServices\n  629 189200   1.5 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n",
+ "others_at_start": [
+  "97355 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "97356 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

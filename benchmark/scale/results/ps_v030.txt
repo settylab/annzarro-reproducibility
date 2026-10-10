@@ -1,0 +1,580 @@
+# Process snapshots taken during the benchmark. The export keeps the benchmark's own processes (pid, elapsed time, rss in kB, command) and omits the unrelated ones; see the count below.
+2026-10-05 10:20:17Z
+ 3:20  up 112 days,  2:05, 27 users, load averages: 3.79 2.75 2.61
+92
+pid=23418 etime=06:02 rss_kb=19712 cmd=.venv/bin/python run.py --tool napari --variant sub100k --n 1000000 --run 1 -- $DEMO_ROOT/napari-spatialdata/.venv/bin/python napari_ta
+pid=23419 etime=06:02 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SL
+pid=23420 etime=06:02 rss_kb=919088 cmd=$DEMO_ROOT/cellxgene/.venv/bin/python $DEMO_ROOT/cellxgene/.venv/bin/cellxgene launch $DEMO_ROOT/
+pid=24454 etime=05:18 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock sh -c \012  start=$(date -u "+%Y-%m-%dT%H:%M:%S"); "$@"; rc=$?\012  echo "$start $(date -u "+%Y-%m-%dT
+pid=25773 etime=15:51:56 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=31702 etime=00:01 rss_kb=19824 cmd=.venv/bin/python run.py --web --tool annzarro --variant v030_tag --n 150000000 --note AnnZarro v0.3.0 3fb6826, local server -- .venv/bin/python annzarro_t
+pid=31704 etime=00:01 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SL
+2026-10-05 10:22:31Z
+ 3:22  up 112 days,  2:07, 27 users, load averages: 3.31 3.05 2.75
+92
+pid=25773 etime=15:54:10 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=33852 etime=00:51 rss_kb=19824 cmd=.venv/bin/python run.py --web --tool annzarro --variant v030_tag --n 160000000 --note AnnZarro v0.3.0 3fb6826, local server -- .venv/bin/python annzarro_t
+pid=33854 etime=00:51 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SL
+pid=33891 etime=00:50 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock sh -c \012  start=$(date -u "+%Y-%m-%dT%H:%M:%S"); "$@"; rc=$?\012  echo "$start $(date -u "+%Y-%m-%dT
+pid=34950 etime=00:00 rss_kb=6288 cmd=.venv/bin/python run.py --tool napari --variant sub100k --n 5000000 --run 0 -- $DEMO_ROOT/napari-spatialdata/.venv/bin/python napari_ta
+2026-10-05 10:24:08Z
+ 3:24  up 112 days,  2:09, 27 users, load averages: 2.10 2.73 2.66
+92
+pid=25773 etime=15:55:47 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=36502 etime=00:31 rss_kb=19696 cmd=.venv/bin/python run.py --web --tool annzarro --variant v030_tag_sub --n 1000000000 --note AnnZarro v0.3.0 3fb6826, local server -- .venv/bin/python annza
+pid=36505 etime=00:31 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SL
+pid=36719 etime=00:23 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock sh -c \012  start=$(date -u "+%Y-%m-%dT%H:%M:%S"); "$@"; rc=$?\012  echo "$start $(date -u "+%Y-%m-%dT
+pid=37225 etime=00:00 rss_kb=5856 cmd=.venv/bin/python run.py --tool napari --variant sub100k --n 10000000 --run 0 -- $DEMO_ROOT/napari-spatialdata/.venv/bin/python napari_t
+2026-10-05 10:26:52Z
+ 3:26  up 112 days,  2:11, 27 users, load averages: 2.32 2.59 2.61
+92
+pid=25773 etime=15:58:31 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=39664 etime=00:56 rss_kb=19856 cmd=.venv/bin/python run.py --web --tool annzarro --variant v030_tag_sub1m --n 1000000000 --note AnnZarro v0.3.0 3fb6826, local server -- .venv/bin/python ann
+pid=39667 etime=00:56 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SL
+pid=40393 etime=00:25 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock sh -c \012  start=$(date -u "+%Y-%m-%dT%H:%M:%S"); "$@"; rc=$?\012  echo "$start $(date -u "+%Y-%m-%dT
+2026-10-05 10:28:41Z
+ 3:28  up 112 days,  2:13, 27 users, load averages: 3.44 2.85 2.71
+92
+pid=25773 etime=16:00:20 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:29:19Z
+ 3:29  up 112 days,  2:14, 27 users, load averages: 2.87 2.76 2.68
+92
+pid=25773 etime=16:00:58 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:29:57Z
+ 3:29  up 112 days,  2:14, 27 users, load averages: 2.38 2.65 2.64
+92
+pid=25773 etime=16:01:37 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:31:12Z
+ 3:31  up 112 days,  2:16, 27 users, load averages: 2.33 2.54 2.60
+92
+pid=25773 etime=16:02:51 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:31:50Z
+ 3:31  up 112 days,  2:16, 27 users, load averages: 2.35 2.51 2.58
+92
+pid=25773 etime=16:03:29 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:32:29Z
+ 3:32  up 112 days,  2:17, 27 users, load averages: 2.18 2.43 2.55
+92
+pid=25773 etime=16:04:08 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:33:07Z
+ 3:33  up 112 days,  2:17, 27 users, load averages: 2.49 2.48 2.56
+92
+pid=25773 etime=16:04:46 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:33:44Z
+ 3:33  up 112 days,  2:18, 27 users, load averages: 2.78 2.57 2.59
+92
+pid=25773 etime=16:05:23 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:34:21Z
+ 3:34  up 112 days,  2:19, 27 users, load averages: 2.12 2.42 2.53
+92
+pid=25773 etime=16:06:00 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:35:01Z
+ 3:35  up 112 days,  2:19, 27 users, load averages: 2.06 2.41 2.52
+92
+pid=25773 etime=16:06:40 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:35:41Z
+ 3:35  up 112 days,  2:20, 27 users, load averages: 2.67 2.57 2.58
+92
+pid=25773 etime=16:07:20 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:36:21Z
+ 3:36  up 112 days,  2:21, 27 users, load averages: 2.29 2.50 2.55
+92
+pid=25773 etime=16:08:00 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:36:59Z
+ 3:36  up 112 days,  2:21, 27 users, load averages: 2.45 2.52 2.56
+92
+pid=25773 etime=16:08:38 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:37:37Z
+ 3:37  up 112 days,  2:22, 27 users, load averages: 2.99 2.65 2.60
+92
+pid=25773 etime=16:09:16 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:38:15Z
+ 3:38  up 112 days,  2:23, 27 users, load averages: 3.19 2.80 2.66
+92
+pid=25773 etime=16:09:54 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:38:58Z
+ 3:38  up 112 days,  2:23, 27 users, load averages: 2.64 2.72 2.64
+91
+pid=25773 etime=16:10:37 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:39:40Z
+ 3:39  up 112 days,  2:24, 27 users, load averages: 7.92 4.14 3.17
+91
+pid=25773 etime=16:11:19 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:40:22Z
+ 3:40  up 112 days,  2:25, 27 users, load averages: 11.16 5.55 3.73
+91
+pid=25773 etime=16:12:01 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:41:01Z
+ 3:41  up 112 days,  2:25, 27 users, load averages: 8.51 5.56 3.82
+91
+pid=25773 etime=16:12:40 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:41:41Z
+ 3:41  up 112 days,  2:26, 27 users, load averages: 7.35 5.63 3.92
+92
+pid=25773 etime=16:13:20 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:42:20Z
+ 3:42  up 112 days,  2:27, 27 users, load averages: 12.74 7.38 4.65
+92
+pid=25773 etime=16:13:59 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:43:08Z
+ 3:43  up 112 days,  2:28, 27 users, load averages: 10.04 7.57 4.87
+92
+pid=25773 etime=16:14:47 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 10:43:56Z
+ 3:43  up 112 days,  2:28, 27 users, load averages: 10.20 8.21 5.28
+91
+pid=25773 etime=16:15:35 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:01:21Z
+ 4:01  up 112 days,  2:46, 27 users, load averages: 6.33 7.27 6.52
+92
+pid=25773 etime=16:33:00 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=72854 etime=16:40 rss_kb=2606592 cmd=$ENVS_ROOT/annzarro_v030_3fb6826/.venv/bin/python3 $ENVS_ROOT/annzarro_v030_3fb6826/.venv/bin/annzarro start --ho
+pid=73690 etime=16:16 rss_kb=22960 cmd=$ENVS_ROOT/annzarro_v030_3fb6826/.venv/bin/python3 -c from multiprocessing.resource_tracker import main;main(11)
+pid=73695 etime=16:16 rss_kb=126272 cmd=benchmark/tool_ceiling/.venv/lib/python3.12/site-packages/playwright/driver/node benchma
+pid=73696 etime=16:16 rss_kb=220832 cmd=(Google Chrome fo)
+pid=73698 etime=16:16 rss_kb=10880 cmd=$HOME/.cache/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/Frameworks/Google Chrome for Testing Frame
+pid=73700 etime=16:16 rss_kb=9552 cmd=$HOME/.cache/ms-playwright/chromium-1243/chrome-mac-arm64/Google Chrome for Testing.app/Contents/Frameworks/Google Chrome for Testing Frame
+pid=73704 etime=16:15 rss_kb=143040 cmd=(Google Chrome fo)
+pid=73705 etime=16:15 rss_kb=114560 cmd=(Google Chrome fo)
+pid=73718 etime=16:15 rss_kb=78768 cmd=(Google Chrome fo)
+pid=73739 etime=16:15 rss_kb=0 cmd=(Google Chrome fo)
+pid=73776 etime=16:14 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock .venv/bin/python $DATA_ROOT/tool_ceiling_data/probe/tum_debug2.py
+pid=76031 etime=14:59 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock sh -c \012  start=$(date -u "+%Y-%m-%dT%H:%M:%S"); "$@"; rc=$?\012  echo "$start $(date -u "+%Y-%m-%dT
+pid=95067 etime=03:24 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock sh -c \012  start=$(date -u "+%Y-%m-%dT%H:%M:%S"); "$@"; rc=$?\012  echo "$start $(date -u "+%Y-%m-%dT
+2026-10-05 11:03:05Z
+ 4:03  up 112 days,  2:47, 27 users, load averages: 5.13 6.71 6.40
+91
+pid=4047 etime=00:12 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock .venv/bin/python memmon.py --timeout 700 --out $DATA_ROOT/tool_ceiling_data/probe/tum3.mem.json -- .
+pid=25773 etime=16:34:44 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:11:37Z
+ 4:11  up 112 days,  2:56, 27 users, load averages: 2.54 3.65 4.91
+91
+pid=25773 etime=16:43:16 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:12:19Z
+ 4:12  up 112 days,  2:57, 27 users, load averages: 3.96 4.02 4.98
+92
+pid=25773 etime=16:43:58 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:13:26Z
+ 4:13  up 112 days,  2:58, 27 users, load averages: 7.79 5.08 5.31
+92
+pid=25773 etime=16:45:05 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:14:34Z
+ 4:14  up 112 days,  2:59, 27 users, load averages: 5.76 5.25 5.37
+92
+pid=25773 etime=16:46:13 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:15:41Z
+ 4:15  up 112 days, 3 hrs, 27 users, load averages: 3.34 4.68 5.15
+92
+pid=25773 etime=16:47:20 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:16:38Z
+ 4:16  up 112 days,  3:01, 27 users, load averages: 4.68 5.10 5.29
+92
+pid=25773 etime=16:48:18 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:20:52Z
+ 4:20  up 112 days,  3:05, 27 users, load averages: 2.10 3.81 4.70
+92
+pid=25773 etime=16:52:31 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:21:49Z
+ 4:21  up 112 days,  3:06, 27 users, load averages: 2.74 3.79 4.65
+92
+pid=25773 etime=16:53:28 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:23:23Z
+ 4:23  up 112 days,  3:08, 27 users, load averages: 3.81 4.41 4.83
+92
+pid=25773 etime=16:55:02 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:24:58Z
+ 4:24  up 112 days,  3:09, 27 users, load averages: 3.34 4.52 4.86
+92
+pid=25773 etime=16:56:37 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:26:31Z
+ 4:26  up 112 days,  3:11, 27 users, load averages: 4.02 4.83 4.98
+92
+pid=25773 etime=16:58:10 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:27:46Z
+ 4:27  up 112 days,  3:12, 27 users, load averages: 4.53 5.09 5.08
+92
+pid=25773 etime=16:59:25 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:29:00Z
+ 4:29  up 112 days,  3:13, 27 users, load averages: 5.75 5.84 5.40
+92
+pid=25773 etime=17:00:39 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:30:15Z
+ 4:30  up 112 days,  3:15, 27 users, load averages: 5.96 6.47 5.72
+92
+pid=25773 etime=17:01:54 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:31:22Z
+ 4:31  up 112 days,  3:16, 27 users, load averages: 4.59 6.01 5.60
+92
+pid=25773 etime=17:03:01 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:32:28Z
+ 4:32  up 112 days,  3:17, 27 users, load averages: 2.89 5.23 5.34
+92
+pid=25773 etime=17:04:08 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:33:37Z
+ 4:33  up 112 days,  3:18, 27 users, load averages: 2.60 4.71 5.13
+92
+pid=25773 etime=17:05:16 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:34:32Z
+ 4:34  up 112 days,  3:19, 27 users, load averages: 2.34 4.24 4.93
+92
+pid=25773 etime=17:06:11 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:35:26Z
+ 4:35  up 112 days,  3:20, 27 users, load averages: 2.08 3.89 4.76
+92
+pid=25773 etime=17:07:05 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:36:20Z
+ 4:36  up 112 days,  3:21, 27 users, load averages: 1.76 3.52 4.57
+92
+pid=25773 etime=17:07:59 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:37:46Z
+ 4:37  up 112 days,  3:22, 27 users, load averages: 2.11 3.28 4.38
+92
+pid=25773 etime=17:09:25 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:39:13Z
+ 4:39  up 112 days,  3:24, 27 users, load averages: 1.99 2.96 4.14
+92
+pid=25773 etime=17:10:52 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:40:40Z
+ 4:40  up 112 days,  3:25, 27 users, load averages: 2.21 2.79 3.96
+92
+pid=25773 etime=17:12:19 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:41:43Z
+ 4:41  up 112 days,  3:26, 27 users, load averages: 2.20 2.74 3.86
+92
+pid=25773 etime=17:13:22 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:42:47Z
+ 4:42  up 112 days,  3:27, 27 users, load averages: 2.29 2.67 3.76
+92
+pid=25773 etime=17:14:26 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:43:51Z
+ 4:43  up 112 days,  3:28, 27 users, load averages: 3.79 3.26 3.91
+92
+pid=25773 etime=17:15:30 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:45:09Z
+ 4:45  up 112 days,  3:30, 27 users, load averages: 2.85 3.17 3.83
+92
+pid=25773 etime=17:16:48 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:46:37Z
+ 4:46  up 112 days,  3:31, 27 users, load averages: 2.06 2.83 3.63
+92
+pid=25773 etime=17:18:16 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:47:13Z
+ 4:47  up 112 days,  3:32, 27 users, load averages: 1.88 2.70 3.55
+92
+pid=25773 etime=17:18:52 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:47:50Z
+ 4:47  up 112 days,  3:32, 27 users, load averages: 2.01 2.65 3.50
+92
+pid=25773 etime=17:19:29 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:48:26Z
+ 4:48  up 112 days,  3:33, 27 users, load averages: 2.16 2.61 3.44
+92
+pid=25773 etime=17:20:05 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:49:01Z
+ 4:49  up 112 days,  3:33, 27 users, load averages: 3.68 2.95 3.54
+92
+pid=25773 etime=17:20:40 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:49:35Z
+ 4:49  up 112 days,  3:34, 27 users, load averages: 2.89 2.84 3.47
+92
+pid=25773 etime=17:21:14 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:50:10Z
+ 4:50  up 112 days,  3:35, 27 users, load averages: 2.91 2.89 3.47
+92
+pid=25773 etime=17:21:49 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:50:46Z
+ 4:50  up 112 days,  3:35, 27 users, load averages: 2.52 2.79 3.41
+92
+pid=25773 etime=17:22:25 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:51:23Z
+ 4:51  up 112 days,  3:36, 27 users, load averages: 3.13 2.97 3.45
+92
+pid=25773 etime=17:23:02 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:51:59Z
+ 4:51  up 112 days,  3:36, 27 users, load averages: 2.61 2.86 3.39
+92
+pid=25773 etime=17:23:38 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:52:34Z
+ 4:52  up 112 days,  3:37, 27 users, load averages: 2.73 2.88 3.37
+92
+pid=25773 etime=17:24:13 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:53:09Z
+ 4:53  up 112 days,  3:38, 27 users, load averages: 2.36 2.76 3.31
+92
+pid=25773 etime=17:24:48 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:53:43Z
+ 4:53  up 112 days,  3:38, 27 users, load averages: 2.53 2.77 3.29
+92
+pid=25773 etime=17:25:22 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:54:20Z
+ 4:54  up 112 days,  3:39, 27 users, load averages: 2.00 2.60 3.21
+92
+pid=25773 etime=17:25:59 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:54:57Z
+ 4:54  up 112 days,  3:39, 27 users, load averages: 2.08 2.58 3.17
+92
+pid=25773 etime=17:26:36 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:55:34Z
+ 4:55  up 112 days,  3:40, 27 users, load averages: 2.93 2.78 3.23
+92
+pid=25773 etime=17:27:13 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:56:10Z
+ 4:56  up 112 days,  3:41, 27 users, load averages: 2.88 2.79 3.21
+92
+pid=25773 etime=17:27:49 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:56:44Z
+ 4:56  up 112 days,  3:41, 27 users, load averages: 3.72 2.98 3.26
+92
+pid=25773 etime=17:28:23 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:57:19Z
+ 4:57  up 112 days,  3:42, 27 users, load averages: 4.70 3.43 3.42
+92
+pid=25773 etime=17:28:58 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:57:56Z
+ 4:57  up 112 days,  3:42, 27 users, load averages: 4.15 3.49 3.44
+92
+pid=25773 etime=17:29:36 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:58:34Z
+ 4:58  up 112 days,  3:43, 27 users, load averages: 3.16 3.32 3.38
+92
+pid=25773 etime=17:30:13 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:59:11Z
+ 4:59  up 112 days,  3:44, 27 users, load averages: 2.80 3.25 3.36
+92
+pid=25773 etime=17:30:50 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 11:59:47Z
+ 4:59  up 112 days,  3:44, 27 users, load averages: 3.80 3.40 3.40
+92
+pid=25773 etime=17:31:26 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:00:22Z
+ 5:00  up 112 days,  3:45, 27 users, load averages: 3.51 3.37 3.39
+92
+pid=25773 etime=17:32:01 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:00:57Z
+ 5:00  up 112 days,  3:45, 27 users, load averages: 2.88 3.23 3.34
+92
+pid=25773 etime=17:32:36 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:01:36Z
+ 5:01  up 112 days,  3:46, 27 users, load averages: 3.09 3.28 3.35
+92
+pid=25773 etime=17:33:15 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:02:14Z
+ 5:02  up 112 days,  3:47, 27 users, load averages: 4.38 3.68 3.50
+92
+pid=25773 etime=17:33:53 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:02:52Z
+ 5:02  up 112 days,  3:47, 27 users, load averages: 4.99 3.98 3.62
+92
+pid=25773 etime=17:34:31 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:03:28Z
+ 5:03  up 112 days,  3:48, 27 users, load averages: 4.21 3.90 3.60
+92
+pid=25773 etime=17:35:08 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:04:05Z
+ 5:04  up 112 days,  3:48, 27 users, load averages: 4.44 4.06 3.68
+92
+pid=25773 etime=17:35:44 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:04:41Z
+ 5:04  up 112 days,  3:49, 27 users, load averages: 4.83 4.29 3.78
+92
+pid=25773 etime=17:36:20 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:05:22Z
+ 5:05  up 112 days,  3:50, 27 users, load averages: 6.36 4.93 4.05
+92
+pid=25773 etime=17:37:01 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:06:03Z
+ 5:06  up 112 days,  3:50, 27 users, load averages: 4.50 4.64 3.98
+92
+pid=25773 etime=17:37:42 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:06:44Z
+ 5:06  up 112 days,  3:51, 27 users, load averages: 5.61 5.02 4.16
+92
+pid=25773 etime=17:38:23 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:07:23Z
+ 5:07  up 112 days,  3:52, 27 users, load averages: 6.21 5.31 4.31
+92
+pid=25773 etime=17:39:02 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:08:02Z
+ 5:08  up 112 days,  3:52, 27 users, load averages: 5.61 5.32 4.36
+92
+pid=25773 etime=17:39:41 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:08:41Z
+ 5:08  up 112 days,  3:53, 27 users, load averages: 5.80 5.50 4.48
+92
+pid=25773 etime=17:40:20 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:09:28Z
+ 5:09  up 112 days,  3:54, 27 users, load averages: 7.69 6.25 4.81
+92
+pid=25773 etime=17:41:07 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:10:14Z
+ 5:10  up 112 days,  3:55, 27 users, load averages: 8.93 7.05 5.20
+92
+pid=25773 etime=17:41:53 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:11:00Z
+ 5:11  up 112 days,  3:55, 27 users, load averages: 8.01 7.25 5.38
+92
+pid=25773 etime=17:42:39 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:11:43Z
+ 5:11  up 112 days,  3:56, 27 users, load averages: 7.29 7.29 5.49
+92
+pid=25773 etime=17:43:22 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:12:27Z
+ 5:12  up 112 days,  3:57, 27 users, load averages: 8.37 7.83 5.80
+92
+pid=25773 etime=17:44:06 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:13:10Z
+ 5:13  up 112 days,  3:58, 27 users, load averages: 8.29 7.99 5.96
+92
+pid=25773 etime=17:44:49 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:13:50Z
+ 5:13  up 112 days,  3:58, 27 users, load averages: 5.03 7.18 5.75
+92
+pid=25773 etime=17:45:29 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:14:29Z
+ 5:14  up 112 days,  3:59, 27 users, load averages: 3.59 6.54 5.58
+92
+pid=25773 etime=17:46:08 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:15:08Z
+ 5:15  up 112 days,  3:59, 27 users, load averages: 3.26 6.09 5.46
+92
+pid=25773 etime=17:46:47 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:15:48Z
+ 5:15  up 112 days, 4 hrs, 27 users, load averages: 2.44 5.52 5.28
+92
+pid=25773 etime=17:47:27 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:16:27Z
+ 5:16  up 112 days,  4:01, 27 users, load averages: 2.23 5.11 5.14
+92
+pid=25773 etime=17:48:06 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:17:07Z
+ 5:17  up 112 days,  4:01, 27 users, load averages: 2.05 4.70 4.99
+92
+pid=25773 etime=17:48:46 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:17:50Z
+ 5:17  up 112 days,  4:02, 27 users, load averages: 3.56 4.78 5.00
+92
+pid=25773 etime=17:49:29 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:18:32Z
+ 5:18  up 112 days,  4:03, 27 users, load averages: 2.66 4.40 4.85
+92
+pid=25773 etime=17:50:11 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:19:14Z
+ 5:19  up 112 days,  4:04, 27 users, load averages: 2.69 4.19 4.75
+92
+pid=25773 etime=17:50:53 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:20:00Z
+ 5:20  up 112 days,  4:04, 27 users, load averages: 2.40 3.90 4.61
+92
+pid=25773 etime=17:51:39 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:20:46Z
+ 5:20  up 112 days,  4:05, 27 users, load averages: 2.24 3.67 4.49
+92
+pid=25773 etime=17:52:25 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:21:32Z
+ 5:21  up 112 days,  4:06, 27 users, load averages: 2.85 3.72 4.47
+92
+pid=25773 etime=17:53:11 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:22:26Z
+ 5:22  up 112 days,  4:07, 27 users, load averages: 4.13 4.14 4.59
+92
+pid=25773 etime=17:54:05 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:23:20Z
+ 5:23  up 112 days,  4:08, 27 users, load averages: 4.84 4.55 4.73
+92
+pid=25773 etime=17:55:00 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:24:15Z
+ 5:24  up 112 days,  4:09, 27 users, load averages: 5.16 4.83 4.83
+92
+pid=25773 etime=17:55:54 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:25:32Z
+ 5:25  up 112 days,  4:10, 27 users, load averages: 4.94 5.25 5.02
+92
+pid=25773 etime=17:57:12 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:26:51Z
+ 5:26  up 112 days,  4:11, 27 users, load averages: 4.43 5.28 5.06
+92
+pid=25773 etime=17:58:30 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:28:09Z
+ 5:28  up 112 days,  4:13, 27 users, load averages: 4.90 5.59 5.23
+92
+pid=25773 etime=17:59:48 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:30:04Z
+ 5:30  up 112 days,  4:14, 27 users, load averages: 4.69 6.17 5.57
+92
+pid=25773 etime=18:01:43 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 12:31:59Z
+ 5:31  up 112 days,  4:16, 27 users, load averages: 6.09 6.63 5.86
+92
+pid=25773 etime=18:03:38 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 16:58:37Z
+ 9:58  up 112 days,  8:43, 27 users, load averages: 3.93 2.79 2.46
+pid=25773 etime=22:30:16 rss_kb=34400 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 17:02:27Z
+10:02  up 112 days,  8:47, 27 users, load averages: 4.92 4.32 3.22
+pid=25773 etime=22:34:07 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=60079 etime=02:59 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock .venv/bin/python memmon.py --timeout 300 --out $DATA_ROOT/tool_ceiling_data/probe/tum4.mem.json -- .
+2026-10-05 17:40:22Z
+10:40  up 112 days,  9:25, 27 users, load averages: 2.04 2.15 2.63
+92
+pid=15071 etime=09:21 rss_kb=19856 cmd=.venv/bin/python run.py --web --tool cellxgene --variant remote_default --n 20000000 --run 0 --note server on HPC: http://hpc-node-09:8791; one prior operator
+pid=15072 etime=09:21 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SL
+pid=25773 etime=23:12:01 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 18:38:27Z
+11:38  up 112 days, 10:23, 27 users, load averages: 7.57 7.30 5.14
+92
+pid=25773 etime=01-00:10:06 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 18:39:31Z
+11:39  up 112 days, 10:24, 27 users, load averages: 8.09 7.68 5.46
+92
+pid=25773 etime=01-00:11:10 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 18:40:16Z
+11:40  up 112 days, 10:25, 27 users, load averages: 7.99 7.95 5.69
+92
+pid=25773 etime=01-00:11:55 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+2026-10-05 18:41:02Z
+11:41  up 112 days, 10:25, 27 users, load averages: 17.22 11.17 7.04
+92
+pid=25773 etime=01-00:12:41 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=47291 etime=00:03 rss_kb=2112 cmd=/bin/sh -c while [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SLOT ] || [ -e $HOME/.annzarro-bench.paus
+2026-10-05 18:42:07Z
+11:42  up 112 days, 10:26, 27 users, load averages: 9.72 10.40 7.07
+91
+pid=25773 etime=01-00:13:46 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=49349 etime=00:18 rss_kb=19792 cmd=.venv/bin/python run.py --tool napari --variant allpoints --n 2000000 --run 0 -- $DEMO_ROOT/napari-spatialdata/.venv/bin/python napari_
+pid=49351 etime=00:18 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SL
+pid=49618 etime=00:07 rss_kb=19632 cmd=.venv/bin/python run.py --tool input_h5ad_csc --variant to_h5ad_csc --phase convert --n 2000000 --timeout 7200 -- .venv-conv/bin/python to_h5ad.py /Users/
+pid=49619 etime=00:07 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SL
+2026-10-05 18:43:57Z
+11:43  up 112 days, 10:28, 27 users, load averages: 6.11 9.57 7.20
+91
+pid=25773 etime=01-00:15:36 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=51189 etime=00:57 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SL
+pid=51944 etime=00:30 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock .venv/bin/python evidence/build.py --check
+pid=52722 etime=00:00 rss_kb=6464 cmd=.venv/bin/python run.py --tool napari --variant allpoints --n 10000000 --run 0 -- $DEMO_ROOT/napari-spatialdata/.venv/bin/python napari
+2026-10-05 18:45:44Z
+11:45  up 112 days, 10:30, 27 users, load averages: 5.07 8.11 6.89
+91
+pid=25773 etime=01-00:17:23 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=55178 etime=00:39 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /usr/bin/lockf -k $HOME/.annzarro-screen.lock sh -c ps -Ao pid,etime,%cpu,comm > /private/tmp/c
+pid=56065 etime=00:00 rss_kb=6768 cmd=.venv/bin/python add_colors.py $DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first5000000_csc.h5ad
+2026-10-05 18:46:53Z
+11:46  up 112 days, 10:31, 27 users, load averages: 3.83 7.09 6.60
+92
+pid=25773 etime=01-00:18:32 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=57887 etime=00:00 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /usr/bin/lockf -k $HOME/.annzarro-screen.lock sh -c ps -Ao pid,etime,%cpu,comm > /private/tmp/c
+pid=57920 etime=00:00 rss_kb=6432 cmd=.venv/bin/python add_colors.py $DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first10000000_csc.h5ad
+2026-10-05 18:48:42Z
+11:48  up 112 days, 10:33, 27 users, load averages: 3.54 6.08 6.27
+92
+pid=25773 etime=01-00:20:21 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=60589 etime=00:08 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock sh -c benchmark/scale/ceiling/.venv/bin/python evidence/screens/annzarro/capture.py --annzarro /privat
+pid=60748 etime=00:00 rss_kb=6288 cmd=.venv/bin/python add_colors.py $DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first20000000_csc.h5ad
+2026-10-05 19:18:39Z
+12:18  up 112 days, 11:03, 27 users, load averages: 3.29 3.13 3.36
+91
+pid=25773 etime=01-00:50:18 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=62511 etime=28:52 rss_kb=1216 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock .venv/bin/python evidence/build.py --check
+pid=66721 etime=26:30 rss_kb=2128 cmd=/bin/bash ./queue_annzarro_prep.sh
+pid=66751 etime=26:30 rss_kb=19552 cmd=.venv/bin/python run.py --tool annzarro --variant annzarro_prep --phase convert --n 1000000 --timeout 7200 -- .venv/bin/python annzarro_prep.py /Users/dot
+pid=66752 etime=26:30 rss_kb=1216 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SL
+# omitted: 3666 process lines unrelated to the benchmark

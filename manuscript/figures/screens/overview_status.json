@@ -1,0 +1,53 @@
+{
+ "dsf": 2,
+ "status": {
+  "cell-plot-O1": {
+   "strip": [
+    1,
+    731.8,
+    752.3,
+    24
+   ],
+   "text": [
+    12,
+    732.3,
+    73.7,
+    24
+   ],
+   "label": "8,090 cells",
+   "class": "plot-status plot-status--ok"
+  },
+  "cell-plot-O3": {
+   "strip": [
+    1,
+    1383.8,
+    752.3,
+    24
+   ],
+   "text": [
+    12,
+    1384.3,
+    73.7,
+    24
+   ],
+   "label": "8,090 cells",
+   "class": "plot-status plot-status--ok"
+  },
+  "gene-plot-O2": {
+   "strip": [
+    759.3,
+    810.5,
+    1039.7,
+    24
+   ],
+   "text": [
+    770.3,
+    811,
+    87.7,
+    24
+   ],
+   "label": "16,285 genes",
+   "class": "plot-status plot-status--ok"
+  }
+ }
+}

@@ -1,0 +1,16 @@
+# Minimal AnnZarro config for the protocol demo (localhost only, no auth).
+# Needed because `annzarro start` validates server.host/port/data_dir BEFORE the
+# --host/--port/--data-dir flags are applied, and otherwise only finds defaults
+# when launched from inside the AnnZarro source tree (config/<env>.yaml is CWD-relative).
+server:
+  host: 127.0.0.1
+  port: 8010
+  data_dir: data            # relative to the directory you launch from
+  log_file: data/annzarro_server.log
+  log_level: INFO
+  max_cells_per_request: 20000
+  max_genes_per_request: 20000
+  cache_enabled: true
+  cache_memory_mb: 4000
+auth:
+  enabled: false

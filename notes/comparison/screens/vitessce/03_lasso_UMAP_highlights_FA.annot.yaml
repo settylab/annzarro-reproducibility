@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "03_lasso_UMAP_highlights_FA.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (hosted app at vitessce.io, @vitessce 4.0.10)",
+ "data": "bm_demo.zarr (8,090 cells), served on 127.0.0.1:8904",
+ "url": "https://vitessce.io/#?url=http://127.0.0.1:8904/config.json",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_vitessce.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "Vitessce @vitessce 4.0.10 (2026-10-04): a lasso on the UMAP highlights the same cells in the FA plot and restricts the heatmap"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    6,
+    86,
+    580,
+    486
+   ],
+   "label": "lasso on UMAP",
+   "selector": "[data-cap='umap']"
+  },
+  {
+   "n": 2,
+   "box": [
+    583,
+    86,
+    465,
+    486
+   ],
+   "label": "same cells in FA",
+   "selector": "[data-cap='fa']"
+  },
+  {
+   "n": 4,
+   "box": [
+    6,
+    871,
+    1378,
+    23
+   ],
+   "label": "heatmap restricted to the selection",
+   "selector": "[data-cap='hmfoot3']"
+  }
+ ]
+}

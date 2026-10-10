@@ -1,0 +1,48 @@
+{
+ "version": 1,
+ "image": "g02_spatial_image_organize_panels_classes.jpg",
+ "tool": "isee",
+ "software": "iSEE 2.18.0 (Bioc 3.20, R 4.4.3)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8902",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_isee.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "spatial",
+   "mark": "N",
+   "caption": "iSEE 2.18.0 (Bioc 3.20, R 4.4.3) (2026-10-04): Organize panels offers the panel classes of iSEE (Reduced dimension plot, Row data table, Feature assay plot, Column data plot, Sample assay plot, Column data table, Complex heatmap); none plots spatial coordinates"
+  },
+  {
+   "column": "image",
+   "mark": "N",
+   "caption": "iSEE 2.18.0 (Bioc 3.20, R 4.4.3) (2026-10-04): no panel class draws a tissue image layer"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    411,
+    265,
+    508,
+    202
+   ],
+   "label": "panel classes on offer",
+   "selector": "[data-gap='classes']"
+  },
+  {
+   "n": 2,
+   "box": [
+    396,
+    26,
+    608,
+    974
+   ],
+   "label": "Organize panels",
+   "selector": ".modal-dialog"
+  }
+ ]
+}

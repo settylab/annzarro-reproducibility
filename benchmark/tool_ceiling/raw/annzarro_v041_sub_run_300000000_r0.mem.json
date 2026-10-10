@@ -1,0 +1,79 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_300000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_sub_run_300000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 14.64,
+ "peaks": {
+  "client": {
+   "fp_peak": 1554129656,
+   "fp_lifetime_sum": 1645864584,
+   "rss_peak": 1366704128,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 4313534424,
+   "fp_lifetime_sum": 4365455800,
+   "rss_peak": 4334419968,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 130680592,
+   "fp_lifetime_sum": 130680592,
+   "rss_peak": 165969920,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5191758256,
+   "rss_peak": 5469831168,
+   "fp_lifetime_sum": 6011320384
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.44,
+   2232788832
+  ],
+  [
+   4.84,
+   2387322864
+  ],
+  [
+   7.27,
+   2248616160
+  ],
+  [
+   9.73,
+   2250795232
+  ],
+  [
+   12.08,
+   2248567008
+  ]
+ ],
+ "ps_before": "2026-10-07T16:24:58-0700\nmemorystatus_level=90 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n  855 1236736  94.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n84235 384384  87.0 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n 3704  37040  46.9 .venv/bin/python\n  626 422080  35.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n86901 506000  10.7 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 3720  19856   6.7 .venv/bin/python\n57113 2346048   6.6 $HOME/.local/bin/claude\n94048 151456   5.9 /System/Library/Frameworks/AppKit.framework/Versions/C/XPCServices/com.apple.appkit.xpc.openAndSavePanelService.xpc/Contents/MacOS/com.apple.appkit.xpc.openAndSavePanelService\n47634 381008   3.7 /System/Applications/Mail.app/Contents/MacOS/Mail\n  557  51856   3.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n",
+ "others_at_start": [
+  "3721 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "3722 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

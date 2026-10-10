@@ -1,0 +1,2 @@
+# notes/sources/zenodo_15587768.json: the public Zenodo API record of the bone marrow dataset (Data availability),
+# fetched 2026-10-07T06:40Z with: curl -sS -f https://zenodo.org/api/records/15587768 (bytes saved unchanged).

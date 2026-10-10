@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m07_spatial_obsm_spatial_plotted_as_embedding.jpg",
+ "tool": "kana",
+ "software": "Kana v3.2.0 (live build, kanaverse.org)",
+ "data": "bm_spatial_test.h5ad (2,023 cells, synthetic obsm['spatial'] grid)",
+ "url": "https://www.kanaverse.org/kana/",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/kana/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "spatial",
+   "mark": "P",
+   "caption": "obsm['spatial'] (synthetic grid) is offered as an ordinary embedding tab; nothing spatial-aware (no image, no aspect/scale handling)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    418,
+    48,
+    70,
+    38
+   ],
+   "label": "obsm key 'spatial' as embedding tab",
+   "selector": "button:has-text('spatial')"
+  },
+  {
+   "n": 2,
+   "box": [
+    112,
+    131,
+    795,
+    778
+   ],
+   "label": "grid drawn as x/y",
+   "selector": "canvas"
+  }
+ ]
+}

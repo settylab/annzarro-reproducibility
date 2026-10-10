@@ -1,0 +1,116 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_1250000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub_run_1250000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 38.31,
+ "peaks": {
+  "client": {
+   "fp_peak": 1598677656,
+   "fp_lifetime_sum": 1712039464,
+   "rss_peak": 1395163136,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 10758611536,
+   "fp_lifetime_sum": 11421558240,
+   "rss_peak": 10789208064,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 118256120,
+   "fp_lifetime_sum": 122466976,
+   "rss_peak": 156794880,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 11163173784,
+   "rss_peak": 11905105920,
+   "fp_lifetime_sum": 13133597704
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.48,
+   953377624
+  ],
+  [
+   4.94,
+   797533016
+  ],
+  [
+   7.46,
+   515810136
+  ],
+  [
+   9.87,
+   609330080
+  ],
+  [
+   12.37,
+   922313872
+  ],
+  [
+   14.78,
+   923198608
+  ],
+  [
+   17.24,
+   923886736
+  ],
+  [
+   19.82,
+   924755088
+  ],
+  [
+   22.35,
+   764355680
+  ],
+  [
+   24.78,
+   769107040
+  ],
+  [
+   27.24,
+   989177096
+  ],
+  [
+   29.75,
+   990078216
+  ],
+  [
+   32.23,
+   2886544064
+  ],
+  [
+   35.28,
+   1475455224
+  ],
+  [
+   37.8,
+   2508909008
+  ]
+ ],
+ "ps_before": "2026-10-06T00:25:55-0700\nmemorystatus_level=88 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n73723 747456 165.4 /Applications/Xcode.app/Contents/Developer/usr/bin/git\n  582  76960  97.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n96336  48448  25.9 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService\n73374  20256  16.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n73375  20224  14.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n72258  20272  13.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n72254  26208  13.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n73379  20256  12.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n73377  20224  11.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n73378  20256  11.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

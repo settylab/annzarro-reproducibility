@@ -1,0 +1,530 @@
+\section{Introduction}
+
+
+
+%claim{intro.no_viewer}
+Two of the most informative objects in a single-cell analysis are how similar each cell is to every other cell and how similar each gene is to every other gene. Both are computed routinely, as kNN graphs, diffusion kernels, distances and gene-gene correlations, and both drive downstream results such as trajectories, fate probabilities and gene programs. Explored directly, they answer questions that a summary cannot: which cells a given cell resembles in the space where its pseudotime and fate probabilities were computed, which genes change together with a gene of interest and how strongly, and how both answers shift from one cell state to the next. Static plots show one gene or one cell per figure, and existing interactive viewers rarely display these pairwise matrices. Of those we examined, only one colors an embedding by a cells~$\times$~cells row, and only when its index is typed in. Users cannot view genes~$\times$~genes matrices in any of them, or select a cell or gene in one plot to set the row shown in the others (\textbf{Fig.~\ref{fig:overview}c}).
+% Before MS's review the paragraph opened with what the summaries distort (UMAP keeps 14 of 30 neighbors, Fig. 4; claim intro.umap_knn, now only in the Fig. 4 caption as fig2.knn).
+
+Similarity is only one kind of cells~$\times$~cells matrix. In spatial transcriptomics, neighbor graphs and physical distances between cells are stored as such matrices\cite{palla2022squidpy}, and so is cell-to-cell communication inferred under the constraint of how far a ligand can diffuse through the tissue\cite{cang2023commot}. In the nervous system, a connectome is a matrix of synapses between individual neurons, which can now be read against the neurons' transcriptomic types\cite{microns2025,gamlin2025}. Each of these matrices answers a question about one cell at a time: which cells it neighbors, signals to or is wired to. A static figure answers such a question for one cell. Asking it for many cells in turn, and for the genes that set them apart, requires a view that redraws with each click.
+
+
+%claim{intro.kernel_size} %claim{intro.tahoe.n} %claim{intro.datasets_100m}
+We built AnnZarro to make these matrices explorable. AnnZarro uses AnnData objects\cite{virshup2024anndata}, the format that scanpy and the scverse tools write, where cells~$\times$~cells matrices are stored in obsp and genes~$\times$~genes matrices in varp, beside the cells~$\times$~genes data in X and layers (\textbf{Fig.~\ref{fig:overview}a,b}). Clicking a cell paints its row of a cell-by-cell matrix over any embedding or over the positions of cells in a tissue section. Results computed in the original space, such as diffusion-based pseudotime, can be checked against the matrix that produced them. Clicking a gene paints its row of a gene-by-gene matrix over any gene-level plot, such as a differential expression volcano. The same click links cells and genes in both directions: a focused gene colors cells by its expression or fold change, and a focused cell colors genes by its values. This link matters most for differential expression methods that estimate a fold change for every cell, such as Kompot\cite{otto2025kompot}. Both the matrices and the datasets are large: a cells~$\times$~cells kernel over 100,000 cells holds $10^{10}$ values, and single-cell datasets now reach nearly 100 million cells\cite{zhang2025tahoe}. AnnZarro reads only the matrix rows and columns each panel displays, and on a laptop users can browse all 95.6 million cells of Tahoe-100M, through a reproducible subset or in one plot (\textbf{Fig.~\ref{fig:overview}c}).
+% MS's edits in this paragraph accepted: ", which shows co-regulation as a graded quantity" and the volcano sentence with its Fig. 6 reference deleted.
+
+
+
+\subsection{Development of the protocol}
+
+AnnZarro was developed to inspect the outputs of Palantir\cite{setty2019}, Mellon\cite{otto2024mellon} and Kompot\cite{otto2025kompot}, which store their results across every AnnData slot, including dense cells~$\times$~genes layers and cells~$\times$~cells kernels that the existing viewers could not display. It builds on two ideas from other groups: panels linked so that a selection in one drives the others, as in iSEE\cite{ruealbrecht2018}, and views that are shared as configurations, as in Vitessce\cite{keller2025}. To these it adds a focused cell and a focused gene that select rows of stored pairwise matrices, and lazy reads of chunked zarr stores so that these matrices need not fit in memory. Its design rests on five principles.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{A focused cell and a focused gene.} The application keeps one focused cell and one focused gene, with back and forward history. Clicking a point in any panel moves the focus. Every panel whose content depends on the focus fetches the new slice and redraws in place, keeping its zoom.
+\item
+  \textbf{Any data on any axis.} A cell scatter can take the x, y and optional z positions of its points, and their color, from any per-cell value. These include cell metadata in obs, a column of any obsm matrix (such as an embedding or spatial positions), a gene's column of X or any layer (such as expression, imputed expression or fold changes), and the focused cell's row of any cells~$\times$~cells matrix in obsp. A gene scatter mirrors this with gene metadata in var, a column of any varm matrix, the focused cell's row of a layer and the focused gene's row of any genes~$\times$~genes matrix in varp. Several cell and gene scatters can be open at once, and a click that changes the focused cell or gene redraws every panel that depends on it. Tissue positions are one more obsm matrix, so spatial data need no special mode. Coloring a tissue section by the focused cell's row of an expression kernel shows where similar cells lie. Tables of cells or genes define masks with arbitrary AND/OR conditions, and plots follow them.
+\item
+%claim{dev.subset_threshold}
+  \textbf{Bounded memory on both sides.} AnnZarro is built for dense data: imputed and fold-change layers, dense kernels and correlation matrices, which are too large to load but are stored in chunks. The server opens zarr stores lazily and reads only the chunks a request touches, so one gene of a dense layer or one row of a dense kernel costs one chunk column or row. The browser receives only the vectors on screen and, by default, for datasets of more than 200,000 cells only their values for a reproducible subset, whose parts reach every cell. Neither side holds the full dataset, so a laptop can explore data that live on a cluster.
+\item
+  \textbf{Read-only hosting.} The server never writes to datasets and runs no user code. 
+Datasets on institutional servers can be exposed, with login, without granting write or compute access.
+\item
+  \textbf{Views as shareable objects.} Panel sets are stored on the server, so a view defined by one user can be opened by every other user of the instance. Deep links encode layout and focus in the URL, and plots export as SVG, PNG, JPEG or WebP.
+\end{enumerate}
+
+% Fig. 1 takes a whole page; its caption follows as a separate float on the next page (user X5).
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{figures/fig1_overview.pdf}
+\end{figure}
+\begin{figure}[t]
+\caption{\textbf{The focus model, the AnnData slots behind it, and AnnZarro compared with other viewers.}
+\textbf{a}, The focused cell selects rows of the cells~$\times$~cells and cells~$\times$~genes matrices (blue); the focused gene selects a column of cells~$\times$~genes and a row of genes~$\times$~genes (orange). Each scatter is colored by the selected vector, and clicking a point moves the focus. LFC, log fold change. Interactive walkthrough: \url{https://annzarro.readthedocs.io/en/latest/tutorials/tour.html}.
+\textbf{b}, Which stored array drives which view, on an AnnData object laid out around its cells~$\times$~genes matrix. A click on a cell selects one row (blue) of every cell-indexed array; a click on a gene selects one column (orange) of every gene-indexed array. AnnZarro fetches only these slices; their crossing in X or a layer is the focused cell's value for the focused gene. Rows of obsp color cell plots, rows of varp color gene plots, and X and layers link cells and genes in both directions.
+%claim{fig1.lacks} %claim{fig1.distinct}
+%claim{fig1.budget} %claim{fig1.strip_range} %claim{fig1.server_rendered} %claim{fig1.stop_in_sn1} %claim{fig1.ring_arrow_only} %claim{fig1.loupe_version}
+\textbf{c}, Feature comparison. Rows are tools, columns capabilities grouped by job. CELLxGENE is shown as its two programs; Loupe Browser 9.1.0 was checked in the running app on demo data, with spatial and image underlays from its documentation and lazy reads measured in the app (\textbf{Supplementary Note~1}); Scanpy / Seurat is the baseline of what code can do. Filled circle, documented and working in the GUI; half-filled, partial or only by writing code; open circle, searched and not found. In the shaded Relationships columns, only AnnZarro reads genes~$\times$~genes matrices and lets a focused cell or gene choose the row that every linked panel shows. AnnZarro lacks annotation editing, on-the-fly differential expression, tissue image underlays and a static-site mode. The Cells strip (log scale, 100,000 to 10 billion cells) shows, as a filled orange circle, the largest dataset built from Tahoe-100M of which each tool drew every cell without failing and within a 16 GiB client memory budget (\textdagger{} server-rendered: its server is measured instead); what stopped each tool at the next size (client or server memory, a crash, an unreadable input) is given in \textbf{Supplementary Note~1}. Ring, the largest store drawn with a subset; open diamond, the largest dataset the project documents (for AnnZarro, the largest store tested here, with a subset); arrow, a lower bound at the largest size tested; \ddag{}, cytometry events. Sc, Scanpy; Se, Seurat. Method, rules and sources are in \textbf{Supplementary Note~1}.}
+\label{fig:overview}
+\end{figure}
+
+The same code runs as a multi-user server, as a local server, or as a self-contained desktop application for macOS, Windows and Linux. \textbf{Fig.~\ref{fig:app}} shows the interface on the data used in this protocol. 
+
+\figapp
+
+\subsection{Overview of the procedure}
+
+The procedure takes users from a processed AnnData object to a set of linked, shareable views in five stages (\textbf{Fig.~\ref{fig:procedure}}). 
+
+\begin{enumerate}[nosep]
+\item \textbf{Installation (Steps 1--2).} Install the Python package or the desktop app.
+\item \textbf{Data preparation (Steps 3--10).} Run Kompot differential abundance and expression on the Kompot tutorial dataset of aging murine bone marrow, add a diffusion-walk kernel to obsp and gene-gene Spearman correlations to varp, and write a chunked zarr store.
+\item \textbf{Starting AnnZarro (Steps 11--13).} Start the server, open the store and add panels.
+\item \textbf{Worked examples (Steps 14--36).} (1) Walk a diffusion neighborhood across the embedding (Steps 14--17); (2) browse co-regulated genes in a differential expression volcano (Steps 18--21); (3) go from a gene to the cells where it changes (Steps 22--24); (4) compare two cell states gene by gene (Steps 25--27); (5) mask plots with table filters (Steps 28--31); (6) browse a dataset of millions of cells, Tahoe-100M (Steps 32--36).
+\item \textbf{Saving, sharing and hosting (Steps 37--44).} Save panel sets, share links, export figures and, optionally, host datasets for a lab.
+\end{enumerate}
+
+Worked examples 1, 2, 4 and 5 can be run in any order after Step 13; Worked example 3 reuses the volcano of Worked example 2, and Worked example 6 uses a separate, large dataset.
+
+\begin{figure}[t]
+\centering
+\input{figures/fig_procedure.tex}
+\caption{\textbf{Overview of the procedure.} Stages with their step numbers. Worked examples 1--5 use the bone marrow store prepared in Steps 3--10 and can be run in any order, except that Worked example 3 reuses the volcano of Worked example 2; Worked example 6 uses Tahoe-100M. Dashed box, optional stage.}
+\label{fig:procedure}
+\end{figure}
+
+\subsection{Applications}
+
+AnnZarro is built for results that live in matrices too large to plot at once: per-cell, per-gene and pairwise quantities that users want to browse one slice at a time. We have used it to explore the results of Kompot\cite{otto2025kompot} as the method was being developed. Three classes of question motivate the protocol and each is demonstrated in it on the bone marrow data (\textbf{Figs.~\ref{fig:cellcell}--\ref{fig:cellgene}}), a connectome of \textit{C. elegans} neuron classes shows the neuronal case (\textbf{Fig.~\ref{fig:cellcell}d}) and a public Visium dataset of the mouse brain shows the spatial case, with the spots' tissue positions as the axes and a spatial kernel in obsp (\textbf{Fig.~\ref{fig:app}d}).
+
+\textbf{Cell-by-cell relationships.} Any cells~$\times$~cells matrix in obsp (diffusion or Mellon kernels, kNN connectivities, distances, Kompot posterior covariance, spatial neighbor graphs and distances, or cell-level communication scores) can drive an embedding's color or axis. Each click on a cell paints that cell's row over the whole embedding, so walking along a trajectory shows how a kernel or distance function changes with cell state. Palantir pseudotime and branch probabilities \cite{setty2019}, Mellon densities \cite{otto2024mellon} and SEACells metacell assignments \cite{persad2023} sit beside these as obs columns. \textbf{Fig.~\ref{fig:cellcell}a} shows such a walk through hematopoiesis. The same view reads a connectome. With synapses between \textit{C. elegans} neuron classes\cite{varshney2011} stored in obsp and their transcriptomes\cite{taylor2021} in X, focusing the command interneuron AVA paints its synaptic targets over the transcriptomic UMAP: its strongest targets, the motor neurons of the ventral cord, form a cluster far from it (\textbf{Fig.~\ref{fig:cellcell}d}).
+
+\textbf{The geometry of the phenotypic manifold.} Cells occupy a continuous shape in gene-expression space, the phenotypic manifold, and many analyses measure how similar cells are along that shape rather than on a two-dimensional map. Diffusion distances are one such measure: they treat the nearest-neighbor graph as a network, and two cells are close when a random walk passes easily from one to the other. Palantir pseudotime and fate probabilities are computed from them\cite{setty2019}. Painting the focused cell's row of such a matrix shows the manifold's geometry one cell at a time, beside the familiar map: which cells a cell is closest to, and how far its neighborhood reaches. For a plasma cell, most of the walk's mass lies on naive and memory B cells, its relatives in expression space, although the UMAP draws them far away, and almost none on the pDC, NK, basophil and T cells drawn next to it; along the trajectory from stem cells to monocytes, the map and the manifold agree (\textbf{Fig.~\ref{fig:cellcell}b,c}). An ordering or a fate probability that looks surprising on the UMAP can thus be read in the geometry that produced it.
+
+\textbf{Gene-by-gene relationships.} A genes~$\times$~genes matrix in varp, such as Spearman correlation computed on imputed expression, drives the color of a gene scatter. Coloring a differential expression volcano by correlation to the focused gene shows which genes are co-regulated with it, wherever they sit in effect size and significance, and clicking one of them moves the focus to it. 
+% Removed after MS review: "Module methods such as WGCNA and Hotspot summarize the same kind of matrix by grouping genes. The grouping gives an overview, and a module label stored in var can color the same volcano, but it discards how strongly each gene relates to a given gene, its partners in other modules and the differences within a module, all of which the focused gene's row keeps."
+\textbf{Fig.~\ref{fig:genegene}} shows this for MHC genes in aging bone marrow.
+
+\textbf{Differential expression at single-cell resolution.} Kompot \cite{otto2025kompot} writes its results across every AnnData slot: per-cell differential abundance in obs; per-gene Mahalanobis distance, mean log fold change and local FDR in var; per-cell-type summaries in varm; dense cells~$\times$~genes smoothed expression, fold change and fold-change z-score layers; an optional posterior covariance in obsp; and a run history with a field\_names map in uns. No single static plot shows these together. In AnnZarro, a gene scatter of Mahalanobis distance against mean log fold change acts as a volcano; clicking a gene recolors linked embeddings with that gene's per-cell fold change and with smoothed expression in each condition. The reverse direction also holds: clicking a cell recolors the gene scatter with that cell's fold change for every gene, showing which genes change in that cell state. Locking one cell and refocusing another compares two states gene by gene, which is how opposite regulation of the same genes across cell types becomes visible. \textbf{Fig.~\ref{fig:cellgene}} shows a gene that looks unchanged in the volcano but is lost with age in stem cells.
+
+\textbf{Gene sets.} A gene table defines a gene set by any combination of conditions, joined with AND and OR, on the per-gene annotations in var and on columns taken from a chosen gene or cell, such as each gene's correlation to that gene or its expression in that cell. A set can thus combine thresholds on differential expression statistics, such as one corner of the volcano, with a stored module label, a gene annotation, a name pattern, or similarity and expression thresholds. The optional gene-set panel takes the genes that pass, and the focused gene, to outside services: STRING and g:Profiler for enrichment against the dataset's genes as background, STRING for the protein network and MyGene.info for what each gene is; Enrichr, Reactome and the Human Protein Atlas can be switched on. Changing a threshold and running the panel again gives the next set's results, and every gene plot linked to the same table shows the set.
+
+\figfocusrow
+\figgenegene
+\figcellgene
+
+While we used the outputs of Palantir and Kompot for illustration, none of these uses needs code specific to Kompot or Palantir. They follow from two general rules: a cell plot can take any per-cell vector, including a row of obsp or a gene column of a layer, and a gene plot can take any per-gene vector, including a row of varp or a cell row of a layer.
+
+\subsection{Comparison with other methods}
+
+We compared AnnZarro with graphical single-cell viewers, and with Scanpy and Seurat as the baseline of what code can do (\textbf{Fig.~\ref{fig:overview}c}). The viewers we compared are CELLxGENE (Explorer and Annotate)\cite{megill2021,czi2025}, Vitessce\cite{keller2025}, UCSC Cell Browser\cite{speir2021}, Single Cell Portal\cite{tarhan2023scp}, Cirrocumulus (part of Cumulus\cite{li2020cumulus}), SCope\cite{davie2018scope}, ShinyCell2\cite{ouyang2021,chen2025shinycell2}, Kana\cite{lun2023kana}, iSEE\cite{ruealbrecht2018}, Loupe Browser, ManiVault Studio\cite{vieth2023manivault} and VizIt (\textbf{Supplementary Note~1}).  Viewers built around tissue images, for spatial data and its quality control, serve a different task and were not compared. The paragraphs below follow four of the column groups of \textbf{Fig.~\ref{fig:overview}c}: relationships, work, scale and sharing.
+
+%claim{cmp.no_other_viewer} %claim{cmp.obsp_varp_code_only} %claim{cmp.focus_central}
+\textbf{Relationships.} Among these viewers, only ManiVault Studio colors an embedding by a stored cells~$\times$~cells row. The user selects the row by typing its index and is not shown which cell it belongs to. The other viewers either ignore obsp and varp or reach them only through code. Users cannot color or position points by a genes~$\times$~genes matrix in any of them, or select a cell or gene in one plot to set the row shown in the others. This link between a focused cell or gene and every panel is the central difference between AnnZarro and these viewers.
+
+
+%claim{cmp.annotations} %claim{cmp.readonly} %claim{cmp.images} %claim{cmp.isee_code} %claim{cmp.de} %claim{cmp.refresh_shows} %claim{cmp.refresh_new_keys} %claim{cmp.refresh_keeps} %claim{cmp.refresh_readonly}
+\textbf{Work.} The tools differ most in what they are for. Many viewers move parts of the analysis into the viewer, so that it can be done without code: CELLxGENE, Cirrocumulus and Loupe edit annotations, and Loupe and CELLxGENE run differential expression on demand. AnnZarro does not try to replace analysis. It is a tool for visualization and exploration: AnnZarro is read-only by design and computes nothing, so every annotation, statistic and matrix it shows is produced in code, where the analysis stays documented and reproducible. Analysis and exploration then form a loop: code computes, AnnZarro shows the results, and what the user sees prompts the next computation. The loop is short because the viewer follows the store. When code, for example in a Jupyter session on the same store, writes new results with anndata's write\_elem, one refresh (Ctrl+R) shows them in the open views, new obs columns, layers and pairwise matrices included, and keeps the layout, the focus and locked colors. On a shared server, the people who run it decide whether stores are updated in place; if they are, every user sees the new results on their next refresh, while the server itself never writes the store. Note that AnnZarro does not render tissue images, as Vitessce does, under the cells, and it cannot export the exact code behind a view, as iSEE does, which would let a user recreate a figure in R. 
+
+%claim{cmp.others_scale} %claim{cmp.annzarro_scale} %claim{cmp.client_budget} %claim{cmp.server_budget} %claim{fig1.input_rule}
+%claim{cmp.scsva_tahoe}
+\textbf{Scale.} AnnZarro draws each of the 95.6 million cells of Tahoe-100M as a point (\textbf{Fig.~\ref{fig:scale}a,b}). CELLxGENE and Cirrocumulus show datasets of one million or more cells in their documentation and Vitessce millions of points. Since these are demonstrations and do not establish limits, we measured every tool in \textbf{Fig.~\ref{fig:overview}c} except CELLxGENE Explorer, Single Cell Portal and VizIt (\textbf{Supplementary Note~1}) on datasets built from Tahoe-100M (ManiVault Studio and Loupe Browser by hand, in an interactive desktop session), each drawing a UMAP colored by cell line and by one gene (\textbf{Fig.~\ref{fig:overview}c}, Cells strip). The client budget, 16 GiB, covers all browser processes, or the whole process for Scanpy and Seurat; the server budget is a flat 32 GiB for every tool, AnnZarro included. Each tool's input was prepared in its own format, and preparing it was not measured (\textbf{Supplementary Note~1}). AnnZarro was measured on all 95.6 million cells of Tahoe-100M on a laptop (\textbf{Fig.~\ref{fig:scale}}): it browses them through a reproducible subset and its parts, and, with the default subset switched off, draws every cell in one plot at the cost of hover and click (benchmarks in \textbf{Supplementary Note~2}).
+
+%claim{cmp.vitessce_share}
+\textbf{Sharing.} AnnZarro builds on two ideas from other tools. In iSEE\cite{ruealbrecht2018}, selecting a row in one table updates the other panels; in AnnZarro, a click on a cell or gene selects its row of every stored pairwise matrix, and each linked panel redraws with it. Vitessce established declarative, URL-shareable view configurations\cite{keller2025}: a view is saved as a description that reopens it from a link. AnnZarro saves the focused cell and gene in that description too, and users build views by pointing and clicking instead of writing the description by hand.
+
+
+\figscale
+
+\subsection{Limitations}
+
+AnnZarro computes no statistics, clusters, embeddings or correlations. Every quantity it draws from the data must already be stored in the AnnData object, so a gene-module view needs a precomputed varp matrix and a kernel view needs a precomputed obsp matrix.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Plot vocabulary.} AnnZarro draws only scatter plots and tables: heatmaps, violins, dot plots and histology image underlays are not available, so users who need them should use scanpy, Seurat or a spatial viewer such as Vitessce alongside. Two plot types, a cell scatter and a gene scatter (2D or 3D), cover all views. Any stored coordinates serve as axes, for cells (UMAP, diffusion components, or spatial positions in obsm, so spatial transcriptomics data are browsed with the same linking) and for genes (any var or varm columns, including gene embeddings).
+\item
+  \textbf{Selection.} Cells cannot be selected by drawing a lasso or box on a plot. Cells are selected instead by table filters on stored values, in arbitrary AND/OR combinations of conditions on any column; one table can hold obs columns, embedding coordinates, gene values and a focused cell's matrix rows, so any selection fits in one filter. On a large dataset a table filters the cells it has loaded; its conditions on obs columns can also select from every cell, through \ui{Use} in the subset dialog (Step 33). Such a selection is a written rule: it is saved with the panel set and share link, so every user who opens the view gets the same cells, and the rule can be applied to the next sample and reported. A region is then defined by a quantity computed for it, for example each cell's distance to the nearest tumor cell computed in Python, or in the app a focused cell's row of a distance matrix; an expert's annotation of a tissue section enters the same way, as an obs column. On a UMAP or t-SNE, a drawn region would also select cells by positions that distort their similarities\cite{chari2023}.
+% Sources (paper repo, not cited in the text): annzarro v0.4.1 (78c9da6, re-read 2026-10-08) static/js/panels/cell-table.js:41-42 (searchBuilderConfig, searchText), 399-434 (getConfig); table-utilities/table-data.js:499-535 (criteria kept, focus columns pinned); utils/deeplink.js:495-505 (DERIVED_CONFIG_KEYS strips only derived keys); table-utilities/table-ui-make.js:172-188 (obs, obsm, obsp, layer sources); panel-tracker.js:414 (getObspColumnsForCellTable). The filter applies to the rows the table loads (the saved subset and part, which the set and link restore).
+\item
+  \textbf{Storage layout.} A poorly chunked store is slow: latency depends on chunk shape, and a poorly chunked dense layer reads more data per click than needed. AnnZarro is optimized for dense chunked arrays. Sparse matrices are served too, but a gene from a row-compressed (CSR) matrix requires reading all non-zero values, so the Procedure converts X to CSC. Sparse matrices in h5ad files are read the same way, a row or column at a time.
+\item
+  \textbf{Large dense layers.} Each gene click on a dense layer decompresses one chunk column, so chunk shape and float32 storage determine latency. Kompot fold-change and smoothed-expression layers are such dense cells~$\times$~genes arrays.
+\item
+%claim{lim.subset_threshold} %claim{lim.large_threshold} %claim{lim.guard}
+%claim{lim.threshold_reason}
+  \textbf{Very large datasets.} Not every cell of a very large dataset can be explored with hover and click at the same time. Vectors travel as binary float32, sparse rows as their non-zeros and categories as integer codes, but the browser still holds one value per shown cell for each displayed vector. Above 200,000 cells AnnZarro therefore opens on a 100,000-cell subset, and the rest of the cells are reached part by part rather than all at once (Worked example 6). One plot can draw every cell: above 1 million points it switches to large-plot mode, which drops hover, click to focus, table filters, obsp colors and 3D in that plot. Gene plots keep hover and click, and clicking a gene in one still recolors the large plot. The threshold is a server setting; regular plots need far more memory per point, and at its default several of them fit in the browser's memory side by side. A memory guard checks each plot against the browser's memory and against the largest plot tested; it allows one plot of every cell up to 200 million cells and declines it at 250 million; with a subset, every store tested opens, up to 1.5 billion cells (\textbf{Supplementary Notes~1 and 2}). A billion cells cannot be drawn as interactive points within current browser limits: above the guard's limit the tab cannot allocate memory for the points' positions (\textbf{Supplementary Note~2}), so datasets of that size are explored on a subset. % ceilings.csv annzarro/v041 (guard rule: 250M declined as above the 200M tested cap) 
+\item
+  \textbf{Data access.} h5ad files must be local, and remote stores need optional dependencies. Local stores and remote zarr stores (\texttt{s3://}, \texttt{gs://}, \texttt{https://}) are served; remote access needs the optional \texttt{annzarro[remote]} dependencies and is limited to an allowlist on hosted servers.
+\item
+%claim{lim.repro_store} %claim{lim.repro_figure}
+  \textbf{Reproducibility scope.} A saved view (share link, panel set or exported figure) names its store relative to the data directory and records which cells, genes and fields the store had, so it opens on any server that holds the store (Step 38) and warns when the cells, genes or fields differ. Values changed in place, in the same cells and genes, are not detected. Settings left automatic, such as point size, opacity or an unlocked color range, can differ between AnnZarro versions, and AnnZarro says when a view was saved with another version. With the same store and the same AnnZarro version a view gives the same figure: every exported PNG or SVG carries its view, and \passthrough{\lstinline!annzarro export --from figure.png!} draws it again.
+\item
+  \textbf{Read-only data.} By design, AnnZarro separates producing results, in code, from exploring them: users cannot write labels back to the data or run code on the server; besides small caches of its own, the only state AnnZarro writes is view definitions (panel sets). Curation, as in CELLxGENE Annotate or Loupe, therefore happens in Python, and the store is re-exported.
+\item
+  \textbf{Outside services.} The optional gene-set panel depends on services AnnZarro does not control. Its requests leave from the user's browser, never from the server, and only after explicit consent, and carry gene identifiers, the species and the dataset's gene list as background, never cell data; Enrichr and Reactome, which keep what they receive, are off by default.
+\end{itemize}
+
+\subsection{Experimental design}
+
+The exploration available to users is fixed when the store is written: AnnZarro displays what is stored and computes nothing new. Design therefore happens in four decisions made before the app opens.
+
+\subsubsection{What to store}
+
+Every view reads one AnnData slot (\textbf{Fig.~\ref{fig:overview}b}): coordinates and annotations in obsm and obs, expression and Kompot layers in X and layers, per-gene statistics in var and varm, and the two kinds of relationship matrix in obsp (cells~$\times$~cells: kernels, graphs, distances) and varp (genes~$\times$~genes: correlations). Category colors come from \texttt{uns[`\{key\}\_colors']}.
+
+%claim{design.obsp_100k} %claim{design.varp_16k}
+Pairwise matrices are the expensive part. A dense cells~$\times$~cells matrix grows with the square of cell number (100,000 cells in float32 is 40 GB), so store kNN-sparse kernels or restrict dense obsp matrices to metacells or subsets. A genes~$\times$~genes matrix over 16,000 genes is about 1 GB in float32; restricting it to highly variable or differentially expressed genes keeps it small.
+
+\subsubsection{How to store it}
+
+%claim{design.chunk_target}
+Write the store with anndata in zarr format 2, its default. The chunk layout of the dense arrays decides responsiveness (see \textit{Anticipated results}): a gene column of a cells~$\times$~genes layer costs the chunk's width in genes times all cells, and a cell row costs the chunk's height in cells times all genes. Chunks whose aspect ratio follows the matrix's own, at about $5\times10^5$ values, keep both fast; anndata 0.12 with zarr 3 already chooses such chunks, and Step 10 rewrites stores that use whole-gene chunks. Pairwise matrices are only read by row, so obsp and varp are chunked in whole rows. Sparse matrices are the secondary case: store them CSC if genes are queried, since CSR forces a read of all non-zero values per gene. For a single machine an h5ad file also opens directly; it is read like a zarr store, but it cannot be opened remotely or rechunked.
+
+\subsubsection{Where to run it}
+
+The same software runs in three arrangements (\textbf{Fig.~\ref{fig:deploy}}). The desktop app bundles its server for a single user with data on the laptop. A personal server (\texttt{annzarro start}) runs where large stores already live, and the browser connects through an SSH tunnel. A lab server hosts datasets for many users behind login and a TLS proxy; it never writes to datasets or runs user code, and panel sets saved by one user are available to all. In every arrangement the browser holds only the vectors on screen and the server holds only the chunks it is reading.
+
+%claim{design.collab_refresh}
+On a lab server, the computational researcher can work on the same stores there, for example in Jupyter. After they write new results with anndata's write\_elem, the refresh button next to the dataset menu shows them, and collaborators see them when they refresh their view (Step 44).
+
+\begin{figure}[t]
+\centering
+\input{figures/fig_deploy.tex}
+\caption{\textbf{Three ways to run AnnZarro.} Dashed boxes are machines. Blue boxes are the AnnZarro server; arrows show what moves per click: compressed chunks from storage to the server, and one decoded vector from the server to each browser.}
+\label{fig:deploy}
+\end{figure}
+
+\subsubsection{Which views to link}
+
+Plan panels in pairs that answer one question from both sides: an embedding colored by the focused gene beside a gene scatter colored by the focused cell; or an embedding colored by an obsp row beside a table that masks to a cell state. Lock one focus to keep a reference while moving the other.
+
+\subsubsection{Expertise needed}
+
+Data preparation (Steps 3--10) needs basic Python and familiarity with AnnData. The worked examples (Steps 14--36) and saving and sharing (Steps 37--41) need no programming. Hosting for a lab (Steps 42--44) needs experience administering a Linux server behind a reverse proxy.
+
+\section{Materials}
+
+\subsection{Equipment}
+
+\begin{itemize}
+\tightlist
+\item
+%claim{equip.client_threshold} %claim{equip.laptop} %claim{equip.tab_subset} %claim{equip.tab_all} %claim{equip.gpu} %claim{equip.units}
+  \textbf{Client.} Any computer with a current Chromium-based browser or Firefox with WebGL enabled. The browser receives only the vectors on screen and, by default, above 200,000 cells only those of a 100,000-cell subset; a larger subset or every cell can be chosen (Worked example 6). The measurements here used a laptop with 128 GiB RAM (Apple M3 Max); with the default subset the tab's renderer process used 0.5 GiB at every dataset size up to 95.6 million cells, and with every cell of Tahoe-100M in one plot 8.7 GiB (the default subset switched off, Step 36); the browser's GPU process added 0.2 GiB and 1.9 GiB. Memory in this protocol is binary (1 GiB = $2^{30}$ bytes, 1 MiB = $2^{20}$ bytes), as are installed RAM and memory budgets; data sizes and transfers are decimal (1 GB = $10^9$ bytes, 1 MB = $10^6$ bytes), and quoted app messages keep their own units. Process memory is resident memory (RSS), except in the tool comparison (\textbf{Supplementary Note~1}), which reports physical footprint, a different measure. % No smaller-RAM machine was tested, so no minimum RAM is claimed. Source: browser_v041_events.csv (v0.4.1).
+\item
+%claim{equip.server_subset} %claim{equip.server_all} %claim{equip.server_burst} %claim{equip.server_python}
+  \textbf{Server (optional).} A Linux workstation or HPC node with read access to the zarr stores, Python 3.9 or later and an open port reachable from the client, directly or via an SSH tunnel. Memory scales with the largest chunk read, not the dataset size. Serving the default subset of Tahoe-100M (95.6 million cells) the server process used at most 1.7 GiB in the browser session and 2.6 GiB under eight concurrent subset requests; with the subset switched off, drawing and recoloring every cell in one plot took up to 7.0 GiB.
+\item
+  \textbf{Desktop alternative.} The standalone app for macOS, Windows or Linux bundles the server and runs entirely on one machine with no separate installation.
+\end{itemize}
+
+\subsection{Software}
+
+\noindent\textbf{Table 1 | Software used in the Procedure.} Minimum versions, the versions tested and where to obtain each package.
+
+{\def\LTcaptype{none} % title above the table (Table N | Title)
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Package
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Version
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Role
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Source
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+%claim{sw.annzarro_version}
+AnnZarro & 0.4.1 (tag v0.4.1, commit 78c9da6) & Server, web client, CLI & PyPI (pip install annzarro), GitHub, standalone apps on GitHub releases \\
+anndata & 0.10 or later (tested 0.12.19) & Writing the zarr store & PyPI \\ %claim{sw.anndata}
+zarr-python & 2.13 or later (tested 3.1.6) & Storage & PyPI \\ %claim{sw.zarr}
+scanpy & 1.10 or later (tested 1.11.5) & Preprocessing, embeddings, neighbor graphs (optional) & PyPI \\ %claim{sw.scanpy}
+kompot & 0.8 or later (tested 0.8.0) & Differential abundance and expression (optional, for the case study) & PyPI, bioconda \\ %claim{sw.kompot}
+Palantir & 1.4 or later (tested 1.4.5) & Diffusion maps, pseudotime, fate probabilities (optional) & PyPI \\ %claim{sw.palantir}
+Mellon & installed with kompot (tested 1.7.1) & Cell-state densities (optional) & PyPI \\ %claim{sw.mellon}
+\end{longtable}
+}
+
+%claim{sw.python}
+AnnZarro's runtime dependencies (Flask, Flask-CORS, Werkzeug, zarr, numpy, scipy, h5py, psutil, PyYAML) install automatically. The Procedure was tested with Python 3.11 and the versions given.
+% Sources (paper repo, not cited in the text): notes/sources/procedure_env.txt
+
+\subsection{Example data}
+
+%claim{data.zenodo_size}
+Demonstrations use the processed dataset of the Kompot tutorial: CITE-seq of murine bone marrow across aging (Young, Mid, Old), deposited as \href{https://doi.org/10.5281/zenodo.15587768}{murine\_bone\_marrow\_aging.h5ad on Zenodo} (2.4 GB, CC-BY 4.0). The Kompot getting-started notebook turns it into bm\_aging\_processed.h5ad (Step 4), which carries differential abundance in obs, gene statistics in var, and fold-change and smoothed-expression layers. Steps 3--10 convert this file to an AnnZarro-ready zarr store and add a gene-gene Spearman correlation in varp and a diffusion kernel in obsp.
+
+\section{Procedure}
+
+\subsection{Installation (Steps 1--2)}\timing{5--10 min}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Install AnnZarro on the machine that will read the data. Follow option A to install the Python package, which also runs data preparation (Steps 3--10), or option B to install the desktop app, which views prepared stores without a Python installation.
+  \begin{enumerate}[label=(\Alph*),leftmargin=*]
+  \item \textit{Python package}
+    \begin{enumerate}[label=(\roman*)]
+    \item Create a fresh environment and install AnnZarro with the packages used for data preparation:
+\begin{lstlisting}[language=bash]
+python -m venv annzarro-env && source annzarro-env/bin/activate
+pip install annzarro anndata kompot palantir
+\end{lstlisting}
+    \end{enumerate}
+  \item \textit{Desktop app}
+    \begin{enumerate}[label=(\roman*)]
+    \item Download the app for macOS, Windows or Linux from the AnnZarro GitHub release page and install it as usual for the operating system. It bundles the server. Data preparation (Steps 3--10) still needs the Python packages of option A, on this or another machine.
+    \end{enumerate}
+  \end{enumerate}
+\item
+  Check the installation. For option A, run \passthrough{\lstinline!annzarro --help!}; the subcommands start, stop, user, install, config, desktop and export should be listed. For option B, open the app; the data directory is chosen in it at Step 11.
+\end{enumerate}
+
+\input{sections/procedure_prep.tex}
+
+\subsection{Worked example 3: from a gene to the cells where it changes (Steps 22--24)}\timing{5 min}
+
+\noindent\textbf{Tutorial:} \url{https://annzarro.readthedocs.io/en/latest/tutorials/cells-and-genes.html}
+
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  Add a \ui{Cell Plot} on \texttt{X\_umap}. Set \ui{Color} to \ui{layer} $\rightarrow$ the Kompot fold-change layer, column \ui{Focused gene}. Enable \ui{Center at 0} and a diverging color scale.
+\troubleshoot{}
+\item
+  Add two more \ui{Cell Plot} panels colored by the smoothed expression layers of Young and Old, and lock their color ranges to a shared range.
+\troubleshoot{}
+\item
+  Click genes in the volcano of Worked example 2. All three embeddings follow, showing where in state space each gene changes and in which direction.
+\end{enumerate}
+
+\subsection{Worked example 4: compare two cell states gene by gene (Steps 25--27)}\timing{5 min}
+
+\noindent\textbf{Tutorial:} \url{https://annzarro.readthedocs.io/en/latest/tutorials/cells-and-genes.html}
+
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{24}
+\tightlist
+\item
+  Create a \ui{Gene Plot}. Set \ui{X} to \ui{layer} $\rightarrow$ the fold-change layer, row \ui{Focused cell}, and press the lock button: \ui{X} stays on the current cell (for example a stem cell).
+\troubleshoot{}
+\item
+  Set \ui{Y} to the same layer, row \ui{Focused cell}, unlocked. Set \ui{Color} to \ui{varp} $\rightarrow$ \texttt{spearman\_fold\_change}, row \ui{Focused gene}.
+\item
+  Click a cell of another type in any embedding. Genes on the diagonal change alike in both states; genes off it change differently, and genes in the upper-left or lower-right quadrants change in opposite directions.
+\end{enumerate}
+
+\subsection{Worked example 5: define subsets with tables and mask plots (Steps 28--31)}\timing{5 min}
+
+\noindent\textbf{Tutorial:} \url{https://annzarro.readthedocs.io/en/latest/tutorials/tour.html}
+
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{27}
+\tightlist
+\item
+  Create a \ui{Cell Table}. In the column picker, tick the cell type column and the Kompot differential abundance z-score in obs, then click \ui{Apply Changes}.
+\item
+  Filter with the search box (for a regular expression, press the \ui{.*} button under it and type, for example, \texttt{Mid|Old}), or with \ui{Advanced Search}, which combines conditions with AND and OR, for example cell type equals HSC AND abundance z-score above 2, the filter of \textbf{Fig.~\ref{fig:app}c}.
+\item
+  In any plot's options, set \ui{Table} to this table. Cells outside the filter turn gray; the eye toggle hides them instead. Masking happens in the browser, with no new data requests.
+\item
+  Export the filtered rows as CSV. Click a cell ID in the table to focus that cell.
+\end{enumerate}
+
+\subsection{Worked example 6: datasets of millions of cells (Steps 32--36)}\timing{5 min}
+
+\noindent\textbf{Tutorial:} \url{https://annzarro.readthedocs.io/en/latest/tutorials/millions.html}
+
+
+%claim{optF.threshold} %claim{optF.tahoe_n}
+Steps 32--36 apply to any dataset of more than 200,000 cells. The times quoted are for Tahoe-100M (95,624,334 cells\cite{zhang2025tahoe}) on a laptop (\textbf{Fig.~\ref{fig:scale}}). Worked examples 1--5 work unchanged on a subset.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{31}
+\tightlist
+\item
+%claim{optF.subset_size}
+  Open the dataset. It opens on a subset of 100,000 cells with seed 0, and the statistics bar shows the badge \ui{Subset $\cdot$ seed 0}. Every panel and table shows the same cells. The selection is fixed by the seed and each cell's row, so the same seed gives the same cells on every machine, and a larger subset with the same seed contains the smaller one.
+\item
+  (Optional) Click the badge to change the subset: the number of cells, the seed, \ui{Balanced across} an obs column (for example the cell line, which gives small groups an equal share) and \ui{Filter}: conditions on obs columns joined by AND (\ui{Add condition}), or a cell table's filter (\ui{Use}), which brings its AND/OR groups and text conditions such as contains or starts with. The preview line states how many cells pass and how many are taken per group. Click \ui{Apply}; every panel reloads.
+%claim{optF.balance}
+  On Tahoe-100M, opening the dialog, choosing \ui{Balanced across} the cell line and applying it takes 3.3 s.
+\item
+%claim{optF.n_parts}
+  Step through the rest of the cells with the part buttons next to the badge, or type a part number and press Enter. The parts are disjoint and together hold every cell that passes the conditions once; Tahoe-100M in parts of 100,000 has 957. Layout, colors, zoom and locks stay as they are.
+%claim{optF.part_step}
+  Each step takes 2.8 s on Tahoe-100M. A line under each plot counts the cells it shows and says why the others are not drawn, for example that they are not in this part or are hidden by a table filter (cells a filter only grays out still count as shown).
+\item
+  To focus a cell outside the current part, type its name into the \ui{Focused Cell} picker; cells outside the subset follow the subset's cells, tagged not shown. A focused or locked cell stays focused when users step to another part: its rows of obsp matrices and layers are still read and painted over the part's cells, and the header marks it as not in this part. Share links and panel sets record the part and the focus, and reopen both.
+\troubleshoot{}
+\item
+%claim{optF.large_threshold} %claim{optF.every_cell_size5} %claim{optF.every_cell_size1}
+% v0.4.1 (tag 78c9da6): automatic size and opacity = all_v041 (app defaults), point size 1 / opacity 0.2 = conf95_v041 (browser_v041_events.csv).
+  (Optional) To draw every cell, switch off \ui{Show a subset of the cells} in the badge dialog. Above 1 million points a Cell Plot switches to large-plot mode, and the status line under the plot reads \ui{Large plot: no hover/click}. Hover, click to focus, the focused-cell marker, table filters, obsp axes and colors and 3D are off; pan, zoom, point size, opacity and color by an obs column or a gene remain. Until set by hand, point size and opacity follow the number of points in view, so zooming in enlarges the points. On Tahoe-100M every cell is drawn in 5--7 s at the automatic size and opacity, and in 5--6 s at point size 1 and opacity 0.2, which shows density instead of a solid shape (\textbf{Fig.~\ref{fig:scale}a,b}). Switch the subset back on to recover hover and focus.
+\troubleshoot{}
+\end{enumerate}
+
+\subsection{Saving, sharing and exporting (Steps 37--41)}\timing{5 min}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{36}
+\tightlist
+\item
+  Click \ui{Save Panel Set} and name it. The set is stored on the server and appears under \ui{Load Panel Set} for every user of this instance.
+\troubleshoot{}
+\item
+%claim{step.move_set}
+  To move a set to another server, click its download icon in the \ui{Load Panel Set} dialog to save it as JSON, and add it there with \ui{Upload file}. It opens on any server whose data directory holds the same store; the badge on its card says whether that store was found.
+\item
+  Click \ui{Share Link} in the header to copy a link that holds the dataset, the layout with every panel's settings, the cell subset and the focused cell and gene. The view is stored in the link's fragment, which the browser never sends to the server, so the server sets no limit on its length.
+\item
+  For figures, open \ui{Plot Options} in a panel, set fonts, axes and size, and export SVG, PNG, JPEG or WebP.
+\item
+  Record the panel set name, the dataset version and the AnnZarro version in the figure legend or methods. Exported PNG and SVG files also carry the view they show, the store's identity and the AnnZarro version.
+\end{enumerate}
+
+\subsection{(Optional) Hosting for a lab (Steps 42--44)}\timing{30 min}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{41}
+\tightlist
+\item
+  On a shared server, create accounts with \passthrough{\lstinline!annzarro user add --username NAME!}; add \passthrough{\lstinline!--admin!} for the person who manages the server (\passthrough{\lstinline!annzarro user set-admin!} changes an existing account).
+\item
+  Start the server with \passthrough{\lstinline!annzarro start --data-dir /shared/datasets --host 0.0.0.0 --port 8000 --detach!}; login is enforced for non-local hosts. Run it behind the institution's reverse proxy with TLS.
+\troubleshoot{}
+\item
+  %claim{hosting.refresh_hosted}
+%claim{hosting.arbitrary_paths}
+  Give the server account read-only access to the data directory. AnnZarro never writes to datasets and runs no user code; it writes only panel sets and small caches of its own, outside the data directory. Admins can also open datasets elsewhere on the server; to keep everyone inside the data directory, set \passthrough{\lstinline!server.arbitrary_paths: local-only!} in the configuration. When a dataset changes on disk, users see the new values with the refresh button next to the dataset menu (Ctrl+R); the browser's reload can keep showing old values.
+\end{enumerate}
+
+\section{Troubleshooting}
+
+\noindent\textbf{Table 2 | Troubleshooting.} The step where each problem is first observed, its possible reason and the solution.
+
+{\def\LTcaptype{none} % title above the table (Table N | Title)
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Step
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Problem
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Possible reason
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Solution
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+5 & Fold-change or smoothed layers missing & \texttt{kompot.cleanup()} was run before saving & Re-run Step 4 without the cleanup call, then repeat Step 5 \\
+5 & \texttt{TypeError: string indices must be integers} & Run record stored as a JSON string & Decode with \texttt{json.loads}, as in Step 5 \\
+10 & \texttt{Cannot overwrite/edit a store with consolidated metadata} & \texttt{write\_zarr} consolidated the store & Open with \texttt{use\_consolidated=False} and re-consolidate afterwards \\
+12 & Store unreadable after Step 10 & Metadata not re-consolidated & Run \texttt{zarr.consolidate\_metadata} on the store (Step 10) \\
+12 & Dataset does not open; the error says the store is zarr format 3 & The server's zarr-python is 2.x, which reads only format 2 stores & Install zarr $\geq$ 3 on the server, or rewrite with \passthrough{\lstinline!ad.settings.zarr\_write\_format = 2!} \\
+12 & Dataset missing from the menu & Store outside the data directory, or not a .zarr or .h5ad path & Move the store under -{}-data-dir and reload \\
+18 & Gene plot shows no options & Default source is varm and the dataset has none & Switch the axis source to var \\
+20 & Volcano all gray & Focused gene not in the varp matrix & Click a gene that is in the matrix, or pick one from the Focused Gene selector \\
+22 & Each gene click takes seconds & X stored CSR, or dense layer chunked wide in genes & Repeat Step 8 or Step 10 \\
+23 & Color range looks wrong after loading a view & Range restored from another focus & Toggle Lock Range or reset min and max \\
+%claim{ts.cell_row_slow}
+25 & First click on a new cell in a cell-row plot takes many seconds (7.8 s at 1 million cells on HPC) & Layer chunked as whole gene columns (all cells by a few genes), so one cell row decompresses the entire layer & Rechunk as in Step 10; repeat clicks are faster but still decompress the layer \\
+%claim{ts.name_index}
+35 & The first search for a cell by name on tens of millions of cells takes a while, and the picker reads \ui{Building the name index (first search of this dataset)\ldots} & The server builds its index of cell names on the first search (5.8--6.4 s at 50 million cells; 0.8 s once a local server has built it in the background) & Wait; the results appear when the index is ready, and this happens once per server process \\
+%claim{ts.large_threshold}
+36 & Hover and clicks do nothing in a Cell Plot; the status line under it reads \ui{Large plot: no hover/click} & More than 1 million points are drawn, for example with the subset switched off & Switch the subset back on in the dialog that the subset badge opens (Steps 33 and 36) and step through parts (Step 34) \\
+37 & Loading a saved panel set on a large dataset is slow, or the machine stalls & The set reopens every panel that was open when it was saved & Load the set with the icon that only adds its panels to the closed list, and open the ones you need; panels can also be closed while they load \\
+43 & Remote users see no login & Server bound to localhost or started with -{}-auth-disabled & Start with -{}-host 0.0.0.0 and without -{}-auth-disabled \\
+\end{longtable}
+}
+
+\section{Timing}
+
+Data preparation was timed; the other times are the authors' estimates for a first run.
+
+\begin{itemize}
+\tightlist
+\item
+%claim{timing.install}
+  Steps 1--2, installation: 5--10 min
+\item
+%claim{timing.prep} %claim{timing.prep_parts}
+  Steps 3--10, data preparation: about 10 min on a 16-core workstation with 32 GiB RAM (download 5.5 min, Kompot 1 min, store preparation 1 min)
+\item
+%claim{timing.start}
+  Steps 11--13, starting AnnZarro: 2 min
+\item
+%claim{timing.options}
+  Steps 14--31, Worked examples 1--5: about 5 min each to set up; exploration itself is open-ended
+\item
+%claim{timing.optF}
+  Steps 32--36, Worked example 6, datasets of millions of cells: 5 min
+\item
+%claim{timing.save}
+  Steps 37--41, saving and export: 5 min
+\item
+%claim{timing.hosting}
+  Steps 42--44, lab hosting: 30 min
+\end{itemize}
+
+\section{Anticipated results}
+
+What a user sees first: running Worked examples 1--5 on the bone marrow data reproduces the views in \textbf{Figs.~\ref{fig:cellcell}--\ref{fig:cellgene}}:
+
+\begin{itemize}[nosep]
+%claim{ar.bm.walk_mass} %claim{ar.bm.n_eff}
+\item \textbf{Diffusion walk (Worked example 1, \textbf{Fig.~\ref{fig:cellcell}a}).} A stem cell's five-step walk stays within its cell type (91\% of its mass); moving the focus to a lymphoid-primed or granulocyte-monocyte progenitor spreads it across 517--559 effective cells and over two or more cell types, and at the monocyte it contracts again.
+\item \textbf{Neighbors on the manifold (\textbf{Fig.~\ref{fig:cellcell}b,c}).} Coloring by a plasma cell's diffusion row shows most of its walk on naive and memory B cells that look distant on the UMAP, and almost none on the nearby-looking pDC, NK, basophil and T cells; for the stem cell, UMAP and diffusion distances agree. The tutorial linked in \textbf{Fig.~\ref{fig:cellcell}} reproduces both panels in the app.
+%claim{ar.bm.partners_not_de}
+\item \textbf{Co-regulated genes in the volcano (Worked example 2, \textbf{Fig.~\ref{fig:genegene}}).} Focusing \textit{H2-Q7} highlights the MHC class I antigen-presentation response (\textit{H2-Q6}, \textit{Tapbpl}, \textit{H2-D1}, \textit{B2m}); clicking \textit{H2-Aa} switches the highlight to class II genes. Most of these partners are not themselves called differentially expressed. For comparison, \textbf{Fig.~\ref{fig:genegene}c} groups the same correlations into modules by hierarchical clustering. The modules give a coarse overview, with no number of modules standing out, and the focused rows add the detail within them: \textit{H2-Q7}'s module holds both class I and class II genes, which its row separates, and \textit{S100a9}'s strongest partners sit in another module. Switching the color to the correlation of smoothed expression (Step 21) asks a different question: many genes share \textit{H2-Q7}'s expression pattern across cell states, but few share its change with age (\textbf{Fig.~\ref{fig:genegene}d}).
+\item \textbf{Gene-to-cell maps (Worked example 3, \textbf{Fig.~\ref{fig:cellgene}a--c}).} \textit{S100a9}, unchanged on average, is lost with age in stem cells only.
+%claim{ar.bm.state_lfc} %claim{ar.bm.same_dir}
+\item \textbf{State comparison (Worked example 4, \textbf{Fig.~\ref{fig:cellgene}d}).} A locked stem cell has much larger age effects than a monocyte (median $|\log_2 \mathrm{FC}|$ over differentially expressed genes 0.41 against 0.068); the two agree in direction for 129 of 190 differentially expressed genes.
+\item \textbf{Masking (Worked example 5).} A table filter on cell type and abundance z-score grays out all other cells in every linked plot without new requests.
+\end{itemize}
+
+A saved panel set reproduces the same five views for any other user of the instance, and SVG export provides figure-ready versions.
+
+\textbf{Good and problematic results.} Each click transfers one vector, never a matrix (\textbf{Fig.~\ref{fig:performance}}), so the cost of an interaction grows with the number of cells or genes and not with the size of the stored matrix. Three signs tell a good result from a problematic one.
+\begin{itemize}[nosep]
+%claim{ar.deploy.demo_row}
+\item \textbf{Good: a click redraws at once.} In a store written as in Step 10, focused rows and columns arrive in well under a second; on the demonstration store a cell row of the fold-change layer is read from the store in 10 ms.
+%claim{ar.deploy.bench_layout}
+\item \textbf{Problematic: a click on a cell takes seconds.} The layer is then chunked as whole gene columns, so one cell row decompresses the entire layer. In the HPC benchmark, a cells~$\times$~genes layer of Tahoe-100M (1 million cells, 5,000 genes) in chunks of all cells by 64 genes took 8.7 s cold for one cell row, against 0.38 s in the Step 10 shape for this layer, $8192\times64$ (\textbf{Fig.~\ref{fig:performance}d}). The status line under the plot shows the wait; rechunk as in Step 10 (Troubleshooting, Step 25).
+\item \textbf{Problematic: every point is gray in a plot colored by a matrix row.} The focused cell or gene is not in that matrix, for example a gene outside the correlated gene set; focus one that is (Troubleshooting, Step 20).
+\end{itemize}
+
+\figperformance
+
+%claim{ar.tahoe.n} %claim{ar.tahoe.laptop} %claim{ar.tahoe.panel} %claim{ar.tahoe.reference} %claim{ar.tahoe.knn} %claim{ar.tahoe.recall} %claim{ar.tahoe.part} %claim{ar.tahoe.first_plot} %claim{ar.tahoe.recolour} %claim{ar.tahoe.part_step} %claim{ar.tahoe.balance} %claim{ar.tahoe.reps} %claim{ar.tahoe.first_plot_1M} %claim{ar.tahoe.memory_subset}
+\textbf{Large datasets.} Datasets of tens of millions of cells stay interactive through the subset (\textbf{Fig.~\ref{fig:scale}}). We used all 95,624,334 cells of Tahoe-100M\cite{zhang2025tahoe} on a laptop (Apple M3 Max, 128 GiB RAM, headless Chromium 153), stored with raw counts of a 200-gene panel in X and a UMAP\cite{mcinnes2018umap} fitted on 999,073 reference cells sampled evenly across plates and cell lines. Every other cell was placed at the distance-weighted mean of its 15 nearest reference cells in principal-component space, found with faiss\cite{johnson2021faiss} (recall 0.997 against exact search). On the default 100,000-cell part of all 95.6 million cells, the first plot appeared 4.0 s after the page was opened (3.8 s colored by cell line). Recoloring by another gene then took 0.46 s, stepping to the next of 957 parts 2.8 s, and switching to a subset balanced across the 50 cell lines 3.3 s, including the dialog (\textbf{Fig.~\ref{fig:scale}e}; medians over 3 cold runs). These times grow with the number of cells in the dataset, not with the number shown: the first plot took 0.9 s at one million cells. The tab's renderer process used 0.5 GiB at every dataset size and the server process at most 1.7 GiB.
+% Sources (paper repo, not cited in the text): benchmark/scale/umap_tahoe.py
+% Source: benchmark/scale/results/browser_v041_events.csv, tag sub_v041 (v0.4.1, tag 78c9da6).
+
+%claim{ar.tahoe.every_cell_size1} %claim{ar.tahoe.every_cell_size5} %claim{ar.tahoe.every_cell_reps} %claim{ar.tahoe.every_cell_memory} %claim{ar.tahoe.malat1_zoom_median}
+%claim{ar.local_app}
+Every cell can also be drawn at once (\textbf{Fig.~\ref{fig:scale}a--c}). In large-plot mode the 95.6 million cells were drawn in 5--6 s at point size 1 and opacity 0.2, colored by cell line or by a gene (3 cold runs each), and zooming in resolves single cells. At the automatic size and opacity the first plot took 6.1--7.1 s colored by a gene and 5.2--5.3 s by cell line (ranges of 3 cold runs); the tab's renderer process used up to 8.7 GiB and the server, recoloring included, 7.0 GiB (resident memory). On one machine, as in the desktop app, client and server add up: in the tool comparison, which reports physical footprint, drawing every cell with the server on the same laptop took 11.3 GiB of client and 4.6 GiB of server memory, 15.9 GiB together, close to what a 16 GiB laptop offers (\textbf{Supplementary Note~1}). Each cell line forms its own island. Colored by \textit{MALAT1}, each island looks uniformly high while the whole dataset is in view, because where cells overlap, large-plot mode draws the highest values on top; zoomed in, each cell shows its own count (median 83 in the region of \textbf{Fig.~\ref{fig:scale}c}).
+
+Benchmarks of the server on HPC nodes, the cost of the regular plot, the memory guard's limits and the largest stores tested are in \textbf{Supplementary Note~2}.
+
+\section{Data availability}
+
+%claim{data.zenodo_record}
+The murine bone marrow aging CITE-seq data are available on Zenodo (\href{https://doi.org/10.5281/zenodo.15587768}{doi:10.5281/zenodo.15587768}; Fred Hutchinson Cancer Center, published 3 June 2025; CC BY 4.0). Tahoe-100M is available from Hugging Face (tahoebio/Tahoe-100M, CC0 1.0)\cite{zhang2025tahoe}. The \textit{C. elegans} store of \textbf{Fig.~\ref{fig:cellcell}d} is not deposited; the script \azfile{docs/_tools/datasets/celegans_connectome.py}{docs/\allowbreak\_tools/\allowbreak datasets/\allowbreak celegans\_connectome.py} in the AnnZarro repository (v0.4.1) builds it from public downloads, checked by sha256 (\url{https://annzarro.readthedocs.io/en/latest/paper/cell-by-cell.html\#cell-by-cell-connectome}): the wiring diagram of Varshney et al.\cite{varshney2011} (WormAtlas NeuronConnect.xls; article CC BY), CeNGEN neuron-type expression\cite{taylor2021} (cengenDataSC, GPL-3.0) and neurotransmitter identities from Wang et al.\cite{wang2024nt} (CC BY 4.0). The processed AnnZarro-ready store, bm\_aging\_annzarro.zarr (derived from \href{https://doi.org/10.5281/zenodo.15587768}{doi:10.5281/zenodo.15587768}, CC BY 4.0), and the Tahoe-100M UMAP of every cell with its list of reference cells are deposited on Zenodo (\href{https://doi.org/10.5281/zenodo.23277103}{doi:10.5281/zenodo.23277103})\cite{otto2026annzarrodata}. The Visium store of \textbf{Fig.~\ref{fig:app}d} is built from the 10x Genomics dataset by \azfile{docs/_tools/make_spatial_demo.py}{docs/\allowbreak\_tools/\allowbreak make\_spatial\_demo.py} in the AnnZarro repository (v0.4.1). The measurements behind \textbf{Figs.~\ref{fig:overview}c, \ref{fig:scale} and \ref{fig:performance}}, the benchmark code and an evidence site that links every number in this paper to its source are in the repository \url{https://github.com/settylab/annzarro-reproducibility}, which will be made public with this preprint.
+
+\section{Code availability}
+
+%claim{code.annzarro_version}
+AnnZarro is released under the MIT license at \url{https://github.com/settylab/annzarro}, on PyPI as annzarro, and as standalone desktop applications on GitHub releases; this protocol describes version 0.4.1 (tag v0.4.1, commit 78c9da6; Zenodo \href{https://doi.org/10.5281/zenodo.23222217}{doi:10.5281/zenodo.23222217}). The script for data preparation (Steps 3--10, \azfile{docs/_tools/datasets/bm_aging.py}{docs/\allowbreak\_tools/\allowbreak datasets/\allowbreak bm\_aging.py}) and the panel sets for the worked examples (\azdir{docs/_static/panelsets/protocol}{docs/\allowbreak\_static/\allowbreak panelsets/\allowbreak protocol}) are in the AnnZarro repository. The benchmark code and the scripts behind the figures are in \url{https://github.com/settylab/annzarro-reproducibility} (see Data availability). Documentation is at \url{https://annzarro.readthedocs.io}. Every figure of this paper can be reproduced from it: a page per figure (\url{https://annzarro.readthedocs.io/en/latest/paper/}) links to the share links and panel sets that reopen each view, and its tutorials rebuild \textbf{Figs.~\ref{fig:app} and \ref{fig:cellcell}--\ref{fig:cellgene}} step by step in the app.
+% Sources (paper repo, not cited in the text): github.com/settylab/annzarro-reproducibility
+

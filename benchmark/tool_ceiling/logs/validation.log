@@ -1,0 +1,5 @@
+== scanpy default 7100000 rc=0 oom=false
+== scanpy default 8400000 rc=0 oom=false
+== scanpy default 10000000 rc=137 oom=true
+== seurat default 2000000 rc=0 oom=false
+== seurat default 5000000 rc=137 oom=true

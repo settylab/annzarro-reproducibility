@@ -1,0 +1,37 @@
+{
+ "tool": "scope",
+ "variant": "default",
+ "n_obs": 1000000,
+ "checks": {
+  "cat": {
+   "status": "ok",
+   "n_drawn": 1000000,
+   "idx": 1000000,
+   "seconds": 12.7,
+   "all_cells": true
+  },
+  "gene": {
+   "status": "ok",
+   "n_drawn": 1000000,
+   "idx": 1000000,
+   "seconds": 10.9,
+   "all_cells": true
+  }
+ },
+ "image": "scope:1.8.2-9ae5207-final",
+ "image_id": "sha256:dd89d344b6c3954d153e374ab0300f214da47b84500e6c870d89f0a82b61a04f",
+ "versions": {
+  "scope": "1.8.2 (9ae5207)",
+  "image": "sha256:dd89d344b6c3",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ok": true,
+ "server_ready_s": 24.4,
+ "load_s": 2.7,
+ "page_errors": [
+  "Cannot read properties of null (reading 'active')",
+  "Cannot read properties of null (reading 'active')"
+ ],
+ "server_container_peak_gib": 0.974,
+ "server_log_tail": "og-transforming gene expression...\n2026-10-08 06:39:08,572 - scopeserver.dataserver.utils.loom_file_handler - DEBUG - Should be preloaded\n2026-10-08 06:39:08,572 - scopeserver.dataserver.utils.loom_file_handler - DEBUG - Current mode: r, wanted mode r\n2026-10-08 06:39:08,572 - scopeserver.dataserver.utils.loom_file_handler - DEBUG - Returning pre-loaded loom file tahoe_first1000000.loom. Object 140737355845200\n2026-10-08 06:39:08,583 - scopeserver.dataserver.utils.loom_file_handler - DEBUG - Should be preloaded\n2026-10-08 06:39:08,583 - scopeserver.dataserver.utils.loom_file_handler - DEBUG - Current mode: r, wanted mode r\n2026-10-08 06:39:08,583 - scopeserver.dataserver.utils.loom_file_handler - DEBUG - Returning pre-loaded loom file tahoe_first1000000.loom. Object 140737355845200\n2026-10-08 06:39:08,585 - scopeserver.dataserver.utils.loom - DEBUG - Debug: getting expression of MALAT1 ...\n2026-10-08 06:39:08,936 - scopeserver.dataserver.utils.loom - DEBUG - Debug: log-transforming gene expression...\n2026-10-08 06:39:09,057 - scopeserver.dataserver.modules.gserver.GServer - DEBUG - 0.48516 seconds elapsed getting colours ---\n2026-10-08 06:39:10,850 - scopeserver.dataserver.utils.cell_color_by_features - DEBUG - Compressing colour data... \n2026-10-08 06:39:10,894 - scopeserver.dataserver.utils.cell_color_by_features - DEBUG - Saving 81.10% of space\n2026-10-08 06:39:10,894 - scopeserver.dataserver.utils.cell_color_by_features - DEBUG - 1.83620 seconds elapsed (compression) ---\n"
+}

@@ -1,0 +1,68 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_150000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub_run_150000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 8.0,
+ "peaks": {
+  "client": {
+   "fp_peak": 1582293512,
+   "fp_lifetime_sum": 1715185168,
+   "rss_peak": 1382957056,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 2495531672,
+   "fp_lifetime_sum": 2553465976,
+   "rss_peak": 2517270528,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 130402016,
+   "fp_lifetime_sum": 130402016,
+   "rss_peak": 165380096,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 4041272432,
+   "rss_peak": 3860365312,
+   "fp_lifetime_sum": 4268651144
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.43,
+   955572912
+  ],
+  [
+   4.9,
+   1381311512
+  ],
+  [
+   7.47,
+   3723340792
+  ]
+ ],
+ "ps_before": "2026-10-06T00:10:49-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n59322  97824  83.7 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n41902 313600  72.3 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n57113 2938304  32.4 $HOME/.local/bin/claude\n47413 543136  31.1 /Applications/cmux.app/Contents/MacOS/cmux\n42005  21136   8.4 benchmark/tool_ceiling/.venv/bin/python\n  626 385824   7.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n49293 804672   7.7 $HOME/.local/bin/claude\n  855 1474000   6.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  629 205040   4.7 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n97961 769984   4.0 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n",
+ "others_at_start": []
+}

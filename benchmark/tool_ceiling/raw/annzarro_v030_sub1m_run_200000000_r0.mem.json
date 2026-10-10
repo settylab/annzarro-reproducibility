@@ -1,0 +1,104 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_200000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_sub1m_run_200000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 28.1,
+ "peaks": {
+  "client": {
+   "fp_peak": 3503253800,
+   "fp_lifetime_sum": 3586207000,
+   "rss_peak": 3105947648,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 6236542808,
+   "fp_lifetime_sum": 6279420264,
+   "rss_peak": 6268911616,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 126579240,
+   "fp_lifetime_sum": 126923328,
+   "rss_peak": 165134336,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6755973544,
+   "rss_peak": 7517929472,
+   "fp_lifetime_sum": 9865627264
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.32,
+   957457432
+  ],
+  [
+   4.58,
+   1028613816
+  ],
+  [
+   6.83,
+   1108731864
+  ],
+  [
+   9.07,
+   1803086384
+  ],
+  [
+   11.3,
+   2450730000
+  ],
+  [
+   13.5,
+   3257396960
+  ],
+  [
+   15.71,
+   3932631232
+  ],
+  [
+   18.02,
+   4587139744
+  ],
+  [
+   20.35,
+   3509121168
+  ],
+  [
+   22.62,
+   4808880632
+  ],
+  [
+   24.89,
+   4705235904
+  ],
+  [
+   27.12,
+   6096893224
+  ]
+ ],
+ "ps_before": "2026-10-05T00:20:30-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n91118 213088  85.0 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n  855 1978208   6.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  629 241328   2.9 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n97961 765808   2.4 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n 1012  17904   2.4 /usr/libexec/pboard\n  557 567664   2.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  633  31008   2.2 /usr/libexec/runningboardd\n57113 2884304   1.9 $HOME/.local/bin/claude\n  596  30928   1.9 /System/Library/CoreServices/launchservicesd\n93323 1098928   1.8 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

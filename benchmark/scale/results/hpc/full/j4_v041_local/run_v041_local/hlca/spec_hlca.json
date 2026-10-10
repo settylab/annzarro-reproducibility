@@ -1,0 +1,228 @@
+{
+ "name": "hlca",
+ "experiment": "hlca",
+ "repeats": 5,
+ "warm_repeats": 5,
+ "seed": 20261001,
+ "annzarro_dir": "$SCRATCH/annzarro-scale/hpcbench/src_v041",
+ "cases": [
+  {
+   "case_id": "hlca:X_gene_col",
+   "kind": "X_gene_col",
+   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/X",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 55329,
+   "chunk": 1,
+   "evict": [
+    "X"
+   ],
+   "expect_len": 2282447,
+   "wire": "f32"
+  },
+  {
+   "case_id": "hlca:sparse_layer_cell_row:normalized_csr",
+   "kind": "sparse_layer_cell_row",
+   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/layer/normalized_csr",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 2282447,
+   "chunk": 1,
+   "evict": [
+    "layers/normalized_csr"
+   ],
+   "expect_len": 55329,
+   "wire": "f32"
+  },
+  {
+   "case_id": "hlca:obsm_col:X_umap",
+   "kind": "obsm_col",
+   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obsm/X_umap",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 2,
+   "chunk": 2,
+   "evict": [
+    "obsm/X_umap"
+   ],
+   "expect_len": 2282447,
+   "wire": "f32"
+  },
+  {
+   "case_id": "hlca:obsm_col:X_scanvi_emb",
+   "kind": "obsm_col",
+   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obsm/X_scanvi_emb",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 30,
+   "chunk": 30,
+   "evict": [
+    "obsm/X_scanvi_emb"
+   ],
+   "expect_len": 2282447,
+   "wire": "f32"
+  },
+  {
+   "case_id": "hlca:obs_col:ann_level_1",
+   "kind": "obs_col",
+   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "ann_level_1",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/ann_level_1"
+   ],
+   "expect_len": 2282447,
+   "wire": "f32"
+  },
+  {
+   "case_id": "hlca:obs_col:cell_type",
+   "kind": "obs_col",
+   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "cell_type",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/cell_type"
+   ],
+   "expect_len": 2282447,
+   "wire": "f32"
+  },
+  {
+   "case_id": "hlca:obsp_csr_row:connectivities",
+   "kind": "obsp_csr_row",
+   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obsp/connectivities",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 2282447,
+   "chunk": 1,
+   "evict": [
+    "obsp/connectivities"
+   ],
+   "expect_len": 2282447,
+   "wire": "f32"
+  },
+  {
+   "case_id": "hlca:cell_names",
+   "kind": "cell_names",
+   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/cells",
+   "params": {},
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/_index"
+   ],
+   "expect_len": 2282447,
+   "wire": "f32"
+  },
+  {
+   "case_id": "hlca_dense:dense_layer_gene_col:lognorm",
+   "kind": "dense_layer_gene_col",
+   "dataset": "/loc/scratch/10163485/public/hlca/hlca_dense_4096x128.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/layer/lognorm",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 55329,
+   "chunk": 128,
+   "evict": [
+    "layers/lognorm"
+   ],
+   "expect_len": 2282447,
+   "wire": "f32"
+  },
+  {
+   "case_id": "hlca_dense:dense_layer_cell_row:lognorm",
+   "kind": "dense_layer_cell_row",
+   "dataset": "/loc/scratch/10163485/public/hlca/hlca_dense_4096x128.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/layer/lognorm",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 2282447,
+   "chunk": 4096,
+   "evict": [
+    "layers/lognorm"
+   ],
+   "expect_len": 55329,
+   "wire": "f32"
+  },
+  {
+   "case_id": "hlca_dense_allx4:dense_layer_gene_col:lognorm",
+   "kind": "dense_layer_gene_col",
+   "dataset": "/loc/scratch/10163485/public/hlca/hlca_dense_allx4.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/layer/lognorm",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 55329,
+   "chunk": 128,
+   "evict": [
+    "layers/lognorm"
+   ],
+   "expect_len": 2282447,
+   "seed_key": "hlca_dense:dense_layer_gene_col:lognorm",
+   "wire": "f32"
+  },
+  {
+   "case_id": "hlca_dense_allx4:dense_layer_cell_row:lognorm",
+   "kind": "dense_layer_cell_row",
+   "dataset": "/loc/scratch/10163485/public/hlca/hlca_dense_allx4.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/layer/lognorm",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 2282447,
+   "chunk": 4096,
+   "evict": [
+    "layers/lognorm"
+   ],
+   "expect_len": 55329,
+   "seed_key": "hlca_dense:dense_layer_cell_row:lognorm",
+   "wire": "f32"
+  }
+ ],
+ "wire": "f32"
+}

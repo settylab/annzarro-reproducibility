@@ -1,0 +1,90 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "isee",
+  "hdf5",
+  "$DATA_ROOT/tool_ceiling_data/sce_h5/first1000000.rds",
+  "benchmark/tool_ceiling/shots/isee_hdf5_run_1000000_r0",
+  "--n",
+  "1000000",
+  "--port",
+  "8948"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 22.87,
+ "peaks": {
+  "client": {
+   "fp_peak": 839639344,
+   "fp_lifetime_sum": 904308072,
+   "rss_peak": 1082064896,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 4494774784,
+   "fp_lifetime_sum": 4701198456,
+   "rss_peak": 5232738304,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 131560408,
+   "fp_lifetime_sum": 132084576,
+   "rss_peak": 166100992,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 4896813872,
+   "rss_peak": 6293569536,
+   "fp_lifetime_sum": 5605506528
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.25,
+   812082152
+  ],
+  [
+   4.44,
+   1437312456
+  ],
+  [
+   6.65,
+   1248847592
+  ],
+  [
+   8.86,
+   1835034584
+  ],
+  [
+   11.08,
+   1751329280
+  ],
+  [
+   13.27,
+   1828170384
+  ],
+  [
+   15.46,
+   3070045440
+  ],
+  [
+   17.67,
+   4402016736
+  ],
+  [
+   19.89,
+   2280205952
+  ],
+  [
+   22.04,
+   2342088392
+  ]
+ ],
+ "ps_before": "2026-10-05T12:48:42-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 2737520   7.2 $HOME/.local/bin/claude\n  639 142144   3.8 /usr/sbin/coreaudiod\n  734  57520   2.8 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n35279 355408   1.1 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  626 505760   1.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n92291  31008   0.8 .venv/bin/python\n86901 555680   0.7 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n80588 601360   0.7 $HOME/.local/bin/claude\n  618  60128   0.7 /usr/sbin/bluetoothd\n93323 892448   0.6 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

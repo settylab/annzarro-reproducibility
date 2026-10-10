@@ -1,0 +1,25 @@
+version: 1
+image: 01_view_gene_Mbp.jpg
+tool: napari-spatialdata
+software: napari 0.9.2, napari-spatialdata 0.7.2, anndata 0.13.4 (with _get_X shim)
+data: Visium demo (obsp spatial_kernel, spatial_distance, connectivities, distances; varp spearman_hvg)
+captured: '2026-10-03'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/napari-spatialdata/focus_check.py
+source: manual
+image_sha256: 449f474c75ef3d51d0777e4f4335f86c5fbc7c35fcda17e48b085b62813ff1d4
+proves:
+- column: focus
+  mark: N
+  caption: 'napari-spatialdata 0.7.2: a gene pick (Mbp) recolours only the selected layer; the dock offers no relation
+    matrix and no focused cell.'
+callouts:
+- n: 1
+  box: [2261, 665, 518, 325]
+  label: 'Vars: Mbp double-clicked'
+- n: 2
+  box: [2261, 1781, 210, 42]
+  label: 'Color by: Mbp, on the selected cells layer only'
+- n: 3
+  box: [2261, 1015, 518, 325]
+  label: Obsm list; no obsp entry to slice a relation row from

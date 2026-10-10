@@ -1,0 +1,33 @@
+version: 1
+image: m17_subset_APP_reanalyze_dialog.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: de399513ba978f1e1835dd92caf6a253e600f1aa7b4469af935e3b83eecf2e7a
+proves:
+- column: subset
+  mark: P
+  caption: 'Reanalyze wizard on the selected barcodes (63 of 8,090): recomputes t-SNE/UMAP for a subset of up to
+    100,000 barcodes; opened and closed, not run'
+callouts:
+- n: 1
+  box:
+  - 240
+  - 127
+  - 520
+  - 55
+  label: 'Reanalyze: up to 100,000 barcodes'
+- n: 2
+  box:
+  - 790
+  - 92
+  - 175
+  - 305
+  label: barcode counts

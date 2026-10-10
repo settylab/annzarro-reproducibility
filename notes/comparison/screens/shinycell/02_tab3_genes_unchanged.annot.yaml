@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "02_tab3_genes_unchanged.jpg",
+ "tool": "shinycell",
+ "software": "ShinyCell 2.1.0 (local Shiny app built by build.R)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8907",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/shinycell/recap_focus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Other tabs keep their own gene inputs (GeneExpr vs GeneExpr still Mrpl15 / Lypla1)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    26,
+    552,
+    308,
+    42
+   ],
+   "label": "gene 1 unchanged",
+   "selector": "#sc1a3inp1 + .selectize-control"
+  },
+  {
+   "n": 2,
+   "box": [
+    711,
+    552,
+    308,
+    42
+   ],
+   "label": "gene 2 unchanged",
+   "selector": "#sc1a3inp2 + .selectize-control"
+  }
+ ]
+}

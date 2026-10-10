@@ -1,0 +1,17 @@
+{
+ "knn_preservation_reference": 0.026894,
+ "knn_preservation_placed": 0.023300666666666667,
+ "cell_line_purity_umap": 0.94775,
+ "cell_line_purity_pca": 0.95001,
+ "cell_line_silhouette_umap": 0.5968787670135498,
+ "cell_line_silhouette_pca": 0.16170085966587067,
+ "random_baseline_purity": 0.027391040199999998,
+ "same_plate_fraction_umap": 0.09299,
+ "same_plate_fraction_pca": 0.12917,
+ "same_plate_fraction_if_mixed": 0.07865197965872742,
+ "plate_entropy_15nn_umap": 2.914576744046127,
+ "plate_entropy_15nn_umap_if_mixed": 3.017523895152169,
+ "plate_entropy_15nn_pca": 2.778400243988808,
+ "plate_entropy_15nn_pca_if_mixed": 3.016621983785228,
+ "plate_entropy_max_bits": 3.807354922057604
+}

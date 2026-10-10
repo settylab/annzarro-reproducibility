@@ -1,0 +1,66 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "tissuumaps",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first1000000_csc.h5ad",
+  "benchmark/tool_ceiling/shots/tissuumaps_default_run_1000000_r1",
+  "--n",
+  "1000000",
+  "--port",
+  "8944"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 10.52,
+ "peaks": {
+  "client": {
+   "fp_peak": 1683416256,
+   "fp_lifetime_sum": 1727817880,
+   "rss_peak": 1524187136,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 76104592,
+   "fp_lifetime_sum": 93898624,
+   "rss_peak": 147521536,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 164066192,
+   "fp_lifetime_sum": 165393344,
+   "rss_peak": 198541312,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1757456464,
+   "rss_peak": 1671708672,
+   "fp_lifetime_sum": 1821716504
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.31,
+   849011688
+  ],
+  [
+   4.44,
+   1629202392
+  ],
+  [
+   6.6,
+   1283188696
+  ],
+  [
+   8.73,
+   1021061200
+  ]
+ ],
+ "ps_before": "2026-10-05T11:41:49-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n49259 334112  71.3 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 887568  25.3 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n  626 524688  16.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n86901 577888  11.7 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 6219  59792  11.6 $HOME/Projects/investments/.venv/bin/python3\n57113 2904752   7.9 $HOME/.local/bin/claude\n49341  30480   6.2 .venv/bin/python\n 1492  42992   5.6 /System/Library/PrivateFrameworks/TextInputUIMacHelper.framework/Versions/A/XPCServices/CursorUIViewService.xpc/Contents/MacOS/CursorUIViewService\n 1015  21360   5.6 /System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent\n 2074 357712   5.4 /System/Library/Frameworks/Contacts.framework/Support/contactsd\n",
+ "others_at_start": []
+}

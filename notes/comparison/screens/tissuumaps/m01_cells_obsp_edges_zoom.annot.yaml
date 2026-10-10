@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m01_cells_obsp_edges_zoom.jpg",
+ "tool": "tissuumaps",
+ "software": "TissUUmaps 3.2.1.11 (server build, pip; TU4 is beta)",
+ "data": "spatial_demo.h5ad (2,693 Visium spots; synthetic grey tissue image)",
+ "url": "http://127.0.0.1:8908/spatial_demo.h5ad",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/tissuumaps/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "cells",
+   "mark": "N",
+   "caption": "Zoomed spatial view: spots only. The one obsp key TissUUmaps reads (spatial_connectivities) can only be drawn as edges between spots (Advanced options > Network diagram > Add Edges); no obsp row becomes a colour or an axis"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    37,
+    941,
+    863
+   ],
+   "label": "zoomed spots; edges if drawn",
+   "selector": ".openseadragon-container"
+  }
+ ]
+}

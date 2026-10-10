@@ -1,0 +1,94 @@
+WARNING:root:The directory $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000 does not exist. Making a new directory now.
+INFO:root:dataRoot is not set in ~/.cellbrowser or via $CBDATAROOT. Dataset hierarchies are not supported.
+INFO:root:dataRoot not set in ~/.cellbrowser, no need to rebuild hierarchy
+INFO:root:Creating $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000
+INFO:root:Determining if $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/matrix.mtx.gz needs to be created
+INFO:root:$DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/matrix.mtx.gz does not exist. Must build matrix now.
+INFO:root:Loading old config from $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/dataset.json
+INFO:root:Creating $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/metaFields
+INFO:root:Checking and reordering meta data to $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/meta.tsv
+INFO:root:Reading sample names from $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/meta.tsv
+INFO:root:Reading sample names for $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000 -> $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/barcodes.tsv.gz
+INFO:root:Data contains 1000000 samples/cells
+INFO:root:Field 2, 'plate', has only a single value. Removing this field from meta data.
+INFO:root:Converting to numbers and compressing meta data fields
+INFO:root:Field cellId: type uniqueString, 1000000 different values
+INFO:root:Field sample: type enum, 96 different values
+INFO:root:Field cell_line_id: type enum, 50 different values
+INFO:root:Field drug: type enum, 95 different values
+INFO:root:Field moa_fine: type enum, 15 different values
+INFO:root:Field ExpressedGenes: type int, 4404 different values
+INFO:root:Field total_counts: type float, 9598 different values
+INFO:root:Indexing meta file $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/meta.tsv to $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/meta.index
+INFO:root:Kept 1000000 cells present in both meta data file and expression matrix
+INFO:root:Auto-detected gene IDs type: symbols
+INFO:root:MTX file $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/matrix.mtx.gz: 5000 rows, 1000000 columns, 101488849 entries - sparseness 0.020298
+INFO:root:Syncing ['$DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/matrix.mtx.gz', '$DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/features.tsv.gz', '$DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/barcodes.tsv.gz'] to $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000
+INFO:root:converting $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/matrix.mtx.gz to $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/exprMatrix.bin and writing index to $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/exprMatrix.json, type None
+INFO:root:Compressing gene expression vectors...
+INFO:root:Loading $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/matrix.mtx.gz
+INFO:root:Loading expression matrix from $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/matrix.mtx.gz...
+INFO:root:Dimensions of matrix: 5000 , 1000000
+INFO:root:Converting matrix to row-based layout...
+INFO:root:0 genes written...
+INFO:root:Wrote compressed expression values for 1000 genes
+INFO:root:1000 genes written...
+INFO:root:Wrote compressed expression values for 2000 genes
+INFO:root:2000 genes written...
+INFO:root:Wrote compressed expression values for 3000 genes
+INFO:root:3000 genes written...
+INFO:root:Wrote compressed expression values for 4000 genes
+INFO:root:4000 genes written...
+INFO:root:Wrote compressed expression values for 5000 genes
+INFO:root:Global minimum in matrix is: 0.000000
+INFO:root:Wrote $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/cellbrowser.json.bak
+INFO:root:Wrote $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/dataset.json
+INFO:root:Wrote main config $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/dataset.json
+INFO:root:Parsing column cell_line_id from $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/meta.tsv
+INFO:root:Parsing coordinates for UMAP from $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/umap_coords.tsv
+INFO:root:Creating $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/coords/coords_0
+INFO:root:Writing coordinates for UMAP
+INFO:root:Parsing coordinates for pca_2d from $DATA_ROOT/tool_ceiling_data/ucsc/in_1000000/pca_2d_coords.tsv
+INFO:root:Creating $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/coords/coords_1
+INFO:root:Writing coordinates for pca_2d
+INFO:root:Copying tahoe_first1000000.h5ad to $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/tahoe_first1000000.h5ad
+INFO:root:Wrote $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/desc.json
+INFO:root:There are no gene/symbol pairs in the matrix
+INFO:root:Wrote $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/cellbrowser.json.bak
+INFO:root:Wrote $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/dataset.json
+INFO:root:Wrote main config $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/first1000000/dataset.json
+INFO:root:Rebuilding flat list of datasets, without hierarchies
+INFO:root:Found 1 datasets in subdirectories of directory $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000
+INFO:root:Wrote $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/dataset.json
+INFO:root:Wrote $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/search.json
+INFO:root:Wrote $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/search.json (1 datasets)
+INFO:root:Wrote $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/index.html (devMode: False)
+INFO:root:$DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/js/cellBrowser.js does not exist: running cbUpgrade now to make sure there are static js/css files
+INFO:root:Copying js, css and img files to $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000
+INFO:root:Creating $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/ext/images
+INFO:root:Creating $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/img
+INFO:root:Creating $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/js
+INFO:root:Creating $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/css
+INFO:root:Creating $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/genes
+INFO:root:Creating $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/downloads/markers
+INFO:root:Downloading marker database https://cells-test.gi.ucsc.edu/markers/cellMarker2.0_human.json
+ERROR:root:Cannot download https://cells-test.gi.ucsc.edu/markers/cellMarker2.0_human.json
+WARNING:root:Could not find marker file locally or download from https://cells-test.gi.ucsc.edu/markers/cellMarker2.0_human.json
+INFO:root:Downloading marker database https://cells-test.gi.ucsc.edu/markers/cellMarker2.0_mouse.json
+ERROR:root:Cannot download https://cells-test.gi.ucsc.edu/markers/cellMarker2.0_mouse.json
+WARNING:root:Could not find marker file locally or download from https://cells-test.gi.ucsc.edu/markers/cellMarker2.0_mouse.json
+INFO:root:Downloading marker database https://cells-test.gi.ucsc.edu/markers/panglaoDb_human.json
+ERROR:root:Cannot download https://cells-test.gi.ucsc.edu/markers/panglaoDb_human.json
+WARNING:root:Could not find marker file locally or download from https://cells-test.gi.ucsc.edu/markers/panglaoDb_human.json
+INFO:root:Downloading marker database https://cells-test.gi.ucsc.edu/markers/panglaoDb_mouse.json
+ERROR:root:Cannot download https://cells-test.gi.ucsc.edu/markers/panglaoDb_mouse.json
+WARNING:root:Could not find marker file locally or download from https://cells-test.gi.ucsc.edu/markers/panglaoDb_mouse.json
+INFO:root:Downloading marker database https://cells-test.gi.ucsc.edu/markers/singleCellBase_human.json
+ERROR:root:Cannot download https://cells-test.gi.ucsc.edu/markers/singleCellBase_human.json
+WARNING:root:Could not find marker file locally or download from https://cells-test.gi.ucsc.edu/markers/singleCellBase_human.json
+INFO:root:Downloading marker database https://cells-test.gi.ucsc.edu/markers/singleCellBase_mouse.json
+ERROR:root:Cannot download https://cells-test.gi.ucsc.edu/markers/singleCellBase_mouse.json
+WARNING:root:Could not find marker file locally or download from https://cells-test.gi.ucsc.edu/markers/singleCellBase_mouse.json
+INFO:root:Marker gene databases in $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/downloads/markers: []
+INFO:root:Wrote $DATA_ROOT/tool_ceiling_data/ucsc/html_1000000/index.html (devMode: False)
+{"status": "ok", "rc": 0, "wall_s": 97.42} fp_peak=3.22GB lifetime=3.24GB

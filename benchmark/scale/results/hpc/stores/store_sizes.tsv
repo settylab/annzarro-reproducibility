@@ -1,0 +1,8 @@
+store	apparent_bytes	du_h_apparent	disk_h_alone	files	csr_bytes
+stores_panel/n1M/tahoe_panel_1M.zarr	2713609433	2.6G	2.6G	1896	1278897977
+stores_panel/n2M/tahoe_panel_2M.zarr	5576368147	5.2G	5.2G	3812	2632714474
+stores_panel/n5M/tahoe_panel_5M.zarr	15106865000	15G	15G	10249	7168332108
+stores_panel/n10M/tahoe_panel_10M.zarr	30277401694	29G	29G	20438	14366551920
+stores_panel/n20M/tahoe_panel_20M.zarr	62749176298	59G	59G	42311	29815876749
+stores_panel/n50M/tahoe_panel_50M.zarr	152809815359	143G	143G	102903	72557971602
+stores_panel/n95.6M/tahoe_panel_95.6M.zarr	294428670848	275G	275G	198393	139901650884

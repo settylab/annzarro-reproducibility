@@ -1,0 +1,122 @@
+{
+ "A_in_process": [
+  {
+   "store": "50M",
+   "cache_mb": 1000,
+   "rep": 0,
+   "get_s": 36.223,
+   "json_s": 6.127,
+   "json_bytes": 650000712,
+   "value_type": "list",
+   "first": "['CVCL_0480', 'CVCL_0546']",
+   "estimate_mb": 3147.1,
+   "cache_usage_mb": 0,
+   "cache_keys": 0
+  },
+  {
+   "store": "50M",
+   "cache_mb": 1000,
+   "rep": 1,
+   "get_s": 35.941,
+   "json_s": 5.538,
+   "json_bytes": 650000712,
+   "value_type": "list",
+   "first": "['CVCL_0480', 'CVCL_0546']",
+   "estimate_mb": 3147.1,
+   "cache_usage_mb": 0,
+   "cache_keys": 0
+  },
+  {
+   "store": "50M",
+   "cache_mb": 1000,
+   "rep": 2,
+   "get_s": 36.046,
+   "json_s": 5.569,
+   "json_bytes": 650000712,
+   "value_type": "list",
+   "first": "['CVCL_0480', 'CVCL_0546']",
+   "estimate_mb": 3147.1,
+   "cache_usage_mb": 0,
+   "cache_keys": 0
+  },
+  {
+   "store": "95.6M",
+   "cache_mb": 1000,
+   "rep": 0,
+   "get_s": 68.337,
+   "json_s": 10.835,
+   "json_bytes": 1243117054,
+   "value_type": "list",
+   "first": "['CVCL_0480', 'CVCL_0546']",
+   "estimate_mb": 6018.8,
+   "cache_usage_mb": 0,
+   "cache_keys": 0
+  },
+  {
+   "store": "95.6M",
+   "cache_mb": 1000,
+   "rep": 1,
+   "get_s": 68.402,
+   "json_s": 11.071,
+   "json_bytes": 1243117054,
+   "value_type": "list",
+   "first": "['CVCL_0480', 'CVCL_0546']",
+   "estimate_mb": 6018.8,
+   "cache_usage_mb": 0,
+   "cache_keys": 0
+  },
+  {
+   "store": "95.6M",
+   "cache_mb": 1000,
+   "rep": 2,
+   "get_s": 68.492,
+   "json_s": 11.251,
+   "json_bytes": 1243117054,
+   "value_type": "list",
+   "first": "['CVCL_0480', 'CVCL_0546']",
+   "estimate_mb": 6018.8,
+   "cache_usage_mb": 0,
+   "cache_keys": 0
+  },
+  {
+   "store": "95.6M",
+   "cache_mb": 200000,
+   "rep": 0,
+   "get_s": 69.006,
+   "json_s": 11.261,
+   "json_bytes": 1243117054,
+   "value_type": "list",
+   "first": "['CVCL_0480', 'CVCL_0546']",
+   "estimate_mb": 6018.8,
+   "cache_usage_mb": 6018.8,
+   "cache_keys": 1
+  },
+  {
+   "store": "95.6M",
+   "cache_mb": 200000,
+   "rep": 1,
+   "get_s": 0.0,
+   "json_s": 11.074,
+   "json_bytes": 1243117054,
+   "value_type": "list",
+   "first": "['CVCL_0480', 'CVCL_0546']",
+   "estimate_mb": 6018.8,
+   "cache_usage_mb": 6018.8,
+   "cache_keys": 1
+  },
+  {
+   "store": "95.6M",
+   "cache_mb": 200000,
+   "rep": 2,
+   "get_s": 0.0,
+   "json_s": 11.117,
+   "json_bytes": 1243117054,
+   "value_type": "list",
+   "first": "['CVCL_0480', 'CVCL_0546']",
+   "estimate_mb": 6018.8,
+   "cache_usage_mb": 6018.8,
+   "cache_keys": 1
+  }
+ ],
+ "B_note": "part B of this first script fetched the frontend page (wrong base URL) and is void; see obs_cat_http.json"
+}

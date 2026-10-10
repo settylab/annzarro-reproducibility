@@ -1,0 +1,491 @@
+# VizIt v1.0.0: marks and evidence (comparison-auditor, 2026-10-05); schema: evidence/README.md.
+id: vizit
+name: VizIt v1.0.0
+figure:
+  row: 14
+  label: VizIt
+  largest_documented: 310k
+notes: notes/comparison/vizit.md
+largest_documented: 310k cells (pd5d atlas, observed)
+cells:
+  cells:
+    reason: 'No cell x cell data type: datasets are prepared from Seurat objects into expression, metadata and UMAP
+      tables.'
+    detail: 'No cell x cell data type: datasets are prepared from Seurat objects into expression, metadata and UMAP
+      tables.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/m00_every_cell_geneview_umap.jpg
+      label: Gene View controls
+    - kind: docs
+      url: https://thedonglab.github.io/VizIt/prepare_dataset/scrnaseq/
+      label: 'prep: expression, metadata, UMAP'
+      checked: '2026-10-05'
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: source and docs
+    na:
+      visual: absence; the prepared data contain no pairwise matrix
+    mark: N
+  genes:
+    reason: No gene x gene data type.
+    detail: No gene x gene data type.
+    evidence:
+    - kind: docs
+      url: https://thedonglab.github.io/VizIt/prepare_dataset/scrnaseq/
+      label: prep outputs
+      checked: '2026-10-05'
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: source and docs
+    na:
+      visual: absence; nothing to show
+    mark: N
+  focus:
+    reason: A gene choice colours the UMAP and violins by its expression (feature colouring); no relation row.
+    detail: A gene choice colours the UMAP and violins by its expression (feature colouring); no relation row.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/f04_focus_cell_click_no_change.jpg
+      label: cell click changes nothing
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/m00_every_cell_geneview_umap.jpg
+      label: gene colouring
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/pages/GeneView/PlotlyScatter.jsx
+      lines: 51-60
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/pages/GeneView/PlotlyScatter.jsx#L51-L60
+      label: UMAP coloured by one gene's values (continuous colourscale)
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: N
+  slots:
+    reason: Only expression, cell metadata and a UMAP are prepared from a Seurat object; no AnnData slots beyond
+      those.
+    detail: Only expression, cell metadata and a UMAP are prepared from a Seurat object; no AnnData slots beyond
+      those.
+    evidence:
+    - kind: docs
+      url: https://thedonglab.github.io/VizIt/prepare_dataset/scrnaseq/
+      label: prep steps
+      checked: '2026-10-05'
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: source and docs
+    na:
+      visual: input route is a prep pipeline, not a slot picker
+    mark: N
+  remote:
+    reason: The backend serves its own prepared files; no URL or object-store input for single-cell data.
+    detail: The backend serves its own prepared files; no URL or object-store input for single-cell data.
+    evidence:
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: backend/requirements.txt
+      lines: '1'
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/backend/requirements.txt#L1
+      label: FastAPI backend
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: source and docs
+    na:
+      visual: absence; no GUI input for remote data
+    mark: N
+  spatial:
+    reason: Visium spots at tissue coordinates in the Spatial Tx View.
+    detail: Visium spots at tissue coordinates in the Spatial Tx View.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/m07_m11_spatial_he.jpg
+      label: spots
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/pages/VisiumView/VisiumPlotlyPlot.jsx
+      lines: 115-120
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/pages/VisiumView/VisiumPlotlyPlot.jsx#L115-L120
+      label: spots placed at imagecol/imagerow x lowres scale factor
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: Y
+  selection:
+    reason: Plotly's box/lasso tools exist, but no plot handles a selection, so nothing reaches another view.
+    detail: Plotly's box/lasso tools exist, but no plot handles a selection, so nothing reaches another view.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/f03_selection_umap_toolbar.jpg
+      label: plot toolbar
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/pages/GeneView/PlotlyScatter.jsx
+      lines: 178-200
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/pages/GeneView/PlotlyScatter.jsx#L178-L200
+      label: 'UMAP <Plot>: config and toolbar only, no onSelected handler'
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: N
+  annot:
+    reason: No control to label cells.
+    detail: No control to label cells.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/m00_every_cell_geneview_umap.jpg
+      label: Gene View controls
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: backend/routes/dm_routes.py
+      lines: 108-109
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/backend/routes/dm_routes.py#L108-L109
+      label: write routes are dataset management only (extract, prepare, delete); the 19 api_routes are GETs
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    na:
+      visual: absence; the controls in m00 show none
+    mark: N
+  de:
+    reason: Markers and condition DE are read from tables computed at preparation (31_clustermarkers.R); nothing
+      is computed for a selection.
+    detail: Markers and condition DE are read from tables computed at preparation (31_clustermarkers.R); nothing
+      is computed for a selection.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/f02_de_cluster_markers.jpg
+      label: Cluster View markers and DE
+    - kind: docs
+      url: https://thedonglab.github.io/VizIt/prepare_dataset/scrnaseq/
+      label: 'step 6: computing cluster markers'
+      checked: '2026-10-05'
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: N
+  image:
+    reason: '''Show H&E image'' draws the H&E section under the spots.'
+    detail: '''Show H&E image'' draws the H&E section under the spots.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/f01_image_he_on.jpg
+      label: H&E on
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/pages/VisiumView/VisiumPlotlyPlot.jsx
+      lines: 324-334
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/pages/VisiumView/VisiumPlotlyPlot.jsx#L324-L334
+      label: H&E image added as a layout image below the spots when showImage
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: Y
+  share:
+    reason: The URL carries dataset, gene, sample, colouring and grouping.
+    detail: The URL carries dataset, gene, sample, colouring and grouping.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/m12_share_url_state.jpg
+      label: view from URL parameters
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/pages/GeneView/index.jsx
+      lines: 141-149
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/pages/GeneView/index.jsx#L141-L149
+      label: dataset, genes, samples, colour and grouping written to the URL
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/pages/GeneView/index.jsx
+      lines: 34-38
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/pages/GeneView/index.jsx#L34-L38
+      label: state read back from the URL
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: Y
+  export:
+    reason: '''Download plot'' saved a 9.7 MB SVG; Export SVG/PNG and Download CSV buttons.'
+    detail: '''Download plot'' saved a 9.7 MB SVG; Export SVG/PNG and Download CSV buttons.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/m13_export_plotly_download.jpg
+      label: Download plot
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/pages/GeneView/GenePlots.jsx
+      lines: '155'
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/pages/GeneView/GenePlots.jsx#L155
+      label: Plotly.downloadImage
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/pages/GeneView/GenePlots.jsx
+      lines: '180'
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/pages/GeneView/GenePlots.jsx#L180
+      label: Export SVG button
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: Y
+  desktop:
+    reason: A web portal (Docker or uvicorn plus npm); no desktop application.
+    detail: A web portal (Docker or uvicorn plus npm); no desktop application.
+    evidence:
+    - kind: docs
+      url: https://thedonglab.github.io/VizIt/install/
+      label: 'installation: docker or manual'
+      checked: '2026-10-05'
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: source and docs
+    na:
+      visual: deployment fact; docs cited
+    mark: N
+  hosted:
+    reason: One deployment (pd5d.yale.edu) serves all visitors.
+    detail: One deployment (pd5d.yale.edu) serves all visitors.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/h01_hosted_pd5d_home.jpg
+      label: PD5D hosted home
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/g01_hosted_DOCS_install.jpg
+      label: install docs
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/m12_share_url_state.jpg
+      label: hosted atlas
+    - kind: docs
+      url: https://thedonglab.github.io/VizIt/install/
+      label: 'install: Docker or manual deployment of the web portal'
+      checked: '2026-10-05'
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/App.jsx
+      lines: '109'
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/App.jsx#L109
+      label: 'route /home_pd5d: the PD5D deployment''s home page ships in the VizIt source'
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: Y
+  static:
+    reason: Needs the FastAPI backend.
+    detail: Needs the FastAPI backend.
+    evidence:
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: backend/requirements.txt
+      lines: '1'
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/backend/requirements.txt#L1
+      label: FastAPI backend
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: source and docs
+    na:
+      visual: deployment fact
+    mark: N
+  lazy:
+    reason: Expression is fetched per gene (getexprdata, 1.6 MB for SNCA on 309,960 cells); the backend reads per-gene
+      files written at preparation. Cell metadata for the dataset arrive in one call.
+    detail: Expression is fetched per gene (getexprdata, 1.6 MB for SNCA on 309,960 cells); the backend reads per-gene
+      files written at preparation. Cell metadata for the dataset arrive in one call.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/l01_lazy_request_log.jpg
+      label: request log (rendered)
+    - kind: docs
+      url: https://thedonglab.github.io/VizIt/prepare_dataset/scrnaseq/
+      label: 'step 5: expression split into per-gene json files'
+      checked: '2026-10-05'
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/api/api.js
+      lines: '103'
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/api/api.js#L103
+      label: 'getExprData(dataset, gene): one request per gene'
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: Y
+  every_cell:
+    reason: 'The Gene View UMAP draws 50,000 of 309,960 cells. Under reading B a preparation step would count, but
+      the cap is fixed in code: the prep script hard-codes 50,000 with no argument, and the backend serves only
+      umap_embeddings_50k.csv (the full umap_embeddings.csv is written but never served). Drawing all cells needs
+      a code change, so N.'
+    detail: 'The Gene View UMAP draws 50,000 of 309,960 cells. Under reading B a preparation step would count, but
+      the cap is fixed in code: the prep script hard-codes 50,000 with no argument, and the backend serves only
+      umap_embeddings_50k.csv (the full umap_embeddings.csv is written but never served). Drawing all cells needs
+      a code change, so N.'
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/m00_every_cell_geneview_umap.jpg
+      label: 50,000-point UMAP
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: backend/funcs/scst_scripts/31_rename_meta_SC.py
+      lines: 170-172
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/backend/funcs/scst_scripts/31_rename_meta_SC.py#L170-L172
+      label: 'prep: sample_rows = 50000 if n_rows > 50000, hard-coded, no argument'
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: backend/funcs/scst_scripts/x0_run_from_toml.py
+      lines: '158'
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/backend/funcs/scst_scripts/x0_run_from_toml.py#L158
+      label: runner passes path, features and columns only
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: backend/funcs/get_data.py
+      lines: '818'
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/backend/funcs/get_data.py#L818
+      label: backend serves only umap_embeddings_50k.csv
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: N
+  subset:
+    reason: Choosing samples limits what is drawn; expression and cell metadata still arrive for all cells.
+    detail: Choosing samples limits what is drawn; expression and cell metadata still arrive for all cells.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/f01_image_he_on.jpg
+      label: one sample drawn
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/pages/GeneView/GenePlots.jsx
+      lines: 25-37
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/pages/GeneView/GenePlots.jsx#L25-L37
+      label: sample choice filters already-fetched expression in the browser
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: frontend/src/pages/GeneView/index.jsx
+      lines: 159-169
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/frontend/src/pages/GeneView/index.jsx#L159-L169
+      label: sample selector
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: P
+  auto_subset:
+    reason: The UMAP is a random 50,000-cell sample (random_state 42) taken at preparation with the cap fixed in
+      code, not chosen at viewing time.
+    detail: The UMAP is a random 50,000-cell sample (random_state 42) taken at preparation with the cap fixed in
+      code, not chosen at viewing time.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vizit/m00_every_cell_geneview_umap.jpg
+      label: 50,000 of 309,960
+    - kind: docs
+      url: https://thedonglab.github.io/VizIt/prepare_dataset/scrnaseq/
+      label: 'step 5: UMAP embedding sampling'
+      checked: '2026-10-05'
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: backend/funcs/scst_scripts/31_rename_meta_SC.py
+      lines: 170-172
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/backend/funcs/scst_scripts/31_rename_meta_SC.py#L170-L172
+      label: 'prep: sample_rows = 50000 if n_rows > 50000, hard-coded, no argument'
+    - kind: code
+      repo: thedonglab/VizIt
+      commit: a0aabb2197b8eea4acf1b32e393bd7fc4619fa96
+      path: backend/funcs/get_data.py
+      lines: '818'
+      url: https://github.com/thedonglab/VizIt/blob/a0aabb2197b8eea4acf1b32e393bd7fc4619fa96/backend/funcs/get_data.py#L818
+      label: backend serves only umap_embeddings_50k.csv
+    reproduce:
+    - notes/comparison/demos/vizit/matrix_check.py
+    - notes/comparison/demos/vizit/followup_check.py
+    checked:
+      date: '2026-10-05'
+      by: comparison-auditor
+      how: running app (hosted pd5d.yale.edu, headless Chromium)
+    mark: P

@@ -1,0 +1,21 @@
+{
+ "n_ref": 999073,
+ "n_neighbors": 15,
+ "min_dist": 0.3,
+ "metric": "euclidean",
+ "random_state": 0,
+ "n_epochs": null,
+ "read_s": 0.14713835716247559,
+ "fit_s": 1339.3788118362427,
+ "versions": {
+  "umap-learn": "0.5.12",
+  "pynndescent": "0.6.0",
+  "faiss-cpu": "1.15.1",
+  "numpy": "2.4.6",
+  "numba": "0.68.0",
+  "scikit-learn": "1.9.1",
+  "zarr": "3.1.6",
+  "python": "3.11.6",
+  "machine": "x86_64 36 cores"
+ }
+}

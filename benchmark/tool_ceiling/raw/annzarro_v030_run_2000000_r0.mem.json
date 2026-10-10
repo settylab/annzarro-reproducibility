@@ -1,0 +1,54 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first2000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_run_2000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 3.15,
+ "peaks": {
+  "client": {
+   "fp_peak": 1993581616,
+   "fp_lifetime_sum": 2156406792,
+   "rss_peak": 1585741824,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 932234992,
+   "fp_lifetime_sum": 979552512,
+   "rss_peak": 967327744,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 123826896,
+   "fp_lifetime_sum": 123826896,
+   "rss_peak": 161824768,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2813406104,
+   "rss_peak": 2505244672,
+   "fp_lifetime_sum": 3135959304
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.24,
+   1176905592
+  ]
+ ],
+ "ps_before": "2026-10-04T21:52:09-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78801  36256  57.1 .venv/bin/python\n47413 660928  12.5 /Applications/cmux.app/Contents/MacOS/cmux\n  626 528864  10.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 2881200   8.4 $HOME/.local/bin/claude\n 1012  17792   6.8 /usr/libexec/pboard\n78806  20624   6.4 benchmark/tool_ceiling/.venv/bin/python\n  734  50512   5.0 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n  596  31008   4.0 /System/Library/CoreServices/launchservicesd\n  629 199488   3.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  601  43552   2.9 /usr/libexec/locationd\n",
+ "others_at_start": []
+}

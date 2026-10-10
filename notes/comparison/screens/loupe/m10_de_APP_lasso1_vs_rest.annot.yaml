@@ -1,0 +1,26 @@
+version: 1
+image: m10_de_APP_lasso1_vs_rest.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: d29304456bab2c2b5f7a118a46e4bfa95f5a9416975576afe16899f4152ddbb1
+proves:
+- column: de
+  mark: Y
+  caption: 'differential expression computed in the app: lasso1 vs entire dataset, table in about 8 s (Izumo1r,
+    Foxp3, Tnfrsf4 at the top)'
+callouts:
+- n: 1
+  box:
+  - 280
+  - 457
+  - 640
+  - 137
+  label: DE result table

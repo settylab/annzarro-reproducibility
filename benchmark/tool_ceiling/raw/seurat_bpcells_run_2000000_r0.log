@@ -1,0 +1,15 @@
+During startup - Warning message:
+package ‘colorout’ in options("defaultPackages") was not found 
+[     2.8s] read_obs_obsm
+[     3.2s] read_counts
+[    20.4s] load
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+[    31.5s] plot_cat
+Warning: Converting to a dense matrix may use excessive memory
+This message is displayed once every 8 hours.
+Rasterizing points since number of points exceeds 100,000.
+To disable this behavior set `raster=FALSE`
+[    41.7s] plot_gene
+[    41.7s] done
+{"status": "ok", "rc": 0, "wall_s": 44.49} fp_peak=1.47GB lifetime=1.47GB

@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "image": "g03_static_lazy_request_log_api.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP383, 10X 1.3M brain cells E18 (1,306,127 cells)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP383",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_single_cell_portal.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "static",
+   "mark": "N",
+   "caption": "request log, Single Cell Portal 1.20.0 (2026-10-04): every view is filled from the Rails JSON API, so it cannot run as static files"
+  },
+  {
+   "column": "lazy",
+   "mark": "Y",
+   "caption": "request log, Single Cell Portal 1.20.0 (2026-10-04): the server returns one gene when it is asked for (expression/violin?genes=Sox2, 705,205 B), while the coordinates arrive whole (about 2.4 MB per cluster request)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    145,
+    1375,
+    35
+   ],
+   "label": "Explore / cluster data from the API",
+   "selector": "#r0"
+  },
+  {
+   "n": 2,
+   "box": [
+    12,
+    363,
+    1375,
+    35
+   ],
+   "label": "one gene on demand",
+   "selector": "#r6"
+  },
+  {
+   "n": 3,
+   "box": [
+    12,
+    803,
+    1376,
+    38
+   ],
+   "label": "server-computed views",
+   "selector": "#note"
+  }
+ ]
+}

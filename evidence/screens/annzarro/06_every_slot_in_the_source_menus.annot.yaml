@@ -1,0 +1,83 @@
+version: 1
+image: 06_every_slot_in_the_source_menus.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:8920/?dataset_path=$DATA_DIR/bm_aging_showcase.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZENlbGwiOiJNYXR1cm...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: slots
+  mark: Y
+  caption: X, layers, obs, var, obsm, varm, obsp and varp each drive an axis or a colour in this one layout,
+    all chosen from the GUI menus.
+callouts:
+- n: 1
+  box:
+  - 69
+  - 165
+  - 276
+  - 36
+  label: 'obsm: X-Axis = obsm / X_umap / 0'
+  selector: .tile[data-tile-id="cell-plot-s1"] .axis-type-select[data-axis="x"] >> xpath=..
+- n: 2
+  box:
+  - 69
+  - 229
+  - 276
+  - 36
+  label: 'X: Color = layer / X / Focused gene H2-Q7; the layer menu lists X, cc_counts, kompot_de_Old_smoothed,
+    kompot_de_Young_smoothed, ... (10 entries, X first)'
+  selector: .tile[data-tile-id="cell-plot-s1"] .axis-type-select[data-axis="color"] >> xpath=..
+- n: 3
+  box:
+  - 69
+  - 865
+  - 276
+  - 36
+  label: 'obs: X-Axis = obs / n_genes_by_counts / N/A'
+  selector: .tile[data-tile-id="cell-plot-s2"] .axis-type-select[data-axis="x"] >> xpath=..
+- n: 4
+  box:
+  - 69
+  - 929
+  - 276
+  - 36
+  label: 'obsp: Color = obsp / connectivities / Focused cell Mature_Young_2#TCAATTCAGTGAGGCT-1'
+  selector: .tile[data-tile-id="cell-plot-s2"] .axis-type-select[data-axis="color"] >> xpath=..
+- n: 5
+  box:
+  - 771
+  - 165
+  - 276
+  - 36
+  label: 'varm: X-Axis = varm / PCs / 0'
+  selector: .tile[data-tile-id="gene-plot-s3"] .axis-type-select[data-axis="x"] >> xpath=..
+- n: 6
+  box:
+  - 771
+  - 229
+  - 276
+  - 36
+  label: 'varp: Color = varp / spearman_fold_change / Focused gene H2-Q7'
+  selector: .tile[data-tile-id="gene-plot-s3"] .axis-type-select[data-axis="color"] >> xpath=..
+- n: 7
+  box:
+  - 771
+  - 865
+  - 276
+  - 36
+  label: 'var: X-Axis = var / kompot_de_Young_to_Old_mean_lfc / N/A'
+  selector: .tile[data-tile-id="gene-plot-s4"] .axis-type-select[data-axis="x"] >> xpath=..
+- n: 8
+  box:
+  - 771
+  - 929
+  - 276
+  - 36
+  label: 'layers: Color = layer / kompot_de_Young_to_Old_fold_change / Focused cell Mature_Young_2#TCAATTCAGTGAGGCT-1.
+    Source menus: cell plot [''None (constant)'', ''obs'', ''obsm'', ''obsp'', ''layer''], gene plot [''None
+    (constant)'', ''var'', ''varm'', ''varp'', ''layer'']'
+  selector: .tile[data-tile-id="gene-plot-s4"] .axis-type-select[data-axis="color"] >> xpath=..

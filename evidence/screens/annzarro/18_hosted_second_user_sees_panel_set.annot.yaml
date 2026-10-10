@@ -1,0 +1,33 @@
+version: 1
+image: 18_hosted_second_user_sees_panel_set.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:8921/?dataset_path=$DATA_DIR/bm_aging_showcase.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZENlbGwiOiJNYXR1cm...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: hosted
+  mark: Y
+  caption: 'A second user (bob), signed in to the same server in a separate browser session, sees the
+    panel set alice saved: one deployment serves many users.'
+callouts:
+- n: 1
+  box:
+  - 16
+  - 43
+  - 42
+  - 25
+  label: 'signed in: bob'
+  selector: '#auth-indicator'
+- n: 2
+  box:
+  - 263
+  - 158
+  - 874
+  - 219
+  label: 'panel sets on this server: [''saved_by_alice bm_aging_showcase.zarr ✓ available here 10/7/2026
+    05:21 PM alice Load'']'
+  selector: '#session-grid'

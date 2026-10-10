@@ -1,0 +1,70 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first50000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_run_50000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 13.54,
+ "peaks": {
+  "client": {
+   "fp_peak": 9974285592,
+   "fp_lifetime_sum": 10367845848,
+   "rss_peak": 7935967232,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 4794159928,
+   "fp_lifetime_sum": 4840297800,
+   "rss_peak": 4829036544,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 129107632,
+   "fp_lifetime_sum": 133121808,
+   "rss_peak": 163872768,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 13801445216,
+   "rss_peak": 11580588032,
+   "fp_lifetime_sum": 15208143648
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.21,
+   1060480384
+  ],
+  [
+   4.5,
+   1658873816
+  ],
+  [
+   6.82,
+   4760483088
+  ],
+  [
+   9.16,
+   8276004424
+  ],
+  [
+   11.47,
+   13533665072
+  ]
+ ],
+ "ps_before": "2026-10-04T21:52:29-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n79584 149280  98.5 $TMPDIR/evidence/venv/bin/python\n57113 2881312  25.1 $HOME/.local/bin/claude\n  626 528832  12.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n47413 660928   9.6 /Applications/cmux.app/Contents/MacOS/cmux\n  855 1980448   6.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  582 111152   4.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  557 567856   3.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  629 199488   3.2 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n74971 1187328   2.7 /Applications/Microsoft Teams.app/Contents/Helpers/Microsoft Teams WebView.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/149.0.4022.96/Helpers/Microsoft Teams WebView Helper (Renderer).app/Contents/MacOS/Microsoft Teams WebView Helper (Renderer)\n  596  30976   2.6 /System/Library/CoreServices/launchservicesd\n",
+ "others_at_start": []
+}

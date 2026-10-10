@@ -1,0 +1,25 @@
+version: 1
+image: m04_slots_APP_projections.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: 0828e565c402920ae8b0f25c4c3ac7810e23c44d5d0e4556bce2528bffcc6e97
+proves:
+- column: slots
+  mark: N
+  caption: 'projection menu: diffusion, draw_graph_fa, pca, UMAP (2-D each) plus ''Feature Plot'''
+callouts:
+- n: 1
+  box:
+  - 280
+  - 57
+  - 145
+  - 165
+  label: projection menu

@@ -1,0 +1,38 @@
+{
+ "tool": "tissuumaps",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first20000000_csc.h5ad",
+ "n": 20000000,
+ "phases": {
+  "server_ready": 2.12,
+  "first_plot": 2.4,
+  "plot_cat": 14.67,
+  "done": 45.1
+ },
+ "checks": {
+  "cat": {
+   "gl": {
+    "crit": "frame",
+    "drawn": 20000000,
+    "frame_max": {
+     "pts": 0,
+     "inst": 20000000
+    },
+    "call_max": 65536
+   },
+   "stated": null,
+   "png": "benchmark/tool_ceiling/shots/tissuumaps_default_run_20000000_r1_cat.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "tissuumaps": "3.2.1.11"
+ },
+ "console": [],
+ "pageerrors": [
+  "Cannot convert a BigInt value to a number"
+ ],
+ "error": "RuntimeError: page error: Cannot convert a BigInt value to a number",
+ "ok": false
+}

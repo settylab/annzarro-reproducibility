@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m12_share_link_reopened.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/#q={%22dataset%22:%22../_data/bm_demo.h5ad%22,%22embeddings%22:[{%22name%22:%22X_umap%22,%22dimensions%22:2}],%22layers%22:[],%22camera%22:{%22position%22:[0,-0.000004000000000115023,3.999999999997996],%22target%22:[0,0,0],%22zoom%22:1},%22activeFeature%22:{%22name%22:%22Mpo%22,%22type%22:%22X%22,%22embeddingKey%22:%22Mpo_X_umap%22},%22q%22:[{%22id%22:%22highres_celltype%22,%22type%22:%22obsCat%22},{%22id%22:%22Mpo%22,%22type%22:%22X%22}]}",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_matrix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "Y",
+   "caption": "The copied link, opened in a new tab, restores X_umap, Mpo colouring and the gallery"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    244,
+    60,
+    1156,
+    742
+   ],
+   "label": "Mpo colouring restored",
+   "selector": "[data-recap='p0']"
+  },
+  {
+   "n": 2,
+   "box": [
+    1006,
+    0,
+    138,
+    56
+   ],
+   "label": "active feature Mpo",
+   "selector": "text=Mpo >> nth=0"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "lazy_h5ad",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_lazy_h5ad_run_2000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 15.7,
+ "peaks": {
+  "proc": {
+   "fp_peak": 1017677408,
+   "fp_lifetime_sum": 1017677408,
+   "rss_peak": 1244987392,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1017677408,
+   "rss_peak": 1244987392,
+   "fp_lifetime_sum": 1017677408
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8765848
+  ],
+  [
+   1.46,
+   274645760
+  ],
+  [
+   2.9,
+   551961824
+  ],
+  [
+   4.34,
+   647955752
+  ],
+  [
+   5.79,
+   670090536
+  ],
+  [
+   7.3,
+   910837272
+  ],
+  [
+   8.73,
+   910837272
+  ],
+  [
+   10.18,
+   910837272
+  ],
+  [
+   11.65,
+   1017644640
+  ],
+  [
+   13.09,
+   1017644640
+  ],
+  [
+   14.54,
+   1017644640
+  ]
+ ],
+ "ps_before": "2026-10-03T19:46:31-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 1012  17152   7.0 /usr/libexec/pboard\n57113 2032752   2.5 $HOME/.local/bin/claude\n 4725 613712   2.5 claude\n  626 494064   1.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n92291  30832   1.7 .venv/bin/python\n80588 616224   1.6 $HOME/.local/bin/claude\n34972 494480   1.6 $HOME/.local/bin/claude\n80005 380400   1.2 $HOME/.local/bin/claude\n72627 488432   1.1 $HOME/.local/bin/claude\n47413 613520   1.1 /Applications/cmux.app/Contents/MacOS/cmux\n"
+}

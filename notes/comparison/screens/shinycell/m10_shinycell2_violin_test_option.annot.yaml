@@ -1,0 +1,23 @@
+version: 1
+image: m10_shinycell2_violin_test_option.jpg
+tool: shinycell
+software: ShinyCell2 (public showcase)
+data: ShinyCell2 showcase spatial dataset (Visium)
+url: https://shinycell.ouyanglab.com/
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/shinycell/matrix_check2.py
+source: manual
+image_sha256: a2abd0276c3e9c9e7ea4406647a0839961f2f2a5a6e2b82a6d4a60a259e0afa7
+proves:
+- column: de
+  mark: N
+  caption: 'ShinyCell2 showcase: the violin tab adds only a stats-test toggle for one feature''s violins; nothing
+    ranks genes.'
+callouts:
+- n: 1
+  box: [28, 530, 216, 38]
+  label: Toggle to perform stats test(s), for the plotted feature only
+- n: 2
+  box: [26, 210, 310, 470]
+  label: the rest of the controls are plot inputs

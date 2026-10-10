@@ -1,0 +1,107 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_235000000.zarr",
+  "$TMPDIR/wt-ceiling-max/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_235000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 27.92,
+ "peaks": {
+  "client": {
+   "fp_peak": 19842450672,
+   "fp_lifetime_sum": 20312770736,
+   "rss_peak": 20333592576,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 9272516192,
+   "fp_lifetime_sum": 9320243264,
+   "rss_peak": 9291005952,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 138102664,
+   "fp_lifetime_sum": 138102664,
+   "rss_peak": 173490176,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 29083427664,
+   "rss_peak": 29592027136,
+   "fp_lifetime_sum": 29633014000
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.05,
+   875504520
+  ],
+  [
+   4.33,
+   10112862160
+  ],
+  [
+   6.49,
+   13519622784
+  ],
+  [
+   8.65,
+   16297500192
+  ],
+  [
+   10.85,
+   19047576064
+  ],
+  [
+   13.1,
+   23138993464
+  ],
+  [
+   15.35,
+   28293422992
+  ],
+  [
+   17.59,
+   28896109392
+  ],
+  [
+   19.8,
+   28905104232
+  ],
+  [
+   22.04,
+   23866233912
+  ],
+  [
+   24.25,
+   25559586832
+  ],
+  [
+   26.54,
+   26941055344
+  ]
+ ],
+ "ps_before": "2026-10-09T19:17:02-0700\nmemorystatus_level=93 swap=total = 5120.00M  used = 3904.19M  free = 1215.81M  (encrypted)\n 1250 195104  11.5 /System/Library/CoreServices/NotificationCenter.app/Contents/MacOS/NotificationCenter\n 4725 825776   8.1 claude\n80588 772976   7.7 $HOME/.local/bin/claude\n  626 524864   6.7 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n46800  19872   6.5 .venv/bin/python\n 6219  61136   3.1 $HOME/Projects/investments/.venv/bin/python3\n  601  48784   2.5 /usr/libexec/locationd\n46801   1232   1.3 /usr/bin/lockf\n28847 1183344   1.3 $HOME/.local/bin/claude\n92291  30848   1.2 .venv/bin/python\n",
+ "others_at_start": [
+  "46801 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "46802 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

@@ -1,0 +1,112 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_300000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_sub1m_run_300000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 35.65,
+ "peaks": {
+  "client": {
+   "fp_peak": 2687510296,
+   "fp_lifetime_sum": 3189631680,
+   "rss_peak": 2720825344,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 8657772104,
+   "fp_lifetime_sum": 8738365528,
+   "rss_peak": 8688893952,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 115372296,
+   "fp_lifetime_sum": 115831096,
+   "rss_peak": 156925952,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 9168994312,
+   "rss_peak": 9927114752,
+   "fp_lifetime_sum": 11927997208
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.39,
+   957490032
+  ],
+  [
+   4.88,
+   1189062160
+  ],
+  [
+   7.34,
+   1076324096
+  ],
+  [
+   9.79,
+   1100752664
+  ],
+  [
+   12.18,
+   1928669696
+  ],
+  [
+   14.64,
+   2665835536
+  ],
+  [
+   17.04,
+   3399069240
+  ],
+  [
+   19.46,
+   4387942880
+  ],
+  [
+   21.93,
+   5152699400
+  ],
+  [
+   24.3,
+   5889078808
+  ],
+  [
+   26.77,
+   6953056704
+  ],
+  [
+   29.4,
+   4379964160
+  ],
+  [
+   31.92,
+   5598540952
+  ],
+  [
+   34.42,
+   5397755608
+  ]
+ ],
+ "ps_before": "2026-10-05T15:54:41-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 507104  15.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n62125  20928   7.8 benchmark/tool_ceiling/.venv/bin/python\n62123  19792   6.5 .venv/bin/python\n  629 209344   6.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  639 129536   4.4 /usr/sbin/coreaudiod\n 1012  17072   3.9 /usr/libexec/pboard\n  596  30352   3.9 /System/Library/CoreServices/launchservicesd\n86901 537040   3.6 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 1240  49296   2.1 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  633  29936   2.0 /usr/libexec/runningboardd\n",
+ "others_at_start": []
+}

@@ -1,0 +1,148 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "scanpy_task.py",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first8400000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_default_run_8400000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 43.81,
+ "peaks": {
+  "proc": {
+   "fp_peak": 17697535248,
+   "fp_lifetime_sum": 17697535248,
+   "rss_peak": 18006622208,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 17697535248,
+   "rss_peak": 18006622208,
+   "fp_lifetime_sum": 17697535248
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9077144
+  ],
+  [
+   1.5,
+   1271514648
+  ],
+  [
+   2.97,
+   8208587112
+  ],
+  [
+   4.43,
+   8803752944
+  ],
+  [
+   5.91,
+   9166757088
+  ],
+  [
+   7.34,
+   9346014576
+  ],
+  [
+   8.81,
+   10280083520
+  ],
+  [
+   10.26,
+   10287603776
+  ],
+  [
+   11.72,
+   10287603776
+  ],
+  [
+   13.19,
+   10287603776
+  ],
+  [
+   14.66,
+   10287603776
+  ],
+  [
+   16.14,
+   10287603776
+  ],
+  [
+   17.63,
+   10287603776
+  ],
+  [
+   19.1,
+   10287603776
+  ],
+  [
+   20.56,
+   10287603776
+  ],
+  [
+   22.01,
+   10287603776
+  ],
+  [
+   23.47,
+   10287603776
+  ],
+  [
+   24.93,
+   10296074304
+  ],
+  [
+   26.41,
+   17697535248
+  ],
+  [
+   27.88,
+   10321928304
+  ],
+  [
+   29.34,
+   11183432440
+  ],
+  [
+   30.79,
+   11183432440
+  ],
+  [
+   32.29,
+   11183432440
+  ],
+  [
+   33.73,
+   11183432440
+  ],
+  [
+   35.2,
+   11183432440
+  ],
+  [
+   36.62,
+   11183432440
+  ],
+  [
+   38.04,
+   11183432440
+  ],
+  [
+   39.52,
+   11183432440
+  ],
+  [
+   40.99,
+   11183432440
+  ],
+  [
+   42.44,
+   11183432440
+  ]
+ ],
+ "ps_before": "2026-10-03T22:51:57-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1063552  73.6 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n49232  24832  21.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n49233  24752  21.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n49234  14176  18.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n49228  25216  16.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n49230  24832  13.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n    1  35280  12.5 /sbin/launchd\n49231  14176  11.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n49229  14192  11.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n 6219  58672   9.6 $HOME/Projects/investments/.venv/bin/python3\n"
+}

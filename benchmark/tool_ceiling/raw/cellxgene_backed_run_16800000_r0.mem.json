@@ -1,0 +1,130 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first16800000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_backed_run_16800000_r0",
+  "--n",
+  "16800000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 43.06,
+ "peaks": {
+  "client": {
+   "fp_peak": 5923780456,
+   "fp_lifetime_sum": 6947109696,
+   "rss_peak": 6481723392,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 36966231280,
+   "fp_lifetime_sum": 37116522648,
+   "rss_peak": 37553618944,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 122876528,
+   "fp_lifetime_sum": 122876528,
+   "rss_peak": 161710080,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 41383011392,
+   "rss_peak": 43533942784,
+   "fp_lifetime_sum": 44063632344
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.12,
+   870589152
+  ],
+  [
+   4.21,
+   1987684048
+  ],
+  [
+   6.27,
+   2987830240
+  ],
+  [
+   8.31,
+   3150064944
+  ],
+  [
+   10.32,
+   3693096600
+  ],
+  [
+   12.42,
+   4663406928
+  ],
+  [
+   14.5,
+   9051553176
+  ],
+  [
+   16.6,
+   12264212984
+  ],
+  [
+   18.68,
+   13188550264
+  ],
+  [
+   20.76,
+   13626299032
+  ],
+  [
+   22.83,
+   14904842176
+  ],
+  [
+   24.9,
+   14683805776
+  ],
+  [
+   26.95,
+   15296599904
+  ],
+  [
+   29.05,
+   14158108560
+  ],
+  [
+   31.19,
+   17325252656
+  ],
+  [
+   33.33,
+   31301732384
+  ],
+  [
+   35.45,
+   41375802432
+  ],
+  [
+   37.56,
+   12123853488
+  ],
+  [
+   39.65,
+   12476617344
+  ],
+  [
+   41.76,
+   11794141608
+  ]
+ ],
+ "ps_before": "2026-10-04T16:15:12-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n84235 275440 105.8 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node\n 6219  59040  14.3 $HOME/Projects/investments/.venv/bin/python3\n86901 554400   3.4 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  557 567008   3.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n12311  19536   2.9 benchmark/tool_ceiling/.venv/bin/python\n57113 2834256   2.3 $HOME/.local/bin/claude\n  855 1972816   2.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n80588 605584   1.6 $HOME/.local/bin/claude\n  582 105504   1.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n92291  30992   1.4 .venv/bin/python\n",
+ "others_at_start": []
+}

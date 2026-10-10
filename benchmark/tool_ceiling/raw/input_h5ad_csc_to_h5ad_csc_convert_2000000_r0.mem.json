@@ -1,0 +1,70 @@
+{
+ "cmd": [
+  ".venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "2000000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first2000000_csc.h5ad",
+  "--csc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 13.43,
+ "peaks": {
+  "proc": {
+   "fp_peak": 6425794104,
+   "fp_lifetime_sum": 6485956248,
+   "rss_peak": 6517358592,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 6425794104,
+   "rss_peak": 6517358592,
+   "fp_lifetime_sum": 6485956248
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8569240
+  ],
+  [
+   1.44,
+   431539376
+  ],
+  [
+   2.86,
+   3059518608
+  ],
+  [
+   4.28,
+   3986509616
+  ],
+  [
+   5.7,
+   4755411312
+  ],
+  [
+   7.13,
+   4755526000
+  ],
+  [
+   8.57,
+   4755526000
+  ],
+  [
+   9.99,
+   4755558768
+  ],
+  [
+   11.42,
+   4982182400
+  ],
+  [
+   12.85,
+   6363403832
+  ]
+ ],
+ "ps_before": "2026-10-05T11:42:44-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 525312  12.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n50476  50656  10.9 (com.apple.Safari)\n 1042 134240   9.7 /System/Library/Frameworks/Accounts.framework/Versions/A/Support/accountsd\n 2074 350192   7.1 /System/Library/Frameworks/Contacts.framework/Support/contactsd\n86901 577408   3.4 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 1044  35712   3.3 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd\n82028  17088   2.9 /Library/Apple/System/Library/PrivateFrameworks/RemotePairing.framework/Versions/A/XPCServices/remotepairingd.xpc/Contents/MacOS/remotepairingd\n 1240  49440   2.9 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n80588 626704   2.2 $HOME/.local/bin/claude\n 1492  42928   2.1 /System/Library/PrivateFrameworks/TextInputUIMacHelper.framework/Versions/A/XPCServices/CursorUIViewService.xpc/Contents/MacOS/CursorUIViewService\n",
+ "others_at_start": []
+}

@@ -1,0 +1,27 @@
+syn_1000000.zarr color=gene mode=live ready 10.6s  js_heap 0.54 GB (535 B/pt)  renderer RSS now 0.96 GB peak 1.77 GB (1773 B/pt)  gpu peak 0.24 GB
+total sampled 434 MB = 433.7 B/pt
+     78.2 MB    78.2 B/pt  normalize plotly-2.20.0.min.js:134582   <- sortTracesByColor plot-make.js:1202
+     55.3 MB    55.3 B/pt  normalize plotly-2.20.0.min.js:134582   <- drawPlot panel-surface.js:277
+     36.4 MB    36.4 B/pt  _safeJSONParse data-manager.js:65   <- _safeJSONParse data-manager.js:65
+     35.9 MB    35.9 B/pt  primitivesLoopSplice plotly-2.20.0.min.js:24570   <- sortTracesByColor plot-make.js:1202
+     35.5 MB    35.5 B/pt  relinkPrivateKeys plotly-2.20.0.min.js:28261   <- sortTracesByColor plot-make.js:1202
+     29.6 MB    29.6 B/pt  sort plotly-2.20.0.min.js:124733   <- sortTracesByColor plot-make.js:1202
+     16.0 MB    16.0 B/pt  convertMarkerStyle plotly-2.20.0.min.js:98284   <- drawPlot panel-surface.js:277
+     16.0 MB    16.0 B/pt  convertMarkerStyle plotly-2.20.0.min.js:98284   <- sortTracesByColor plot-make.js:1202
+     16.0 MB    16.0 B/pt  toPlainArray wire.js:87   <- toPlainArray wire.js:87
+     16.0 MB    16.0 B/pt  ax.makeCalcdata plotly-2.20.0.min.js:46906   <- sortTracesByColor plot-make.js:1202
+     16.0 MB    16.0 B/pt  calc plotly-2.20.0.min.js:97917   <- drawPlot panel-surface.js:277
+     16.0 MB    16.0 B/pt  calc plotly-2.20.0.min.js:97917   <- sortTracesByColor plot-make.js:1202
+     16.0 MB    16.0 B/pt  normalize plotly-2.20.0.min.js:124969   <- sortTracesByColor plot-make.js:1202
+     10.4 MB    10.4 B/pt  __webpack_modules__.11870.Scatter.updateColor plotly-2.20.0.min.js:207911   <- sortTracesByColor plot-make.js:1202
+      8.0 MB     8.0 B/pt  map   <- _permuted plot-make.js:1188
+      5.2 MB     5.2 B/pt  formatColor plotly-2.20.0.min.js:25417   <- drawPlot panel-surface.js:277
+      5.2 MB     5.2 B/pt  formatColor plotly-2.20.0.min.js:25417   <- sortTracesByColor plot-make.js:1202
+      4.0 MB     4.0 B/pt  getCells data-manager.js:1400   <- getCells data-manager.js:1400
+      4.0 MB     4.0 B/pt  cluster plotly-2.20.0.min.js:124655   <- sortTracesByColor plot-make.js:1202
+      4.0 MB     4.0 B/pt  map   <- colorSortOrder plot-make.js:1197
+      2.2 MB     2.2 B/pt  webpackUniversalModuleDefinition plotly-2.20.0.min.js:7   <- -
+      0.7 MB     0.7 B/pt  (V8 API)   <- -
+      0.5 MB     0.5 B/pt  c plotly-2.20.0.min.js:208548   <- drawPlot panel-surface.js:277
+      0.4 MB     0.4 B/pt  compile plotly-2.20.0.min.js:208550   <- drawPlot panel-surface.js:277
+      0.4 MB     0.4 B/pt  (anon) plotly-2.20.0.min.js:157757   <- -

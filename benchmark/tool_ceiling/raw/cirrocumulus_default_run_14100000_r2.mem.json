@@ -1,0 +1,211 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first14100000.h5ad",
+  "benchmark/tool_ceiling/shots/cirrocumulus_default_run_14100000_r2",
+  "--n",
+  "14100000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 82.73,
+ "peaks": {
+  "client": {
+   "fp_peak": 5047528536,
+   "fp_lifetime_sum": 5173325728,
+   "rss_peak": 4197941248,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 46615135736,
+   "fp_lifetime_sum": 46808090104,
+   "rss_peak": 46888665088,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 116634200,
+   "fp_lifetime_sum": 116634200,
+   "rss_peak": 156680192,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 47242831464,
+   "rss_peak": 47926493184,
+   "fp_lifetime_sum": 51981415832
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.18,
+   2561402744
+  ],
+  [
+   4.35,
+   13973407600
+  ],
+  [
+   6.46,
+   14433405264
+  ],
+  [
+   8.61,
+   15802617296
+  ],
+  [
+   10.73,
+   15992540792
+  ],
+  [
+   12.84,
+   28894720680
+  ],
+  [
+   14.96,
+   40992695888
+  ],
+  [
+   17.07,
+   35076621288
+  ],
+  [
+   19.2,
+   18458449112
+  ],
+  [
+   21.32,
+   18825270896
+  ],
+  [
+   23.39,
+   18921592504
+  ],
+  [
+   25.51,
+   19106912120
+  ],
+  [
+   27.64,
+   19318740976
+  ],
+  [
+   29.77,
+   18615801408
+  ],
+  [
+   31.93,
+   18742695632
+  ],
+  [
+   34.1,
+   18878109488
+  ],
+  [
+   36.26,
+   18765436696
+  ],
+  [
+   38.39,
+   18542466720
+  ],
+  [
+   40.48,
+   18682632296
+  ],
+  [
+   42.59,
+   19047029080
+  ],
+  [
+   44.68,
+   20446551464
+  ],
+  [
+   46.76,
+   23147077848
+  ],
+  [
+   48.87,
+   21746835576
+  ],
+  [
+   51.0,
+   21825183912
+  ],
+  [
+   53.13,
+   20425121264
+  ],
+  [
+   55.21,
+   20867522464
+  ],
+  [
+   57.29,
+   20873781128
+  ],
+  [
+   59.41,
+   20836884312
+  ],
+  [
+   61.48,
+   20605607744
+  ],
+  [
+   63.57,
+   20611620672
+  ],
+  [
+   65.66,
+   20617289536
+  ],
+  [
+   67.75,
+   20627676992
+  ],
+  [
+   69.84,
+   20622761792
+  ],
+  [
+   71.92,
+   20635672408
+  ],
+  [
+   74.01,
+   20637097816
+  ],
+  [
+   76.11,
+   20654186304
+  ],
+  [
+   78.21,
+   22128648216
+  ],
+  [
+   80.36,
+   22461882512
+  ],
+  [
+   82.51,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-04T16:16:58-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n69003 440736  44.5 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell\n  626 519024  18.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n97961 675568   8.6 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n69166  20688   8.5 benchmark/tool_ceiling/.venv/bin/python\n  629 236192   7.5 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n69164  19744   7.2 benchmark/tool_ceiling/.venv/bin/python\n73194 195648   5.0 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n41553 488400   4.1 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n 1012  17792   3.5 /usr/libexec/pboard\n77716 505840   3.0 /Applications/Claude.app/Contents/MacOS/Claude\n",
+ "others_at_start": [
+  "69000 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disa",
+  "69001 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=gpu-process --no-sandbox --d",
+  "69002 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=utility --utility-sub-type=n",
+  "69003 $HOME/.cache/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell --type=renderer --headless=old --no"
+ ]
+}

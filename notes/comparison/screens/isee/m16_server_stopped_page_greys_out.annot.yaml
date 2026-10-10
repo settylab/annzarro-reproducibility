@@ -1,0 +1,19 @@
+version: 1
+image: m16_server_stopped_page_greys_out.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3)
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: 5c430d9b928e8976761bb214ebf057b81b838f5c510f1e3980f80ced7bceca70
+proves:
+- column: static
+  mark: N
+  caption: 'iSEE 2.18.0: with the R process stopped the page greys out; no panel works without the server.'
+callouts:
+- n: 1
+  box: [3, 68, 1394, 830]
+  label: every panel greyed by Shiny's disconnected overlay after the server stopped

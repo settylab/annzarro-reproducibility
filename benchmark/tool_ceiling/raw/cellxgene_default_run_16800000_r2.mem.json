@@ -1,0 +1,133 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first16800000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_default_run_16800000_r2",
+  "--n",
+  "16800000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 44.58,
+ "peaks": {
+  "client": {
+   "fp_peak": 6534461168,
+   "fp_lifetime_sum": 6916962728,
+   "rss_peak": 6283509760,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 38787608920,
+   "fp_lifetime_sum": 38869169240,
+   "rss_peak": 39371735040,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 122729000,
+   "fp_lifetime_sum": 122729000,
+   "rss_peak": 161579008,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 43303642824,
+   "rss_peak": 45182386176,
+   "fp_lifetime_sum": 45786131968
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.1,
+   795222440
+  ],
+  [
+   4.18,
+   2457642920
+  ],
+  [
+   6.39,
+   14954728312
+  ],
+  [
+   8.45,
+   16571813904
+  ],
+  [
+   10.48,
+   18104227248
+  ],
+  [
+   12.55,
+   18036495816
+  ],
+  [
+   14.58,
+   18577921840
+  ],
+  [
+   16.7,
+   20089789240
+  ],
+  [
+   18.75,
+   23039517632
+  ],
+  [
+   20.79,
+   26421244056
+  ],
+  [
+   22.91,
+   26824307440
+  ],
+  [
+   24.95,
+   27873425456
+  ],
+  [
+   26.97,
+   28847324240
+  ],
+  [
+   29.01,
+   28392701080
+  ],
+  [
+   31.06,
+   29856578928
+  ],
+  [
+   33.12,
+   28130360592
+  ],
+  [
+   35.19,
+   40146836864
+  ],
+  [
+   37.26,
+   43020101320
+  ],
+  [
+   39.38,
+   28700999360
+  ],
+  [
+   41.43,
+   29908450720
+  ],
+  [
+   43.53,
+   28103638432
+  ]
+ ],
+ "ps_before": "2026-10-04T03:27:51-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 6219  56640   9.8 $HOME/Projects/investments/.venv/bin/python3\n57113 1675568   2.7 $HOME/.local/bin/claude\n 4725 547680   1.6 claude\n80588 578896   1.0 $HOME/.local/bin/claude\n79623   5152   0.7 tmux\n92291  30784   0.6 .venv/bin/python\n80005 354080   0.5 $HOME/.local/bin/claude\n72627 440224   0.5 $HOME/.local/bin/claude\n  350   1232   0.4 sleep\n47413 562976   0.3 /Applications/cmux.app/Contents/MacOS/cmux\n"
+}

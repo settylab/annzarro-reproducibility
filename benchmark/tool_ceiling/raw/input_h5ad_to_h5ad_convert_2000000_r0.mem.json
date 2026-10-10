@@ -1,0 +1,56 @@
+{
+ "cmd": [
+  ".venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "2000000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 10.69,
+ "peaks": {
+  "proc": {
+   "fp_peak": 11755481192,
+   "fp_lifetime_sum": 11771537512,
+   "rss_peak": 11845304320,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 11755481192,
+   "rss_peak": 11845304320,
+   "fp_lifetime_sum": 11771537512
+  }
+ },
+ "trace": [
+  [
+   0.03,
+   13468056
+  ],
+  [
+   1.6,
+   426558712
+  ],
+  [
+   3.35,
+   8139071048
+  ],
+  [
+   4.93,
+   8243388048
+  ],
+  [
+   6.51,
+   8449662752
+  ],
+  [
+   8.1,
+   8449662752
+  ],
+  [
+   9.67,
+   10925401616
+  ]
+ ],
+ "ps_before": "2026-10-03T16:36:42-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n77014  23120  44.2 .venv/bin/python\n  626 553872  10.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1040  27424  10.2 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/ContextStoreAgent\n57113 2050336   6.6 $HOME/.local/bin/claude\n 1012  14816   4.1 /usr/libexec/pboard\n  619   7088   3.2 /usr/sbin/notifyd\n47413 639808   2.8 /Applications/cmux.app/Contents/MacOS/cmux\n  629 222352   2.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30480   2.1 /System/Library/CoreServices/launchservicesd\n  557 652464   1.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n"
+}

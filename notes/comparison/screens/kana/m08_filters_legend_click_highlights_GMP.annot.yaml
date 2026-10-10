@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m08_filters_legend_click_highlights_GMP.jpg",
+ "tool": "kana",
+ "software": "Kana v3.2.0 (live build, kanaverse.org)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "https://www.kanaverse.org/kana/",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/kana/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "filters",
+   "mark": "P",
+   "caption": "Clicking a legend entry highlights that cluster (others grey); no table-driven filter of cells"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    979,
+    508,
+    153,
+    28
+   ],
+   "label": "legend entry clicked",
+   "selector": "text=GMP"
+  },
+  {
+   "n": 2,
+   "box": [
+    112,
+    131,
+    795,
+    778
+   ],
+   "label": "GMP highlighted",
+   "selector": "canvas"
+  }
+ ]
+}

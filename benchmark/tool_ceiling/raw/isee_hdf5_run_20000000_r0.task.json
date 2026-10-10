@@ -1,0 +1,34 @@
+{
+ "tool": "isee",
+ "variant": "hdf5",
+ "input": "$DATA_ROOT/tool_ceiling_data/sce_h5/first20000000.rds",
+ "n": 20000000,
+ "phases": {
+  "server_ready": 50.07,
+  "first_plot": 138.46,
+  "plot_cat": 138.54
+ },
+ "checks": {
+  "cat": {
+   "gl": null,
+   "stated": 20000000,
+   "png": "benchmark/tool_ceiling/shots/isee_hdf5_run_20000000_r0_cat.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "iSEE": "2.18.0",
+  "shiny": "1.14.0",
+  "Rscript": "$ENVS_ROOT/rceiling/bin/Rscript"
+ },
+ "console": [
+  "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+  "error: [shiny] Error on client while running Shiny app - Unexpected input value mode: '[object Object]'",
+  "error: Error: Unexpected input value mode: '[object Object]'\n    at Ai (http://127.0.0.1:8948/shiny-javascript-1.14.0/shiny.min.js:436:3925)\n    at Bt.setInput (http://127.0.0.1:8948/shiny-javascript-1.14.0/",
+  "error: [shiny] Error on client while running Shiny app - Unexpected input value mode: '[object Object]'",
+  "error: Error: Unexpected input value mode: '[object Object]'\n    at Ai (http://127.0.0.1:8948/shiny-javascript-1.14.0/shiny.min.js:436:3925)\n    at Bt.setInput (http://127.0.0.1:8948/shiny-javascript-1.14.0/",
+  "error: [shiny] Error on client while running Shiny app - Unexpected input value mode: '[object Object]'",
+  "error: Error: Unexpected input value mode: '[object Object]'\n    at Ai (http://127.0.0.1:8948/shiny-javascript-1.14.0/shiny.min.js:436:3925)\n    at Bt.setInput (http://127.0.0.1:8948/shiny-javascript-1.14.0/"
+ ]
+}

@@ -1,0 +1,105 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_200000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_syn_run_200000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 30.07,
+ "peaks": {
+  "client": {
+   "fp_peak": 18641483680,
+   "fp_lifetime_sum": 20478377880,
+   "rss_peak": 18345541632,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 9140641280,
+   "fp_lifetime_sum": 9241550840,
+   "rss_peak": 9206087680,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 133351160,
+   "fp_lifetime_sum": 133351160,
+   "rss_peak": 168771584,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 27677955416,
+   "rss_peak": 26218135552,
+   "fp_lifetime_sum": 29719928720
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.34,
+   2284497072
+  ],
+  [
+   4.87,
+   11215685944
+  ],
+  [
+   7.42,
+   12815191888
+  ],
+  [
+   9.91,
+   16408095000
+  ],
+  [
+   12.42,
+   22039577432
+  ],
+  [
+   14.91,
+   24830054856
+  ],
+  [
+   17.4,
+   23768092720
+  ],
+  [
+   19.99,
+   24735782712
+  ],
+  [
+   22.48,
+   14929296656
+  ],
+  [
+   25.05,
+   22659465592
+  ],
+  [
+   27.6,
+   24766878896
+  ],
+  [
+   29.94,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-07T16:22:46-0700\nmemorystatus_level=90 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n  855 1232528  98.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  626 420672   8.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n99106  19856   6.4 .venv/bin/python\n57113 2346048   4.8 $HOME/.local/bin/claude\n80005 1029840   1.6 $HOME/.local/bin/claude\n  629 189200   1.5 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  557  51760   1.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n99107   1232   1.2 /usr/bin/lockf\n47413 694800   1.2 /Applications/cmux.app/Contents/MacOS/cmux\n49293 905840   1.0 $HOME/.local/bin/claude\n",
+ "others_at_start": [
+  "99107 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "99108 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

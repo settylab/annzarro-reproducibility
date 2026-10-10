@@ -1,0 +1,44 @@
+{
+ "version": 1,
+ "image": "g01_static_request_log_api_calls.jpg",
+ "tool": "cellxgene",
+ "software": "CELLxGENE Annotate 1.3.0 (local)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8903/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_cellxgene.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "static",
+   "mark": "N",
+   "caption": "request log, CELLxGENE Annotate 1.3.0 (2026-10-04): schema, layouts, annotations all come from the Python server's /api; it cannot run as static files"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    125,
+    1375,
+    35
+   ],
+   "label": "data request to the API server",
+   "selector": "#r0"
+  },
+  {
+   "n": 2,
+   "box": [
+    12,
+    721,
+    1376,
+    23
+   ],
+   "label": "no static mode",
+   "selector": "#note"
+  }
+ ],
+ "note": "Captured on local CELLxGENE Annotate 1.3.0, not the hosted Explorer: headless Chromium logged no data requests from Explorer. The static N holds for both programs (both need their Python server)."
+}

@@ -1,0 +1,119 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_220000000.zarr",
+  "$TMPDIR/wt-ceiling-max/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_220000000_r1",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 33.4,
+ "peaks": {
+  "client": {
+   "fp_peak": 19107087624,
+   "fp_lifetime_sum": 22155086000,
+   "rss_peak": 20220198912,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 9037471160,
+   "fp_lifetime_sum": 9090359456,
+   "rss_peak": 9055977472,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 136267656,
+   "fp_lifetime_sum": 136267656,
+   "rss_peak": 171638784,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 26767989256,
+   "rss_peak": 27424063488,
+   "fp_lifetime_sum": 31245445456
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.09,
+   895574848
+  ],
+  [
+   4.41,
+   9267774648
+  ],
+  [
+   6.58,
+   12076829992
+  ],
+  [
+   8.77,
+   14950078976
+  ],
+  [
+   10.98,
+   17731169928
+  ],
+  [
+   13.23,
+   22491497664
+  ],
+  [
+   15.49,
+   26693212680
+  ],
+  [
+   17.73,
+   24107815488
+  ],
+  [
+   20.01,
+   26049796736
+  ],
+  [
+   22.27,
+   25070476744
+  ],
+  [
+   24.48,
+   14088995144
+  ],
+  [
+   26.69,
+   17180411000
+  ],
+  [
+   29.04,
+   23016001320
+  ],
+  [
+   31.28,
+   25149807352
+  ],
+  [
+   33.4,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-09T19:20:28-0700\nmemorystatus_level=93 swap=total = 5120.00M  used = 3904.19M  free = 1215.81M  (encrypted)\n52601  19760   6.4 .venv/bin/python\n80588 772944   5.3 $HOME/.local/bin/claude\n28847 1183264   2.2 $HOME/.local/bin/claude\n92291  30848   1.8 .venv/bin/python\n  626 524832   1.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n52602   1232   1.2 /usr/bin/lockf\n  594  27552   1.1 /usr/libexec/opendirectoryd\n52605   2272   1.0 /bin/sh\n72627 601808   0.8 $HOME/.local/bin/claude\n 4725 825776   0.8 claude\n",
+ "others_at_start": [
+  "52602 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "52605 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

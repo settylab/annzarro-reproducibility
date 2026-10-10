@@ -1,0 +1,1086 @@
+# Vitessce: Fig. 1c marks and their evidence.
+# Seeded by evidence/tools/import_notes.py from notes/comparison/vitessce.md and
+# figures/fig_comparison.py; edit this file from now on (schema: evidence/README.md).
+id: vitessce
+name: Vitessce
+figure:
+  row: 4
+  label: Vitessce
+  largest_documented: 1.28M
+notes: notes/comparison/vitessce.md
+cells:
+  cells:
+    mark: N
+    reason: >-
+      Vitessce has no obsp data type or loader; Cell Sets lists the configured obs columns only, though
+      the store holds three obsp matrices.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Cell Sets lists only the configured obs columns (Cell type, Age, Sample); the Gene List lists var names. Nothing offers `connectivities`, `distances` or `diffusion_distance`, although the store has them under `obsp/`. *Steps:* Open `https://vitessce.io/#?url=http://127.0.0.1:8904/config.json`. *Evidence:* [m00](screens/vitessce/m00_plots_render.jpg), [Focus 01](screens/vitessce/01_loaded.jpg)
+
+      **Source and docs.** No `obsp` data type or loader. Data types: [`packages/constants-internal/src/constants.ts#L41-L62`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/constants-internal/src/constants.ts#L41-L62) (no pairwise type; `sampleEdges` is an obs to sample mapping, [`SampleEdgesAnndataLoader.js#L26-L36`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/SampleEdgesAnndataLoader.js#L26-L36)). `grep -rE "obsp\|varp\|obsPairs" packages` hits only test fixtures. Pointing the matrix loader's `path` at `obsp/...` does not work: feature names come from `var` ([`ObsFeatureMatrixAnndataLoader.js#L130-L140`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js#L130-L140)), so an n_obs × n_obs matrix has no matching labels. Python `AnnDataWrapper` takes no obsp argument ([PY `src/vitessce/wrappers.py#L1196`](https://github.com/vitessce/vitessce-python/blob/1fdcf8a238a5e22cdfad21ef2f679c03154f000c/src/vitessce/wrappers.py#L1196)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m00_plots_render.jpg
+      label: m00
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/01_loaded.jpg
+      label: Focus 01
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/constants-internal/src/constants.ts
+      lines: 41-62
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/constants-internal/src/constants.ts#L41-L62
+      label: '`packages/constants-internal/src/constants.ts#L41-L62`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/file-types/zarr/src/anndata-loaders/SampleEdgesAnndataLoader.js
+      lines: 26-36
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/SampleEdgesAnndataLoader.js#L26-L36
+      label: '`SampleEdgesAnndataLoader.js#L26-L36`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js
+      lines: 130-140
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js#L130-L140
+      label: '`ObsFeatureMatrixAnndataLoader.js#L130-L140`'
+    - kind: code
+      repo: vitessce/vitessce-python
+      commit: 1fdcf8a238a5e22cdfad21ef2f679c03154f000c
+      path: src/vitessce/wrappers.py
+      lines: '1196'
+      url: >-
+        https://github.com/vitessce/vitessce-python/blob/1fdcf8a238a5e22cdfad21ef2f679c03154f000c/src/vitessce/wrappers.py#L1196
+      label: PY `src/vitessce/wrappers.py#L1196`
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  genes:
+    mark: N
+    reason: No varp data type or loader; the Gene List lists var names only.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Same; no varp. *Steps:* As column 1. *Evidence:* [m00](screens/vitessce/m00_plots_render.jpg)
+
+      **Source and docs.** Same searches for `varp`; none outside fixtures.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m00_plots_render.jpg
+      label: m00
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/constants-internal/src/constants.ts
+      lines: 41-62
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/constants-internal/src/constants.ts#L41-L62
+      label: '`packages/constants-internal/src/constants.ts#L41-L62`'
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  focus:
+    mark: N
+    reason: >-
+      The only focus is a gene's expression column propagating to every coordinated view, which the strict
+      definition excludes; no pairwise row can be chosen or drawn.
+    detail: |-
+      **Focus, checked in the running app.** The only focus Vitessce has is (a2), a gene's expression column propagating to every coordinated view, which by the strict definition is N; no cell x cell or gene x gene row can be chosen or drawn.
+
+      **Source and docs.** Under the loose definition: One selected gene re-drives every coordinated view: clicking a row of the feature statistics table sets `featureSelection` ([`statistical-plots/src/FeatureStatsTable.js#L101-L107`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/statistical-plots/src/FeatureStatsTable.js#L101-L107)), as do the gene list ([`feature-list/src/FeatureListSubscriber.js#L79`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/feature-list/src/FeatureListSubscriber.js#L79)) and a volcano click ([`VolcanoPlotSubscriber.js#L123`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/statistical-plots/src/VolcanoPlotSubscriber.js#L123)); the embedding ([`EmbeddingScatterplotSubscriber.js#L110`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js#L110)), spatial ([`SpatialSubscriber.js#L107`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/spatial/src/SpatialSubscriber.js#L107)) and violin plot ([`CellSetExpressionPlotSubscriber.js#L162`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/statistical-plots/src/CellSetExpressionPlotSubscriber.js#L162)) read it. This is the same behaviour iSEE gets P for ("table row click changes plotted gene"). Not Y: a focused *cell* only produces a transient hover highlight (`obsHighlight`), and no focused entity pulls a relationship row. Demo: Habib 2017, click a gene in the gene list, the UMAP recolours.
+    evidence:
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/statistical-plots/src/FeatureStatsTable.js
+      lines: 101-107
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/statistical-plots/src/FeatureStatsTable.js#L101-L107
+      label: '`statistical-plots/src/FeatureStatsTable.js#L101-L107`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/feature-list/src/FeatureListSubscriber.js
+      lines: '79'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/feature-list/src/FeatureListSubscriber.js#L79
+      label: '`feature-list/src/FeatureListSubscriber.js#L79`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/statistical-plots/src/VolcanoPlotSubscriber.js
+      lines: '123'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/statistical-plots/src/VolcanoPlotSubscriber.js#L123
+      label: '`VolcanoPlotSubscriber.js#L123`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js
+      lines: '110'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js#L110
+      label: '`EmbeddingScatterplotSubscriber.js#L110`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/spatial/src/SpatialSubscriber.js
+      lines: '107'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/spatial/src/SpatialSubscriber.js#L107
+      label: '`SpatialSubscriber.js#L107`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/statistical-plots/src/CellSetExpressionPlotSubscriber.js
+      lines: '162'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/statistical-plots/src/CellSetExpressionPlotSubscriber.js#L162
+      label: '`CellSetExpressionPlotSubscriber.js#L162`'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main, 'Integrate and explore multimodal data with coordinated multiple views'
+      quote: >-
+        enabling interactions such as selection of genes and cell types to be reflected in multiple visualizations
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Gene selection propagating to all coordinated views is feature colouring, excluded by the strict
+        definition; no pairwise row.
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/01_loaded.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/02_gene_Mpo_both_scatterplots.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/03_lasso_UMAP_highlights_FA.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/04_cellset_uncheck_CD4_both_views.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/05_cell_hover_tooltip.jpg
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  slots:
+    mark: P
+    reason: >-
+      Loaders read X, layers, obs, var and obsm named in a view config; obsp, varp and varm cannot be
+      loaded, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** There is no slot browser in the GUI: what is shown is what the view config names (`obsm/X_umap`, `obsm/X_draw_graph_fa`, three obs columns, `X`). Layers can be named in a config; obsp, varp and varm cannot (no loader). Nothing to screenshot beyond column 1. *Evidence:* [m00](screens/vitessce/m00_plots_render.jpg)
+
+      **Source and docs.** Loaders read X, layers, obs, var, obsm, uns (comparison metadata) ([`file-def-options.ts#L427-L448`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/schemas/src/file-def-options.ts#L427-L448), the anndata.zarr options; [`base-plugins.ts#L317-L334`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/main/all/src/base-plugins.ts#L317-L334), the AnnData file types and their loaders); none read `obsp`, `varp` or `varm`.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m00_plots_render.jpg
+      label: m00
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/schemas/src/file-def-options.ts
+      lines: 427-448
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/schemas/src/file-def-options.ts#L427-L448
+      label: '`packages/schemas/src/file-def-options.ts#L427-L448`'
+      note: >-
+        anndata.zarr options: obsLabels, featureLabels, obsFeatureMatrix (X or a layer), obsFeatureColumns,
+        obsSets (obs), obsSpots, obsPoints, obsLocations, obsSegmentations, obsEmbedding (obsm), sampleEdges;
+        no option for obsp, varp or varm.
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/main/all/src/base-plugins.ts
+      lines: 317-334
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/main/all/src/base-plugins.ts#L317-L334
+      label: '`packages/main/all/src/base-plugins.ts#L317-L334`'
+      note: every AnnData zarr file type and the loader and data type it is bound to; none is pairwise.
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Methods, 'Data organization'
+      quote: >-
+        AnnData objects, which may contain multiple observation-by-feature matrices, dimensionality reductions
+        and spatial coordinates, can be configured using a higher-level joint file type
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: X/layers and obsm; obsp, varp and varm are not mentioned.
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  remote:
+    mark: Y
+    reason: >-
+      Demos read AnnData zarr and OME-zarr images over HTTP from data-1.vitessce.io and Google Cloud Storage.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The lymph node demo reads its zarr from two remote hosts: `https://data-1.vitessce.io/` (AnnData zarr) and `https://vitessce-data.storage.googleapis.com/` (OME-zarr image). *Steps:* Network tab on the demo. *Evidence:* Observation (request log)
+
+      **Source and docs.** All demos above read zarr from GCS and `data-1.vitessce.io` over HTTP. [docs/data-hosting](https://vitessce.io/docs/data-hosting/).
+    evidence:
+    - kind: docs
+      url: https://vitessce.io/docs/data-hosting/
+      label: docs/data-hosting
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260512113610/https://vitessce.io/docs/data-hosting/
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main (paragraph on supported data)
+      quote: Vitessce can access files stored on static web servers and cloud object storage
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main, 'Deploy and share interactive visualizations'
+      quote: >-
+        Vitessce loads data from static files stored on standard web servers or cloud object storage systems
+        including Google Cloud Storage and Amazon Web Services S3.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    - evidence/screens/gaps/capture2_vitessce.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  spatial:
+    mark: Y
+    reason: Spatial views draw spots, locations and segmentations in tissue coordinates (lymph node demo).
+    detail: |-
+      **Checked in the running app (2026-10-04).** Lymph node demo: two Spatial views with 3,861 spots in tissue coordinates (Leiden clusters left, CR2 right). *Steps:* Open the demo link. *Evidence:* [m07](screens/vitessce/m07_spatial_lymph_node_spots_on_he.jpg)
+
+      **Source and docs.** `obsSpots`, `obsLocations`, `obsSegmentations`, `obsPoints` types ([`constants.ts#L41-L62`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/constants-internal/src/constants.ts#L41-L62)); lymph node demo.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m07_spatial_lymph_node_spots_on_he.jpg
+      label: m07
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/constants-internal/src/constants.ts
+      lines: 41-62
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/constants-internal/src/constants.ts#L41-L62
+      label: '`constants.ts#L41-L62`'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Fig. 2d legend
+      quote: >-
+        Schematic of supported visualization layers in the spatial view of Vitessce, namely, points, spots,
+        segmentations and images
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  selection:
+    reason: >-
+      a lasso in the UMAP highlights the cells in the FA plot; a cell-set checkbox acts on both views
+      and the heatmap
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/03_lasso_UMAP_highlights_FA.jpg
+      label: vitessce/03
+    - kind: docs
+      url: https://vitessce.io/docs/coordination/
+      label: >-
+        Coordinated Multiple Views: 'Views are "coordinated" if they are linked to a common coordination
+        scope'
+      checked: '2026-10-04'
+      archive: null
+    - kind: docs
+      url: https://vitessce.io/docs/components/
+      label: >-
+        obsSetSizes: the bar plot shows 'the currently-selected observation sets' via the obsSetSelection
+        coordination type
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js
+      lines: 315-322
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js#L315-L322
+      label: the scatterplot's lasso callback hands the selection to setObsSelection with the coordinated
+        setters
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/utils/sets-utils/src/utils.js
+      lines: 128-138
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/utils/sets-utils/src/utils.js#L128-L138
+      label: the lasso becomes a 'My Selections' cell set and is written to the shared obsSetSelection
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main, 'Integrate and explore multimodal data with coordinated multiple views'
+      quote: >-
+        enabling interactions such as selection of genes and cell types to be reflected in multiple visualizations
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: Read in the Europe PMC full text (PMC11725496).
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: running app
+    detail: >-
+      a lasso in the UMAP highlights the cells in the FA plot; a cell-set checkbox acts on both views
+      and the heatmap
+    mark: Y
+    reproduce:
+    - evidence/screens/gaps/capture2_vitessce.py
+  annot:
+    mark: P
+    reason: >-
+      A lasso creates a renamable cell set that lives in the view state and exported JSON/CSV files, but
+      nothing is written back to the data, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** A lasso on the UMAP creates "My Selections" > "Selection 1" (the other cells are greyed, and the Cell Set Sizes bar shows about 2,200 cells). The set's menu offers Rename, Delete, Export hierarchy (to JSON file), Export hierarchy (to CSV file). The set lives in view state and in exported files; the store is not written. P holds. *Steps:* `config_matrix.json`; click the lasso button in the UMAP toolbar; draw around the top (neutrophil) arm; in Cell Sets click the three dots next to "My Selections". *Evidence:* [lasso](screens/vitessce/m09_annotation_lasso_creates_set.jpg), [menu](screens/vitessce/m09_annotation_set_menu.jpg)
+
+      **Source and docs.** User cell sets: create from lasso, import, download JSON/CSV ([`obs-sets-manager/src/ObsSetsManagerSubscriber.js#L496-L595`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/obs-sets-manager/src/ObsSetsManagerSubscriber.js#L496-L595)); held in view state, not written back to the store.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m09_annotation_lasso_creates_set.jpg
+      label: lasso
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m09_annotation_set_menu.jpg
+      label: menu
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/obs-sets-manager/src/ObsSetsManagerSubscriber.js
+      lines: 496-595
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/obs-sets-manager/src/ObsSetsManagerSubscriber.js#L496-L595
+      label: '`obs-sets-manager/src/ObsSetsManagerSubscriber.js#L496-L595`'
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  de:
+    mark: N
+    reason: No view computes a test; comparative views only display precomputed results.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show. No view computes a test; searched the view list of the docs and the app's view-type menu sources (Matrix row). *Evidence:* Observation
+
+      **Source and docs.** [Comparative analysis docs](https://vitessce.io/docs/data-comparative/) (200) display precomputed results; `grep -riE "wilcoxon\|ttest\|t-test\|rank_genes" packages` finds only a comment about reading Scanpy output ([`packages/config/src/generate-config.js#L198`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/config/src/generate-config.js#L198)).
+    evidence:
+    - kind: docs
+      url: https://vitessce.io/docs/data-comparative/
+      label: Comparative analysis docs
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260512113611/https://vitessce.io/docs/data-comparative/
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/config/src/generate-config.js
+      lines: '198'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/config/src/generate-config.js#L198
+      label: '`packages/config/src/generate-config.js#L198`'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main (closing paragraphs)
+      quote: >-
+        Future directions for Vitessce include comparative analysis support, increased scalability and
+        additional visualization types
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Comparative analysis is future work as of the paper.
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main (paragraph on supported data)
+      quote: >-
+        Data (pre)processing (for example, dimensionality reduction and cell segmentation) must be performed
+        outside of Vitessce or through plugins
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Computation is outside the viewer; DE is not named specifically.
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    - evidence/screens/gaps/capture2_docs.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  image:
+    mark: Y
+    reason: OME-zarr / OME-TIFF image layers draw the H&E under the spots (lymph node demo).
+    detail: |-
+      **Checked in the running app (2026-10-04).** Lymph node demo: the H&E image is drawn under the spots in both Spatial views, and the Spatial Layers panel has an "Image" layer toggle. *Steps:* Open the demo link. *Evidence:* [m07](screens/vitessce/m07_spatial_lymph_node_spots_on_he.jpg)
+
+      **Source and docs.** OME-zarr/OME-TIFF image layers; lymph node demo draws spots on the H&E.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m07_spatial_lymph_node_spots_on_he.jpg
+      label: m07
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Fig. 2a legend
+      quote: >-
+        Visualization of a single-molecule FISH experiment containing multiplexed images, spatially resolved
+        RNA molecules and cell segmentations
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Extended Data Fig. 4 legend
+      quote: by hiding the cell segmentation masks in the spatial plot, uncovering the underlying image
+        data
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  share:
+    mark: Y
+    reason: >-
+      The EDIT button serialises the live view config, including the gene selection, into a URL that restores
+      the view when reopened.
+    detail: |-
+      **Checked in the running app (2026-10-04).** After choosing Mpo, the "EDIT" button rewrites the URL to `#?edit=true&url=data:,<config>` (23,992 characters, containing the Mpo selection) and opens the config editor. Opening the same URL with `edit=false` in a new tab restores both scatterplots coloured by Mpo. *Steps:* Choose Mpo in the Gene List; click EDIT (top right); copy the URL; change `edit=true` to `edit=false`; open it in a new tab. *Evidence:* [editor](screens/vitessce/m12_share_edit_config_with_live_state.jpg), [reopened](screens/vitessce/m12_share_data_url_reopened.jpg)
+
+      **Source and docs.** The vitessce.io app's "Edit" button serialises the live config, including gene selection and pan/zoom, into a `#?edit=true&url=data:,<json>` URL ([`sites/docs/src/pages/_Index.js#L280-L285`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/sites/docs/src/pages/_Index.js#L280-L285), button at [L340-L346](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/sites/docs/src/pages/_Index.js#L340-L346)); configs also load from `?url=` or a gist ([L405](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/sites/docs/src/pages/_Index.js#L405)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m12_share_edit_config_with_live_state.jpg
+      label: editor
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m12_share_data_url_reopened.jpg
+      label: reopened
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: sites/docs/src/pages/_Index.js
+      lines: 280-285
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/sites/docs/src/pages/_Index.js#L280-L285
+      label: '`sites/docs/src/pages/_Index.js#L280-L285`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: sites/docs/src/pages/_Index.js
+      lines: 340-346
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/sites/docs/src/pages/_Index.js#L340-L346
+      label: L340-L346
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: sites/docs/src/pages/_Index.js
+      lines: '405'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/sites/docs/src/pages/_Index.js#L405
+      label: L405
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main, 'Integrate and explore multimodal data with coordinated multiple views'
+      quote: >-
+        Configurations can be saved and shared via uniform resource locator (URL), making the interactive
+        visualization reproducible and trackable
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  export:
+    mark: P
+    reason: >-
+      Only the Vega statistical views have Save as PNG/SVG; scatterplot, spatial and heatmap views have
+      none, so the figure's N should be P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The Vega views (Cell Set Sizes, Histogram, Expression by Cell Set) carry a "..." menu: Save as SVG, Save as PNG, View Source, View Compiled Vega, Open in Vega Editor. "Save as PNG" on Cell Set Sizes saved `visualization.png`, 91,075 bytes. The deck.gl scatterplot, spatial and heatmap views have no such menu. This confirms the proposed N -> P. *Steps:* `config_matrix.json`; hover a Vega plot; click "..." at its top right. *Evidence:* [views](screens/vitessce/m13_export_vega_views.jpg), [menu](screens/vitessce/m13_export_vega_actions_menu.jpg)
+
+      **Source and docs.** The Vega statistical plots (cell set sizes, expression histogram, violin, dot plot, composition and enrichment bars) are rendered through react-vega's `Vega` (vega-embed) without an `actions` prop ([`packages/vega/src/VegaPlot.js#L106-L120`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/vega/src/VegaPlot.js#L106-L120)), and pass `scaleFactor={3}`, which is the vega-embed PNG export scale. vega-embed's default `actions` include "Save as SVG" and "Save as PNG" ([vega-embed build](https://unpkg.com/vega-embed@6/build/vega-embed.js), `DEFAULT_ACTIONS`, `PNG_ACTION`/`SVG_ACTION`, export branch `view.toImageURL(ext, scaleFactor)`). No export for the deck.gl views (embedding, spatial, heatmap): searched `toDataURL`, `toBlob`, `screenshot`, `html2canvas`, `saveAs`; `preserveDrawingBuffer: false` in [`spatial-accelerated/src/SpatialWrapper.js#L49`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/spatial-accelerated/src/SpatialWrapper.js#L49). The per-view download menu ([`vit-s/src/TitleInfo.js#L118`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/vit-s/src/TitleInfo.js#L118)) links data files. **Confirm in a browser before changing the mark** (look for the "..." menu at the top right of a bar or violin plot).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m13_export_vega_views.jpg
+      label: views
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m13_export_vega_actions_menu.jpg
+      label: menu
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/vega/src/VegaPlot.js
+      lines: 106-120
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/vega/src/VegaPlot.js#L106-L120
+      label: '`packages/vega/src/VegaPlot.js#L106-L120`'
+    - kind: docs
+      url: https://unpkg.com/vega-embed@6/build/vega-embed.js
+      label: vega-embed build
+      checked: '2026-10-04'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/spatial-accelerated/src/SpatialWrapper.js
+      lines: '49'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/spatial-accelerated/src/SpatialWrapper.js#L49
+      label: '`spatial-accelerated/src/SpatialWrapper.js#L49`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/vit-s/src/TitleInfo.js
+      lines: '118'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/vit-s/src/TitleInfo.js#L118
+      label: '`vit-s/src/TitleInfo.js#L118`'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main, 'Explore visualizations in different computational environments'
+      quote: Export functions are included in the APIs to simplify remote data hosting.
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Data export from the Python/R APIs, not plot image export; the paper says nothing about downloading
+        plots.
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  desktop:
+    mark: N
+    reason: >-
+      Vitessce ships as a web app, React component, Jupyter widget and R htmlwidget; there is no desktop
+      installer.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show. Searched docs/platforms (web app, React component, Jupyter widget, R htmlwidget). *Evidence:* Observation
+
+      **Source and docs.** [docs/platforms](https://vitessce.io/docs/platforms/) (200): web app, React component, Jupyter widget, R htmlwidget.
+    evidence:
+    - kind: docs
+      url: https://vitessce.io/docs/platforms/
+      label: docs/platforms
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260512113629/https://vitessce.io/docs/platforms/
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Fig. 1a legend
+      quote: >-
+        Vitessce can be used as a JavaScript component in a web browser or a widget in Python and R analysis
+        environments.
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Forms listed (also Methods, 'Using Vitessce') include no downloadable application.
+    na:
+      visual: No desktop application exists
+      so there is no GUI place in which its absence could be shown.: null
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  hosted:
+    mark: P
+    reason: >-
+      vitessce.io serves the app to anyone but has no accounts or shared server state; data are wherever
+      a config points, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** vitessce.io serves the app to anyone, but has no accounts or shared state; data are wherever the config points. Nothing more to show. *Evidence:* Observation
+
+      **Source and docs.** No accounts or server of its own; embedded in multi-user portals (HuBMAP, KPMP, configs under `examples/configs/src/view-configs/`).
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main (closing paragraphs)
+      quote: >-
+        Usage of the framework in the data portals for the Human BioMolecular Atlas Program (HuBMAP)38
+        and Kidney Precision Medicine Project (KPMP)39
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Multi-user via host portals; Vitessce has no deployment of its own ('38', '39' are reference numbers
+        in the PMC text).
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    - evidence/screens/gaps/capture2_docs.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  static:
+    mark: Y
+    reason: >-
+      All loaders run in the browser; vitessce.io itself is static hosting on S3/CloudFront and a config
+      can point at static files.
+    detail: |-
+      **Checked in the running app (2026-10-04).** vitessce.io itself is static hosting (`server: AmazonS3`, `via: ... CloudFront`). The local data come from a plain static file server (`_bin/serve.py`), with all reads being file GETs. *Steps:* `curl -sI https://vitessce.io/` *Evidence:* Observation
+
+      **Source and docs.** Browser-side loaders only; [GitHub Pages tutorial](https://vitessce.io/docs/tutorial-gh-pages/) (200); `vitessce-python` `export_to_files` / `export_to_s3` ([PY `src/vitessce/export.py#L12`](https://github.com/vitessce/vitessce-python/blob/1fdcf8a238a5e22cdfad21ef2f679c03154f000c/src/vitessce/export.py#L12), [#L62](https://github.com/vitessce/vitessce-python/blob/1fdcf8a238a5e22cdfad21ef2f679c03154f000c/src/vitessce/export.py#L62)).
+    evidence:
+    - kind: docs
+      url: https://vitessce.io/docs/tutorial-gh-pages/
+      label: GitHub Pages tutorial
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20240302200137/http://vitessce.io/docs/tutorial-gh-pages/
+    - kind: code
+      repo: vitessce/vitessce-python
+      commit: 1fdcf8a238a5e22cdfad21ef2f679c03154f000c
+      path: src/vitessce/export.py
+      lines: '12'
+      url: >-
+        https://github.com/vitessce/vitessce-python/blob/1fdcf8a238a5e22cdfad21ef2f679c03154f000c/src/vitessce/export.py#L12
+      label: PY `src/vitessce/export.py#L12`
+    - kind: code
+      repo: vitessce/vitessce-python
+      commit: 1fdcf8a238a5e22cdfad21ef2f679c03154f000c
+      path: src/vitessce/export.py
+      lines: '62'
+      url: >-
+        https://github.com/vitessce/vitessce-python/blob/1fdcf8a238a5e22cdfad21ef2f679c03154f000c/src/vitessce/export.py#L62
+      label: '#L62'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main, 'Deploy and share interactive visualizations'
+      quote: Implemented as a client-side web application without server-side requirements
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main
+      quote: >-
+        including in static websites, web applications, data portals, Jupyter Notebooks, RStudio and R
+        Shiny apps
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    - evidence/screens/gaps/capture_vitessce.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  lazy:
+    mark: Y
+    reason: >-
+      Per-gene zarr chunks are fetched on demand (one 146 kB chunk for Mpo), but views such as the heatmap
+      load the whole X at startup, so Y with a caveat.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Store X is dense zarr with chunks [8090, 10] (1,629 chunk files, 247 MB). With `config_lazy.json` (UMAP and gene list only), loading fetches **no** X chunk; clicking Mpo fetches `X/.zattrs`, `X/.zarray` and one chunk, `X/0.1041` (146,492 bytes). With `config.json` (heatmap) or `config_matrix.json` (Vega views; I did not isolate which of the three triggers it), the app fetches **all 1,631 X files at load**, i.e. the whole matrix. Lazy per-gene reads hold only when no view needs the full matrix. *Steps:* Network tab, or the request log in matrix_check2.py / matrix_check3.py output. *Evidence:* [m05](screens/vitessce/m05_lazy_scatter_genelist_mpo.jpg) plus request log
+
+      **Source and docs.** Per-gene reads from csc or column-chunked dense X ([docs "chunking strategy" and "sparse matrices"](https://vitessce.io/docs/data-troubleshooting/), source [`sites/docs/docs/data-troubleshooting.md#L66-L84`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/sites/docs/docs/data-troubleshooting.md#L66-L84)); `loadGeneSelection` in [`ObsFeatureMatrixAnndataLoader.js#L556`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js#L555). Tiled spatial points via SpatialData ([blog](https://vitessce.io/blog/spatial-elements/), 200).
+
+      **Scale group.** **Lazy, in the browser; no server process.** Expression is fetched per gene by HTTP range from chunked zarr; the embedding (obsm) and the obs columns used are read whole into browser memory. The full-matrix heatmap path checks a ~2 GB browser allocation budget and throws `MatrixTooLargeError` rather than stalling. Evidence: [`ObsEmbeddingAnndataLoader.js#L23`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/ObsEmbeddingAnndataLoader.js#L23); [`ObsFeatureMatrixAnndataLoader.js#L46-L47`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js#L46-L47), [L519-L550](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js#L519-L550); [docs](https://vitessce.io/docs/data-troubleshooting/) (source L66-L84).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/m05_lazy_scatter_genelist_mpo.jpg
+      label: m05
+    - kind: docs
+      url: https://vitessce.io/docs/data-troubleshooting/
+      label: docs "chunking strategy" and "sparse matrices"
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260512113610/https://vitessce.io/docs/data-troubleshooting/
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: sites/docs/docs/data-troubleshooting.md
+      lines: 66-84
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/sites/docs/docs/data-troubleshooting.md#L66-L84
+      label: '`sites/docs/docs/data-troubleshooting.md#L66-L84`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js
+      lines: '555'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js#L555
+      label: '`ObsFeatureMatrixAnndataLoader.js#L556`'
+    - kind: docs
+      url: https://vitessce.io/blog/spatial-elements/
+      label: blog
+      checked: '2026-10-04'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/file-types/zarr/src/anndata-loaders/ObsEmbeddingAnndataLoader.js
+      lines: '23'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/ObsEmbeddingAnndataLoader.js#L23
+      label: '`ObsEmbeddingAnndataLoader.js#L23`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js
+      lines: 46-47
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js#L46-L47
+      label: '`ObsFeatureMatrixAnndataLoader.js#L46-L47`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js
+      lines: 519-550
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/file-types/zarr/src/anndata-loaders/ObsFeatureMatrixAnndataLoader.js#L519-L550
+      label: L519-L550
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Methods, 'On-demand loading of data subsets'
+      quote: >-
+        To scale to large datasets, data loading is deferred in multiple cases: multiscale images, multiscale
+        bitmask-based segmentations, genome-mapped data and per-feature subsets of observation-by-feature
+        matrices.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Methods, 'On-demand loading of data subsets'
+      quote: performance is optimized when many observations and few features are stored in each chunk
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  every_cell:
+    mark: Y
+    reason: >-
+      The embedding is one deck.gl ScatterplotLayer over every cell; density contours are an optional
+      overlay, not a downsample.
+    detail: >-
+      **Scale group.** **All cells drawn.** The embedding is one deck.gl `ScatterplotLayer` whose data
+      length is the full embedding (`obsEmbedding.shape[1]`); no downsampling or binning of points. An
+      optional per-cell-set **density contour** overlay exists (`embeddingContoursVisible`, percentiles
+      0.09/0.9/0.99), and points can be switched off to show contours only. Spatial transcript points
+      (SpatialData) are tiled by viewport, not all at once. Heatmap: full n_obs × n_vars matrix, with
+      a documented allocation-budget error and "load a subset" advice. Evidence: [`scatterplot/src/Scatterplot.js#L292`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L292),
+      [L470-L479](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L470-L479);
+      contours [L153-L158](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L153-L158),
+      [`scatterplot-embedding/src/constants.js#L1`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/constants.js#L1),
+      [`EmbeddingScatterplotSubscriber.js#L571`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js#L571);
+      [docs "too large to render everything"](https://vitessce.io/docs/data-troubleshooting/) (source
+      L86-L98).
+    evidence:
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot/src/Scatterplot.js
+      lines: '292'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L292
+      label: '`scatterplot/src/Scatterplot.js#L292`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot/src/Scatterplot.js
+      lines: 470-479
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L470-L479
+      label: L470-L479
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot/src/Scatterplot.js
+      lines: 153-158
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L153-L158
+      label: L153-L158
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot-embedding/src/constants.js
+      lines: '1'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/constants.js#L1
+      label: '`scatterplot-embedding/src/constants.js#L1`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js
+      lines: '571'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js#L571
+      label: '`EmbeddingScatterplotSubscriber.js#L571`'
+    - kind: docs
+      url: https://vitessce.io/docs/data-troubleshooting/
+      label: docs "too large to render everything"
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260512113610/https://vitessce.io/docs/data-troubleshooting/
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main, 'Tailor visualizations to problem-specific data and biological questions'
+      quote: >-
+        the scatterplots can display millions of cells and the heatmaps can display tens of thousands
+        of features
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Does not explicitly rule out downsampling; the heatmap aggregates on the GPU (Methods, 'Implementation
+        of custom deck.gl layers'), which concerns features x cells, not the embedding.
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture2_vitessce.py
+  subset:
+    mark: N
+    reason: No GUI control picks a subset; cell sets only highlight.
+    detail: |-
+      **Scale group.** **No cell subset in the GUI** (highlight only). Selecting cell sets colours them and draws the rest in grey behind; there is no "hide others", subset-and-recompute or sample slider. The only subsetting is author-side config: `initialFeatureFilterPath`/`featureFilterPath` restrict genes, and an author can point the matrix `path` at a smaller array. Call it N for cells; a reviewer could argue P via cell-set selection driving the statistical plots. Evidence: [`EmbeddingScatterplotSubscriber.js#L447-L450`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js#L447-L450); [`shader-module.js#L7`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/gl/src/SelectionExtension/shader-module.js#L7) (unselected points pushed behind, not discarded); `obsFilter` unused at [`Scatterplot.js#L277`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L277); docs "Use or Store a subset of X" (source L100-L120).
+
+      **Re-scored under X8 (2026-10-04)**: No GUI control picks a subset; cell sets only highlight.
+    evidence:
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js
+      lines: 447-450
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js#L447-L450
+      label: '`EmbeddingScatterplotSubscriber.js#L447-L450`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/gl/src/SelectionExtension/shader-module.js
+      lines: '7'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/gl/src/SelectionExtension/shader-module.js#L7
+      label: '`shader-module.js#L7`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot/src/Scatterplot.js
+      lines: '277'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L277
+      label: '`Scatterplot.js#L277`'
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture2_vitessce.py
+  auto_subset:
+    reason: The scatterplot layer draws every cell of the embedding.
+    detail: >-
+      **New column (user X8, 2026-10-04).** The scatterplot layer draws every cell of the embedding. Evidence
+      is the same as for every cell drawn, which shows how the default view is drawn.
+    evidence:
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot/src/Scatterplot.js
+      lines: '292'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L292
+      label: '`scatterplot/src/Scatterplot.js#L292`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot/src/Scatterplot.js
+      lines: 470-479
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L470-L479
+      label: L470-L479
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot/src/Scatterplot.js
+      lines: 153-158
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L153-L158
+      label: L153-L158
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot-embedding/src/constants.js
+      lines: '1'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/constants.js#L1
+      label: '`scatterplot-embedding/src/constants.js#L1`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js
+      lines: '571'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js#L571
+      label: '`EmbeddingScatterplotSubscriber.js#L571`'
+    - kind: docs
+      url: https://vitessce.io/docs/data-troubleshooting/
+      label: docs "too large to render everything"
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260512113610/https://vitessce.io/docs/data-troubleshooting/
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main, 'Tailor visualizations to problem-specific data and biological questions'
+      quote: >-
+        the scatterplots can display millions of cells and the heatmaps can display tens of thousands
+        of features
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Does not explicitly rule out downsampling; the heatmap aggregates on the GPU (Methods, 'Implementation
+        of custom deck.gl layers'), which concerns features x cells, not the embedding.
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/s_auto_subset_at_scale.jpg
+      label: 'LuCA demo: 1,283,972 points in one draw call, no automatic subset'
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: N
+retired_cells:
+  filters:
+    mark: P
+    reason: >-
+      Unticking a cell set restricts the statistical views and greys those cells in the embeddings, but
+      there is no table and greyed cells stay drawn, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Unchecking one cell type in Cell Sets removes it from every view (heatmap "with 8,050 cells selected"), but cells are greyed rather than hidden, and there is no table. Shown in the Focus section. *Steps:* Expand "Cell type" in Cell Sets and untick a type. *Evidence:* [Focus 04](screens/vitessce/04_cellset_uncheck_CD4_both_views.jpg)
+
+      **Source and docs.** Cell-set selection (`obsSetSelection`) restricts the statistical plots and colours the embedding, but unselected cells stay drawn in grey behind the selected ones ([`EmbeddingScatterplotSubscriber.js#L447-L450`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js#L447-L450), [`gl/src/SelectionExtension/shader-module.js#L7`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/gl/src/SelectionExtension/shader-module.js#L7)). The `obsFilter` prop reaches the scatterplot but is commented out there ([`scatterplot/src/Scatterplot.js#L277`](https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L277)). No row table with filter conditions.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/vitessce/04_cellset_uncheck_CD4_both_views.jpg
+      label: Focus 04
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js
+      lines: 447-450
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot-embedding/src/EmbeddingScatterplotSubscriber.js#L447-L450
+      label: '`EmbeddingScatterplotSubscriber.js#L447-L450`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/gl/src/SelectionExtension/shader-module.js
+      lines: '7'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/gl/src/SelectionExtension/shader-module.js#L7
+      label: '`gl/src/SelectionExtension/shader-module.js#L7`'
+    - kind: code
+      repo: vitessce/vitessce
+      commit: fed6719970740e1930f3e495bc0ef5855b49ab08
+      path: packages/view-types/scatterplot/src/Scatterplot.js
+      lines: '277'
+      url: >-
+        https://github.com/vitessce/vitessce/blob/fed6719970740e1930f3e495bc0ef5855b49ab08/packages/view-types/scatterplot/src/Scatterplot.js#L277
+      label: '`scatterplot/src/Scatterplot.js#L277`'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02436-x
+      label: Keller et al. 2025, Nature Methods 22(1):63-67
+      where: Main, 'Integrate and explore multimodal data with coordinated multiple views'
+      quote: >-
+        enabling interactions such as selection of genes and cell types to be reflected in multiple visualizations
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Cell-type selection propagates across views; the paper does not describe a table filter or say
+        whether unselected cells are masked.
+    reproduce:
+    - notes/comparison/demos/vitessce/matrix_check.py
+    - notes/comparison/demos/vitessce/matrix_check2.py
+    - notes/comparison/demos/vitessce/matrix_check3.py
+    - evidence/screens/gaps/capture2_vitessce.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app

@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m09_annotation_legend_renamed.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_matrix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "annot",
+   "mark": "Y",
+   "caption": "Right-click > Annotate renamed Monocyte to Monocyte_matrixcheck in the legend; saved server-side"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1125,
+    479,
+    210,
+    48
+   ],
+   "label": "renamed category",
+   "selector": "[data-recap='ren']"
+  }
+ ]
+}

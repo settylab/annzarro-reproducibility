@@ -1,0 +1,56 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "lazy_h5ad",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_lazy_h5ad_run_1000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 9.27,
+ "peaks": {
+  "proc": {
+   "fp_peak": 640632104,
+   "fp_lifetime_sum": 640746792,
+   "rss_peak": 780386304,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 640632104,
+   "rss_peak": 780386304,
+   "fp_lifetime_sum": 640746792
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8274328
+  ],
+  [
+   1.42,
+   184222416
+  ],
+  [
+   2.87,
+   413893712
+  ],
+  [
+   4.34,
+   565527800
+  ],
+  [
+   5.78,
+   565527800
+  ],
+  [
+   7.23,
+   640615720
+  ],
+  [
+   8.68,
+   640615720
+  ]
+ ],
+ "ps_before": "2026-10-03T19:41:13-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n44418  20592   6.8 benchmark/tool_ceiling/.venv/bin/python\n72627 488432   5.1 $HOME/.local/bin/claude\n57113 2031200   4.8 $HOME/.local/bin/claude\n 1012  17184   3.8 /usr/libexec/pboard\n47413 613536   3.0 /Applications/cmux.app/Contents/MacOS/cmux\n  626 494080   3.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  596  29792   2.9 /System/Library/CoreServices/launchservicesd\n  629 154208   2.5 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n 6219  58640   2.3 $HOME/Projects/investments/.venv/bin/python3\n 1240  50160   1.8 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n"
+}

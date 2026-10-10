@@ -1,0 +1,57 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale_ceiling/syn_500000000.zarr",
+ "n_obs": 500000000,
+ "checks": {
+  "gene": {
+   "status": "alloc_failed",
+   "guard": [],
+   "console": [
+    "error: Error loading plot data: RangeError: Array buffer allocation failed\n    at new ArrayBuffer (<anonymous>)\n    at new Uint32Array (<anonymous>)\n    at Uint32Array.from (<anonymous>)\n    at typedPositions (http://127.0.0.1:8933/static/js/utils/scattergl-calc.js:270:29)\n    at Object.wrapped [as calc] ("
+   ],
+   "n_drawn": -1,
+   "seconds": 61.019279167056084,
+   "all_cells": false,
+   "renderer_rss": 17104584704,
+   "gpu_rss": 151339008,
+   "server_rss": 15617720320
+  }
+ },
+ "versions": {
+  "annzarro": "78c9da6",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "stalled",
+   "seconds": 61.019279167056084,
+   "n_points": -1
+  }
+ ],
+ "heap": {
+  "file": "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_noguard_run_500000000_r1.heap.jsonl",
+  "samples": 687,
+  "last_pm": {
+   "t": 62.632,
+   "src": "performance.memory",
+   "n": -1,
+   "used": 2015705366,
+   "limit": 4395630592
+  },
+  "last_cdp": {
+   "t": 62.634,
+   "src": "Runtime.getHeapUsage",
+   "used": 9648028,
+   "total": 12058624,
+   "backing": 2006066986
+  },
+  "peak_used_pm": 16183547668,
+  "peak_used_cdp": 27677596
+ },
+ "ok": false
+}

@@ -1,0 +1,22 @@
+version: 1
+image: m09_annotation_by_code.jpg
+tool: scanpy-seurat
+software: scanpy 1.11.5, anndata 0.12.19 (code output; Seurat not run)
+data: bm_demo.h5ad (8,090 cells)
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/scanpy-seurat/matrix_check.py
+source: manual
+image_sha256: 4f19685ac5e9deb50762b779f6fe1fb7b89f5b7a46045dacbfea43e7f7ea3169
+proves:
+- column: annot
+  mark: P
+  caption: 'By code only (scanpy): a UMAP rectangle written to obs[''my_label''] (1,324 my_region), saved to h5ad
+    and read back.'
+callouts:
+- n: 1
+  box: [87, 3, 353, 24]
+  label: obs['my_label'] set by code, saved, re-read
+- n: 2
+  box: [494, 178, 112, 46]
+  label: labels my_region / other

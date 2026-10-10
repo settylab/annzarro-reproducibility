@@ -1,0 +1,72 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_prep.py",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first10000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/annzarro_prep/first10000000.zarr"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 15.39,
+ "peaks": {
+  "proc": {
+   "fp_peak": 32351690272,
+   "fp_lifetime_sum": 32693362208,
+   "rss_peak": 32621445120,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 32351690272,
+   "rss_peak": 32621445120,
+   "fp_lifetime_sum": 32693362208
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9683352
+  ],
+  [
+   1.49,
+   3712814200
+  ],
+  [
+   3.0,
+   9376668704
+  ],
+  [
+   4.45,
+   9962921472
+  ],
+  [
+   5.91,
+   10412892104
+  ],
+  [
+   7.37,
+   10749092024
+  ],
+  [
+   8.82,
+   19837278264
+  ],
+  [
+   10.28,
+   29668187680
+  ],
+  [
+   11.73,
+   26387532928
+  ],
+  [
+   13.18,
+   11520337256
+  ],
+  [
+   14.69,
+   10990183760
+  ]
+ ],
+ "ps_before": "2026-10-05T12:20:24-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 3031   6192  99.7 ugrep\n  855 2589904  69.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  582 115888  66.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  626 535024  54.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  557 586688  33.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n73194 196784  18.8 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n  592  20144  15.9 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored\n 9026  26608  13.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n86901 577328  13.4 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 9096  25296  12.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

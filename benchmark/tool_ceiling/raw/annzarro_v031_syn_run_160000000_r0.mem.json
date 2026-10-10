@@ -1,0 +1,130 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_160000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_syn_run_160000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 47.77,
+ "peaks": {
+  "client": {
+   "fp_peak": 883548488,
+   "fp_lifetime_sum": 917464160,
+   "rss_peak": 1103134720,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 253707464,
+   "fp_lifetime_sum": 426477344,
+   "rss_peak": 288817152,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 122259000,
+   "fp_lifetime_sum": 122521192,
+   "rss_peak": 157351936,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1087858168,
+   "rss_peak": 1372979200,
+   "fp_lifetime_sum": 1343941504
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.39,
+   1043408376
+  ],
+  [
+   4.87,
+   1087677944
+  ],
+  [
+   7.39,
+   613557752
+  ],
+  [
+   9.82,
+   603940344
+  ],
+  [
+   12.27,
+   599074296
+  ],
+  [
+   14.75,
+   599827960
+  ],
+  [
+   17.22,
+   600057336
+  ],
+  [
+   19.67,
+   600122872
+  ],
+  [
+   22.14,
+   600401400
+  ],
+  [
+   24.59,
+   600712696
+  ],
+  [
+   27.01,
+   601286136
+  ],
+  [
+   29.45,
+   601318904
+  ],
+  [
+   31.98,
+   588473896
+  ],
+  [
+   34.43,
+   586114600
+  ],
+  [
+   36.82,
+   586311208
+  ],
+  [
+   39.3,
+   586491432
+  ],
+  [
+   41.73,
+   586688040
+  ],
+  [
+   44.14,
+   586999336
+  ],
+  [
+   46.57,
+   587064872
+  ]
+ ],
+ "ps_before": "2026-10-05T15:51:28-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 507040  35.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  641 123856  27.9 /usr/libexec/airportd\n53394  11872  13.6 /usr/libexec/corecaptured\n75254 141776   9.5 /System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter\n 1061  66560   8.7 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent\n  605  51072   8.2 /usr/libexec/dasd\n  557 503664   8.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n93226 207264   7.0 /System/Applications/Notes.app/Contents/MacOS/Notes\n 1012  17040   6.5 /usr/libexec/pboard\n49293 438448   5.3 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

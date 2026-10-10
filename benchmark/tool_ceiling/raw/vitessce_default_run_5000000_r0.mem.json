@@ -1,0 +1,73 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "vitessce",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/vitessce/first5000000",
+  "benchmark/tool_ceiling/shots/vitessce_default_run_5000000_r0",
+  "--n",
+  "5000000",
+  "--port",
+  "8937"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 13.58,
+ "peaks": {
+  "client": {
+   "fp_peak": 7282717344,
+   "fp_lifetime_sum": 7384151768,
+   "rss_peak": 4912300032,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 15106528,
+   "fp_lifetime_sum": 15303208,
+   "rss_peak": 27951104,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 129544936,
+   "fp_lifetime_sum": 129544936,
+   "rss_peak": 164151296,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 7297823872,
+   "rss_peak": 4940251136,
+   "fp_lifetime_sum": 7399454976
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.15,
+   1224746464
+  ],
+  [
+   4.2,
+   2589600832
+  ],
+  [
+   6.25,
+   3958403576
+  ],
+  [
+   8.3,
+   6061781880
+  ],
+  [
+   10.37,
+   7297807488
+  ],
+  [
+   12.44,
+   4124636264
+  ]
+ ],
+ "ps_before": "2026-10-03T18:07:25-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  855 1526208  87.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n78218 1044944  44.4 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n  626 525680  11.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  557 651504   5.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n13729  27552   5.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  582 100720   3.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n 1012  17440   3.1 /usr/libexec/pboard\n94883 314416   3.0 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n47413 619552   2.8 /Applications/cmux.app/Contents/MacOS/cmux\n  629 190016   2.6 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n"
+}

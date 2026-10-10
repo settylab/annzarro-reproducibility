@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "image": "g01_desktop_DOCS_releases_v1.3.5_CI.jpg",
+ "tool": "scope",
+ "software": "SCope GitHub releases page (read 2026-10-04)",
+ "data": "docs page: https://github.com/aertslab/SCope/releases",
+ "url": "https://github.com/aertslab/SCope/releases",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_scope.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "desktop",
+   "mark": "P",
+   "caption": "docs page, SCope GitHub releases (read 2026-10-04): the newest desktop build is the 2019 v1.3.5 CI prerelease, whose note says app development has halted and the apps are likely non-functional; none for SCope 1.8.x, so P"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    358,
+    437,
+    795,
+    26
+   ],
+   "label": "docs page: \"App development has currently halted\"",
+   "selector": "[data-gap-phrase='1']"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    0,
+    1400,
+    42
+   ],
+   "label": "docs page, with its URL",
+   "selector": "#gapbanner"
+  },
+  {
+   "n": 3,
+   "box": [
+    536,
+    365,
+    84,
+    25
+   ],
+   "label": "released Feb 8, 2019",
+   "selector": "relative-time >> nth=0"
+  },
+  {
+   "n": 4,
+   "box": [
+    341,
+    282,
+    9,
+    9
+   ],
+   "label": "newest desktop build: SCope_macOS_x64_v1.3.5_CI, Pre-release",
+   "selector": "h2:has-text('SCope_macOS_x64_v1.3.5_CI') >> nth=0"
+  }
+ ]
+}

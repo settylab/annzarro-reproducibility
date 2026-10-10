@@ -1,0 +1,155 @@
+{
+ "attach_name": "Loupe Browser 9",
+ "pids_at_start": [
+  72631,
+  72649,
+  72650,
+  72663,
+  72664
+ ],
+ "status": "ok",
+ "ended_by": [
+  "$DEMO_ROOT/loupe/lazy/partD/g2000_r3.done"
+ ],
+ "wall_s": 75.29,
+ "peaks": {
+  "app": {
+   "fp_peak": 2239666704,
+   "fp_lifetime_sum": 2518702680,
+   "rss_peak": 1979056128,
+   "n_proc_max": 5
+  },
+  "total": {
+   "fp_peak": 2239666704,
+   "rss_peak": 1979056128,
+   "fp_lifetime_sum": 2518702680
+  }
+ },
+ "trace": [
+  [
+   0.29,
+   219239464
+  ],
+  [
+   6.77,
+   270587208
+  ],
+  [
+   11.91,
+   244487496
+  ],
+  [
+   15.16,
+   244405576
+  ],
+  [
+   18.33,
+   1166890720
+  ],
+  [
+   21.53,
+   2012207320
+  ],
+  [
+   24.04,
+   1408571608
+  ],
+  [
+   26.19,
+   1376557272
+  ],
+  [
+   28.38,
+   1376344280
+  ],
+  [
+   30.62,
+   1374001392
+  ],
+  [
+   32.77,
+   1374443760
+  ],
+  [
+   35.13,
+   1374722288
+  ],
+  [
+   37.29,
+   1375246576
+  ],
+  [
+   39.52,
+   1375574256
+  ],
+  [
+   41.7,
+   1376016624
+  ],
+  [
+   43.88,
+   1376442608
+  ],
+  [
+   46.01,
+   1415420192
+  ],
+  [
+   48.19,
+   2132564328
+  ],
+  [
+   50.36,
+   1531140456
+  ],
+  [
+   52.53,
+   1519556968
+  ],
+  [
+   54.66,
+   1500010856
+  ],
+  [
+   57.21,
+   2239420944
+  ],
+  [
+   59.48,
+   1652709904
+  ],
+  [
+   61.68,
+   1637227024
+  ],
+  [
+   63.77,
+   1643338256
+  ],
+  [
+   65.89,
+   1599969760
+  ],
+  [
+   68.04,
+   1599756768
+  ],
+  [
+   70.26,
+   1590860256
+  ],
+  [
+   72.43,
+   1589369312
+  ],
+  [
+   74.58,
+   1589369312
+  ]
+ ],
+ "ps_before": "2026-10-08T22:14:58-0700\nmemorystatus_level=92 swap=total = 5120.00M  used = 3928.19M  free = 1191.81M  (encrypted)\n  626 543952  62.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n72631 106560  52.1 /Applications/Loupe Browser 9.app/Contents/MacOS/Loupe Browser 9\n72513 273536  39.8 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n30480 136528  38.6 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n30725 503392  33.6 $HOME/Library/Application Support/Claude/claude-code/2.1.293/8433d0d9cd0d/claude.app/Contents/MacOS/claude\n30522 856000  22.9 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n37026 130672  15.8 $HOME/Projects/investments/.venv/bin/python3\n86901 612464  13.0 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n97961 796448  12.6 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n72628  23488  10.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": [
+  "72634 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "72640 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

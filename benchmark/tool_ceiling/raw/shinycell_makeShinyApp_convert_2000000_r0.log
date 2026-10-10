@@ -1,0 +1,24 @@
+During startup - Warning message:
+package ‘colorout’ in options("defaultPackages") was not found 
+Warning messages:
+1: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.5 GiB
+2: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.5 GiB
+3: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.5 GiB
+4: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.5 GiB
+5: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.5 GiB
+6: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.5 GiB
+7: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.5 GiB
+8: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.5 GiB
+9: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.5 GiB
+10: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 7.5 GiB
+{"status": "ok", "rc": 0, "wall_s": 285.4} fp_peak=29.76GB lifetime=29.76GB

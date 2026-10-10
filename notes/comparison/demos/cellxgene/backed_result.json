@@ -1,0 +1,46 @@
+{
+ "csr": {
+  "var_index": "name_0",
+  "after_load_MiB": 685,
+  "Mpo": {
+   "status": "200",
+   "content_length": "32464",
+   "s": 0.55,
+   "rss_MiB": 888
+  },
+  "Elane": {
+   "status": "200",
+   "content_length": "32464",
+   "s": 0.53,
+   "rss_MiB": 892
+  },
+  "Cd74": {
+   "status": "200",
+   "content_length": "32464",
+   "s": 0.53,
+   "rss_MiB": 892
+  }
+ },
+ "csc": {
+  "var_index": "name_0",
+  "after_load_MiB": 677,
+  "Mpo": {
+   "status": "200",
+   "content_length": "32464",
+   "s": 0.03,
+   "rss_MiB": 678
+  },
+  "Elane": {
+   "status": "200",
+   "content_length": "32464",
+   "s": 0.02,
+   "rss_MiB": 678
+  },
+  "Cd74": {
+   "status": "200",
+   "content_length": "32464",
+   "s": 0.02,
+   "rss_MiB": 678
+  }
+ }
+}

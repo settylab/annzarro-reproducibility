@@ -1,0 +1,91 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_225000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_225000000_r1",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 21.51,
+ "peaks": {
+  "client": {
+   "fp_peak": 19933037328,
+   "fp_lifetime_sum": 20532152208,
+   "rss_peak": 19914784768,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 8763120744,
+   "fp_lifetime_sum": 8820612680,
+   "rss_peak": 8781643776,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 134842296,
+   "fp_lifetime_sum": 134842296,
+   "rss_peak": 170164224,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 28274400832,
+   "rss_peak": 28274868224,
+   "fp_lifetime_sum": 29352764888
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.42,
+   2030643232
+  ],
+  [
+   5.01,
+   11961191480
+  ],
+  [
+   7.64,
+   13873091440
+  ],
+  [
+   10.15,
+   17388874992
+  ],
+  [
+   12.72,
+   22607283824
+  ],
+  [
+   15.35,
+   26661051176
+  ],
+  [
+   17.86,
+   27762023832
+  ],
+  [
+   20.53,
+   25593617096
+  ]
+ ],
+ "ps_before": "2026-10-08T00:56:53-0700\nmemorystatus_level=93 swap=total = 5120.00M  used = 3960.19M  free = 1159.81M  (encrypted)\n20536  21024   8.6 $TMPDIR/sw_v041/benchmark/tool_ceiling/.venv/bin/python\n57113 3391872   7.2 $HOME/.local/bin/claude\n14980 6856016   4.1 /System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine\n49293 1174064   3.4 $HOME/.local/bin/claude\n32927  23200   1.9 /System/Cryptexes/App/usr/libexec/SafariBookmarksSyncAgent\n 6219  60960   1.5 $HOME/Projects/investments/.venv/bin/python3\n93323 555216   1.3 $HOME/.local/bin/claude\n92291  30816   1.3 .venv/bin/python\n  734  49584   1.3 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n80005 1030800   1.2 $HOME/.local/bin/claude\n",
+ "others_at_start": [
+  "19071 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "19072 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

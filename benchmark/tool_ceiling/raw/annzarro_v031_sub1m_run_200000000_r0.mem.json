@@ -1,0 +1,100 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_200000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_sub1m_run_200000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 27.58,
+ "peaks": {
+  "client": {
+   "fp_peak": 3018139296,
+   "fp_lifetime_sum": 3305581416,
+   "rss_peak": 2821636096,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 5957490400,
+   "fp_lifetime_sum": 6143039800,
+   "rss_peak": 5989941248,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 121975048,
+   "fp_lifetime_sum": 125678024,
+   "rss_peak": 160825344,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6468270168,
+   "rss_peak": 7231340544,
+   "fp_lifetime_sum": 9448621216
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.39,
+   965288744
+  ],
+  [
+   4.82,
+   1209705952
+  ],
+  [
+   7.31,
+   1113548520
+  ],
+  [
+   9.81,
+   1895508384
+  ],
+  [
+   12.35,
+   2623302576
+  ],
+  [
+   14.79,
+   3536203536
+  ],
+  [
+   17.23,
+   4242010376
+  ],
+  [
+   19.71,
+   5397001488
+  ],
+  [
+   22.3,
+   4414189712
+  ],
+  [
+   24.81,
+   5184893552
+  ],
+  [
+   27.33,
+   5156238296
+  ]
+ ],
+ "ps_before": "2026-10-05T15:53:35-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n93226 245488  42.4 /System/Applications/Notes.app/Contents/MacOS/Notes\n  626 507120  13.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  557 503648   7.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  639 129536   4.3 /usr/sbin/coreaudiod\n86901 536944   3.4 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  629 209344   3.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n48273 574192   2.9 /Applications/Microsoft Outlook.app/Contents/MacOS/Microsoft Outlook\n  596  30384   2.8 /System/Library/CoreServices/launchservicesd\n49293 466160   2.7 $HOME/.local/bin/claude\n 1191 1319456   2.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/corespotlightd\n",
+ "others_at_start": []
+}

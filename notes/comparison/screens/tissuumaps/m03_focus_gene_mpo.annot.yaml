@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m03_focus_gene_mpo.jpg",
+ "tool": "tissuumaps",
+ "software": "TissUUmaps 3.2.1.11 (server build, pip; TU4 is beta)",
+ "data": "bm_demo_csc.h5ad (8,090 cells x 16,285 genes)",
+ "url": "http://127.0.0.1:8908/bm_demo_csc.h5ad",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/tissuumaps/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Picking a gene (here Primpol) colours all markers by its expression: feature colouring; no cell can be focused and no relation row drives the view"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    942,
+    210,
+    137,
+    26
+   ],
+   "label": "gene picker",
+   "selector": "text=Gene expression"
+  }
+ ]
+}

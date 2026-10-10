@@ -1,0 +1,297 @@
+{
+ "name": "tahoe_x",
+ "experiment": "tahoe_x",
+ "repeats": 5,
+ "warm_repeats": 5,
+ "seed": 20261001,
+ "annzarro_dir": "$SCRATCH/annzarro-scale/hpcbench/src_v041",
+ "cases": [
+  {
+   "case_id": "tahoe_x_1M:X_gene_col",
+   "kind": "X_gene_col",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/X",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 62710,
+   "chunk": 1,
+   "evict": [
+    "X"
+   ],
+   "expect_len": 1000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1M:sparse_layer_gene_col:counts_csr",
+   "kind": "sparse_layer_gene_col",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/layer/counts_csr",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 62710,
+   "chunk": 1,
+   "evict": [
+    "layers/counts_csr"
+   ],
+   "expect_len": 1000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1M:sparse_layer_cell_row:counts_csr",
+   "kind": "sparse_layer_cell_row",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/layer/counts_csr",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 1000000,
+   "chunk": 1,
+   "evict": [
+    "layers/counts_csr"
+   ],
+   "expect_len": 62710,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1M:obsm_col:X_pca_2d",
+   "kind": "obsm_col",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obsm/X_pca_2d",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 2,
+   "chunk": 2,
+   "evict": [
+    "obsm/X_pca_2d"
+   ],
+   "expect_len": 1000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1M:obs_col:cell_line_id",
+   "kind": "obs_col",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "cell_line_id",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/cell_line_id"
+   ],
+   "expect_len": 1000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1M:obs_col:drug",
+   "kind": "obs_col",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "drug",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/drug"
+   ],
+   "expect_len": 1000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1M:obsp_csr_row:connectivities",
+   "kind": "obsp_csr_row",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obsp/connectivities",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 1000000,
+   "chunk": 1,
+   "evict": [
+    "obsp/connectivities"
+   ],
+   "expect_len": 1000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1M:cell_names",
+   "kind": "cell_names",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/cells",
+   "params": {},
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/_index"
+   ],
+   "expect_len": 1000000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1.17M:X_gene_col",
+   "kind": "X_gene_col",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/X",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 62710,
+   "chunk": 1,
+   "evict": [
+    "X"
+   ],
+   "expect_len": 1170000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1.17M:sparse_layer_gene_col:counts_csr",
+   "kind": "sparse_layer_gene_col",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/layer/counts_csr",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 62710,
+   "chunk": 1,
+   "evict": [
+    "layers/counts_csr"
+   ],
+   "expect_len": 1170000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1.17M:sparse_layer_cell_row:counts_csr",
+   "kind": "sparse_layer_cell_row",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/layer/counts_csr",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 1170000,
+   "chunk": 1,
+   "evict": [
+    "layers/counts_csr"
+   ],
+   "expect_len": 62710,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1.17M:obsm_col:X_pca_2d",
+   "kind": "obsm_col",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obsm/X_pca_2d",
+   "params": {
+    "cols": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 2,
+   "chunk": 2,
+   "evict": [
+    "obsm/X_pca_2d"
+   ],
+   "expect_len": 1170000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1.17M:obs_col:cell_line_id",
+   "kind": "obs_col",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "cell_line_id",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/cell_line_id"
+   ],
+   "expect_len": 1170000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1.17M:obs_col:drug",
+   "kind": "obs_col",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obs",
+   "params": {
+    "columns": "drug",
+    "format": "f32",
+    "categorical": "codes"
+   },
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/drug"
+   ],
+   "expect_len": 1170000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1.17M:obsp_csr_row:connectivities",
+   "kind": "obsp_csr_row",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/obsp/connectivities",
+   "params": {
+    "rows": "{idx}",
+    "format": "f32"
+   },
+   "axis_len": 1170000,
+   "chunk": 1,
+   "evict": [
+    "obsp/connectivities"
+   ],
+   "expect_len": 1170000,
+   "wire": "f32"
+  },
+  {
+   "case_id": "tahoe_x_1.17M:cell_names",
+   "kind": "cell_names",
+   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "fs": "locscratch",
+   "route": "/api/v1/data/cells",
+   "params": {},
+   "axis_len": null,
+   "chunk": 1,
+   "evict": [
+    "obs/_index"
+   ],
+   "expect_len": 1170000,
+   "wire": "f32"
+  }
+ ],
+ "wire": "f32"
+}

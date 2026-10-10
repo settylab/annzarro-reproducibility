@@ -1,0 +1,44 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "to_sdata.py",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first2000000.zarr"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 4.95,
+ "peaks": {
+  "proc": {
+   "fp_peak": 3241151896,
+   "fp_lifetime_sum": 3244641688,
+   "rss_peak": 3357704192,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3241151896,
+   "rss_peak": 3357704192,
+   "fp_lifetime_sum": 3244641688
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8470936
+  ],
+  [
+   1.47,
+   1967818720
+  ],
+  [
+   2.97,
+   2492779328
+  ],
+  [
+   4.39,
+   2944060608
+  ]
+ ],
+ "ps_before": "2026-10-05T00:18:20-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n47413 662640  22.0 /Applications/cmux.app/Contents/MacOS/cmux\n 6219  59392   9.9 $HOME/Projects/investments/.venv/bin/python3\n 1012  17920   6.3 /usr/libexec/pboard\n  629 241360   2.9 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30992   2.9 /System/Library/CoreServices/launchservicesd\n  626 513872   2.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1240  48928   2.3 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n80005 427520   2.0 $HOME/.local/bin/claude\n57113 2884176   1.9 $HOME/.local/bin/claude\n  557 567648   1.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n",
+ "others_at_start": []
+}

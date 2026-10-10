@@ -1,0 +1,130 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$SCRATCH/annzarro-scale/stores_panel/n50M/tahoe_panel_50M.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_50000000_r1",
+  "--server-url",
+  "http://hpc-node-36:8790",
+  "--proxy",
+  "socks5://127.0.0.1:8767",
+  "--n",
+  "50000000",
+  "--probe-store",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "--version-label",
+  "606f0bc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 43.19,
+ "peaks": {
+  "client": {
+   "fp_peak": 11103309672,
+   "fp_lifetime_sum": 11469721520,
+   "rss_peak": 9422749696,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1818888,
+   "fp_lifetime_sum": 1818888,
+   "rss_peak": 3768320,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 156174144,
+   "fp_lifetime_sum": 156567360,
+   "rss_peak": 191414272,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 11103309672,
+   "rss_peak": 9422749696,
+   "fp_lifetime_sum": 11471540408
+  }
+ },
+ "trace": [
+  [
+   0.07,
+   0
+  ],
+  [
+   2.21,
+   0
+  ],
+  [
+   4.38,
+   815653384
+  ],
+  [
+   6.62,
+   891658760
+  ],
+  [
+   8.85,
+   412361224
+  ],
+  [
+   11.09,
+   398156296
+  ],
+  [
+   13.35,
+   396517896
+  ],
+  [
+   15.6,
+   392765960
+  ],
+  [
+   17.95,
+   392995336
+  ],
+  [
+   20.14,
+   482108080
+  ],
+  [
+   22.31,
+   635380736
+  ],
+  [
+   24.5,
+   768238832
+  ],
+  [
+   26.61,
+   887088560
+  ],
+  [
+   28.78,
+   1121068848
+  ],
+  [
+   30.94,
+   1162356576
+  ],
+  [
+   33.24,
+   6536642664
+  ],
+  [
+   35.4,
+   10237184744
+  ],
+  [
+   37.59,
+   8806370408
+  ],
+  [
+   39.79,
+   6061558912
+  ],
+  [
+   42.04,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-04T01:26:13-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1120496 166.7 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n  855 1794448  40.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n47413 615344  21.8 /Applications/cmux.app/Contents/MacOS/cmux\n 4572  13936  13.8 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n 4573  12784  12.1 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n  582 110848  11.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n 4571   7152  11.2 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n 4570  14144  11.0 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n 4574  12880   9.4 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n    1  35680   8.9 /sbin/launchd\n"
+}

@@ -1,0 +1,77 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "shinycell",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/shinycell/first1000000",
+  "benchmark/tool_ceiling/shots/shinycell_default_run_1000000_r0",
+  "--n",
+  "1000000",
+  "--port",
+  "8936"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 15.95,
+ "peaks": {
+  "client": {
+   "fp_peak": 844685400,
+   "fp_lifetime_sum": 900703328,
+   "rss_peak": 1067909120,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1100237200,
+   "fp_lifetime_sum": 1293848896,
+   "rss_peak": 2328231936,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 132527472,
+   "fp_lifetime_sum": 134034944,
+   "rss_peak": 166641664,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1942743576,
+   "rss_peak": 3374301184,
+   "fp_lifetime_sum": 2194552224
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.13,
+   750494528
+  ],
+  [
+   4.21,
+   1269671176
+  ],
+  [
+   6.29,
+   1018029728
+  ],
+  [
+   8.37,
+   1202022312
+  ],
+  [
+   10.44,
+   1283123520
+  ],
+  [
+   12.49,
+   1850681880
+  ],
+  [
+   14.53,
+   1335421488
+  ]
+ ],
+ "ps_before": "2026-10-03T18:51:27-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n79072 189536  13.5 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n 1012  17408   5.7 /usr/libexec/pboard\n57113 2100736   5.1 $HOME/.local/bin/claude\n47413 620384   2.8 /Applications/cmux.app/Contents/MacOS/cmux\n80005 380592   2.1 $HOME/.local/bin/claude\n72627 491472   2.1 $HOME/.local/bin/claude\n  626 528816   2.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n98631 477216   1.3 $HOME/.local/bin/claude\n 1240  51072   1.2 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n92291  30832   1.0 .venv/bin/python\n"
+}

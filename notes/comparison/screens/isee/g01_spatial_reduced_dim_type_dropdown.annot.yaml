@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "g01_spatial_reduced_dim_type_dropdown.jpg",
+ "tool": "isee",
+ "software": "iSEE 2.18.0 (Bioc 3.20, R 4.4.3)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8902",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_isee.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "spatial",
+   "mark": "N",
+   "caption": "iSEE 2.18.0 (Bioc 3.20, R 4.4.3) (2026-10-04): Reduced dimension plot 'Type' lists the reducedDims only (UMAP, PCA); no spatial coordinate type, and no panel reads spatialCoords"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    26,
+    731,
+    415,
+    72
+   ],
+   "label": "Type: UMAP, PCA",
+   "selector": "[data-gap='typedd']"
+  },
+  {
+   "n": 2,
+   "box": [
+    26,
+    695,
+    415,
+    42
+   ],
+   "label": "Reduced dimension type",
+   "selector": "#ReducedDimensionPlot1_Type + .selectize-control"
+  }
+ ]
+}

@@ -1,0 +1,122 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_160000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_noguard_run_160000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 38.56,
+ "peaks": {
+  "client": {
+   "fp_peak": 15033606552,
+   "fp_lifetime_sum": 17504085456,
+   "rss_peak": 15392620544,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 8060541960,
+   "fp_lifetime_sum": 8160599864,
+   "rss_peak": 8146321408,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 132794080,
+   "fp_lifetime_sum": 132794080,
+   "rss_peak": 167854080,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 21589029592,
+   "rss_peak": 22065266688,
+   "fp_lifetime_sum": 25664685320
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.21,
+   332091928
+  ],
+  [
+   4.6,
+   1364502176
+  ],
+  [
+   7.02,
+   1821518000
+  ],
+  [
+   9.34,
+   2598579048
+  ],
+  [
+   11.78,
+   3748884336
+  ],
+  [
+   14.11,
+   4495815064
+  ],
+  [
+   16.55,
+   5870253472
+  ],
+  [
+   18.98,
+   8682833800
+  ],
+  [
+   21.42,
+   11254959952
+  ],
+  [
+   23.88,
+   17064240712
+  ],
+  [
+   26.38,
+   19715781768
+  ],
+  [
+   28.77,
+   20438496728
+  ],
+  [
+   31.24,
+   10591458592
+  ],
+  [
+   33.67,
+   19132049376
+  ],
+  [
+   36.14,
+   20727970368
+  ],
+  [
+   38.45,
+   10682824
+  ]
+ ],
+ "ps_before": "2026-10-05T21:54:28-0700\nmemorystatus_level=89 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 6219  53520  11.1 $HOME/Projects/investments/.venv/bin/python3\n  626 375792  10.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n47413 530288   9.2 /Applications/cmux.app/Contents/MacOS/cmux\n57113 2684080   6.2 $HOME/.local/bin/claude\n84854  21024   6.1 benchmark/tool_ceiling/.venv/bin/python\n 4725 545424   5.9 claude\n  629 130528   5.8 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  24512   4.4 /System/Library/CoreServices/launchservicesd\n37026 117120   2.5 $HOME/Projects/investments/.venv/bin/python3\n84602 272320   2.1 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n",
+ "others_at_start": [
+  "74546 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1790895733153-mick9a.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>"
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "napari_task.py",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first2000000.zarr",
+  "benchmark/tool_ceiling/shots/napari_sub100k_run_2000000_r0",
+  "--n",
+  "2000000"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 13.42,
+ "peaks": {
+  "proc": {
+   "fp_peak": 13774744352,
+   "fp_lifetime_sum": 13774744352,
+   "rss_peak": 13202751488,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 13774744352,
+   "rss_peak": 13202751488,
+   "fp_lifetime_sum": 13774744352
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8733080
+  ],
+  [
+   1.45,
+   212222984
+  ],
+  [
+   2.92,
+   1071499160
+  ],
+  [
+   4.34,
+   3608137400
+  ],
+  [
+   5.85,
+   4095201600
+  ],
+  [
+   7.31,
+   11242726520
+  ],
+  [
+   8.76,
+   11376256264
+  ],
+  [
+   10.21,
+   11093534056
+  ],
+  [
+   11.66,
+   13567044264
+  ],
+  [
+   13.13,
+   13612771888
+  ]
+ ],
+ "ps_before": "2026-10-05T03:22:17-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 1012  17920   6.8 /usr/libexec/pboard\n72627 495808   3.3 $HOME/.local/bin/claude\n  626 514304   3.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  596  30960   3.2 /System/Library/CoreServices/launchservicesd\n57113 2887200   2.8 $HOME/.local/bin/claude\n 1240  48928   2.4 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n80588 623168   2.2 $HOME/.local/bin/claude\n 4725 644576   2.0 claude\n86901 573424   1.6 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n92291  30992   1.4 .venv/bin/python\n",
+ "others_at_start": []
+}

@@ -1,0 +1,61 @@
+version: 1
+image: 05_focus_after_cell_click.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:8920/?dataset_path=$DATA_DIR/bm_aging_showcase.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZENlbGwiOiJNYXR1cm...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: focus
+  mark: Y
+  caption: 'One click on a cell in plot A re-drives every linked panel through that cell''s stored rows:
+    A and B redraw from its obsp rows, C from its layer row.'
+- column: lazy
+  mark: Y
+  caption: 'The click fetches only the new cell''s rows (one per matrix), not the matrices: see callout
+    5 for the requests the browser made.'
+callouts:
+- n: 1
+  box:
+  - 669
+  - 28
+  - 154
+  - 46
+  label: 'Focused Cell after the click: HSPC_Old_1#GAAGCCCGTGGCTCTG-1'
+  selector: '#focused-cell'
+- n: 2
+  box:
+  - 0
+  - 157
+  - 704
+  - 722
+  label: A redrawn from the new cell's diffusion_walk_t5 row
+  selector: .tile[data-tile-id="cell-plot-A"] .js-plotly-plot
+- n: 3
+  box:
+  - 699
+  - 157
+  - 701
+  - 324
+  label: B redrawn from its diffusion_distance row
+  selector: .tile[data-tile-id="cell-plot-B"] .js-plotly-plot
+- n: 4
+  box:
+  - 699
+  - 554
+  - 701
+  - 324
+  label: C redrawn from its fold-change row over genes
+  selector: .tile[data-tile-id="gene-plot-C"] .js-plotly-plot
+- n: 5
+  box:
+  - 0
+  - 75
+  - 1400
+  - 38
+  label: 'data requests after the click: obsp/diffusion_distance {"rows": "2089"}; obsp/diffusion_walk_t5
+    {"rows": "2089"}; layer/kompot_de_Young_to_Old_fold_change {"rows": "2089"}; fingerprint'
+  selector: '#dataset-stats'

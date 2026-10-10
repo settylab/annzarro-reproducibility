@@ -1,0 +1,99 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/_mamba/envs/rtools/bin/Rscript",
+  "to_sce.R",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first5000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/sce/first5000000.rds"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 25.18,
+ "peaks": {
+  "proc": {
+   "fp_peak": 7964679176,
+   "fp_lifetime_sum": 7964679176,
+   "rss_peak": 8587886592,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 7964679176,
+   "rss_peak": 8587886592,
+   "fp_lifetime_sum": 7964679176
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   245928
+  ],
+  [
+   1.48,
+   367199216
+  ],
+  [
+   2.92,
+   564233368
+  ],
+  [
+   4.41,
+   874907376
+  ],
+  [
+   5.86,
+   1123387312
+  ],
+  [
+   7.31,
+   1293207592
+  ],
+  [
+   8.78,
+   1293191328
+  ],
+  [
+   10.25,
+   1393756440
+  ],
+  [
+   11.72,
+   3438137184
+  ],
+  [
+   13.2,
+   7964679176
+  ],
+  [
+   14.71,
+   7885659144
+  ],
+  [
+   16.16,
+   7887297544
+  ],
+  [
+   17.62,
+   7892622344
+  ],
+  [
+   19.09,
+   7892638728
+  ],
+  [
+   20.56,
+   7892638728
+  ],
+  [
+   22.03,
+   7892638728
+  ],
+  [
+   23.48,
+   7952718928
+  ],
+  [
+   24.96,
+   7952850000
+  ]
+ ],
+ "ps_before": "2026-10-03T17:44:38-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n83542 269664  83.0 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 724000  22.3 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n57113 2094752   6.1 $HOME/.local/bin/claude\n47413 638736   4.7 /Applications/cmux.app/Contents/MacOS/cmux\n98631 480384   4.2 $HOME/.local/bin/claude\n92291  30832   0.7 .venv/bin/python\n81907  26480   0.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n80572  26560   0.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  618  67264   0.7 /usr/sbin/bluetoothd\n  555  26912   0.6 /usr/libexec/UserEventAgent\n"
+}

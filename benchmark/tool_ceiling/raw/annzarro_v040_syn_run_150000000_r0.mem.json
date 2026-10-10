@@ -1,0 +1,86 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_150000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_syn_run_150000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 20.79,
+ "peaks": {
+  "client": {
+   "fp_peak": 14493046840,
+   "fp_lifetime_sum": 17157923176,
+   "rss_peak": 14447034368,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 7309514968,
+   "fp_lifetime_sum": 7409326800,
+   "rss_peak": 7370817536,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 132646648,
+   "fp_lifetime_sum": 132646648,
+   "rss_peak": 167165952,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 21357342848,
+   "rss_peak": 21067284480,
+   "fp_lifetime_sum": 24567249976
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.48,
+   2688756416
+  ],
+  [
+   5.13,
+   9254077336
+  ],
+  [
+   7.65,
+   14504154376
+  ],
+  [
+   10.25,
+   18459012504
+  ],
+  [
+   12.82,
+   20625633912
+  ],
+  [
+   15.39,
+   11199305736
+  ],
+  [
+   17.94,
+   21340942296
+  ],
+  [
+   20.6,
+   7309514968
+  ]
+ ],
+ "ps_before": "2026-10-06T00:09:05-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 1191 1311216  92.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/corespotlightd\n59322  95760  82.2 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n26818  66528  43.2 /usr/libexec/gamed\n 2074 321648  19.6 /System/Library/Frameworks/Contacts.framework/Support/contactsd\n57113 2938368  12.5 $HOME/.local/bin/claude\n 1012  15888   6.5 /usr/libexec/pboard\n  626 385824   5.7 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n47413 543184   4.8 /Applications/cmux.app/Contents/MacOS/cmux\n 1021  55936   3.6 /usr/libexec/knowledge-agent\n 1240  45456   3.0 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n",
+ "others_at_start": []
+}

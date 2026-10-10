@@ -1,0 +1,200 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_1000000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_sub_run_1000000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 89.96,
+ "peaks": {
+  "client": {
+   "fp_peak": 1559405136,
+   "fp_lifetime_sum": 1665901880,
+   "rss_peak": 1382563840,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 25092000896,
+   "fp_lifetime_sum": 25212718784,
+   "rss_peak": 25137037312,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 116339024,
+   "fp_lifetime_sum": 116339024,
+   "rss_peak": 157958144,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 25462697392,
+   "rss_peak": 26244956160,
+   "fp_lifetime_sum": 26878620664
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.46,
+   953017080
+  ],
+  [
+   4.91,
+   967615248
+  ],
+  [
+   7.35,
+   620520736
+  ],
+  [
+   9.81,
+   934536720
+  ],
+  [
+   12.2,
+   934061584
+  ],
+  [
+   14.67,
+   935323152
+  ],
+  [
+   17.12,
+   936355344
+  ],
+  [
+   19.59,
+   937485840
+  ],
+  [
+   22.06,
+   778790392
+  ],
+  [
+   24.48,
+   783902200
+  ],
+  [
+   26.94,
+   1506862872
+  ],
+  [
+   29.43,
+   1827760448
+  ],
+  [
+   31.93,
+   2391255840
+  ],
+  [
+   34.37,
+   3130158384
+  ],
+  [
+   36.78,
+   3818516288
+  ],
+  [
+   39.23,
+   4609290600
+  ],
+  [
+   41.59,
+   5302694752
+  ],
+  [
+   44.02,
+   6071170416
+  ],
+  [
+   46.41,
+   6730790760
+  ],
+  [
+   48.82,
+   7519369592
+  ],
+  [
+   51.22,
+   8208907144
+  ],
+  [
+   53.63,
+   9125035536
+  ],
+  [
+   56.09,
+   9846997048
+  ],
+  [
+   58.47,
+   10553410072
+  ],
+  [
+   60.91,
+   11249763344
+  ],
+  [
+   63.34,
+   11951162912
+  ],
+  [
+   65.73,
+   12639651864
+  ],
+  [
+   68.17,
+   13346802192
+  ],
+  [
+   70.54,
+   14038846472
+  ],
+  [
+   72.96,
+   14746013184
+  ],
+  [
+   75.35,
+   15442235360
+  ],
+  [
+   77.79,
+   16104559064
+  ],
+  [
+   80.26,
+   17289221624
+  ],
+  [
+   82.89,
+   20721573912
+  ],
+  [
+   85.54,
+   23671351480
+  ],
+  [
+   88.08,
+   9553510624
+  ]
+ ],
+ "ps_before": "2026-10-05T15:57:22-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n17007  41472  79.8 /usr/libexec/frauddefensed\n66233 271824  68.4 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n15970 106896  62.1 /usr/libexec/duetexpertd\n  626 505632  39.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n97961 796176  16.1 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n93226 275344  11.6 /System/Applications/Notes.app/Contents/MacOS/Notes\n66331  15888   9.2 /usr/libexec/biomesyncd\n47413 650496   9.0 /Applications/cmux.app/Contents/MacOS/cmux\n73194 173632   7.2 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n 6219  59136   7.1 $HOME/Projects/investments/.venv/bin/python3\n",
+ "others_at_start": []
+}

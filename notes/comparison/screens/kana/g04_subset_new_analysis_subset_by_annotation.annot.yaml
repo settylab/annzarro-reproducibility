@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "g04_subset_new_analysis_subset_by_annotation.jpg",
+ "tool": "kana",
+ "software": "Kana v3.2.0 (live build, kanaverse.org)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "https://www.kanaverse.org/kana/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_kana.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "subset",
+   "mark": "Y",
+   "caption": "Kana v3.2.0 (live build, 2026-10-04), New Analysis: 'Subsetting by annotation' keeps the ticked highres_celltype groups (HSC, LMPP) for the whole downstream analysis"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    144,
+    466,
+    728,
+    457
+   ],
+   "label": "Subsetting by annotation (New Analysis, H5AD)",
+   "selector": "[data-gap='subset']"
+  },
+  {
+   "n": 2,
+   "box": [
+    182,
+    664,
+    675,
+    244
+   ],
+   "label": "groups to keep: HSC and LMPP ticked",
+   "selector": ".subset-section"
+  }
+ ]
+}

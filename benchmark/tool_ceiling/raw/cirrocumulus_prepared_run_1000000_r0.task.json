@@ -1,0 +1,51 @@
+{
+ "tool": "cirrocumulus",
+ "variant": "prepared",
+ "input": "$DATA_ROOT/tool_ceiling_data/cirro/first1000000.zarr",
+ "n": 1000000,
+ "phases": {
+  "server_ready": 1.64,
+  "first_plot": 6.48,
+  "plot_cat": 11.83,
+  "plot_gene": 14.98,
+  "done": 15.06
+ },
+ "checks": {
+  "cat": {
+   "gl": {
+    "crit": "call",
+    "drawn": 1000000,
+    "frame_max": {
+     "pts": 3000000,
+     "inst": 0
+    },
+    "call_max": 1000000
+   },
+   "stated": null,
+   "png": "benchmark/tool_ceiling/shots/cirrocumulus_prepared_run_1000000_r0_cat.png",
+   "all_cells": true
+  },
+  "gene": {
+   "gl": {
+    "crit": "call",
+    "drawn": 1000000,
+    "frame_max": {
+     "pts": 4000000,
+     "inst": 0
+    },
+    "call_max": 1000000
+   },
+   "stated": null,
+   "png": "benchmark/tool_ceiling/shots/cirrocumulus_prepared_run_1000000_r0_gene.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "cirrocumulus": "1.1.61"
+ },
+ "console": [],
+ "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
+ "crashed": false,
+ "ok": true
+}

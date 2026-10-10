@@ -1,0 +1,154 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$SCRATCH/annzarro-scale/stores_panel/n95.6M/tahoe_panel_95.6M.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_95624334_r2",
+  "--server-url",
+  "http://hpc-node-36:8790",
+  "--proxy",
+  "socks5://127.0.0.1:8767",
+  "--n",
+  "95624334",
+  "--probe-store",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "--version-label",
+  "606f0bc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 56.21,
+ "peaks": {
+  "client": {
+   "fp_peak": 13679386648,
+   "fp_lifetime_sum": 14109664312,
+   "rss_peak": 13770424320,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1818888,
+   "fp_lifetime_sum": 1818888,
+   "rss_peak": 3768320,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 157238816,
+   "fp_lifetime_sum": 157255200,
+   "rss_peak": 192675840,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 13679386648,
+   "rss_peak": 13770424320,
+   "fp_lifetime_sum": 14111483200
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.16,
+   0
+  ],
+  [
+   4.3,
+   309498920
+  ],
+  [
+   6.55,
+   888168488
+  ],
+  [
+   8.7,
+   607003048
+  ],
+  [
+   10.84,
+   748757728
+  ],
+  [
+   12.98,
+   880026600
+  ],
+  [
+   15.13,
+   1013146864
+  ],
+  [
+   17.29,
+   1153803768
+  ],
+  [
+   19.44,
+   1302865760
+  ],
+  [
+   21.6,
+   1460398208
+  ],
+  [
+   23.69,
+   1623370168
+  ],
+  [
+   25.85,
+   2158586920
+  ],
+  [
+   28.06,
+   2865377688
+  ],
+  [
+   30.27,
+   9768490800
+  ],
+  [
+   32.47,
+   10872199560
+  ],
+  [
+   34.66,
+   11155757040
+  ],
+  [
+   36.93,
+   11987261520
+  ],
+  [
+   39.08,
+   11992258640
+  ],
+  [
+   41.23,
+   9621739816
+  ],
+  [
+   43.34,
+   9680230768
+  ],
+  [
+   45.47,
+   9125157520
+  ],
+  [
+   47.65,
+   10930659376
+  ],
+  [
+   49.89,
+   12535569544
+  ],
+  [
+   51.99,
+   12303588488
+  ],
+  [
+   54.2,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-04T02:34:25-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n93048 1769520  10.1 .venv/bin/python\n14891  20640   5.5 benchmark/tool_ceiling/.venv/bin/python\n57113 2199632   4.1 $HOME/.local/bin/claude\n 6219  57744   3.6 $HOME/Projects/investments/.venv/bin/python3\n72627 487312   3.1 $HOME/.local/bin/claude\n80588 612720   2.6 $HOME/.local/bin/claude\n14896  19520   2.1 .venv/bin/python\n 4725 611040   1.7 claude\n14803 298208   1.3 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  582 102416   1.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n"
+}

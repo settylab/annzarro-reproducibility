@@ -1,0 +1,25 @@
+{
+ "version": 1,
+ "image": "m12_share_permalink_reopened.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (scope.aertslab.org)",
+ "data": "Wouters_Human_Melanoma / 10_Baselines_filteredRegulons.loom (4,322 cells)",
+ "url": "https://scope.aertslab.org/#/b517db4b-72dc-4cb4-91aa-1c7b07495614/Wouters_Human_Melanoma%2F10_Baselines_filteredRegulons.loom/gene",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/scope/matrix_check_fix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "share",
+   "mark": "Y",
+   "caption": "bit.ly permalink opened in a new page: gene MITF restored in the red query and the F1: MITF tab (new session, since the session UUID was not included); viewer still loading after 18 s headless"
+  },
+  {
+   "column": "remote",
+   "mark": "N",
+   "caption": "A user session offers only 'Upload new dataset' (.loom upload); no URL / S3 / GCS input"
+  }
+ ],
+ "callouts": []
+}

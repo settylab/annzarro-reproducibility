@@ -1,0 +1,115 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_220000000.zarr",
+  "$TMPDIR/wt-ceiling-max/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_220000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 32.51,
+ "peaks": {
+  "client": {
+   "fp_peak": 19135564384,
+   "fp_lifetime_sum": 22160789000,
+   "rss_peak": 20295335936,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 9837862904,
+   "fp_lifetime_sum": 9892159960,
+   "rss_peak": 9856024576,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 138676200,
+   "fp_lifetime_sum": 138676200,
+   "rss_peak": 173998080,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 27532042944,
+   "rss_peak": 28210741248,
+   "fp_lifetime_sum": 32052948960
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.12,
+   906339160
+  ],
+  [
+   4.4,
+   9953037296
+  ],
+  [
+   6.59,
+   13060429304
+  ],
+  [
+   8.75,
+   16051774784
+  ],
+  [
+   10.93,
+   18718177400
+  ],
+  [
+   13.17,
+   23747874768
+  ],
+  [
+   15.44,
+   27532042944
+  ],
+  [
+   17.66,
+   24889498288
+  ],
+  [
+   19.92,
+   26221830656
+  ],
+  [
+   22.14,
+   26049716976
+  ],
+  [
+   24.31,
+   14706247400
+  ],
+  [
+   26.54,
+   21206518032
+  ],
+  [
+   28.86,
+   24202090944
+  ],
+  [
+   31.08,
+   25035546584
+  ]
+ ],
+ "ps_before": "2026-10-09T19:19:13-0700\nmemorystatus_level=94 swap=total = 5120.00M  used = 3904.19M  free = 1215.81M  (encrypted)\n50567  19776   5.1 .venv/bin/python\n80588 772928   2.5 $HOME/.local/bin/claude\n28847 1183376   2.4 $HOME/.local/bin/claude\n10151 514272   1.9 $HOME/.local/bin/claude\n  594  27568   1.5 /usr/libexec/opendirectoryd\n92291  30848   1.2 .venv/bin/python\n47758 984416   1.2 $HOME/.local/bin/claude\n  626 526704   1.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 4725 825824   0.8 claude\n72627 601808   0.7 $HOME/.local/bin/claude\n",
+ "others_at_start": [
+  "50568 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "50569 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

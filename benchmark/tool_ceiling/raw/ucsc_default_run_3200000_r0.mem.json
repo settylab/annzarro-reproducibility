@@ -1,0 +1,66 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/ucsc/html_3200000",
+  "benchmark/tool_ceiling/shots/ucsc_default_run_3200000_r0",
+  "--n",
+  "3200000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 9.76,
+ "peaks": {
+  "client": {
+   "fp_peak": 1802691632,
+   "fp_lifetime_sum": 1988388824,
+   "rss_peak": 1696825344,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 14352864,
+   "fp_lifetime_sum": 14615104,
+   "rss_peak": 27213824,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 133853928,
+   "fp_lifetime_sum": 133853928,
+   "rss_peak": 168329216,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1817044472,
+   "rss_peak": 1724039168,
+   "fp_lifetime_sum": 2003003928
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.24,
+   1441768640
+  ],
+  [
+   4.38,
+   1534928160
+  ],
+  [
+   6.68,
+   1545495864
+  ],
+  [
+   8.86,
+   1036936696
+  ]
+ ],
+ "ps_before": "2026-10-04T15:42:48-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n11827  19632  48.5 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n11828  20656   8.2 benchmark/tool_ceiling/.venv/bin/python\n77736 141648   8.0 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n11813  15648   7.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n77769 942624   5.1 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n11829  19536   4.9 benchmark/tool_ceiling/.venv/bin/python\n  629 237184   4.8 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  855 2071952   4.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  626 515200   4.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  636  28992   3.7 /usr/libexec/lsd\n",
+ "others_at_start": []
+}

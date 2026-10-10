@@ -1,0 +1,146 @@
+/* Marks follow Fig. 1c: shape and fill, never colour alone. */
+:root { --ev-accent: #2f6db5; --ev-band: #eaf1fb; --ev-ink: #1d2733; --ev-muted: #8a94a0; }
+[data-md-color-scheme="slate"] { --ev-accent: #6ea3e6; --ev-band: #1f2a38; --ev-ink: #e3e8ee; --ev-muted: #7d8794; }
+
+.ev-mark { display: inline-block; box-sizing: border-box; width: 13px; height: 13px; border-radius: 50%;
+  border: 1.5px solid var(--ev-ink); vertical-align: -2px; font-size: 0; overflow: hidden; }
+.ev-y { background: var(--ev-accent); }
+.ev-n { background: transparent; }
+.ev-p { background: linear-gradient(90deg, var(--ev-accent) 50%, transparent 50%); }
+.ev-q { border: 0; border-radius: 0; height: 2px; width: 11px; background: var(--ev-muted); vertical-align: 3px; }
+.ev-prop { margin-left: 2px; color: #b5532f; font-size: 0.75em; white-space: nowrap; }
+.ev-prop .ev-mark { width: 10px; height: 10px; border-color: #b5532f; }
+
+.ev-controls { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; align-items: center; margin: 0.5rem 0 0.8rem; font-size: 0.75rem; }
+.ev-legend { color: var(--md-default-fg-color--light); }
+.ev-legend .ev-mark { margin-left: 0.6em; }
+
+.ev-matrix-wrap { overflow-x: auto; }
+.md-typeset table.ev-matrix { display: table; border-collapse: collapse; font-size: 0.68rem; border: 0; }
+.md-typeset .ev-matrix th, .md-typeset .ev-matrix td { padding: 0.25rem 0.3rem; border: 0; text-align: center; vertical-align: bottom; }
+.md-typeset .ev-matrix tbody tr { border-top: 1px solid var(--md-default-fg-color--lightest); }
+.md-typeset .ev-matrix tbody tr:first-child { background: var(--ev-band); }
+.ev-matrix .ev-group { font-weight: 700; border-bottom: 2px solid var(--md-default-fg-color--light) !important; }
+.ev-matrix th.ev-col { height: 11em; white-space: nowrap; font-weight: 400; }
+.ev-matrix th.ev-col span { display: inline-block; writing-mode: vertical-rl; transform: rotate(180deg); }
+.ev-matrix th.ev-col a { color: var(--md-default-fg-color--light); }
+.ev-matrix .ev-tool { text-align: left !important; white-space: nowrap; }
+.md-typeset .ev-matrix tbody td, .md-typeset .ev-matrix tbody th { vertical-align: middle; }
+.ev-matrix td.ev-cell a { display: inline-block; white-space: nowrap; padding: 2px 3px; border-radius: 4px; }
+.ev-matrix td.ev-cell a:hover { background: var(--md-accent-fg-color--transparent); }
+.ev-matrix td.ev-num { text-align: left; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ev-matrix .ev-hl { background: var(--md-accent-fg-color--transparent); }
+.ev-hide-prop .ev-prop { display: none; }
+.ev-only-fig tr.ev-extra { display: none; }
+
+.ev-card { border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; padding: 0.2rem 0.9rem 0.4rem; margin: 0.8rem 0; scroll-margin-top: 4rem; }
+.ev-card:target { border-color: var(--ev-accent); box-shadow: 0 0 0 2px var(--ev-band); }
+.ev-card-head { font-weight: 700; margin: 0.5rem 0 0.2rem; display: flex; gap: 0.5rem; align-items: center; }
+.ev-anchor { margin-left: auto; opacity: 0.3; }
+.ev-list { font-size: 0.72rem; }
+.ev-kind { display: inline-block; min-width: 5.2em; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--md-default-fg-color--light); }
+.ev-shots { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.4rem 0; }
+.ev-shots a { display: flex; flex-direction: column; width: 220px; font-size: 0.6rem; color: var(--md-default-fg-color--light); }
+.ev-shots img { width: 220px; height: 130px; object-fit: cover; object-position: top left; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 4px; }
+.ev-meta { font-size: 0.65rem; color: var(--md-default-fg-color--light); }
+.ev-dirty { color: #b5532f; font-weight: 600; }
+.ev-detail { font-size: 0.72rem; }
+
+.ev-chips { display: inline-flex; gap: 2px; margin-left: 0.4rem; }
+.ev-chip { display: inline-block; min-width: 1.1em; padding: 0 2px; border-radius: 3px; font-size: 0.6rem; font-weight: 700; text-align: center; line-height: 1.5; border: 1px solid transparent; }
+.ev-chip-ok { background: var(--ev-accent); color: #fff; }
+.ev-chip-raw { background: transparent; color: var(--ev-accent); border: 1px solid var(--ev-accent); }
+.ev-chip-na { background: transparent; color: var(--ev-muted); border: 1px dashed var(--ev-muted); }
+.ev-chip-miss { background: transparent; color: #b5532f; border: 1px solid #b5532f; opacity: 0.85; }
+.ev-covtable td.ev-cov { padding: 0.2rem 0.15rem; }
+.ev-covtable .ev-chips { margin: 0; }
+.ev-proofs { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0.8rem; margin: 0.4rem 0 0.6rem; }
+.ev-proofs figure { margin: 0; }
+.ev-proofs img { width: 100%; border: 1px solid var(--md-default-fg-color--lightest); border-radius: 4px; }
+.ev-proofs figcaption { font-size: 0.65rem; text-align: left; max-width: none; }
+.ev-quote { font-size: 0.68rem; color: var(--md-default-fg-color--light); }
+.ev-indicates { font-size: 0.6rem; border: 1px solid var(--ev-muted); border-radius: 3px; padding: 0 3px; }
+
+/* Measurement charts (evidence/tools/svgplot.py): inline SVG, themed here for light and dark. */
+:root { --ev-c1: #2a78d6; --ev-c2: #d0612a; --ev-c3: #198f63; --ev-c4: #6a4fc9; --ev-grey: #a3a9b0;
+  --ev-grid: #e6e9ed; --ev-frame: #c4cad1; --ev-ref: #6b737c; --ev-glyph: #b5532f; --ev-chartbg: transparent; }
+[data-md-color-scheme="slate"] { --ev-c1: #6ea3e6; --ev-c2: #f08a54; --ev-c3: #4cc493; --ev-c4: #a38cf0; --ev-grey: #6d7580;
+  --ev-grid: #2a3340; --ev-frame: #445060; --ev-ref: #9aa4af; --ev-glyph: #f0956a; }
+.ev-charts { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; }
+.ev-fig { margin: 0; max-width: 100%; }
+.ev-chart { max-width: 100%; height: auto; font-family: var(--md-text-font-family, system-ui), sans-serif; }
+.ev-chart text { fill: var(--md-default-fg-color); }
+.ev-chart .ev-tick { font-size: calc(13px * var(--k, 1)); fill: var(--md-default-fg-color--light); }
+.ev-chart .ev-axlab { font-size: calc(14px * var(--k, 1)); fill: var(--md-default-fg-color--light); }
+.ev-chart .ev-ctitle { font-size: calc(15px * var(--k, 1)); font-weight: 700; }
+.ev-chart .ev-note { font-size: calc(12.5px * var(--k, 1)); fill: var(--md-default-fg-color--light); }
+.ev-chart .ev-frame { fill: var(--ev-chartbg); stroke: var(--ev-frame); stroke-width: 1; }
+.ev-chart .ev-grid { stroke: var(--ev-grid); stroke-width: 1; }
+.ev-chart .ev-ref { stroke: var(--ev-ref); stroke-width: 1; stroke-dasharray: 5 3; }
+.ev-chart .ev-ref.ev-cap { stroke-dasharray: 2 2; }
+.ev-chart .ev-reflab { font-size: calc(12.5px * var(--k, 1)); fill: var(--ev-ref); }
+.ev-chart .ev-band { fill: var(--ev-glyph); opacity: 0.08; }
+.ev-chart .ev-glyph line { stroke: var(--ev-glyph); stroke-width: 1.5; }
+.ev-chart .ev-glyph text { font-size: calc(13.5px * var(--k, 1)); font-weight: 700; fill: var(--ev-glyph); }
+.ev-chart .ev-line { fill: none; stroke-width: 1.4; }
+.ev-chart .ev-dash { stroke-dasharray: 4 3; }
+.ev-chart .ev-s1 { fill: var(--ev-c1); stroke: var(--ev-c1); }
+.ev-chart .ev-s2 { fill: var(--ev-c2); stroke: var(--ev-c2); }
+.ev-chart .ev-s3 { fill: var(--ev-c3); stroke: var(--ev-c3); }
+.ev-chart .ev-s4 { fill: var(--ev-c4); stroke: var(--ev-c4); }
+.ev-chart .ev-sx { fill: var(--ev-grey); stroke: var(--ev-grey); }
+.ev-chart .ev-sk { fill: var(--md-default-fg-color); stroke: var(--md-default-fg-color); }
+.ev-chart polyline.ev-line { fill: none; }
+.ev-chart .ev-hollow { fill: var(--md-default-bg-color); stroke-width: 1.4; }
+.ev-chart .ev-stroke { fill: none; stroke-width: 1.6; }
+.ev-chart .ev-pt { cursor: help; }
+.ev-chart .ev-pt:hover, .ev-chart .ev-pt:focus { outline: none; filter: drop-shadow(0 0 2px var(--md-default-fg-color)); }
+.ev-legend-row { display: flex; flex-wrap: wrap; gap: 0.2rem 1rem; font-size: 0.8rem; margin: 0.3rem 0 0.6rem;
+  color: var(--md-default-fg-color--light); }
+.ev-key { display: inline-flex; align-items: center; gap: 0.3rem; }
+.ev-mini { width: 14px; height: 14px; }
+figure.ev-fig figcaption { font-size: 0.76rem; max-width: 40rem; margin-top: 0.1rem; color: var(--md-default-fg-color--light); text-align: left; }
+.md-typeset figure.ev-fig { margin: 0; width: 100%; align-items: flex-start; }
+.ev-chart text.ev-note { stroke: none; }
+
+/* Fig. 1c cells strip on the matrix page (shapes of fig_comparison.draw_strip) */
+.ev-strip { vertical-align: middle; overflow: visible; }
+/* Cells strip: its own color, fig_comparison.STRIP_COLOR (CAT[1], 2026-10-08 review) */
+.ev-strip .ev-sg-fill { fill: var(--ev-strip, #eb6834); stroke: var(--ev-ink); stroke-width: 0.8; }
+.ev-strip .ev-sg-open { fill: var(--md-default-bg-color); stroke: var(--ev-ink); stroke-width: 0.8; }
+.ev-strip .ev-sg-ring { fill: var(--md-default-bg-color); stroke: var(--ev-strip, #eb6834); stroke-width: 1.4; }
+.ev-strip .ev-sg-acc { stroke: var(--ev-strip, #eb6834); stroke-width: 1.2; }
+.ev-strip .ev-sg-line { stroke: var(--ev-ink); stroke-width: 1; }
+.ev-strip .ev-sg-ink { fill: var(--ev-ink); }
+.ev-strip .ev-sg-grid { stroke: var(--md-default-fg-color--lightest); stroke-width: 1; }
+.ev-strip .ev-sg-lab { font-size: 8px; fill: var(--md-default-fg-color--light); }
+.ev-strip .ev-sg-nm { font-size: 9px; fill: var(--ev-muted); }
+.ev-striptxt { font-size: 0.6rem; color: var(--md-default-fg-color--light); max-width: 210px; white-space: normal; }
+.ev-axis { display: flex; justify-content: space-between; width: 190px; margin: 0 10px; font-size: 0.6rem; font-weight: 400;
+  color: var(--md-default-fg-color--light); writing-mode: horizontal-tb; transform: none; }
+.ev-matrix th.ev-scalehead { white-space: normal; height: auto; vertical-align: bottom; }
+.ev-matrix th.ev-scalehead span { writing-mode: horizontal-tb; transform: none; display: block; max-width: 210px; font-weight: 700; }
+.ev-matrix th.ev-scalehead .ev-axis span { display: inline; font-weight: 400; }
+.ev-legend-fig { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; font-size: 0.68rem; margin: 0.3rem 0 0.7rem;
+  color: var(--md-default-fg-color--light); }
+.ev-legend-fig .ev-key { display: inline-flex; align-items: center; gap: 0.3rem; }
+.ev-fn { font-size: 0.6em; color: var(--md-default-fg-color--light); margin-left: 1px; }
+.ev-dagger { margin-left: 2px; }
+.ev-matrix td.ev-cell { white-space: nowrap; }
+.ev-chart .ev-dot { stroke-dasharray: 1.5 2.5; stroke-width: 1.8; }
+.ev-guard { font-size: 0.68rem; max-width: 46rem; border-left: 3px solid var(--ev-accent); padding: 0.2rem 0.6rem; margin: 0.4rem 0 0.8rem; }
+
+/* Charts fill the page column (single column, larger type). Wide pages (matrix, coverage, tool ceiling) add
+   .ev-wide via a <style> block of their own, so no other page changes width. */
+figure.ev-fig > svg.ev-chart { width: 100%; height: auto; }
+.ev-charts { flex-direction: column; }
+figure.ev-fig { width: 100%; }
+/* Chart, its legend and its caption share one left edge and one width. */
+.md-typeset figure.ev-fig > svg.ev-chart { align-self: flex-start; margin: 0; }
+.md-typeset figure.ev-fig > .ev-legend-row { max-width: 720px; align-self: flex-start; margin: 0.2rem 0 0.5rem; }
+.md-typeset figure.ev-fig figcaption { max-width: 720px; align-self: flex-start; }
+.md-typeset figure.ev-fig { display: block; text-align: left; }
+.md-typeset figure.ev-fig > svg.ev-chart { display: block; }
+.md-typeset figure.ev-fig figcaption { margin-left: 0; margin-right: 0; text-align: left; }
+
+/* Wide pages: matrix, coverage, tool ceiling. Their markdown includes WIDE_PAGE_STYLE (evidence/build.py). */

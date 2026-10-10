@@ -1,0 +1,11 @@
+{
+ "n_cells": 95624334,
+ "store": "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+ "barcode_unique": true,
+ "n_reference": 999073,
+ "per_stratum": 1430,
+ "strata_match_run": true,
+ "n_strata": 700,
+ "x_umap_sha256": "575e8bb1efac3a69d556d129f3d44b53946501554b0122061a60766e3fda458a",
+ "x_umap_sha256_of": "raw little-endian float32 bytes of X_umap [n, 2], C order"
+}

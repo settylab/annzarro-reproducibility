@@ -1,0 +1,22 @@
+version: 1
+image: m13_download_buttons.jpg
+tool: shinycell
+software: ShinyCell 2.1.0 (local app)
+data: bone marrow SCE (8,090 cells)
+url: http://127.0.0.1:8907
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/shinycell/matrix_check.py
+source: manual
+image_sha256: 1d1b774188edb871d24bcf06a19079cdf50294eb45ec72af8a094121bfab04e5
+proves:
+- column: export
+  mark: Y
+  caption: 'ShinyCell 2.1.0: every plot has Download PDF and Download PNG buttons.'
+callouts:
+- n: 1
+  box: [28, 596, 288, 38]
+  label: 'left plot: Download PDF / Download PNG'
+- n: 2
+  box: [712, 596, 288, 38]
+  label: 'right plot: Download PDF / Download PNG'

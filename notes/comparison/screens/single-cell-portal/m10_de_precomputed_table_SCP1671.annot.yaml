@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m10_de_precomputed_table_SCP1671.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP1671, human lactation (49,310 cells)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP1671/cellular-and-transcriptional-diversity-over-the-course-of-human-lactation?genes=CD74#study-visualize",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/single-cell-portal/matrix_check_fix2.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "de",
+   "mark": "P",
+   "caption": "DE table for 'B cells' is precomputed at ingest (Wilcoxon, SCP-computed); no control to compute DE for a new group in the GUI"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1047,
+    422,
+    353,
+    499
+   ],
+   "label": "precomputed DE table",
+   "selector": "tr.de-gene-row >> nth=0 >> xpath=ancestor::table"
+  }
+ ]
+}

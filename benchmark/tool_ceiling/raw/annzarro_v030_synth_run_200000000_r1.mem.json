@@ -1,0 +1,130 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/synth/synth_tahoe_200000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_synth_run_200000000_r1",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 47.43,
+ "peaks": {
+  "client": {
+   "fp_peak": 882614528,
+   "fp_lifetime_sum": 918643784,
+   "rss_peak": 1100054528,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 151700584,
+   "fp_lifetime_sum": 288131088,
+   "rss_peak": 186793984,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 116027800,
+   "fp_lifetime_sum": 116027800,
+   "rss_peak": 154664960,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1034315112,
+   "rss_peak": 1286848512,
+   "fp_lifetime_sum": 1206774872
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.35,
+   993961320
+  ],
+  [
+   4.62,
+   836101480
+  ],
+  [
+   6.87,
+   555607400
+  ],
+  [
+   9.15,
+   544793960
+  ],
+  [
+   11.43,
+   545121640
+  ],
+  [
+   13.68,
+   541238632
+  ],
+  [
+   15.95,
+   541468008
+  ],
+  [
+   18.29,
+   541697384
+  ],
+  [
+   20.54,
+   541877608
+  ],
+  [
+   22.8,
+   542631272
+  ],
+  [
+   25.04,
+   542647656
+  ],
+  [
+   27.29,
+   542664040
+  ],
+  [
+   29.52,
+   542975336
+  ],
+  [
+   31.8,
+   543417704
+  ],
+  [
+   34.07,
+   524985752
+  ],
+  [
+   36.38,
+   525198744
+  ],
+  [
+   38.63,
+   525428120
+  ],
+  [
+   40.87,
+   525624728
+  ],
+  [
+   43.13,
+   525903256
+  ],
+  [
+   45.36,
+   526034328
+  ]
+ ],
+ "ps_before": "2026-10-05T00:17:33-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  582 111872  10.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  855 1973280   9.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  557 567664   2.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n47413 662592   1.7 /Applications/cmux.app/Contents/MacOS/cmux\n 4725 640960   1.7 claude\n93323 1098976   1.5 $HOME/.local/bin/claude\n86294  25424   1.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n 6219  59392   1.4 $HOME/Projects/investments/.venv/bin/python3\n  592  21312   1.4 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored\n87551  13152   1.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

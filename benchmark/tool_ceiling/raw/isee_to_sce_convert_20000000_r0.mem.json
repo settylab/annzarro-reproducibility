@@ -1,0 +1,123 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/_mamba/envs/rtools/bin/Rscript",
+  "to_sce.R",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first20000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/sce/first20000000.rds"
+ ],
+ "status": "error",
+ "rc": 1,
+ "wall_s": 32.1,
+ "peaks": {
+  "proc": {
+   "fp_peak": 3492123088,
+   "fp_lifetime_sum": 3508097512,
+   "rss_peak": 4731224064,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3492123088,
+   "rss_peak": 4731224064,
+   "fp_lifetime_sum": 3508097512
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   540864
+  ],
+  [
+   1.41,
+   366887896
+  ],
+  [
+   2.79,
+   583763120
+  ],
+  [
+   4.19,
+   866256624
+  ],
+  [
+   5.57,
+   1186285992
+  ],
+  [
+   7.01,
+   1439747072
+  ],
+  [
+   8.4,
+   1809321224
+  ],
+  [
+   9.78,
+   2059210160
+  ],
+  [
+   11.15,
+   2132643320
+  ],
+  [
+   12.54,
+   2415644344
+  ],
+  [
+   13.96,
+   2460618472
+  ],
+  [
+   15.33,
+   2568458032
+  ],
+  [
+   16.71,
+   2873085960
+  ],
+  [
+   18.1,
+   3000733800
+  ],
+  [
+   19.48,
+   3071627416
+  ],
+  [
+   20.86,
+   3319648600
+  ],
+  [
+   22.26,
+   3319648600
+  ],
+  [
+   23.65,
+   3453948344
+  ],
+  [
+   25.03,
+   3487977960
+  ],
+  [
+   26.41,
+   3028849368
+  ],
+  [
+   27.81,
+   3109229440
+  ],
+  [
+   29.2,
+   2949288880
+  ],
+  [
+   30.58,
+   3029685408
+  ],
+  [
+   32.01,
+   2949780736
+  ]
+ ],
+ "ps_before": "2026-10-03T18:12:09-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 6219  58640  14.7 $HOME/Projects/investments/.venv/bin/python3\n  626 524704   7.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1012  17296   6.2 /usr/libexec/pboard\n47413 619600   5.0 /Applications/cmux.app/Contents/MacOS/cmux\n57113 2075328   4.9 $HOME/.local/bin/claude\n72627 491008   2.5 $HOME/.local/bin/claude\n 1240  51040   2.2 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  596  30112   1.7 /System/Library/CoreServices/launchservicesd\n  734  51632   1.4 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n92291  30832   1.0 .venv/bin/python\n"
+}

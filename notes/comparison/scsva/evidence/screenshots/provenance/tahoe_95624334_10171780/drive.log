@@ -1,0 +1,15 @@
+23:04:15 shot 01_file_tab
+23:04:19 shot 02_file_chooser_modal
+23:04:19 shinyFiles root (from modal)  | modal: None
+23:04:24 verified {'X_coord': '/X', 'Y_coord': '/Y'}
+23:04:33 verified {'inputGenes': '/'}
+23:04:39 verified {'inputClusters': '/clusters'}
+23:04:43 shot 03_file_tab_loaded
+23:04:51 shot 04_2d_density_grid512
+23:04:54 shot 05_hover_no_tooltip
+23:05:09 shot 06_2d_gene_mean_per_bin
+23:05:12 shot 07_brush_on_bins
+23:05:21 shot 08_zoomed_rebinned
+23:06:21 shot 09_2d_groups
+23:06:26 shot 10_groups_tab
+23:06:29 shot 11_annotation_tab

@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "h02_subset_applied_undo_subset.jpg",
+ "tool": "cellxgene",
+ "software": "CELLxGENE Annotate 1.3.0 (local)",
+ "data": "bm_demo.h5ad (8,090 cells; obsp holds connectivities, distances, diffusion_distance; one counts layer)",
+ "url": "http://127.0.0.1:8903/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_cellxgene.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "subset",
+   "mark": "Y",
+   "caption": "Annotate 1.3.0 (2026-10-04): after Subset only the selected cells remain in every view (umap: 1996 out of 1996 cells); 'Undo subset' restores all; view only, nothing recomputed"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    362,
+    0,
+    676,
+    900
+   ],
+   "label": "UMAP: only the subset drawn",
+   "selector": "[data-testid='layout-graph']"
+  },
+  {
+   "n": 2,
+   "box": [
+    403,
+    865,
+    169,
+    24
+   ],
+   "label": "cell count of the subset",
+   "selector": "[data-cap='foot2']"
+  },
+  {
+   "n": 3,
+   "box": [
+    782,
+    4,
+    38,
+    38
+   ],
+   "label": "Undo subset",
+   "selector": "[data-testid='reset-subset-button']"
+  }
+ ]
+}

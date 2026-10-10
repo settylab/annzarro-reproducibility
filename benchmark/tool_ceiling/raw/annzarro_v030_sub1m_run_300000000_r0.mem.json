@@ -1,0 +1,120 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_300000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_sub1m_run_300000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 37.18,
+ "peaks": {
+  "client": {
+   "fp_peak": 3319703536,
+   "fp_lifetime_sum": 3391351536,
+   "rss_peak": 2945515520,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 8578702872,
+   "fp_lifetime_sum": 8663327120,
+   "rss_peak": 8609972224,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 115388824,
+   "fp_lifetime_sum": 115847624,
+   "rss_peak": 157663232,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 9097969576,
+   "rss_peak": 9855926272,
+   "fp_lifetime_sum": 12054678656
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.21,
+   960701320
+  ],
+  [
+   4.44,
+   1009985016
+  ],
+  [
+   6.68,
+   1073391336
+  ],
+  [
+   9.01,
+   1098016512
+  ],
+  [
+   11.25,
+   1711253848
+  ],
+  [
+   13.51,
+   2390502176
+  ],
+  [
+   15.75,
+   3036261632
+  ],
+  [
+   17.96,
+   3644567264
+  ],
+  [
+   20.18,
+   4328468648
+  ],
+  [
+   22.41,
+   4971803272
+  ],
+  [
+   24.72,
+   5639222352
+  ],
+  [
+   26.95,
+   7065336232
+  ],
+  [
+   29.28,
+   4278039056
+  ],
+  [
+   31.55,
+   5487522704
+  ],
+  [
+   33.85,
+   5399573968
+  ],
+  [
+   36.09,
+   6056031816
+  ]
+ ],
+ "ps_before": "2026-10-05T00:21:26-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n91118 344944  92.4 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n47413 662640  17.6 /Applications/cmux.app/Contents/MacOS/cmux\n 6219  59392   6.5 $HOME/Projects/investments/.venv/bin/python3\n  855 1978224   4.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  601  45200   3.8 /usr/libexec/locationd\n97961 766032   3.7 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n  629 241328   3.6 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n57113 2884288   3.3 $HOME/.local/bin/claude\n72627 490688   3.0 $HOME/.local/bin/claude\n 1012  17984   3.0 /usr/libexec/pboard\n",
+ "others_at_start": []
+}

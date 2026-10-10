@@ -1,0 +1,199 @@
+{
+ "v": 1,
+ "constants": {
+  "focusedCell": "TTGACAGGAGCTCCCG-1",
+  "focusedGene": "Penk",
+  "taxonomyId": "10090"
+ },
+ "layout": {
+  "v": 1,
+  "hierarchy": [
+   {
+    "type": "split",
+    "direction": "horizontal",
+    "panes": [
+     {
+      "percentage": 33,
+      "controlsVisible": false
+     },
+     {
+      "percentage": 67,
+      "controlsVisible": false
+     }
+    ],
+    "children": [
+     {
+      "type": "tile",
+      "id": "cell-plot-P1",
+      "controlsVisible": false
+     },
+     {
+      "type": "split",
+      "direction": "horizontal",
+      "panes": [
+       {
+        "percentage": 50,
+        "controlsVisible": false
+       },
+       {
+        "percentage": 50,
+        "controlsVisible": false
+       }
+      ],
+      "children": [
+       {
+        "type": "tile",
+        "id": "cell-plot-P2",
+        "controlsVisible": false
+       },
+       {
+        "type": "tile",
+        "id": "cell-plot-P4",
+        "controlsVisible": false
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "controlState": {
+   "cell-plot-P1": false,
+   "cell-plot-P2": false,
+   "cell-plot-P4": false
+  },
+  "panelConfigs": {
+   "cell-plot-P1": {
+    "id": "cell-plot-P1",
+    "title": "Section: Leiden cluster",
+    "x": {
+     "type": "obsm",
+     "key": "spatial_upright",
+     "column": "0"
+    },
+    "y": {
+     "type": "obsm",
+     "key": "spatial_upright",
+     "column": "1"
+    },
+    "z": null,
+    "color": {
+     "type": "obs",
+     "key": "leiden",
+     "column": ""
+    },
+    "pointSize": 3,
+    "pointOpacity": 0.9,
+    "highlightFocusedCell": true,
+    "hoverInfo": [
+     {
+      "type": "obs",
+      "key": "_index"
+     },
+     {
+      "type": "obs",
+      "key": "leiden"
+     }
+    ],
+    "equalAspect": true,
+    "fontSize": 9,
+    "margins": {
+     "l": 46,
+     "r": 4,
+     "t": 6,
+     "b": 34,
+     "pad": 0
+    }
+   },
+   "cell-plot-P2": {
+    "id": "cell-plot-P2",
+    "title": "Diffusion walk in state space",
+    "x": {
+     "type": "obsm",
+     "key": "spatial_upright",
+     "column": "0"
+    },
+    "y": {
+     "type": "obsm",
+     "key": "spatial_upright",
+     "column": "1"
+    },
+    "z": null,
+    "color": {
+     "type": "obsp",
+     "key": "expression_walk_t5",
+     "column": "TTGACAGGAGCTCCCG-1",
+     "locked": false
+    },
+    "pointSize": 3,
+    "pointOpacity": 0.9,
+    "highlightFocusedCell": true,
+    "hoverInfo": [
+     {
+      "type": "obs",
+      "key": "_index"
+     },
+     {
+      "type": "obs",
+      "key": "leiden"
+     }
+    ],
+    "equalAspect": true,
+    "fontSize": 9,
+    "margins": {
+     "l": 46,
+     "r": 4,
+     "t": 6,
+     "b": 34,
+     "pad": 0
+    },
+    "colorScale": "Blues",
+    "colorReversed": true
+   },
+   "cell-plot-P4": {
+    "id": "cell-plot-P4",
+    "title": "UMAP: spatial_kernel row",
+    "x": {
+     "type": "obsm",
+     "key": "X_umap",
+     "column": "0"
+    },
+    "y": {
+     "type": "obsm",
+     "key": "X_umap",
+     "column": "1"
+    },
+    "z": null,
+    "color": {
+     "type": "obsp",
+     "key": "spatial_kernel",
+     "column": "TTGACAGGAGCTCCCG-1",
+     "locked": false
+    },
+    "pointSize": 3,
+    "pointOpacity": 0.9,
+    "highlightFocusedCell": true,
+    "hoverInfo": [
+     {
+      "type": "obs",
+      "key": "_index"
+     },
+     {
+      "type": "obs",
+      "key": "leiden"
+     }
+    ],
+    "equalAspect": true,
+    "fontSize": 9,
+    "margins": {
+     "l": 46,
+     "r": 4,
+     "t": 6,
+     "b": 34,
+     "pad": 0
+    },
+    "colorScale": "Blues",
+    "colorReversed": true
+   }
+  }
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "f03_selection_umap_toolbar.jpg",
+ "tool": "vizit",
+ "software": "VizIt v1.0.0 as deployed at pd5d.yale.edu (Parkinson's Cell Atlas)",
+ "data": "PD5D_MTG_snRNAseq (hosted)",
+ "url": "https://pd5d.yale.edu/views/geneview?dataset=PD5D_MTG_snRNAseq&gene=SNCA&sample=all&color=MajorCellTypes&group=MajorCellTypes",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/vizit/followup_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "N",
+   "caption": "The UMAP's Plotly toolbar has box and lasso tools, but no plot in the app handles a selection (no onSelected handler in the frontend source), so a selection reaches no other view"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    831,
+    228,
+    280,
+    34
+   ],
+   "label": "UMAP plot toolbar",
+   "selector": ".js-plotly-plot >> nth=0 >> .modebar"
+  }
+ ]
+}

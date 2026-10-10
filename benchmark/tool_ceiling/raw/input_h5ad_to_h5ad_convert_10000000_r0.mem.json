@@ -1,0 +1,168 @@
+{
+ "cmd": [
+  ".venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "10000000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first10000000.h5ad"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 50.46,
+ "peaks": {
+  "proc": {
+   "fp_peak": 19383156864,
+   "fp_lifetime_sum": 19648594168,
+   "rss_peak": 19698270208,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 19383156864,
+   "rss_peak": 19698270208,
+   "fp_lifetime_sum": 19648594168
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8896920
+  ],
+  [
+   1.48,
+   1487636472
+  ],
+  [
+   2.95,
+   1825474792
+  ],
+  [
+   4.41,
+   1837156776
+  ],
+  [
+   5.96,
+   8059199624
+  ],
+  [
+   7.4,
+   8260165912
+  ],
+  [
+   8.86,
+   8468275600
+  ],
+  [
+   10.34,
+   8468275600
+  ],
+  [
+   11.81,
+   9291686864
+  ],
+  [
+   13.27,
+   11773864640
+  ],
+  [
+   14.75,
+   12447051728
+  ],
+  [
+   16.2,
+   12557201432
+  ],
+  [
+   17.67,
+   12557201432
+  ],
+  [
+   19.12,
+   12557201432
+  ],
+  [
+   20.57,
+   12553433112
+  ],
+  [
+   21.99,
+   13457535720
+  ],
+  [
+   23.46,
+   12177977200
+  ],
+  [
+   24.92,
+   13445509888
+  ],
+  [
+   26.38,
+   13671478160
+  ],
+  [
+   27.83,
+   13671478160
+  ],
+  [
+   29.26,
+   13671478160
+  ],
+  [
+   30.68,
+   14568437272
+  ],
+  [
+   32.13,
+   17281760280
+  ],
+  [
+   33.61,
+   12920910088
+  ],
+  [
+   35.07,
+   13137572248
+  ],
+  [
+   36.52,
+   13355856448
+  ],
+  [
+   37.97,
+   13355856448
+  ],
+  [
+   39.4,
+   13362131520
+  ],
+  [
+   40.85,
+   14064743000
+  ],
+  [
+   42.33,
+   13091091104
+  ],
+  [
+   43.81,
+   13201224424
+  ],
+  [
+   45.24,
+   13636105248
+  ],
+  [
+   46.7,
+   13636105248
+  ],
+  [
+   48.13,
+   13636105248
+  ],
+  [
+   49.58,
+   13622227976
+  ]
+ ],
+ "ps_before": "2026-10-03T16:58:16-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 1040  27520  16.5 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/ContextStoreAgent\n  626 553024   9.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1250 202832   8.0 /System/Library/CoreServices/NotificationCenter.app/Contents/MacOS/NotificationCenter\n 1012  14832   7.4 /usr/libexec/pboard\n47413 638336   5.7 /Applications/cmux.app/Contents/MacOS/cmux\n  619   7088   4.1 /usr/sbin/notifyd\n  592  18032   3.6 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored\n  629 222368   3.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30640   2.9 /System/Library/CoreServices/launchservicesd\n57113 2059696   2.6 $HOME/.local/bin/claude\n"
+}

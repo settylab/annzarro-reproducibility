@@ -1,0 +1,132 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_1400000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub1m_run_1400000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 48.03,
+ "peaks": {
+  "client": {
+   "fp_peak": 2966251552,
+   "fp_lifetime_sum": 3029904352,
+   "rss_peak": 2645655552,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 12797503448,
+   "fp_lifetime_sum": 12883110328,
+   "rss_peak": 12837257216,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 139478536,
+   "fp_lifetime_sum": 142280320,
+   "rss_peak": 174637056,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 13255297816,
+   "rss_peak": 14029242368,
+   "fp_lifetime_sum": 15913014680
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.33,
+   956228824
+  ],
+  [
+   4.76,
+   813327600
+  ],
+  [
+   7.26,
+   541025520
+  ],
+  [
+   9.67,
+   712369536
+  ],
+  [
+   12.17,
+   1030514288
+  ],
+  [
+   14.64,
+   1036707440
+  ],
+  [
+   17.03,
+   1041409648
+  ],
+  [
+   19.45,
+   1048045168
+  ],
+  [
+   21.91,
+   979035736
+  ],
+  [
+   24.29,
+   985720408
+  ],
+  [
+   26.73,
+   992634480
+  ],
+  [
+   29.26,
+   1218897688
+  ],
+  [
+   31.62,
+   1079224064
+  ],
+  [
+   34.06,
+   1070032688
+  ],
+  [
+   36.56,
+   3148934472
+  ],
+  [
+   39.35,
+   1666837280
+  ],
+  [
+   41.78,
+   1843260360
+  ],
+  [
+   44.44,
+   3605573272
+  ],
+  [
+   46.78,
+   3747311424
+  ]
+ ],
+ "ps_before": "2026-10-06T00:28:26-0700\nmemorystatus_level=88 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n59322  97680  84.9 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n78059 272080  74.8 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 679376  20.7 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n  557  37040  11.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 1012  14784   6.5 /usr/libexec/pboard\n  855 1226352   6.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n93323 530720   4.9 $HOME/.local/bin/claude\n  629 198880   4.9 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  626 305632   4.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  596  25184   4.0 /System/Library/CoreServices/launchservicesd\n",
+ "others_at_start": []
+}

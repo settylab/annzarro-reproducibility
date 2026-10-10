@@ -1,0 +1,154 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cirrocumulus",
+  "prepared",
+  "$DATA_ROOT/tool_ceiling_data/cirro/first10000000.zarr",
+  "benchmark/tool_ceiling/shots/cirrocumulus_prepared_run_10000000_r2",
+  "--n",
+  "10000000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 56.11,
+ "peaks": {
+  "client": {
+   "fp_peak": 3901057296,
+   "fp_lifetime_sum": 4274744672,
+   "rss_peak": 3544629248,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 14365125864,
+   "fp_lifetime_sum": 14417702840,
+   "rss_peak": 14412365824,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 115405208,
+   "fp_lifetime_sum": 115405208,
+   "rss_peak": 149880832,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 17624208288,
+   "rss_peak": 17088282624,
+   "fp_lifetime_sum": 18692447512
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.22,
+   2358438064
+  ],
+  [
+   4.34,
+   5336199456
+  ],
+  [
+   6.49,
+   8426666528
+  ],
+  [
+   8.66,
+   12222891264
+  ],
+  [
+   10.84,
+   12657657400
+  ],
+  [
+   13.0,
+   14313392896
+  ],
+  [
+   15.18,
+   14535248808
+  ],
+  [
+   17.32,
+   14661487648
+  ],
+  [
+   19.44,
+   14826179736
+  ],
+  [
+   21.54,
+   14806256840
+  ],
+  [
+   23.64,
+   14509902952
+  ],
+  [
+   25.71,
+   14397476064
+  ],
+  [
+   27.83,
+   15617986744
+  ],
+  [
+   29.95,
+   17426092816
+  ],
+  [
+   32.04,
+   16336147192
+  ],
+  [
+   34.1,
+   16107688456
+  ],
+  [
+   36.16,
+   15853277872
+  ],
+  [
+   38.23,
+   15889208008
+  ],
+  [
+   40.3,
+   15906968264
+  ],
+  [
+   42.38,
+   15644709432
+  ],
+  [
+   44.45,
+   15620133432
+  ],
+  [
+   46.5,
+   15631274552
+  ],
+  [
+   48.55,
+   15647363664
+  ],
+  [
+   50.62,
+   15624573520
+  ],
+  [
+   52.74,
+   15662731520
+  ],
+  [
+   54.86,
+   15321256696
+  ]
+ ],
+ "ps_before": "2026-10-04T16:19:18-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n73950  40832 100.0 .venv/bin/python\n  626 519248  36.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  621  16112  14.7 /usr/libexec/corebrightnessd\n75254 139568   5.9 /System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter\n86901 554400   4.6 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n47413 610688   4.5 /Applications/cmux.app/Contents/MacOS/cmux\n12615   8224   4.2 /System/Library/PrivateFrameworks/AmbientDisplay.framework/Versions/A/XPCServices/com.apple.AmbientDisplayAgent.xpc/Contents/MacOS/com.apple.AmbientDisplayAgent\n  629 236176   2.7 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n16798 507936   1.9 /Applications/Microsoft Outlook.app/Contents/MacOS/Microsoft Outlook\n 1012  17856   1.8 /usr/libexec/pboard\n",
+ "others_at_start": []
+}

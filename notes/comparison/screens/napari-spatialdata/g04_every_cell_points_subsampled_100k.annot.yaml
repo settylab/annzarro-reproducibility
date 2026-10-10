@@ -1,0 +1,48 @@
+version: 1
+image: g04_every_cell_points_subsampled_100k.png
+tool: napari-spatialdata
+software: napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (PyQt6)
+data: synthetic SpatialData, one points element of 150,000 uniform random points
+url: null
+captured: '2026-10-04'
+by: evidence-curator
+driver: evidence/screens/gaps/capture_napari.py
+source: manual
+note: Captured on the native Qt platform (a window was on screen for about 15 s) because napari segfaults
+  under QT_QPA_PLATFORM=offscreen; boxes computed from Qt widget geometry.
+image_sha256: 45e590af8d4b10bd42e1563b58ac03d89c6eb63d3c43786df02af6d54a44a17b
+coordinates: computed by the driver from Qt widget geometry (QMenu.actionGeometry, QWidget.mapTo), not
+  read off the image
+proves:
+- column: every_cell
+  mark: P
+  caption: 'terminal + window, napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (PyQt6) (2026-10-04):
+    a 150,000-point element is drawn as a random 100,000-point subsample (config.POINT_THRESHOLD, changeable
+    only in code); labels and the scatter widget draw everything, so P'
+- column: auto_subset
+  mark: P
+  caption: 'napari-spatialdata subsamples a points element to 100,000 by itself (150,000 points in, 100,000
+    drawn, with the plugin''s own log line); shapes and the table are drawn whole, so the automatic reduction
+    covers one element type: P'
+callouts:
+- n: 1
+  box:
+  - 0
+  - 0
+  - 2800
+  - 1898
+  label: viewer with the points layer
+- n: 2
+  box:
+  - 10
+  - 1938
+  - 1106
+  - 32
+  label: 100,000 of 150,000 points in the layer
+- n: 3
+  box:
+  - 10
+  - 1970
+  - 2666
+  - 68
+  label: the plugin's own subsampling log line

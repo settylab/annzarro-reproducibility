@@ -1,0 +1,155 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_300000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_noguard_run_300000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 63.84,
+ "peaks": {
+  "client": {
+   "fp_peak": 17453611848,
+   "fp_lifetime_sum": 17506369072,
+   "rss_peak": 17949130752,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 11156464568,
+   "fp_lifetime_sum": 11239548672,
+   "rss_peak": 11174019072,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 134334080,
+   "fp_lifetime_sum": 134334080,
+   "rss_peak": 169771008,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 28610076416,
+   "rss_peak": 29123149824,
+   "fp_lifetime_sum": 28745917744
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.47,
+   2435311816
+  ],
+  [
+   5.58,
+   12800364872
+  ],
+  [
+   8.17,
+   16537673080
+  ],
+  [
+   10.77,
+   19801434608
+  ],
+  [
+   13.41,
+   22299474976
+  ],
+  [
+   16.31,
+   24991256216
+  ],
+  [
+   19.31,
+   27126176504
+  ],
+  [
+   21.93,
+   26667588344
+  ],
+  [
+   24.51,
+   26652334840
+  ],
+  [
+   27.04,
+   26652629752
+  ],
+  [
+   29.57,
+   25112549056
+  ],
+  [
+   32.07,
+   12463701912
+  ],
+  [
+   34.67,
+   11255151624
+  ],
+  [
+   37.25,
+   11255299080
+  ],
+  [
+   39.83,
+   11424119960
+  ],
+  [
+   42.4,
+   11424398488
+  ],
+  [
+   45.02,
+   11424562328
+  ],
+  [
+   47.57,
+   11424578712
+  ],
+  [
+   50.08,
+   11424595096
+  ],
+  [
+   52.68,
+   11424758912
+  ],
+  [
+   55.24,
+   11424758912
+  ],
+  [
+   57.89,
+   11424857216
+  ],
+  [
+   60.56,
+   11424545920
+  ],
+  [
+   63.21,
+   11413519488
+  ]
+ ],
+ "ps_before": "2026-10-07T16:34:48-0700\nmemorystatus_level=90 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n22887  24048  95.4 /System/Library/PrivateFrameworks/IntelligencePlatformCompute.framework/Versions/A/XPCServices/IntelligencePlatformComputeService.xpc/Contents/MacOS/IntelligencePlatformComputeService\n  626 423088   7.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n22990  19728   5.9 .venv/bin/python\n78770 503152   4.3 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 750480   3.9 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n 6219  59056   3.8 $HOME/Projects/investments/.venv/bin/python3\n23003  21056   3.0 $TMPDIR/sw_v041/benchmark/tool_ceiling/.venv/bin/python\n  629 189552   2.7 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n73194 135024   2.6 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n  596  35680   1.9 /System/Library/CoreServices/launchservicesd\n",
+ "others_at_start": [
+  "22991 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "22992 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

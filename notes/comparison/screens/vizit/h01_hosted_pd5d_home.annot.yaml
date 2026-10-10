@@ -1,0 +1,20 @@
+{
+ "version": 1,
+ "image": "h01_hosted_pd5d_home.jpg",
+ "tool": "vizit",
+ "software": "VizIt v1.0.0 as deployed at pd5d.yale.edu (Parkinson's Cell Atlas)",
+ "data": "landing page",
+ "url": "https://pd5d.yale.edu/",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/vizit/visuals_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "hosted",
+   "mark": "Y",
+   "caption": "pd5d.yale.edu: the Parkinson's Cell Atlas, one public deployment of VizIt ('an implementation of VizIt!' in the footer) serving every visitor"
+  }
+ ],
+ "callouts": []
+}

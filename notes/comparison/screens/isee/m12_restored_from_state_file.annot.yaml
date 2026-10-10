@@ -1,0 +1,29 @@
+version: 1
+image: m12_restored_from_state_file.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3)
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: e706f912487a3a2696ea8241e0ac2f24e34677f092ef13ef062526a7f1292393
+proves:
+- column: share
+  mark: P
+  caption: 'iSEE 2.18.0: relaunching with iSEE(initial = readRDS(f)$memory), in code, restores the brush, the search
+    and the Restrict tick.'
+callouts:
+- n: 1
+  box: [246, 8, 266, 34]
+  label: 'app relaunched from the state file (title: restored)'
+- n: 2
+  box: [64, 241, 116, 180]
+  label: brush restored
+- n: 3
+  box: [753, 117, 168, 36]
+  label: table search Neutrophil restored
+- n: 4
+  box: [957, 869, 203, 27]
+  label: Restrict to selected columns restored

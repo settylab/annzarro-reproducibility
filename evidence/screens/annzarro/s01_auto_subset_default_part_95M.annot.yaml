@@ -1,0 +1,40 @@
+version: 1
+image: s01_auto_subset_default_part_95M.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: Tahoe-100M, 95,624,334 cells (tahoe_panel_95.6M_plot.zarr)
+url: http://127.0.0.1:8924/?dataset_path=$DATA_DIR/tahoe_panel_95.6M_plot.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZEdlbmUiOiJGTjEifS...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: auto_subset
+  mark: Y
+  caption: 'Opened from a link that names no subset, the 95.6M-cell dataset shows its default part: 100,000
+    cells, part 1 of 957, with the cells left out stated under the plot.'
+callouts:
+- n: 1
+  box:
+  - 4
+  - 79
+  - 354
+  - 51
+  label: 'statistics bar: Cells: 100,000 of 95,624,334 Subset · seed 0'
+  selector: '#subset-button >> xpath=..'
+- n: 2
+  box:
+  - 22
+  - 103
+  - 183
+  - 23
+  label: 'part navigator: Part 1 of 957'
+  selector: text=/of 957/ >> xpath=..
+- n: 3
+  box:
+  - 193
+  - 871
+  - 166
+  - 32
+  label: 'plot status: 95.5M not in part 1 of 957'
+  selector: .ps-chip

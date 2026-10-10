@@ -1,0 +1,68 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_200000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub_run_200000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 9.38,
+ "peaks": {
+  "client": {
+   "fp_peak": 1591763536,
+   "fp_lifetime_sum": 1705191072,
+   "rss_peak": 1381629952,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 2905476000,
+   "fp_lifetime_sum": 2964508032,
+   "rss_peak": 2927034368,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 130566072,
+   "fp_lifetime_sum": 130566072,
+   "rss_peak": 165347328,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 4422692312,
+   "rss_peak": 4232445952,
+   "fp_lifetime_sum": 4669699104
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.42,
+   950592296
+  ],
+  [
+   4.85,
+   1264772096
+  ],
+  [
+   7.54,
+   3788418280
+  ]
+ ],
+ "ps_before": "2026-10-06T00:11:12-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n59322  96800  93.2 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n47413 543152   8.5 /Applications/cmux.app/Contents/MacOS/cmux\n72627 489904   7.3 $HOME/.local/bin/claude\n49293 804784   6.9 $HOME/.local/bin/claude\n  629 205120   5.7 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n57113 2938496   5.1 $HOME/.local/bin/claude\n 1012  15872   3.8 /usr/libexec/pboard\n  596  24928   3.5 /System/Library/CoreServices/launchservicesd\n41331  24528   2.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  855 1476240   2.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n",
+ "others_at_start": []
+}

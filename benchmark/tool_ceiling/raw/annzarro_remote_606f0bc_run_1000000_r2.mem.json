@@ -1,0 +1,78 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_1000000_r2",
+  "--server-url",
+  "http://hpc-node-36:8790",
+  "--proxy",
+  "socks5://127.0.0.1:8767",
+  "--n",
+  "1000000",
+  "--probe-store",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "--version-label",
+  "606f0bc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 13.6,
+ "peaks": {
+  "client": {
+   "fp_peak": 3392448448,
+   "fp_lifetime_sum": 3453594568,
+   "rss_peak": 2907602944,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 3031400,
+   "fp_lifetime_sum": 3031400,
+   "rss_peak": 14516224,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 122565472,
+   "fp_lifetime_sum": 122565472,
+   "rss_peak": 160448512,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3392448448,
+   "rss_peak": 2907602944,
+   "fp_lifetime_sum": 3456625968
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.25,
+   0
+  ],
+  [
+   4.37,
+   311727360
+  ],
+  [
+   6.53,
+   862740736
+  ],
+  [
+   8.7,
+   2080121904
+  ],
+  [
+   10.89,
+   1724999040
+  ],
+  [
+   13.05,
+   3179849472
+  ]
+ ],
+ "ps_before": "2026-10-04T01:35:48-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  601  44880   3.4 /usr/libexec/locationd\n80005 382768   1.6 $HOME/.local/bin/claude\n86901 519856   1.2 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n57113 2205392   1.1 $HOME/.local/bin/claude\n47413 615456   1.0 /Applications/cmux.app/Contents/MacOS/cmux\n92291  30800   0.9 .venv/bin/python\n98631 481840   0.6 $HOME/.local/bin/claude\n  774   6576   0.4 /usr/libexec/sysmond\n80588 618704   0.3 $HOME/.local/bin/claude\n47477 397568   0.3 $HOME/.local/bin/claude\n"
+}

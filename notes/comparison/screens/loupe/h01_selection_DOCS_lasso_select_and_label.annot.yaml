@@ -1,0 +1,55 @@
+{
+ "version": 1,
+ "image": "h01_selection_DOCS_lasso_select_and_label.jpg",
+ "tool": "loupe",
+ "software": "Loupe Browser 9.1.0 DOCS PAGE (10x website, archived copy read 2026-10-04), not the app",
+ "data": "docs, not the app: https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation",
+ "url": "https://web.archive.org/web/20260613184701/https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_docs.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "P",
+   "caption": "docs, not the app: Loupe Browser 9.1.0 interface tutorial (10x, archived copy read 2026-10-04): the Lasso/rectangle selector 'Select[s] and label[s]' an area, so a selection becomes a labelled group that other panels then use, not a live linked highlight: P"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    368,
+    422,
+    702,
+    56
+   ],
+   "label": "docs, not the app: \"Select and label an image area with an irregular shape\"",
+   "selector": "[data-cap='phrase']"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    0,
+    1400,
+    62
+   ],
+   "label": "docs, not the app, with its URL",
+   "selector": "#gapbanner"
+  },
+  {
+   "n": 3,
+   "box": [
+    328,
+    294,
+    200,
+    40
+   ],
+   "label": "Mouse selector tools",
+   "selector": "text=Mouse selector tools >> nth=0"
+  }
+ ],
+ "note": "Docs, not the app: Loupe Browser needs a 10x account, which the audit does not create. Archived copy (web.archive.org, 2026-06-13) because the live 10x page sits behind a Vercel bot challenge."
+}

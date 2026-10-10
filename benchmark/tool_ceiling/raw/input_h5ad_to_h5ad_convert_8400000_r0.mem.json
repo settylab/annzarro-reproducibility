@@ -1,0 +1,144 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv-conv/bin/python",
+  "to_h5ad.py",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "8400000",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first8400000.h5ad"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 41.97,
+ "peaks": {
+  "proc": {
+   "fp_peak": 19335692440,
+   "fp_lifetime_sum": 19590463832,
+   "rss_peak": 19641745408,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 19335692440,
+   "rss_peak": 19641745408,
+   "fp_lifetime_sum": 19590463832
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9503128
+  ],
+  [
+   1.49,
+   1277134672
+  ],
+  [
+   2.95,
+   1728252040
+  ],
+  [
+   4.46,
+   2739818216
+  ],
+  [
+   5.96,
+   8083431632
+  ],
+  [
+   7.41,
+   8593121872
+  ],
+  [
+   8.86,
+   8593121872
+  ],
+  [
+   10.31,
+   8593121872
+  ],
+  [
+   11.75,
+   11068877120
+  ],
+  [
+   13.23,
+   12296122344
+  ],
+  [
+   14.67,
+   12612071640
+  ],
+  [
+   16.14,
+   12834861416
+  ],
+  [
+   17.58,
+   12834861416
+  ],
+  [
+   18.98,
+   12836991336
+  ],
+  [
+   20.42,
+   13285765816
+  ],
+  [
+   21.88,
+   11185990720
+  ],
+  [
+   23.32,
+   13464761040
+  ],
+  [
+   24.82,
+   13690729312
+  ],
+  [
+   26.26,
+   13690729312
+  ],
+  [
+   27.7,
+   13690729312
+  ],
+  [
+   29.14,
+   14592308736
+  ],
+  [
+   30.6,
+   16953654176
+  ],
+  [
+   32.08,
+   12876820504
+  ],
+  [
+   33.53,
+   12985413752
+  ],
+  [
+   34.99,
+   13203681544
+  ],
+  [
+   36.44,
+   13203681544
+  ],
+  [
+   37.89,
+   13209956616
+  ],
+  [
+   39.31,
+   13201600776
+  ],
+  [
+   40.82,
+   11476921192
+  ]
+ ],
+ "ps_before": "2026-10-03T22:47:48-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  855 1720512  64.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n42498  25200  14.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n86901 499216   3.5 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n57113 1903088   2.8 $HOME/.local/bin/claude\n39372  27328   1.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  582 104352   1.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n80588 617040   1.2 $HOME/.local/bin/claude\n  555  26640   1.2 /usr/libexec/UserEventAgent\n47413 607808   1.1 /Applications/cmux.app/Contents/MacOS/cmux\n 4725 642848   1.0 claude\n"
+}

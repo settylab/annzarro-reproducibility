@@ -1,0 +1,57 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tahoe_scale_ceiling/syn_master_300000000.zarr",
+ "n_obs": 300000000,
+ "checks": {
+  "gene": {
+   "status": "stalled",
+   "guard": [],
+   "console": [
+    "error: Error loading plot data: RangeError: Array buffer allocation failed\n    at arrayBufferConstructor_DoNotInitialize (<anonymous>)\n    at new Float64Array (<anonymous>)\n    at t.exports (http://127.0.0.1:8933/static/vendor/js/plotly-2.20.0.min.js:8:2406951)\n    at Object.positions (http://127.0.0.1:893"
+   ],
+   "n_drawn": -1,
+   "seconds": 61.74300108291209,
+   "all_cells": false,
+   "renderer_rss": 15715647488,
+   "gpu_rss": 1445134336,
+   "server_rss": 11174051840
+  }
+ },
+ "versions": {
+  "annzarro": "78c9da6",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "stalled",
+   "seconds": 61.74300108291209,
+   "n_points": -1
+  }
+ ],
+ "heap": {
+  "file": "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_noguard_run_300000000_r0.heap.jsonl",
+  "samples": 635,
+  "last_pm": {
+   "t": 63.475,
+   "src": "performance.memory",
+   "n": -1,
+   "used": 1216357465,
+   "limit": 4395630592
+  },
+  "last_cdp": {
+   "t": 63.477,
+   "src": "Runtime.getHeapUsage",
+   "used": 10296632,
+   "total": 12058624,
+   "backing": 1206070481
+  },
+  "peak_used_pm": 14943992219,
+  "peak_used_cdp": 26213008
+ },
+ "ok": false
+}

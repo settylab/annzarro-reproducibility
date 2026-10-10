@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m04_slots_layers_menu.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_matrix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "slots",
+   "mark": "P",
+   "caption": "Layers lists counts"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    284,
+    239,
+    32
+   ],
+   "label": "Layers: counts",
+   "selector": "[role=listbox] >> visible=true"
+  }
+ ]
+}

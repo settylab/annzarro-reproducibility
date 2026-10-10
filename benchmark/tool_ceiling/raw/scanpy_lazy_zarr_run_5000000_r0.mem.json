@@ -1,0 +1,104 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "lazy_zarr",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first5000000.zarr",
+  "benchmark/tool_ceiling/shots/scanpy_lazy_zarr_run_5000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 27.45,
+ "peaks": {
+  "proc": {
+   "fp_peak": 4589916456,
+   "fp_lifetime_sum": 4589916456,
+   "rss_peak": 4650582016,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 4589916456,
+   "rss_peak": 4650582016,
+   "fp_lifetime_sum": 4589916456
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9077144
+  ],
+  [
+   1.51,
+   654115968
+  ],
+  [
+   2.99,
+   1410483880
+  ],
+  [
+   4.46,
+   3674984072
+  ],
+  [
+   5.94,
+   3714354872
+  ],
+  [
+   7.4,
+   4305932392
+  ],
+  [
+   8.89,
+   4305932392
+  ],
+  [
+   10.36,
+   4305932392
+  ],
+  [
+   11.84,
+   4305932392
+  ],
+  [
+   13.3,
+   4305932392
+  ],
+  [
+   14.78,
+   4305932392
+  ],
+  [
+   16.25,
+   4305981544
+  ],
+  [
+   17.79,
+   4329082984
+  ],
+  [
+   19.24,
+   4589916456
+  ],
+  [
+   20.72,
+   4589916456
+  ],
+  [
+   22.21,
+   4589916456
+  ],
+  [
+   23.68,
+   4589916456
+  ],
+  [
+   25.15,
+   4589916456
+  ],
+  [
+   26.65,
+   4589916456
+  ]
+ ],
+ "ps_before": "2026-10-03T21:12:27-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 1849456  15.0 $HOME/.local/bin/claude\n 1012  16752   2.1 /usr/libexec/pboard\n  633  30768   2.0 /usr/libexec/runningboardd\n  626 486928   1.7 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  629 154240   1.6 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  28064   1.6 /System/Library/CoreServices/launchservicesd\n80588 616592   1.4 $HOME/.local/bin/claude\n 6219  58688   1.4 $HOME/Projects/investments/.venv/bin/python3\n  557 651616   1.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 1240  50224   1.3 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n"
+}

@@ -1,0 +1,33 @@
+version: 1
+image: m18_selection_APP_other_view.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: 0b358fbc653c6910966193759ce14e156971766390c077c1cf649384b454b2fe
+proves:
+- column: selection
+  mark: P
+  caption: 'the saved group (audit: lasso1) carries into another projection (draw_graph_fa) and the violin plot;
+    a live, unsaved selection could not be shown in another view'
+callouts:
+- n: 1
+  box:
+  - 420
+  - 227
+  - 105
+  - 40
+  label: lasso1 in draw_graph_fa
+- n: 2
+  box:
+  - 280
+  - 452
+  - 640
+  - 142
+  label: violin plot for group audit

@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m06_remote_new_analysis_tabs.jpg",
+ "tool": "kana",
+ "software": "Kana v3.2.0 (live build, kanaverse.org)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "https://www.kanaverse.org/kana/",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/kana/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "remote",
+   "mark": "P",
+   "caption": "Only remote source is a fixed ExperimentHub list (8 datasets, downloaded whole); other tabs are local file pickers"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    322,
+    339,
+    352,
+    26
+   ],
+   "label": "fixed ExperimentHub list",
+   "selector": "text=Choose an ExperimentHub dataset >> xpath=.."
+  },
+  {
+   "n": 2,
+   "box": [
+    144,
+    216,
+    161,
+    199
+   ],
+   "label": "source tabs: no URL / S3 / GCS",
+   "selector": "text=10X MatrixMarket >> xpath=.."
+  }
+ ]
+}

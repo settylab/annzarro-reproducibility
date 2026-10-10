@@ -1,0 +1,35 @@
+{
+ "variant": "lazy_zarr",
+ "path": "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first10000000.zarr",
+ "versions": {
+  "scanpy": "1.12.4",
+  "anndata": "0.13.4",
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.3",
+  "h5py": "3.16.0",
+  "zarr": "3.4.0"
+ },
+ "phases": {
+  "import": 1.21,
+  "load": 9.4,
+  "plot_cat": 32.27,
+  "plot_gene": 53.65,
+  "done": 53.65
+ },
+ "checks": {
+  "cat": {
+   "n_drawn": 10000000,
+   "all_cells": true,
+   "n_colours": 34187,
+   "png": "benchmark/tool_ceiling/shots/scanpy_lazy_zarr_run_10000000_r0_cat.png"
+  },
+  "gene": {
+   "n_drawn": 10000000,
+   "all_cells": true,
+   "n_colours": 9800,
+   "png": "benchmark/tool_ceiling/shots/scanpy_lazy_zarr_run_10000000_r0_gene.png"
+  }
+ },
+ "n_obs": 10000000,
+ "ok": true
+}

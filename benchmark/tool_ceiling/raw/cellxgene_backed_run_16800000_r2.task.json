@@ -1,0 +1,17 @@
+{
+ "tool": "cellxgene",
+ "variant": "backed",
+ "input": "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first16800000.h5ad",
+ "n": 16800000,
+ "phases": {
+  "done": 2.09
+ },
+ "checks": {},
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "cellxgene": "[cellxgene] Version 1.3.0"
+ },
+ "console": [],
+ "error": "RuntimeError: server exited rc=1",
+ "ok": false
+}

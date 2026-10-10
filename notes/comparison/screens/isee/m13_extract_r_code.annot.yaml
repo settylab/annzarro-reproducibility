@@ -1,0 +1,19 @@
+version: 1
+image: m13_extract_r_code.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3)
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: 32f474057d419fc44cb1f5ea0f305c0bea53dc5b6f590ad1992adc9f4e7ea415
+proves:
+- column: export
+  mark: Y
+  caption: 'iSEE 2.18.0: Extract the R code shows the code that regenerates the current plots.'
+callouts:
+- n: 1
+  box: [265, 152, 870, 600]
+  label: 'My code: se <- sce, colormap, brushes, then each panel''s plotting commands'

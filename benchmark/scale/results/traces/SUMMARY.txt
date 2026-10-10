@@ -1,0 +1,23 @@
+Chrome traces of one every-cell first plot at 95.6M (real Tahoe, X_umap, default point size), release-0.3 d5be664,
+ceiling.py --trace, 2026-10-04 ~04:45Z, bench lock held, no overlap window. Raw traces (all95_{gene,cat}.json,
+62-70 MB) are not committed. Times are seconds after navigation start.
+
+gene (harness ready 9.53 s; app log "Large cell plot ... draw" at 6.38 s)
+  1.83 +4.64  renderer main: load/build/draw (microtask)
+  6.48 +3.13  renderer main: TimerFire -> listeners.js:92, the ResizeObserver debounce calling
+              Plotly.relayout(plotContainer, {autosize: true}) = a second full render
+     6.52 +2.22  inside it: GLES2::GetGLError -> CommandBufferHelper::Finish (main thread blocked on the GPU)
+  6.50 +2.25  GPU process: IOSurfaceImageBacking::WaitForCommandsToBeScheduled (executing the WebGL commands)
+  page: long tasks 1.74+4.63 s, 6.39+3.13 s; no animation frame 6.40-9.52 s
+
+cat (harness ready 12.89 s; app log at 4.75 s)
+  1.06 +3.74  renderer main: load/build/draw
+  4.83 +2.64  renderer compositor: RasterImplementation::Finish (waits for the GPU); GPU process: CommandBuffer::Flush
+  7.47 +4.51  renderer compositor: WaitForCmd; GPU process: IOSurfaceImageBacking::WaitForCommandsToBeScheduled
+ 11.99 +0.93  renderer main: TimerFire -> listeners.js:92 (the same autosize relayout)
+  page: no animation frame 4.75-10.02 s and 10.01-12.84 s
+
+Reading: the gap after the app's draw log is real, user-visible time (no new frame reaches the screen; with gene the
+page is also unresponsive). It is GPU execution of the draw's WebGL command buffers (2-7 s at 95.6M) plus a second
+full render from the ResizeObserver's autosize relayout right after the first draw (3.1 s gene, 0.9 s cat), whose
+synchronous getError waits for the GPU. Not an artifact of the readiness check, and not the name prewarm.

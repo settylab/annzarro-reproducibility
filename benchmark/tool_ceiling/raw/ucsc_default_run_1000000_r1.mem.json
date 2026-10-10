@@ -1,0 +1,61 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/ucsc/html_1000000",
+  "benchmark/tool_ceiling/shots/ucsc_default_run_1000000_r1",
+  "--n",
+  "1000000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 6.39,
+ "peaks": {
+  "client": {
+   "fp_peak": 1356407808,
+   "fp_lifetime_sum": 1410426696,
+   "rss_peak": 1353121792,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 14582240,
+   "fp_lifetime_sum": 16581472,
+   "rss_peak": 27426816,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 131904496,
+   "fp_lifetime_sum": 131904496,
+   "rss_peak": 166232064,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1370990048,
+   "rss_peak": 1380548608,
+   "fp_lifetime_sum": 1427008168
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.15,
+   1054860456
+  ],
+  [
+   4.27,
+   1360029128
+  ],
+  [
+   6.37,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-04T11:30:09-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 435760  24.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n30053  19568  10.9 benchmark/tool_ceiling/.venv/bin/python\n57113 2857744  10.8 $HOME/.local/bin/claude\n97977 271744   8.3 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n32386  20528   8.2 benchmark/tool_ceiling/.venv/bin/python\n27145 490416   7.4 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n72627 473248   6.1 $HOME/.local/bin/claude\n97961 570848   5.5 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n37026 114336   4.2 $HOME/Projects/investments/.venv/bin/python3\n32378  43024   2.7 gh\n"
+}

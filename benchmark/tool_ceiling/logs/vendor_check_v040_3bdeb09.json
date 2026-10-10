@@ -1,0 +1,240 @@
+{
+ "exe": "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+ "worktree": "$ANNZARRO_SRC",
+ "rev": "3bdeb09",
+ "files_fetched": 24,
+ "files_ok": 24,
+ "files": [
+  {
+   "path": "css/all.min.css",
+   "status": 200,
+   "component": "Font Awesome Free",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "css/bootstrap.min.css",
+   "status": 200,
+   "component": "Bootstrap",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "css/buttons.bootstrap5.min.css",
+   "status": 200,
+   "component": "DataTables Buttons",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "css/dataTables.bootstrap5.min.css",
+   "status": 200,
+   "component": "DataTables",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "css/fixedHeader.bootstrap5.min.css",
+   "status": 200,
+   "component": "DataTables FixedHeader",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "css/searchBuilder.bootstrap5.min.css",
+   "status": 200,
+   "component": "DataTables SearchBuilder",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "css/select.bootstrap5.min.css",
+   "status": 200,
+   "component": "DataTables Select",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "css/select2.min.css",
+   "status": 200,
+   "component": "Select2",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/bootstrap.bundle.min.js",
+   "status": 200,
+   "component": "Bootstrap",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/buttons.bootstrap5.min.js",
+   "status": 200,
+   "component": "DataTables Buttons",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/buttons.html5.min.js",
+   "status": 200,
+   "component": "DataTables Buttons",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/chroma.min.js",
+   "status": 200,
+   "component": "chroma.js",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/dataTables.bootstrap5.min.js",
+   "status": 200,
+   "component": "DataTables",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/dataTables.buttons.min.js",
+   "status": 200,
+   "component": "DataTables Buttons",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/dataTables.fixedHeader.min.js",
+   "status": 200,
+   "component": "DataTables FixedHeader",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/dataTables.searchBuilder.min.js",
+   "status": 200,
+   "component": "DataTables SearchBuilder",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/dataTables.select.min.js",
+   "status": 200,
+   "component": "DataTables Select",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/jquery-3.6.4.min.js",
+   "status": 200,
+   "component": "jQuery",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/jquery.dataTables.min.js",
+   "status": 200,
+   "component": "DataTables",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/plotly-2.20.0.min.js",
+   "status": 200,
+   "component": "Plotly.js",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/searchBuilder.bootstrap5.min.js",
+   "status": 200,
+   "component": "DataTables SearchBuilder",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "js/select2.min.js",
+   "status": 200,
+   "component": "Select2",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "webfonts/fa-solid-900.woff2",
+   "status": 200,
+   "component": "Font Awesome Free",
+   "ok": true,
+   "listed": true
+  },
+  {
+   "path": "webfonts/fa-v4compatibility.woff2",
+   "status": 200,
+   "component": "Font Awesome Free",
+   "ok": true,
+   "listed": true
+  }
+ ],
+ "libraries": [
+  {
+   "component": "Plotly.js",
+   "pinned": "2.20.0",
+   "runtime": "2.20.0",
+   "ok": true
+  },
+  {
+   "component": "jQuery",
+   "pinned": "3.6.4",
+   "runtime": "3.6.4",
+   "ok": true
+  },
+  {
+   "component": "Bootstrap",
+   "pinned": "5.2.3",
+   "runtime": "5.2.3",
+   "ok": true
+  },
+  {
+   "component": "DataTables",
+   "pinned": "1.13.4",
+   "runtime": "1.13.4",
+   "ok": true
+  },
+  {
+   "component": "DataTables Buttons",
+   "pinned": "2.3.6",
+   "runtime": "2.3.6",
+   "ok": true
+  },
+  {
+   "component": "DataTables SearchBuilder",
+   "pinned": "1.4.2",
+   "runtime": "1.4.2",
+   "ok": true
+  },
+  {
+   "component": "DataTables Select",
+   "pinned": "1.6.2",
+   "runtime": "1.6.2",
+   "ok": true
+  },
+  {
+   "component": "DataTables FixedHeader",
+   "pinned": "3.3.2",
+   "runtime": "3.3.2",
+   "ok": true
+  },
+  {
+   "component": "chroma.js",
+   "pinned": "2.4.2",
+   "runtime": "2.4.2",
+   "ok": true
+  },
+  {
+   "component": "Select2",
+   "pinned": "4.1.0-rc.0",
+   "runtime": "loaded",
+   "ok": true
+  }
+ ],
+ "ok": true
+}

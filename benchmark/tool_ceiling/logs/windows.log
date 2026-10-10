@@ -1,0 +1,2 @@
+2026-10-04T05:09:46 2026-10-04T05:10:00 rc=0 cmd=scanpy-seurat/matrix_check.py (no GUI, run outside gap runner on the coordinator's note) overlapped_timed=.venv/bin/python run.py --tool seurat --variant default --n 1000000 -- $ENVS_ROOT/rceiling/bin/Rscri
+2026-10-04T05:10:17 2026-10-04T05:11:08 rc=0 cmd=scanpy-seurat/matrix_check.py rerun (no GUI, outside gap runner on the coordinator's note) overlapped_timed=.venv/bin/python run.py --tool seurat --variant default --n 1000000 -- $ENVS_ROOT/rceiling/bin/Rscri

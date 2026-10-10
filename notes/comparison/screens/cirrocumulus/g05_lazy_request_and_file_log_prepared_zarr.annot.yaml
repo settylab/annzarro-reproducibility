@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "g05_lazy_request_and_file_log_prepared_zarr.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (prepare_data zarr; local cirro launch and direct reader call)",
+ "data": "bm_demo prepared with cirro prepare_data --format zarr",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_cirrocumulus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "lazy",
+   "mark": "Y",
+   "caption": "request and file log, Cirrocumulus 1.1.61 (2026-10-04): the prepare_data reader reads one gene from 2 of 128 X chunks (lazy after a preparation step, reading B); caveat: cirro launch on the same zarr opened every X chunk at load"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    224,
+    1375,
+    35
+   ],
+   "label": "one gene: 2 data chunks of 128",
+   "selector": "#r3"
+  },
+  {
+   "n": 2,
+   "box": [
+    12,
+    125,
+    1375,
+    54
+   ],
+   "label": "cirro launch: every chunk opened at load",
+   "selector": "#r0"
+  },
+  {
+   "n": 3,
+   "box": [
+    12,
+    288,
+    1376,
+    38
+   ],
+   "label": "lazy reader, eager launch",
+   "selector": "#note"
+  }
+ ]
+}

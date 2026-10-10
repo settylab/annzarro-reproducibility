@@ -1,0 +1,99 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_225000000.zarr",
+  "$TMPDIR/wt-ceiling-max/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_225000000_r2",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 23.24,
+ "peaks": {
+  "client": {
+   "fp_peak": 20184138584,
+   "fp_lifetime_sum": 20629194640,
+   "rss_peak": 20155564032,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 10011418784,
+   "fp_lifetime_sum": 10057523840,
+   "rss_peak": 10029596672,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 134579864,
+   "fp_lifetime_sum": 134579864,
+   "rss_peak": 170065920,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 29651575392,
+   "rss_peak": 29641457664,
+   "fp_lifetime_sum": 30686718480
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.12,
+   336728720
+  ],
+  [
+   4.4,
+   5862863688
+  ],
+  [
+   6.69,
+   13067735200
+  ],
+  [
+   8.93,
+   14877988680
+  ],
+  [
+   11.21,
+   18024902112
+  ],
+  [
+   13.45,
+   21762293728
+  ],
+  [
+   15.75,
+   27090524824
+  ],
+  [
+   18.08,
+   27870846960
+  ],
+  [
+   20.31,
+   26542283392
+  ],
+  [
+   22.62,
+   26092854896
+  ]
+ ],
+ "ps_before": "2026-10-09T19:13:12-0700\nmemorystatus_level=93 swap=total = 5120.00M  used = 3904.19M  free = 1215.81M  (encrypted)\n47413 854112  65.8 /Applications/cmux.app/Contents/MacOS/cmux\n  626 522640  37.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n23101 2848720  21.9 /Applications/OneDrive.app/Contents/MacOS/OneDrive\n 1015  21808  17.0 /System/Library/PrivateFrameworks/BiomeStreams.framework/Support/BiomeAgent\n39538   6672  14.4 /usr/bin/ssh\n28847 1183136   9.7 $HOME/.local/bin/claude\n 1584 473088   8.8 /System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight\n39575  19888   7.7 .venv/bin/python\n 1240  49344   7.1 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  687  87504   7.1 /usr/libexec/syspolicyd\n",
+ "others_at_start": [
+  "39576 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "39577 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

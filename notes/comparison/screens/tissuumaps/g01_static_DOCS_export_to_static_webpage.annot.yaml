@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "g01_static_DOCS_export_to_static_webpage.jpg",
+ "tool": "tissuumaps",
+ "software": "TissUUmaps 3 documentation (tissuumaps.github.io)",
+ "data": null,
+ "url": "https://tissuumaps.github.io/TissUUmaps-docs/docs/sharing/apache.html",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/tissuumaps/docs_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "static",
+   "mark": "Y",
+   "caption": "TissUUmaps docs, Apache server: projects export to static webpages (menu > File > Export to static webpage) for any web server; the export was also served with no backend in this audit"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    372,
+    254,
+    680,
+    34
+   ],
+   "label": "menu > File > Export to static webpage",
+   "selector": "text=Export to static page"
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_backed_run_1000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 7.6,
+ "peaks": {
+  "proc": {
+   "fp_peak": 1456768632,
+   "fp_lifetime_sum": 1456768632,
+   "rss_peak": 1536835584,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1456768632,
+   "rss_peak": 1536835584,
+   "fp_lifetime_sum": 1456768632
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8585624
+  ],
+  [
+   1.4,
+   186761960
+  ],
+  [
+   2.78,
+   572703752
+  ],
+  [
+   4.17,
+   572703752
+  ],
+  [
+   5.55,
+   1456539256
+  ],
+  [
+   6.94,
+   1456539256
+  ]
+ ],
+ "ps_before": "2026-10-03T17:56:49-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 525744  55.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n31539 762512  18.0 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 700576  17.8 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n97977 259280  12.0 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n57113 2056128  11.2 $HOME/.local/bin/claude\n 1012  14336   7.3 /usr/libexec/pboard\n 1018  43984   3.5 /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Resources/AXVisualSupportAgent.app/Contents/MacOS/AXVisualSupportAgent\n47413 619120   2.1 /Applications/cmux.app/Contents/MacOS/cmux\n  734  51632   1.8 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n92291  30832   1.7 .venv/bin/python\n"
+}

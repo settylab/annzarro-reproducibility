@@ -1,0 +1,68 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_backed_run_2000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 12.39,
+ "peaks": {
+  "proc": {
+   "fp_peak": 2666056224,
+   "fp_lifetime_sum": 2666170912,
+   "rss_peak": 2778955776,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2666056224,
+   "rss_peak": 2778955776,
+   "fp_lifetime_sum": 2666170912
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8700312
+  ],
+  [
+   1.39,
+   189694648
+  ],
+  [
+   2.78,
+   661357648
+  ],
+  [
+   4.14,
+   880985360
+  ],
+  [
+   5.52,
+   880985360
+  ],
+  [
+   6.89,
+   889488656
+  ],
+  [
+   8.26,
+   2601945584
+  ],
+  [
+   9.63,
+   2666007072
+  ],
+  [
+   11.0,
+   2666007072
+  ],
+  [
+   12.37,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-03T18:01:43-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 524640  11.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n47413 619552   4.6 /Applications/cmux.app/Contents/MacOS/cmux\n 1012  17312   4.6 /usr/libexec/pboard\n98631 476832   3.9 $HOME/.local/bin/claude\n57113 2064784   3.3 $HOME/.local/bin/claude\n  629 189952   3.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30112   2.7 /System/Library/CoreServices/launchservicesd\n80588 616896   2.5 $HOME/.local/bin/claude\n 1240  51024   2.3 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n86901 524944   1.9 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n"
+}

@@ -1,0 +1,105 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "vitessce",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/vitessce/first14100000",
+  "benchmark/tool_ceiling/shots/vitessce_default_run_14100000_r0",
+  "--n",
+  "14100000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 29.37,
+ "peaks": {
+  "client": {
+   "fp_peak": 14840302024,
+   "fp_lifetime_sum": 14900350440,
+   "rss_peak": 10722148352,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 15663656,
+   "fp_lifetime_sum": 17548080,
+   "rss_peak": 28459008,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 126694096,
+   "fp_lifetime_sum": 126726864,
+   "rss_peak": 161284096,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 14855064488,
+   "rss_peak": 10750607360,
+   "fp_lifetime_sum": 14917898520
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.27,
+   902373992
+  ],
+  [
+   4.39,
+   2476731288
+  ],
+  [
+   6.46,
+   3313889424
+  ],
+  [
+   8.52,
+   4525651360
+  ],
+  [
+   10.62,
+   4826855488
+  ],
+  [
+   12.71,
+   5476154176
+  ],
+  [
+   14.8,
+   7335625576
+  ],
+  [
+   16.95,
+   8924497560
+  ],
+  [
+   18.99,
+   11383441144
+  ],
+  [
+   21.04,
+   13764135008
+  ],
+  [
+   23.12,
+   9390623104
+  ],
+  [
+   25.19,
+   14799260536
+  ],
+  [
+   27.29,
+   14512901032
+  ],
+  [
+   29.36,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-03T22:31:40-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n15638 270272  80.1 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n  855 1675632  59.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n97961 632816  21.0 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n 1012  16912   6.3 /usr/libexec/pboard\n  626 488416   4.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 1902992   3.1 $HOME/.local/bin/claude\n 1240  50208   2.7 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n68627 421648   1.9 $HOME/.local/bin/claude\n  596  30208   1.8 /System/Library/CoreServices/launchservicesd\n 4725 642416   1.6 claude\n"
+}

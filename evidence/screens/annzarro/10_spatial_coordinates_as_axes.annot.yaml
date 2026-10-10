@@ -1,0 +1,40 @@
+version: 1
+image: 10_spatial_coordinates_as_axes.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: spatial_demo.zarr (10x Visium mouse brain, 2,693 spots; annzarro docs/_tools/make_spatial_demo.py)
+url: http://127.0.0.1:8920/?dataset_path=$DATA_DIR/spatial_demo.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZENlbGwiOiJBQUFDQU...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: spatial
+  mark: Y
+  caption: Visium spot positions (obsm spatial_upright) are the plot's x and y, at equal aspect, coloured
+    by cluster.
+callouts:
+- n: 1
+  box:
+  - 69
+  - 165
+  - 394
+  - 36
+  label: X-Axis = obsm / spatial_upright / 0
+  selector: .tile[data-tile-id="cell-plot-sp"] .axis-type-select[data-axis="x"] >> xpath=..
+- n: 2
+  box:
+  - 69
+  - 197
+  - 394
+  - 36
+  label: Y-Axis = obsm / spatial_upright / 1
+  selector: .tile[data-tile-id="cell-plot-sp"] .axis-type-select[data-axis="y"] >> xpath=..
+- n: 3
+  box:
+  - 72
+  - 269
+  - 119
+  - 36
+  label: 'Equal aspect on: one unit of x as long as one of y'
+  selector: '#equal-aspect-cell-plot-sp'

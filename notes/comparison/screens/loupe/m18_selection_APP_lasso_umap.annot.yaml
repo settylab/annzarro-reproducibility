@@ -1,0 +1,33 @@
+version: 1
+image: m18_selection_APP_lasso_umap.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: e826c8a61c3e2f1fd3dc7112eb426321bbabdc4030a60da4510b24d2c29e102e
+proves:
+- column: selection
+  mark: P
+  caption: rectangle selection on the UMAP (63 barcodes) opens 'Save Barcodes' at once; the live selection exists
+    only inside that dialog
+callouts:
+- n: 1
+  box:
+  - 205
+  - 84
+  - 247
+  - 338
+  label: Save Barcodes dialog
+- n: 2
+  box:
+  - 510
+  - 322
+  - 32
+  - 25
+  label: selected cells

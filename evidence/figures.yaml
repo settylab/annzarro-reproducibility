@@ -1,0 +1,287 @@
+# Figure provenance: one entry per figure as the manuscript includes it.
+#
+# Read by evidence/tools/figcheck.py (staleness report) and evidence/gen/50_figures.py (site page).
+# Found from manuscript/main.tex, body.tex and sections/figs_results.tex (\includegraphics,
+# \label, and the order of the \fig... macros in body.tex). Figure numbers are not written here: they come
+# from the manuscript's own labels (evidence/tools/fignum.py: manuscript/main.aux, evidence/figure_numbers.json).
+#
+# Schema
+#   id, label                    label is the LaTeX label (its number: fignum.fig(label))
+#   (placement)                  not stored: the site finds where the label is placed (fignum.placement)
+#   outputs                      files under manuscript/figures/ the manuscript includes; the first png
+#                                is the thumbnail. other_outputs: written by the same script for this figure, not included;
+#                                not_in_paper: written by the script but in no figure of the paper
+#   script, command              the script that writes the outputs, and the command from its docstring
+#   code                         repository modules the script imports (a change can change the figure)
+#   inputs                       every data file the script reads: {path, what, panels?, external?}
+#                                path is a repository path or glob; external: true marks a path outside
+#                                the repository or a gitignored one (git cannot date it)
+#   related                      files that document the figure but are not read by the script
+#   panels                       letter -> {shows, inputs: [paths or globs from inputs]}
+#   upstream                     scripts that make the inputs: {script, makes, command?, note?}
+#   gaps                         reproducibility gaps: inputs or software outside this repository
+#   todo                         ledger rows that touch the figure
+figures:
+
+- id: overview
+  label: fig:overview
+  title: The focus model, the AnnData slots behind it, and AnnZarro compared with other viewers
+  outputs: [manuscript/figures/fig1_overview.png, manuscript/figures/fig1_overview.pdf]
+  other_outputs: [manuscript/figures/fig_comparison.png, manuscript/figures/fig_comparison.pdf]
+  script: figures/fig1_overview.py
+  command: .venv/bin/python figures/fig1_overview.py
+  code: [figures/fig_comparison.py, figures/style.py]
+  inputs:
+    - path: figures/fig_comparison.py
+      what: "panel c data: the TOOLS marks and the size column are hard-coded in the script (fig1_overview calls fig_comparison.draw())"
+      panels: [c]
+  related:     # not read by the script, so never makes the figure STALE
+    - {path: figures/COMPARISON_NOTES.md, what: "sources for every mark of c, kept in sync with fig_comparison.py by hand"}
+    - {path: evidence/matrix/tools/*.yaml, what: "the evidence-curator copy of the c marks; build.py --check compares it with fig_comparison.py"}
+  panels:
+    a: {shows: "what one click selects (a row for a cell, a column for a gene) and what each panel receives; schematic drawn in code", inputs: []}
+    b: {shows: "which stored AnnData array drives which view; schematic drawn in code", inputs: []}
+    c: {shows: "feature matrix, tools x capabilities, marks Y/P/N/?, largest documented dataset", inputs: [figures/fig_comparison.py]}
+  upstream:
+    - {script: notes/comparison/, makes: "audit notes behind the marks (hand-written, per tool)"}
+    - {script: evidence/tools/import_notes.py, makes: "evidence/matrix/tools/*.yaml seeded from the notes and the figure"}
+  gaps:
+    - "figures/fig1_overview.py and figures/fig_comparison.py put the repository root on sys.path; run them from a checkout of this repository"
+    - "panel c marks live in code, not in a data file; the evidence YAML is a second copy (F1 would make it the one source)"
+  todo: [B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13, B14, B15, D1, D3, F1, F5]
+
+- id: app
+  label: fig:app
+  title: AnnZarro on the demonstration data
+  outputs: [manuscript/figures/fig5_app.png, manuscript/figures/fig5_app.pdf]
+  script: figures/fig5_app.py
+  command: .venv/bin/python figures/fig5_app.py
+  other_outputs: [figures/numbers/app_spatial.json]
+  code: [figures/style.py]
+  inputs:
+    - {path: manuscript/figures/screens/overview.png, what: "four linked panels, focused gene H2-Q7 and an HSC", panels: [a]}
+    - {path: manuscript/figures/screens/overview_status.json, what: "where each status line sits in overview.png; the inset crops the fold-change UMAP's", panels: [a]}
+    - {path: manuscript/figures/screens/focus_sequence/1_HSC_tile.png, what: "diffusion-walk tile, click 1 (HSC)", panels: [b]}
+    - {path: manuscript/figures/screens/focus_sequence/2_GMP_tile.png, what: "click 2 (GMP)", panels: [b]}
+    - {path: manuscript/figures/screens/focus_sequence/3_cMoP_tile.png, what: "click 3 (cMoP)", panels: [b]}
+    - {path: manuscript/figures/screens/focus_sequence/4_Monocyte_tile.png, what: "click 4 (monocyte)", panels: [b]}
+    - {path: manuscript/figures/screens/E_table_tile.png, what: "cell table, cell type = HSC AND DA z-score > 2", panels: [c]}
+    - {path: manuscript/figures/screens/E_umap_tile.png, what: "linked UMAP masked by the table", panels: [c]}
+    - {path: manuscript/figures/screens/app_spatial/row4_*.png, what: "the four plots of d, captured after a click on a cortex spot (AnnZarro v0.4.1, spatial demo)", panels: [d]}
+    - {path: manuscript/figures/screens/app_spatial/crops.json, what: "where d's cluster plots are cut to drop the scrolled Leiden legend", panels: [d]}
+  panels:
+    a: {shows: "four linked panels: walk row on UMAP, volcano by varp row, UMAP by fold change, filtered cell table; inset: one status line enlarged", inputs: [manuscript/figures/screens/overview.png, manuscript/figures/screens/overview_status.json]}
+    b: {shows: "the walk panel after four clicks HSC -> GMP -> cMoP -> monocyte", inputs: [manuscript/figures/screens/focus_sequence/*_tile.png]}
+    c: {shows: "a two-condition table filter masking a linked UMAP (290 of 8,090 cells)", inputs: [manuscript/figures/screens/E_table_tile.png, manuscript/figures/screens/E_umap_tile.png]}
+    d: {shows: "a tissue section (public Visium demo): after a click on a cortex spot, the section and the expression UMAP by Leiden cluster, the section by the spot's expression_walk_t5 row, the UMAP by its spatial_kernel row", inputs: [manuscript/figures/screens/app_spatial/row4_*.png, manuscript/figures/screens/app_spatial/crops.json]}
+  upstream:
+    - script: figures/screenshots.py
+      makes: manuscript/figures/screens/*.png
+      command: "venv/bin/python figures/screenshots.py   # separate venv: annzarro 0.4.1 (the tag 78c9da6, or the v0.4.1 wheel), playwright, zarr"
+      note: "drives a local AnnZarro server on data/bm_aging.zarr with deep links built from data_prep/demo_panelsets/*.view.json; also writes screens/overview_status.json and fails the run if view E's filter fetches data or a focus click fetches other than one row; figures/SCREENSHOTS.md records AnnZarro 0.4.0 release candidate 3bdeb0913d7e5761c496070dbb30acd2cd32ceb5 (tree bb2ace6d4f0078c41738dabd1bb6f64de15771ca), shot 2026-10-05"
+    - {script: data_prep/make_panelsets.py, makes: "data_prep/demo_panelsets/*.view.json (the views A-E)"}
+    - {script: data_prep/prepare_annzarro_store.py, makes: data/bm_aging.zarr, command: ".venv/bin/python data_prep/prepare_annzarro_store.py --report data/prepare_report.json"}
+    - script: figures/screenshots_app_spatial.py
+      makes: "manuscript/figures/screens/app_spatial/*, figures/spatial_views/app_spatial_*.view.json, figures/numbers/app_spatial.json"
+      command: "python figures/screenshots_app_spatial.py --annzarro <v0.4.1 venv>/bin/annzarro --port 8841   # playwright, zarr, numpy"
+      note: "AnnZarro 0.4.1 (the tag 78c9da6) on data/spatial_demo.zarr (v0.4.1's make_spatial_demo.py plus figures/spatial/add_expression_walk.py); fails unless the click focused the cortex spot and fetched one row of each followed matrix; smoke-tests the after-click views (figures/SCREENSHOTS.md, Fig. 2 spatial row). The numbers keep the name app_spatial.json until the claims are re-sourced"
+  gaps:
+    - "panel d's captures depend on AnnZarro 0.4.1 (external repository) and on the gitignored data/spatial_demo.zarr; recorded in figures/SCREENSHOTS.md"
+    - "screenshots depend on the AnnZarro application, an external repository (0.4.1, the tag 78c9da6, tree 661a454f, per figures/SCREENSHOTS.md); the version is recorded only in prose, not by screenshots.py"
+    - "data/bm_aging.zarr is gitignored; rebuilt from Zenodo 10.5281/zenodo.15587768 by data_prep/README.md steps 0-2"
+  todo: [D1, D2]
+
+- id: procedure
+  label: fig:procedure
+  title: Overview of the procedure
+  outputs: [manuscript/figures/fig_procedure.tex]
+  script: null
+  command: "none: TikZ drawn inside the manuscript (\\input{figures/fig_procedure.tex}); compiled with manuscript/Makefile"
+  code: []
+  inputs: []
+  panels: {}
+  upstream: []
+  gaps: []
+  todo: []
+
+- id: cellcell
+  label: fig:cellcell
+  title: A cell-by-cell matrix, read one focused cell at a time
+  outputs: [manuscript/figures/fig2_cell_by_cell.png, manuscript/figures/fig2_cell_by_cell.pdf]
+  other_outputs: [figures/numbers/fig2.json]
+  script: figures/fig2_cell_by_cell.py
+  command: .venv/bin/python figures/fig2_cell_by_cell.py
+  code: [figures/_load.py, figures/style.py]
+  inputs:
+    - path: data/bm_aging_annzarro.zarr
+      external: true
+      what: "demo store: obsp/diffusion_walk_t5, obsp/DM_Kernel, obsm/X_umap, obsm/DM_EigenVectors, uns/DM_EigenValues, obs/highres_celltype"
+      panels: [a, b, c]
+      store: {md5: a372502012ded8cd238e5eb83e408b89, files: 4243, doi: "10.5281/zenodo.23277103", file: bm_aging_annzarro.zarr.zip, zip_sha256: ba42a5fd921871eac31de19ef6528d1e0d7a33a6cee5c2d2728d2801f40d1131, fetch: data_prep/fetch_demo_store.py}
+    - path: data/neuro_demo/celegans_connectome_cengen.zarr
+      external: true
+      what: "panel d: the C. elegans connectome and CeNGEN expression store (built by data_prep/neuro_demo.py)"
+      panels: [d]
+      identity: "no public deposit and no checksum recorded yet; not on the build host"
+    - {path: data_prep/demo_panelsets/examples.json, what: "store keys and the example HSC and monocyte (figures/_load.py)", panels: [a, b, c]}
+  reproduced: {commit: a9f2d0325047d6b3cf71728df9b5df0ffb7d221a, date: "2026-10-10", host: "the authors' laptop (macOS)", result: "identical: the re-rendered PNG has the same bytes as the committed one, and the numbers JSON the same values", store_md5: a372502012ded8cd238e5eb83e408b89}
+  panels:
+    a: {shows: "rows of obsp/diffusion_walk_t5 for four cells on the HSC -> monocyte path, on the UMAP", inputs: [data/bm_aging_annzarro.zarr, data_prep/demo_panelsets/examples.json]}
+    b: {shows: "UMAP distance against multiscale diffusion distance for a focused plasma cell", inputs: [data/bm_aging_annzarro.zarr]}
+    c: {shows: "the discordant groups of b on the UMAP", inputs: [data/bm_aging_annzarro.zarr]}
+  upstream:
+    - {script: data_prep/prepare_annzarro_store.py, makes: data/bm_aging.zarr, command: ".venv/bin/python data_prep/prepare_annzarro_store.py --report data/prepare_report.json"}
+    - {script: data_prep/run_kompot.py, makes: data/murine_bone_marrow_aging_processed.h5ad}
+    - {script: data_prep/download_data.sh, makes: "data/murine_bone_marrow_aging.h5ad (Zenodo 10.5281/zenodo.15587768, md5 checked)"}
+    - {script: data_prep/pick_examples.py, makes: data_prep/demo_panelsets/examples.json}
+  gaps:
+    - "data/bm_aging_annzarro.zarr is gitignored; data_prep/fetch_demo_store.py fetches it from Zenodo 10.5281/zenodo.23277103 (published with the preprint) and checks its md5"
+  todo: []
+
+- id: genegene
+  label: fig:genegene
+  title: A gene-by-gene matrix over a differential expression volcano
+  outputs: [manuscript/figures/fig3_gene_by_gene.png, manuscript/figures/fig3_gene_by_gene.pdf]
+  other_outputs: [figures/numbers/fig3.json]
+  script: figures/fig3_gene_by_gene.py
+  command: .venv/bin/python figures/fig3_gene_by_gene.py
+  code: [figures/_load.py, figures/style.py]
+  inputs:
+    - path: data/bm_aging_annzarro.zarr
+      external: true
+      what: "demo store: varp/spearman_fold_change, varp/spearman_smoothed, var Kompot DE columns (mean_lfc, mahalanobis, is_de)"
+      panels: [a, b, c, d]
+      store: {md5: a372502012ded8cd238e5eb83e408b89, files: 4243, doi: "10.5281/zenodo.23277103", file: bm_aging_annzarro.zarr.zip, zip_sha256: ba42a5fd921871eac31de19ef6528d1e0d7a33a6cee5c2d2728d2801f40d1131, fetch: data_prep/fetch_demo_store.py}
+    - {path: data_prep/demo_panelsets/examples.json, what: store keys (figures/_load.py), panels: [a, b, c, d]}
+  reproduced: {commit: a9f2d0325047d6b3cf71728df9b5df0ffb7d221a, date: "2026-10-10", host: "the authors' laptop (macOS)", result: "identical: the re-rendered PNG has the same bytes as the committed one, and the numbers JSON the same values", store_md5: a372502012ded8cd238e5eb83e408b89}
+  panels:
+    a: {shows: "Kompot volcano coloured by H2-Q7's row of varp/spearman_fold_change", inputs: [data/bm_aging_annzarro.zarr]}
+    b: {shows: "the same volcano focused on H2-Aa", inputs: [data/bm_aging_annzarro.zarr]}
+    c: {shows: "190 DE genes ranked by rho with H2-Q7 and S100a9, coloured by average-linkage module", inputs: [data/bm_aging_annzarro.zarr]}
+    d: {shows: "H2-Q7's spearman_smoothed row against its spearman_fold_change row", inputs: [data/bm_aging_annzarro.zarr]}
+  upstream:
+    - {script: data_prep/prepare_annzarro_store.py, makes: data/bm_aging.zarr}
+    - {script: data_prep/run_kompot.py, makes: "Kompot DE/DA results in the processed h5ad"}
+  gaps:
+    - "data/bm_aging_annzarro.zarr is gitignored; data_prep/fetch_demo_store.py fetches it from Zenodo 10.5281/zenodo.23277103 (published with the preprint) and checks its md5"
+  todo: []
+
+- id: cellgene
+  label: fig:cellgene
+  title: Linking genes to cells and cells to genes
+  outputs: [manuscript/figures/fig4_cells_by_genes.png, manuscript/figures/fig4_cells_by_genes.pdf]
+  other_outputs: [figures/numbers/fig4.json]
+  script: figures/fig4_cells_by_genes.py
+  command: .venv/bin/python figures/fig4_cells_by_genes.py
+  code: [figures/_load.py, figures/style.py]
+  inputs:
+    - path: data/bm_aging_annzarro.zarr
+      external: true
+      what: "demo store: layers/kompot_de_Young_to_Old_fold_change, layers/kompot_de_{Young,Old}_smoothed, obsm/X_umap, obs Kompot std columns, var is_de"
+      panels: [a, b, c, d]
+      store: {md5: a372502012ded8cd238e5eb83e408b89, files: 4243, doi: "10.5281/zenodo.23277103", file: bm_aging_annzarro.zarr.zip, zip_sha256: ba42a5fd921871eac31de19ef6528d1e0d7a33a6cee5c2d2728d2801f40d1131, fetch: data_prep/fetch_demo_store.py}
+    - {path: data_prep/demo_panelsets/examples.json, what: "focus gene S100a9, the locked HSC and focused monocyte", panels: [a, b, c, d]}
+  reproduced: {commit: a9f2d0325047d6b3cf71728df9b5df0ffb7d221a, date: "2026-10-10", host: "the authors' laptop (macOS)", result: "identical: the re-rendered PNG has the same bytes as the committed one, and the numbers JSON the same values", store_md5: a372502012ded8cd238e5eb83e408b89}
+  panels:
+    a: {shows: "S100a9's column of the Kompot fold-change layer on the UMAP", inputs: [data/bm_aging_annzarro.zarr]}
+    b: {shows: "its smoothed expression in Young", inputs: [data/bm_aging_annzarro.zarr]}
+    c: {shows: "its smoothed expression in Old, same scale", inputs: [data/bm_aging_annzarro.zarr]}
+    d: {shows: "fold-change row of the locked HSC against the focused monocyte, DE genes by sign agreement", inputs: [data/bm_aging_annzarro.zarr, data_prep/demo_panelsets/examples.json]}
+  upstream:
+    - {script: data_prep/prepare_annzarro_store.py, makes: data/bm_aging.zarr}
+    - {script: data_prep/pick_examples.py, makes: data_prep/demo_panelsets/examples.json}
+  gaps:
+    - "data/bm_aging_annzarro.zarr is gitignored; data_prep/fetch_demo_store.py fetches it from Zenodo 10.5281/zenodo.23277103 (published with the preprint) and checks its md5"
+  todo: []
+
+- id: deploy
+  label: fig:deploy
+  title: Three ways to run AnnZarro
+  outputs: [manuscript/figures/fig_deploy.tex]
+  script: null
+  command: "none: TikZ drawn inside the manuscript (\\input{figures/fig_deploy.tex}); compiled with manuscript/Makefile"
+  code: []
+  inputs: []
+  panels: {}
+  upstream: []
+  gaps: []
+  todo: []
+
+- id: scale
+  label: fig:scale
+  title: "Tahoe-100M on a laptop: every cell in one plot, and a subset that stays interactive"
+  outputs: [manuscript/figures/fig_scale.png, manuscript/figures/fig_scale.pdf]
+  script: figures/fig_scale.py
+  command: "python figures/fig_scale.py   (--draft draws missing panels as 'awaiting data'; --out DIR writes elsewhere)"
+  code: [figures/style.py]
+  inputs:
+    - {path: figures/scale/tahoe95M_umap_all_cat_panel.png, what: "every cell by cell line, size 1, opacity 0.2", panels: [a]}
+    - {path: figures/scale/tahoe95M_malat1_all_gene_panel.png, what: "every cell by MALAT1, colour scale 0 to 400, size 1, opacity 0.2", panels: [b]}
+    - {path: figures/scale/tahoe95M_malat1_all_gene.view.json, what: "b's drawn axis ranges (where the box goes) and screenshot time", panels: [b]}
+    - {path: figures/scale/tahoe95M_malat1_zoom_all_gene_panel.png, what: "the operator's zoom by MALAT1, opened zoomed, automatic size and opacity", panels: [c]}
+    - {path: figures/scale/tahoe95M_malat1_zoom_all_gene.view.json, what: "c's drawn range, marker size and opacity, screenshot time", panels: [b, c]}
+    - {path: figures/scale/tahoe95M_malat1_stats.json, what: "MALAT1 over all cells (share under the scale's top) and the cells in c's region", panels: [b, c]}
+    - {path: figures/scale/tahoe95M_umap_default_sub_cat_panel.png, what: "part 1 of 957, regular plot, automatic size and opacity", panels: [d]}
+    - {path: benchmark/scale/results/browser_v041_events.csv, what: "browser events of the v0.4.1 series (the tag, 78c9da6), clean=true", panels: [e, f, g]}
+    - path: benchmark/tool_ceiling/ceilings.csv
+      what: "the memory guard's largest allowed and declined sizes (annzarro row)"
+      panels: [f, g]
+      reads: {where: {tool: annzarro, variant: v041}, columns: [first_fail, max_n_16gb, first_fail_n]}
+    - {path: benchmark/scale/results/heapcap_v041.jsonl, what: "the tab's V8 heap limit, default flags (Chromium 153, with the v0.4.1 series)", panels: [g]}
+  panels:
+    a: {shows: "all 95.6M cells by cell line, large-plot mode", inputs: [figures/scale/tahoe95M_umap_all_cat_panel.png]}
+    b: {shows: "all cells by MALAT1, scale 0 to 400 counts; the box marks c", inputs: [figures/scale/tahoe95M_malat1_all_gene_panel.png, figures/scale/tahoe95M_malat1_all_gene.view.json, figures/scale/tahoe95M_malat1_zoom_all_gene.view.json]}
+    c: {shows: "the boxed region of b, every cell at automatic size: single cells", inputs: [figures/scale/tahoe95M_malat1_zoom_all_gene_panel.png, figures/scale/tahoe95M_malat1_zoom_all_gene.view.json]}
+    d: {shows: "default subset, part 1 of 957 (100,000 cells)", inputs: [figures/scale/tahoe95M_umap_default_sub_cat_panel.png]}
+    e: {shows: "browser time per action on the default subset against dataset size", inputs: [benchmark/scale/results/browser_v041_events.csv]}
+    f: {shows: "time to the first every-cell plot; the memory guard's rule", inputs: [benchmark/scale/results/browser_v041_events.csv, benchmark/tool_ceiling/ceilings.csv]}
+    g: {shows: "peak JS heap at first plot against the heap limit", inputs: [benchmark/scale/results/browser_v041_events.csv, benchmark/scale/results/heapcap_v041.jsonl, benchmark/tool_ceiling/ceilings.csv]}
+  upstream:
+    - script: benchmark/scale/ceiling/figures_tahoe.py
+      makes: "figures/scale/tahoe95M_*_panel.png and *.view.json"
+      command: "see figures/scale/commands.txt (one line per shot set)"
+    - script: benchmark/scale/summarize_rerun.py
+      makes: "benchmark/scale/results/browser_v041_events.csv, browser_v041_summary.csv, http_v041_summary.csv (from results/browser_v041*.jsonl, http_v041.csv)"
+      command: python benchmark/scale/summarize_rerun.py
+    - {script: benchmark/scale/ceiling/ceiling.py, makes: "benchmark/scale/results/browser_v041*.jsonl (queued by queue_v041.sh)"}
+    - {script: benchmark/scale/ceiling/heapcap.py, makes: benchmark/scale/results/heapcap_v041.jsonl}
+    - script: benchmark/scale/ceiling/gene_view_stats.py
+      makes: figures/scale/tahoe95M_malat1_stats.json
+      command: "python benchmark/scale/ceiling/gene_view_stats.py STORE MALAT1 400 figures/scale/tahoe95M_malat1_zoom_all_gene.view.json figures/scale/tahoe95M_malat1_stats.json"
+    - {script: benchmark/scale/umap_tahoe.py, makes: "obsm/X_umap of the 95.6M store"}
+    - {script: benchmark/scale/build_tahoe.py, makes: "Tahoe-100M stores and prefixes"}
+  gaps:
+    - "screenshot store $DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr (outside the repo; figures/scale/commands.txt)"
+    - "AnnZarro client for the screenshots and the rerun: $ANNZARRO_SRC/.venv-test/bin/annzarro (a worktree of the app repo; README names dominik/release-0.3 d5be664)"
+    - "rerun stores $DATA_ROOT/tahoe_scale/stores/{_cold_rerun,rerun_prefix,_scratch_http_rerun} and synthetic stores under $DATA_ROOT/tahoe_scale_ceiling (queue_rerun*.sh)"
+    - "commands.txt runs figures_tahoe.py with a virtual environment under benchmark/scale/ceiling/ (machine paths are placeholders)"
+    - "the clean-time windows are hard-coded in summarize_rerun.py (OVERLAP) and fig_scale.py (CLEAN_BEFORE); the session log they came from is not in the repo"
+  todo: [A1, A2, A12, A16, D3, D4, E2, E6]
+
+- id: performance
+  label: fig:performance
+  title: Interactions cost one vector, and memory stays flat
+  outputs: [manuscript/figures/fig6_performance.png, manuscript/figures/fig6_performance.pdf]
+  not_in_paper: [manuscript/figures/figS_chunk_sweep.pdf, manuscript/figures/figS_interactions.pdf]   # supplementary panels the paper dropped; the script still writes them
+  script: figures/fig6_performance.py
+  command: .venv/bin/python figures/fig6_performance.py
+  code: [figures/style.py]
+  inputs:
+    - {path: benchmark/results/scale_v041.csv, what: "laptop latency and memory per interaction against n_cells, AnnZarro v0.4.1 (the tag 78c9da6), binary wire (status 200 asserted)", panels: [a, b, c]}
+    - {path: benchmark/results/sweep_v041.csv, what: "laptop chunk-shape sweep at 1M cells, AnnZarro v0.4.1 (the tag 78c9da6)", panels: [d]}
+    - {path: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, what: "HPC pairwise rows on $SCRATCH, run T (correlation 30,000 genes, distance 200,000 cells), AnnZarro v0.4.1", panels: [b, c]}
+    - {path: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv, what: "HPC pairwise rows on $SCRATCH, run T2 (kernels and distances at 50,000-200,000 cells, correlation 20,000 genes), AnnZarro v0.4.1", panels: [b, c]}
+    - {path: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, what: "HPC 1M x 5,000 dense Tahoe-100M layer in four chunk shapes on $SCRATCH, run T, AnnZarro v0.4.1", panels: [b, d]}
+  panels:
+    a: {shows: "bytes per click against cells (binary format: 4 B per float32)", inputs: [benchmark/results/scale_v041.csv]}
+    b: {shows: "latency per click, cold and warm: laptop gene column and cell row; HPC pairwise distance rows and gene column", inputs: [benchmark/results/scale_v041.csv, benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv, benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv]}
+    c: {shows: "peak server RSS against matrix size: laptop layers, HPC pairwise matrices to 160 GB", inputs: [benchmark/results/scale_v041.csv, benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv]}
+    d: {shows: "chunk shape at 1M cells: cell-row against gene-column read time, laptop sweep and HPC grid", inputs: [benchmark/results/sweep_v041.csv, benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv]}
+  upstream:
+    - script: benchmark/run_benchmark.py
+      makes: "benchmark/results/{scale,sparse,sweep}_v041.csv"
+      command: "cd benchmark && python run_benchmark.py (v0.4.1 series by benchmark/queue_perf.sh; see scale_v041_environment.json)"
+    - {script: benchmark/generate_data.py, makes: "synthetic stores under data/bench (gitignored)"}
+  gaps:
+    - "the paper states no AnnZarro 0.1.1 value: scale.csv, sweep.csv and benchmark/hpc/results (58030e1) are not inputs"
+  todo: [A14, A15]

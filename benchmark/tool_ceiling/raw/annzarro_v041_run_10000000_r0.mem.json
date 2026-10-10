@@ -1,0 +1,57 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first10000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_run_10000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 4.34,
+ "peaks": {
+  "client": {
+   "fp_peak": 3488427264,
+   "fp_lifetime_sum": 3830804384,
+   "rss_peak": 2677440512,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 2192116184,
+   "fp_lifetime_sum": 2265729976,
+   "rss_peak": 2213920768,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 125563768,
+   "fp_lifetime_sum": 125563768,
+   "rss_peak": 163676160,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5471434264,
+   "rss_peak": 4713824256,
+   "fp_lifetime_sum": 6096534360
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.38,
+   2251172136
+  ]
+ ],
+ "ps_before": "2026-10-07T16:19:47-0700\nmemorystatus_level=91 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n  855 1230736  95.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  626 422160   7.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n92902  19808   6.5 .venv/bin/python\n74971 1049104   5.7 /Applications/Microsoft Teams.app/Contents/Helpers/Microsoft Teams WebView.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/149.0.4022.96/Helpers/Microsoft Teams WebView Helper (Renderer).app/Contents/MacOS/Microsoft Teams WebView Helper (Renderer)\n57113 2346000   4.2 $HOME/.local/bin/claude\n74740 333168   3.1 /Applications/Microsoft Teams.app/Contents/Helpers/Microsoft Teams WebView.app/Contents/MacOS/Microsoft Teams WebView\n 1044  27632   3.1 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd\n47413 694960   2.9 /Applications/cmux.app/Contents/MacOS/cmux\n  629 189200   2.8 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n86901 506192   2.6 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n",
+ "others_at_start": [
+  "92903 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "92904 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

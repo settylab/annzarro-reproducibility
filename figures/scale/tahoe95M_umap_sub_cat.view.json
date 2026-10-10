@@ -1,0 +1,58 @@
+{
+ "view": {
+  "v": 1,
+  "constants": {
+   "focusedGene": "FN1"
+  },
+  "layout": {
+   "v": 1,
+   "hierarchy": [
+    {
+     "type": "tile",
+     "id": "cell-plot-A",
+     "controlsVisible": false
+    }
+   ],
+   "controlState": {
+    "cell-plot-A": false
+   },
+   "panelConfigs": {
+    "cell-plot-A": {
+     "id": "cell-plot-A",
+     "title": "cat",
+     "x": {
+      "type": "obsm",
+      "key": "X_umap",
+      "column": "0"
+     },
+     "y": {
+      "type": "obsm",
+      "key": "X_umap",
+      "column": "1"
+     },
+     "z": null,
+     "color": {
+      "type": "obs",
+      "key": "cell_line_id",
+      "column": ""
+     },
+     "pointSize": 1.0,
+     "pointOpacity": 0.2,
+     "xaxisTitle": "UMAP 1",
+     "yaxisTitle": "UMAP 2"
+    }
+   }
+  }
+ },
+ "store": "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+ "n_cells_store": 95624334,
+ "ready_s": 4.1,
+ "browser": "chromium 153.0.8010.12",
+ "dsf": 2,
+ "viewport": [
+  1600,
+  1000
+ ],
+ "gl": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version) | maxbuf? 16384",
+ "notice": null
+}

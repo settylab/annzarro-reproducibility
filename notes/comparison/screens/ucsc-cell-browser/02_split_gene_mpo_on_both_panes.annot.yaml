@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "02_split_gene_mpo_on_both_panes.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo&gene=Mpo&split=1",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Feature colouring: Mpo (one column of X) colours both split panes; not a relation row, so column 3 stays N"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    246,
+    56,
+    483,
+    834
+   ],
+   "label": "left pane coloured by Mpo",
+   "selector": "#mpCanvas"
+  },
+  {
+   "n": 2,
+   "box": [
+    721,
+    56,
+    483,
+    834
+   ],
+   "label": "right pane coloured by Mpo (drawn partly in headless)",
+   "selector": "[data-recap=right]"
+  },
+  {
+   "n": 3,
+   "box": [
+    22,
+    168,
+    140,
+    22
+   ],
+   "label": "Gene tab: Show on both sides",
+   "selector": "text=Show on both sides"
+  }
+ ]
+}

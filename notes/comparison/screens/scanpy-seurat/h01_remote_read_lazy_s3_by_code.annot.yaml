@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "image": "h01_remote_read_lazy_s3_by_code.jpg",
+ "tool": "scanpy-seurat",
+ "software": "anndata 0.13.4, zarr 3.4.0, s3fs 2026.9.0 (code; Scanpy has no GUI)",
+ "data": "s3://lamindata/.lamindb/CFcQxNjzSRzWZrVh.anndata.zarr (public, 46,086 cells)",
+ "url": "s3://lamindata/.lamindb/CFcQxNjzSRzWZrVh.anndata.zarr",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_code.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "remote",
+   "mark": "P",
+   "caption": "code output, anndata 0.13.4 / zarr 3.4.0 (2026-10-04): read_lazy opens an anonymous s3:// AnnData zarr and fetches one gene's chunks over S3 on demand; by code only, so P"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    12,
+    83,
+    1376,
+    497
+   ],
+   "label": "the code: read_lazy on an s3:// URL",
+   "selector": "#code0"
+  },
+  {
+   "n": 2,
+   "box": [
+    22,
+    593,
+    747,
+    24
+   ],
+   "label": "opened the remote store",
+   "selector": "#hl1_0"
+  },
+  {
+   "n": 3,
+   "box": [
+    22,
+    671,
+    201,
+    24
+   ],
+   "label": "one gene: only X chunks fetched (S3 GET log)",
+   "selector": "[id^=hl1_] >> nth=2"
+  },
+  {
+   "n": 4,
+   "box": [
+    12,
+    906,
+    1376,
+    23
+   ],
+   "label": "code only, optional packages",
+   "selector": "#note"
+  }
+ ]
+}

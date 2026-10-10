@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "l01_lazy_request_log.jpg",
+ "tool": "tissuumaps",
+ "software": "tissuumaps request log (rendered)",
+ "data": null,
+ "url": "about:blank",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/request_logs/render_logs.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "lazy",
+   "mark": "Y",
+   "caption": "server log for the 476 MB h5ad: the first plain 200 is the viewer page (views.py sends file bytes only to h5Utils_worker.js); the browser worker then fetches the file as HTTP 206 byte ranges"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    16,
+    76,
+    1368,
+    23
+   ],
+   "label": "first request",
+   "selector": ".l >> nth=0"
+  }
+ ]
+}

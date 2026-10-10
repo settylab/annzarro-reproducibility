@@ -1,0 +1,72 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_300000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub_run_300000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 12.04,
+ "peaks": {
+  "client": {
+   "fp_peak": 1612554880,
+   "fp_lifetime_sum": 1705387560,
+   "rss_peak": 1411661824,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 3746500208,
+   "fp_lifetime_sum": 3855192144,
+   "rss_peak": 3767582720,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 130631704,
+   "fp_lifetime_sum": 130631704,
+   "rss_peak": 165429248,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5044678608,
+   "rss_peak": 4892622848,
+   "fp_lifetime_sum": 5560579704
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.43,
+   951771872
+  ],
+  [
+   4.88,
+   1067688744
+  ],
+  [
+   7.31,
+   929621016
+  ],
+  [
+   9.9,
+   4625182504
+  ]
+ ],
+ "ps_before": "2026-10-06T00:11:56-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n59322  94224  94.6 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n47413 543456   7.3 /Applications/cmux.app/Contents/MacOS/cmux\n45088  19840   6.5 .venv/bin/python\n45095  21136   5.8 benchmark/tool_ceiling/.venv/bin/python\n  629 205040   4.8 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  24960   3.9 /System/Library/CoreServices/launchservicesd\n 1012  15840   3.3 /usr/libexec/pboard\n45105   9616   2.4 /Applications/Xcode.app/Contents/Developer/usr/bin/git\n  557  44736   2.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  633  31456   2.2 /usr/libexec/runningboardd\n",
+ "others_at_start": []
+}

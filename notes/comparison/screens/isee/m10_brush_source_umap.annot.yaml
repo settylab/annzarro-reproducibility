@@ -1,0 +1,23 @@
+version: 1
+image: m10_brush_source_umap.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3) + iSEEu 1.18.0, scran 1.34.0
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: e3fd90d337f32e58e64003eecdcb707346689dd49bec14043d39142a2a3f51ad
+proves:
+- column: de
+  mark: P
+  caption: 'iSEE 2.18.0 with iSEEu 1.18.0: a brush of 996 cells is sent to a Dynamic marker table, a panel that
+    must be added in code.'
+callouts:
+- n: 1
+  box: [58, 131, 120, 182]
+  label: brush on Reduced dimension plot 1 (UMAP)
+- n: 2
+  box: [4, 984, 300, 46]
+  label: 996 of 8090 columns in active selection, transmitted to Dynamic marker table 1

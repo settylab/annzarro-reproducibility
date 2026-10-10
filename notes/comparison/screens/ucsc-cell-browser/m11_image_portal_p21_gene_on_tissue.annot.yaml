@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m11_image_portal_p21_gene_on_tissue.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser (cells.ucsc.edu portal)",
+ "data": "brain-spatial-omics/p21, Mouse P21 spatial RNA+ATAC (2,373 spots)",
+ "url": "https://cells.ucsc.edu/?ds=brain-spatial-omics+p21&gene=Mbp",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_portal_isee.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "image",
+   "mark": "Y",
+   "caption": "Colouring by Mbp keeps the tissue image visible under the spots"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    246,
+    56,
+    958,
+    834
+   ],
+   "label": "Mbp over the tissue image",
+   "selector": "#mpCanvas, canvas"
+  },
+  {
+   "n": 2,
+   "box": [
+    1196,
+    24,
+    204,
+    876
+   ],
+   "label": "legend: gene Mbp",
+   "selector": "#tpLegendBar"
+  }
+ ]
+}

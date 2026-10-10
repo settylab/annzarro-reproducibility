@@ -1,0 +1,129 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_250000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_syn_run_250000000_r1",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 47.57,
+ "peaks": {
+  "client": {
+   "fp_peak": 886579576,
+   "fp_lifetime_sum": 921806136,
+   "rss_peak": 1120305152,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 320127720,
+   "fp_lifetime_sum": 386385120,
+   "rss_peak": 342720512,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 128845368,
+   "fp_lifetime_sum": 128943672,
+   "rss_peak": 166445056,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1165222984,
+   "rss_peak": 1445150720,
+   "fp_lifetime_sum": 1308191256
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.45,
+   1050747928
+  ],
+  [
+   5.01,
+   1063724080
+  ],
+  [
+   7.56,
+   598795312
+  ],
+  [
+   10.18,
+   598713392
+  ],
+  [
+   12.75,
+   594355248
+  ],
+  [
+   15.43,
+   594994224
+  ],
+  [
+   18.01,
+   595158064
+  ],
+  [
+   20.61,
+   595387440
+  ],
+  [
+   23.21,
+   595764272
+  ],
+  [
+   25.77,
+   596304944
+  ],
+  [
+   28.38,
+   596403248
+  ],
+  [
+   30.94,
+   596763720
+  ],
+  [
+   33.49,
+   577791096
+  ],
+  [
+   36.02,
+   577987704
+  ],
+  [
+   38.56,
+   578200696
+  ],
+  [
+   41.18,
+   578430072
+  ],
+  [
+   43.73,
+   578774136
+  ],
+  [
+   46.31,
+   578856056
+  ]
+ ],
+ "ps_before": "2026-10-07T16:38:38-0700\nmemorystatus_level=90 swap=total = 5120.00M  used = 4000.25M  free = 1119.75M  (encrypted)\n86901 518736  46.7 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  626 418416  34.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n29804  19856   7.4 .venv/bin/python\n 6219  59056   3.8 $HOME/Projects/investments/.venv/bin/python3\n57113 2343136   2.0 $HOME/.local/bin/claude\n47413 692224   1.9 /Applications/cmux.app/Contents/MacOS/cmux\n29805   1232   1.9 /usr/bin/lockf\n 1018  45152   1.8 /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Resources/AXVisualSupportAgent.app/Contents/MacOS/AXVisualSupportAgent\n14980 6035120   1.6 /System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine\n92291  30816   1.3 .venv/bin/python\n",
+ "others_at_start": [
+  "29805 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() ",
+  "29806 /bin/sh -c \nM=\"$1\"; shift\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT INT TERM\nbusy() { ps -axo pid=,command= | grep -E \"pytest|playwright|chrom(e"
+ ]
+}

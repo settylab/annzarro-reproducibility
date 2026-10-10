@@ -1,0 +1,92 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_500000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub1m_run_500000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 23.92,
+ "peaks": {
+  "client": {
+   "fp_peak": 3068028912,
+   "fp_lifetime_sum": 3121949664,
+   "rss_peak": 2736668672,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 5496034176,
+   "fp_lifetime_sum": 5697557952,
+   "rss_peak": 5516214272,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 130238176,
+   "fp_lifetime_sum": 133695200,
+   "rss_peak": 165216256,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 8084224688,
+   "rss_peak": 7773732864,
+   "fp_lifetime_sum": 8819507616
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.55,
+   966255568
+  ],
+  [
+   5.03,
+   1160537256
+  ],
+  [
+   7.43,
+   1037936000
+  ],
+  [
+   9.87,
+   1055450520
+  ],
+  [
+   12.31,
+   1065919896
+  ],
+  [
+   14.78,
+   2695670416
+  ],
+  [
+   17.41,
+   5900613216
+  ],
+  [
+   19.99,
+   7692531992
+  ],
+  [
+   22.42,
+   7873657280
+  ]
+ ],
+ "ps_before": "2026-10-06T00:12:52-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n59322  94704  93.4 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n47413 543136   6.5 /Applications/cmux.app/Contents/MacOS/cmux\n72627 489952   4.6 $HOME/.local/bin/claude\n  629 205040   3.9 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n 1012  15904   3.7 /usr/libexec/pboard\n  557  44752   3.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  596  24944   2.5 /System/Library/CoreServices/launchservicesd\n  626 385824   1.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 2938912   1.8 $HOME/.local/bin/claude\n  633  31408   1.8 /usr/libexec/runningboardd\n",
+ "others_at_start": []
+}

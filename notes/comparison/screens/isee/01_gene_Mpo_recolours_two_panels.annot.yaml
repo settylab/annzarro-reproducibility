@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "01_gene_Mpo_recolours_two_panels.jpg",
+ "tool": "isee",
+ "software": "iSEE 2.18.0 (Bioconductor 3.20)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8902/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_portal_isee.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Feature colouring: clicking Mpo in Row data table 1 recolours plot 1 (UMAP) and plot 2 (PCA); a column of the assay, not a relation row"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    10,
+    134,
+    447,
+    44
+   ],
+   "label": "Mpo row clicked",
+   "selector": "#RowDataTable1 tbody tr.selected"
+  },
+  {
+   "n": 2,
+   "box": [
+    477,
+    55,
+    447,
+    508
+   ],
+   "label": "plot 1 (UMAP): Mpo (logcounts)",
+   "selector": "#ReducedDimensionPlot1"
+  },
+  {
+   "n": 3,
+   "box": [
+    943,
+    55,
+    447,
+    508
+   ],
+   "label": "plot 2 (PCA): Mpo (logcounts)",
+   "selector": "#ReducedDimensionPlot2"
+  }
+ ]
+}

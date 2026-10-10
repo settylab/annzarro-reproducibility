@@ -1,0 +1,818 @@
+# napari-spatialdata: Fig. 1c marks and their evidence.
+# Seeded by evidence/tools/import_notes.py from notes/comparison/napari-spatialdata.md and
+# figures/fig_comparison.py; edit this file from now on (schema: evidence/README.md).
+id: napari-spatialdata
+name: napari-spatialdata
+# Out of scope (operator 2026-10-06: spatial-specific tool, removed from the paper); kept in git, not in Fig. 1c.
+figure: null
+out_of_scope: operator 2026-10-06, spatial-specific tool removed from the paper
+notes: notes/comparison/napari-spatialdata.md
+cells:
+  cells:
+    reason: >-
+      The View dock lists observations, layers, vars and obsm; the demo table's four obsp matrices are
+      never offered.
+    detail: |-
+      **Checked in the running app (2026-10-04).** On the demo table (obsp `spatial_kernel`, `spatial_distance`, `distances`, `connectivities`) the View dock offers Observations, Layers (`X`, `counts`, `log_normalized`), Vars, Obsm (`X_umap`, `spatial_upright`, `spatial`, `X_pca`), Dataframe columns. No obsp anywhere. *Steps:* `start.sh`; read the View dock. *Evidence:* [screens/napari-spatialdata/m04_view_dock_lists_no_obsp.jpg](screens/napari-spatialdata/m04_view_dock_lists_no_obsp.jpg)
+
+      **Source and docs.** The table model accepts only `("obs", "var", "obsm", "columns_df")`: [`NS/_model.py#L40`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_model.py#L40). `grep -rn obsp src/` returns nothing.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/napari-spatialdata/m04_view_dock_lists_no_obsp.jpg
+      label: screens/napari-spatialdata/m04_view_dock_lists_no_obsp.jpg
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_model.py
+      lines: '40'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_model.py#L40
+      label: '`NS/_model.py#L40`'
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  genes:
+    reason: No varp is read (the demo's varp spearman_hvg is not listed); the View dock offers genes of
+      X only.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Same dock; varp `spearman_hvg` not listed. *Steps:* as column 1 *Evidence:* same screenshot
+
+      **Source and docs.** Same; `grep -rn varp src/` returns nothing.
+    evidence:
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_model.py
+      lines: '40'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_model.py#L40
+      label: '`NS/_model.py#L40`'
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  focus:
+    reason: No relation matrix is reachable, and a gene pick recolours only the selected layer.
+    detail: |-
+      **Focus, checked in the running app.** No relation matrix is reachable, and a gene pick recolours only the active layer.
+
+      **Source and docs.** Choosing a gene in View recolours only the selected layer; Scatter ROIs become an obs column that the user then picks again ([tutorial](https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/spatialdata.html), "You can find the new annotation at the bottom of Observations"). No single selected cell or gene re-drives other panels.
+    evidence:
+    - kind: docs
+      url: https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/spatialdata.html
+      label: tutorial
+      checked: '2026-10-04'
+    - kind: screenshot
+      path: notes/comparison/screens/napari-spatialdata/01_view_gene_Mbp.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/napari-spatialdata/02_scatter_umap_leiden_spatial_Mbp.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/napari-spatialdata/03_select_one_cell.jpg
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/focus_check.py
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  slots:
+    reason: obs, var, layers and obsm are reachable in the View dock; obsp, varp, varm and uns are not,
+      so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** obs, var (gene list), layers, obsm reachable (lists above); obsp, varp, varm, uns not. *Steps:* as column 1 *Evidence:* [m04_view_dock_lists_no_obsp.jpg](screens/napari-spatialdata/m04_view_dock_lists_no_obsp.jpg)
+
+      **Source and docs.** X/layers by gene ([`_model.py#L139`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_model.py#L139)), obs, var and obsm ([`_model.py#L145`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_model.py#L145)) are reachable; obsp, varp, varm are not (grep: no hits).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/napari-spatialdata/m04_view_dock_lists_no_obsp.jpg
+      label: m04_view_dock_lists_no_obsp.jpg
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_model.py
+      lines: '139'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_model.py#L139
+      label: '`_model.py#L139`'
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_model.py
+      lines: '145'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_model.py#L145
+      label: '`_model.py#L145`'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Extended Data Fig. 3 legend
+      quote: >-
+        Embeddings of molecular profiles (for example, t-SNE, UMAP) can be interactively queried via the
+        scatter plot widget.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        With the 'associated annotations (such as gene expression, cluster annotations etc.)' sentence:
+        X, obs, obsm; no pairwise slots mentioned.
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: P
+  remote:
+    reason: >-
+      The CLI treats a URL as a local path; a remote zarr reaches the viewer only through Python (Interactive(sd.read_zarr(url))),
+      so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation: `python -m napari_spatialdata view https://example.org/remote.zarr` stops at `AssertionError: Error: $DEMO_ROOT/napari-spatialdata/https:/example.org/remote.zarr does not exist`. The CLI treats the URL as a local path. A remote store reaches the viewer only through Python (`Interactive(sd.read_zarr(url))`, not run). *Steps:* the command above
+
+      **Source and docs.** The GUI/CLI path requires a local directory: `assert p.exists()` ([`__main__.py#L47`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/__main__.py#L47)). spatialdata itself reads "on-disk or remote" stores ([`SD/_io/io_zarr.py#L140`](https://github.com/scverse/spatialdata/blob/ea93a37203d187020c5d50a7f984dbf8c264a3ae/src/spatialdata/_io/io_zarr.py#L140)), so `Interactive(sd.read_zarr("https://…"))` from Python works: code only.
+    evidence:
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/__main__.py
+      lines: '47'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/__main__.py#L47
+      label: '`__main__.py#L47`'
+    - kind: code
+      repo: scverse/spatialdata
+      commit: ea93a37203d187020c5d50a7f984dbf8c264a3ae
+      path: src/spatialdata/_io/io_zarr.py
+      lines: '140'
+      url: >-
+        https://github.com/scverse/spatialdata/blob/ea93a37203d187020c5d50a7f984dbf8c264a3ae/src/spatialdata/_io/io_zarr.py#L140
+      label: '`SD/_io/io_zarr.py#L140`'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Main text
+      quote: >-
+        thereby offering performant, interoperable access for both traditional file system- and cloud-based
+        storage
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Property of the format/library (code); the plugin GUI is not addressed.
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Methods, 'SpatialData framework'
+      quote: >-
+        Each dataset can be downloaded in full (.zip) or even directly accessed from the cloud (public
+        S3 storage).
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Sample data on S3, reached from code.
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Main text, closing paragraph (ongoing developments)
+      quote: support cloud-based data access both programmatically and via the visualization tool Vitessce
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Names Vitessce, not napari-spatialdata, as the GUI route to cloud data, and frames it as ongoing
+        work.
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    - evidence/screens/gaps/capture2_code.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: P
+  spatial:
+    reason: >-
+      Spots, shapes and labels are drawn at their positions in a chosen coordinate system, aligned with
+      the tissue image.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Spots drawn at their tissue coordinates in the `ST8059048` coordinate system, aligned with the image. *Steps:* as "plots render" *Evidence:* [m00_m07_m11_visium_spots_over_HE.jpg](screens/napari-spatialdata/m00_m07_m11_visium_spots_over_HE.jpg)
+
+      **Source and docs.** The napari canvas draws every element in a chosen coordinate system with its affine transform ([`_viewer.py#L476`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L476)); the Scatter widget also takes `obsm["spatial"]` columns as x/y ([tutorial](https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/spatialdata.html), "Load axis into scatter widget").
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/napari-spatialdata/m00_m07_m11_visium_spots_over_HE.jpg
+      label: m00_m07_m11_visium_spots_over_HE.jpg
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_viewer.py
+      lines: '476'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L476
+      label: '`_viewer.py#L476`'
+    - kind: docs
+      url: https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/spatialdata.html
+      label: tutorial
+      checked: '2026-10-04'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Extended Data Fig. 3 legend
+      quote: >-
+        Napari-spatialdata enables the interactive visualization of SpatialElements (Images, Labels, Points,
+        Shapes) together with associated annotations (such as gene expression, cluster annotations etc.).
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Extended Data Fig. 7b legend
+      quote: >-
+        Screenshot of the visualization of all Visium datasets for one of the tissue samples in the context
+        of the whole tissue coordinate system using napari-spatialdata.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  selection:
+    reason: the Scatter ROI acts inside the scatter widget only
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/napari-spatialdata/02_scatter_umap_leiden_spatial_Mbp.jpg
+      label: napari/02
+    - kind: docs
+      url: https://spatialdata.scverse.org/projects/napari/en/latest/notebooks/scatterwidget_annotation.html
+      label: >-
+        Scatter widget annotation: ROIs 'only make sense in a single space'; after Annotate the new obs
+        column can be used 'in the View Widget'
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_view.py
+      lines: 184-212
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_view.py#L184-L212
+      label: the ROI selection is written as an obs column, not pushed to other views
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Extended Data Fig. 3a legend
+      quote: >-
+        The lasso tool in the scatterplot windows is used to annotate a set of cells. The annotation can
+        be visualized in space
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Read in the PMC full text (PMC11725494).
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: running app
+    detail: the Scatter ROI acts inside the scatter widget only
+    mark: P
+  annot:
+    reason: >-
+      Drawn shapes are added to the SpatialData object with Shift+E but only in memory; writing them to
+      disk needs code, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** A polygon layer `my_roi`, saved with the Shift+E handler (`_save_to_sdata`), appears as an element in the SpatialData dock, and napari shows "Layer saved". The log says `Annotations only added in memory, please manually save to disk.`; the store's `shapes/` directory was unchanged (`ST8059048`, `ST8059050` before and after). So "saved" means into the in-memory object. (The polygon itself is off-screen in the image: I placed it in the wrong coordinate frame, which does not affect the save.) *Steps:* New Shapes layer, draw, select it, Shift+E; then `ls <store>/shapes`. *Evidence:* [screens/napari-spatialdata/m09_roi_saved_in_memory.jpg](screens/napari-spatialdata/m09_roi_saved_in_memory.jpg)
+
+      **Source and docs.** Which reading of "written back" applies: the GUI writes labels into the **in-memory** SpatialData object (Extended Data Fig. 3: annotations "are then exported into the underlying SpatialData"). Writing them to the store on disk needs code (`sdata.write_element`); the app logs "Annotations only added in memory, please manually save to disk." Hence P, not Y. GUI annotation is real: Scatter lasso/rectangle ROIs become an obs column ([`_view.py#L184`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_view.py#L184), [`#L212`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_view.py#L212)) and drawn shapes/points are saved into the SpatialData object (Shift+E, [`_viewer.py#L61`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L61); [`#L284`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L284)). But for a SpatialData store the "save" is in memory only: `logger.warning("Annotations only added in memory, please manually save to disk.")` ([`_viewer.py#L177`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L177)); writing to the zarr needs `sdata.write_element(...)` in code. Only the standalone-AnnData mode writes a file from a dialog (`.h5ad`/`.zarr`/`.csv`, [`_view.py#L319`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_view.py#L319)). Images/labels cannot be saved; existing elements cannot be updated ([`_viewer.py#L306`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L306)). Arguably Y if "written back" means into the live object; P under a strict "persisted" reading.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/napari-spatialdata/m09_roi_saved_in_memory.jpg
+      label: screens/napari-spatialdata/m09_roi_saved_in_memory.jpg
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_view.py
+      lines: '184'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_view.py#L184
+      label: '`_view.py#L184`'
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_view.py
+      lines: '212'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_view.py#L212
+      label: '`#L212`'
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_viewer.py
+      lines: '61'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L61
+      label: '`_viewer.py#L61`'
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_viewer.py
+      lines: '284'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L284
+      label: '`#L284`'
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_viewer.py
+      lines: '177'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L177
+      label: '`_viewer.py#L177`'
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_view.py
+      lines: '319'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_view.py#L319
+      label: '`_view.py#L319`'
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_viewer.py
+      lines: '306'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L306
+      label: '`_viewer.py#L306`'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Main text; Fig. 1d
+      quote: >-
+        The napari-spatialdata plugin can be used for the interactive definition of spatial annotations
+        such as drawing regions of interest
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Extended Data Fig. 3 legend
+      quote: >-
+        Spatial annotations can be interactively created via drawing of regions in the napari viewer.
+        The corresponding annotations are then exported into the underlying SpatialData
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Says 'exported into the underlying SpatialData' and does not distinguish the in-memory object
+        from the zarr store; see contradictions.
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Extended Data Fig. 3a legend
+      quote: The lasso tool in the scatterplot windows is used to annotate a set of cells.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Methods, 'ROI selection with napari-spatialdata'
+      quote: >-
+        four ROIs were selected based on the H&E image from the Visium dataset using the napari-spatial
+        data plugin
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: P
+  de:
+    reason: Nothing computes DE; the Plugins menu holds no such widget and the source has no DE code.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; Plugins menu lists Install/Uninstall Plugins, napari Matplotlib, napari spatialdata, Features table widget; none computes DE. *Steps:* Plugins menu.
+
+      **Source and docs.** No DE code (`grep -rni "rank_genes\|differential" src/`: no hits).
+    evidence:
+    - kind: docs
+      url: https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/spatialdata.html
+      label: tutorial
+      checked: '2026-10-04'
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    - evidence/screens/gaps/capture_napari.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  image:
+    reason: >-
+      Multiscale or RGB images load as napari image layers under the spots (H&E under Visium spots in
+      the check).
+    detail: |-
+      **Checked in the running app (2026-10-04).** H&E under the spots, as above. *Steps:* as "plots render" *Evidence:* [m00_m07_m11_visium_spots_over_HE.jpg](screens/napari-spatialdata/m00_m07_m11_visium_spots_over_HE.jpg)
+
+      **Source and docs.** Images (multiscale, RGB or channels) load as napari Image layers under labels/points/shapes ([`_viewer.py#L457`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L457)); tutorial shows `point23_image` under `point23_labels`.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/napari-spatialdata/m00_m07_m11_visium_spots_over_HE.jpg
+      label: m00_m07_m11_visium_spots_over_HE.jpg
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_viewer.py
+      lines: '457'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L457
+      label: '`_viewer.py#L457`'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Extended Data Fig. 6b legend
+      quote: >-
+        Multimodal visualization of the H&E image from the Visium data, ... the Visium array capture locations
+        colored by gene expression (showed with transparency)
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Extended Data Fig. 7c legend
+      quote: >-
+        napari-spatialdata allows to view and interactively explore all of the large images (15 images,
+        ≈ 580 megapixels each) aligned together with the spatial gene expression.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  share:
+    reason: The File menu saves layers and screenshots but no session or view state, and there is no link.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation: the File menu has Save Selected Layers, Save All Layers, screenshots, Preferences, but no session or view-state item. *Steps:* File menu.
+
+      **Source and docs.** No session/view file or link. Annotations persist (via code) but camera, layer and colour choices do not.
+    evidence:
+    - kind: docs
+      url: https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/spatialdata.html
+      label: tutorial
+      checked: '2026-10-04'
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    - evidence/screens/gaps/capture_napari.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  export:
+    reason: File > Save Screenshot (with or without the viewer) writes a PNG of the canvas.
+    detail: |-
+      **Checked in the running app (2026-10-04).** File menu lists "Save Screenshot...", "Save Screenshot with Viewer...", and two clipboard variants; the same call (`viewer.screenshot(path=…, canvas_only=False)`) wrote `napari_screenshot.png`, 3,962,937 bytes. *Steps:* File > Save Screenshot with Viewer... *Evidence:* observation (file size); the screenshots in this table are its output
+
+      **Source and docs.** napari core menu File > "Save Screenshot..." and "Save Screenshot with Viewer..." (PNG default): [`napari/_qt/_qapp_model/qactions/_file.py#L137`](https://github.com/napari/napari/blob/595639295a153c84bcb127a9e07d801355440a35/src/napari/_qt/_qapp_model/qactions/_file.py#L137) at v0.9.2. The Scatter widget is a pyqtgraph `GraphicsLayoutWidget` ([`_scatterwidgets.py#L303`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_scatterwidgets.py#L303)); pyqtgraph's right-click "Export..." probably applies, not verified.
+    evidence:
+    - kind: code
+      repo: napari/napari
+      commit: 595639295a153c84bcb127a9e07d801355440a35
+      path: src/napari/_qt/_qapp_model/qactions/_file.py
+      lines: '137'
+      url: >-
+        https://github.com/napari/napari/blob/595639295a153c84bcb127a9e07d801355440a35/src/napari/_qt/_qapp_model/qactions/_file.py#L137
+      label: '`napari/_qt/_qapp_model/qactions/_file.py#L137`'
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_scatterwidgets.py
+      lines: '303'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_scatterwidgets.py#L303
+      label: '`_scatterwidgets.py#L303`'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Fig. 1d legend
+      quote: SpatialData provides functionality for the generation of both interactive and static plots.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Static plots come from the spatialdata-plot code library ('Static figures and graphics can be
+        created using the spatialdata-plot library'). The paper does not mention napari's GUI screenshot
+        export, on which the notes' Y rests.
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    - evidence/screens/gaps/capture_napari.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  desktop:
+    reason: >-
+      napari runs as a native Qt desktop window and ships downloadable installers; napari-spatialdata
+      installs into it from the Plugins menu.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation: runs as a native Qt window from the pip venv. The napari bundle installer route was not tested. *Steps:* `start.sh`
+
+      **Source and docs.** napari ships downloadable installers (v0.9.2 release assets include `napari-0.9.2-macOS-arm64.pkg`, [releases](https://github.com/napari/napari/releases/latest)); its Plugins > "Install/Uninstall Plugins..." installs from PyPI/conda-forge ([napari docs](https://napari.org/stable/plugins/start_using_plugins/finding_and_installing_plugins.html)), and napari-spatialdata is on conda-forge (0.7.1). Caveat: the plugin's own docs only document `pip install napari-spatialdata[all]`; the bundle route is not tested here. Downgrade to P if the bundle install fails.
+    evidence:
+    - kind: docs
+      url: https://github.com/napari/napari/releases/latest
+      label: releases
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20261003032456/https://github.com/napari/napari/releases/tag/v0.9.2
+    - kind: docs
+      url: https://napari.org/stable/plugins/start_using_plugins/finding_and_installing_plugins.html
+      label: napari docs
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20260924132704/https://napari.org/stable/plugins/start_using_plugins/finding_and_installing_plugins.html
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Methods, 'SpatialData framework dependencies'
+      quote: >-
+        pip can be used readily to install the software and all its dependent libraries. Conda support
+        is in preparation.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Python package install; the napari bundle installer route used for the notes' Y is not mentioned.
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: Y
+  hosted:
+    reason: napari is a desktop Qt application with no server mode.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; desktop only.
+
+      **Source and docs.** Desktop Qt app; no server mode.
+    evidence:
+    - kind: docs
+      url: https://github.com/napari/napari/releases/latest
+      label: releases
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20261003032456/https://github.com/napari/napari/releases/tag/v0.9.2
+    na:
+      visual: napari-spatialdata is a desktop application with no web interface
+      so there is no GUI place in which a missing hosted mode could be shown.: null
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  static:
+    reason: There is no web build.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; no web build.
+
+      **Source and docs.** No web build.
+    evidence:
+    - kind: docs
+      url: https://github.com/napari/napari/releases/latest
+      label: releases
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20261003032456/https://github.com/napari/napari/releases/tag/v0.9.2
+    na:
+      visual: napari-spatialdata is a desktop application with no web interface
+      so there is no GUI place in which a missing static mode could be shown.: null
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: N
+  lazy:
+    reason: Images are dask-backed and read lazily from zarr, but the table's X is loaded into memory,
+      so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation: the image layer holds an xarray `DataArray` (dask-backed, read from zarr; this example's hires image is single-scale), while the table X is an in-memory `csr_matrix` (6484 × 31053). Gene colouring still fails here without the shim: `AttributeError: 'AnnData' object has no attribute '_get_X'`, so the spots were coloured by an obs column. *Steps:* printed by the script
+
+      **Source and docs.** Images and labels are lazy multiscale dask (`DataTree` pyramid passed as a list of scales, [`utils/_utils.py#L255`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/utils/_utils.py#L255)). But points are materialised with `.compute()` ([`_viewer.py#L719`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L719)) and the AnnData table is read whole with `anndata.read_zarr` ([`SD/_io/io_table.py#L28`](https://github.com/scverse/spatialdata/blob/ea93a37203d187020c5d50a7f984dbf8c264a3ae/src/spatialdata/_io/io_table.py#L28)).
+
+      **Scale group.** Single local desktop Python process. Images/labels lazy (dask, multiscale zarr). Points computed whole into memory, then subsampled. AnnData table loaded whole into memory by `anndata.read_zarr`. Evidence: [`_viewer.py#L719`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L719); [`SD/_io/io_table.py#L28`](https://github.com/scverse/spatialdata/blob/ea93a37203d187020c5d50a7f984dbf8c264a3ae/src/spatialdata/_io/io_table.py#L28); paper main text, "lazy loading of larger-than-memory data" (not the Fig. 1b legend).
+    evidence:
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/utils/_utils.py
+      lines: '255'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/utils/_utils.py#L255
+      label: '`utils/_utils.py#L255`'
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_viewer.py
+      lines: '719'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L719
+      label: '`_viewer.py#L719`'
+    - kind: code
+      repo: scverse/spatialdata
+      commit: ea93a37203d187020c5d50a7f984dbf8c264a3ae
+      path: src/spatialdata/_io/io_table.py
+      lines: '28'
+      url: >-
+        https://github.com/scverse/spatialdata/blob/ea93a37203d187020c5d50a7f984dbf8c264a3ae/src/spatialdata/_io/io_table.py#L28
+      label: '`SD/_io/io_table.py#L28`'
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Methods, 'Alignment to create common coordinate systems'
+      quote: >-
+        Dask’s lazy-loading and Zarr’s multiscale representation made it possible to performantly explore
+        and zoom the datasets, even in a low-memory device like a standard laptop.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Said of images explored in napari-spatialdata; silent on the table, which the notes find is read
+        whole (hence P).
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Main text (citing Fig. 1b)
+      quote: >-
+        The SpatialData Python library represents this format as SpatialData objects in memory, which
+        supports lazy loading of larger-than-memory data (Fig. 1b).
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: Library-level claim, not the plugin specifically.
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    - evidence/screens/gaps/capture_napari.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    mark: P
+  every_cell:
+    reason: >-
+      Points elements are randomly subsampled to 100,000 by default (changeable only in code); labels
+      and the scatter widget draw everything, so P under reading A.
+    detail: >-
+      **Scale group.** Mixed. Points elements are randomly subsampled to `POINT_THRESHOLD = 100000` with
+      a log message (changeable only in code). Labels (segmentation masks) and shapes are drawn whole;
+      images use the multiscale pyramid. Scatter widget draws all table rows. Evidence: [`constants/config.py#L2`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/constants/config.py#L2);
+      [`_viewer.py#L724`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L724)
+      to L734
+    evidence:
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/constants/config.py
+      lines: '2'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/constants/config.py#L2
+      label: '`constants/config.py#L2`'
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_viewer.py
+      lines: '724'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L724
+      label: '`_viewer.py#L724`'
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture_napari.py
+    mark: P
+  subset:
+    reason: >-
+      A subset that reduces loading (spatial query, filter_by_coordinate_system) needs Python code before
+      Interactive(...).
+    detail: |-
+      **Scale group.** Partial. In the GUI the user picks a coordinate system and which elements to load (element-level choice), not a cell subset. Cell subsets (spatial bounding-box query, `filter_by_coordinate_system`, raising/lowering `POINT_THRESHOLD`) need Python code before `Interactive(...)`. No "subset to selection" or downsample slider. Evidence: [`spatialdata.html`](https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/spatialdata.html) (coordinate system selection); [`nanostring_analysis.html`](https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/nanostring_analysis.html) (`sdata.filter_by_coordinate_system("1")` in code)
+
+      **Re-scored under X8 (2026-10-04)**: A subset that reduces loading (spatial query, filter_by_coordinate_system) needs Python code before Interactive(...).
+    evidence:
+    - kind: docs
+      url: https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/spatialdata.html
+      label: '`spatialdata.html`'
+      checked: '2026-10-04'
+    - kind: docs
+      url: https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/nanostring_analysis.html
+      label: '`nanostring_analysis.html`'
+      checked: '2026-10-04'
+      archive: >-
+        https://web.archive.org/web/20260511051117/https://spatialdata.scverse.org/projects/napari/en/stable/notebooks/nanostring_analysis.html
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Extended Data Fig. 1 legend
+      quote: The spatial query interface allows users to request the data contained in a query region
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Library API; the legend says 'Shown are code excerpts from the spatial query tutorial'. Not a
+        plugin GUI feature.
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture_napari.py
+    mark: P
+  auto_subset:
+    reason: >-
+      Points elements are randomly subsampled to POINT_THRESHOLD = 100,000 by default with a log message;
+      shapes, labels and the AnnData table (the cells) are drawn whole.
+    detail: >-
+      **New column (user X8, 2026-10-04).** Points elements are randomly subsampled to POINT_THRESHOLD
+      = 100,000 by default with a log message; shapes, labels and the AnnData table (the cells) are drawn
+      whole. Evidence is the same as for every cell drawn, which shows how the default view is drawn.
+    evidence:
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/constants/config.py
+      lines: '2'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/constants/config.py#L2
+      label: '`constants/config.py#L2`'
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_viewer.py
+      lines: '724'
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_viewer.py#L724
+      label: '`_viewer.py#L724`'
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: P
+retired_cells:
+  filters:
+    proposed: N
+    reason: The View, Scatter and annotation widgets have lists and plot settings but no filter field.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; the View and Scatter docks have lists and plot settings, no filter field (screenshot of the View dock above).
+
+      **Source and docs.** No filter UI in View, Scatter or Annotation widgets (read [`_view.py`](https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_view.py) widget list; docs show none).
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1038/s41592-024-02212-x
+      label: Marconato et al. 2025, Nature Methods 22:58-62
+      where: Extended Data Fig. 3a legend
+      quote: >-
+        interactive selection with a lasso from the UMAP plot computed from the cell gene expression and
+        colored by Leiden clusters
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        N under the current 'table filters' definition. Under the proposed 'selection restricts linked
+        views' definition this is P: 'The annotation can be visualized in space' means it reaches the
+        spatial view only as an annotation, matching the notes' P.
+    - kind: code
+      repo: scverse/napari-spatialdata
+      commit: 75b8c346bee64ad7428d753b62eb2f8dff64a0c2
+      path: src/napari_spatialdata/_view.py
+      lines: 417-494
+      url: >-
+        https://github.com/scverse/napari-spatialdata/blob/75b8c346bee64ad7428d753b62eb2f8dff64a0c2/src/napari_spatialdata/_view.py#L417-L494
+      label: 'NS _view.py L417-494: the View dock widgets (lists, no filter field)'
+    reproduce:
+    - notes/comparison/demos/napari-spatialdata/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app

@@ -1,0 +1,54 @@
+{
+ "version": 1,
+ "image": "02_de_gene_CD74_click_recolours_scatter.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP1671, human lactation (49,310 cells; All Cells UMAP)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP1671/cellular-and-transcriptional-diversity-over-the-course-of-human-lactation?genes=CD74",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_scp.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "SCP 1.20.0 (2026-10-04): clicking CD74 in the precomputed DE table (B cells) runs a gene search: the scatter tab becomes a CD74 expression UMAP beside the cluster UMAP; a column of the matrix, not a relation row"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    1047,
+    451,
+    353,
+    34
+   ],
+   "label": "CD74 picked in the DE table",
+   "selector": "[data-cap='cd74']"
+  },
+  {
+   "n": 2,
+   "box": [
+    6,
+    269,
+    508,
+    639
+   ],
+   "label": "CD74 expression UMAP",
+   "selector": "[data-cap='plot0']"
+  },
+  {
+   "n": 3,
+   "box": [
+    546,
+    269,
+    508,
+    311
+   ],
+   "label": "reference cluster UMAP",
+   "selector": "[data-cap='plot1']"
+  }
+ ]
+}

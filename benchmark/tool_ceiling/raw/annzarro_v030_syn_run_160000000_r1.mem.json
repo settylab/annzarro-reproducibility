@@ -1,0 +1,134 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_160000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_syn_run_160000000_r1",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 47.54,
+ "peaks": {
+  "client": {
+   "fp_peak": 888512696,
+   "fp_lifetime_sum": 906633304,
+   "rss_peak": 1101201408,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 331285752,
+   "fp_lifetime_sum": 421021832,
+   "rss_peak": 366362624,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 115765488,
+   "fp_lifetime_sum": 115765488,
+   "rss_peak": 154419200,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 1170154928,
+   "rss_peak": 1449312256,
+   "fp_lifetime_sum": 1327655136
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.26,
+   1170154928
+  ],
+  [
+   4.52,
+   891037008
+  ],
+  [
+   6.77,
+   610379088
+  ],
+  [
+   9.05,
+   599450960
+  ],
+  [
+   11.31,
+   599696720
+  ],
+  [
+   13.67,
+   595617104
+  ],
+  [
+   15.94,
+   595830096
+  ],
+  [
+   18.23,
+   595977552
+  ],
+  [
+   20.53,
+   596223312
+  ],
+  [
+   22.83,
+   596501840
+  ],
+  [
+   25.07,
+   597026128
+  ],
+  [
+   27.38,
+   597058896
+  ],
+  [
+   29.77,
+   597288272
+  ],
+  [
+   32.07,
+   583787904
+  ],
+  [
+   34.35,
+   581051776
+  ],
+  [
+   36.62,
+   581248384
+  ],
+  [
+   38.9,
+   581444992
+  ],
+  [
+   41.18,
+   581641600
+  ],
+  [
+   43.47,
+   581920128
+  ],
+  [
+   45.87,
+   582018432
+  ]
+ ],
+ "ps_before": "2026-10-04T23:44:49-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 2884032   6.3 $HOME/.local/bin/claude\n68627 437472   3.9 $HOME/.local/bin/claude\n80588 620448   3.4 $HOME/.local/bin/claude\n92291  30992   2.0 .venv/bin/python\n 4725 640912   1.7 claude\n  734  49376   0.9 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n72627 490480   0.8 $HOME/.local/bin/claude\n93323 1098784   0.4 $HOME/.local/bin/claude\n48273 583888   0.4 /Applications/Microsoft Outlook.app/Contents/MacOS/Microsoft Outlook\n 1912  23888   0.4 socks-failover\n",
+ "others_at_start": []
+}

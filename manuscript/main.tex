@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\input{preamble}
+
+% ---------------------------------------------------------------- title
+\title{AnnZarro: scalable, interactive exploration of cell-by-cell and gene-by-gene relationships in single-cell data}
+\author{\hspace*{-\tabcolsep}\parbox{\textwidth}{\raggedright\normalsize
+Dominik J. Otto$^{1,2}$+, Siddharth Baasri$^{1,2,3}$, Manu Setty$^{1,2}$+\\[8pt]
+$^{1}$Basic Sciences Division, Fred Hutchinson Cancer Center, Seattle WA\\
+$^{2}$Computational Biology Program, Public Health Sciences Division, Fred Hutchinson Cancer Center, Seattle WA\\
+$^{3}$University of Washington, Seattle WA\\[12pt]
++ Corresponding authors: Dominik J. Otto (\href{mailto:dotto@fredhutch.org}{dotto@fredhutch.org}), Manu Setty (\href{mailto:msetty@fredhutch.org}{msetty@fredhutch.org})}\hspace*{-\tabcolsep}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+\input{sections/abstract.tex}
+
+% Key points: Nature Protocols convention; kept for a later Nature Protocols submission (operator 2026-10-08: the bioRxiv preprint does not need them).
+% \paragraph{Key points}
+% \begin{itemize}[nosep]
+%   \item This protocol prepares an AnnData store with Kompot results, a diffusion kernel and gene correlations; in AnnZarro, clicking a cell or a gene paints its row of any stored pairwise matrix, so that pseudotime and abundance results can be checked in the geometry of the phenotypic manifold, which two-dimensional embeddings distort.
+% % claims kp.tahoe.n, kp.distinct, kp.laptop_every_cell parked in evidence/claims_parked.yaml
+%   \item Only AnnZarro, among the viewers compared, lets a focused cell or gene choose the matrix row that every linked panel shows; because it streams single vectors from zarr stores, a laptop's browser shows all 95.6 million cells of Tahoe-100M, on a subset or in one plot.
+% \end{itemize}
+
+\input{sections/figs_results.tex}
+\input{body.tex}
+
+\section*{Acknowledgments}
+We thank members of the Setty laboratory for discussions and for testing AnnZarro. This work was supported by the National Institute of General Medical Sciences of the National Institutes of Health under award numbers R35GM147125 (M.S.) and K99GM159044 (D.J.O.). This work used Fred Hutch Scientific Computing resources supported by NIH grants S10OD038189 and S10OD028685. 
+% Funding: notes/funding.md (draft, sources and open questions Q1-Q7); grant numbers checked in NIH RePORTER 2026-10-06.
+
+\textit{Use of AI assistance.} The authors used AI coding agents (Claude, Anthropic, through Claude Code) to write and test software and analysis code, run and analyze the benchmarks, audit the compared tools, and draft and edit the manuscript. D.J.O.\ and S.B.\ tested and edited the code by hand, and D.J.O.\ checked the full text and every figure against the running software and the underlying data; no figure contains AI-generated imagery. The source of each number and comparison mark in the paper was recorded and checked against the text. The authors take full responsibility for the content.
+
+\section*{Author contributions}
+D.J.O.\ conceived and developed AnnZarro and wrote the manuscript. S.B.\ implemented h5ad support and contributed to the user interface. M.S.\ supervised the work and edited the manuscript.
+
+\section*{Competing interests}
+The authors declare no competing interests.
+
+\bibliographystyle{nprot}
+\bibliography{refs}
+
+%\section*{Key references using this protocol}
+%% Mellon (Nat. Methods 2024) is not listed: AnnZarro's repository starts on 2 April 2025, after Mellon was published, and no earlier tool formalised the approach (operator, 2026-10-07).
+%\begin{itemize}[nosep,label={}]
+%\item Otto, D. J. et al. Comparing phenotypic manifolds with Kompot: cluster-free differential expression at single-cell resolution. Preprint at \textit{bioRxiv} (2025): \url{https://doi.org/10.1101/2025.06.03.657769}
+%\end{itemize}
+
+\end{document}

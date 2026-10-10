@@ -1,0 +1,35 @@
+{
+ "tool": "annzarro",
+ "variant": "default",
+ "store": "$DATA_ROOT/tool_ceiling_data/synth/synth_tahoe_200000000.zarr",
+ "n_obs": 200000000,
+ "checks": {
+  "gene": {
+   "status": "stalled",
+   "guard": [],
+   "console": [],
+   "n_drawn": -1,
+   "seconds": 45.541436792351305,
+   "all_cells": false,
+   "renderer_rss": 257589248,
+   "gpu_rss": 149651456,
+   "server_rss": 186351616
+  }
+ },
+ "versions": {
+  "annzarro": "120f322",
+  "browser": "chromium 153.0.8010.12"
+ },
+ "ceiling_rc": 0,
+ "server_url": null,
+ "network": null,
+ "events": [
+  {
+   "event": "first_plot",
+   "status": "stalled",
+   "seconds": 45.541436792351305,
+   "n_points": -1
+  }
+ ],
+ "ok": false
+}

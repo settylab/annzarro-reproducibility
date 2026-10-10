@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "g01_focus_DOCS_gene_click_colours_projection.jpg",
+ "tool": "loupe",
+ "software": "Loupe Browser 9.1.0 DOCS PAGE (10x website, read 2026-10-04), not the app",
+ "data": "docs, not the app: https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation",
+ "url": "https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-sc-interface-and-navigation",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_loupe.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "docs, not the app, Loupe Browser 9.1.0 docs: clicking a feature shows that feature's distribution on the projection (feature colouring, which does not count); nothing describes a stored pairwise row re-driving linked panels (read 2026-10-04)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    328,
+    422,
+    742,
+    56
+   ],
+   "label": "docs, not the app: \"Click on a different feature in your imported list to view the distribution of that feature\"",
+   "selector": "[data-gap-phrase='1']"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    0,
+    1400,
+    42
+   ],
+   "label": "docs, not the app, with its URL",
+   "selector": "#gapbanner"
+  }
+ ]
+}

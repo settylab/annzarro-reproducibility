@@ -1,0 +1,70 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "tissuumaps",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first5000000_csc.h5ad",
+  "benchmark/tool_ceiling/shots/tissuumaps_default_run_5000000_r0",
+  "--n",
+  "5000000",
+  "--port",
+  "8944"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 12.33,
+ "peaks": {
+  "client": {
+   "fp_peak": 3592333368,
+   "fp_lifetime_sum": 3655363696,
+   "rss_peak": 2225078272,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 79217768,
+   "fp_lifetime_sum": 88049008,
+   "rss_peak": 190447616,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 161973936,
+   "fp_lifetime_sum": 163754824,
+   "rss_peak": 193118208,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3671305424,
+   "rss_peak": 2415525888,
+   "fp_lifetime_sum": 3743412704
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.14,
+   1335978280
+  ],
+  [
+   4.28,
+   1894279992
+  ],
+  [
+   6.37,
+   1680436000
+  ],
+  [
+   8.46,
+   1647783120
+  ],
+  [
+   10.53,
+   1748364472
+  ]
+ ],
+ "ps_before": "2026-10-05T11:46:21-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n56913 265584  77.0 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n 1281  23856  54.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdbulkimport\n  626 517712  25.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n97961 870176  16.9 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n91505  24240  14.9 /usr/libexec/trustd\n57113 2902240   9.4 $HOME/.local/bin/claude\n  774   6192   9.0 /usr/libexec/sysmond\n36742  16272   5.7 /System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Resources/backgroundtaskmanagementd\n93323 1098144   5.3 $HOME/.local/bin/claude\n  601  44320   4.9 /usr/libexec/locationd\n",
+ "others_at_start": []
+}

@@ -1,0 +1,783 @@
+# UCSC Cell Browser: Fig. 1c marks and their evidence.
+# Seeded by evidence/tools/import_notes.py from notes/comparison/ucsc-cell-browser.md and
+# figures/fig_comparison.py; edit this file from now on (schema: evidence/README.md).
+id: ucsc-cell-browser
+name: UCSC Cell Browser
+figure:
+  row: 7
+  label: UCSC Cell Browser
+  largest_documented: 21.8M (PanSci)
+notes: notes/comparison/ucsc-cell-browser.md
+cells:
+  cells:
+    mark: N
+    reason: The importer reads no obsp, and the Annotation tab lists obs fields only.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The Annotation tab lists the obs fields only (cellId, Age, Sample, Replicate, Compartment, highres/midres celltype, leiden, phase, total counts, n genes by counts). No obsp anywhere. *Steps:* Open the Annotation tab. *Evidence:* [m04 annotation](screens/ucsc-cell-browser/m04_slots_annotation_tab.jpg)
+
+      **Source and docs.** No `obsp` anywhere in the importer: `grep -n obsp src/cbPyLib/cellbrowser/*.py` returns nothing. h5ad import is [`scanpyToCellbrowser`](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cellbrowser.py#L5448) (X or one layer, obs, obsm, spatial uns).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m04_slots_annotation_tab.jpg
+      label: m04 annotation
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cellbrowser.py
+      lines: '5448'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cellbrowser.py#L5448
+      label: '`scanpyToCellbrowser`'
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  genes:
+    mark: N
+    reason: No varp is read; the Gene tab searches genes of X only.
+    detail: |-
+      **Checked in the running app (2026-10-04).** No varp; the Gene tab searches genes of X. *Steps:* Gene tab. *Evidence:* [m04 annotation](screens/ucsc-cell-browser/m04_slots_annotation_tab.jpg)
+
+      **Source and docs.** Same; no `varp` in the source.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m04_slots_annotation_tab.jpg
+      label: m04 annotation
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cellbrowser.py
+      lines: '5448'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cellbrowser.py#L5448
+      label: '`scanpyToCellbrowser`'
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  focus:
+    mark: N
+    reason: >-
+      A clicked cell becomes a one-cell selection with a metadata readout and a gene is feature colouring
+      of both split panes; no relation row is involved, so N.
+    detail: |-
+      **Focus, checked in the running app.** A clicked cell becomes a one-cell selection plus a metadata readout; a gene is feature colouring, which reaches both split panes (a2) but is not a relation row.
+
+      **Source and docs.** One scatter plot, optionally split into two panes that share a selection; a gene click recolours that plot only. No set of panels re-driven by a focused cell.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 2 Features; Fig. 1 legend
+      quote: The right side shows the same cells colored by their expression of the gene HES1
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Gene feature colouring in a split pane; no stored pairwise row. The strict definition excludes
+        this.
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/01_single_cell_click_selects_and_shows_meta.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/02_split_gene_mpo_on_both_panes.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/03_lasso_selection_both_panes_and_violin.jpg
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  slots:
+    mark: P
+    reason: >-
+      X, obs fields and the obsm embeddings chosen at import are shown; layers, other obsm keys, obsp
+      and varp are dropped at import, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The Layout tab's Embedding dropdown holds `UMAP` and `ForceAtlas2` (options read from the page; the screenshot shows it closed). The file's `X_pca` and `X_diffusion` were dropped at import, as were the `counts` layer and obsp. obs fields and X are present. *Steps:* Layout tab (layout dropdown). *Evidence:* [m04 layout](screens/ucsc-cell-browser/m04_slots_layout_tab.jpg)
+
+      **Source and docs.** `cellbrowser.py` [L5503](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cellbrowser.py#L5503) (one layer replaces X), [L4907-4911](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cellbrowser.py#L4907) (obsm fields with more than 5 columns dropped), [L5284-5289](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cellbrowser.py#L5284) (obsm/uns spatial).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m04_slots_layout_tab.jpg
+      label: m04 layout
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cellbrowser.py
+      lines: '5503'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cellbrowser.py#L5503
+      label: L5503
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cellbrowser.py
+      lines: '4907'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cellbrowser.py#L4907
+      label: L4907-4911
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cellbrowser.py
+      lines: '5284'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cellbrowser.py#L5284
+      label: L5284-5289
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 2 Features
+      quote: >-
+        As a single dataset may produce several x, y coordinates, scientists can switch between different
+        layouts.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Several embeddings (obsm), plus annotations (obs) and expression (X) for colouring; nothing on
+        layers, varm, obsp or varp.
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 2 Features
+      quote: >-
+        Cells can be colored based on provided annotations (e.g. cell type, age) or by gene expression
+        using several built-in color palettes.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: obs and X only.
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  remote:
+    mark: P
+    reason: >-
+      The viewer reads its own pre-built directory over HTTP from any web host or bucket, but cannot read
+      an h5ad or zarr in place, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The portal serves the same pre-built files over HTTP (requests above); only the viewer's own format is read. Not tested with an h5ad or zarr in a bucket, which it cannot read. *Evidence:* Observation
+
+      **Source and docs.** The built directory can sit on S3, GCS, Azure or github.io (`docs/internet.rst` L9-13), and the viewer reads it over HTTP. But it reads only its own pre-built format; h5ad or zarr in a bucket are not read in place.
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    - evidence/screens/gaps/capture2_docs.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    evidence:
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: docs/internet.rst
+      lines: 9-13
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/docs/internet.rst#L9-L13
+      label: 'docs/internet.rst L9-13: deploy the built directory on any web server, S3, GCS or Azure'
+  spatial:
+    mark: Y
+    reason: >-
+      obsm['spatial'] becomes a layout, and the portal's P21 dataset draws its spots in tissue coordinates.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Portal p21: the "Spots" layout places 2,373 spots on a grid in tissue coordinates. *Steps:* Open https://cells.ucsc.edu/?ds=brain-spatial-omics+p21. *Evidence:* [m07](screens/ucsc-cell-browser/m07_spatial_portal_p21.jpg)
+
+      **Source and docs.** `cellbrowser.py` [L5284-5289](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cellbrowser.py#L5284) turns `obsm['spatial']` into a layout.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m07_spatial_portal_p21.jpg
+      label: m07
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cellbrowser.py
+      lines: '5284'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cellbrowser.py#L5284
+      label: L5284-5289
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  selection:
+    reason: a lasso in one split pane highlights the cells in the other and splits the violin
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/03_lasso_selection_both_panes_and_violin.jpg
+      label: ucsc/03
+    - kind: docs
+      url: https://cellbrowser.readthedocs.io/en/master/ui/analysis.html
+      label: >-
+        Selecting Cells: once cells are selected, a histogram of their metadata and a violin plot (selected
+        vs all other cells) appear
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js
+      lines: '4522'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js#L4522
+      label: 'split(): the second pane shares the first pane''s selection object (plot2.selCells = self.selCells)'
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js
+      lines: 3158-3159
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js#L3158-L3159
+      label: redrawing one pane redraws the other
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 2 Features
+      quote: >-
+        violin plots comparing the expression of a gene in the selection against all other cells in the
+        dataset or user-defined ‘background’ cells
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        The selection drives a second view (violin, histogram); the split-pane linking is not described.
+        Read in the PMC full text (PMC8652023).
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: running app
+    detail: a lasso in one split pane highlights the cells in the other and splits the violin
+    mark: Y
+  annot:
+    mark: Y
+    reason: >-
+      Edit > Name selection writes a custom annotation field, stored in the browser (or with a free account),
+      not in the dataset files.
+    detail: |-
+      **Checked in the running app (2026-10-04).** With the 2,221 cells selected, Edit > Name selection... opens "Annotate selected cells" (field "My custom annotations", value typed `neutro_matrixcheck`). OK adds a colour-by field "My custom annotations" with `neutro matrixcheck` 27.5% and "No annotation" 72.5%. It is stored in the browser (`localStorage` key `bm_demo *Steps:* customFields`), not in the dataset files. *Evidence:* As described.
+
+      **Source and docs.** Edit > Name selection writes a custom annotation field, stored in the browser and shareable with a free account (`docs/ui/accounts.rst`). Dataset files are not changed.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 5 Recent developments and future work
+      quote: During the next few months, we plan to further improve ATAC-seq support and custom annotations.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Names custom annotations as a feature under development; does not describe writing labels
+        back.
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  de:
+    mark: N
+    reason: >-
+      DE is off by default and absent on cells.ucsc.edu; with the flag on but no backend the client shows
+      placeholder statistics, so the figure's P should be N.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The Tools menu of the local build has only Custom Annotations..., Set as background cells and Reset background cells; there is no Differential expression item. The source explains why (cellBrowser.js at a11af81). The menu item is behind `cbDeEnabled()`, which reads `showDiffExp` from `cb.conf` and defaults to OFF so that "the still-in-progress DE UI (whose statistics are a placeholder until the compute backend is wired up) does not leak onto installs like cells.ucsc.edu" (L3690-3699). Without a `deUrl`, `deSubmitJob` falls back to "a clearly-labelled client-side placeholder that ... synthesizes statistics" (L14924-14939). The real Wilcoxon backend is a separate, self-hosted Flask app (`src/cbAnnotServer/de`, mounted at `/api/de`). The portal's `cb.conf` sets only `annotApiBase=` and `showLogin=off`, and the portal's live `js/cellBrowser.js` contains no DE code (0 hits for `tpDeMenu` or "Differential expression"). *Steps:* Open the Tools menu; `curl -s https://cells.ucsc.edu/cb.conf`; grep the two files. *Evidence:* [m10](screens/ucsc-cell-browser/m10_de_tools_menu_no_de.jpg)
+
+      **Source and docs.** The paper describes it as a future plan ("we intend to add support for running analysis algorithms on selected cells on-the-fly"), and the running app agrees: DE is off by default and absent on the portal. Older text follows. Wilcoxon test on a server compute backend (`docs/ui/diffexp.rst` L1-8); not available on a plain static deployment. Client UI default `subsample: 5000` per group (`JS/cellBrowser.js` [L14150](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L14150)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m10_de_tools_menu_no_de.jpg
+      label: m10
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js
+      lines: '14150'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L14150
+      label: L14150
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 2 Features
+      quote: >-
+        violin plots comparing the expression of a gene in the selection against all other cells in the
+        dataset or user-defined ‘background’ cells
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: One-gene comparison plot, no test.
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 5 Recent developments and future work
+      quote: >-
+        Over the next year, we intend to add support for running analysis algorithms on selected cells
+        on-the-fly.
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: 'Future work as of 2021: no in-session analysis at publication.'
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  image:
+    mark: Y
+    reason: >-
+      Spatial layouts draw the tissue image (tissue_hires_image.jpg) under the spots, with gene colouring
+      on top.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Portal p21: the tissue image (`tissue_hires_image.jpg`) is drawn grey under the spots; colouring by Mbp keeps it visible. *Steps:* Open `...?ds=brain-spatial-omics+p21&gene=Mbp`. *Evidence:* [m07](screens/ucsc-cell-browser/m07_spatial_portal_p21.jpg), [m11](screens/ucsc-cell-browser/m11_image_portal_p21_gene_on_tissue.jpg)
+
+      **Source and docs.** Background JPEG for spatial layouts (`JS/cbData.js` [L645-652](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cbData.js#L645)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m07_spatial_portal_p21.jpg
+      label: m07
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m11_image_portal_p21_gene_on_tissue.jpg
+      label: m11
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cbData.js
+      lines: '645'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cbData.js#L645
+      label: L645-652
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 5 Recent developments and future work; Supplementary Fig. S3 (not read)
+      quote: >-
+        We have added the ability to associate large microscopy images with a dataset (Supplementary Fig.
+        S3).
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Images associated with a dataset; the main text does not say they are drawn under spatial
+        points.
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  share:
+    mark: Y
+    reason: >-
+      The URL carries dataset, colouring, gene and layout, and reopening it restores the colouring (zoom
+      was not verified).
+    detail: |-
+      **Checked in the running app (2026-10-04).** Choosing Age in "Color by Annotation" changes the URL to `?ds=bm_demo&meta=Age`; opened in a new tab, it shows the Age colouring and legend. Zoom was not captured (my scripted wheel zoom did not change the view), so only colouring is shown here. *Steps:* Pick Age as colour; copy the URL into a new tab. *Evidence:* [before](screens/ucsc-cell-browser/m12_share_state_before.jpg), [reopened](screens/ucsc-cell-browser/m12_share_url_reopened.jpg)
+
+      **Source and docs.** URL carries dataset, colouring, gene, layout, zoom and selection (`JS/cellBrowser.js` L5659-5661, L5935, L2921 per the 2 Oct audit; same commit).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m12_share_state_before.jpg
+      label: before
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m12_share_url_reopened.jpg
+      label: reopened
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js
+      lines: 5655-5662
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L5655-L5662
+      label: 'cellBrowser.js L5655-5662: colouring read from the URL''s gene argument'
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js
+      lines: '5935'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L5935
+      label: 'cellBrowser.js L5935: layout read from the URL'
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  export:
+    mark: Y
+    reason: The File menu downloads the plot as PNG or SVG.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The File menu has Open dataset..., Download bitmap image (PNG), Download vector image (SVG). PNG saved `cellBrowser.png`, 304,877 bytes. *Steps:* File > Download bitmap image (PNG). *Evidence:* [m13](screens/ucsc-cell-browser/m13_export_file_menu.jpg)
+
+      **Source and docs.** File menu "Download bitmap image (PNG)" and "Download vector image (SVG)" (`JS/cellBrowser.js` [L4516-4517](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L4516)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m13_export_file_menu.jpg
+      label: m13
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js
+      lines: '4516'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L4516
+      label: L4516-4517
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  desktop:
+    mark: N
+    reason: The Cell Browser is a website plus a Python builder; there is no packaged application.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show. Searched docs and repo for a packaged app; there is a website plus a Python builder. *Evidence:* Observation
+
+      **Source and docs.** Website and Python builder only; no packaged application in the repo or docs.
+    na:
+      visual: No desktop application exists
+      so there is no GUI place in which its absence could be shown.: null
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    evidence:
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: docs/basic_usage.rst
+      lines: 26-29
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/docs/basic_usage.rst#L26-L29
+      label: 'docs/basic_usage.rst L26-29: cbBuild output goes on a web server'
+  hosted:
+    mark: Y
+    reason: cells.ucsc.edu serves about 1,640 datasets to anonymous visitors from one deployment.
+    detail: |-
+      **Checked in the running app (2026-10-04).** cells.ucsc.edu opened the p21 dataset anonymously. *Steps:* Open the portal link. *Evidence:* [m07](screens/ucsc-cell-browser/m07_spatial_portal_p21.jpg)
+
+      **Source and docs.** cells.ucsc.edu serves 1,640 datasets to anonymous users (crawl above).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m07_spatial_portal_p21.jpg
+      label: m07
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: Availability and implementation
+      quote: >-
+        We provide the UCSC Cell Browser as a free website where scientists can explore a growing collection
+        of single-cell datasets
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 3 Comparison to other available tools
+      quote: the ability to host many datasets on a single instance arranged as a hierarchy
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  static:
+    mark: Y
+    reason: >-
+      A cbBuild output directory has no server code and runs from any static file server with Range support.
+    detail: |-
+      **Checked in the running app (2026-10-04).** The local build (`$DEMO_ROOT/ucsc-cell-browser/html/`, 623 MB) contains no `.py` or `.cgi`. It is served by a plain static file server with Range support (`_bin/serve.py`), and every request above is a file GET. *Steps:* `find html -name '*.py' -o -name '*.cgi'` (empty). *Evidence:* Observation
+
+      **Source and docs.** "no backend server needed" (`docs/basic_usage.rst` L28). DE and accounts need extra services.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 3 Comparison to other available tools
+      quote: a simple installation procedure that requires no special server infrastructure (e.g. Flask,
+        Shiny)
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: Availability and implementation
+      quote: >-
+        a freely available python package for scientists to create stable, self-contained visualizations
+        for their own single-cell datasets
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: docs/basic_usage.rst
+      lines: 26-29
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/docs/basic_usage.rst#L26-L29
+      label: 'docs/basic_usage.rst L26-29: no backend server needed'
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    - evidence/screens/gaps/capture_ucsc.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  lazy:
+    mark: Y
+    reason: >-
+      Expression is fetched one gene at a time by HTTP byte range (11.7 kB of a 111 MB matrix for Mpo);
+      coordinates and metadata load whole.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Opening `?ds=bm_demo&gene=Mpo` fetches `exprMatrix.json` (index) and then `exprMatrix.bin?Mpo` with `Range: bytes=70955997-70967724`: **11,728 bytes** of a 111,110,566-byte matrix file. Portal: `curl -r 1961463-1963955 .../brain-spatial-omics/p21/exprMatrix.bin` (offsets for Mbp from `exprMatrix.json`) returns 206 with 2,493 bytes of a 199 MB file. *Steps:* Network tab while opening a gene. *Evidence:* Observation (request log in matrix_check.py output)
+
+      **Source and docs.** Per-gene HTTP `Range` requests: `JS/cbData.js` [L192-224](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cbData.js#L192); `docs/advanced.rst` L10-13 (server must support byte ranges). Live: 206 on a range read of the 27.8 GB PanSci `exprMatrix.bin`. Note that coordinates and each metadata field are fetched whole.
+
+      **Scale group.** **Lazy, in the browser.** Expression is fetched one gene at a time by HTTP byte range from a static file; nothing loads the whole matrix. Coordinates for the active layout and each viewed metadata field are downloaded whole (174 MB of coordinates for PanSci). Without byte-range support the viewer falls back to full downloads and warns above 30 MB. For datasets above 200,000 cells only the first quick gene is preloaded. Evidence: `JS/cbData.js` [L222-224](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cbData.js#L222), [L286-294](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cbData.js#L286), [L1231](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cbData.js#L1231); `JS/cellBrowser.js` [L10692-10693](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L10692).
+    evidence:
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cbData.js
+      lines: '192'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cbData.js#L192
+      label: L192-224
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cbData.js
+      lines: '222'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cbData.js#L222
+      label: L222-224
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cbData.js
+      lines: '286'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cbData.js#L286
+      label: L286-294
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cbData.js
+      lines: '1231'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cbData.js#L1231
+      label: L1231
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js
+      lines: '10692'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L10692
+      label: L10692-10693
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    - evidence/screens/gaps/capture2_ucsc.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  every_cell:
+    mark: Y
+    reason: Every cell is drawn (WebGL above 200,000 cells); only side plots such as violins subsample.
+    detail: >-
+      **Scale group.** **All cells drawn.** No downsampling, binning or density mode for the embedding.
+      Above 200,000 cells the viewer switches to WebGL by default (`?drawMode=` overrides) and calls `gl.drawArrays(POINTS,
+      0, count)` over every cell. Downsampling exists only in side plots: violin plots sample 10,000 values
+      per group, and DE subsamples 5,000 cells per group by default. Evidence: `JS/cellBrowser.js` [L8111-8113](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L8111);
+      `JS/maxPlot.js` [L2228-2263](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js#L2228);
+      violin sampling `JS/cellBrowser.js` [L9324-9328](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L9324).
+    evidence:
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js
+      lines: '8111'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L8111
+      label: L8111-8113
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js
+      lines: '2228'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js#L2228
+      label: L2228-2263
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js
+      lines: '9324'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L9324
+      label: L9324-9328
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+  subset:
+    mark: P
+    reason: >-
+      'Hide selected' and 'Only show selected' change the plot only; coordinates and gene values are still
+      fetched for all cells.
+    detail: |-
+      **Scale group.** **Yes, view-only.** After a selection (lasso, box, Find Cells, legend), "Hide selected", "Only show selected" and "Show all" hide or restore cells in the plot. No recompute of embedding on the subset, and no downsample slider. Evidence: `JS/cellBrowser.js` [L2244-2265](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L2244), [L2316-2318](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L2316); `JS/maxPlot.js` [L3700-3770](https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js#L3700); `docs/ui/analysis.rst` L13-15.
+
+      **Re-scored under X8 (2026-10-04)**: 'Hide selected' and 'Only show selected' change the plot only; coordinates and gene values are still fetched for all cells.
+    evidence:
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js
+      lines: '2244'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L2244
+      label: L2244-2265
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js
+      lines: '2316'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L2316
+      label: L2316-2318
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js
+      lines: '3700'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js#L3700
+      label: L3700-3770
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 2 Features
+      quote: >-
+        Cells can be selected, either by visually selecting groups or by combining one or more metadata-based
+        filters (Edit > Find Cells).
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Selection is described; the paper does not mention hiding or showing only the selection (Hide
+        selected / Only show selected, on which the Y mark rests).
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture2_ucsc.py
+  auto_subset:
+    reason: >-
+      Every cell is drawn (21,786,931 points in one draw call on PanSci, checked 2026-10-04); above 200,000
+      cells it switches to WebGL, not to a subset.
+    detail: >-
+      **New column (user X8, 2026-10-04).** Every cell is drawn (21,786,931 points in one draw call on
+      PanSci, checked 2026-10-04); above 200,000 cells it switches to WebGL, not to a subset. Evidence
+      is the same as for every cell drawn, which shows how the default view is drawn.
+    evidence:
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js
+      lines: '8111'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L8111
+      label: L8111-8113
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js
+      lines: '2228'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/maxPlot.js#L2228
+      label: L2228-2263
+    - kind: code
+      repo: ucscGenomeBrowser/cellBrowser
+      commit: a11af81299cc13dfe1ab7b063f03205b75b13913
+      path: src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js
+      lines: '9324'
+      url: >-
+        https://github.com/ucscGenomeBrowser/cellBrowser/blob/a11af81299cc13dfe1ab7b063f03205b75b13913/src/cbPyLib/cellbrowser/cbWeb/js/cellBrowser.js#L9324
+      label: L9324-9328
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: N
+retired_cells:
+  filters:
+    mark: P
+    reason: >-
+      Legend checkboxes and Find Cells select cells, and "Only show selected" hides the rest, but on one
+      plot and with no table, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Ticking `Neutrophil` in the legend selects 2,221 cells ("2.2k selected (27%)"). The toolbar then offers Hide selected / Only show selected / Show all, and "Only show selected" leaves "2.2k of 8.1k cells shown". This is legend and Find cells selection on one plot, with no table, so P stands. *Steps:* Tick the checkbox left of `Neutrophil` in the legend; click "Only show selected". *Evidence:* [select](screens/ucsc-cell-browser/m08_filters_legend_checkbox_selects.jpg), [only show](screens/ucsc-cell-browser/m08_filters_only_show_selected.jpg)
+
+      **Source and docs.** Edit > Find Cells and legend checkboxes select by metadata or expression (`docs/ui/analysis.rst` L24-32), then Hide selected / Only show selected. No table, and only one plot to mask.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m08_filters_legend_checkbox_selects.jpg
+      label: select
+    - kind: screenshot
+      path: notes/comparison/screens/ucsc-cell-browser/m08_filters_only_show_selected.jpg
+      label: only show
+    - kind: paper
+      url: https://doi.org/10.1093/bioinformatics/btab503
+      label: Speir et al. 2021, Bioinformatics 37(23):4578-4580
+      where: 2 Features
+      quote: >-
+        Cells can be selected, either by visually selecting groups or by combining one or more metadata-based
+        filters (Edit > Find Cells).
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Metadata filters produce a selection on the one scatter plot; no table.
+    reproduce:
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check.py
+    - notes/comparison/demos/ucsc-cell-browser/matrix_check2.py
+    - evidence/screens/gaps/capture2_ucsc.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app

@@ -1,0 +1,333 @@
+# Save Page Now results (evidence/tools/archive_save.py; approved 2026-10-04, P3)
+https://annzarro.readthedocs.io:
+  archive: https://web.archive.org/web/20261004192320/https://annzarro.readthedocs.io
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/data/chunking.html:
+  archive: https://web.archive.org/web/20261004192357/https://annzarro.readthedocs.io/en/latest/data/chunking.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/data/pairwise-matrices.html:
+  archive: https://web.archive.org/web/20261005042620/https://annzarro.readthedocs.io/en/latest/data/pairwise-matrices.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/data/slot-map.html:
+  archive: https://web.archive.org/web/20261004195015/https://annzarro.readthedocs.io/en/latest/data/slot-map.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/deployment/lab-server.html:
+  archive: https://web.archive.org/web/20261004195554/https://annzarro.readthedocs.io/en/latest/deployment/lab-server.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/deployment/modes.html:
+  archive: https://web.archive.org/web/20261004195728/https://annzarro.readthedocs.io/en/latest/deployment/modes.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/getting-started/desktop-app.html:
+  archive: https://web.archive.org/web/20261004195805/https://annzarro.readthedocs.io/en/latest/getting-started/desktop-app.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/reference/architecture.html:
+  archive: https://web.archive.org/web/20261004195844/https://annzarro.readthedocs.io/en/latest/reference/architecture.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/tutorials/gene-similarity.html:
+  archive: https://web.archive.org/web/20261004195954/https://annzarro.readthedocs.io/en/latest/tutorials/gene-similarity.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/user-guide/cell-and-gene-plots.html:
+  archive: https://web.archive.org/web/20261004200031/https://annzarro.readthedocs.io/en/latest/user-guide/cell-and-gene-plots.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/user-guide/export.html:
+  archive: https://web.archive.org/web/20261004215632/https://annzarro.readthedocs.io/en/latest/user-guide/export.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/user-guide/focus-and-lock.html:
+  archive: https://web.archive.org/web/20261004203208/https://annzarro.readthedocs.io/en/latest/user-guide/focus-and-lock.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/user-guide/interface.html:
+  archive: https://web.archive.org/web/20261004203247/https://annzarro.readthedocs.io/en/latest/user-guide/interface.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/user-guide/panel-sets.html:
+  archive: https://web.archive.org/web/20261004203404/https://annzarro.readthedocs.io/en/latest/user-guide/panel-sets.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/user-guide/remote-datasets.html:
+  archive: https://web.archive.org/web/20261004220705/https://annzarro.readthedocs.io/en/latest/user-guide/remote-datasets.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/user-guide/share-links.html:
+  archive: https://web.archive.org/web/20261004211035/https://annzarro.readthedocs.io/en/latest/user-guide/share-links.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/user-guide/spatial-coordinates.html:
+  archive: https://web.archive.org/web/20261004211116/https://annzarro.readthedocs.io/en/latest/user-guide/spatial-coordinates.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/user-guide/subsets.html:
+  archive: https://web.archive.org/web/20261004211154/https://annzarro.readthedocs.io/en/latest/user-guide/subsets.html
+  saved: '2026-10-04'
+  status: 200
+https://annzarro.readthedocs.io/en/latest/user-guide/tables-and-filters.html:
+  archive: https://web.archive.org/web/20261004211734/https://annzarro.readthedocs.io/en/latest/user-guide/tables-and-filters.html
+  saved: '2026-10-04'
+  status: 200
+https://cells.ucsc.edu/?ds=adultPancreas:
+  archive: null
+  saved: '2026-10-04'
+  status: 429
+https://cells.ucsc.edu/?ds=brain-spatial-omics:
+  archive: https://web.archive.org/web/20261005013743/https://cells.ucsc.edu/?ds=brain-spatial-omics
+  saved: '2026-10-04'
+  status: 200
+https://cells.ucsc.edu/?ds=brain-spatial-omics+p21:
+  archive: https://web.archive.org/web/20261005020346/https://cells.ucsc.edu/?ds=brain-spatial-omics+p21
+  saved: '2026-10-04'
+  status: 200
+https://cells.ucsc.edu/?ds=mouse-pansci+all:
+  archive: https://web.archive.org/web/20261005020422/https://cells.ucsc.edu/?ds=mouse-pansci+all
+  saved: '2026-10-04'
+  status: 200
+https://cells.ucsc.edu/?ds=whole-brain-perturb+combined:
+  archive: null
+  saved: '2026-10-04'
+  status: 429
+https://cells.ucsc.edu/cb.conf:
+  archive: https://web.archive.org/web/20261005053407/https://cells.ucsc.edu/cb.conf
+  saved: '2026-10-04'
+  status: 200
+https://cellxgene.cziscience.com/e/85585f3f-d16a-412d-b93a-406d52721221.cxg/:
+  archive: https://web.archive.org/web/20261005054443/https://cellxgene.cziscience.com/e/85585f3f-d16a-412d-b93a-406d52721221.cxg/
+  saved: '2026-10-04'
+  status: 200
+https://cirrocumulus-dot-broad-cumulus.appspot.com:
+  archive: null
+  saved: '2026-10-04'
+  status: 404
+https://doi.org/10.1038/s41592-024-02436-x:
+  archive: https://web.archive.org/web/20261005055101/https://doi.org/10.1038/s41592-024-02436-x
+  saved: '2026-10-04'
+  status: 200
+https://doi.org/10.1101/2020.10.25.354100:
+  archive: null
+  saved: '2026-10-04'
+  status: 520
+https://doi.org/10.1126/science.adn3949:
+  archive: null
+  saved: '2026-10-04'
+  status: 523
+https://doi.org/10.12688/f1000research.161076.1:
+  archive: null
+  saved: '2026-10-04'
+  status: 523
+https://doi.org/10.17504/protocols.io.n92ld6qk8g5b/v1:
+  archive: null
+  saved: '2026-10-04'
+  status: 523
+https://eurobioc2023.bioconductor.org/abstracts/paper15/:
+  archive: https://web.archive.org/web/20261005055912/https://eurobioc2023.bioconductor.org/abstracts/paper15/
+  saved: '2026-10-04'
+  status: 200
+https://europepmc.org/article/PMC/PMC6086935:
+  archive: null
+  saved: '2026-10-04'
+  status: 523
+https://flycellatlas.org/scope:
+  archive: null
+  saved: '2026-10-04'
+  status: 523
+https://git.bioconductor.org/packages/iSEEfier:
+  archive: https://web.archive.org/web/20251121172026/https://git.bioconductor.org/packages/iSEEfier
+  saved: '2026-10-04'
+  status: 200
+https://github.com/10xGenomics/loupeR/tree/b1cba07374f7326c6a69fddc2405e17157cb93de:
+  archive: https://web.archive.org/web/20261005060718/https://github.com/10xGenomics/loupeR/tree/b1cba07374f7326c6a69fddc2405e17157cb93de
+  saved: '2026-10-04'
+  status: 200
+https://github.com/aertslab/SCope/releases:
+  archive: https://web.archive.org/web/20261005060801/https://github.com/aertslab/SCope/releases
+  saved: '2026-10-04'
+  status: 200
+https://github.com/aertslab/SCope/wiki:
+  archive: https://web.archive.org/web/20261005061428/https://github.com/aertslab/SCope/wiki
+  saved: '2026-10-04'
+  status: 200
+https://github.com/chanzuckerberg/single-cell-explorer:
+  archive: https://web.archive.org/web/20261005061519/https://github.com/chanzuckerberg/single-cell-explorer
+  saved: '2026-10-04'
+  status: 200
+https://github.com/kanaverse/bakana:
+  archive: https://web.archive.org/web/20261005061604/https://github.com/kanaverse/bakana
+  saved: '2026-10-04'
+  status: 200
+https://github.com/kanaverse/bakana-remotes:
+  archive: https://web.archive.org/web/20261005062150/https://github.com/kanaverse/bakana-remotes
+  saved: '2026-10-04'
+  status: 200
+https://github.com/kanaverse/kana:
+  archive: null
+  saved: '2026-10-04'
+  status: 520
+https://github.com/kanaverse/kana/tree/ecb0360c5e00200ed9cee2d73d45725e93d53a39/src/components/NewAnalysis:
+  archive: https://web.archive.org/web/20261005063755/https://github.com/kanaverse/kana/tree/ecb0360c5e00200ed9cee2d73d45725e93d53a39/src/components/NewAnalysis
+  saved: '2026-10-04'
+  status: 200
+https://github.com/kanaverse/kana/wiki/How-to-interactively-explore-results:
+  archive: null
+  saved: '2026-10-05'
+  status: 429
+https://github.com/kanaverse/kana/wiki/How-to-load-datasets:
+  archive: null
+  saved: '2026-10-05'
+  status: 429
+https://github.com/kanaverse/scran.js:
+  archive: https://web.archive.org/web/20261005074056/https://github.com/kanaverse/scran.js
+  saved: '2026-10-05'
+  status: 200
+https://github.com/kanaverse/wobbegong-kana:
+  archive: https://web.archive.org/web/20261005074632/https://github.com/kanaverse/wobbegong-kana
+  saved: '2026-10-05'
+  status: 200
+https://github.com/settylab/annzarro/releases/tag/v0.2.0:
+  archive: null
+  saved: '2026-10-05'
+  status: 520
+https://github.com/the-ouyang-lab/ShinyCell2-tutorial:
+  archive: https://web.archive.org/web/20261005075237/https://github.com/the-ouyang-lab/ShinyCell2-tutorial
+  saved: '2026-10-05'
+  status: 200
+https://gypsum.artifactdb.com:
+  archive: null
+  saved: '2026-10-05'
+  status: 429
+https://htmlpreview.github.io/?https://github.com/SGDDNB/ShinyCell/blob/master/docs/4cloud.html:
+  archive: https://web.archive.org/web/20261005083056/https://htmlpreview.github.io/?https://github.com/SGDDNB/ShinyCell/blob/master/docs/4cloud.html
+  saved: '2026-10-05'
+  status: 200
+https://htmlpreview.github.io/?https://github.com/the-ouyang-lab/ShinyCell2-tutorial/master/docs/tutCiteseq.html:
+  archive: https://web.archive.org/web/20261005083133/https://htmlpreview.github.io/?https://github.com/the-ouyang-lab/ShinyCell2-tutorial/master/docs/tutCiteseq.html
+  saved: '2026-10-05'
+  status: 200
+https://htmlpreview.github.io/?https://github.com/the-ouyang-lab/ShinyCell2-tutorial/master/docs/tutSpatial.html:
+  archive: https://web.archive.org/web/20261005083712/https://htmlpreview.github.io/?https://github.com/the-ouyang-lab/ShinyCell2-tutorial/master/docs/tutSpatial.html
+  saved: '2026-10-05'
+  status: 200
+https://isee.github.io/iSEE/articles/bigdata.html:
+  archive: https://web.archive.org/web/20261005083751/https://isee.github.io/iSEE/articles/bigdata.html
+  saved: '2026-10-05'
+  status: 200
+https://isee.github.io/iSEE/articles/links.html:
+  archive: null
+  saved: '2026-10-05'
+  status: 520
+https://raw.githubusercontent.com/openjournals/joss-papers/master/joss.05603/10.21105.joss.05603.pdf:
+  archive: https://web.archive.org/web/20261005083854/https://raw.githubusercontent.com/openjournals/joss-papers/master/joss.05603/10.21105.joss.05603.pdf
+  saved: '2026-10-05'
+  status: 200
+https://rehwinkellab.shinyapps.io/ifnresource/:
+  archive: https://web.archive.org/web/20261005084017/https://rehwinkellab.shinyapps.io/ifnresource/
+  saved: '2026-10-05'
+  status: 202
+https://satijalab.org/seurat/reference/featureplot:
+  archive: https://web.archive.org/web/20261005084056/https://satijalab.org/seurat/reference/featureplot
+  saved: '2026-10-05'
+  status: 200
+https://shiny.posit.co/r/gallery/life-sciences/isee/:
+  archive: https://web.archive.org/web/20261005084142/https://shiny.posit.co/r/gallery/life-sciences/isee/
+  saved: '2026-10-05'
+  status: 200
+https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP2805/explore:
+  archive: https://web.archive.org/web/20261005084223/https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP2805/explore
+  saved: '2026-10-05'
+  status: 200
+? https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP383/clusters/1M%20cell%20clusters?annotation_name=Cluster&annotation_scope=study&annotation_type=group&fields=expression&gene=Sox2&subsample=all
+: archive: https://web.archive.org/web/20261005084251/https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP383/clusters/1M%20cell%20clusters?annotation_name=Cluster&annotation_scope=study&annotation_type=group&fields=expression&gene=Sox2&subsample=all
+  saved: '2026-10-05'
+  status: 200
+https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP383/clusters/1M%20cell%20clusters?fields=coordinates:
+  archive: https://web.archive.org/web/20261005084320/https://singlecell.broadinstitute.org/single_cell/api/v1/studies/SCP383/clusters/1M%20cell%20clusters?fields=coordinates
+  saved: '2026-10-05'
+  status: 200
+https://singlecell.broadinstitute.org/single_cell/study/SCP2510:
+  archive: https://web.archive.org/web/20261005084350/https://singlecell.broadinstitute.org/single_cell/study/SCP2510
+  saved: '2026-10-05'
+  status: 200
+https://singlecell.broadinstitute.org/single_cell/study/SCP383:
+  archive: https://web.archive.org/web/20261005084501/https://singlecell.broadinstitute.org/single_cell/study/SCP383
+  saved: '2026-10-05'
+  status: 200
+https://singlecell.broadinstitute.org/single_cell/study/SCP383?genes=Sox2:
+  archive: https://web.archive.org/web/20261005084543/https://singlecell.broadinstitute.org/single_cell/study/SCP383?genes=Sox2
+  saved: '2026-10-05'
+  status: 200
+https://singlecell.zendesk.com/hc/en-us/articles/10994355298331-Spatial-transcriptomics:
+  archive: https://web.archive.org/web/20261005084628/https://singlecell.zendesk.com/hc/en-us/articles/10994355298331-Spatial-transcriptomics
+  saved: '2026-10-05'
+  status: 200
+https://singlecell.zendesk.com/hc/en-us/articles/28157597291291-Pre-computed-differential-expression-DE:
+  archive: https://web.archive.org/web/20261005084707/https://singlecell.zendesk.com/hc/en-us/articles/28157597291291-Pre-computed-differential-expression-DE
+  saved: '2026-10-05'
+  status: 200
+https://singlecell.zendesk.com/hc/en-us/articles/360060610032-Cluster-file-subsampling:
+  archive: https://web.archive.org/web/20261005084745/https://singlecell.zendesk.com/hc/en-us/articles/360060610032-Cluster-file-subsampling
+  saved: '2026-10-05'
+  status: 200
+https://spatialdata.scverse.org/en/stable/tutorials/notebooks/notebooks/examples/napari_rois.html:
+  archive: https://web.archive.org/web/20261005084824/https://spatialdata.scverse.org/en/stable/tutorials/notebooks/notebooks/examples/napari_rois.html
+  saved: '2026-10-05'
+  status: 200
+https://spatialdata.scverse.org/projects/napari/en/stable/:
+  archive: https://web.archive.org/web/20261005084902/https://spatialdata.scverse.org/projects/napari/en/stable/
+  saved: '2026-10-05'
+  status: 200
+https://unpkg.com/vega-embed@6/build/vega-embed.js:
+  archive: null
+  saved: '2026-10-05'
+  status: 523
+https://vitessce-data.storage.googleapis.com/:
+  archive: null
+  saved: '2026-10-05'
+  status: 404
+https://vitessce.io/blog/spatial-elements/:
+  archive: https://web.archive.org/web/20261005085118/https://vitessce.io/blog/spatial-elements/
+  saved: '2026-10-05'
+  status: 200
+https://vitessce.io/demos/:
+  archive: null
+  saved: '2026-10-05'
+  status: 520
+https://vitessce.io/docs/tutorial-gh-pages/:
+  archive: https://web.archive.org/web/20261005085317/https://vitessce.io/docs/tutorial-gh-pages/
+  saved: '2026-10-05'
+  status: 200
+https://vitessce.io/examples/:
+  archive: null
+  saved: '2026-10-05'
+  status: 520
+https://www.10xgenomics.com/support/software/loupe-browser:
+  archive: null
+  saved: '2026-10-05'
+  status: 520
+https://www.10xgenomics.com/support/software/loupe-browser/downloads:
+  archive: null
+  saved: '2026-10-05'
+  status: 520
+https://www.10xgenomics.com/support/software/loupe-browser/latest/release-notes/lb-release-notes:
+  archive: null
+  saved: '2026-10-05'
+  status: 520
+https://www.10xgenomics.com/support/software/loupe-browser/latest/tutorials/introduction/lb-louper:
+  archive: null
+  saved: '2026-10-05'
+  status: 520
+https://www.nature.com/articles/s41592-024-02212-x:
+  archive: https://web.archive.org/web/20261005085555/https://www.nature.com/articles/s41592-024-02212-x
+  saved: '2026-10-05'
+  status: 200
+https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC7437817/unicode:
+  archive: https://web.archive.org/web/20261005085637/https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC7437817/unicode
+  saved: '2026-10-05'
+  status: 200

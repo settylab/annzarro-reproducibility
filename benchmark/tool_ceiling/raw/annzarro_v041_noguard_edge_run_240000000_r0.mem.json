@@ -1,0 +1,155 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_240000000.zarr",
+  "$TMPDIR/sw_v041/benchmark/tool_ceiling/shots/annzarro_v041_noguard_edge_run_240000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "78c9da657ecbff30163fd29055f0e6b10e915c5c",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--guard-off",
+  "--heap-series"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 61.72,
+ "peaks": {
+  "client": {
+   "fp_peak": 19496109176,
+   "fp_lifetime_sum": 19731564816,
+   "rss_peak": 20018233344,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 9410813680,
+   "fp_lifetime_sum": 9463063096,
+   "rss_peak": 9429221376,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 134940408,
+   "fp_lifetime_sum": 135120632,
+   "rss_peak": 170213376,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 28875350864,
+   "rss_peak": 29415931904,
+   "fp_lifetime_sum": 29194627912
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.42,
+   1336796304
+  ],
+  [
+   5.04,
+   12381474568
+  ],
+  [
+   7.62,
+   14874679520
+  ],
+  [
+   10.27,
+   18247773304
+  ],
+  [
+   12.87,
+   21443378712
+  ],
+  [
+   15.59,
+   27733417392
+  ],
+  [
+   18.2,
+   24553331040
+  ],
+  [
+   20.72,
+   21691077088
+  ],
+  [
+   23.21,
+   21690700256
+  ],
+  [
+   25.86,
+   21691339232
+  ],
+  [
+   28.34,
+   21691683296
+  ],
+  [
+   30.83,
+   21730775544
+  ],
+  [
+   33.33,
+   7977298224
+  ],
+  [
+   35.84,
+   7977494832
+  ],
+  [
+   38.25,
+   7977822512
+  ],
+  [
+   40.87,
+   7978051888
+  ],
+  [
+   43.39,
+   7978314032
+  ],
+  [
+   45.95,
+   7978346800
+  ],
+  [
+   48.41,
+   7978363184
+  ],
+  [
+   50.83,
+   7978445104
+  ],
+  [
+   53.3,
+   7978608944
+  ],
+  [
+   55.74,
+   7978625328
+  ],
+  [
+   58.3,
+   7978133808
+  ],
+  [
+   60.8,
+   7978412336
+  ]
+ ],
+ "ps_before": "2026-10-08T00:53:37-0700\nmemorystatus_level=93 swap=total = 5120.00M  used = 3960.19M  free = 1159.81M  (encrypted)\n15697  19856  11.0 .venv/bin/python\n57113 3391776   4.9 $HOME/.local/bin/claude\n80588 629280   4.6 $HOME/.local/bin/claude\n47413 715648   3.9 /Applications/cmux.app/Contents/MacOS/cmux\n15708  21072   3.0 $TMPDIR/sw_v041/benchmark/tool_ceiling/.venv/bin/python\n15699   1232   1.6 /usr/bin/lockf\n92291  30816   1.4 .venv/bin/python\n15700   2240   1.3 /bin/sh\n 4725 753312   1.0 claude\n  734  49696   0.8 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n",
+ "others_at_start": [
+  "15699 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "15700 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for"
+ ]
+}

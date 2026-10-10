@@ -1,0 +1,5960 @@
+{
+ "jobs": {
+  "10011130:real_post/real_hpctemp.env_10011130.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "0172a6c0bcc648c8257c556328db19bfda5ff2c4",
+   "bench_dirty": "M benchmark/hpc/scripts/collect.py",
+   "captured_at": "2026-10-03T05:08:44.236-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/real": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1647265841152 1164091907072 483173934080      71% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-28",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221196 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "10011130",
+   "slurm_mem_per_node_mb": "65536",
+   "slurm_partition": "<partition>"
+  },
+  "10011131:real_post/real_hpctemp.env_10011131.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "0172a6c0bcc648c8257c556328db19bfda5ff2c4",
+   "bench_dirty": "M benchmark/hpc/scripts/collect.py",
+   "captured_at": "2026-10-03T05:41:39.502-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/real": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1648095920128 1165398968320 482696951808      71% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-33",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221096 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "10011131",
+   "slurm_mem_per_node_mb": "131072",
+   "slurm_partition": "<partition>"
+  },
+  "9976358:smoke/smoke.env_9976358.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "5e44f7dc76f442305bdeae20f4b8f719bcbd5a0a",
+   "bench_dirty": "?? benchmark/hpc/scripts/bench_http.py\n?? benchmark/hpc/scripts/bench_raw.py\n?? benchmark/hpc/scripts/benchlib.py\n?? benchmark/hpc/scripts/build_pairwise.py\n?? benchmark/hpc/scripts/make_specs.py\n?? benchmark/hpc/scripts/rechunk_layer.py\n?? benchmark/hpc/scripts/wsgi_bench.py",
+   "captured_at": "2026-10-01T17:19:49.341-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$DATA_ROOT/lab-data/data/processed_zarr": {
+     "df": "filer:/export/fast/lab nfs  11381797438976 8479489214976 2674894576128      77% $DATA_ROOT",
+     "mount": "filer:/export/fast/lab nfs rw,nosuid,nodev,relatime,vers=3,rsize=131072,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=hpc-ip,mountvers=3,mountport=300,mountproto=udp,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-08",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       758965272 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9976358",
+   "slurm_mem_per_node_mb": "65536",
+   "slurm_partition": "<partition>"
+  },
+  "9976382:real/real_fhfast.env_9976382.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "30cf2d291ed77b0888746bf221e108c88b3bd52c",
+   "bench_dirty": "M benchmark/hpc/scripts/make_specs.py",
+   "captured_at": "2026-10-01T17:25:39.323-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$DATA_ROOT/lab-data/data/processed_zarr": {
+     "df": "filer:/export/fast/lab nfs  11381797438976 8479845627904 2674538163200      77% $DATA_ROOT",
+     "mount": "filer:/export/fast/lab nfs rw,nosuid,nodev,relatime,vers=3,rsize=131072,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=hpc-ip,mountvers=3,mountport=300,mountproto=udp,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-16",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221260 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9976382",
+   "slurm_mem_per_node_mb": "65536",
+   "slurm_partition": "<partition>"
+  },
+  "9976383:real/real_rows_fhfast.env_9976383.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "30cf2d291ed77b0888746bf221e108c88b3bd52c",
+   "bench_dirty": "M benchmark/hpc/scripts/make_specs.py",
+   "captured_at": "2026-10-01T17:25:41.190-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$DATA_ROOT/lab-data/data/processed_zarr": {
+     "df": "filer:/export/fast/lab nfs  11381797438976 8479843230720 2674540560384      77% $DATA_ROOT",
+     "mount": "filer:/export/fast/lab nfs rw,nosuid,nodev,relatime,vers=3,rsize=131072,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=hpc-ip,mountvers=3,mountport=300,mountproto=udp,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-18",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       758965264 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9976383",
+   "slurm_mem_per_node_mb": "131072",
+   "slurm_partition": "<partition>"
+  },
+  "9976397:chunksweep/http.env_9976397.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "30cf2d291ed77b0888746bf221e108c88b3bd52c",
+   "bench_dirty": "M benchmark/hpc/scripts/make_specs.py",
+   "captured_at": "2026-10-01T17:27:38.964-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$DATA_ROOT/lab-data/data/processed_zarr": {
+     "df": "filer:/export/fast/lab nfs  11381797438976 8479851900928 2674531890176      77% $DATA_ROOT",
+     "mount": "filer:/export/fast/lab nfs rw,nosuid,nodev,relatime,vers=3,rsize=131072,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=hpc-ip,mountvers=3,mountport=300,mountproto=udp,local_lock=none,addr=hpc-ip"
+    },
+    "$SCRATCH/annzarro-bench/data/chunksweep": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1640648146944 1149349351424 491298795520      71% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-17",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221236 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9976397",
+   "slurm_mem_per_node_mb": "65536",
+   "slurm_partition": "<partition>"
+  },
+  "9976781:pairwise/http_kernels.env_9976781.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "30cf2d291ed77b0888746bf221e108c88b3bd52c",
+   "bench_dirty": "M benchmark/hpc/scripts/build_pairwise.py\n M benchmark/hpc/scripts/make_specs.py\n?? benchmark/hpc/scripts/summarize.py",
+   "captured_at": "2026-10-01T17:49:49.374-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/pairwise": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1641301803008 1150144204800 491157598208      71% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-22",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221188 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9976781",
+   "slurm_mem_per_node_mb": "65536",
+   "slurm_partition": "<partition>"
+  },
+  "9976799:fsarm/env_fhfast_9976799.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "2cbb96431b1242360a4c59ef6f144c15fed27aa4",
+   "bench_dirty": "",
+   "captured_at": "2026-10-01T18:03:00.565-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "72",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$DATA_ROOT/lab-data/data/processed_zarr": {
+     "df": "filer:/export/fast/lab nfs  11381797438976 8480965109248 2673418681856      77% $DATA_ROOT",
+     "mount": "filer:/export/fast/lab nfs rw,nosuid,nodev,relatime,vers=3,rsize=131072,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=hpc-ip,mountvers=3,mountport=300,mountproto=udp,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-07",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791211608 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9976799",
+   "slurm_mem_per_node_mb": "98304",
+   "slurm_partition": "<partition>"
+  },
+  "9976799:fsarm/env_hpctemp_9976799.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "2cbb96431b1242360a4c59ef6f144c15fed27aa4",
+   "bench_dirty": "",
+   "captured_at": "2026-10-01T18:08:26.330-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "72",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/fsarm": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1624146968576 1150812255232 473334713344      71% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-07",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791211608 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9976799",
+   "slurm_mem_per_node_mb": "98304",
+   "slurm_partition": "<partition>"
+  },
+  "9976799:fsarm/env_tmpfs_9976799.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "2cbb96431b1242360a4c59ef6f144c15fed27aa4",
+   "bench_dirty": "",
+   "captured_at": "2026-10-01T18:19:46.091-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "72",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "/loc/scratch/9976799": {
+     "df": "tmpfs          tmpfs   395605804 16937856 378667948       5% /",
+     "mount": "tmpfs[/newroot] tmpfs rw,nosuid,nodev,relatime,uid=71780,gid=71780"
+    }
+   },
+   "hostname": "hpc-node-07",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791211608 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9976799",
+   "slurm_mem_per_node_mb": "98304",
+   "slurm_partition": "<partition>"
+  },
+  "9978406:pairwise/http_dist_corr.env_9978406.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "2cbb96431b1242360a4c59ef6f144c15fed27aa4",
+   "bench_dirty": "M benchmark/hpc/scripts/bench_http.py\n M benchmark/hpc/scripts/build_pairwise.py\n M benchmark/hpc/scripts/make_specs.py\n?? benchmark/hpc/scripts/bench_concurrency.py",
+   "captured_at": "2026-10-01T20:07:59.451-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/pairwise": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1628099837952 1153911457792 474188380160      71% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-34",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221208 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9978406",
+   "slurm_mem_per_node_mb": "65536",
+   "slurm_partition": "<partition>"
+  },
+  "9979078:atlas/http.env_9979078.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "2cbb96431b1242360a4c59ef6f144c15fed27aa4",
+   "bench_dirty": "M benchmark/hpc/scripts/bench_http.py\n M benchmark/hpc/scripts/build_pairwise.py\n M benchmark/hpc/scripts/make_specs.py\n?? benchmark/hpc/scripts/bench_concurrency.py",
+   "captured_at": "2026-10-01T20:36:06.295-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/atlas_rechunked": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1628763455488 1154619023360 474144432128      71% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-45",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221200 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9979078",
+   "slurm_mem_per_node_mb": "131072",
+   "slurm_partition": "<partition>"
+  },
+  "9979171:real/real_fhfast_rerun.env_9979171.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "deae42df43192bdd63d26ff70c5a3290f6b5670a",
+   "bench_dirty": "M benchmark/hpc/scripts/collect.py",
+   "captured_at": "2026-10-02T02:00:29.107-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$DATA_ROOT/lab-data/data/processed_zarr": {
+     "df": "filer:/export/fast/lab nfs  11381797438976 8497941585408 2656442205696      77% $DATA_ROOT",
+     "mount": "filer:/export/fast/lab nfs rw,nosuid,nodev,relatime,vers=3,rsize=131072,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=hpc-ip,mountvers=3,mountport=300,mountproto=udp,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-11",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221240 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9979171",
+   "slurm_mem_per_node_mb": "65536",
+   "slurm_partition": "<partition>"
+  },
+  "9980190:atlas/http_aspect.env_9980190.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "deae42df43192bdd63d26ff70c5a3290f6b5670a",
+   "bench_dirty": "M benchmark/hpc/scripts/collect.py",
+   "captured_at": "2026-10-02T00:08:20.645-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/atlas_rechunked": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1632051789824 1157360730112 474691059712      71% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-44",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221192 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9980190",
+   "slurm_mem_per_node_mb": "65536",
+   "slurm_partition": "<partition>"
+  },
+  "9987982:post/chunksweep/http.env_9987982.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "10f0eca48e67b07d400dbd4d5138f13cc77c3e8e",
+   "bench_dirty": "M benchmark/hpc/scripts/collect.py",
+   "captured_at": "2026-10-02T12:29:47.408-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/chunksweep": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1630179033088 1164740079616 465438953472      72% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-06",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       725934760 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9987982",
+   "slurm_mem_per_node_mb": "65536",
+   "slurm_partition": "<partition>"
+  },
+  "9987992:post/pairwise/http.env_9987992.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
+   "bench_dirty": "",
+   "captured_at": "2026-10-02T13:15:54.739-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/pairwise": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1630000381952 1167216572416 462783809536      72% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-09",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221152 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9987992",
+   "slurm_mem_per_node_mb": "65536",
+   "slurm_partition": "<partition>"
+  },
+  "9987994:post/fsarm/env_hpctemp_9987994.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
+   "bench_dirty": "",
+   "captured_at": "2026-10-02T16:11:54.969-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/fsarm": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1630249287680 1175600840704 454648446976      73% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-43",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221204 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9987994",
+   "slurm_mem_per_node_mb": "98304",
+   "slurm_partition": "<partition>"
+  },
+  "9987994:post/fsarm/env_tmpfs_9987994.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
+   "bench_dirty": "",
+   "captured_at": "2026-10-02T16:20:29.517-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "/loc/scratch/9987994": {
+     "df": "tmpfs          tmpfs   395610600 16937856 378672744       5% /",
+     "mount": "tmpfs[/newroot] tmpfs rw,nosuid,nodev,relatime,uid=71780,gid=71780"
+    }
+   },
+   "hostname": "hpc-node-43",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221204 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9987994",
+   "slurm_mem_per_node_mb": "98304",
+   "slurm_partition": "<partition>"
+  },
+  "9987997:real_post/real_hpctemp.env_9987997.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
+   "bench_dirty": "",
+   "captured_at": "2026-10-02T16:34:52.101-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "36",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/real": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1630063689728 1176227066880 453836622848      73% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-29",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791221096 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9987997",
+   "slurm_mem_per_node_mb": "65536",
+   "slurm_partition": "<partition>"
+  },
+  "9987998:real_post/real_hpctemp.env_9987998.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
+   "bench_dirty": "",
+   "captured_at": "2026-10-02T17:06:54.825-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "72",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/real": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1630120050688 1176988053504 453131997184      73% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-07",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791211608 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9987998",
+   "slurm_mem_per_node_mb": "131072",
+   "slurm_partition": "<partition>"
+  },
+  "9987999:real_post/real_tmpfs.env_9987999.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
+   "bench_dirty": "",
+   "captured_at": "2026-10-02T17:37:29.714-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "72",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "/loc/scratch/9987999": {
+     "df": "tmpfs          tmpfs   395605784 6662352 388943432       2% /",
+     "mount": "tmpfs[/newroot] tmpfs rw,nosuid,nodev,relatime,uid=71780,gid=71780"
+    }
+   },
+   "hostname": "hpc-node-05",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791211568 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9987999",
+   "slurm_mem_per_node_mb": "49152",
+   "slurm_partition": "<partition>"
+  },
+  "9988003:real_post/real_tmpfs.env_9988003.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
+   "bench_dirty": "",
+   "captured_at": "2026-10-02T17:44:23.406-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "72",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "/loc/scratch/9988003": {
+     "df": "tmpfs          tmpfs   395605784 62797584 332808200      16% /",
+     "mount": "tmpfs[/newroot] tmpfs rw,nosuid,nodev,relatime,uid=71780,gid=71780"
+    }
+   },
+   "hostname": "hpc-node-05",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791211568 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9988003",
+   "slurm_mem_per_node_mb": "131072",
+   "slurm_partition": "<partition>"
+  },
+  "9988004:real_post/real_tmpfs.env_9988004.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
+   "bench_dirty": "",
+   "captured_at": "2026-10-02T18:01:34.622-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "72",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "/loc/scratch/9988004": {
+     "df": "tmpfs          tmpfs   395605784 64428128 331177656      17% /",
+     "mount": "tmpfs[/newroot] tmpfs rw,nosuid,nodev,relatime,uid=71780,gid=71780"
+    }
+   },
+   "hostname": "hpc-node-05",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791211568 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9988004",
+   "slurm_mem_per_node_mb": "131072",
+   "slurm_partition": "<partition>"
+  },
+  "9988005:post/atlas/http.env_9988005.json": {
+   "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
+   "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
+   "bench_dirty": "",
+   "captured_at": "2026-10-02T18:20:58.380-07:00",
+   "cpu": {
+    "logical_cpus_on_host": "72",
+    "model_name": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "nproc_allowed": "4"
+   },
+   "filesystems": {
+    "$SCRATCH/annzarro-bench/data/atlas_rechunked": {
+     "df": "nfs-scratch-filer:/temp/lab/user nfs4 1641209921536 1144649640960 496560280576      70% $SCRATCH/user",
+     "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
+    }
+   },
+   "hostname": "hpc-node-05",
+   "kernel": "5.4.0-228-generic",
+   "mem_total": "MemTotal:       791211568 kB",
+   "os": "Ubuntu 18.04.6 LTS",
+   "packages": {
+    "annzarro": "0.1.1",
+    "flask": "3.1.3",
+    "gunicorn": "26.2.0",
+    "numcodecs": "0.16.5",
+    "numpy": "2.4.6",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "scipy": "1.17.1",
+    "zarr": "3.1.6"
+   },
+   "python": "3.11.14",
+   "slurm_cpus_on_node": "4",
+   "slurm_job_id": "9988005",
+   "slurm_mem_per_node_mb": "131072",
+   "slurm_partition": "<partition>"
+  }
+ },
+ "specs": {
+  "runs/fsarm/spec_fhfast_9976799.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_fhfast:X_gene_col",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X",
+     "seed_key": "X_gene_col"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_fhfast:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 64,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed",
+     "seed_key": "dense_layer_gene_col:kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "fsarm_fhfast:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 75000,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "fhfast",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed",
+     "seed_key": "dense_layer_cell_row:kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "fsarm_fhfast:obsm_col:X_umap",
+     "chunk": 2,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap",
+     "seed_key": "obsm_col:X_umap"
+    },
+    {
+     "axis_len": null,
+     "case_id": "fsarm_fhfast:obs_col:celltype",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "obs/celltype"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "obs_col",
+     "params": {
+      "columns": "celltype"
+     },
+     "route": "/api/v1/data/obs",
+     "seed_key": "obs_col:celltype"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "fsarm_fhfast:obsp_dense_row:dist_spatial",
+     "chunk": 16,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "obsp/dist_spatial"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/dist_spatial",
+     "seed_key": "obsp_dense_row:dist_spatial"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_fhfast:varp_dense_row:gene_corr_pearson_lognorm",
+     "chunk": 64,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "varp/gene_corr_pearson_lognorm"
+     ],
+     "expect_len": 18345,
+     "fs": "fhfast",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson_lognorm",
+     "seed_key": "varp_dense_row:gene_corr_pearson_lognorm"
+    },
+    {
+     "axis_len": null,
+     "case_id": "fsarm_fhfast:cell_names",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells",
+     "seed_key": "cell_names"
+    }
+   ],
+   "experiment": "fsarm",
+   "name": "fsarm",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/fsarm/spec_hpctemp_9976799.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_hpctemp:X_gene_col",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X",
+     "seed_key": "X_gene_col"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_hpctemp:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed",
+     "seed_key": "dense_layer_gene_col:kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "fsarm_hpctemp:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 75000,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed",
+     "seed_key": "dense_layer_cell_row:kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "fsarm_hpctemp:obsm_col:X_umap",
+     "chunk": 2,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap",
+     "seed_key": "obsm_col:X_umap"
+    },
+    {
+     "axis_len": null,
+     "case_id": "fsarm_hpctemp:obs_col:celltype",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "obs/celltype"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "celltype"
+     },
+     "route": "/api/v1/data/obs",
+     "seed_key": "obs_col:celltype"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "fsarm_hpctemp:obsp_dense_row:dist_spatial",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "obsp/dist_spatial"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/dist_spatial",
+     "seed_key": "obsp_dense_row:dist_spatial"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_hpctemp:varp_dense_row:gene_corr_pearson_lognorm",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "varp/gene_corr_pearson_lognorm"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson_lognorm",
+     "seed_key": "varp_dense_row:gene_corr_pearson_lognorm"
+    },
+    {
+     "axis_len": null,
+     "case_id": "fsarm_hpctemp:cell_names",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells",
+     "seed_key": "cell_names"
+    }
+   ],
+   "experiment": "fsarm",
+   "name": "fsarm",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/fsarm/spec_tmpfs_9976799.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_tmpfs:X_gene_col",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X",
+     "seed_key": "X_gene_col"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_tmpfs:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 64,
+     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed",
+     "seed_key": "dense_layer_gene_col:kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "fsarm_tmpfs:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 75000,
+     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "tmpfs",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed",
+     "seed_key": "dense_layer_cell_row:kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "fsarm_tmpfs:obsm_col:X_umap",
+     "chunk": 2,
+     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap",
+     "seed_key": "obsm_col:X_umap"
+    },
+    {
+     "axis_len": null,
+     "case_id": "fsarm_tmpfs:obs_col:celltype",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "evict": [
+      "obs/celltype"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "obs_col",
+     "params": {
+      "columns": "celltype"
+     },
+     "route": "/api/v1/data/obs",
+     "seed_key": "obs_col:celltype"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "fsarm_tmpfs:obsp_dense_row:dist_spatial",
+     "chunk": 16,
+     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "evict": [
+      "obsp/dist_spatial"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/dist_spatial",
+     "seed_key": "obsp_dense_row:dist_spatial"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_tmpfs:varp_dense_row:gene_corr_pearson_lognorm",
+     "chunk": 64,
+     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "evict": [
+      "varp/gene_corr_pearson_lognorm"
+     ],
+     "expect_len": 18345,
+     "fs": "tmpfs",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson_lognorm",
+     "seed_key": "varp_dense_row:gene_corr_pearson_lognorm"
+    },
+    {
+     "axis_len": null,
+     "case_id": "fsarm_tmpfs:cell_names",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells",
+     "seed_key": "cell_names"
+    }
+   ],
+   "experiment": "fsarm",
+   "name": "fsarm",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/post/atlas/spec_atlas_9988005.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@1024x1024:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@1024x1024:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@16384x64:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_16384x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@16384x64:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_16384x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@4096x64:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_4096x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@4096x64:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_4096x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@8192x128:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@8192x128:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@8192x64:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@8192x64:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@allx4:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@allx4:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@1024x1024:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@1024x1024:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@2048x128:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@2048x128:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@2048x256:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@2048x256:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@4096x256:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_4096x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@4096x256:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_4096x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@allx4:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@allx4:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    }
+   ],
+   "experiment": "atlas",
+   "name": "atlas",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/post/atlas/spec_atlas_9988006.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@1024x1024:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@1024x1024:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@16384x64:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_16384x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@16384x64:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_16384x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@4096x64:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_4096x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@4096x64:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_4096x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@8192x128:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@8192x128:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@8192x64:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@8192x64:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@allx4:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@allx4:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@1024x1024:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@1024x1024:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@2048x128:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@2048x128:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@2048x256:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@2048x256:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@4096x256:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_4096x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@4096x256:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_4096x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@allx4:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@allx4:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    }
+   ],
+   "experiment": "atlas",
+   "name": "atlas",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/post/chunksweep/spec_chunksweep_9987982.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_1024x1024:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_1024x1024:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_1024x512:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 512,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_1024x512.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_1024x512:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_1024x512.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_2048x2048:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 2048,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_2048x2048.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_2048x2048:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 2048,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_2048x2048.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_256x4096:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 4096,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_256x4096.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_256x4096:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 256,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_256x4096.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_4096x256:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 256,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_4096x256.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_4096x256:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 4096,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_4096x256.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_512x512:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 512,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_512x512.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_512x512:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 512,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_512x512.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_allx64:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_allx64.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_allx64:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 75000,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_allx64.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    }
+   ],
+   "experiment": "chunksweep",
+   "name": "chunksweep",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/post/chunksweep/spec_chunksweep_9987983.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_1024x1024:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_1024x1024:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_1024x512:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 512,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_1024x512.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_1024x512:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_1024x512.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_2048x2048:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 2048,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_2048x2048.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_2048x2048:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 2048,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_2048x2048.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_256x4096:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 4096,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_256x4096.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_256x4096:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 256,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_256x4096.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_4096x256:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 256,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_4096x256.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_4096x256:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 4096,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_4096x256.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_512x512:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 512,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_512x512.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_512x512:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 512,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_512x512.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_allx64:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_allx64.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_allx64:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 75000,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_allx64.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    }
+   ],
+   "experiment": "chunksweep",
+   "name": "chunksweep",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/post/fsarm/spec_hpctemp_9987994.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_hpctemp:X_gene_col",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X",
+     "seed_key": "X_gene_col"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_hpctemp:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed",
+     "seed_key": "dense_layer_gene_col:kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "fsarm_hpctemp:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 75000,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed",
+     "seed_key": "dense_layer_cell_row:kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "fsarm_hpctemp:obsm_col:X_umap",
+     "chunk": 2,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap",
+     "seed_key": "obsm_col:X_umap"
+    },
+    {
+     "axis_len": null,
+     "case_id": "fsarm_hpctemp:obs_col:celltype",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "obs/celltype"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "celltype"
+     },
+     "route": "/api/v1/data/obs",
+     "seed_key": "obs_col:celltype"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "fsarm_hpctemp:obsp_dense_row:dist_spatial",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "obsp/dist_spatial"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/dist_spatial",
+     "seed_key": "obsp_dense_row:dist_spatial"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_hpctemp:varp_dense_row:gene_corr_pearson_lognorm",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "varp/gene_corr_pearson_lognorm"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson_lognorm",
+     "seed_key": "varp_dense_row:gene_corr_pearson_lognorm"
+    },
+    {
+     "axis_len": null,
+     "case_id": "fsarm_hpctemp:cell_names",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/fsarm/spatial-A-subset.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells",
+     "seed_key": "cell_names"
+    }
+   ],
+   "experiment": "fsarm",
+   "name": "fsarm",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/post/fsarm/spec_tmpfs_9987994.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_tmpfs:X_gene_col",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X",
+     "seed_key": "X_gene_col"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_tmpfs:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 64,
+     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed",
+     "seed_key": "dense_layer_gene_col:kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "fsarm_tmpfs:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 75000,
+     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "tmpfs",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed",
+     "seed_key": "dense_layer_cell_row:kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "fsarm_tmpfs:obsm_col:X_umap",
+     "chunk": 2,
+     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap",
+     "seed_key": "obsm_col:X_umap"
+    },
+    {
+     "axis_len": null,
+     "case_id": "fsarm_tmpfs:obs_col:celltype",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "evict": [
+      "obs/celltype"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "obs_col",
+     "params": {
+      "columns": "celltype"
+     },
+     "route": "/api/v1/data/obs",
+     "seed_key": "obs_col:celltype"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "fsarm_tmpfs:obsp_dense_row:dist_spatial",
+     "chunk": 16,
+     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "evict": [
+      "obsp/dist_spatial"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/dist_spatial",
+     "seed_key": "obsp_dense_row:dist_spatial"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "fsarm_tmpfs:varp_dense_row:gene_corr_pearson_lognorm",
+     "chunk": 64,
+     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "evict": [
+      "varp/gene_corr_pearson_lognorm"
+     ],
+     "expect_len": 18345,
+     "fs": "tmpfs",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson_lognorm",
+     "seed_key": "varp_dense_row:gene_corr_pearson_lognorm"
+    },
+    {
+     "axis_len": null,
+     "case_id": "fsarm_tmpfs:cell_names",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 75000,
+     "fs": "tmpfs",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells",
+     "seed_key": "cell_names"
+    }
+   ],
+   "experiment": "fsarm",
+   "name": "fsarm",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/post/pairwise/spec_pairwise_9987992.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 20000,
+     "case_id": "corr_20000:varp_dense_row:gene_corr_pearson",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/corr_20000.zarr",
+     "evict": [
+      "varp/gene_corr_pearson"
+     ],
+     "expect_len": 20000,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson",
+     "seed_key": "corr_20000:varp_dense_row:gene_corr_pearson"
+    },
+    {
+     "axis_len": 30000,
+     "case_id": "corr_30000:varp_dense_row:gene_corr_pearson",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/corr_30000.zarr",
+     "evict": [
+      "varp/gene_corr_pearson"
+     ],
+     "expect_len": 30000,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson",
+     "seed_key": "corr_30000:varp_dense_row:gene_corr_pearson"
+    },
+    {
+     "axis_len": 30000,
+     "case_id": "corr_30000_r32:varp_dense_row:gene_corr_pearson",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/corr_30000_r32.zarr",
+     "evict": [
+      "varp/gene_corr_pearson"
+     ],
+     "expect_len": 30000,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson",
+     "seed_key": "corr_30000:varp_dense_row:gene_corr_pearson"
+    },
+    {
+     "axis_len": 100000,
+     "case_id": "dist_100000:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_100000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 100000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_100000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 100000,
+     "case_id": "dist_100000_r8:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_100000_r8.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 100000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_100000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "dist_200000:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_200000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_200000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "dist_200000_r4:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_200000_r4.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_200000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "dist_200000_r64:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_200000_r64.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_200000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 50000,
+     "case_id": "dist_50000:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_50000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 50000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_50000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 100000,
+     "case_id": "kernel_100000:obsp_dense_row:gaussian_kernel",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_100000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 100000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel",
+     "seed_key": "kernel_100000:obsp_dense_row:gaussian_kernel"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "kernel_200000:obsp_dense_row:gaussian_kernel",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_200000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel",
+     "seed_key": "kernel_200000:obsp_dense_row:gaussian_kernel"
+    },
+    {
+     "axis_len": 50000,
+     "case_id": "kernel_50000:obsp_dense_row:gaussian_kernel",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_50000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 50000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel",
+     "seed_key": "kernel_50000:obsp_dense_row:gaussian_kernel"
+    }
+   ],
+   "experiment": "pairwise",
+   "name": "pairwise",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/post/pairwise/spec_pairwise_9987993.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 20000,
+     "case_id": "corr_20000:varp_dense_row:gene_corr_pearson",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/corr_20000.zarr",
+     "evict": [
+      "varp/gene_corr_pearson"
+     ],
+     "expect_len": 20000,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson",
+     "seed_key": "corr_20000:varp_dense_row:gene_corr_pearson"
+    },
+    {
+     "axis_len": 30000,
+     "case_id": "corr_30000:varp_dense_row:gene_corr_pearson",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/corr_30000.zarr",
+     "evict": [
+      "varp/gene_corr_pearson"
+     ],
+     "expect_len": 30000,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson",
+     "seed_key": "corr_30000:varp_dense_row:gene_corr_pearson"
+    },
+    {
+     "axis_len": 30000,
+     "case_id": "corr_30000_r32:varp_dense_row:gene_corr_pearson",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/corr_30000_r32.zarr",
+     "evict": [
+      "varp/gene_corr_pearson"
+     ],
+     "expect_len": 30000,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson",
+     "seed_key": "corr_30000:varp_dense_row:gene_corr_pearson"
+    },
+    {
+     "axis_len": 100000,
+     "case_id": "dist_100000:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_100000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 100000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_100000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 100000,
+     "case_id": "dist_100000_r8:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_100000_r8.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 100000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_100000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "dist_200000:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_200000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_200000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "dist_200000_r4:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_200000_r4.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_200000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "dist_200000_r64:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_200000_r64.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_200000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 50000,
+     "case_id": "dist_50000:obsp_dense_row:diffmap_distance",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_50000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 50000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance",
+     "seed_key": "dist_50000:obsp_dense_row:diffmap_distance"
+    },
+    {
+     "axis_len": 100000,
+     "case_id": "kernel_100000:obsp_dense_row:gaussian_kernel",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_100000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 100000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel",
+     "seed_key": "kernel_100000:obsp_dense_row:gaussian_kernel"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "kernel_200000:obsp_dense_row:gaussian_kernel",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_200000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel",
+     "seed_key": "kernel_200000:obsp_dense_row:gaussian_kernel"
+    },
+    {
+     "axis_len": 50000,
+     "case_id": "kernel_50000:obsp_dense_row:gaussian_kernel",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_50000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 50000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel",
+     "seed_key": "kernel_50000:obsp_dense_row:gaussian_kernel"
+    }
+   ],
+   "experiment": "pairwise",
+   "name": "pairwise",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/real_post/spec_real_10011130.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:X_gene_col",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:sparse_layer_gene_col:lognorm",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/lognorm"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "sparse_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/lognorm"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 4,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "atlas-1.17M-scvi:obsm_col:X_umap",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap"
+    },
+    {
+     "axis_len": 30,
+     "case_id": "atlas-1.17M-scvi:obsm_col:X_scVI",
+     "chunk": 4,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsm/X_scVI"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_scVI"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:obs_col:kompot_da_lfc",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/kompot_da_lfc"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "kompot_da_lfc"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi:obsp_csr_row:connectivities",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsp/connectivities"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obsp_csr_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/connectivities"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:cell_names",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-raw:X_gene_col",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-raw.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-raw:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-raw.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-raw:cell_names",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-raw.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM:X_gene_col",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 4,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "scPLM:obsm_col:X_umap",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:obs_col:nCount_RNA",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "obs/nCount_RNA"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "nCount_RNA"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:cell_names",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    }
+   ],
+   "experiment": "real",
+   "name": "real",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/real_post/spec_real_9987997.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:X_gene_col",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:sparse_layer_gene_col:lognorm",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/lognorm"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "sparse_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/lognorm"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 4,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "atlas-1.17M-scvi:obsm_col:X_umap",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap"
+    },
+    {
+     "axis_len": 30,
+     "case_id": "atlas-1.17M-scvi:obsm_col:X_scVI",
+     "chunk": 4,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsm/X_scVI"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_scVI"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:obs_col:kompot_da_lfc",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/kompot_da_lfc"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "kompot_da_lfc"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi:obsp_csr_row:connectivities",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsp/connectivities"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obsp_csr_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/connectivities"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:cell_names",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-raw:X_gene_col",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-raw.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-raw:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-raw.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-raw:cell_names",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-raw.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM:X_gene_col",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 4,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "scPLM:obsm_col:X_umap",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:obs_col:nCount_RNA",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "obs/nCount_RNA"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "obs_col",
+     "params": {
+      "columns": "nCount_RNA"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:cell_names",
+     "chunk": 1,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    }
+   ],
+   "experiment": "real",
+   "name": "real",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/real_post/spec_real_rows_10011131.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1165934,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 460337,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    }
+   ],
+   "experiment": "real",
+   "name": "real_rows",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/real_post/spec_real_rows_9987998.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1165934,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 460337,
+     "dataset": "$SCRATCH/annzarro-bench/data/real/atlas-scPLM.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    }
+   ],
+   "experiment": "real",
+   "name": "real_rows",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/real_post/spec_tmpfs_atlas-1.17M-raw_9987999.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-raw:X_gene_col",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9987999/atlas-1.17M-raw.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-raw:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9987999/atlas-1.17M-raw.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-raw:cell_names",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9987999/atlas-1.17M-raw.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    }
+   ],
+   "experiment": "real",
+   "name": "real_tmpfs",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/real_post/spec_tmpfs_atlas-1.17M-scvi_9988004.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:X_gene_col",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:sparse_layer_gene_col:lognorm",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/lognorm"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "sparse_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/lognorm"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 4,
+     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "atlas-1.17M-scvi:obsm_col:X_umap",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap"
+    },
+    {
+     "axis_len": 30,
+     "case_id": "atlas-1.17M-scvi:obsm_col:X_scVI",
+     "chunk": 4,
+     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsm/X_scVI"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_scVI"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:obs_col:kompot_da_lfc",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/kompot_da_lfc"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "obs_col",
+     "params": {
+      "columns": "kompot_da_lfc"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi:obsp_csr_row:connectivities",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsp/connectivities"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "obsp_csr_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/connectivities"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:cell_names",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 1165934,
+     "fs": "tmpfs",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1165934,
+     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "tmpfs",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    }
+   ],
+   "experiment": "real",
+   "name": "real_tmpfs",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "runs/real_post/spec_tmpfs_atlas-scPLM_9988003.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM:X_gene_col",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 460337,
+     "fs": "tmpfs",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 4,
+     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "tmpfs",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "scPLM:obsm_col:X_umap",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 460337,
+     "fs": "tmpfs",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 460337,
+     "fs": "tmpfs",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:obs_col:nCount_RNA",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "evict": [
+      "obs/nCount_RNA"
+     ],
+     "expect_len": 460337,
+     "fs": "tmpfs",
+     "kind": "obs_col",
+     "params": {
+      "columns": "nCount_RNA"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:cell_names",
+     "chunk": 1,
+     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 460337,
+     "fs": "tmpfs",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 460337,
+     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "tmpfs",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    }
+   ],
+   "experiment": "real",
+   "name": "real_tmpfs",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "specs/atlas.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@1024x1024:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@1024x1024:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@allx4:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@allx4:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@1024x1024:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@1024x1024:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@allx4:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@allx4:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    }
+   ],
+   "experiment": "atlas",
+   "name": "atlas",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "specs/atlas_all.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@1024x1024:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@1024x1024:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@16384x64:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_16384x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@16384x64:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_16384x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@4096x64:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_4096x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@4096x64:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_4096x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@8192x128:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@8192x128:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@allx4:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@allx4:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@1024x1024:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@1024x1024:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@2048x128:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@2048x128:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@4096x256:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_4096x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@4096x256:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_4096x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@allx4:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@allx4:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_allx4.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    }
+   ],
+   "experiment": "atlas",
+   "name": "atlas",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "specs/atlas_aspect.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@16384x64:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_16384x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@16384x64:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_16384x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@4096x64:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_4096x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@4096x64:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_4096x64.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi@8192x128:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi@8192x128:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-1.17M-scvi_kompot_smooth_8192x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@2048x128:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@2048x128:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_2048x128.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM@4096x256:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_4096x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM@4096x256:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/atlas_rechunked/atlas-scPLM_kompot_smooth_4096x256.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed",
+     "seed_key": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed"
+    }
+   ],
+   "experiment": "atlas",
+   "name": "atlas",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "specs/chunksweep.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_1024x1024:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_1024x1024:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 1024,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_1024x1024.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_2048x2048:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 2048,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_2048x2048.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_2048x2048:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 2048,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_2048x2048.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_256x4096:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 4096,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_256x4096.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_256x4096:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 256,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_256x4096.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_4096x256:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 256,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_4096x256.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_4096x256:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 4096,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_4096x256.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_512x512:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 512,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_512x512.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_512x512:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 512,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_512x512.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_allx64:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_allx64.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "hpctemp",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_allx64:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 75000,
+     "dataset": "$SCRATCH/annzarro-bench/data/chunksweep/spatial-A-xenium_smoothed_allx64.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "hpctemp",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "sweep_served_allx64:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 64,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "sweep_served_allx64:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 75000,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "fhfast",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    }
+   ],
+   "experiment": "chunksweep",
+   "name": "chunksweep",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "specs/pairwise_all.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 20000,
+     "case_id": "corr_20000:varp_dense_row:gene_corr_pearson",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/corr_20000.zarr",
+     "evict": [
+      "varp/gene_corr_pearson"
+     ],
+     "expect_len": 20000,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson"
+    },
+    {
+     "axis_len": 30000,
+     "case_id": "corr_30000:varp_dense_row:gene_corr_pearson",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/corr_30000.zarr",
+     "evict": [
+      "varp/gene_corr_pearson"
+     ],
+     "expect_len": 30000,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson"
+    },
+    {
+     "axis_len": 100000,
+     "case_id": "dist_100000:obsp_dense_row:diffmap_distance",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_100000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 100000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "dist_200000:obsp_dense_row:diffmap_distance",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_200000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance"
+    },
+    {
+     "axis_len": 50000,
+     "case_id": "dist_50000:obsp_dense_row:diffmap_distance",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_50000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 50000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance"
+    },
+    {
+     "axis_len": 100000,
+     "case_id": "kernel_100000:obsp_dense_row:gaussian_kernel",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_100000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 100000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "kernel_200000:obsp_dense_row:gaussian_kernel",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_200000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel"
+    },
+    {
+     "axis_len": 50000,
+     "case_id": "kernel_50000:obsp_dense_row:gaussian_kernel",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_50000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 50000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel"
+    }
+   ],
+   "experiment": "pairwise",
+   "name": "pairwise",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "specs/pairwise_dist_corr.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 20000,
+     "case_id": "corr_20000:varp_dense_row:gene_corr_pearson",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/corr_20000.zarr",
+     "evict": [
+      "varp/gene_corr_pearson"
+     ],
+     "expect_len": 20000,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson"
+    },
+    {
+     "axis_len": 30000,
+     "case_id": "corr_30000:varp_dense_row:gene_corr_pearson",
+     "chunk": 64,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/corr_30000.zarr",
+     "evict": [
+      "varp/gene_corr_pearson"
+     ],
+     "expect_len": 30000,
+     "fs": "hpctemp",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson"
+    },
+    {
+     "axis_len": 100000,
+     "case_id": "dist_100000:obsp_dense_row:diffmap_distance",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_100000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 100000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "dist_200000:obsp_dense_row:diffmap_distance",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_200000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance"
+    },
+    {
+     "axis_len": 50000,
+     "case_id": "dist_50000:obsp_dense_row:diffmap_distance",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/dist_50000.zarr",
+     "evict": [
+      "obsp/diffmap_distance"
+     ],
+     "expect_len": 50000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/diffmap_distance"
+    }
+   ],
+   "experiment": "pairwise",
+   "name": "pairwise",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "specs/pairwise_kernels.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 100000,
+     "case_id": "kernel_100000:obsp_dense_row:gaussian_kernel",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_100000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 100000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel"
+    },
+    {
+     "axis_len": 200000,
+     "case_id": "kernel_200000:obsp_dense_row:gaussian_kernel",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_200000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 200000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel"
+    },
+    {
+     "axis_len": 50000,
+     "case_id": "kernel_50000:obsp_dense_row:gaussian_kernel",
+     "chunk": 16,
+     "dataset": "$SCRATCH/annzarro-bench/data/pairwise/kernel_50000.zarr",
+     "evict": [
+      "obsp/gaussian_kernel"
+     ],
+     "expect_len": 50000,
+     "fs": "hpctemp",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/gaussian_kernel"
+    }
+   ],
+   "experiment": "pairwise",
+   "name": "pairwise",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "specs/real_fhfast.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:X_gene_col",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:sparse_layer_gene_col:lognorm",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/lognorm"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "sparse_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/lognorm"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 4,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "atlas-1.17M-scvi:obsm_col:X_umap",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap"
+    },
+    {
+     "axis_len": 30,
+     "case_id": "atlas-1.17M-scvi:obsm_col:X_scVI",
+     "chunk": 4,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsm/X_scVI"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_scVI"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:obs_col:kompot_da_lfc",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/kompot_da_lfc"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "obs_col",
+     "params": {
+      "columns": "kompot_da_lfc"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi:obsp_csr_row:connectivities",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obsp/connectivities"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "obsp_csr_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/connectivities"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-scvi:cell_names",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    },
+    {
+     "axis_len": 12731,
+     "case_id": "atlas-1.17M-raw:X_gene_col",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-raw.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-raw:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-raw.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "atlas-1.17M-raw:cell_names",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-raw.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 1165934,
+     "fs": "fhfast",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM:X_gene_col",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-scPLM.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 460337,
+     "fs": "fhfast",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": 33538,
+     "case_id": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed",
+     "chunk": 4,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-scPLM.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 460337,
+     "fs": "fhfast",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "scPLM:obsm_col:X_umap",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-scPLM.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 460337,
+     "fs": "fhfast",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:obs_col:cell_type",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-scPLM.zarr",
+     "evict": [
+      "obs/cell_type"
+     ],
+     "expect_len": 460337,
+     "fs": "fhfast",
+     "kind": "obs_col",
+     "params": {
+      "columns": "cell_type"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:obs_col:nCount_RNA",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-scPLM.zarr",
+     "evict": [
+      "obs/nCount_RNA"
+     ],
+     "expect_len": 460337,
+     "fs": "fhfast",
+     "kind": "obs_col",
+     "params": {
+      "columns": "nCount_RNA"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": null,
+     "case_id": "scPLM:cell_names",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-scPLM.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 460337,
+     "fs": "fhfast",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    }
+   ],
+   "experiment": "real",
+   "name": "real",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "specs/real_rows_fhfast.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 1165934,
+     "case_id": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 1165934,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-1.17M-scvi.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 12731,
+     "fs": "fhfast",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    },
+    {
+     "axis_len": 460337,
+     "case_id": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed",
+     "chunk": 460337,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/atlas-scPLM.zarr",
+     "evict": [
+      "layers/kompot_smooth_all_smoothed"
+     ],
+     "expect_len": 33538,
+     "fs": "fhfast",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_smooth_all_smoothed"
+    }
+   ],
+   "experiment": "real",
+   "name": "real_rows",
+   "repeats": 5,
+   "seed": 20261001,
+   "warm_repeats": 5
+  },
+  "specs/smoke.json": {
+   "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
+   "cases": [
+    {
+     "axis_len": 18345,
+     "case_id": "spatial-A:X_gene_col",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "X"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "X_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/X"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "spatial-A:dense_layer_gene_col:kompot_de_Xenium_smoothed",
+     "chunk": 64,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "dense_layer_gene_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "spatial-A:dense_layer_cell_row:kompot_de_Xenium_smoothed",
+     "chunk": 75000,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "layers/kompot_de_Xenium_smoothed"
+     ],
+     "expect_len": 18345,
+     "fs": "fhfast",
+     "kind": "dense_layer_cell_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/layer/kompot_de_Xenium_smoothed"
+    },
+    {
+     "axis_len": 2,
+     "case_id": "spatial-A:obsm_col:X_umap",
+     "chunk": 2,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "obsm/X_umap"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "obsm_col",
+     "params": {
+      "cols": "{idx}"
+     },
+     "route": "/api/v1/data/obsm/X_umap"
+    },
+    {
+     "axis_len": null,
+     "case_id": "spatial-A:obs_col:celltype",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "obs/celltype"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "obs_col",
+     "params": {
+      "columns": "celltype"
+     },
+     "route": "/api/v1/data/obs"
+    },
+    {
+     "axis_len": 75000,
+     "case_id": "spatial-A:obsp_dense_row:dist_spatial",
+     "chunk": 16,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "obsp/dist_spatial"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "obsp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/obsp/dist_spatial"
+    },
+    {
+     "axis_len": 18345,
+     "case_id": "spatial-A:varp_dense_row:gene_corr_pearson_lognorm",
+     "chunk": 64,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "varp/gene_corr_pearson_lognorm"
+     ],
+     "expect_len": 18345,
+     "fs": "fhfast",
+     "kind": "varp_dense_row",
+     "params": {
+      "rows": "{idx}"
+     },
+     "route": "/api/v1/data/varp/gene_corr_pearson_lognorm"
+    },
+    {
+     "axis_len": null,
+     "case_id": "spatial-A:cell_names",
+     "chunk": 1,
+     "dataset": "$DATA_ROOT/lab-data/data/processed_zarr/spatial-A.zarr",
+     "evict": [
+      "obs/_index"
+     ],
+     "expect_len": 75000,
+     "fs": "fhfast",
+     "kind": "cell_names",
+     "params": {},
+     "route": "/api/v1/data/cells"
+    }
+   ],
+   "experiment": "smoke",
+   "name": "smoke",
+   "repeats": 2,
+   "seed": 20261001,
+   "warm_repeats": 2
+  }
+ },
+ "windows_386": [
+  [
+   "2026-10-01T11:26:31-07:00",
+   "2026-10-01T11:30:00-07:00"
+  ],
+  [
+   "2026-10-01T12:40:30-07:00",
+   "2026-10-01T13:30:00-07:00"
+  ],
+  [
+   "2026-10-01T14:05:02-07:00",
+   "2026-10-01T14:28:12-07:00"
+  ],
+  [
+   "2026-10-01T14:59:00-07:00",
+   "2026-10-01T15:33:00-07:00"
+  ],
+  [
+   "2026-10-01T16:30:00-07:00",
+   "2026-10-02T10:55:00-07:00"
+  ],
+  [
+   "2026-10-02T11:45:51-07:00",
+   "2026-10-02T12:19:25-07:00"
+  ],
+  [
+   "2026-10-02T16:45:31-07:00",
+   "2026-10-02T16:48:42-07:00"
+  ],
+  [
+   "2026-10-02T17:09:42-07:00",
+   "2026-10-02T17:16:59-07:00"
+  ]
+ ]
+}

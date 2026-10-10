@@ -1,0 +1,38 @@
+version: 1
+image: m04_slots_data_hierarchy.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0 (macOS universal, start page reads 1.5.0-dev)
+data: bm_demo.h5ad (8,090 cells x 16,285 genes; obsp kept)
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/manivault_checklist.md (run by hand in a computer-use desktop session; log: notes/comparison/demos/manivault/session_notes.txt)'
+source: manual
+image_sha256: 1423a358c1ac4bbb2f7f47fca8237bfdd6b56e7da42671d344905542d224f7ea
+proves:
+- column: slots
+  mark: P
+  caption: 'After loading: X, layers/counts, every obs column, four obsm layouts and all three obsp matrices appear
+    as datasets; nothing var-indexed.'
+callouts:
+- n: 1
+  box:
+  - 14
+  - 690
+  - 1490
+  - 116
+  label: obsp/connectivities, obsp/diffusion_distance, obsp/distances loaded as datasets
+- n: 2
+  box:
+  - 14
+  - 550
+  - 1490
+  - 140
+  label: obsm layouts
+- n: 3
+  box:
+  - 14
+  - 155
+  - 1490
+  - 30
+  label: bm_demo = X

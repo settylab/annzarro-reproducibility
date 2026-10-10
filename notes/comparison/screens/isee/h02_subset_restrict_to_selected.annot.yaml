@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "image": "h02_subset_restrict_to_selected.jpg",
+ "tool": "isee",
+ "software": "iSEE 2.18.0 (Bioconductor 3.20)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8902",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_isee.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "subset",
+   "mark": "Y",
+   "caption": "iSEE 2.18.0 (2026-10-04): 'Restrict to selected columns' makes plot 2 show only the cells brushed in plot 1, a view-only subset (repeatable as gating)"
+  },
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "the brush in plot 1 is the selection that plot 2 receives"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    477,
+    55,
+    447,
+    508
+   ],
+   "label": "brush on plot 1 (UMAP)",
+   "selector": "#ReducedDimensionPlot1"
+  },
+  {
+   "n": 2,
+   "box": [
+    943,
+    55,
+    447,
+    508
+   ],
+   "label": "plot 2 (PCA): only the brushed cells",
+   "selector": "#ReducedDimensionPlot2"
+  },
+  {
+   "n": 3,
+   "box": [
+    959,
+    808,
+    193,
+    28
+   ],
+   "label": "Restrict to selected columns",
+   "selector": "#ReducedDimensionPlot2_ColumnSelectionRestrict >> xpath=.."
+  }
+ ]
+}

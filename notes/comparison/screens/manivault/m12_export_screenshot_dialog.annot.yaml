@@ -1,0 +1,31 @@
+version: 1
+image: m12_export_screenshot_dialog.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0 (macOS universal, start page reads 1.5.0-dev)
+data: bm_demo.h5ad (8,090 cells x 16,285 genes; obsp kept)
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/manivault_checklist.md (run by hand in a computer-use desktop session; log: notes/comparison/demos/manivault/session_notes.txt)'
+source: manual
+image_sha256: 414be03feebf6d7cd401418dfaeb440a35ea73eaee1f6d4dc90229fd84c4e9e3
+proves:
+- column: export
+  mark: P
+  caption: A view's Screenshot (F2) saves a PNG of that view; the dialog offers PNG only, with no size or resolution
+    options, and the saved colours differ from the screen (red and blue swapped).
+callouts:
+- n: 1
+  box:
+  - 20
+  - 1200
+  - 1385
+  - 48
+  label: 'Files of type: Image files (*.png) only'
+- n: 2
+  box:
+  - 10
+  - 15
+  - 380
+  - 45
+  label: Save Screenshot dialog

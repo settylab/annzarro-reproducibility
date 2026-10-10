@@ -1,0 +1,24 @@
+version: 1
+image: m19_selection_linked_umap.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0 (macOS universal, start page reads 1.5.0-dev)
+data: bm_demo.h5ad (8,090 cells x 16,285 genes; obsp kept)
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/manivault_checklist.md (run by hand in a computer-use desktop session; log: notes/comparison/demos/manivault/session_notes.txt)'
+source: manual
+image_sha256: 8764fe41adba0dcafbd9c8fb3259eef3db5152a65bc0eb18cc3fe86299bd7e77
+proves:
+- column: selection
+  mark: Y
+  caption: 'A lasso in the UMAP view selects 1,376 cells (left branch, outlined). F2 export: colours in this PNG
+    differ from the screen (red and blue swapped), see m12.'
+callouts:
+- n: 1
+  box:
+  - 40
+  - 640
+  - 240
+  - 250
+  label: lasso selection in the UMAP view

@@ -1,0 +1,21 @@
+{
+ "file": "../inputs/bm_aging/coords.h5",
+ "grid": 512,
+ "window": null,
+ "single_cell_marks": 6803,
+ "marks_by_cells_per_bin": {
+  "1": 6803,
+  "2": 576,
+  "3": 37,
+  "4": 6
+ },
+ "n_cells": 8090,
+ "bin_width_x": 0.05205820050698239,
+ "bin_width_y": 0.047379862656653865,
+ "nonempty_bins_drawn": 7422,
+ "cells_sharing_a_bin": 1287,
+ "max_cells_in_one_bin": 4,
+ "max_snap_distance": 0.034898517850029113,
+ "median_snap_distance": 0.019865837419014182,
+ "cells_moved_nonzero": 8090
+}

@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "m05_lazy_scatter_genelist_mpo.jpg",
+ "tool": "vitessce",
+ "software": "Vitessce (hosted app at vitessce.io, 2026-10-04)",
+ "data": "bm_demo.zarr (8,090 cells), served on 127.0.0.1:8904",
+ "url": "https://vitessce.io/#?url=http://127.0.0.1:8904/config_lazy.json",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/vitessce/recap_b.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "lazy",
+   "mark": "Y",
+   "caption": "With only UMAP and Gene List, load fetches no X chunk; choosing Mpo fetches X/.zarray, X/.zattrs and one chunk"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    699,
+    86,
+    696,
+    808
+   ],
+   "label": "Mpo chosen",
+   "selector": "[data-recap='gl']"
+  },
+  {
+   "n": 2,
+   "box": [
+    6,
+    86,
+    696,
+    808
+   ],
+   "label": "UMAP by Mpo",
+   "selector": "[data-recap='umap2']"
+  }
+ ]
+}

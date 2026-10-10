@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "03_lasso_in_gene_scatter_not_in_cluster_scatter.jpg",
+ "tool": "single-cell-portal",
+ "software": "Single Cell Portal 1.20.0 (singlecell.broadinstitute.org)",
+ "data": "SCP1671, human lactation (49,310 cells; All Cells UMAP)",
+ "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP1671/cellular-and-transcriptional-diversity-over-the-course-of-human-lactation?genes=CD74#study-visualize",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture2_scp.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "SCP 1.20.0 (2026-10-04): caveat to the Y: a Plotly lasso in the CD74 scatter selects 20421 points in that plot only; the cluster scatter carries no selection. The cross-plot selection is the facet filter (shot 04)"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    6,
+    269,
+    566,
+    658
+   ],
+   "label": "lasso in the CD74 scatter (20421 points)",
+   "selector": "[data-cap='plot0']"
+  },
+  {
+   "n": 2,
+   "box": [
+    604,
+    269,
+    566,
+    387
+   ],
+   "label": "cluster scatter: no selection",
+   "selector": "[data-cap='plot1']"
+  }
+ ]
+}

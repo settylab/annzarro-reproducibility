@@ -1,0 +1,6 @@
+2026-10-04T17:54:52 OPEN user live AnnZarro session (95.6M, port 8810)
+2026-10-04T18:28:53 CLOSE user live AnnZarro session (95.6M, port 8810)
+2026-10-04T18:47:49 OPEN user review session (v030-preview, 127.0.0.1:8810, up to 95.6M)
+2026-10-04T19:02:18 CLOSE user review session (v030-preview, 127.0.0.1:8810, up to 95.6M)
+2026-10-04T20:43:44 OPEN user session (memory-guard test server, 127.0.0.1:8811, up to 95.6M)
+2026-10-04T21:38:25 CLOSE user session (memory-guard test server, 127.0.0.1:8811, up to 95.6M; ManiVault desktop session 20:47-21:31Z inside it)

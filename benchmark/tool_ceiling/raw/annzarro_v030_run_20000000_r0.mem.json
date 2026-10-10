@@ -1,0 +1,62 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first20000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_run_20000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 7.25,
+ "peaks": {
+  "client": {
+   "fp_peak": 6712063800,
+   "fp_lifetime_sum": 7059667344,
+   "rss_peak": 4913119232,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 2557037784,
+   "fp_lifetime_sum": 3164639360,
+   "rss_peak": 2591703040,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 125448576,
+   "fp_lifetime_sum": 125448576,
+   "rss_peak": 163676160,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 8762589840,
+   "rss_peak": 7078084608,
+   "fp_lifetime_sum": 10224306704
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.26,
+   1073047224
+  ],
+  [
+   4.59,
+   4824692704
+  ],
+  [
+   6.92,
+   7805551728
+  ]
+ ],
+ "ps_before": "2026-10-04T21:52:21-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 2881328  20.8 $HOME/.local/bin/claude\n  626 528848   8.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1012  17840   3.8 /usr/libexec/pboard\n  629 199488   3.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  31120   3.0 /System/Library/CoreServices/launchservicesd\n  734  50608   2.1 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n  633  30944   1.9 /usr/libexec/runningboardd\n  557 567824   1.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 1240  48976   1.5 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  619   6752   1.3 /usr/sbin/notifyd\n",
+ "others_at_start": []
+}

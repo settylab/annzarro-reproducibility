@@ -1,0 +1,108 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first5000000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_backed_run_5000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 27.76,
+ "peaks": {
+  "proc": {
+   "fp_peak": 6602380664,
+   "fp_lifetime_sum": 6602380664,
+   "rss_peak": 6780354560,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6602380664,
+   "rss_peak": 6780354560,
+   "fp_lifetime_sum": 6602380664
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8782232
+  ],
+  [
+   1.46,
+   190087888
+  ],
+  [
+   2.92,
+   967804320
+  ],
+  [
+   4.38,
+   1123501568
+  ],
+  [
+   5.79,
+   1874315304
+  ],
+  [
+   7.24,
+   1874315304
+  ],
+  [
+   8.7,
+   1874315304
+  ],
+  [
+   10.16,
+   1874315304
+  ],
+  [
+   11.59,
+   1874315304
+  ],
+  [
+   12.99,
+   1874315304
+  ],
+  [
+   14.44,
+   1874315304
+  ],
+  [
+   15.89,
+   1893812288
+  ],
+  [
+   17.37,
+   6282695816
+  ],
+  [
+   18.84,
+   6599562616
+  ],
+  [
+   20.3,
+   6599562616
+  ],
+  [
+   21.77,
+   6599562616
+  ],
+  [
+   23.23,
+   6599562616
+  ],
+  [
+   24.66,
+   6599562616
+  ],
+  [
+   26.09,
+   6599562616
+  ],
+  [
+   27.53,
+   6602380664
+  ]
+ ],
+ "ps_before": "2026-10-03T18:09:35-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 1040  25040  27.0 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/ContextStoreAgent\n  619   7088   6.6 /usr/sbin/notifyd\n  626 525728   3.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  592  16848   2.7 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored\n  761  58096   2.2 /usr/libexec/searchpartyd\n  601  42784   1.9 /usr/libexec/locationd\n 6219  58624   1.6 $HOME/Projects/investments/.venv/bin/python3\n  553 108784   1.6 /usr/libexec/logd\n57113 2068320   1.5 $HOME/.local/bin/claude\n47413 619536   1.2 /Applications/cmux.app/Contents/MacOS/cmux\n"
+}

@@ -1,0 +1,36 @@
+version: 1
+image: s01_scale_all_cells_drawn.jpg
+tool: cellxgene
+software: CZ CELLxGENE Discover Explorer (hosted, as served 2026-10-04)
+data: Qiu et al. 2024 mouse embryo timelapse, whole dataset (11,441,407 cells)
+url: https://cellxgene.cziscience.com/e/dcfd4feb-18a3-4b30-81d7-1b0c544a8ab3.cxg/
+captured: 2026-10-04
+by: comparison-auditor (shots) / retrofit by evidence-curator
+driver: notes/comparison/demos/scale_probe/probe_web.py
+source: manual
+image_sha256: 2c734b9cf9fdebf96bc9c16e8eb26542b3222e66f6fe9f3d46718ac92aa60f3f
+proves:
+- column: every_cell
+  mark: Y
+  caption: Hosted Explorer draws all 11,441,407 cells of the dataset in one draw call, no downsampling
+    or density mode.
+- column: auto_subset
+  mark: N
+  caption: Explorer draws all 11,441,407 cells of the largest Discover dataset by default, with no automatic
+    subset (2026-10-04)
+  row: cellxgene-explorer
+callouts:
+- n: 1
+  box:
+  - 370
+  - 98
+  - 164
+  - 21
+  label: 11441407 of 11441407 cells
+- n: 2
+  box:
+  - 400
+  - 155
+  - 600
+  - 645
+  label: every cell drawn as a point

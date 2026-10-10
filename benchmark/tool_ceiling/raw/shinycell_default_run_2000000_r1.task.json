@@ -1,0 +1,39 @@
+{
+ "tool": "shinycell",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/shinycell/first2000000",
+ "n": 2000000,
+ "phases": {
+  "server_ready": 3.56,
+  "first_plot": 20.29,
+  "plot_gene": 20.35,
+  "plot_cat": 26.7,
+  "done": 26.81
+ },
+ "checks": {
+  "gene": {
+   "gl": null,
+   "stated": 2000000,
+   "png": "benchmark/tool_ceiling/shots/shinycell_default_run_2000000_r1_gene.png",
+   "all_cells": true
+  },
+  "cat": {
+   "gl": null,
+   "stated": 2000000,
+   "png": "benchmark/tool_ceiling/shots/shinycell_default_run_2000000_r1_cat.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "ShinyCell": "2.1.0",
+  "shiny": "1.14.0"
+ },
+ "console": [
+  "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+ ],
+ "every_cell_basis": "server.R plots ggData[sample(nrow(ggData))]: every row, shuffled; not counted in the page",
+ "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
+ "crashed": false,
+ "ok": true
+}

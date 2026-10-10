@@ -1,0 +1,137 @@
+{
+ "store": "$SCRATCH/annzarro-scale/hlca/test/hlca_50k.zarr",
+ "src": "$SCRATCH/annzarro-scale/hlca/source/5f863718-02a6-46cb-83e7-52be988b915b.h5ad",
+ "cells": [
+  25556,
+  31847,
+  42529
+ ],
+ "genes": [
+  "SFTPC",
+  "CERCAM",
+  "BICD1P1"
+ ],
+ "n_pass": 17,
+ "n_checks": 17,
+ "checks": [
+  {
+   "check": "info",
+   "pass": true,
+   "detail": "expects n_obs=50000 n_vars=55329",
+   "seconds": 0.184,
+   "response": "{\"embeddings\":[\"X_scanvi_emb\",\"X_umap\"],\"has_layers\":true,\"has_obs\":true,\"has_obsm\":true,\"has_uns\":true,\"has_var\":true,\"has_varm\":true,\"layers\":{\"keys\":[\"normalized_csr\"]},\"n_obs\":50000,\"n_vars\":55329,\"name\":\"Hlca 50K\",\"obs_columns\":[\"3'_or_5'\",\"BMI\",\"_index\",\"age_or_mean_of_age_range\",\"age_range\",\""
+  },
+  {
+   "check": "obs/ann_level_1",
+   "pass": true,
+   "detail": "want ['Immune', 'Endothelial', 'Endothelial'] got ['Immune', 'Endothelial', 'Endothelial']",
+   "seconds": 0.057,
+   "response": "{\"categories\":{\"ann_level_1\":[\"Endothelial\",\"Epithelial\",\"Immune\",\"Stroma\",\"Unknown\"]},\"data\":{\"ann_level_1\":[\"Immune\",\"Endothelial\",\"Endothelial\"]},\"dataset_path\":\"$SCRATCH/annzarro-scale/hlca/test/hlca_50k.zarr\"}\n"
+  },
+  {
+   "check": "obs/donor_id",
+   "pass": true,
+   "detail": "want ['homosapiens_None_2023_None_sikkemalisa_002_d10_1101_2022_03_10_483747A40', 'homosapiens_None_2023_None_sikkemalisa_002_d10_1101_2022_03_10_483747A43', 'homosapiens_None_2023_None_sikkemalisa_002_d10_1101_2022_03_10_483747donor 2'] got ['homosapiens_None_2023_None_sikkemalisa_002_d10_1101_2022_03_10_483747A40', 'homosapiens_None_2023_None_sikkemalisa_002_d10_1101_2022_03_10_483747A43', 'homosapiens_None_2023_None_sikkemalisa_002_d10_1101_2022_03_10_483747donor 2']",
+   "seconds": 0.05,
+   "response": "{\"categories\":{\"donor_id\":[\"homosapiens_None_2023_None_sikkemalisa_002_d10_1101_2022_03_10_483747001C\",\"homosapiens_None_2023_None_sikkemalisa_002_d10_1101_2022_03_10_483747002C\",\"homosapiens_None_2023_None_sikkemalisa_002_d10_1101_2022_03_10_483747003C\",\"homosapiens_None_2023_None_sikkemalisa_002_d"
+  },
+  {
+   "check": "obsm/X_umap[:, 0]",
+   "pass": true,
+   "detail": "want [1.541388988494873, -11.61539077758789, -8.376132011413574] got [1.541388988494873, -11.61539077758789, -8.376132011413574]",
+   "seconds": 0.032,
+   "response": "<12 bytes application/octet-stream>"
+  },
+  {
+   "check": "obsm/X_umap[:, 1]",
+   "pass": true,
+   "detail": "want [6.954648494720459, 1.9886929988861084, 1.3618049621582031] got [6.954648494720459, 1.9886929988861084, 1.3618049621582031]",
+   "seconds": 0.037,
+   "response": "<12 bytes application/octet-stream>"
+  },
+  {
+   "check": "X gene SFTPC non-zero cells",
+   "pass": true,
+   "detail": "at [8992, 32641, 40745]: want [1.772432565689087, 1.856736421585083, 1.4903364181518555] got [1.772432565689087, 1.856736421585083, 1.4903364181518555]",
+   "seconds": 0.12,
+   "response": "<99792 bytes application/octet-stream>"
+  },
+  {
+   "check": "X gene SFTPC (col 48033)",
+   "pass": true,
+   "detail": "at cells [25556, 31847, 42529]: want [0.0, 0.0, 0.0] got [0.0, 0.0, 0.0]; len 50000; nonzero 12474 <= stored 12474",
+   "seconds": 0.12,
+   "response": "<99792 bytes application/octet-stream>"
+  },
+  {
+   "check": "X gene CERCAM non-zero cells",
+   "pass": true,
+   "detail": "at [30530, 36984, 48733]: want [0.686397135257721, 1.038145661354065, 0.6057817339897156] got [0.686397135257721, 1.038145661354065, 0.6057817339897156]",
+   "seconds": 0.118,
+   "response": "<12976 bytes application/octet-stream>"
+  },
+  {
+   "check": "X gene CERCAM (col 4162)",
+   "pass": true,
+   "detail": "at cells [25556, 31847, 42529]: want [0.0, 1.5217115879058838, 0.0] got [0.0, 1.5217115879058838, 0.0]; len 50000; nonzero 1622 <= stored 1622",
+   "seconds": 0.118,
+   "response": "<12976 bytes application/octet-stream>"
+  },
+  {
+   "check": "X gene BICD1P1 non-zero cells",
+   "pass": true,
+   "detail": "at [11423, 26036, 45178]: want [1.327980399131775, 0.937944769859314, 0.4635109603404999] got [1.327980399131775, 0.937944769859314, 0.4635109603404999]",
+   "seconds": 0.108,
+   "response": "<1984 bytes application/octet-stream>"
+  },
+  {
+   "check": "X gene BICD1P1 (col 2266)",
+   "pass": true,
+   "detail": "at cells [25556, 31847, 42529]: want [0.0, 0.0, 0.0] got [0.0, 0.0, 0.0]; len 50000; nonzero 248 <= stored 248",
+   "seconds": 0.108,
+   "response": "<1984 bytes application/octet-stream>"
+  },
+  {
+   "check": "layers/normalized_csr row 25556",
+   "pass": true,
+   "detail": "len 55329, nonzero want 2630 got 2630",
+   "seconds": 0.135,
+   "response": "<21040 bytes application/octet-stream>"
+  },
+  {
+   "check": "obsp/connectivities row 25556",
+   "pass": true,
+   "detail": "len 50000, nonzero want 0 got 0",
+   "seconds": 0.04,
+   "response": "<0 bytes application/octet-stream>"
+  },
+  {
+   "check": "layers/normalized_csr row 31847",
+   "pass": true,
+   "detail": "len 55329, nonzero want 1049 got 1049",
+   "seconds": 0.117,
+   "response": "<8392 bytes application/octet-stream>"
+  },
+  {
+   "check": "obsp/connectivities row 31847",
+   "pass": true,
+   "detail": "len 50000, nonzero want 3 got 3",
+   "seconds": 0.058,
+   "response": "<24 bytes application/octet-stream>"
+  },
+  {
+   "check": "layers/normalized_csr row 42529",
+   "pass": true,
+   "detail": "len 55329, nonzero want 882 got 882",
+   "seconds": 0.115,
+   "response": "<7056 bytes application/octet-stream>"
+  },
+  {
+   "check": "obsp/connectivities row 42529",
+   "pass": true,
+   "detail": "len 50000, nonzero want 2 got 2",
+   "seconds": 0.054,
+   "response": "<16 bytes application/octet-stream>"
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_default_run_2000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 12.5,
+ "peaks": {
+  "proc": {
+   "fp_peak": 4334079696,
+   "fp_lifetime_sum": 4334161616,
+   "rss_peak": 4446158848,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 4334079696,
+   "rss_peak": 4446158848,
+   "fp_lifetime_sum": 4334161616
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   8880536
+  ],
+  [
+   1.47,
+   200196840
+  ],
+  [
+   2.94,
+   2364557616
+  ],
+  [
+   4.41,
+   2569947584
+  ],
+  [
+   5.84,
+   2569947584
+  ],
+  [
+   7.35,
+   2570521024
+  ],
+  [
+   8.82,
+   4332818128
+  ],
+  [
+   10.26,
+   4332818128
+  ],
+  [
+   11.71,
+   4332818128
+  ]
+ ],
+ "ps_before": "2026-10-03T16:39:22-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  557 652416 111.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n84907 295600  97.0 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n84880 334496  86.9 $DEMO_ROOT/cellxgene/.venv/bin/python\n  855 1587632  25.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n84906 180640  22.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n    1  35552  22.8 /sbin/launchd\n86901 551808  17.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n97961 726192  15.5 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n  582 103584   9.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n84910  20704   3.8 benchmark/tool_ceiling/.venv/bin/python\n"
+}

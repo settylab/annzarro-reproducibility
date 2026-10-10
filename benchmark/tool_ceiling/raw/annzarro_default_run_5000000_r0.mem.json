@@ -1,0 +1,110 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first5000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_default_run_5000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-test/bin/annzarro"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 36.97,
+ "peaks": {
+  "client": {
+   "fp_peak": 7179022744,
+   "fp_lifetime_sum": 7565292120,
+   "rss_peak": 6208651264,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1282311752,
+   "fp_lifetime_sum": 1282344520,
+   "rss_peak": 1305067520,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 163394640,
+   "fp_lifetime_sum": 163443792,
+   "rss_peak": 214450176,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 8461334496,
+   "rss_peak": 7513718784,
+   "fp_lifetime_sum": 8847636640
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.3,
+   1812473384
+  ],
+  [
+   4.6,
+   3891457496
+  ],
+  [
+   6.93,
+   3320294872
+  ],
+  [
+   9.25,
+   4292832848
+  ],
+  [
+   11.51,
+   4533334424
+  ],
+  [
+   13.83,
+   4745163184
+  ],
+  [
+   16.12,
+   5445677800
+  ],
+  [
+   18.4,
+   5469926408
+  ],
+  [
+   20.71,
+   5787546776
+  ],
+  [
+   23.01,
+   6190167384
+  ],
+  [
+   25.24,
+   5429490912
+  ],
+  [
+   27.5,
+   5754418400
+  ],
+  [
+   29.78,
+   6174553432
+  ],
+  [
+   32.05,
+   5742048744
+  ],
+  [
+   34.28,
+   8385591264
+  ],
+  [
+   36.54,
+   1282311752
+  ]
+ ],
+ "ps_before": "2026-10-03T17:03:59-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  557 652192 122.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  582 105904  59.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  626 554912  39.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  855 1655520  26.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n26197 404784  16.2 /System/Applications/Preview.app/Contents/MacOS/Preview\n20913  20336  14.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n20917  20320  14.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n20914  20336  13.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n86901 570448  12.0 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n20916  20352  10.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n"
+}

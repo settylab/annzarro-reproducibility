@@ -1,0 +1,26 @@
+version: 1
+image: m15_genes_APP_feature_panel.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: 3e5302269e776a140e328c186724acf36fff1a6b35deda1f82a32584d062c45c
+proves:
+- column: genes
+  mark: N
+  caption: 'Features panel: ''Co-expression'' plots two feature lists against each other per cell; no gene x gene
+    matrix or similarity view'
+callouts:
+- n: 1
+  box:
+  - 65
+  - 430
+  - 200
+  - 127
+  label: Co-expression of two feature lists

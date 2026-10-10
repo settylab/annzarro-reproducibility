@@ -1,0 +1,248 @@
+{
+ "gene": "S100a9",
+ "fold_change_key": "kompot_de_Young_to_Old_fold_change",
+ "smoothed_keys": [
+  "kompot_de_Young_smoothed",
+  "kompot_de_Old_smoothed"
+ ],
+ "mean_lfc": -0.051279275140919706,
+ "mahalanobis": 10.375174379853012,
+ "mahalanobis_rank": 8,
+ "fc_range": [
+  -1.4579427242279053,
+  0.3141939342021942
+ ],
+ "fc_HSC_cell": -1.3499020338058472,
+ "fc_monocyte_cell": -0.017051121219992638,
+ "median_by_celltype": {
+  "Basophil": {
+   "fc": -0.01,
+   "young": 1.981,
+   "old": 1.967
+  },
+  "Basophil Progenitor": {
+   "fc": 0.027,
+   "young": 1.303,
+   "old": 1.319
+  },
+  "CD4 T cell": {
+   "fc": 0.096,
+   "young": 2.008,
+   "old": 2.102
+  },
+  "CD8 TEM": {
+   "fc": 0.271,
+   "young": 1.798,
+   "old": 2.063
+  },
+  "CLP": {
+   "fc": 0.028,
+   "young": 0.655,
+   "old": 0.691
+  },
+  "Ery P": {
+   "fc": 0.095,
+   "young": 0.628,
+   "old": 0.723
+  },
+  "GMP": {
+   "fc": 0.027,
+   "young": 0.578,
+   "old": 0.668
+  },
+  "HSC": {
+   "fc": -1.353,
+   "young": 1.737,
+   "old": 0.385
+  },
+  "ILC": {
+   "fc": 0.07,
+   "young": 1.986,
+   "old": 2.053
+  },
+  "Immature B cell": {
+   "fc": -0.047,
+   "young": 2.089,
+   "old": 2.038
+  },
+  "LMPP": {
+   "fc": -0.069,
+   "young": 0.661,
+   "old": 0.601
+  },
+  "MBEP": {
+   "fc": 0.066,
+   "young": 1.388,
+   "old": 1.454
+  },
+  "MKP": {
+   "fc": -0.073,
+   "young": 0.717,
+   "old": 0.627
+  },
+  "Mature Naive B cell": {
+   "fc": -0.104,
+   "young": 2.087,
+   "old": 1.983
+  },
+  "Memory B cell": {
+   "fc": 0.157,
+   "young": 1.81,
+   "old": 1.963
+  },
+  "Mono P": {
+   "fc": -0.02,
+   "young": 0.981,
+   "old": 0.957
+  },
+  "Monocyte": {
+   "fc": -0.03,
+   "young": 1.865,
+   "old": 1.839
+  },
+  "Myelo P": {
+   "fc": -0.038,
+   "young": 0.868,
+   "old": 0.805
+  },
+  "NK": {
+   "fc": -0.048,
+   "young": 1.953,
+   "old": 1.904
+  },
+  "Naive CD8 T cell": {
+   "fc": -0.176,
+   "young": 1.978,
+   "old": 1.801
+  },
+  "Neutrophil": {
+   "fc": 0.101,
+   "young": 3.531,
+   "old": 3.626
+  },
+  "Non Classical Monocyte": {
+   "fc": -0.206,
+   "young": 2.001,
+   "old": 1.795
+  },
+  "Plasma cell": {
+   "fc": 0.076,
+   "young": 1.778,
+   "old": 1.863
+  },
+  "Pre-B II cell": {
+   "fc": 0.031,
+   "young": 2.065,
+   "old": 2.098
+  },
+  "Pre-B cell": {
+   "fc": -0.069,
+   "young": 1.883,
+   "old": 1.79
+  },
+  "Pro-B cell": {
+   "fc": 0.038,
+   "young": 1.922,
+   "old": 1.96
+  },
+  "T cell": {
+   "fc": 0.014,
+   "young": 1.981,
+   "old": 1.992
+  },
+  "Treg": {
+   "fc": 0.13,
+   "young": 1.984,
+   "old": 2.111
+  },
+  "cDC": {
+   "fc": -0.091,
+   "young": 1.616,
+   "old": 1.52
+  },
+  "cMoP": {
+   "fc": -0.17,
+   "young": 1.358,
+   "old": 1.145
+  },
+  "pDC": {
+   "fc": -0.161,
+   "young": 1.955,
+   "old": 1.794
+  }
+ },
+ "frac_cells_fc_lt_-0.5": 0.03918417799752781,
+ "celltypes_of_cells_fc_lt_-0.5": {
+  "HSC": 288,
+  "LMPP": 24,
+  "MKP": 5
+ },
+ "panel_d": {
+  "locked_cell": "HSPC_Old_1#GAAGCCCGTGGCTCTG-1",
+  "focused_cell": "Mature_Young_2#TCAATTCAGTGAGGCT-1",
+  "encoding": "DE genes coloured by sign(x*y); no magnitude threshold",
+  "spearman_rows_all_genes": 0.18465057687253103,
+  "spearman_rows_de_genes": 0.5293049377370127,
+  "n_de": 190,
+  "n_de_same_direction": 129,
+  "n_de_opposite_direction": 61,
+  "frac_de_opposite": 0.32105263157894737,
+  "frac_all_genes_opposite": 0.43125575683143996,
+  "top_opposite_by_min_abs": [
+   [
+    "Apoe",
+    0.937,
+    -0.348,
+    0.348
+   ],
+   [
+    "Hmgn2",
+    -0.293,
+    0.182,
+    0.182
+   ],
+   [
+    "Wfdc21",
+    -0.623,
+    0.168,
+    0.168
+   ],
+   [
+    "G0s2",
+    -0.213,
+    0.106,
+    0.106
+   ],
+   [
+    "Il1b",
+    -0.095,
+    0.106,
+    0.095
+   ]
+  ],
+  "opposite_de_min_abs_median": 0.027909211814403534,
+  "same_de_min_abs_median": 0.07986898720264435,
+  "noise_fc_sd_per_cell": {
+   "HSPC_Old_1#GAAGCCCGTGGCTCTG-1": 0.15252621566889898,
+   "Mature_Young_2#TCAATTCAGTGAGGCT-1": 0.1213998642749375
+  },
+  "noise_note": "kompot fold_change_zscores layer not stored; per-cell sd from obs kompot_de_{Young,Old}_std",
+  "n_de_opposite_beyond_1.96sd_both": 1,
+  "de_opposite_beyond_1.96sd_both": [
+   "Apoe"
+  ],
+  "n_de_same_beyond_1.96sd_both": 10,
+  "n_de_beyond_1.96sd_hsc": 120,
+  "n_de_beyond_1.96sd_mono": 13,
+  "hsc_fc_range": [
+   -1.3499020338058472,
+   1.1058534383773804
+  ],
+  "mono_fc_range": [
+   -0.3653481602668762,
+   0.3921232521533966
+  ],
+  "de_abs_fc_median_hsc": 0.4115597903728485,
+  "de_abs_fc_median_mono": 0.06826570257544518
+ }
+}

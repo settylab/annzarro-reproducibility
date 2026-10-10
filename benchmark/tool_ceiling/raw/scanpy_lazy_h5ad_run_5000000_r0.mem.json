@@ -1,0 +1,132 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "scanpy_task.py",
+  "lazy_h5ad",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first5000000.h5ad",
+  "benchmark/tool_ceiling/shots/scanpy_lazy_h5ad_run_5000000_r0"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 36.1,
+ "peaks": {
+  "proc": {
+   "fp_peak": 2402601720,
+   "fp_lifetime_sum": 2402601720,
+   "rss_peak": 2788999168,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 2402601720,
+   "rss_peak": 2788999168,
+   "fp_lifetime_sum": 2402601720
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   8618392
+  ],
+  [
+   1.49,
+   311116616
+  ],
+  [
+   2.93,
+   854738192
+  ],
+  [
+   4.36,
+   995886448
+  ],
+  [
+   5.82,
+   1058358928
+  ],
+  [
+   7.24,
+   1190807280
+  ],
+  [
+   8.67,
+   1231947504
+  ],
+  [
+   10.11,
+   1261782792
+  ],
+  [
+   11.54,
+   1281427232
+  ],
+  [
+   12.97,
+   1301923616
+  ],
+  [
+   14.42,
+   1227737008
+  ],
+  [
+   15.86,
+   2063206896
+  ],
+  [
+   17.32,
+   2063206896
+  ],
+  [
+   18.76,
+   2063206896
+  ],
+  [
+   20.22,
+   2063206896
+  ],
+  [
+   21.64,
+   2063206896
+  ],
+  [
+   23.07,
+   2063206896
+  ],
+  [
+   24.5,
+   2063206896
+  ],
+  [
+   25.95,
+   2082687472
+  ],
+  [
+   27.36,
+   2400422624
+  ],
+  [
+   28.82,
+   2400422624
+  ],
+  [
+   30.24,
+   2400422624
+  ],
+  [
+   31.67,
+   2400422624
+  ],
+  [
+   33.15,
+   2400422624
+  ],
+  [
+   34.59,
+   2400422624
+  ],
+  [
+   36.03,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-03T19:49:49-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  557 651392   7.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n98631 478672   4.9 $HOME/.local/bin/claude\n  855 1463904   4.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n57113 2032928   3.7 $HOME/.local/bin/claude\n  596  29760   3.0 /System/Library/CoreServices/launchservicesd\n  629 154144   2.8 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n86901 508192   2.5 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n 1012  17104   2.3 /usr/libexec/pboard\n  582 102560   2.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  626 494096   2.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n"
+}

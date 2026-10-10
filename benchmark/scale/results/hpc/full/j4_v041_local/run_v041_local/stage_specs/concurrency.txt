@@ -1,0 +1,3 @@
+$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_allx64.zarr
+$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_1024x1024.zarr
+$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_8192x64.zarr

@@ -1,0 +1,50 @@
+# Process snapshots taken during the benchmark. The export keeps the benchmark's own processes (pid, elapsed time, rss in kB, command) and omits the unrelated ones; see the count below.
+2026-10-07 23:53:52Z
+16:53  up 114 days, 15:38, 29 users, load averages: 5.05 3.93 4.65
+pid=25773 etime=03-05:25:31 rss_kb=17856 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=56998 etime=00:00 rss_kb=2064 cmd=sh -c benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name; benchmark/scale/ceiling
+pid=57000 etime=00:00 rss_kb=2336 cmd=/bin/bash benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name
+pid=75535 etime=01-21:14:27 rss_kb=26592 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 55645 --data-dir /var/folders/h_/5f3
+pid=75574 etime=01-21:14:25 rss_kb=11088 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -c from multiprocessing.resource_tracker import main;main(11)
+pid=77031 etime=01-23:31:31 rss_kb=26288 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 62230 --data-dir /var/folders/h_/5f3
+2026-10-07 23:54:56Z
+16:54  up 114 days, 15:39, 29 users, load averages: 17.76 6.79 5.61
+pid=25773 etime=03-05:26:35 rss_kb=17856 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=56998 etime=01:04 rss_kb=2064 cmd=sh -c benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name; benchmark/scale/ceiling
+pid=57000 etime=01:04 rss_kb=2336 cmd=/bin/bash benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name
+pid=75535 etime=01-21:15:31 rss_kb=26592 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 55645 --data-dir /var/folders/h_/5f3
+pid=75574 etime=01-21:15:29 rss_kb=11088 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -c from multiprocessing.resource_tracker import main;main(11)
+pid=77031 etime=01-23:32:35 rss_kb=26288 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 62230 --data-dir /var/folders/h_/5f3
+2026-10-07 23:56:04Z
+16:56  up 114 days, 15:40, 29 users, load averages: 9.77 7.06 5.83
+pid=25773 etime=03-05:27:43 rss_kb=17856 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=56998 etime=02:12 rss_kb=2064 cmd=sh -c benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name; benchmark/scale/ceiling
+pid=57000 etime=02:12 rss_kb=2352 cmd=/bin/bash benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name
+pid=75535 etime=01-21:16:39 rss_kb=26592 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 55645 --data-dir /var/folders/h_/5f3
+pid=75574 etime=01-21:16:37 rss_kb=11088 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -c from multiprocessing.resource_tracker import main;main(11)
+pid=77031 etime=01-23:33:43 rss_kb=26288 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 62230 --data-dir /var/folders/h_/5f3
+2026-10-07 23:57:07Z
+16:57  up 114 days, 15:41, 29 users, load averages: 5.74 6.50 5.72
+pid=25773 etime=03-05:28:46 rss_kb=17856 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=56998 etime=03:15 rss_kb=2064 cmd=sh -c benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name; benchmark/scale/ceiling
+pid=57000 etime=03:15 rss_kb=2384 cmd=/bin/bash benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name
+pid=75535 etime=01-21:17:42 rss_kb=26592 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 55645 --data-dir /var/folders/h_/5f3
+pid=75574 etime=01-21:17:40 rss_kb=11088 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -c from multiprocessing.resource_tracker import main;main(11)
+pid=77031 etime=01-23:34:46 rss_kb=26288 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 62230 --data-dir /var/folders/h_/5f3
+2026-10-07 23:58:16Z
+16:58  up 114 days, 15:43, 29 users, load averages: 7.28 6.59 5.79
+pid=25773 etime=03-05:29:55 rss_kb=17856 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=56998 etime=04:24 rss_kb=2064 cmd=sh -c benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name; benchmark/scale/ceiling
+pid=57000 etime=04:24 rss_kb=2400 cmd=/bin/bash benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name
+pid=75535 etime=01-21:18:51 rss_kb=26592 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 55645 --data-dir /var/folders/h_/5f3
+pid=75574 etime=01-21:18:49 rss_kb=11088 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -c from multiprocessing.resource_tracker import main;main(11)
+pid=77031 etime=01-23:35:55 rss_kb=26288 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 62230 --data-dir /var/folders/h_/5f3
+2026-10-07 23:59:19Z
+16:59  up 114 days, 15:44, 29 users, load averages: 4.99 6.14 5.69
+pid=25773 etime=03-05:30:58 rss_kb=17856 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
+pid=56998 etime=05:27 rss_kb=2064 cmd=sh -c benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name; benchmark/scale/ceiling
+pid=57000 etime=05:27 rss_kb=2416 cmd=/bin/bash benchmark/scale/ceiling/queue_v041.sh $ANNZARRO_SRC/.venv-bench/bin/annzarro name
+pid=75535 etime=01-21:19:54 rss_kb=26592 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 55645 --data-dir /var/folders/h_/5f3
+pid=75574 etime=01-21:19:52 rss_kb=11088 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -c from multiprocessing.resource_tracker import main;main(11)
+pid=77031 etime=01-23:36:58 rss_kb=26288 cmd=$ANNZARRO_SRC/.venv-docs/bin/python -m annzarro.cli start --host 127.0.0.1 --port 62230 --data-dir /var/folders/h_/5f3
+# omitted: 187 process lines unrelated to the benchmark

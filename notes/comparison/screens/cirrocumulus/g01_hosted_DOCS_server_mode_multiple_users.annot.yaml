@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "g01_hosted_DOCS_server_mode_multiple_users.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 documentation (cirrocumulus.readthedocs.io/en/latest, read 2026-10-04)",
+ "data": "docs page: https://cirrocumulus.readthedocs.io/en/latest/installation.html",
+ "url": "https://cirrocumulus.readthedocs.io/en/latest/installation.html",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_cirrocumulus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "hosted",
+   "mark": "Y",
+   "caption": "docs page, Cirrocumulus 1.1.61 installation docs (read 2026-10-04): server mode serves multiple users and datasets, with MongoDB and Okta or Google sign-in"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    348,
+    410,
+    704,
+    80
+   ],
+   "label": "docs page: \"serve multiple users and datasets securely\"",
+   "selector": "[data-gap-phrase='1']"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    0,
+    1400,
+    42
+   ],
+   "label": "docs page, with its URL",
+   "selector": "#gapbanner"
+  }
+ ]
+}

@@ -1,0 +1,2 @@
+JobID|JobName|State|ExitCode|Submit|Start|End|Elapsed|NodeList
+10100751|scale-worker-j3-filerwarm|COMPLETED|0:0|2026-10-05T23:57:00|2026-10-06T08:09:52|2026-10-06T11:41:43|03:31:51|hpc-node-27

@@ -1,0 +1,38 @@
+{
+ "tool": "ucsc",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/ucsc/html_5000000",
+ "n": 5000000,
+ "phases": {
+  "server_ready": 1.42,
+  "first_plot": 3.14,
+  "plot_cat": 3.24,
+  "done": 1754.92
+ },
+ "checks": {
+  "cat": {
+   "gl": {
+    "crit": "call",
+    "drawn": 5000000,
+    "frame_max": {
+     "pts": 10000000,
+     "inst": 0
+    },
+    "call_max": 5000000
+   },
+   "stated": 5000000,
+   "png": "benchmark/tool_ceiling/shots/ucsc_default_run_5000000_r1_cat.png",
+   "all_cells": true
+  }
+ },
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "cellbrowser": "1.2.20"
+ },
+ "console": [
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)",
+  "error: Failed to load resource: the server responded with a status of 404 (File not found)"
+ ],
+ "error": "TimeoutError: Locator.wait_for: Timeout 1750000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"Gene: MALAT1\") to be visible\n",
+ "ok": false
+}

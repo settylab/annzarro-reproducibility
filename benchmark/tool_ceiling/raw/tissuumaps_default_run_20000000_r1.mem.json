@@ -1,0 +1,130 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "tissuumaps",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad_csc/tahoe_first20000000_csc.h5ad",
+  "benchmark/tool_ceiling/shots/tissuumaps_default_run_20000000_r1",
+  "--n",
+  "20000000",
+  "--port",
+  "8944"
+ ],
+ "status": "error",
+ "rc": 3,
+ "wall_s": 45.24,
+ "peaks": {
+  "client": {
+   "fp_peak": 3484281704,
+   "fp_lifetime_sum": 3621842872,
+   "rss_peak": 3599777792,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 79135680,
+   "fp_lifetime_sum": 94291528,
+   "rss_peak": 177438720,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 144213896,
+   "fp_lifetime_sum": 145917856,
+   "rss_peak": 179142656,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3558731608,
+   "rss_peak": 3777216512,
+   "fp_lifetime_sum": 3716134400
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.3,
+   870441864
+  ],
+  [
+   4.65,
+   1847880192
+  ],
+  [
+   7.0,
+   2009688864
+  ],
+  [
+   9.35,
+   1610623872
+  ],
+  [
+   11.59,
+   2794155768
+  ],
+  [
+   13.75,
+   3079909208
+  ],
+  [
+   15.92,
+   3546165104
+  ],
+  [
+   18.11,
+   3366776688
+  ],
+  [
+   20.26,
+   3350720416
+  ],
+  [
+   22.44,
+   3353685920
+  ],
+  [
+   24.63,
+   3361009568
+  ],
+  [
+   26.79,
+   3368300496
+  ],
+  [
+   28.97,
+   3375542224
+  ],
+  [
+   31.16,
+   3383242704
+  ],
+  [
+   33.35,
+   3304665088
+  ],
+  [
+   35.57,
+   3311710208
+  ],
+  [
+   37.81,
+   3318984704
+  ],
+  [
+   40.07,
+   3326472192
+  ],
+  [
+   42.3,
+   2794647384
+  ],
+  [
+   44.55,
+   2797694808
+  ]
+ ],
+ "ps_before": "2026-10-05T12:42:49-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 3031   8288  99.0 ugrep\n  626 504464  42.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n97977 275056  35.8 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n35279 353792  12.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n47413 665776   8.1 /Applications/cmux.app/Contents/MacOS/cmux\n  639 142144   3.9 /usr/sbin/coreaudiod\n86901 555744   3.8 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  557 514272   3.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n57113 2597088   3.3 $HOME/.local/bin/claude\n 2191 555760   3.0 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

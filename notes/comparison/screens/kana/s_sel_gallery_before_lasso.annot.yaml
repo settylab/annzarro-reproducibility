@@ -1,0 +1,20 @@
+{
+ "version": 1,
+ "image": "s_sel_gallery_before_lasso.jpg",
+ "tool": "kana",
+ "software": "Kana v3.2.0 (live build, kanaverse.org)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "https://www.kanaverse.org/kana/",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/selection_recheck/selection_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "P",
+   "caption": "before the lasso: X_diffusion gallery copy (top right) and embedding thumbnails as copied"
+  }
+ ],
+ "callouts": []
+}

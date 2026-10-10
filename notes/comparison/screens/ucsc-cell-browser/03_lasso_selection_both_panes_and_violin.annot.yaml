@@ -1,0 +1,65 @@
+{
+ "version": 1,
+ "image": "03_lasso_selection_both_panes_and_violin.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo&gene=Mpo&split=1",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "A lasso in the left pane selects 1.1k cells; the right pane highlights the same cells and the violin splits Selected vs Others"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    246,
+    56,
+    483,
+    834
+   ],
+   "label": "lasso selection, left pane",
+   "selector": "#mpCanvas"
+  },
+  {
+   "n": 2,
+   "box": [
+    721,
+    56,
+    483,
+    834
+   ],
+   "label": "same cells highlighted, right pane",
+   "selector": "[data-recap=right]"
+  },
+  {
+   "n": 3,
+   "box": [
+    1199,
+    350,
+    201,
+    244
+   ],
+   "label": "violin: Selected vs Others",
+   "selector": "#tpViolin"
+  },
+  {
+   "n": 4,
+   "box": [
+    1023,
+    883,
+    174,
+    17
+   ],
+   "label": "cells selected",
+   "selector": "#tpCellCount"
+  }
+ ]
+}

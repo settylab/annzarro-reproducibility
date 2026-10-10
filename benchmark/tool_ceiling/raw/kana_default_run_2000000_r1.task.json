@@ -1,0 +1,21 @@
+{
+ "tool": "kana",
+ "variant": "default",
+ "input": "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+ "n": 2000000,
+ "phases": {
+  "done": 11.06
+ },
+ "checks": {},
+ "versions": {
+  "chromium": "153.0.8010.12",
+  "kana": "v3.2.0"
+ },
+ "console": [
+  "error: Failed to load resource: net::ERR_FAILED",
+  "error: Aborted()",
+  "error: RuntimeError: Aborted(). Build with -sASSERTIONS for more info.\n    at Q (https://www.kanaverse.org/kana/static/js/255.c7a31e86.chunk.js:2:348073)\n    at wt (https://www.kanaverse.org/kana/static/js/2"
+ ],
+ "error": "RuntimeError: Kana EXPLORE ERROR: RuntimeError: Aborted(). Build with -sASSERTIONS for more info.",
+ "ok": false
+}

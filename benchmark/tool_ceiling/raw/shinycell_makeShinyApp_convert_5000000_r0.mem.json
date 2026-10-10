@@ -1,0 +1,119 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/_mamba/envs/rtools/bin/Rscript",
+  "shinycell_build.R",
+  "$DATA_ROOT/tool_ceiling_data/sce/first5000000.rds",
+  "$DATA_ROOT/tool_ceiling_data/shinycell/first5000000"
+ ],
+ "status": "cap",
+ "rc": -9,
+ "wall_s": 32.68,
+ "peaks": {
+  "proc": {
+   "fp_peak": 51588798864,
+   "fp_lifetime_sum": 51603478952,
+   "rss_peak": 53755002880,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 51588798864,
+   "rss_peak": 53755002880,
+   "fp_lifetime_sum": 51603478952
+  }
+ },
+ "trace": [
+  [
+   0.01,
+   999640
+  ],
+  [
+   1.45,
+   328860632
+  ],
+  [
+   2.88,
+   580076768
+  ],
+  [
+   4.33,
+   861029792
+  ],
+  [
+   5.74,
+   1001440792
+  ],
+  [
+   7.21,
+   1152353912
+  ],
+  [
+   8.63,
+   1236747968
+  ],
+  [
+   10.06,
+   1276774104
+  ],
+  [
+   11.51,
+   1436911440
+  ],
+  [
+   12.95,
+   3446934768
+  ],
+  [
+   14.36,
+   3680177560
+  ],
+  [
+   15.8,
+   4918530320
+  ],
+  [
+   17.27,
+   7306336184
+  ],
+  [
+   18.71,
+   8265734744
+  ],
+  [
+   20.15,
+   9337118064
+  ],
+  [
+   21.59,
+   8442977840
+  ],
+  [
+   23.05,
+   14154297032
+  ],
+  [
+   24.5,
+   28926580768
+  ],
+  [
+   25.95,
+   45413222432
+  ],
+  [
+   27.39,
+   48243101720
+  ],
+  [
+   28.85,
+   48243101720
+  ],
+  [
+   30.29,
+   49414443896
+  ],
+  [
+   31.74,
+   51021518840
+  ]
+ ],
+ "ps_before": "2026-10-03T19:46:46-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 2032576   4.4 $HOME/.local/bin/claude\n34762 347584   2.0 $HOME/.local/bin/claude\n80588 616224   1.1 $HOME/.local/bin/claude\n 4725 613712   1.0 claude\n51397 267024   0.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n47413 613552   0.8 /Applications/cmux.app/Contents/MacOS/cmux\n34972 494480   0.7 $HOME/.local/bin/claude\n92291  30832   0.6 .venv/bin/python\n  734  51168   0.6 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n90797 373632   0.5 $HOME/.local/bin/claude\n"
+}

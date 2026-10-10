@@ -1,0 +1,110 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "noprewarm",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first5000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_noprewarm_run_5000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-test/bin/annzarro"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 36.37,
+ "peaks": {
+  "client": {
+   "fp_peak": 7773958768,
+   "fp_lifetime_sum": 7962097320,
+   "rss_peak": 6156861440,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1308624504,
+   "fp_lifetime_sum": 1311655904,
+   "rss_peak": 1331347456,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 161264696,
+   "fp_lifetime_sum": 161281080,
+   "rss_peak": 213434368,
+   "n_proc_max": 2
+  },
+  "total": {
+   "fp_peak": 9082550504,
+   "rss_peak": 7488176128,
+   "fp_lifetime_sum": 9273753224
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.2,
+   1796531464
+  ],
+  [
+   4.4,
+   3502124048
+  ],
+  [
+   6.68,
+   3812306248
+  ],
+  [
+   8.9,
+   4764675688
+  ],
+  [
+   11.13,
+   5365379480
+  ],
+  [
+   13.43,
+   5561004536
+  ],
+  [
+   15.66,
+   6261601048
+  ],
+  [
+   17.89,
+   6274741400
+  ],
+  [
+   20.17,
+   5407667088
+  ],
+  [
+   22.42,
+   5676299176
+  ],
+  [
+   24.6,
+   6238156072
+  ],
+  [
+   26.84,
+   6389822664
+  ],
+  [
+   29.1,
+   5714867184
+  ],
+  [
+   31.37,
+   5850461192
+  ],
+  [
+   33.6,
+   7292335304
+  ],
+  [
+   35.81,
+   7682029680
+  ]
+ ],
+ "ps_before": "2026-10-03T18:12:41-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n57113 2095152  92.3 $HOME/.local/bin/claude\n24004 270608  41.9 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.59/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n97961 700288  13.9 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n  626 524640   8.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 6219  58640   3.8 $HOME/Projects/investments/.venv/bin/python3\n47413 619568   3.2 /Applications/cmux.app/Contents/MacOS/cmux\n  734  51680   2.7 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n24263  20464   2.2 benchmark/tool_ceiling/.venv/bin/python\n  629 189984   1.6 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  601  43200   1.4 /usr/libexec/locationd\n"
+}

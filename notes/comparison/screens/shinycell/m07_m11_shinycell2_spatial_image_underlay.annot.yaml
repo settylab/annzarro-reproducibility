@@ -1,0 +1,33 @@
+version: 1
+image: m07_m11_shinycell2_spatial_image_underlay.jpg
+tool: shinycell
+software: ShinyCell2 (public showcase)
+data: ShinyCell2 showcase spatial dataset (Visium)
+url: https://shinycell.ouyanglab.com/
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/shinycell/matrix_check2.py
+source: manual
+image_sha256: f5e77b9407c3ffedf9a187c2c20dc7ab666a3e5d3a48fb6b6301d9cf349d7ee5
+proves:
+- column: spatial
+  mark: P
+  caption: Only ShinyCell2 places Visium spots at tissue coordinates (showcase); the ShinyCell package itself has
+    no spatial view.
+- column: image
+  mark: P
+  caption: Only ShinyCell2 draws the H&E image under the spots (showcase); the ShinyCell package itself has no image
+    layer.
+callouts:
+- n: 1
+  box: [12, 16, 294, 42]
+  label: shinycell2 showcase (ShinyCell2, not ShinyCell)
+- n: 2
+  box: [44, 460, 626, 604]
+  label: spots by seurat_clusters at tissue positions over the H&E
+- n: 3
+  box: [730, 460, 626, 604]
+  label: spots by Ttr over the same image
+- n: 4
+  box: [28, 1380, 270, 24]
+  label: This webpage was made using ShinyCell2

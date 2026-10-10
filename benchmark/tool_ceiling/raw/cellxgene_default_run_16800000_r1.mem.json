@@ -1,0 +1,125 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first16800000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_default_run_16800000_r1",
+  "--n",
+  "16800000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 41.32,
+ "peaks": {
+  "client": {
+   "fp_peak": 6744127264,
+   "fp_lifetime_sum": 7199898936,
+   "rss_peak": 6502252544,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 38095744792,
+   "fp_lifetime_sum": 38176469528,
+   "rss_peak": 38681329664,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 122270248,
+   "fp_lifetime_sum": 122270248,
+   "rss_peak": 160989184,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 42940589288,
+   "rss_peak": 44709543936,
+   "fp_lifetime_sum": 45376368464
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.13,
+   867082664
+  ],
+  [
+   4.24,
+   3884378816
+  ],
+  [
+   6.47,
+   15847411080
+  ],
+  [
+   8.57,
+   16614510536
+  ],
+  [
+   10.64,
+   17899640024
+  ],
+  [
+   12.7,
+   18036708664
+  ],
+  [
+   14.78,
+   19283892448
+  ],
+  [
+   16.9,
+   19953326688
+  ],
+  [
+   18.98,
+   21841567792
+  ],
+  [
+   21.15,
+   25437319176
+  ],
+  [
+   23.25,
+   26164426080
+  ],
+  [
+   25.33,
+   26272593368
+  ],
+  [
+   27.37,
+   27672574288
+  ],
+  [
+   29.47,
+   28529589568
+  ],
+  [
+   31.57,
+   35675754664
+  ],
+  [
+   33.65,
+   42489636072
+  ],
+  [
+   35.72,
+   28088253616
+  ],
+  [
+   37.87,
+   30434573800
+  ],
+  [
+   40.0,
+   28580036072
+  ]
+ ],
+ "ps_before": "2026-10-04T02:57:04-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n93048 4561824   8.8 .venv/bin/python\n 4725 611520   5.8 claude\n90797 363808   2.1 $HOME/.local/bin/claude\n57113 2200768   1.8 $HOME/.local/bin/claude\n34972 490880   1.5 $HOME/.local/bin/claude\n  855 1387344   1.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  557 596320   1.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n47413 585408   0.9 /Applications/cmux.app/Contents/MacOS/cmux\n92291  30800   0.6 .venv/bin/python\n80588 613136   0.6 $HOME/.local/bin/claude\n"
+}

@@ -1,0 +1,69 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_backed_run_2000000_r1",
+  "--n",
+  "2000000",
+  "--port",
+  "8939"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 13.16,
+ "peaks": {
+  "client": {
+   "fp_peak": 1635067072,
+   "fp_lifetime_sum": 1792846048,
+   "rss_peak": 1815560192,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 4522987432,
+   "fp_lifetime_sum": 4605580088,
+   "rss_peak": 4636803072,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 117797512,
+   "fp_lifetime_sum": 117797512,
+   "rss_peak": 152338432,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6158054504,
+   "rss_peak": 6413352960,
+   "fp_lifetime_sum": 6398426136
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.19,
+   711090696
+  ],
+  [
+   4.38,
+   2383964528
+  ],
+  [
+   6.62,
+   2603920040
+  ],
+  [
+   8.81,
+   2498161368
+  ],
+  [
+   11.07,
+   6151517288
+  ]
+ ],
+ "ps_before": "2026-10-03T21:12:55-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 6219  58688   6.0 $HOME/Projects/investments/.venv/bin/python3\n57113 1849472   4.1 $HOME/.local/bin/claude\n  618  65904   1.2 /usr/sbin/bluetoothd\n47413 607344   1.0 /Applications/cmux.app/Contents/MacOS/cmux\n  601  43424   0.8 /usr/libexec/locationd\n92291  30816   0.6 .venv/bin/python\n80588 616592   0.5 $HOME/.local/bin/claude\n 4725 638512   0.5 claude\n  734  51728   0.5 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n  565  18272   0.5 /usr/libexec/configd\n"
+}

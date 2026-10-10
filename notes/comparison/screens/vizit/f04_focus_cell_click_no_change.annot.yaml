@@ -1,0 +1,20 @@
+{
+ "version": 1,
+ "image": "f04_focus_cell_click_no_change.jpg",
+ "tool": "vizit",
+ "software": "VizIt v1.0.0 as deployed at pd5d.yale.edu (Parkinson's Cell Atlas)",
+ "data": "PD5D_MTG_snRNAseq (snRNA-seq), hosted",
+ "url": "https://pd5d.yale.edu/views/geneview?dataset=PD5D_MTG_snRNAseq&gene=SNCA&sample=all&color=MajorCellTypes&group=MajorCellTypes",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/vizit/visuals_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Gene View after a click on a UMAP cell: only Plotly's hover tooltip appears; the URL and the data of both plots are unchanged, and no request names the cell (the API calls logged after the click are the page's own load set: UMAP, gene list, metadata, SNCA)"
+  }
+ ],
+ "callouts": []
+}

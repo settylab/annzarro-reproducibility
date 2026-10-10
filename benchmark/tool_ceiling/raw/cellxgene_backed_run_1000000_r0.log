@@ -1,0 +1,7 @@
+[     3.1s] server_ready
+[     3.8s] first_plot
+[     7.2s] plot_cat
+[     7.3s] gene_added
+[    10.9s] plot_gene
+[    11.0s] done
+{"status": "ok", "rc": 0, "wall_s": 11.16} fp_peak=3.51GB lifetime=3.65GB

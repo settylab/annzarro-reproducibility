@@ -1,0 +1,90 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/n95.6M_plot/tahoe_panel_95.6M_plot.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_run_95624334_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 24.39,
+ "peaks": {
+  "client": {
+   "fp_peak": 12725410040,
+   "fp_lifetime_sum": 13298832936,
+   "rss_peak": 11440046080,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 10410468184,
+   "fp_lifetime_sum": 10461865680,
+   "rss_peak": 10444636160,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 126153400,
+   "fp_lifetime_sum": 126563048,
+   "rss_peak": 164593664,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 20704359992,
+   "rss_peak": 20727906304,
+   "fp_lifetime_sum": 23760698616
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.21,
+   1032398208
+  ],
+  [
+   4.46,
+   1505060704
+  ],
+  [
+   6.73,
+   1866459456
+  ],
+  [
+   9.05,
+   5672679704
+  ],
+  [
+   11.37,
+   7719845752
+  ],
+  [
+   13.74,
+   14445946200
+  ],
+  [
+   16.11,
+   8612945224
+  ],
+  [
+   18.48,
+   16311873256
+  ],
+  [
+   20.91,
+   14896934560
+  ],
+  [
+   23.29,
+   18879444776
+  ]
+ ],
+ "ps_before": "2026-10-04T21:53:02-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n79584 169072  98.7 $TMPDIR/evidence/venv/bin/python\n 1012  17856   6.7 /usr/libexec/pboard\n  626 528896   5.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n47413 660880   5.2 /Applications/cmux.app/Contents/MacOS/cmux\n  855 1981040   4.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n57113 2881312   3.7 $HOME/.local/bin/claude\n86901 571680   3.4 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n80820  20624   3.3 benchmark/tool_ceiling/.venv/bin/python\n  582 111264   2.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n 6219  59376   2.3 $HOME/Projects/investments/.venv/bin/python3\n",
+ "others_at_start": []
+}

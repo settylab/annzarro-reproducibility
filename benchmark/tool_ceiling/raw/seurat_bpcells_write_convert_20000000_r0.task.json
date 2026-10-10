@@ -1,0 +1,15 @@
+{
+  "variant": "bpcells_write",
+  "path": "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first20000000.h5ad",
+  "phases": {
+    "write_matrix_dir": 103.06
+  },
+  "checks": [],
+  "versions": {
+    "R": "R version 4.4.3 (2025-02-28)",
+    "Seurat": "5.5.1",
+    "SeuratObject": "5.4.0",
+    "BPCells": "0.3.1",
+    "ggplot2": "4.0.3"
+  }
+}

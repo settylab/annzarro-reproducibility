@@ -1,0 +1,32 @@
+version: 1
+image: 01_obsp_row_by_code.jpg
+tool: scanpy-seurat
+software: scanpy (paper .venv; code output; Seurat not run)
+data: bm_demo.h5ad (8,090 cells)
+captured: '2026-10-03'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/scanpy-seurat/focus_row.py
+source: manual
+image_sha256: 106446c69c331b01b5b6a3abda0a5eef7193c8cc34b43afff87f03cad4ebb283
+proves:
+- column: focus
+  mark: P
+  caption: 'By code only (scanpy): one obsp row, copied into obs for cell 4236, colours two embeddings; every new
+    focus means editing i and re-running.'
+- column: cells
+  mark: P
+  caption: 'By code only (scanpy): obsp[''diffusion_distance''] row 4236 drawn as a colour on UMAP and force-directed
+    layouts.'
+callouts:
+- n: 1
+  box: [150, 2, 298, 34]
+  label: 'title set by code: diffusion distance to cell 4236 (obsp row copied to obs)'
+- n: 2
+  box: [336, 186, 40, 32]
+  label: the focused cell, circled by code
+- n: 3
+  box: [925, 60, 40, 32]
+  label: the same cell in the second embedding
+- n: 4
+  box: [636, 40, 520, 428]
+  label: the same row on X_draw_graph_fa, only because the code drew both from one column

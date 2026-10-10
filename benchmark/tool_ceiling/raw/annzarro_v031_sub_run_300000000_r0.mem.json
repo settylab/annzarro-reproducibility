@@ -1,0 +1,100 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_300000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_sub_run_300000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 29.72,
+ "peaks": {
+  "client": {
+   "fp_peak": 1599333040,
+   "fp_lifetime_sum": 1646585360,
+   "rss_peak": 1403863040,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 8435211656,
+   "fp_lifetime_sum": 8557141936,
+   "rss_peak": 8466513920,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 123499288,
+   "fp_lifetime_sum": 123499288,
+   "rss_peak": 161873920,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 8846589624,
+   "rss_peak": 9587539968,
+   "fp_lifetime_sum": 10203727296
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.46,
+   954803104
+  ],
+  [
+   4.97,
+   644392344
+  ],
+  [
+   7.43,
+   943449736
+  ],
+  [
+   9.89,
+   1558816608
+  ],
+  [
+   12.36,
+   1820453232
+  ],
+  [
+   14.83,
+   2543086464
+  ],
+  [
+   17.26,
+   3293539728
+  ],
+  [
+   19.78,
+   4174557304
+  ],
+  [
+   22.31,
+   4904039024
+  ],
+  [
+   24.83,
+   5601588352
+  ],
+  [
+   27.44,
+   8191606024
+  ]
+ ],
+ "ps_before": "2026-10-05T15:54:11-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n93226 246944  13.7 /System/Applications/Notes.app/Contents/MacOS/Notes\n  626 507072  13.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 1012  17024   6.6 /usr/libexec/pboard\n  557 503664   5.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  639 129536   4.4 /usr/sbin/coreaudiod\n  629 209344   4.0 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  596  30400   3.9 /System/Library/CoreServices/launchservicesd\n 1240  49264   3.2 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  855 2152192   3.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n86901 536992   3.0 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n",
+ "others_at_start": []
+}

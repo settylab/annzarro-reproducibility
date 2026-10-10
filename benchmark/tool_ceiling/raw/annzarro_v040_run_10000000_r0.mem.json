@@ -1,0 +1,54 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale/stores/rerun_prefix/tahoe95_first10000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_run_10000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 4.17,
+ "peaks": {
+  "client": {
+   "fp_peak": 3501452016,
+   "fp_lifetime_sum": 3765284384,
+   "rss_peak": 2580299776,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1794803848,
+   "fp_lifetime_sum": 1867565672,
+   "rss_peak": 1816788992,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 126366272,
+   "fp_lifetime_sum": 126366272,
+   "rss_peak": 164446208,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5296124792,
+   "rss_peak": 4396072960,
+   "fp_lifetime_sum": 5632850056
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.42,
+   2024466656
+  ]
+ ],
+ "ps_before": "2026-10-06T00:08:15-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n59322  97744  91.5 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n47413 543152   5.3 /Applications/cmux.app/Contents/MacOS/cmux\n  629 205136   3.6 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n 1012  15856   3.3 /usr/libexec/pboard\n  626 385840   2.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n  596  25040   2.5 /System/Library/CoreServices/launchservicesd\n57113 2938304   2.2 $HOME/.local/bin/claude\n 1240  45568   2.2 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n  557  44752   1.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  633  31504   1.5 /usr/libexec/runningboardd\n",
+ "others_at_start": []
+}

@@ -1,0 +1,104 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_300000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_sub_run_300000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 28.29,
+ "peaks": {
+  "client": {
+   "fp_peak": 1656562352,
+   "fp_lifetime_sum": 1782097424,
+   "rss_peak": 1396342784,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 8385437016,
+   "fp_lifetime_sum": 8600084808,
+   "rss_peak": 8416706560,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 133891808,
+   "fp_lifetime_sum": 134481680,
+   "rss_peak": 168804352,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 8801615568,
+   "rss_peak": 9543516160,
+   "fp_lifetime_sum": 10382182232
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.18,
+   953885624
+  ],
+  [
+   4.52,
+   904127920
+  ],
+  [
+   6.72,
+   944727712
+  ],
+  [
+   8.96,
+   942745248
+  ],
+  [
+   11.16,
+   1632364792
+  ],
+  [
+   13.36,
+   2290412272
+  ],
+  [
+   15.59,
+   2956094672
+  ],
+  [
+   17.84,
+   3882987448
+  ],
+  [
+   20.04,
+   4580487600
+  ],
+  [
+   22.37,
+   5311493032
+  ],
+  [
+   24.62,
+   6649395384
+  ],
+  [
+   27.07,
+   4109857056
+  ]
+ ],
+ "ps_before": "2026-10-05T00:20:58-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n91118 311216  94.6 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n  855 1979200  37.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n92310  19856   6.3 .venv/bin/python\n  629 241328   5.0 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n 1012  18064   2.9 /usr/libexec/pboard\n  596  30928   2.9 /System/Library/CoreServices/launchservicesd\n92314  20624   2.7 benchmark/tool_ceiling/.venv/bin/python\n  626 513872   2.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n91110  16224   2.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  633  31008   1.7 /usr/libexec/runningboardd\n",
+ "others_at_start": []
+}

@@ -1,0 +1,7 @@
+# Hard-limit check for the Seurat runs (conda-forge, as the local env).
+FROM mambaorg/micromamba:2.0.5
+RUN micromamba install -y -n base -c conda-forge -c bioconda r-base=4.4 r-seurat=5.5.1 r-seuratobject=5.4.0 \
+    r-bpcells=0.3.1 r-hdf5r r-ggplot2 r-png r-ragg r-jsonlite && micromamba clean -a -y
+COPY seurat_task.R /task/seurat_task.R
+WORKDIR /task
+ENTRYPOINT ["/opt/conda/bin/Rscript", "/task/seurat_task.R"]

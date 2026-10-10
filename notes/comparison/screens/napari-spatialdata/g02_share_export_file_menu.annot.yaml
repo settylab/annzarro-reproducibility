@@ -1,0 +1,63 @@
+version: 1
+image: g02_share_export_file_menu.png
+tool: napari-spatialdata
+software: napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (PyQt6)
+data: SpatialData sandbox Visium example (ST8059048, H&E + spots)
+url: null
+captured: '2026-10-04'
+by: evidence-curator
+driver: evidence/screens/gaps/capture_napari.py
+source: manual
+note: "Captured on the native Qt platform (a window was on screen for about 15 s) because napari segfaults under QT_QPA_PLATFORM=offscreen; boxes computed from Qt widget geometry."
+image_sha256: 842ca1312729804b0e0ccf63a3890a7642b3a6b061236e6109d2d22f3131692f
+coordinates: computed by the driver from Qt widget geometry (QMenu.actionGeometry, QWidget.mapTo), not
+  read off the image
+proves:
+- column: share
+  mark: N
+  caption: 'napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (PyQt6) (2026-10-04): the File menu
+    opens and saves layers and screenshots; no session, view-state or link entry'
+- column: export
+  mark: Y
+  caption: 'napari 0.9.2, napari-spatialdata 0.7.2, spatialdata 0.8.0 (PyQt6) (2026-10-04): File > Save
+    Screenshot... and Save Screenshot with Viewer... write the canvas or the whole viewer as a PNG (two
+    Copy entries put it on the clipboard)'
+callouts:
+- n: 1
+  box:
+  - 0
+  - 0
+  - 568
+  - 762
+  label: 'File menu: New Layer; New Image from Clipboard; Open File(s)...; Open Files as Stack...; Open
+    Folder...; Open with Plugin; Open Sample; IO Utilities; Acquire; Preferences; Save Selected Layers...;
+    Save All Layers...; Save Screenshot...; Save Screenshot with Viewer...; Copy Screenshot to Clipboard;
+    Copy Screenshot with Viewer to Clipboard; Close Window; Restart; Exit'
+- n: 2
+  box:
+  - 0
+  - 514
+  - 568
+  - 36
+  label: Save Screenshot... (writes a PNG)
+- n: 3
+  box:
+  - 0
+  - 550
+  - 568
+  - 36
+  label: Save Screenshot with Viewer... (writes a PNG)
+- n: 4
+  box:
+  - 0
+  - 586
+  - 568
+  - 36
+  label: Copy Screenshot to Clipboard (copies the image to the clipboard)
+- n: 5
+  box:
+  - 0
+  - 622
+  - 568
+  - 36
+  label: Copy Screenshot with Viewer to Clipboard (copies the image to the clipboard)

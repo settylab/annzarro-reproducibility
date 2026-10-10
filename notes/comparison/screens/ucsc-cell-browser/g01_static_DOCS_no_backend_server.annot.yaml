@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "g01_static_DOCS_no_backend_server.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser docs, cellbrowser.readthedocs.io/en/master (read 2026-10-04; cellbrowser 1.2.20)",
+ "data": "docs page: https://cellbrowser.readthedocs.io/en/master/basic_usage.html",
+ "url": "https://cellbrowser.readthedocs.io/en/master/basic_usage.html",
+ "captured": "2026-10-04",
+ "by": "evidence-curator",
+ "driver": "evidence/screens/gaps/capture_ucsc.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "static",
+   "mark": "Y",
+   "caption": "docs page, UCSC Cell Browser docs (read 2026-10-04): no backend server is needed; the cbBuild output goes on any static web server"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    348,
+    384,
+    704,
+    132
+   ],
+   "label": "docs page: \"no backend\"",
+   "selector": "[data-gap-phrase='1']"
+  },
+  {
+   "n": 2,
+   "box": [
+    0,
+    0,
+    1400,
+    42
+   ],
+   "label": "docs page, with its URL",
+   "selector": "#gapbanner"
+  }
+ ]
+}

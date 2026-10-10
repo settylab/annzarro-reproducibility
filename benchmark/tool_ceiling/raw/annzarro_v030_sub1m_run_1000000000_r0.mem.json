@@ -1,0 +1,220 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_master_1000000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v030_sub1m_run_1000000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v030p_120f322/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "120f322",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 94.5,
+ "peaks": {
+  "client": {
+   "fp_peak": 3399755832,
+   "fp_lifetime_sum": 3569429496,
+   "rss_peak": 3028697088,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 25331109184,
+   "fp_lifetime_sum": 25454776528,
+   "rss_peak": 25394724864,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 116207808,
+   "fp_lifetime_sum": 116207808,
+   "rss_peak": 159465472,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 25749565160,
+   "rss_peak": 26569064448,
+   "fp_lifetime_sum": 29024206024
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.18,
+   950608776
+  ],
+  [
+   4.39,
+   809837496
+  ],
+  [
+   6.64,
+   560227256
+  ],
+  [
+   8.9,
+   1041557248
+  ],
+  [
+   11.2,
+   1056237312
+  ],
+  [
+   13.42,
+   1061316352
+  ],
+  [
+   15.66,
+   1071687448
+  ],
+  [
+   17.89,
+   1077700376
+  ],
+  [
+   20.15,
+   1084548888
+  ],
+  [
+   22.35,
+   858416848
+  ],
+  [
+   24.58,
+   868951760
+  ],
+  [
+   26.88,
+   1754032184
+  ],
+  [
+   29.1,
+   1972218392
+  ],
+  [
+   31.34,
+   2369743696
+  ],
+  [
+   33.61,
+   3120360800
+  ],
+  [
+   35.83,
+   3731222336
+  ],
+  [
+   38.04,
+   4403196216
+  ],
+  [
+   40.29,
+   5118194480
+  ],
+  [
+   42.62,
+   5818938664
+  ],
+  [
+   44.83,
+   6533101344
+  ],
+  [
+   47.06,
+   7217445120
+  ],
+  [
+   49.28,
+   7913175824
+  ],
+  [
+   51.49,
+   8571829488
+  ],
+  [
+   53.74,
+   9476308976
+  ],
+  [
+   55.96,
+   10119725496
+  ],
+  [
+   58.32,
+   10902373344
+  ],
+  [
+   60.54,
+   11608163800
+  ],
+  [
+   62.81,
+   12298667984
+  ],
+  [
+   65.08,
+   13005375944
+  ],
+  [
+   67.36,
+   13703465920
+  ],
+  [
+   69.57,
+   14398393760
+  ],
+  [
+   71.82,
+   15095074712
+  ],
+  [
+   74.04,
+   15743832440
+  ],
+  [
+   76.41,
+   16518091680
+  ],
+  [
+   78.67,
+   17712568304
+  ],
+  [
+   81.04,
+   20831953136
+  ],
+  [
+   83.43,
+   23857506704
+  ],
+  [
+   85.83,
+   9749643728
+  ],
+  [
+   88.16,
+   11062592360
+  ],
+  [
+   90.6,
+   11389552112
+  ],
+  [
+   92.86,
+   12143429272
+  ]
+ ],
+ "ps_before": "2026-10-05T00:27:16-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 1241  27056  54.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  855 1970960  13.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  582 112032  12.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n 6219  59392   6.2 $HOME/Projects/investments/.venv/bin/python3\n 1258  19872   5.2 .venv/bin/python\n90826 136160   3.3 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n57113 2884224   3.2 $HOME/.local/bin/claude\n80588 621328   2.2 $HOME/.local/bin/claude\n  557 567648   2.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 1012  17936   1.8 /usr/libexec/pboard\n",
+ "others_at_start": []
+}

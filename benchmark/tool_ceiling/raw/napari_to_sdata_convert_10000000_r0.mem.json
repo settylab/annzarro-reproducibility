@@ -1,0 +1,80 @@
+{
+ "cmd": [
+  "$DEMO_ROOT/napari-spatialdata/.venv/bin/python",
+  "to_sdata.py",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first10000000.h5ad",
+  "$DATA_ROOT/tool_ceiling_data/sdata/first10000000.zarr"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 17.87,
+ "peaks": {
+  "proc": {
+   "fp_peak": 14574710640,
+   "fp_lifetime_sum": 14574825328,
+   "rss_peak": 15154855936,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 14574710640,
+   "rss_peak": 15154855936,
+   "fp_lifetime_sum": 14574825328
+  }
+ },
+ "trace": [
+  [
+   0.02,
+   9159064
+  ],
+  [
+   1.49,
+   3080276800
+  ],
+  [
+   3.03,
+   9490734328
+  ],
+  [
+   4.52,
+   10573308064
+  ],
+  [
+   5.98,
+   11137639016
+  ],
+  [
+   7.42,
+   10780615080
+  ],
+  [
+   8.88,
+   12044281288
+  ],
+  [
+   10.31,
+   12453291944
+  ],
+  [
+   11.73,
+   12053915632
+  ],
+  [
+   13.14,
+   12738193968
+  ],
+  [
+   14.58,
+   13297150968
+  ],
+  [
+   16.0,
+   14086123136
+  ],
+  [
+   17.41,
+   14571122544
+  ]
+ ],
+ "ps_before": "2026-10-05T00:18:35-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  582 111824   4.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n  855 1974912   3.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n86901 573408   2.2 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n93323 1098912   2.0 $HOME/.local/bin/claude\n57113 2884176   1.6 $HOME/.local/bin/claude\n88943  17344   1.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n88944  17376   0.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n88942  17280   0.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n88930  17360   0.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n98631 483664   0.8 $HOME/.local/bin/claude\n",
+ "others_at_start": []
+}

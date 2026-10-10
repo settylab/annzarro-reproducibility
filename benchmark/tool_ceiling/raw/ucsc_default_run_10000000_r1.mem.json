@@ -1,0 +1,94 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/ucsc/html_10000000",
+  "benchmark/tool_ceiling/shots/ucsc_default_run_10000000_r1",
+  "--n",
+  "10000000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 24.62,
+ "peaks": {
+  "client": {
+   "fp_peak": 3097454144,
+   "fp_lifetime_sum": 3452234336,
+   "rss_peak": 2390638592,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 14647800,
+   "fp_lifetime_sum": 16548656,
+   "rss_peak": 27475968,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 145721056,
+   "fp_lifetime_sum": 145721056,
+   "rss_peak": 176848896,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3112085536,
+   "rss_peak": 2418081792,
+   "fp_lifetime_sum": 3468782992
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.23,
+   1265656928
+  ],
+  [
+   4.37,
+   2032101216
+  ],
+  [
+   6.47,
+   1834543040
+  ],
+  [
+   8.61,
+   1793255336
+  ],
+  [
+   10.73,
+   1772283816
+  ],
+  [
+   12.86,
+   1771022248
+  ],
+  [
+   15.02,
+   1772300200
+  ],
+  [
+   17.16,
+   1278699096
+  ],
+  [
+   19.29,
+   1278682712
+  ],
+  [
+   21.43,
+   1655645904
+  ],
+  [
+   23.58,
+   2646845472
+  ]
+ ],
+ "ps_before": "2026-10-04T16:21:08-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n75828 105968 100.0 $TMPDIR/evidence/venv/bin/python\n47413 607424  79.4 /Applications/cmux.app/Contents/MacOS/cmux\n  626 520160  38.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n73194 195664  15.3 /System/Library/Input Methods/CharacterPalette.app/Contents/MacOS/CharacterPalette\n  629 236176  11.6 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n 1240  49168   9.4 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n76871  19888   8.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n76866  23584   7.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n76885  19648   7.1 benchmark/tool_ceiling/.venv/bin/python\n  582 105232   6.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n",
+ "others_at_start": []
+}

@@ -1,0 +1,29 @@
+{
+ "site": "hpc",
+ "hostname": "hpc-node-15",
+ "platform": "Linux-5.4.0-228-generic-x86_64-with-glibc2.27",
+ "python": "3.11.14 (main, Jan 13 2026, 17:35:07) [Clang 21.1.4 ]",
+ "packages": {
+  "annzarro": "0.4.1",
+  "zarr": "3.1.6",
+  "numcodecs": "0.16.5",
+  "anndata": null,
+  "numpy": "2.4.6",
+  "flask": "3.1.3",
+  "werkzeug": "3.1.9",
+  "playwright": null,
+  "scipy": "1.17.1"
+ },
+ "annzarro_commit": "",
+ "annzarro_branch": "",
+ "cpu": "",
+ "n_cpu": 36,
+ "ram_bytes": 810210471936,
+ "filesystem": "Filesystem                                     Type  Size  Used Avail Use% Mounted on\nfs-scratch-filer:/temp/lab/user nfs4  1.4P  1.1P  370T  74% $SCRATCH/user\nfs-scratch-filer:/temp/lab/user on $SCRATCH/user type nfs4 (rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip)",
+ "cold_mode": "fadvise",
+ "reps": 3,
+ "warm": 2,
+ "timeout_s": 600,
+ "slow_s": 120,
+ "date": "2026-10-08 08:28:25 PDT"
+}

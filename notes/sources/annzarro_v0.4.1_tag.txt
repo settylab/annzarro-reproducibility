@@ -1,0 +1,51 @@
+# AnnZarro v0.4.1 release tag, as cited in the manuscript (Software, Code availability).
+# Copied with git from settylab/annzarro on 2026-10-07T20:06Z; git ls-remote confirms the tag (below). Zenodo record from its public API.
+
+## git ls-remote git@github.com:settylab/annzarro.git refs/tags/v0.4.1 refs/tags/v0.4.1^{}
+2194bfc61fa922a7433644788f09f713dca28b06	refs/tags/v0.4.1
+78c9da657ecbff30163fd29055f0e6b10e915c5c	refs/tags/v0.4.1^{}
+
+## git rev-parse --short v0.4.1^{commit}
+78c9da6
+
+## git rev-parse v0.4.1^{commit}
+78c9da657ecbff30163fd29055f0e6b10e915c5c
+
+## git rev-parse v0.4.1^{tree}
+661a454fc2f83f1c2b8bb3adf0ddda0d4c23400d
+
+## git show -s --format='%H %s%n%ci' v0.4.1^{commit}
+78c9da657ecbff30163fd29055f0e6b10e915c5c Release v0.4.1 (#86)
+2026-10-07 12:46:14 -0700
+
+## pyproject.toml version at v0.4.1
+version = "0.4.1"
+
+## PyPI https://pypi.org/pypi/annzarro/0.4.1/json (info.version, upload time)
+version 0.4.1
+uploaded 2026-10-07T19:47:42.478560Z
+
+## Zenodo https://zenodo.org/api/records/23222217
+doi 10.5281/zenodo.23222217
+conceptdoi 10.5281/zenodo.23222216
+title AnnZarro
+version v0.4.1
+publication_date 2026-10-07
+creators Otto, Dominik J.; Baasri, Siddharth; Setty, Manu
+license mit-license
+
+## annzarro/config/base.yaml at v0.4.1 (ui.defaults: subset and large-plot thresholds; git show 78c9da6:annzarro/config/base.yaml, lines 141-151)
+    # Datasets with more cells than subset_threshold open on a reproducible
+    # subset of subset_size cells (seed subset_seed); the header shows it and
+    # its dialog changes or removes it. Every panel shows the same cells.
+    subset_threshold: 200000
+    # A Cell Plot with more points than this is drawn in large-plot mode
+    # (typed arrays, no hover, click or table filter); only reachable with
+    # the subset off or larger than this. 1M keeps several regular plots
+    # (400-900 B of browser heap per point) open side by side.
+    large_plot_points: 1000000
+    subset_size: 100000
+    subset_seed: 0
+
+## pyproject.toml requires-python at v0.4.1 (git show 78c9da6:pyproject.toml, line 10)
+requires-python = ">=3.9"  # list[str] annotations are evaluated at import

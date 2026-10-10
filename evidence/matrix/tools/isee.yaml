@@ -1,0 +1,1012 @@
+# iSEE: Fig. 1c marks and their evidence.
+# Seeded by evidence/tools/import_notes.py from notes/comparison/isee.md and
+# figures/fig_comparison.py; edit this file from now on (schema: evidence/README.md).
+id: isee
+name: iSEE
+figure:
+  row: 6
+  label: iSEE
+  largest_documented: '>170k (cytometry)'
+notes: notes/comparison/isee.md
+cells:
+  cells:
+    mark: N
+    reason: >-
+      "Color by" offers None, Column data, Feature name, Sample name and Column selection; no iSEE panel
+      or extension reads colPairs, though the object has a kNN graph.
+    detail: |-
+      **Checked in the running app (2026-10-04).** "Color by" offers None, Column data, Feature name, Sample name, Column selection. The object has `colPairs` (kNN graph), and nothing lists it. *Steps:* Plot 1 > Visual parameters > Color by. *Evidence:* [screens/isee/m04_slots_colourby_and_type_dropdown.jpg](screens/isee/m04_slots_colourby_and_type_dropdown.jpg)
+
+      **Source and docs.** No `colPairs`/`rowPairs` reference in iSEE or in any of the nine extension packages (`grep -rn -i "colPair\|rowPair"` over all clones: zero hits). Colour-by choices are None, Column data, Row data, Feature name, Sample name, Column selection ([R/constants.R#L26-31](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/constants.R#L26-L31)). Local demo: open "Color by" in Reduced dimension plot 1; no pairwise option although the object has a colPair.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m04_slots_colourby_and_type_dropdown.jpg
+      label: screens/isee/m04_slots_colourby_and_type_dropdown.jpg
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/constants.R
+      lines: 26-31
+      url: https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/constants.R#L26-L31
+      label: R/constants.R#L26-31
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Figure 1 legend (A); 'Using a multi-panel layout' panel-type list
+      quote: >-
+        Panel types are available to visualise sample-based reduced dimensionality embeddings (iii), sample-level
+        metadata (iv), and experimental observations across samples for each feature (v).
+      indicates: N
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: >-
+        Enumeration of panel types; none takes a sample x sample matrix. Absence, not an explicit refutation.
+    - kind: docs
+      url: https://isee.github.io/iSEE/articles/basic.html
+      label: >-
+        An introduction to the iSEE interface: panel types and their Visual parameters; no pairwise-matrix
+        panel or colour source
+      checked: '2026-10-04'
+      archive: http://web.archive.org/web/20260216145925/https://isee.github.io/iSEE/articles/basic.html
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  genes:
+    mark: N
+    reason: >-
+      No panel in iSEE or its nine extensions reads rowPairs; colour and axis choices come from assays,
+      colData and rowData only.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Same radio buttons; no rowPairs entry anywhere (the SCE has none, and no panel reads them; see grep above). *Steps:* as column 1 *Evidence:* same screenshot
+
+      **Source and docs.** Same grep, zero hits.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Figure 1 legend (A); 'Using a multi-panel layout' panel-type list
+      quote: >-
+        Other panel types include row statistics tables (vi), to facilitate searching across features
+        and their metadata; heatmaps (vii) ... and feature-level metadata plots.
+      indicates: N
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: No panel takes a feature x feature matrix. Absence only.
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/constants.R
+      lines: 26-31
+      url: https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/constants.R#L26-L31
+      label: R/constants.R#L26-31
+    - kind: docs
+      url: https://isee.github.io/iSEE/articles/basic.html
+      label: >-
+        An introduction to the iSEE interface: panel types and their Visual parameters; no pairwise-matrix
+        panel or colour source
+      checked: '2026-10-04'
+      archive: http://web.archive.org/web/20260216145925/https://isee.github.io/iSEE/articles/basic.html
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  focus:
+    mark: N
+    reason: >-
+      The single selection carries only an identity (a gene becomes feature colouring, a cell a red dot)
+      and no shipped panel uses the cell's colPairs row, so the figure's P should be N.
+    detail: |-
+      **Focus, checked in the running app.** iSEE's "single selection" carries a gene or cell *identity*: a gene becomes feature colouring, and a cell becomes a red dot. No shipped panel turns the focused cell into its row of `colPairs` or any other relation, and a precomputed colData row does not follow the focus. The earlier Y rested on this (a2)-type mechanism, which the strict column excludes. A user could write a custom `Panel` subclass that reads `colPair(se)[i, ]` for the transmitted sample. That would justify P, but no such panel exists in iSEE or its nine extensions, and I did not write one.
+
+      **Source and docs.** Under the loose definition: "Single selections": "transmitting a selection of a single feature or sample ... direct other panels to focus on a feature or sample of interest", e.g. a row data table click recolours a reduced-dimension plot by that gene; a chosen sample is highlighted ([vignettes/links.Rmd#L225-262](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/links.Rmd#L225-L262)). Slots `ColorByFeatureSource`, `ColorByFeatureDynamicSource`, `YAxisFeatureSource` ([R/AllClasses.R#L174-177](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/AllClasses.R#L174-L177), [R/panel_FeatureAssayPlot.R#L14](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/panel_FeatureAssayPlot.R#L14)). This matches the column's own definition; the earlier P only noted it is not a matrix row, which columns 1-2 already capture.
+    evidence:
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: vignettes/links.Rmd
+      lines: 225-262
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/links.Rmd#L225-L262
+      label: vignettes/links.Rmd#L225-262
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/AllClasses.R
+      lines: 174-177
+      url: https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/AllClasses.R#L174-L177
+      label: R/AllClasses.R#L174-177
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/panel_FeatureAssayPlot.R
+      lines: '14'
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/panel_FeatureAssayPlot.R#L14
+      label: R/panel_FeatureAssayPlot.R#L14
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Figure 1 legend (B)
+      quote: >-
+        feature X in the row statistics table determines the y-axis of the feature assay plot, and colours
+        the samples ... by the expression of X
+      indicates: N
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: >-
+        Feature colouring/axis from a single selection, which the strict definition excludes; supports
+        the proposed N.
+    - kind: screenshot
+      path: notes/comparison/screens/isee/01_gene_Mpo_recolours_two_panels.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/02_cell_4236_sample_name_highlight.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/03_brush_umap_highlights_in_pca.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/04_brush_restrict_in_pca.jpg
+    reproduce:
+    - notes/comparison/demos/isee/focus_app.R
+    - notes/comparison/demos/isee/focus_check.py
+    - notes/comparison/demos/isee/focus_check_cell.py
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  slots:
+    mark: P
+    reason: >-
+      Assays, colData, rowData and reducedDims are reachable in panel dropdowns; colPairs/rowPairs are
+      not, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Reachable: colData (14 columns in the Column data dropdown), reducedDims (Type = `UMAP`, `PCA`), assays (Feature assay plot > Assay = `logcounts`). Not reachable: colPairs. *Steps:* Plot 1 > Data parameters > Type; Feature assay plot 1 > Data parameters > Assay. *Evidence:* [m04_slots_colourby_and_type_dropdown.jpg](screens/isee/m04_slots_colourby_and_type_dropdown.jpg), [m04_slots_assay_dropdown.jpg](screens/isee/m04_slots_assay_dropdown.jpg)
+
+      **Source and docs.** Assays, colData, rowData, reducedDims; no pairwise slots (grep above), no varm equivalent.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m04_slots_colourby_and_type_dropdown.jpg
+      label: m04_slots_colourby_and_type_dropdown.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m04_slots_assay_dropdown.jpg
+      label: m04_slots_assay_dropdown.jpg
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Interface implementation, 'Using a multi-panel layout'
+      quote: >-
+        All data aspects stored in a SummarizedExperiment can be simultaneously examined in the multi-panel
+        layout of the iSEE interface
+      indicates: P
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: The listed panels cover assays, colData, rowData and reducedDim only; no pairwise slot is
+        named.
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  remote:
+    mark: N
+    reason: >-
+      Core iSEE takes an in-memory object and its landing page a local upload; iSEEindex downloads a remote
+      RDS whole before reading it, so N.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show. The app takes an in-memory object; the landing page only takes a local file upload (row 12).
+
+      **Source and docs.** Core reads only the in-memory object. iSEEindex accepts `https://` and `s3://` URIs but downloads the whole RDS into a BiocFileCache, then `readRDS` ([iSEEindex R/iSEEindexResource-class.R#L155-175](https://github.com/iSEE/iSEEindex/blob/868cfb33f1bd78eda4dfd84111cbd64c7123e1d4/R/iSEEindexResource-class.R#L155-L175), [R/utils-datasets.R#L66](https://github.com/iSEE/iSEEindex/blob/868cfb33f1bd78eda4dfd84111cbd64c7123e1d4/R/utils-datasets.R#L66)). Fetch-then-load, not a direct read. Upgrade to P only if the matrix credits download-to-cache.
+    evidence:
+    - kind: code
+      repo: iSEE/iSEEindex
+      commit: 868cfb33f1bd78eda4dfd84111cbd64c7123e1d4
+      path: R/iSEEindexResource-class.R
+      lines: 155-175
+      url: >-
+        https://github.com/iSEE/iSEEindex/blob/868cfb33f1bd78eda4dfd84111cbd64c7123e1d4/R/iSEEindexResource-class.R#L155-L175
+      label: iSEEindex R/iSEEindexResource-class.R#L155-175
+    - kind: code
+      repo: iSEE/iSEEindex
+      commit: 868cfb33f1bd78eda4dfd84111cbd64c7123e1d4
+      path: R/utils-datasets.R
+      lines: '66'
+      url: >-
+        https://github.com/iSEE/iSEEindex/blob/868cfb33f1bd78eda4dfd84111cbd64c7123e1d4/R/utils-datasets.R#L66
+      label: R/utils-datasets.R#L66
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  spatial:
+    mark: N
+    reason: >-
+      The reduced-dimension Type list holds only embeddings (UMAP, PCA) and no panel class reads spatialCoords;
+      coordinates work only if copied into a reducedDim in code.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show. Type lists only `UMAP`, `PCA`; no spatial panel class. *Steps:* Plot 1 > Data parameters > Type. *Evidence:* observation (printed options)
+
+      **Source and docs.** No `spatialCoords`/`imgData`/SpatialExperiment handling in iSEE or extensions; the only hits are iSEEhub listing SpatialExperiment as an accepted class ([iSEEhub R/datasets-utils.R#L22](https://github.com/iSEE/iSEEhub/blob/ddf47c136af582cf380290c0172193f5c7d92ac2/R/datasets-utils.R#L22)). Copying coordinates into a reducedDim before launch works, but that same code-side reshaping would also "support" obsp, so it is not counted.
+    evidence:
+    - kind: code
+      repo: iSEE/iSEEhub
+      commit: ddf47c136af582cf380290c0172193f5c7d92ac2
+      path: R/datasets-utils.R
+      lines: '22'
+      url: https://github.com/iSEE/iSEEhub/blob/ddf47c136af582cf380290c0172193f5c7d92ac2/R/datasets-utils.R#L22
+      label: iSEEhub R/datasets-utils.R#L22
+    - kind: docs
+      url: https://isee.github.io/iSEE/articles/basic.html
+      label: >-
+        An introduction to the iSEE interface: panel types and their Visual parameters; no pairwise-matrix
+        panel or colour source
+      checked: '2026-10-04'
+      archive: http://web.archive.org/web/20260216145925/https://isee.github.io/iSEE/articles/basic.html
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    - evidence/screens/gaps/capture_isee.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  selection:
+    reason: a brush in the UMAP highlights the cells in the PCA plot, and "Restrict" filters them
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/isee/03_brush_umap_highlights_in_pca.jpg
+      label: isee/03
+    - kind: docs
+      url: https://isee.github.io/iSEE/articles/links.html
+      label: >-
+        Sharing information across panels: a brush 'highlights those same points in the column data plot';
+        a receiver can be restricted to show only the selection
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: vignettes/links.Rmd
+      lines: 105-107
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/links.Rmd#L105-L107
+      label: vignette source, brush in one plot highlights the same points in another
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: vignettes/links.Rmd
+      lines: 161-165
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/links.Rmd#L161-L165
+      label: vignette source, restrict the receiving plot to the selection ('gates' the dataset)
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/family_Panel.R
+      lines: 496-500
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_Panel.R#L496-L500
+      label: the 'Restrict to selected ...s' checkbox
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Interface implementation, 'Dynamic linking between panels'
+      quote: >-
+        selections in transmitting panels control the inclusion and appearance of the corresponding data
+        points in receiving panels
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: Re-read in the PMC full text (PMC6013759).
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: running app
+    detail: a brush in the UMAP highlights the cells in the PCA plot, and "Restrict" filters them
+    mark: Y
+    reproduce:
+    - evidence/screens/gaps/capture2_isee.py
+  annot:
+    mark: N
+    reason: Brushes can be saved as selection history inside a panel, but no control writes a label to
+      colData.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show. Searched the Export menu, panel settings and every panel's parameter boxes; brushes can be saved as selection history inside a panel, but nothing writes a label to colData.
+
+      **Source and docs.** Saved selections live in panel state; nothing writes to colData. Results leave as RDS or code ([R/observers_general.R#L68-82](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/observers_general.R#L68-L82)).
+    evidence:
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/observers_general.R
+      lines: 68-82
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/observers_general.R#L68-L82
+      label: R/observers_general.R#L68-82
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Referee report 1 (open peer review appended to the article)
+      quote: >-
+        it would be very useful to enable users to fill new columns of colData based on the interactive
+        grouping of samples
+      indicates: N
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: Reviewer request, so absent in v1; reviewer text, not the authors'.
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    - evidence/screens/gaps/capture_isee.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  de:
+    mark: N
+    reason: >-
+      Core iSEE computes no DE; the iSEEu DynamicMarkerTable runs findMarkers on a selection, but extensions
+      added in code are out of scope (Fig. 1c rule: core tools only), so N.
+    detail: |-
+      **Checked in the running app (2026-10-04).** With the iSEEu panel added in code: a brush on plot 1 (left, lymphoid island) is sent to Dynamic marker table 1, which runs `scran::findMarkers`. On relaunch from the saved state the table filled in 4 s (16,285 genes; top Cd79a, Cd79b, Ighm). **But a live brush did not refresh the table:** in both sessions it stayed unchanged for 180 s after the brush (first session: "No data available"; second: still the old ranking after a new brush on the neutrophil arm). Download panel output did include `DynamicMarkerTable1.csv` (1.18 MB). So the computation works and the live update did not happen in my runs; I did not find out why. *Steps:* `matrix_app.R main`; drag a rectangle on plot 1; watch Dynamic marker table 1. Or `matrix_app.R restore <state.rds>` to see the table filled at launch. *Evidence:* [m10_brush_source_umap.jpg](screens/isee/m10_brush_source_umap.jpg), [m10_dynamic_marker_table_on_brush.jpg](screens/isee/m10_dynamic_marker_table_on_brush.jpg) (live, empty), [m10_dynamic_marker_table_filled.jpg](screens/isee/m10_dynamic_marker_table_filled.jpg) (at relaunch), [m10_dynamic_marker_table_after_rebrush.jpg](screens/isee/m10_dynamic_marker_table_after_rebrush.jpg)
+
+      **Source and docs.** Core: "relies primarily on precomputed values" (`vignettes/basic.Rmd` L126). But the official extension iSEEu ships `DynamicMarkerTable`, which "dynamically identifies marker genes for a selected subset of samples" by running `scran::findMarkers` on the active selection vs the rest ([iSEEu R/DynamicMarkerTable.R#L1-6](https://github.com/iSEE/iSEEu/blob/2f5ca87331d85898802d8e0517087c478fb5a003/R/DynamicMarkerTable.R#L1-L6), [L303-309](https://github.com/iSEE/iSEEu/blob/2f5ca87331d85898802d8e0517087c478fb5a003/R/DynamicMarkerTable.R#L303-L309)). The panel must be added in code at launch (`iSEE(sce, initial=list(..., DynamicMarkerTable(...)))`), hence P. iSEEde only displays precomputed DE.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m10_brush_source_umap.jpg
+      label: m10_brush_source_umap.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m10_dynamic_marker_table_on_brush.jpg
+      label: m10_dynamic_marker_table_on_brush.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m10_dynamic_marker_table_filled.jpg
+      label: m10_dynamic_marker_table_filled.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m10_dynamic_marker_table_after_rebrush.jpg
+      label: m10_dynamic_marker_table_after_rebrush.jpg
+    - kind: code
+      repo: iSEE/iSEEu
+      commit: 2f5ca87331d85898802d8e0517087c478fb5a003
+      path: R/DynamicMarkerTable.R
+      lines: 1-6
+      url: >-
+        https://github.com/iSEE/iSEEu/blob/2f5ca87331d85898802d8e0517087c478fb5a003/R/DynamicMarkerTable.R#L1-L6
+      label: iSEEu R/DynamicMarkerTable.R#L1-6
+    - kind: code
+      repo: iSEE/iSEEu
+      commit: 2f5ca87331d85898802d8e0517087c478fb5a003
+      path: R/DynamicMarkerTable.R
+      lines: 303-309
+      url: >-
+        https://github.com/iSEE/iSEEu/blob/2f5ca87331d85898802d8e0517087c478fb5a003/R/DynamicMarkerTable.R#L303-L309
+      label: L303-309
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Referee report 1
+      quote: >-
+        In the context of single-cell or large-scale analyses, it would be helpful to implement tools
+        for differential abundance analyses and gene set enrichment analyses.
+      indicates: N
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: Reviewer request; absent in v1. The current P rests on the later iSEEu DynamicMarkerTable.
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  image:
+    mark: N
+    reason: No panel class in iSEE or its extensions draws an image layer.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; no image panel class (searched the panel classes and parameter boxes).
+
+      **Source and docs.** No image layer in iSEE or extensions (grep for `imgData`, `spatial`: no rendering code).
+    evidence:
+    - kind: docs
+      url: https://isee.github.io/iSEE/articles/basic.html
+      label: >-
+        An introduction to the iSEE interface: panel types and their Visual parameters; no pairwise-matrix
+        panel or colour source
+      checked: '2026-10-04'
+      archive: http://web.archive.org/web/20260216145925/https://isee.github.io/iSEE/articles/basic.html
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    - evidence/screens/gaps/capture_isee.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  share:
+    mark: P
+    reason: >-
+      The panel state downloads as an RDS file, but the shipped landing page rejected it (SE over 5 MB)
+      and no link carries state; it restores only via iSEE(initial=) in code, so the figure's Y should
+      be P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Export > Display panel settings > Download RDS (SE unticked) saved `iSEE_memory.rds` (1,827 bytes, a list with `memory`). Relaunching with `iSEE(sce, initial = readRDS(f)$memory)` restored all five panels with the brush, the `Neutrophil` search, the Restrict tick and the marker table. The GUI path failed: the default landing page (`createLandingPage()`) refused the 64 MB SE file with "Maximum upload size exceeded" (Shiny's default 5 MB limit), and the server logged `Error in readRDS(x$datapath) : bad 'file' argument`. No link or URL state: restoring needs a file plus code at launch, or a deployer-configured landing page. *Steps:* Export > Display panel settings > untick "include SummarizedExperiment" > Download RDS; then `Rscript demos/isee/matrix_app.R restore iSEE_memory.rds`. Landing page: `matrix_app.R landing`, upload both files, Launch. *Evidence:* [m12_panel_settings_download_rds.jpg](screens/isee/m12_panel_settings_download_rds.jpg), [m12_restored_from_state_file.jpg](screens/isee/m12_restored_from_state_file.jpg), [m12_landing_page_upload.jpg](screens/isee/m12_landing_page_upload.jpg), [m12_landing_page_after_launch.jpg](screens/isee/m12_landing_page_after_launch.jpg)
+
+      **Source and docs.** The F1000 paper restores state only through generated code ("the code required to reproduce the current state ... used in startup scripts"). In the app, the state downloads as an RDS file, but the shipped landing page refuses it for any SE over 5 MB, and no link carries the state; restoring it needs `iSEE(initial=)` in code. Hence P. "Display panel settings" offers "Download RDS" of the panel list ([R/observers_general.R#L68-76](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/observers_general.R#L68-L76)); the default landing page has an "Initial state RDS file" upload, and with `requireButton=FALSE` Shiny URL bookmarking can launch a state "by simply clicking a link" ([R/createLandingPage.R#L29-31, L96](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/createLandingPage.R#L29-L31)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m12_panel_settings_download_rds.jpg
+      label: m12_panel_settings_download_rds.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m12_restored_from_state_file.jpg
+      label: m12_restored_from_state_file.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m12_landing_page_upload.jpg
+      label: m12_landing_page_upload.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m12_landing_page_after_launch.jpg
+      label: m12_landing_page_after_launch.jpg
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/observers_general.R
+      lines: 68-76
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/observers_general.R#L68-L76
+      label: R/observers_general.R#L68-76
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/createLandingPage.R
+      lines: 29-31
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/createLandingPage.R#L29-L31
+      label: R/createLandingPage.R#L29-31, L96
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Interface implementation, 'Code tracking and reproducibility'
+      quote: >-
+        the code required to reproduce the current state of the interface can also be reported ... used
+        in startup scripts to launch an iSEE instance
+      indicates: P
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: State is restored by code at launch, not by a link or file in the GUI.
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  export:
+    mark: Y
+    reason: >-
+      The Export menu downloads each panel as PDF (and tables as CSV) and extracts the R code that reproduces
+      the view.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Export menu has "Download panel output", "Extract the R code", "Display panel settings". Download panel output (all five ticked) saved `iSEE_exports.zip`, 1,759,017 bytes: `ReducedDimensionPlot1.pdf` 493 kB, `ReducedDimensionPlot2.pdf` 134 kB, `FeatureAssayPlot1.pdf` 430 kB, `ColumnDataTable1.csv` 1.24 MB, `DynamicMarkerTable1.csv` 1.18 MB. Extract the R code opened "My code" (1,962 characters), starting `se <- sce`, `colormap <- ExperimentColorMap()`, then the brush and plotting commands. *Steps:* Top bar download icon > each item. *Evidence:* [m13_export_menu.jpg](screens/isee/m13_export_menu.jpg), [m13_download_panel_output_dialog.jpg](screens/isee/m13_download_panel_output_dialog.jpg), [m13_extract_r_code.jpg](screens/isee/m13_extract_r_code.jpg)
+
+      **Source and docs.** Export > "Download panel output" zips plots as PDF ([R/family_DotPlot.R#L1101](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_DotPlot.R#L1101)) and tables as CSV ([R/family_Table.R#L185-186](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_Table.R#L185-L186)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m13_export_menu.jpg
+      label: m13_export_menu.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m13_download_panel_output_dialog.jpg
+      label: m13_download_panel_output_dialog.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m13_extract_r_code.jpg
+      label: m13_extract_r_code.jpg
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/family_DotPlot.R
+      lines: '1101'
+      url: https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_DotPlot.R#L1101
+      label: R/family_DotPlot.R#L1101
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/family_Table.R
+      lines: 185-186
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_Table.R#L185-L186
+      label: R/family_Table.R#L185-186
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Interface implementation, 'Code tracking and reproducibility'
+      quote: iSEE automatically memorises the exact R code that was used to generate every plot
+      indicates: P
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: Plots reproducible by running code; the paper does not mention image download.
+    - kind: paper
+      url: https://doi.org/10.1093/bioadv/vbaf107
+      label: Benedetti et al. 2025, Bioinformatics Advances 5:vbaf107
+      where: 2.2 Operative framework
+      quote: Once the desired plots are achieved, they can be downloaded to report and publish findings.
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    - kind: paper
+      url: https://doi.org/10.1093/bioadv/vbaf107
+      label: Benedetti et al. 2025, Bioinformatics Advances 5:vbaf107
+      where: 2.3 App functionality
+      quote: >-
+        our app inherits the complete set of functionality from this foundation, including ... code tracking
+        for reproducibility and downloadable results
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: States the download feature is inherited from iSEE itself.
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  desktop:
+    mark: N
+    reason: >-
+      iSEE is an R package; the app exists only while an R process runs shiny::runApp, with nothing to
+      install or double-click.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation: the app exists only while an `Rscript` process runs `shiny::runApp`; nothing to install or double-click.
+
+      **Source and docs.** R package; needs an R installation and a call to `iSEE()`.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Referee report 3
+      quote: >-
+        requires that the colleague either have R, iSEE, and all its dependencies installed, or that you
+        have a server running all necessary packages
+      indicates: N
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+    - kind: paper
+      url: https://doi.org/10.1093/bioadv/vbaf107
+      label: Benedetti et al. 2025, Bioinformatics Advances 5:vbaf107
+      where: 4.1 Limitations
+      quote: it is still necessary to build TreeSE objects and launch the app either from R or RStudio
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+    na:
+      visual: No desktop application exists
+      so there is no GUI place in which its absence could be shown.: null
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  hosted:
+    mark: Y
+    reason: >-
+      iSEE deploys to Shiny Server, RStudio Connect or shinyapps.io, where one instance serves every visitor
+      (a public shinyapps.io instance was opened).
+    detail: |-
+      **Checked in the running app (2026-10-04).** https://kevinrue.shinyapps.io/isee-shiny-contest/ served "iSEE - interactive SummarizedExperiment Explorer v1.5.1" with plots after about 45 s. *Steps:* Open the URL, wait for the worker. *Evidence:* [screens/isee/m15_hosted_shinyapps_instance.jpg](screens/isee/m15_hosted_shinyapps_instance.jpg)
+
+      **Source and docs.** Shiny Server, RStudio Connect, shinyapps.io deployment documented ([vignettes/bigdata.Rmd#L235-246](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/bigdata.Rmd#L235-L246)); iSEEindex serves many datasets from one app. Live example: the shiny-contest app above.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m15_hosted_shinyapps_instance.jpg
+      label: screens/isee/m15_hosted_shinyapps_instance.jpg
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: vignettes/bigdata.Rmd
+      lines: 235-246
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/bigdata.Rmd#L235-L246
+      label: vignettes/bigdata.Rmd#L235-246
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Referee report 3
+      quote: or that you have a server running all necessary packages that you can point the colleague
+        to
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: Reviewer text.
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Conclusion
+      quote: >-
+        we also anticipate that public instances of iSEE will accompany publications to enable authors
+        to showcase important aspects of their data
+      indicates: P
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: Anticipated, not a documented deployment.
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  static:
+    mark: N
+    reason: Every panel is rendered by a live R process; stopping the server greys the page out.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Stopping the R process with the page open greyed the page out (Shiny's disconnected overlay); no plot works without the server. *Steps:* Stop the server with the page open. *Evidence:* [screens/isee/m16_server_stopped_page_greys_out.jpg](screens/isee/m16_server_stopped_page_greys_out.jpg)
+
+      **Source and docs.** Every panel is computed by a live R process (`renderPlot`, [R/family_DotPlot.R#L1085](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_DotPlot.R#L1085)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m16_server_stopped_page_greys_out.jpg
+      label: screens/isee/m16_server_stopped_page_greys_out.jpg
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/family_DotPlot.R
+      lines: '1085'
+      url: https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_DotPlot.R#L1085
+      label: R/family_DotPlot.R#L1085
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Introduction
+      quote: iSEE is implemented in R using the Shiny framework
+      indicates: N
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: 'Needs a live R/Shiny process (also referee report 3: ''a function of how Shiny works'').'
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  lazy:
+    mark: P
+    reason: >-
+      File-backed HDF5Matrix assays are read on demand (bigdata vignette), but only if the user builds
+      the object that way in code; the demo's in-memory assay exercised nothing lazy, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation only: this demo's assay is an in-memory `dgCMatrix` (`class(assay(sce))`), so nothing lazy was exercised. The P rests on the bigdata vignette (HDF5Matrix). *Steps:* `Rscript -e 'class(SummarizedExperiment::assay(readRDS("$DEMO_ROOT/_data/bm_demo_sce.rds")))'`
+
+      **Source and docs.** File-backed `HDF5Matrix` assays are "retrieved on demand ... without ever loading the entire assay matrix into memory" ([vignettes/bigdata.Rmd#L86-111](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/bigdata.Rmd#L86-L111)). Server side only; colData and reducedDims stay in memory.
+
+      **Scale group.** Server R process. Assays may be lazy (HDF5Matrix, DelayedArray, read on demand from local disk); colData, rowData and reducedDims are in memory. No browser-side data. Evidence: [vignettes/bigdata.Rmd#L86-143](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/bigdata.Rmd#L86-L143) ("does not know or care that the data is stored in a HDF5 file").
+    evidence:
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: vignettes/bigdata.Rmd
+      lines: 86-111
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/bigdata.Rmd#L86-L111
+      label: vignettes/bigdata.Rmd#L86-111
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: vignettes/bigdata.Rmd
+      lines: 86-143
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/bigdata.Rmd#L86-L143
+      label: vignettes/bigdata.Rmd#L86-143
+    - kind: paper
+      url: https://doi.org/10.1093/bioadv/vbaf107
+      label: Benedetti et al. 2025, Bioinformatics Advances 5:vbaf107
+      where: 4.1 Limitations
+      quote: >-
+        store the assays of the TreeSE object as out-of-memory matrices provided by the HDF5Matrix class,
+        which accesses data from an HDF5 file
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Assays only, server side; matches the current P.
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    - evidence/screens/gaps/capture2_code.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  every_cell:
+    mark: Y
+    reason: Every point is drawn by default (Downsample = FALSE); grid downsampling is an opt-in checkbox.
+    detail: >-
+      **Scale group.** Every point is drawn by default (`Downsample = FALSE`). Optional per-panel "Downsample
+      points for speed" checkbox with a "Sampling resolution" field: grid-based, density-dependent thinning
+      (`subsetPointsByGrid`, default resolution 200), affecting display only; brushes still select all
+      underlying points. iSEEhex adds a hexbin `ReducedDimensionHexPlot` (aggregation). Plots are rendered
+      server-side as images, so the browser never holds per-point data. Evidence: [R/panelDefaults.R#L7-8](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/panelDefaults.R#L7-L8);
+      [R/family_DotPlot.R#L784-791](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_DotPlot.R#L784-L791);
+      [R/plotting.R#L141-148](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/plotting.R#L141-L148);
+      [vignettes/bigdata.Rmd#L149-221](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/bigdata.Rmd#L149-L221);
+      [iSEEhex R/ReducedDimensionHexPlot.R#L372](https://github.com/iSEE/iSEEhex/blob/eef739924607b2586355264ff14b6990ed2e9824/R/ReducedDimensionHexPlot.R#L372).
+    evidence:
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/panelDefaults.R
+      lines: 7-8
+      url: https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/panelDefaults.R#L7-L8
+      label: R/panelDefaults.R#L7-8
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/family_DotPlot.R
+      lines: 784-791
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_DotPlot.R#L784-L791
+      label: R/family_DotPlot.R#L784-791
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/plotting.R
+      lines: 141-148
+      url: https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/plotting.R#L141-L148
+      label: R/plotting.R#L141-148
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: vignettes/bigdata.Rmd
+      lines: 149-221
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/bigdata.Rmd#L149-L221
+      label: vignettes/bigdata.Rmd#L149-221
+    - kind: code
+      repo: iSEE/iSEEhex
+      commit: eef739924607b2586355264ff14b6990ed2e9824
+      path: R/ReducedDimensionHexPlot.R
+      lines: '372'
+      url: >-
+        https://github.com/iSEE/iSEEhex/blob/eef739924607b2586355264ff14b6990ed2e9824/R/ReducedDimensionHexPlot.R#L372
+      label: iSEEhex R/ReducedDimensionHexPlot.R#L372
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Interface implementation, 'Additional functionalities'
+      quote: >-
+        For large data sets, points can be downsampled in a density-dependent manner to accelerate rendering
+        of the plots
+      indicates: P
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: >-
+        Optional downsampling; the paper does not say what the default is (the Y rests on Downsample =
+        FALSE in code).
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+  subset:
+    mark: P
+    reason: >-
+      'Restrict' and the downsample checkbox change what a panel draws; the SingleCellExperiment stays
+      whole in the R session (subset-and-recompute needs the iSEEu panel, added in code).
+    detail: |-
+      **Scale group.** Yes. (a) "Restrict to selected samples" shows only the transmitted selection, repeatable as gating; (b) the downsample checkbox and resolution field; (c) iSEEu `DynamicReducedDimensionPlot` recomputes PCA/t-SNE/UMAP on the selected subset (subset-and-recompute; needs the extension panel added in code). Evidence: [R/family_Panel.R#L497](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_Panel.R#L497); [vignettes/links.Rmd#L160-171](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/links.Rmd#L160-L171); [iSEEu R/DynamicReducedDimensionPlot.R#L1-12, L235](https://github.com/iSEE/iSEEu/blob/2f5ca87331d85898802d8e0517087c478fb5a003/R/DynamicReducedDimensionPlot.R#L1-L12).
+
+      **Re-scored under X8 (2026-10-04)**: 'Restrict' and the downsample checkbox change what a panel draws; the SingleCellExperiment stays whole in the R session (subset-and-recompute needs the iSEEu panel, added in code).
+    evidence:
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/family_Panel.R
+      lines: '497'
+      url: https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_Panel.R#L497
+      label: R/family_Panel.R#L497
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: vignettes/links.Rmd
+      lines: 160-171
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/links.Rmd#L160-L171
+      label: vignettes/links.Rmd#L160-171
+    - kind: code
+      repo: iSEE/iSEEu
+      commit: 2f5ca87331d85898802d8e0517087c478fb5a003
+      path: R/DynamicReducedDimensionPlot.R
+      lines: 1-12
+      url: >-
+        https://github.com/iSEE/iSEEu/blob/2f5ca87331d85898802d8e0517087c478fb5a003/R/DynamicReducedDimensionPlot.R#L1-L12
+      label: iSEEu R/DynamicReducedDimensionPlot.R#L1-12, L235
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Figure 1 legend (B)
+      quote: >-
+        Selection of points in the reduced dimension plot ... also determines the samples that are shown
+        in the column data ... plot
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+    - kind: paper
+      url: https://doi.org/10.1093/bioadv/vbaf107
+      label: Benedetti et al. 2025, Bioinformatics Advances 5:vbaf107
+      where: 2.2 Operative framework
+      quote: >-
+        provides several parameters to transform data (Data parameters), control aesthetics (Visual parameters),
+        and subset the data (Selection parameters)
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+    reproduce:
+    - evidence/screens/gaps/capture2_isee.py
+  auto_subset:
+    reason: Point downsampling exists but is off by default (Downsample = FALSE); the user must tick it.
+    detail: >-
+      **New column (user X8, 2026-10-04).** Point downsampling exists but is off by default (Downsample
+      = FALSE); the user must tick it. Evidence is the same as for every cell drawn, which shows how the
+      default view is drawn.
+    evidence:
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/panelDefaults.R
+      lines: 7-8
+      url: https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/panelDefaults.R#L7-L8
+      label: R/panelDefaults.R#L7-8
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/family_DotPlot.R
+      lines: 784-791
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_DotPlot.R#L784-L791
+      label: R/family_DotPlot.R#L784-791
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/plotting.R
+      lines: 141-148
+      url: https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/plotting.R#L141-L148
+      label: R/plotting.R#L141-148
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: vignettes/bigdata.Rmd
+      lines: 149-221
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/bigdata.Rmd#L149-L221
+      label: vignettes/bigdata.Rmd#L149-221
+    - kind: code
+      repo: iSEE/iSEEhex
+      commit: eef739924607b2586355264ff14b6990ed2e9824
+      path: R/ReducedDimensionHexPlot.R
+      lines: '372'
+      url: >-
+        https://github.com/iSEE/iSEEhex/blob/eef739924607b2586355264ff14b6990ed2e9824/R/ReducedDimensionHexPlot.R#L372
+      label: iSEEhex R/ReducedDimensionHexPlot.R#L372
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Interface implementation, 'Additional functionalities'
+      quote: >-
+        For large data sets, points can be downsampled in a density-dependent manner to accelerate rendering
+        of the plots
+      indicates: P
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: >-
+        Optional downsampling; the paper does not say what the default is (the Y rests on Downsample =
+        FALSE in code).
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: N
+retired_cells:
+  filters:
+    mark: Y
+    reason: >-
+      A table's search defines a selection that, with "Restrict" ticked, removes the other cells from
+      a linked plot (Neutrophil search left 2,221 of 8,090 cells drawn).
+    detail: |-
+      **Checked in the running app (2026-10-04).** Typing `Neutrophil` in Column data table 1's search keeps 2,221 of 8,090 rows, and plot 2 (Receive column selection from = Column data table 1, Restrict to selected columns ticked) then draws only those cells. *Steps:* Column data table 1 > Search `Neutrophil`; plot 2 > Selection parameters. *Evidence:* [screens/isee/m08_table_search_restricts_plot.jpg](screens/isee/m08_table_search_restricts_plot.jpg)
+
+      **Source and docs.** A table's search fields define a multiple selection transmitted to other panels ([vignettes/links.Rmd#L192-193](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/links.Rmd#L192-L193)); the receiver can "restrict ... so that it only shows the points in the multiple selection" ([L160-171](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/links.Rmd#L160-L171); checkbox "Restrict to selected ...s", [R/family_Panel.R#L497](https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_Panel.R#L497)).
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/isee/m08_table_search_restricts_plot.jpg
+      label: screens/isee/m08_table_search_restricts_plot.jpg
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: vignettes/links.Rmd
+      lines: 192-193
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/links.Rmd#L192-L193
+      label: vignettes/links.Rmd#L192-193
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: vignettes/links.Rmd
+      lines: 160-171
+      url: >-
+        https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/vignettes/links.Rmd#L160-L171
+      label: L160-171
+    - kind: code
+      repo: iSEE/iSEE
+      commit: f6c190304e95e35503a5cc9444c9e0607ddc58ab
+      path: R/family_Panel.R
+      lines: '497'
+      url: https://github.com/iSEE/iSEE/blob/f6c190304e95e35503a5cc9444c9e0607ddc58ab/R/family_Panel.R#L497
+      label: R/family_Panel.R#L497
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Interface implementation, 'Dynamic linking between panels'
+      quote: >-
+        selections in transmitting panels control the inclusion and appearance of the corresponding data
+        points in receiving panels
+      indicates: Y
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+    - kind: paper
+      url: https://doi.org/10.12688/f1000research.14966.1
+      label: Rue-Albrecht et al. 2018, F1000Research 7:741
+      where: Interface implementation, 'Dynamic linking between panels'
+      quote: >-
+        Row statistics tables can also transmit to various plot types ... by defining a subset of features
+        to visualise in a heatmap.
+      indicates: P
+      checked: '2026-10-04'
+      archive: https://web.archive.org/web/20260802032036/https://f1000research.com/articles/7-741/v1
+      note: Table to heatmap only; search-field filters masking every plot are not described in the paper.
+    - kind: paper
+      url: https://doi.org/10.1093/bioadv/vbaf107
+      label: Benedetti et al. 2025, Bioinformatics Advances 5:vbaf107
+      where: 3.1 Use cases
+      quote: >-
+        a selection of samples or features can be simultaneously shared across panels without having to
+        subset the original TreeSE object
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Selection sharing; no table filter described.
+    reproduce:
+    - notes/comparison/demos/isee/matrix_app.R
+    - notes/comparison/demos/isee/matrix_check.py
+    - notes/comparison/demos/isee/matrix_check2.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app

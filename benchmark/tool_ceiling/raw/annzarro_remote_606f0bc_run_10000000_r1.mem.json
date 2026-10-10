@@ -1,0 +1,82 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$SCRATCH/annzarro-scale/stores_panel/n10M/tahoe_panel_10M.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_10000000_r1",
+  "--server-url",
+  "http://hpc-node-36:8790",
+  "--proxy",
+  "socks5://127.0.0.1:8767",
+  "--n",
+  "10000000",
+  "--probe-store",
+  "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
+  "--version-label",
+  "606f0bc"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 15.76,
+ "peaks": {
+  "client": {
+   "fp_peak": 4389252304,
+   "fp_lifetime_sum": 4818596008,
+   "rss_peak": 3208216576,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 3047808,
+   "fp_lifetime_sum": 3047808,
+   "rss_peak": 14516224,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 123925104,
+   "fp_lifetime_sum": 123925104,
+   "rss_peak": 162496512,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 4389252304,
+   "rss_peak": 3208216576,
+   "fp_lifetime_sum": 4821643816
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.16,
+   0
+  ],
+  [
+   4.35,
+   763928520
+  ],
+  [
+   6.59,
+   889381120
+  ],
+  [
+   8.79,
+   428466432
+  ],
+  [
+   11.0,
+   483811800
+  ],
+  [
+   13.22,
+   2723817624
+  ],
+  [
+   15.47,
+   2417857288
+  ]
+ ],
+ "ps_before": "2026-10-04T01:25:21-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n78218 1116320 181.1 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd\n 1248 229232  98.5 $TMPDIR/evidence/venv/bin/python\n 1611  26480  10.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n57113 2065216   4.4 $HOME/.local/bin/claude\n 1771  19504   3.9 .venv/bin/python\n  582 107248   3.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n 1776  20640   3.0 benchmark/tool_ceiling/.venv/bin/python\n94883 336400   2.9 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n  557 652064   2.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n 6219  58688   2.2 $HOME/Projects/investments/.venv/bin/python3\n"
+}

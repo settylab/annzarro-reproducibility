@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m10_de_clusters_view.jpg",
+ "tool": "vizit",
+ "software": "VizIt v1.0.0 as deployed at pd5d.yale.edu (Parkinson's Cell Atlas)",
+ "data": "PD5D_MTG_snRNAseq (snRNA-seq, 94 samples), hosted",
+ "url": "https://pd5d.yale.edu/views/clusters?dataset=PD5D_MTG_snRNAseq",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/vizit/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "de",
+   "mark": "N",
+   "caption": "Cluster View before a cluster is chosen: no control to compute differential expression; see f02"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    0,
+    1400,
+    1000
+   ],
+   "label": "Cluster View",
+   "selector": "body"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+version: 1
+image: m12_share_APP_reopened_with_category.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: fe36a48353e71d7c5291aaa3791f7e98d166cc4b90de41a43ca2b3804a999c4a
+proves:
+- column: share
+  mark: P
+  caption: 'Save As .cloupe and reopen: the custom group ''audit'' is still listed; sharing means passing the whole
+    file (title: bm_demo_saved)'
+callouts:
+- n: 1
+  box:
+  - 300
+  - 2
+  - 340
+  - 17
+  label: reopened bm_demo_saved
+- n: 2
+  box:
+  - 65
+  - 430
+  - 195
+  - 44
+  label: 'Custom groups: audit'

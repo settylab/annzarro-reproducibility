@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m04_slots_layout_tab.jpg",
+ "tool": "ucsc-cell-browser",
+ "software": "UCSC Cell Browser, cellbrowser 1.2.20 (local static build)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8906/?ds=bm_demo",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/ucsc-cell-browser/recap_local.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "slots",
+   "mark": "P",
+   "caption": "Layout tab: the embedding dropdown holds UMAP and ForceAtlas2 only; X_pca, X_diffusion, layers and obsp were dropped at import"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    57,
+    257,
+    843
+   ],
+   "label": "embedding dropdown",
+   "selector": "#tpLayoutTab"
+  }
+ ]
+}

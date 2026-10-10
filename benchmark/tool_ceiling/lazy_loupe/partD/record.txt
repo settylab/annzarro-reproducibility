@@ -1,0 +1,48 @@
+set=g200 rep=1
+loupe_version=9.1.0
+opened_after_s=<=5 (plot already drawn at first check, 5 s after Load click; coarse)
+cellline_after_s=0 (cell_line_id was already selected and the plot already showed cell-line colours)
+gene_after_s=<=3 (coloured at first check, 3 s after selecting MALAT1)
+points_seen=999966 barcodes found (shown for MALAT1 colouring; cluster counts not summed)
+odd=memmon waited 470 s for the lock (leaked pytest server pid 19082 stopped by operator). File opened via Cmd+Shift+G path entry in the Open panel (full-screen control). Quit showed "Close this Loupe file without saving?"; chose "Close file without saving". Screenshot taken with the desktop app's capture, converted jpg->png, not screencapture. Record written from Bash, not TextEdit. memmon: status ok, wall_s 144.51, fp_peak=2.00GB lifetime=2.16GB.
+
+set=g2000 rep=1
+loupe_version=9.1.0
+opened_after_s=<=5 (plot already drawn at first check, 5 s after Load click; coarse)
+cellline_after_s=0 (cell_line_id was already selected and the plot already showed cell-line colours)
+gene_after_s=<=3 (coloured at first check, 3 s after selecting MALAT1)
+points_seen=999966 barcodes found (shown for MALAT1 colouring; cluster counts not summed)
+odd=After the cellline marker (written while Loupe was open and idle) Loupe lost focus and my first Features/MALAT1 clicks and typing landed in Finder (navigated a Finder window to Documents, type-ahead selected ManiVault; nothing changed). I re-focused Loupe and redid the steps, so the gene marker came about 43 s after the cellline marker instead of ~10 s. Same file-open and quit method as g200 r1; chose "Close file without saving". memmon: status ok, wall_s 101.67, fp_peak=2.20GB lifetime=2.29GB.
+
+set=g200 rep=2
+loupe_version=9.1.0
+opened_after_s=<=5 (plot already drawn at first check, 5 s after Load click; coarse)
+cellline_after_s=0 (cell_line_id was already selected and the plot already showed cell-line colours)
+gene_after_s=<=3 (coloured at first check, 3 s after selecting MALAT1)
+points_seen=999966 barcodes found (shown for MALAT1 colouring; cluster counts not summed)
+odd=none. Same method as g200 r1 ("Close file without saving" on quit). memmon: {"status": "ok", "wall_s": 82.99} fp_peak=2.12GB lifetime=2.31GB
+
+set=g2000 rep=2
+loupe_version=9.1.0
+opened_after_s=<=5 (plot already drawn at first check, 5 s after Load click; coarse)
+cellline_after_s=0 (cell_line_id was already selected and the plot already showed cell-line colours)
+gene_after_s=<=3 (coloured at first check, 3 s after selecting MALAT1)
+points_seen=999966 barcodes found (shown for MALAT1 colouring; cluster counts not summed)
+odd=none. Same method as earlier reps ("Close file without saving" on quit). memmon: {"status": "ok", "wall_s": 74.74} fp_peak=2.17GB lifetime=2.44GB
+
+set=g200 rep=3
+loupe_version=9.1.0
+opened_after_s=10-18 (Loading screen still shown 10 s after the Load click, plot drawn at the next check at 18 s; slower than reps 1-2 which were drawn within 5 s)
+cellline_after_s=0 (cell_line_id was already selected and the plot already showed cell-line colours)
+gene_after_s=6-11 (plot still grey 6 s after selecting MALAT1, coloured at 11 s)
+points_seen=999966 barcodes found (shown for MALAT1 colouring; cluster counts not summed)
+odd=Slower load and slower recolour than reps 1-2 (see above); a macOS notification banner appeared at the bottom right of the screen during the gene step. Same method otherwise ("Close file without saving" on quit). memmon: {"status": "ok", "wall_s": 127.86} fp_peak=2.13GB lifetime=2.32GB
+
+set=g2000 rep=3
+loupe_version=9.1.0
+opened_after_s=<=5 (plot already drawn at first check, 5 s after Load click; coarse)
+cellline_after_s=0 (cell_line_id was already selected and the plot already showed cell-line colours)
+gene_after_s=<=3 (coloured at first check, 3 s after selecting MALAT1)
+points_seen=999966 barcodes found (shown for MALAT1 colouring; cluster counts not summed)
+odd=none. Same method as earlier reps ("Close file without saving" on quit). memmon: {"status": "ok", "wall_s": 75.29} fp_peak=2.09GB lifetime=2.35GB
+

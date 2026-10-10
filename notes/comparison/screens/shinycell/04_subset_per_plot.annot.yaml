@@ -1,0 +1,59 @@
+{
+ "version": 1,
+ "image": "04_subset_per_plot.jpg",
+ "tool": "shinycell",
+ "software": "ShinyCell 2.1.0 (local Shiny app built by build.R)",
+ "data": "bm_demo_sce.rds (8,090 cells)",
+ "url": "http://127.0.0.1:8907",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/shinycell/recap_focus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "N",
+   "caption": "No selection in any plot; the only cell-set control is a per-tab subset form (Age, Mid unticked)"
+  },
+  {
+   "column": "filters",
+   "mark": "N",
+   "caption": "Subset form filters one tab's two plots; no table filter"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    368,
+    408,
+    320,
+    53
+   ],
+   "label": "subset checkboxes (per tab)",
+   "selector": "#sc1a1sub1\\.ui"
+  },
+  {
+   "n": 2,
+   "box": [
+    26,
+    616,
+    661,
+    608
+   ],
+   "label": "left plot subset",
+   "selector": "#sc1a1oup1 img"
+  },
+  {
+   "n": 3,
+   "box": [
+    711,
+    616,
+    663,
+    608
+   ],
+   "label": "right plot subset",
+   "selector": "#sc1a1oup2 img"
+  }
+ ]
+}

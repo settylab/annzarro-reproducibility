@@ -1,0 +1,38 @@
+version: 1
+image: f2_annot_cluster_added.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0-dev (official 'ManiVault 1.5.0 macOS installer', manivault_1.5.0_mac.dmg)
+data: bm_demo.h5ad (8,090 cells), project bm_demo.mv
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: '$DEMO_ROOT/manivault/DESKTOP_PROMPT.md follow-up F1-F6 (computer-use desktop session); log: notes/comparison/demos/manivault/session_notes.txt'
+source: manual
+image_sha256: 3396cabbe4db2feacd5189efb724764c0f3617d1150f03c6f92aee91ae584154
+proves:
+- column: annot
+  mark: Y
+  caption: 'After ''Add cluster'': the leiden cluster dataset lists the new cluster my_cells with 442 points (26
+    clusters); exported as Clusters (JSON) it carries the name, colour and 442 indices.'
+callouts:
+- n: 1
+  box:
+  - 970
+  - 912
+  - 480
+  - 38
+  label: new cluster my_cells, 442 points
+- n: 2
+  box:
+  - 300
+  - 1170
+  - 210
+  - 240
+  label: the selected cells
+- n: 3
+  box:
+  - 60
+  - 265
+  - 240
+  - 32
+  label: colouring switched to leiden when the target was chosen

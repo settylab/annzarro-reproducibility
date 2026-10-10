@@ -1,0 +1,69 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first1000000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_default_run_1000000_r0",
+  "--n",
+  "1000000",
+  "--port",
+  "8934"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 11.58,
+ "peaks": {
+  "client": {
+   "fp_peak": 1408017288,
+   "fp_lifetime_sum": 1581656024,
+   "rss_peak": 1575141376,
+   "n_proc_max": 8
+  },
+  "server": {
+   "fp_peak": 2317683040,
+   "fp_lifetime_sum": 2396244848,
+   "rss_peak": 2417950720,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 116880056,
+   "fp_lifetime_sum": 116880056,
+   "rss_peak": 151453696,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 3701484752,
+   "rss_peak": 3968827392,
+   "fp_lifetime_sum": 3977900872
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.08,
+   873341544
+  ],
+  [
+   4.17,
+   3077122560
+  ],
+  [
+   6.34,
+   3615354088
+  ],
+  [
+   8.43,
+   3686247752
+  ],
+  [
+   10.5,
+   3116657968
+  ]
+ ],
+ "ps_before": "2026-10-03T19:47:19-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 6219  58640   6.2 $HOME/Projects/investments/.venv/bin/python3\n57113 2032816   2.3 $HOME/.local/bin/claude\n34972 494480   1.4 $HOME/.local/bin/claude\n47413 613536   1.2 /Applications/cmux.app/Contents/MacOS/cmux\n92291  30832   0.8 .venv/bin/python\n 1912  21072   0.6 socks-failover\n  734  51088   0.6 /System/Library/DriverExtensions/com.apple.DriverKit-AppleBCMWLAN.dext/com.apple.DriverKit-AppleBCMWLAN\n79623   5184   0.4 tmux\n80588 616224   0.3 $HOME/.local/bin/claude\n72627 488336   0.3 $HOME/.local/bin/claude\n"
+}

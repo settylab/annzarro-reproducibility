@@ -1,0 +1,9 @@
+[     4.2s] server_ready
+[     4.9s] first_plot
+[     9.2s] plot_cat
+TimeoutError: Locator.wait_for: Timeout 1750000ms exceeded.
+Call log:
+  - waiting for locator(".bp3-menu-item").filter(has_text="MALAT1").first to be visible
+
+[  1759.4s] done
+{"status": "error", "rc": 3, "wall_s": 1759.58} fp_peak=2.49GB lifetime=2.71GB

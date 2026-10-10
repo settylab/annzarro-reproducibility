@@ -1,0 +1,22 @@
+version: 1
+image: m04_slots_assay_dropdown.jpg
+tool: isee
+software: iSEE 2.18.0 (Bioc 3.20, R 4.4.3)
+data: bm_demo_sce.rds (8,090 cells; colPairs holds the kNN graph)
+url: http://127.0.0.1:8902
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: 552a7a8cf9f45b51b4ed32409734caafc8840d18c2f4c647c5e89f4959c1391e
+proves:
+- column: slots
+  mark: P
+  caption: 'iSEE 2.18.0: the assay slot is reachable from the Feature assay plot''s Assay dropdown (logcounts).'
+callouts:
+- n: 1
+  box: [25, 586, 410, 38]
+  label: 'Y-axis feature: Mpo (a row of the assay)'
+- n: 2
+  box: [25, 722, 410, 72]
+  label: 'Assay dropdown open: logcounts'

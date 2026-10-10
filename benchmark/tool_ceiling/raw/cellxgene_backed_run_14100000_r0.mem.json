@@ -1,0 +1,121 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "backed",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first14100000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_backed_run_14100000_r0",
+  "--n",
+  "14100000",
+  "--port",
+  "8940"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 39.57,
+ "peaks": {
+  "client": {
+   "fp_peak": 5533791432,
+   "fp_lifetime_sum": 6535789208,
+   "rss_peak": 6066716672,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 30498298392,
+   "fp_lifetime_sum": 30580022576,
+   "rss_peak": 31001427968,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 120763136,
+   "fp_lifetime_sum": 124859256,
+   "rss_peak": 159301632,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 34844086080,
+   "rss_peak": 36728619008,
+   "fp_lifetime_sum": 37115811784
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.13,
+   823632608
+  ],
+  [
+   4.2,
+   736748472
+  ],
+  [
+   6.29,
+   1643456304
+  ],
+  [
+   8.35,
+   2790386512
+  ],
+  [
+   10.44,
+   3060149288
+  ],
+  [
+   12.52,
+   4339461928
+  ],
+  [
+   14.6,
+   5963723760
+  ],
+  [
+   16.69,
+   9972580960
+  ],
+  [
+   18.79,
+   10110944392
+  ],
+  [
+   20.87,
+   11769645488
+  ],
+  [
+   22.93,
+   12469652848
+  ],
+  [
+   24.98,
+   12081663416
+  ],
+  [
+   27.06,
+   12068097512
+  ],
+  [
+   29.14,
+   11297393576
+  ],
+  [
+   31.3,
+   25830340104
+  ],
+  [
+   33.38,
+   34844036928
+  ],
+  [
+   35.8,
+   10447571712
+  ],
+  [
+   38.13,
+   9554545000
+  ]
+ ],
+ "ps_before": "2026-10-04T12:44:13-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  557 565680  50.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  855 1753824  18.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  582 101488  11.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n25143 4246832   9.3 /System/Library/Frameworks/Virtualization.framework/Versions/A/XPCServices/com.apple.Virtualization.VirtualMachine.xpc/Contents/MacOS/com.apple.Virtualization.VirtualMachine\n  626 448720   4.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n57113 2869232   4.0 $HOME/.local/bin/claude\n47413 570048   2.1 /Applications/cmux.app/Contents/MacOS/cmux\n 4725 595664   1.5 claude\n80254  20512   1.2 benchmark/tool_ceiling/.venv/bin/python\n34972 488240   0.9 $HOME/.local/bin/claude\n"
+}

@@ -1,0 +1,32 @@
+version: 1
+image: m16_every_cell_APP_ladder_5M.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: tahoe_first<N>.cloupe from the shared Tahoe-100M ladder (LoupeR, benchmark/tool_ceiling/loupe_build.R)
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: Loupe ceiling ladder (desktop session Part B; record $DEMO_ROOT/loupe/session_v031/drawn_<N>_1;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)
+source: manual
+image_sha256: 258ff1540355147060d45620afc27822b2a78750895941b8fda63e483acf8653
+proves:
+- column: every_cell
+  mark: Y
+  caption: 'Loupe ceiling ladder, tahoe_first5000000 (5,000,000 cells): UMAP drawn with no sampling notice; the
+    50 per-cluster counts in the cell_line_id list sum to exactly 5,000,000 (session record drawn_5000000_1)'
+callouts:
+- n: 1
+  box:
+  - 270
+  - 57
+  - 655
+  - 327
+  label: whole UMAP, no sampling notice
+- n: 2
+  box:
+  - 65
+  - 92
+  - 195
+  - 315
+  label: cell_line_id counts

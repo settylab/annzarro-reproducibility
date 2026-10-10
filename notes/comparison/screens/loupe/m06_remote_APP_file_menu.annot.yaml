@@ -1,0 +1,25 @@
+version: 1
+image: m06_remote_APP_file_menu.jpg
+tool: loupe
+software: 'Loupe Browser 9.1.0 (macOS; About box: Version 9.1.0 (9.1.0))'
+data: 'bm_demo.cloupe: bm_demo.h5ad as .cloupe via LoupeR create_loupe() (8,090 cells x 16,285 genes; 8 clusterings,
+  4 projections)'
+url: desktop app
+captured: '2026-10-05'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/loupe_checklist.md (Part C, computer-use desktop session; log: notes/comparison/demos/loupe/session_notes.txt;
+  redacted by notes/comparison/demos/loupe/redact_shots.py)'
+source: manual
+image_sha256: 2bc33a3c5c1b533ac99502fcfa191db01d2def79bfd8ec631016843dc0b17664
+proves:
+- column: remote
+  mark: N
+  caption: 'File menu: New Window, Open File..., Save, Save As...; no URL, server or cloud entry'
+callouts:
+- n: 1
+  box:
+  - 98
+  - 28
+  - 132
+  - 84
+  label: File menu

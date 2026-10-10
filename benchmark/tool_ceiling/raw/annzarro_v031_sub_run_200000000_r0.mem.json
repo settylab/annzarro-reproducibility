@@ -1,0 +1,88 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_200000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v031_sub_run_200000000_r0",
+  "--exe",
+  "$ENVS_ROOT/annzarro_v031_1391357/.venv/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "1391357",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "absent"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 21.05,
+ "peaks": {
+  "client": {
+   "fp_peak": 1588191824,
+   "fp_lifetime_sum": 1633052032,
+   "rss_peak": 1391673344,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 6156015352,
+   "fp_lifetime_sum": 6206675208,
+   "rss_peak": 6188384256,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 124268952,
+   "fp_lifetime_sum": 124268952,
+   "rss_peak": 163004416,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6568196040,
+   "rss_peak": 7314079744,
+   "fp_lifetime_sum": 7839727240
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.45,
+   953623312
+  ],
+  [
+   4.9,
+   1080911160
+  ],
+  [
+   7.34,
+   1520084712
+  ],
+  [
+   9.83,
+   1730013408
+  ],
+  [
+   12.36,
+   2470390512
+  ],
+  [
+   14.84,
+   3388665328
+  ],
+  [
+   17.27,
+   4097224680
+  ],
+  [
+   19.8,
+   3221941768
+  ]
+ ],
+ "ps_before": "2026-10-05T15:53:13-0700\nmemorystatus_level=91 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n  626 507040  35.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 6219  59104  10.6 $HOME/Projects/investments/.venv/bin/python3\n 1012  17072   6.9 /usr/libexec/pboard\n  557 503648   5.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd\n  639 129568   4.7 /usr/sbin/coreaudiod\n  596  30400   3.7 /System/Library/CoreServices/launchservicesd\n  855 2148352   3.5 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  629 209344   2.7 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow\n  582 108192   2.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n 4725 573856   1.6 claude\n",
+ "others_at_start": []
+}

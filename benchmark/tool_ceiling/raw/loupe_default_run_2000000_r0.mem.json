@@ -1,0 +1,212 @@
+{
+ "attach_name": "Loupe Browser 9",
+ "pids_at_start": [
+  89403,
+  89406,
+  89407,
+  89411,
+  89422
+ ],
+ "status": "ok",
+ "ended_by": [
+  "$DEMO_ROOT/loupe/session_v031/drawn_2000000_1"
+ ],
+ "wall_s": 97.16,
+ "peaks": {
+  "app": {
+   "fp_peak": 3408829736,
+   "fp_lifetime_sum": 3665141032,
+   "rss_peak": 2978398208,
+   "n_proc_max": 5
+  },
+  "total": {
+   "fp_peak": 3408829736,
+   "rss_peak": 2978398208,
+   "fp_lifetime_sum": 3665141032
+  }
+ },
+ "trace": [
+  [
+   0.07,
+   247518488
+  ],
+  [
+   2.25,
+   247485720
+  ],
+  [
+   4.47,
+   247485720
+  ],
+  [
+   6.7,
+   247403800
+  ],
+  [
+   8.9,
+   247502104
+  ],
+  [
+   11.09,
+   253351240
+  ],
+  [
+   13.29,
+   252155208
+  ],
+  [
+   15.46,
+   241882440
+  ],
+  [
+   17.65,
+   240801096
+  ],
+  [
+   19.85,
+   240801096
+  ],
+  [
+   22.04,
+   240686408
+  ],
+  [
+   24.2,
+   240686408
+  ],
+  [
+   26.42,
+   1239439432
+  ],
+  [
+   28.62,
+   2533628576
+  ],
+  [
+   30.84,
+   2325404560
+  ],
+  [
+   33.04,
+   2324568976
+  ],
+  [
+   35.22,
+   2292669328
+  ],
+  [
+   37.43,
+   2293013392
+  ],
+  [
+   39.64,
+   2293406608
+  ],
+  [
+   41.85,
+   2293734288
+  ],
+  [
+   44.03,
+   2294061968
+  ],
+  [
+   46.2,
+   2961415056
+  ],
+  [
+   48.42,
+   2954156944
+  ],
+  [
+   50.6,
+   2765265832
+  ],
+  [
+   52.81,
+   2405768080
+  ],
+  [
+   55.02,
+   1974295416
+  ],
+  [
+   57.18,
+   2030476176
+  ],
+  [
+   59.37,
+   1984060280
+  ],
+  [
+   61.58,
+   1984207736
+  ],
+  [
+   63.79,
+   2770361424
+  ],
+  [
+   66.08,
+   2367233104
+  ],
+  [
+   68.29,
+   3068320968
+  ],
+  [
+   70.48,
+   2581011728
+  ],
+  [
+   72.68,
+   2517523728
+  ],
+  [
+   74.89,
+   3285884176
+  ],
+  [
+   77.06,
+   2513165584
+  ],
+  [
+   79.42,
+   2500975888
+  ],
+  [
+   81.6,
+   2499321104
+  ],
+  [
+   83.8,
+   2499321104
+  ],
+  [
+   85.99,
+   2498960656
+  ],
+  [
+   88.23,
+   2499026192
+  ],
+  [
+   90.43,
+   2499026192
+  ],
+  [
+   92.64,
+   2499026192
+  ],
+  [
+   94.81,
+   2499173648
+  ],
+  [
+   97.03,
+   2069093600
+  ]
+ ],
+ "ps_before": "2026-10-05T20:39:59-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n86324 26045084 202.1 $HOME/Library/Application Support/org.R-project.R/R/loupeR/louper\n  626 530928  71.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 5081 144608  52.5 /Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper\n22504 123168   6.6 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n57113 3306576   6.5 $HOME/.local/bin/claude\n 5104 1030432   4.8 /Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)\n68627 431344   3.7 $HOME/.local/bin/claude\n47413 680352   2.7 /Applications/cmux.app/Contents/MacOS/cmux\n93323 778720   1.9 $HOME/.local/bin/claude\n87158  26032   1.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n",
+ "others_at_start": []
+}

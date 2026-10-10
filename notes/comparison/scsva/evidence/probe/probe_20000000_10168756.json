@@ -1,0 +1,27 @@
+{
+  "n_cells": [20000000],
+  "grid": 512,
+  "gene": "MALAT1",
+  "n_groups": [50],
+  "bins_nonempty_density": 123582,
+  "bins_nonempty_groups": 459546,
+  "max_cells_in_one_bin": 4994,
+  "frac_bins_with_one_cell": 0.1933,
+  "seconds": {
+    "load_xy": 1.12,
+    "load_groups": 0.19,
+    "load_gene": 0.49,
+    "density_bin": 0.16,
+    "gene_bin": 0.3,
+    "groups_bin": 5.26,
+    "render_png": 3.08
+  },
+  "rss_self_gb": {
+    "after_xy": 0.822,
+    "after_loads": 0.971,
+    "end": 2.036
+  },
+  "R": "R version 3.6.2 (2019-12-12)",
+  "python": "3.6.15 | packaged by conda-forge | (default, Dec  3 2021, 18:52:47) \n[GCC 9.4.0]",
+  "vaex": "{'vaex-core': '2.0.3', 'vaex-hdf5': '0.6.0'}"
+}

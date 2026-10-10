@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "image": "m08_selection_APP_metadata_table.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (9ae5207), local Docker image scope:1.8.2-9ae5207-final, frontend http://127.0.0.1:55850/; Google Chrome 155.0.8059.39 driven through the Claude in Chrome extension",
+ "data": "SCope_Test.loom (100 cells, local)",
+ "url": "http://127.0.0.1:55850/",
+ "captured": "2026-10-09",
+ "by": "selection-test session (headed Chrome)",
+ "driver": "notes/comparison/demos/scope/selection/record.txt",
+ "source": "manual",
+ "image_sha256": "b112323b88e313634d3452d6c1f5f45b579cdb50be3e734354e944771cc858b2",
+ "proves": [],
+ "note": "Selection magnifier: table of Cell ID, expression, AUC, annotation and clustering for the selected cells, with Download; no sign-in appeared.",
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    10,
+    55,
+    940,
+    380
+   ],
+   "label": "selection metadata table"
+  },
+  {
+   "n": 2,
+   "box": [
+    830,
+    444,
+    70,
+    20
+   ],
+   "label": "Download"
+  }
+ ]
+}

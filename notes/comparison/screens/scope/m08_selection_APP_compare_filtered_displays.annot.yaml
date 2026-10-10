@@ -1,0 +1,42 @@
+{
+ "version": 1,
+ "image": "m08_selection_APP_compare_filtered_displays.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (9ae5207), local Docker image scope:1.8.2-9ae5207-final, frontend http://127.0.0.1:55850/; Google Chrome 155.0.8059.39 driven through the Claude in Chrome extension",
+ "data": "SCope_Test.loom (100 cells, local)",
+ "url": "http://127.0.0.1:55850/",
+ "captured": "2026-10-09",
+ "by": "selection-test session (headed Chrome)",
+ "driver": "notes/comparison/demos/scope/selection/record.txt",
+ "source": "manual",
+ "image_sha256": "67c9661e4684c454649606828bf0713b2451f4209cf2ce33e250ad560c2fe42b",
+ "proves": [
+  {
+   "column": "selection",
+   "mark": "Y",
+   "caption": "Compare page: First half dragged to display 1 (fewer dots), First + Second half to display 3 (all cells, OR superposition)."
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    420,
+    135,
+    390,
+    326
+   ],
+   "label": "display 1, First half"
+  },
+  {
+   "n": 2,
+   "box": [
+    420,
+    472,
+    390,
+    325
+   ],
+   "label": "display 3, First + Second half"
+  }
+ ]
+}

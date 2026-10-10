@@ -1,0 +1,69 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "web_task.py",
+  "cellxgene",
+  "default",
+  "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first2000000.h5ad",
+  "benchmark/tool_ceiling/shots/cellxgene_default_run_2000000_r0",
+  "--n",
+  "2000000",
+  "--port",
+  "8934"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 12.44,
+ "peaks": {
+  "client": {
+   "fp_peak": 1633526952,
+   "fp_lifetime_sum": 1795238136,
+   "rss_peak": 1765408768,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 4514680768,
+   "fp_lifetime_sum": 4594815680,
+   "rss_peak": 4645994496,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 122106696,
+   "fp_lifetime_sum": 122106696,
+   "rss_peak": 156680192,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 6148093008,
+   "rss_peak": 6411272192,
+   "fp_lifetime_sum": 6390053816
+  }
+ },
+ "trace": [
+  [
+   0.04,
+   0
+  ],
+  [
+   2.18,
+   733520584
+  ],
+  [
+   4.22,
+   5742408304
+  ],
+  [
+   6.28,
+   5968671728
+  ],
+  [
+   8.36,
+   5387432944
+  ],
+  [
+   10.44,
+   5748929616
+  ]
+ ],
+ "ps_before": "2026-10-03T19:52:12-0700\nmemorystatus_level=92 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n 1012  17168   7.4 /usr/libexec/pboard\n57113 2033552   4.2 $HOME/.local/bin/claude\n  626 494080   3.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n34972 494672   3.0 $HOME/.local/bin/claude\n86901 508192   2.8 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n  601  43152   2.6 /usr/libexec/locationd\n72627 488432   2.4 $HOME/.local/bin/claude\n 4725 613712   2.2 claude\n 1240  50208   2.2 /System/Library/CoreServices/WindowManager.app/Contents/MacOS/WindowManager\n92291  30832   1.7 .venv/bin/python\n"
+}

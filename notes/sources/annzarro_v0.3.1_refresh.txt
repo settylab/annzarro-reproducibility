@@ -1,0 +1,370 @@
+AnnZarro refresh workflow check (annzarro-reproducibility notes/sources/annzarro_v0.3.1_refresh.py)
+date        2026-10-05T19:16:40-07:00
+annzarro    0.3.1 from $TMPDIR/refresh/refresh-wt; commit 13913570654876210dc4a274dfcaa0bfbc367a7a tags ['v0.3.1'] tracked changes: none
+python      3.13.9 on macOS-26.5.1-arm64-arm-64bit-Mach-O
+libraries   zarr 3.4.0, anndata 0.13.4, h5py 3.16.0, numpy 2.5.3, playwright 1.63.0, gunicorn 26.2.0
+source      data/bm_aging.zarr (never written; cloned with cp -c)
+work dir    $TMPDIR/refresh/full
+load        not run under the bench lock (~/.annzarro-bench.lock): one headless Chromium, one Flask or gunicorn server, an 8,090-cell store; nothing here is a timing measurement
+
+setup: copies made in 5 s: bm_aging.zarr (format 2, consolidated), bm_aging_nocons.zarr (format 2, .zmetadata removed), bm_aging_slim.h5ad and bm_aging_slim_v3.zarr (slim: X, obs, var, obsm, layers/MAGIC_imputed_data, obsp/connectivities; written with anndata 0.13.4)
+server: $TMPDIR/refresh/venv/bin/python -m annzarro.cli start --host 127.0.0.1 --port 57029 --data-dir $TMPDIR/refresh/full/data --no-browser --auth-disabled  (HOME=$TMPDIR/refresh/full/home_local)
+read-only: files of bm_aging.zarr created/changed/removed by the server while browsing and refreshing: 0
+
+(a) in-place modification of displayed values, zarr format 2 with consolidated metadata
+    panels: cell-plot-A colour = obs/doublet_score, x = obsm/X_umap[:,0]; cell-plot-B colour = layers/MAGIC_imputed_data[:, Gata2] (focused gene). Drawn plotly values are matched per cell name with the values on disk (rtol 1e-5), all 8090 cells.
+    styles: slice = g['obs/..'][:] = v, g['layers/..'][:, j] = v, g['obsm/X_umap'][:, 0] = v (zarr.open_group(mode='r+', use_consolidated=False)); write_elem = anndata.io.write_elem replacing obs/doublet_score and obsm/X_umap (layer not written)
+    mechanism none          = no action (control)
+    mechanism panel         = each panel's Refresh button (#refresh-plot-<id>, label 'Refresh', title 'Redraw the plot')
+    mechanism ctrlr         = Ctrl+R (REFRESH_DATASETS; clicks the header Refresh-dataset button)
+    mechanism dsbtn         = header Refresh-dataset button (#refresh-dataset, sync icon next to Dataset)
+    mechanism reload        = browser reload (page.reload, like F5)
+    mechanism reset         = POST /api/v1/cache/reset from the Jupyter process, nothing in the browser
+    mechanism reset+panel   = POST /api/v1/cache/reset, then each panel's Refresh
+    mechanism reset+reload  = POST /api/v1/cache/reset, then browser reload
+    mechanism ctrlr+reload  = Ctrl+R, then browser reload
+    mechanism restart+reload = server restart (same port), then browser reload
+    mechanism cons+ctrlr+reload = zarr.consolidate_metadata(path) from the Jupyter process, Ctrl+R, then browser reload
+    mechanism reload,ctrlr+reload = browser reload first, then Ctrl+R, then browser reload
+    mechanism restart+panel = server restart (same port), then each panel's Refresh
+    mechanism cons+ctrlr    = zarr.consolidate_metadata(path) from the Jupyter process, then Ctrl+R
+    mechanism aged-ctrlr    = Ctrl+R at least 65 s after the page loaded
+    mechanism reset+fresh   = POST /api/v1/cache/reset, then the link in a fresh browser profile (empty HTTP cache)
+  [zarr2] slice: ETag probe: GET obs with the pre-write ETag, after the write and a cache reset -> HTTP 304 (304 = the browser keeps its old body); ETag unchanged
+  [zarr2] slice      none          FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 6 s; requests: no data requests
+  [zarr2] slice      panel         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: no data requests
+  [zarr2] slice      ctrlr         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 21 s; requests: cells:200x2, names:200x1
+  [zarr2] slice      dsbtn         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x2, names:200x1
+  [zarr2] slice      reload        FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2] slice      reset         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; reset HTTP 200; plot loaded 2 s before the action; waited 20 s; requests: no data requests
+  [zarr2] slice      reset+panel   FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; reset HTTP 200; plot loaded 2 s before the action; waited 20 s; requests: no data requests
+  [zarr2] slice      reset+reload  FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; reset HTTP 200; plot loaded 2 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2] slice      ctrlr+reload  FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x3, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2] slice      reload,ctrlr+reload FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x4, dataset_structure:200x2, genes:200x2, layer:200x2, names:200x1, obs:200x2, obsm:200x4, subset:200x2
+  [zarr2] slice      restart+reload FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2] slice      cons+ctrlr+reload PASS  obs colour: NEW; layer colour: NEW; obsm x: NEW; plot loaded 2 s before the action; new values after 0.8 s; requests: cells:200x3, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2] slice      reset+fresh   PASS  obs colour: NEW; layer colour: NEW; obsm x: NEW; reset HTTP 200; plot loaded 2 s before the action; new values after 0.8 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2] write_elem: ETag probe: GET obs with the pre-write ETag, after the write and a cache reset -> HTTP 200 (304 = the browser keeps its old body); ETag changed
+  [zarr2] write_elem none          FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 2 s before the action; waited 6 s; requests: no data requests
+  [zarr2] write_elem panel         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 2 s before the action; waited 21 s; requests: no data requests
+  [zarr2] write_elem ctrlr         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x2, names:200x1
+  [zarr2] write_elem dsbtn         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x2, names:200x1
+  [zarr2] write_elem reload        FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2] write_elem reset         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; reset HTTP 200; plot loaded 2 s before the action; waited 21 s; requests: no data requests
+  [zarr2] write_elem reset+panel   FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; reset HTTP 200; plot loaded 2 s before the action; waited 21 s; requests: no data requests
+  [zarr2] write_elem reset+reload  PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; reset HTTP 200; plot loaded 2 s before the action; new values after 1.1 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2] write_elem ctrlr+reload  PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 2 s before the action; new values after 1.1 s; requests: cells:200x3, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2] write_elem reload,ctrlr+reload FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x4, dataset_structure:200x2, genes:200x2, layer:200x2, names:200x1, obs:200x2, obsm:200x4, subset:200x2
+  [zarr2] write_elem restart+reload PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 2 s before the action; new values after 1.3 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2] write_elem cons+ctrlr+reload PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 2 s before the action; new values after 1.1 s; requests: cells:200x3, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2] write_elem reset+fresh   PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; reset HTTP 200; plot loaded 2 s before the action; new values after 1.2 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  aged: the same, but the refresh comes 65 s after the plot loaded (past the 60 s browser-side cache), one page per mechanism
+  [zarr2 aged] slice      panel         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 67 s before the action; waited 20 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [zarr2 aged] slice      ctrlr         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 87 s before the action; waited 20 s; requests: cells:200x2, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2 aged] slice      reset+panel   FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; reset HTTP 200; plot loaded 108 s before the action; waited 20 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [zarr2 aged] slice      cons+ctrlr    PASS  obs colour: NEW; layer colour: NEW; obsm x: NEW; plot loaded 129 s before the action; new values after 0.7 s; requests: cells:200x2, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2 aged] write_elem panel         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 67 s before the action; waited 20 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [zarr2 aged] write_elem ctrlr         PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 87 s before the action; new values after 0.7 s; requests: cells:200x2, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr2 aged] write_elem reset+panel   PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; reset HTTP 200; plot loaded 88 s before the action; new values after 0.7 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [zarr2 aged] write_elem cons+ctrlr    PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 89 s before the action; new values after 0.7 s; requests: cells:200x2, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+
+(b) adding elements with anndata.io.write_elem from a separate process
+    writes: obs rewritten with a new column (read_elem obs, add column, write_elem(g,'obs',df)); a bare array written into obs (no column-order update); layers/obsp/varp new sparse matrices
+  [b1] consolidated store, user skips zarr.consolidate_metadata, then consolidates
+  step | result
+  write | anndata.io.write_elem from a separate process: ok
+  .zmetadata | lists the new elements after write_elem: {'obs': False, 'layer': False, 'obsp': False, 'varp': False}
+  menus after reload | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  menus after ctrlr | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  menus after ctrlr+reload | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  menus after aged-ctrlr | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  zarr.consolidate_metadata | ok
+  menus after consolidate + ctrlr | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '200', 'layer': '200', 'obsp': '200', 'varp': '200'}
+  menus after consolidate + ctrlr+reload | listed: obs=yes, naive obs array=yes, layer=yes, obsp=yes, varp=yes; API: {'structure': 200, 'obs': '200', 'layer': '200', 'obsp': '200', 'varp': '200'}
+  menus after consolidate + aged-ctrlr | listed: obs=yes, naive obs array=yes, layer=yes, obsp=yes, varp=yes; API: {'structure': 200, 'obs': '200', 'layer': '200', 'obsp': '200', 'varp': '200'}
+  plot new elements (fresh page) | {'obs': 'drawn = written', 'layer': 'drawn = written', 'obsp': 'drawn = written', 'varp': 'drawn = written'}
+  [b2] store without .zmetadata
+  step | result
+  write | anndata.io.write_elem from a separate process: ok
+  menus after reload | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  menus after ctrlr | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '200', 'layer': '200', 'obsp': '200', 'varp': '200'}
+  menus after ctrlr+reload | listed: obs=yes, naive obs array=yes, layer=yes, obsp=yes, varp=yes; API: {'structure': 200, 'obs': '200', 'layer': '200', 'obsp': '200', 'varp': '200'}
+  menus after aged-ctrlr | listed: obs=yes, naive obs array=yes, layer=yes, obsp=yes, varp=yes; API: {'structure': 200, 'obs': '200', 'layer': '200', 'obsp': '200', 'varp': '200'}
+  plot new elements (fresh page) | {'obs': 'drawn = written', 'layer': 'drawn = written', 'obsp': 'drawn = written', 'varp': 'drawn = written'}
+  [b3] consolidated store: obs/doublet_score replaced by a float32 array with other chunks, not re-consolidated
+    after ctrlr: panel A shows OLD values, no message; UI notes []
+    after ctrlr+reload: panel A shows no plot; panel text: 'al_counts_hb total_counts_mt 3D Plot Equal aspect Highlight Focused Cell  Refresh  Plot Options 2795 2800 2805 2810 2815 2820 −5 0 5 10 15 obsm.X_umap.0 obsm.X_umap.1 8,090 cells obs.doublet_score: failed to read details'; UI notes ['error: Failed to load resource: the server responded with a status of 500 (INTERNAL SERVER ERROR)', 'error: Error fetching from /api/v1/data/obs?dataset_path=%24TMPDIR%2Fscr']
+    after aged-ctrlr: panel A shows no plot; panel text: 'al_counts_hb total_counts_mt 3D Plot Equal aspect Highlight Focused Cell  Refresh  Plot Options 2795 2800 2805 2810 2815 2820 −5 0 5 10 15 obsm.X_umap.0 obsm.X_umap.1 8,090 cells obs.doublet_score: failed to read details'; UI notes ['error: Failed to load resource: the server responded with a status of 500 (INTERNAL SERVER ERROR)', 'error: Error fetching from /api/v1/data/obs?dataset_path=%24TMPDIR%2Fscr']
+    write: {"op": "dtype_change", "ok": true} (0.5 s); GET obs -> 500 {"error":"The store's consolidated metadata (.zmetadata) is out of date (obs/doublet_score: consolidated metadata says dtype float64, the array on disk has float32). It was probably rewritten in place without re-consolidating. Run `zarr.consolidate_metadata(pa
+    after zarr.consolidate_metadata + ctrlr: panel A shows the new float32 values: True
+    after zarr.consolidate_metadata + ctrlr+reload: panel A shows the new float32 values: True
+
+(c) h5ad: bm_aging_slim.h5ad
+  [h5ad] slice      panel         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: no data requests
+  [h5ad] slice      ctrlr         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 21 s; requests: cells:200x2, names:200x1
+  [h5ad] slice      reload        FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 21 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad] slice      reset+reload  FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; reset HTTP 200; plot loaded 2 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad] slice      ctrlr+reload  FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x3, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad] slice      reload,ctrlr+reload FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x4, dataset_structure:200x2, genes:200x2, layer:200x2, names:200x1, obs:200x2, obsm:200x4, subset:200x2
+  [h5ad] slice      restart+reload PASS  obs colour: NEW; layer colour: NEW; obsm x: NEW; plot loaded 2 s before the action; new values after 0.8 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad] slice      reset+fresh   FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; reset HTTP 200; plot loaded 2 s before the action; waited 21 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad] write_elem panel         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: no data requests
+  [h5ad] write_elem ctrlr         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 2 s before the action; waited 21 s; requests: cells:200x2, names:200x1
+  [h5ad] write_elem reload        FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad] write_elem reset+reload  FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; reset HTTP 200; plot loaded 2 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad] write_elem ctrlr+reload  FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x3, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad] write_elem reload,ctrlr+reload FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 2 s before the action; waited 21 s; requests: cells:200x4, dataset_structure:200x2, genes:200x2, layer:200x2, names:200x1, obs:200x2, obsm:200x4, subset:200x2
+  [h5ad] write_elem restart+reload PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 2 s before the action; new values after 0.7 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad] write_elem reset+fresh   FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; reset HTTP 200; plot loaded 2 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad aged] slice      panel         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 67 s before the action; waited 21 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [h5ad aged] slice      ctrlr         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 88 s before the action; waited 20 s; requests: cells:200x2, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad aged] slice      reset+panel   FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; reset HTTP 200; plot loaded 108 s before the action; waited 20 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [h5ad aged] slice      restart+panel PASS  obs colour: NEW; layer colour: NEW; obsm x: NEW; plot loaded 129 s before the action; new values after 0.5 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [h5ad aged] write_elem panel         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 67 s before the action; waited 20 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [h5ad aged] write_elem ctrlr         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 87 s before the action; waited 20 s; requests: cells:200x2, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad aged] write_elem reset+panel   FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; reset HTTP 200; plot loaded 108 s before the action; waited 20 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [h5ad aged] write_elem restart+panel PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 129 s before the action; new values after 0.2 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [h5ad] rewrite    ctrlr         FAIL  adata.write_h5ad(path) over the served file: {"op": "rewrite", "ok": true} (1.7 s); obs colour new after 20.0 s: False; requests: cells:200x2, names:200x1
+  [h5ad] rewrite    reset+fresh   FAIL  adata.write_h5ad(path) over the served file: {"op": "rewrite", "ok": true} (1.3 s); obs colour new after 20.1 s: False; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [h5ad] after server restart: obs colour = disk: True
+  [h5ad] lock: separate process opens h5py.File(path, 'r+') while the page shows the file: ok
+  [h5ad] lock: while another process holds h5py r+ ({"op": "hold_open", "opened": true}), the server reads the file: plot drawn True; GET obs 200; meanwhile a default (locking) h5py open from a third process fails: [Errno 35] Unable to synchronously open file (unable to lock file, errno = 35, error messa (the server's reader retries with locking=False, h5ad_reader._open); server log lock lines: []
+  [h5ad] additions
+  step | result
+  write | anndata.io.write_elem from a separate process: ok
+  menus after reload | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  menus after ctrlr | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  menus after ctrlr+reload | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  menus after aged-ctrlr | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  menus after server restart + reload | listed: obs=yes, naive obs array=no, layer=yes, obsp=yes, varp=yes; API: {'structure': 200, 'obs': '200', 'layer': '200', 'obsp': '200', 'varp': '200'}
+  plot new elements (fresh page) | {'obs': 'drawn = written', 'layer': 'drawn = written', 'obsp': 'drawn = written', 'varp': 'drawn = written'}
+
+(c) zarr3: bm_aging_slim_v3.zarr
+  [zarr3] slice      panel         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: no data requests
+  [zarr3] slice      ctrlr         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x2, names:200x1
+  [zarr3] slice      reload        FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] slice      reset+reload  FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; reset HTTP 200; plot loaded 2 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] slice      ctrlr+reload  FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x3, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] slice      reload,ctrlr+reload FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x4, dataset_structure:200x2, genes:200x2, layer:200x2, names:200x1, obs:200x2, obsm:200x4, subset:200x2
+  [zarr3] slice      restart+reload FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 2 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] slice      cons+ctrlr+reload PASS  obs colour: NEW; layer colour: NEW; obsm x: NEW; plot loaded 2 s before the action; new values after 0.8 s; requests: cells:200x3, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] slice      reset+fresh   PASS  obs colour: NEW; layer colour: NEW; obsm x: NEW; reset HTTP 200; plot loaded 2 s before the action; new values after 1.1 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] write_elem panel         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 1 s before the action; waited 20 s; requests: no data requests
+  [zarr3] write_elem ctrlr         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 1 s before the action; waited 20 s; requests: cells:200x2, names:200x1
+  [zarr3] write_elem reload        FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 1 s before the action; waited 20 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] write_elem reset+reload  PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; reset HTTP 200; plot loaded 1 s before the action; new values after 0.8 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] write_elem ctrlr+reload  PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 1 s before the action; new values after 0.9 s; requests: cells:200x3, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] write_elem reload,ctrlr+reload FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 1 s before the action; waited 20 s; requests: cells:200x4, dataset_structure:200x2, genes:200x2, layer:200x2, names:200x1, obs:200x2, obsm:200x4, subset:200x2
+  [zarr3] write_elem restart+reload PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 1 s before the action; new values after 0.7 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] write_elem cons+ctrlr+reload PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 1 s before the action; new values after 0.8 s; requests: cells:200x3, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] write_elem reset+fresh   PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; reset HTTP 200; plot loaded 1 s before the action; new values after 0.8 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3 aged] slice      panel         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 67 s before the action; waited 21 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [zarr3 aged] slice      ctrlr         FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; plot loaded 88 s before the action; waited 21 s; requests: cells:200x2, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3 aged] slice      reset+panel   FAIL  obs colour: OLD; layer colour: OLD; obsm x: OLD; reset HTTP 200; plot loaded 108 s before the action; waited 20 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [zarr3 aged] slice      cons+ctrlr    PASS  obs colour: NEW; layer colour: NEW; obsm x: NEW; plot loaded 129 s before the action; new values after 0.7 s; requests: cells:200x2, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3 aged] write_elem panel         FAIL  obs colour: OLD; layer colour: not written; obsm x: OLD; plot loaded 67 s before the action; waited 20 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [zarr3 aged] write_elem ctrlr         PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 87 s before the action; new values after 0.7 s; requests: cells:200x2, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3 aged] write_elem reset+panel   PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; reset HTTP 200; plot loaded 88 s before the action; new values after 0.7 s; requests: dataset_structure:200x1, layer:200x1, obs:200x1, obsm:200x2
+  [zarr3 aged] write_elem cons+ctrlr    PASS  obs colour: NEW; layer colour: not written; obsm x: NEW; plot loaded 88 s before the action; new values after 0.7 s; requests: cells:200x2, dataset_structure:200x1, genes:200x1, layer:200x1, names:200x1, obs:200x1, obsm:200x2, subset:200x1
+  [zarr3] additions
+  step | result
+  write | anndata.io.write_elem from a separate process: ok
+  zarr.json | has consolidated metadata: True; it lists the new layer: False
+  menus after reload | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  menus after ctrlr | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  menus after ctrlr+reload | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  menus after aged-ctrlr | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '404 key_not_found', 'layer': '404 key_not_found', 'obsp': '404 key_not_found', 'varp': '404 key_not_found'}
+  zarr.consolidate_metadata | ok
+  menus after consolidate + ctrlr | listed: obs=no, naive obs array=no, layer=no, obsp=no, varp=no; API: {'structure': 200, 'obs': '200', 'layer': '200', 'obsp': '200', 'varp': '200'}
+  menus after consolidate + ctrlr+reload | listed: obs=yes, naive obs array=yes, layer=yes, obsp=yes, varp=yes; API: {'structure': 200, 'obs': '200', 'layer': '200', 'obsp': '200', 'varp': '200'}
+  menus after consolidate + aged-ctrlr | listed: obs=yes, naive obs array=yes, layer=yes, obsp=yes, varp=yes; API: {'structure': 200, 'obs': '200', 'layer': '200', 'obsp': '200', 'varp': '200'}
+  plot new elements (fresh page) | {'obs': 'drawn = written', 'layer': 'drawn = written', 'obsp': 'drawn = written', 'varp': 'drawn = written'}
+
+(d) what a refresh keeps (own copy bm_aging_d.zarr). Start: link with 2 panels at 35/65 %, focused gene Gata2; then the user locks panel B's colour (lock button), focuses Kit in the Focused Gene picker (Enter).
+  panel: before: focusedGene=Kit focusedCell=HSPC_Young_1#CCACTTGCAAT tiles=['cell-plot-A', 'cell-plot-B'] widths=[559, 1037] lockB=closed marker=same-page
+  panel: after:  focusedGene=Kit focusedCell=HSPC_Young_1#CCACTTGCAAT tiles=['cell-plot-A', 'cell-plot-B'] widths=[559, 1037] lockB=closed marker=same-page; panel B draws Gata2 (locked); changed: nothing
+  ctrlr: before: focusedGene=Kit focusedCell=HSPC_Young_1#CCACTTGCAAT tiles=['cell-plot-A', 'cell-plot-B'] widths=[559, 1037] lockB=closed marker=same-page
+  ctrlr: after:  focusedGene=Kit focusedCell=HSPC_Young_1#CCACTTGCAAT tiles=['cell-plot-A', 'cell-plot-B'] widths=[559, 1037] lockB=closed marker=same-page; panel B draws Gata2 (locked); changed: nothing
+  reload: before: focusedGene=Kit focusedCell=HSPC_Young_1#CCACTTGCAAT tiles=['cell-plot-A', 'cell-plot-B'] widths=[559, 1037] lockB=closed marker=same-page
+  reload: after:  focusedGene=Gata2 focusedCell=HSPC_Young_1#CCACTTGCAAT tiles=['cell-plot-A', 'cell-plot-B'] widths=[559, 1037] lockB=open marker=None; panel B draws Gata2 (locked); changed: ['focusedGene', 'lockB', 'view']
+      view before {"layout":[{"type":"split","direction":"horizontal","children":[{"type":"tile","id":"cell-plot-A","controlsVisible":true},{"type":"tile","id":"cell-plot-B","controlsVisible":true}],"panes":[{"percentage":35,"controlsVisible":true},{"percentage":65,"controlsVisible":true}],"height":841},{"type":"selector"}],"constants":{"focusedGene":"Kit","focusedCell":"HSPC_Young_1#CCACTTGCAATCCTAG-1","taxonomyId":"9606","cellRows":{"HSPC_Young_1#CCACTTGCAATCCTAG-1":100}},"colorB":{"type":"layer","key":"MAGIC_imputed_data","column":"Gata2","history":{"layer":{"key":null,"columns":{}}},"locked":true}}
+      view after  {"layout":[{"type":"split","direction":"horizontal","children":[{"type":"tile","id":"cell-plot-A","controlsVisible":true},{"type":"tile","id":"cell-plot-B","controlsVisible":true}],"panes":[{"percentage":35,"controlsVisible":true},{"percentage":65,"controlsVisible":true}],"height":841},{"type":"selector"}],"constants":{"focusedGene":"Gata2","focusedCell":"HSPC_Young_1#CCACTTGCAATCCTAG-1","taxonomyId":"9606","cellRows":{"HSPC_Young_1#CCACTTGCAATCCTAG-1":100}},"colorB":{"type":"layer","key":"MAGIC_imputed_data","column":"Gata2","history":{"layer":{"key":null,"columns":{}}},"locked":false}}
+
+(e) hosted: gunicorn 2 workers, login on, users admin (admin) and bob; own copy bm_aging_e.zarr
+  check | result
+  user add | admin admin=True: exit 0
+  user add | bob admin=False: exit 0
+  POST /cache/reset anonymous | 401 {"error":"Authentication required","reason":"login_required"}
+
+  POST /cache/reset as bob (non-admin) | login 302; 403 {"message":"Only an admin can reset the shared cache on this server.","reason":"admin_only","status":"error"}
+
+  POST /cache/reset as admin | login 302; 200 {"cache_config":{"cache_dataset_limit":20,"cache_enabled":true,"cache_memory_mb"
+  Ctrl+R as bob | FAIL: obs colour OLD after 20.1 s; button title 'Reload this dataset in this browser (only an admin can clear the server's shared cache)'; cache/reset calls none; baseline ok True; requests: cells:200x2, names:200x1
+  16 direct GETs after bob's Ctrl+R | new values 0, old values 16
+  Ctrl+R then browser reload as bob | FAIL: obs colour OLD after 20.2 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  Ctrl+R as admin | FAIL: obs colour OLD after 20.1 s; button title 'Reload this dataset and clear the server's cache for it'; cache/reset calls [(200, 'cache/reset', 'POST')]; baseline ok True; requests: cells:200x2, names:200x1
+  16 direct GETs after admin's Ctrl+R | new values 11, old values 5
+  Ctrl+R then browser reload as admin | FAIL: obs colour OLD after 20.2 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  admin POST /cache/reset once, then 16 GETs | reset 200; new 10, old 6 (2 gunicorn workers, one cache each)
+
+SUMMARY
+  PASS   (e) server never writes the store (browse + Ctrl+R, file mtimes)
+  FAIL   (a) zarr2 slice + none (within 60 s of the plot's load)
+  FAIL   (a) zarr2 slice + panel (within 60 s of the plot's load)
+  FAIL   (a) zarr2 slice + ctrlr (within 60 s of the plot's load)
+  FAIL   (a) zarr2 slice + dsbtn (within 60 s of the plot's load)
+  FAIL   (a) zarr2 slice + reload (within 60 s of the plot's load)
+  FAIL   (a) zarr2 slice + reset (within 60 s of the plot's load)
+  FAIL   (a) zarr2 slice + reset+panel (within 60 s of the plot's load)
+  FAIL   (a) zarr2 slice + reset+reload (within 60 s of the plot's load)
+  FAIL   (a) zarr2 slice + ctrlr+reload (within 60 s of the plot's load)
+  FAIL   (a) zarr2 slice + reload,ctrlr+reload (within 60 s of the plot's load)
+  FAIL   (a) zarr2 slice + restart+reload (within 60 s of the plot's load)
+  PASS   (a) zarr2 slice + cons+ctrlr+reload (within 60 s of the plot's load)
+  PASS   (a) zarr2 slice + reset+fresh (within 60 s of the plot's load)
+  FAIL   (a) zarr2 write_elem + none (within 60 s of the plot's load)
+  FAIL   (a) zarr2 write_elem + panel (within 60 s of the plot's load)
+  FAIL   (a) zarr2 write_elem + ctrlr (within 60 s of the plot's load)
+  FAIL   (a) zarr2 write_elem + dsbtn (within 60 s of the plot's load)
+  FAIL   (a) zarr2 write_elem + reload (within 60 s of the plot's load)
+  FAIL   (a) zarr2 write_elem + reset (within 60 s of the plot's load)
+  FAIL   (a) zarr2 write_elem + reset+panel (within 60 s of the plot's load)
+  PASS   (a) zarr2 write_elem + reset+reload (within 60 s of the plot's load)
+  PASS   (a) zarr2 write_elem + ctrlr+reload (within 60 s of the plot's load)
+  FAIL   (a) zarr2 write_elem + reload,ctrlr+reload (within 60 s of the plot's load)
+  PASS   (a) zarr2 write_elem + restart+reload (within 60 s of the plot's load)
+  PASS   (a) zarr2 write_elem + cons+ctrlr+reload (within 60 s of the plot's load)
+  PASS   (a) zarr2 write_elem + reset+fresh (within 60 s of the plot's load)
+  FAIL   (a) zarr2 slice + panel (65 s after the plot's load)
+  FAIL   (a) zarr2 slice + ctrlr (65 s after the plot's load)
+  FAIL   (a) zarr2 slice + reset+panel (65 s after the plot's load)
+  PASS   (a) zarr2 slice + cons+ctrlr (65 s after the plot's load)
+  FAIL   (a) zarr2 write_elem + panel (65 s after the plot's load)
+  PASS   (a) zarr2 write_elem + ctrlr (65 s after the plot's load)
+  PASS   (a) zarr2 write_elem + reset+panel (65 s after the plot's load)
+  PASS   (a) zarr2 write_elem + cons+ctrlr (65 s after the plot's load)
+  FAIL   (b) zarr2 consolidated: new obs/layer/obsp/varp in the source menus, menus after reload
+  FAIL   (b) zarr2 consolidated: new obs/layer/obsp/varp in the source menus, menus after ctrlr
+  FAIL   (b) zarr2 consolidated: new obs/layer/obsp/varp in the source menus, menus after ctrlr+reload
+  FAIL   (b) zarr2 consolidated: new obs/layer/obsp/varp in the source menus, menus after aged-ctrlr
+  FAIL   (b) zarr2 consolidated: new obs/layer/obsp/varp in the source menus, menus after consolidate + ctrlr
+  PASS   (b) zarr2 consolidated: new obs/layer/obsp/varp in the source menus, menus after consolidate + ctrlr+reload
+  PASS   (b) zarr2 consolidated: new obs/layer/obsp/varp in the source menus, menus after consolidate + aged-ctrlr
+  PASS   (b) zarr2 consolidated: new elements, once listed, drawn with the written values
+  FAIL   (b) zarr2 unconsolidated: new obs/layer/obsp/varp in the source menus, menus after reload
+  FAIL   (b) zarr2 unconsolidated: new obs/layer/obsp/varp in the source menus, menus after ctrlr
+  PASS   (b) zarr2 unconsolidated: new obs/layer/obsp/varp in the source menus, menus after ctrlr+reload
+  PASS   (b) zarr2 unconsolidated: new obs/layer/obsp/varp in the source menus, menus after aged-ctrlr
+  PASS   (b) zarr2 unconsolidated: new elements, once listed, drawn with the written values
+  FAIL (OLD values, no message)  (b) unconsolidated dtype change: error shown, never wrong data (Ctrl+R)
+  PASS   (b) unconsolidated dtype change: error shown, never wrong data (ctrlr+reload)
+  PASS   (b) unconsolidated dtype change: error shown, never wrong data (aged-ctrlr)
+  FAIL   (c) h5ad slice + panel (within 60 s)
+  FAIL   (c) h5ad slice + ctrlr (within 60 s)
+  FAIL   (c) h5ad slice + reload (within 60 s)
+  FAIL   (c) h5ad slice + reset+reload (within 60 s)
+  FAIL   (c) h5ad slice + ctrlr+reload (within 60 s)
+  FAIL   (c) h5ad slice + reload,ctrlr+reload (within 60 s)
+  PASS   (c) h5ad slice + restart+reload (within 60 s)
+  FAIL   (c) h5ad slice + reset+fresh (within 60 s)
+  FAIL   (c) h5ad write_elem + panel (within 60 s)
+  FAIL   (c) h5ad write_elem + ctrlr (within 60 s)
+  FAIL   (c) h5ad write_elem + reload (within 60 s)
+  FAIL   (c) h5ad write_elem + reset+reload (within 60 s)
+  FAIL   (c) h5ad write_elem + ctrlr+reload (within 60 s)
+  FAIL   (c) h5ad write_elem + reload,ctrlr+reload (within 60 s)
+  PASS   (c) h5ad write_elem + restart+reload (within 60 s)
+  FAIL   (c) h5ad write_elem + reset+fresh (within 60 s)
+  FAIL   (c) h5ad slice + panel (65 s after load)
+  FAIL   (c) h5ad slice + ctrlr (65 s after load)
+  FAIL   (c) h5ad slice + reset+panel (65 s after load)
+  PASS   (c) h5ad slice + restart+panel (65 s after load)
+  FAIL   (c) h5ad write_elem + panel (65 s after load)
+  FAIL   (c) h5ad write_elem + ctrlr (65 s after load)
+  FAIL   (c) h5ad write_elem + reset+panel (65 s after load)
+  PASS   (c) h5ad write_elem + restart+panel (65 s after load)
+  FAIL   (c) h5ad full rewrite (write_h5ad) + ctrlr
+  FAIL   (c) h5ad full rewrite (write_h5ad) + reset+fresh
+  PASS   (c) h5ad writable by another process while displayed
+  PASS   (c) h5ad readable by the server while a writer holds it open
+  FAIL   (c) h5ad: new obs/layer/obsp/varp in the source menus, menus after reload
+  FAIL   (c) h5ad: new obs/layer/obsp/varp in the source menus, menus after ctrlr
+  FAIL   (c) h5ad: new obs/layer/obsp/varp in the source menus, menus after ctrlr+reload
+  FAIL   (c) h5ad: new obs/layer/obsp/varp in the source menus, menus after aged-ctrlr
+  PASS   (c) h5ad: new obs/layer/obsp/varp in the source menus, menus after server restart + reload
+  PASS   (c) h5ad: new elements, once listed, drawn with the written values
+  FAIL   (c) zarr3 slice + panel (within 60 s)
+  FAIL   (c) zarr3 slice + ctrlr (within 60 s)
+  FAIL   (c) zarr3 slice + reload (within 60 s)
+  FAIL   (c) zarr3 slice + reset+reload (within 60 s)
+  FAIL   (c) zarr3 slice + ctrlr+reload (within 60 s)
+  FAIL   (c) zarr3 slice + reload,ctrlr+reload (within 60 s)
+  FAIL   (c) zarr3 slice + restart+reload (within 60 s)
+  PASS   (c) zarr3 slice + cons+ctrlr+reload (within 60 s)
+  PASS   (c) zarr3 slice + reset+fresh (within 60 s)
+  FAIL   (c) zarr3 write_elem + panel (within 60 s)
+  FAIL   (c) zarr3 write_elem + ctrlr (within 60 s)
+  FAIL   (c) zarr3 write_elem + reload (within 60 s)
+  PASS   (c) zarr3 write_elem + reset+reload (within 60 s)
+  PASS   (c) zarr3 write_elem + ctrlr+reload (within 60 s)
+  FAIL   (c) zarr3 write_elem + reload,ctrlr+reload (within 60 s)
+  PASS   (c) zarr3 write_elem + restart+reload (within 60 s)
+  PASS   (c) zarr3 write_elem + cons+ctrlr+reload (within 60 s)
+  PASS   (c) zarr3 write_elem + reset+fresh (within 60 s)
+  FAIL   (c) zarr3 slice + panel (65 s after load)
+  FAIL   (c) zarr3 slice + ctrlr (65 s after load)
+  FAIL   (c) zarr3 slice + reset+panel (65 s after load)
+  PASS   (c) zarr3 slice + cons+ctrlr (65 s after load)
+  FAIL   (c) zarr3 write_elem + panel (65 s after load)
+  PASS   (c) zarr3 write_elem + ctrlr (65 s after load)
+  PASS   (c) zarr3 write_elem + reset+panel (65 s after load)
+  PASS   (c) zarr3 write_elem + cons+ctrlr (65 s after load)
+  FAIL   (c) zarr3: new obs/layer/obsp/varp in the source menus, menus after reload
+  FAIL   (c) zarr3: new obs/layer/obsp/varp in the source menus, menus after ctrlr
+  FAIL   (c) zarr3: new obs/layer/obsp/varp in the source menus, menus after ctrlr+reload
+  FAIL   (c) zarr3: new obs/layer/obsp/varp in the source menus, menus after aged-ctrlr
+  FAIL   (c) zarr3: new obs/layer/obsp/varp in the source menus, menus after consolidate + ctrlr
+  PASS   (c) zarr3: new obs/layer/obsp/varp in the source menus, menus after consolidate + ctrlr+reload
+  PASS   (c) zarr3: new obs/layer/obsp/varp in the source menus, menus after consolidate + aged-ctrlr
+  PASS   (c) zarr3: new elements, once listed, drawn with the written values
+  PASS   (d) panel keeps layout, focus, lock, same page
+  PASS   (d) ctrlr keeps layout, focus, lock, same page
+  FAIL (focusedGene, lockB, view; page reloaded)  (d) reload keeps layout, focus, lock, same page
+  PASS   (e) anonymous reset refused
+  PASS   (e) non-admin reset refused (403 admin_only)
+  PASS   (e) admin reset allowed
+  FAIL   (e) Ctrl+R as non-admin shows data changed on disk
+  FAIL   (e) Ctrl+R as admin shows data changed on disk
+  FAIL   (e) Ctrl+R + reload as non-admin shows data changed on disk
+  FAIL   (e) Ctrl+R + reload as admin shows data changed on disk
+  FAIL   (e) one admin reset clears every worker
+
+APPENDIX: a second run of case (e) alone, same script and commit, to show the gunicorn worker-routing variance
+command: <venv>/bin/python annzarro_v0.3.1_refresh.py --work <dir> --reuse --only e   (date        2026-10-05T20:05:59-07:00)
+(e) hosted: gunicorn 2 workers, login on, users admin (admin) and bob; own copy bm_aging_e.zarr
+  check | result
+  user add | admin admin=True: exit 0
+  user add | bob admin=False: exit 0
+  POST /cache/reset anonymous | 401 {"error":"Authentication required","reason":"login_required"}
+
+  POST /cache/reset as bob (non-admin) | login 302; 403 {"message":"Only an admin can reset the shared cache on this server.","reason":"admin_only","status":"error"}
+
+  POST /cache/reset as admin | login 302; 200 {"cache_config":{"cache_dataset_limit":20,"cache_enabled":true,"cache_memory_mb"
+  Ctrl+R as bob | FAIL: obs colour OLD after 20.3 s; button title 'Reload this dataset in this browser (only an admin can clear the server's shared cache)'; cache/reset calls none; baseline ok True; requests: cells:200x2, names:200x1
+  16 direct GETs after bob's Ctrl+R | new values 0, old values 16
+  Ctrl+R then browser reload as bob | FAIL: obs colour OLD after 20.1 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  Ctrl+R as admin | FAIL: obs colour OLD after 20.3 s; button title 'Reload this dataset and clear the server's cache for it'; cache/reset calls [(200, 'cache/reset', 'POST')]; baseline ok True; requests: cells:200x2, names:200x1
+  16 direct GETs after admin's Ctrl+R | new values 7, old values 9
+  Ctrl+R then browser reload as admin | PASS: obs colour NEW after 0.7 s; requests: cells:200x1, dataset_structure:200x1, genes:200x1, layer:200x1, obs:200x1, obsm:200x2, subset:200x1
+  admin POST /cache/reset once, then 16 GETs | reset 200; new 16, old 0 (2 gunicorn workers, one cache each)
+
+SUMMARY
+  PASS   (e) server never writes the store (browse + Ctrl+R, file mtimes)
+  PASS   (e) anonymous reset refused
+  PASS   (e) non-admin reset refused (403 admin_only)
+  PASS   (e) admin reset allowed
+  FAIL   (e) Ctrl+R as non-admin shows data changed on disk
+  FAIL   (e) Ctrl+R as admin shows data changed on disk
+  FAIL   (e) Ctrl+R + reload as non-admin shows data changed on disk
+  PASS   (e) Ctrl+R + reload as admin shows data changed on disk
+  PASS   (e) one admin reset clears every worker

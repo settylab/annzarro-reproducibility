@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "image": "m08_selection_APP_compare_empty.jpg",
+ "tool": "scope",
+ "software": "SCope 1.8.2 (9ae5207), local Docker image scope:1.8.2-9ae5207-final, frontend http://127.0.0.1:55850/; Google Chrome 155.0.8059.39 driven through the Claude in Chrome extension",
+ "data": "SCope_Test.loom (100 cells, local)",
+ "url": "http://127.0.0.1:55850/",
+ "captured": "2026-10-09",
+ "by": "selection-test session (headed Chrome)",
+ "driver": "notes/comparison/demos/scope/selection/record.txt",
+ "source": "manual",
+ "image_sha256": "9f7017f2762b23524d132f41820b5260e2220bf0272f6e0b68be4481a8f09359",
+ "proves": [],
+ "note": "Compare page before configuring displays.",
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    160,
+    25,
+    85,
+    55
+   ],
+   "label": "displays and superposition"
+  },
+  {
+   "n": 2,
+   "box": [
+    732,
+    105,
+    128,
+    70
+   ],
+   "label": "no selections"
+  }
+ ]
+}

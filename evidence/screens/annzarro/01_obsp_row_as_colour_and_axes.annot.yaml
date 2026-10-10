@@ -1,0 +1,59 @@
+version: 1
+image: 01_obsp_row_as_colour_and_axes.png
+tool: annzarro
+software: AnnZarro 0.4.1 (settylab/annzarro@78c9da6, pip install from that commit)
+data: bm_aging_showcase.zarr (8,090 cells x 16,285 genes; data/bm_aging_showcase.FIELDS.md)
+url: http://127.0.0.1:8920/?dataset_path=$DATA_DIR/bm_aging_showcase.zarr#view=eyJ2IjoxLCJjb25zdGFudHMiOnsiZm9jdXNlZENlbGwiOiJNYXR1cm...
+captured: '2026-10-07'
+by: evidence-curator
+driver: evidence/screens/annzarro/capture.py
+source: dom
+proves:
+- column: cells
+  mark: Y
+  caption: A stored cells x cells matrix (obsp) is the colour of one plot and both axes of another, chosen
+    from the GUI menus.
+- column: every_cell
+  mark: Y
+  caption: 'The UMAP draws all 8,090 cells of the dataset (statistics bar: All cells); no downsampling.'
+callouts:
+- n: 1
+  box:
+  - 69
+  - 229
+  - 276
+  - 36
+  label: Color = obsp / diffusion_distance / Focused cell Mature_Mid_1#GCCATGGAGTATGATG-1
+  selector: .tile[data-tile-id="cell-plot-L"] .axis-type-select[data-axis="color"] >> xpath=..
+- n: 2
+  box:
+  - 771
+  - 165
+  - 276
+  - 36
+  label: X-Axis = obsp / umap_distance / Focused cell Mature_Mid_1#GCCATGGAGTATGATG-1
+  selector: .tile[data-tile-id="cell-plot-R"] .axis-type-select[data-axis="x"] >> xpath=..
+- n: 3
+  box:
+  - 771
+  - 197
+  - 276
+  - 36
+  label: Y-Axis = obsp / diffusion_distance / Focused cell Mature_Mid_1#GCCATGGAGTATGATG-1
+  selector: .tile[data-tile-id="cell-plot-R"] .axis-type-select[data-axis="y"] >> xpath=..
+- n: 4
+  box:
+  - 669
+  - 28
+  - 154
+  - 46
+  label: 'Focused Cell = Mature_Mid_1#GCCATGGAGTATGATG-1: the obsp row shown'
+  selector: '#focused-cell'
+- n: 5
+  box:
+  - 0
+  - 75
+  - 1400
+  - 38
+  label: 'Cells: 8,090, badge ''All cells''; the UMAP trace holds 8,090 distinct cells'
+  selector: '#dataset-stats'

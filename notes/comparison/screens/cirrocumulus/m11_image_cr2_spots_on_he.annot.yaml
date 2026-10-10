@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m11_image_cr2_spots_on_he.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "V1_Human_Lymph_Node.h5ad (3,962 spots, Cirrocumulus repository example)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_spatial.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "image",
+   "mark": "Y",
+   "caption": "The H&E tissue_hires image is drawn under the spots; CR2 colouring on top"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    244,
+    60,
+    1128,
+    738
+   ],
+   "label": "CR2 spots over H&E",
+   "selector": "[data-recap='p0']"
+  }
+ ]
+}

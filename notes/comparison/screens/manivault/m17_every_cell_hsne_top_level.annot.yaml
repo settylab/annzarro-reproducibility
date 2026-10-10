@@ -1,0 +1,32 @@
+version: 1
+image: m17_every_cell_hsne_top_level.jpg
+tool: manivault
+software: ManiVault Studio 1.5.0 (macOS universal, start page reads 1.5.0-dev)
+data: bm_demo.h5ad (8,090 cells x 16,285 genes; obsp kept)
+url: desktop app
+captured: '2026-10-04'
+by: comparison-auditor (scored) / desktop session operator (shots)
+driver: 'notes/comparison/manivault_checklist.md (run by hand in a computer-use desktop session; log: notes/comparison/demos/manivault/session_notes.txt)'
+source: manual
+image_sha256: 2f8e62e084e081cf7a8402bc89cab2c93aff86a69844500e95bcba42b1921dc9
+proves:
+- column: every_cell
+  mark: Y
+  caption: 'HSNE''s top level shows 300 landmarks for 8,090 cells (Data properties: 300 points); the plain scatterplot
+    of the same data draws all 8,090 (m00), so ''every cell drawn'' holds, with landmark aggregation as an option.
+    F2 export: colours in this PNG differ from the screen (red and blue swapped), see m12.'
+callouts:
+- n: 1
+  box:
+  - 60
+  - 110
+  - 380
+  - 40
+  label: 'Position by: HSNE Embedding (300 landmarks)'
+- n: 2
+  box:
+  - 55
+  - 480
+  - 600
+  - 770
+  label: top-level landmarks

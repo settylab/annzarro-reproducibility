@@ -1,0 +1,43 @@
+{
+ "version": 1,
+ "image": "02_hover_shows_value_only.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_focus.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "focus",
+   "mark": "N",
+   "caption": "Hover shows only the current colouring's value for that cell; a single click changes nothing"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    900,
+    256,
+    66,
+    34
+   ],
+   "label": "tooltip: Mono P",
+   "selector": "[data-recap='tip']"
+  },
+  {
+   "n": 2,
+   "box": [
+    244,
+    60,
+    1156,
+    892
+   ],
+   "label": "primary plot",
+   "selector": "[data-recap='p0']"
+  }
+ ]
+}

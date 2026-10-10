@@ -1,0 +1,35 @@
+{
+  "variant": "bpcells",
+  "path": "$DATA_ROOT/tool_ceiling_data/h5ad/tahoe_first10000000.h5ad",
+  "phases": {
+    "read_obs_obsm": 18.03,
+    "read_counts": 20.36,
+    "load": 121.53,
+    "plot_cat": 176.25,
+    "plot_gene": 227.03,
+    "done": 227.03
+  },
+  "checks": {
+    "cat": {
+      "n_drawn": 10000000,
+      "all_cells": true,
+      "n_colours": 18272,
+      "png": "benchmark/tool_ceiling/shots/seurat_bpcells_run_10000000_r0_cat.png"
+    },
+    "gene": {
+      "n_drawn": 10000000,
+      "all_cells": true,
+      "n_colours": 687,
+      "png": "benchmark/tool_ceiling/shots/seurat_bpcells_run_10000000_r0_gene.png"
+    }
+  },
+  "versions": {
+    "R": "R version 4.4.3 (2025-02-28)",
+    "Seurat": "5.5.1",
+    "SeuratObject": "5.4.0",
+    "BPCells": "0.3.1",
+    "ggplot2": "4.0.3"
+  },
+  "n_obs": 10000000,
+  "ok": true
+}

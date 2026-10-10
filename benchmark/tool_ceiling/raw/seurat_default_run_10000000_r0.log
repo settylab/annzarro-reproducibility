@@ -1,0 +1,5 @@
+During startup - Warning message:
+package ‘colorout’ in options("defaultPackages") was not found 
+[    17.6s] read_obs_obsm
+[   147.5s] read_counts
+{"status": "cap", "rc": -9, "wall_s": 247.71} fp_peak=48.06GB lifetime=48.06GB

@@ -1,0 +1,261 @@
+# AnnZarro v0.4.1 (tag 78c9da6) behaviour the Procedure and Limitations describe, as code excerpts.
+# Each block: git show v0.4.1:<file> | sed -n <lines>p, copied 2026-10-07T20:16Z. Read from code (audit for annzarro-reproducibility), not a run.
+
+## static/js/utils/name-picker.js lines 89-106
+
+/**
+ * What the picker's status line says while a search is answered. A search
+ * that has not answered is never "no match": the first search of a large
+ * dataset waits for its name index (about 30 s at 95.6M cells), and under a
+ * subset the cells not shown come from that slower search.
+ * @param {NameSearchModel} model
+ * @param {string} noun - 'cell' or 'gene'
+ */
+export function statusText(model, noun) {
+    const n = model.items.length;
+    const waiting = model.building ? 'building the name index (first search of this dataset)…'
+        : model.pending === 'more' ? `searching every ${noun}…` : 'searching…';
+    if (n === 0) {
+        if (model.pending) return waiting.charAt(0).toUpperCase() + waiting.slice(1);
+        return model.query ? `No ${noun} matches` : '';
+    }
+    const found = model.truncated ? `First ${n} matches, keep typing to narrow` : `${n} match${n === 1 ? '' : 'es'}`;
+
+## static/js/panels/table-utilities/table-data.js lines 684-694
+export function searchSmart(regex, smart) {
+    return !!smart && !regex;
+}
+
+export function initializeDataTable(tableContainer, tableData, settings, entityType) {
+    // Clear the container and add a table element
+    tableContainer.innerHTML = '<table class="table table-sm table-striped" style="width:100%"></table>';
+    const table = tableContainer.querySelector('table');
+
+    // State‐holders for our toggles:
+    let useRegex          = false;
+
+## static/js/main.js lines 2465-2465
+                                ${isAutosave ? '' : `<button class="btn btn-sm btn-outline-secondary session-export session-action-button" title="Export this panel set as a file" aria-label="Export">
+
+## static/js/utils/panelset-load.js lines 1-15
+/**
+ * What a panel set's Load buttons do, as data (no DOM, no fetch), so the Node
+ * suite tests the rules the Load dialog and the welcome list both draw.
+ *
+ * One primary button, "Load", restores the set exactly as a share link would:
+ * it switches to the set's dataset and opens every panel that was open when
+ * the set was saved, in its layout. Two small icon buttons are its ablations:
+ * `current` (keep the open dataset, open the panels there) and `add` (keep
+ * dataset and open panels, only add the set's panels to the closed list).
+ *
+ * When the set's dataset is not on this server, "switch dataset" has nothing
+ * to switch to: the primary becomes "Load on the current dataset" (or, with
+ * no dataset open, "Choose dataset..."), and a `choose` icon loads the set
+ * onto any store the user picks.
+ */
+
+## static/js/utils/panelset-load.js lines 50-60
+    let why;
+    if (status.refused) {
+        why = `${named} is outside the data directory this server shares, so it cannot be opened here.`;
+    } else if (status.failed) {
+        why = `${named} could not be read: ${status.failed.error || 'unknown error'}.`;
+    } else {
+        why = `${named} is not on this server, and no store in its data directory has the same cells and genes.`;
+    }
+    return { state: 'missing', text: 'not found here',
+        title: `${why} Load uses the open dataset instead, or choose another.` };
+}
+
+## static/js/utils/view-store.js lines 1-28
+/**
+ * Which store a saved view belongs to, and how the store it is opened on
+ * compares. Pure (no DOM, no fetch), so the Node suite tests the very
+ * functions the boot path runs.
+ *
+ * A share link or panel set records, next to its layout:
+ *
+ *   view.store = {
+ *     path,      // relative to the server's data directory when the store
+ *                //   is inside it (opens on any server whose data
+ *                //   directory holds it); absolute otherwise
+ *     abs?,      // the absolute path it had where it was saved: a hint
+ *     name,      // the store's file name, for finding it by name
+ *     fp?        // the fingerprint (annzarro/core/fingerprint.py)
+ *   }
+ *   view.annzarro = '<version that saved it>'
+ *
+ * The fingerprint has two tiers. `data` (n_obs, n_var, and a digest of the
+ * cell and of the gene names) says whether these are the same cells and
+ * genes; `meta` (a digest of every metadata document, per-group digests and
+ * the field names) says whether the fields are the same. A view opened on a
+ * store whose cells or genes differ gets a strong warning; one whose fields
+ * differ gets a mild notice naming them; a view without a fingerprint (made
+ * before v0.4.1) opens as it always did.
+ *
+ * The same store and the same AnnZarro version give the same view and the
+ * same exported figure. Another version opens the view, but it may render
+ * differently; versionNotice says so.
+
+## static/js/utils/view-store.js lines 175-183
+ * The notice for a view saved with another AnnZarro version, or null.
+ * @param {string|null|undefined} saved
+ * @param {string|null|undefined} current
+ * @returns {string|null}
+ */
+export function versionNotice(saved, current) {
+    if (!saved || !current || String(saved) === String(current)) return null;
+    return `Saved with AnnZarro ${saved}; this is ${current}. The view may look different.`;
+}
+
+## static/js/utils/view-point-style.js lines 1-14
+/**
+ * Automatic point size and opacity for the points in view (issue #85).
+ *
+ * The automatic values (point-style.js) follow the number of points a
+ * panel draws. Zoomed in, only some of them are on screen: at 95.6M cells
+ * the automatic 0.78 px at opacity 0.16 left a zoomed view almost blank.
+ * In a zoomed or panned 2D view the count is the points inside the visible
+ * x/y ranges; back at the full view (autorange), every point drawn.
+ *
+ * Counting reads the drawn traces' x/y (no refetch); above SAMPLE points it
+ * reads every k-th point and scales up, which is far finer than the curve's
+ * two significant digits need.
+ */
+
+
+## static/js/utils/color-scales.js lines 85-97
+ * @returns {(v: number) => number} -Infinity for a missing value
+ */
+export function strongOnTopKey({ scale, centred = false, min, max }) {
+    const finite = (v) => typeof v === 'number' && Number.isFinite(v);
+    if (centred || DIVERGING_SCALES.has(scale) || !(finite(min) && finite(max) && max > min)) {
+        return (v) => (finite(v) ? Math.abs(v) : -Infinity);
+    }
+    const span = max - min;
+    return (v) => {
+        if (!finite(v)) return -Infinity;
+        return v <= min ? 0 : v >= max ? 1 : (v - min) / span;
+    };
+}
+
+## annzarro/server/confinement.py lines 15-35
+allowed roots: ``data_dir`` plus any ``allowed_dirs`` from the configuration.
+Anything else is refused with a 403 (after the login check, and without
+naming the roots: absolute server paths stay in the server log).
+
+Who may open a path OUTSIDE those roots is ``server.arbitrary_paths``
+(``may_open_any_path``):
+
+* ``admins`` (default): admins of a shared server with login, every such
+  open logged with the admin's name; other users never. On a local
+  single-user server (localhost, login disabled: a laptop, the desktop app)
+  its one user, who owns the machine and its files anyway.
+* ``local-only``: only that local single-user; on a shared server nobody, admins
+  included.
+* ``none``: nobody, local servers included (the lock-down setting).
+
+Remote stores (a scheme in ``core.remote.REMOTE_SCHEMES``: ``s3://``,
+``gs://``, ``gcs://``, ``http(s)://``) are not local paths and are left alone
+here; they get their own allowlist elsewhere. Any other ``scheme://`` string
+(``file://``, ``ftp://``) is checked like a local path, so it is refused.
+"""
+
+
+## annzarro/config/base.yaml lines 44-52
+  #            any file the server process can read (each open is logged
+  #            with the admin's name); other users never. On a local server
+  #            (loopback, no login: the laptop, the desktop app) its one user.
+  #   local-only - only that local single user; on a shared server
+  #            nobody, admins included
+  #   none   - nobody, local servers included (lock-down)
+  arbitrary_paths: admins
+  
+  # Logging configuration
+
+## annzarro/config/base.yaml lines 140-152
+    taxonomy_id: "9606"  # Homo sapiens
+    # Datasets with more cells than subset_threshold open on a reproducible
+    # subset of subset_size cells (seed subset_seed); the header shows it and
+    # its dialog changes or removes it. Every panel shows the same cells.
+    subset_threshold: 200000
+    # A Cell Plot with more points than this is drawn in large-plot mode
+    # (typed arrays, no hover, click or table filter); only reachable with
+    # the subset off or larger than this. 1M keeps several regular plots
+    # (400-900 B of browser heap per point) open side by side.
+    large_plot_points: 1000000
+    subset_size: 100000
+    subset_seed: 0
+
+
+## annzarro/cli.py lines 935-950
+    desktop_icons_parser.add_argument('--icon', type=str, required=True, help="Path to source icon file (high-res PNG)")
+    desktop_icons_parser.add_argument('--desktop-icons', action='store_true', help="Generate desktop application icons")
+    desktop_icons_parser.add_argument('--web-icons', action='store_true', help="Generate web server favicons")
+    desktop_icons_parser.add_argument('--all', action='store_true', help="Generate all icon types")
+    
+    desktop_parser.set_defaults(func=desktop_command)
+
+    # Export command: a saved view's plots as files (annzarro/export.py)
+    from annzarro.export import add_parser as add_export_parser
+    add_export_parser(subparsers)
+    
+    # Parse arguments
+    args = parser.parse_args(argv)
+
+    # ANNZARRO_CONFIG names the site file for every entry point: gunicorn
+    # (wsgi.py) always read it, the CLI did not, so `annzarro config show`
+
+## static/js/utils/memory-guard.js lines 50-76
+ */
+export const HEAP_USABLE_SHARE = 4027182277 / 4395630592;
+/** The heap ceiling where the browser reports none (Firefox, Safari): Chrome's, which is the tightest known. */
+export const FALLBACK_HEAP_GB = 4.40;
+/**
+ * Total budget where ui.memory.total_gb is not set (GB). The guard cannot
+ * see the computer's memory: Chrome reports at most 8 GB (navigator.deviceMemory).
+ * - Browser on the server's computer (the server reports its RAM, see
+ *   routes/core.py): that RAM less a reserve for the system and the browser,
+ *   HOST_RESERVE_SHARE of it and at least HOST_RESERVE_MIN_GB.
+ * - Browser on another computer: REMOTE_TOTAL_GB, a budget a 32 GB computer
+ *   can give a tab; with the margin it binds just above 200M large-plot
+ *   points (13.6 GB of renderer memory measured at 200M).
+ * ui.memory.total_gb (server-wide) replaces either.
+ */
+export const HOST_RESERVE_SHARE = 0.25;
+export const HOST_RESERVE_MIN_GB = 4;
+export const REMOTE_TOTAL_GB = 16;
+/**
+ * The largest large plot drawn in a test (synthetic 200M-cell store, every
+ * cell, v0.4.1, Chrome on an M3 Max with 128 GB: 13.6 GB renderer, 35 MB of
+ * V8 heap). Larger plots are refused whatever the budget until a larger
+ * run says more.
+ */
+export const LARGEST_TESTED_POINTS = 200000000;
+/** navigator.deviceMemory at or below this (GB) sets a total budget of half of it. */
+export const SMALL_DEVICE_GB = 4;
+
+## annzarro/export.py lines 1-20
+"""``annzarro export``: a saved view's plots as image files, without a browser window.
+
+    annzarro export view.json --store data/bm_aging.zarr --out fig.svg
+    annzarro export 'https://host/?dataset_path=bm.zarr#view=z1....' --store bm.zarr --out fig.png
+    annzarro export --from fig.png --store bm.zarr --out again.png
+
+It starts a local AnnZarro server on the store, opens the view in headless
+Chromium (Playwright's, as the browser tests use), waits until every plot is
+drawn, and writes each plot exactly as its Export button would: the size and
+scale from the panel's settings, the coverage notice when not every point is
+shown, and the recipe (the view as a panel set, the store's fingerprint, the
+AnnZarro version) in the file. ``--from`` reads that recipe back from a PNG or
+SVG and makes the figure again.
+
+The same store and the same AnnZarro version give the same figure: an SVG
+identical byte for byte, a PNG identical pixel for pixel (WebGL is drawn by
+SwiftShader, Chromium's software renderer, so the GPU does not matter).
+Another version opens the view, but may draw it differently; the command
+then names the version that made the figure.
+"""
+
+## grep -n -i 'fingerprint' annzarro/core/fingerprint.py (cache location)
+29:state directory (``~/.annzarro/fingerprints``), keyed by the store's stat

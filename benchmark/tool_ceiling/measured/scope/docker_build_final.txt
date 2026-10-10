@@ -1,0 +1,355 @@
+Wed Oct  7 22:52:10 PDT 2026
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 4.17kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/debian:bullseye
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 90B done
+#3 DONE 0.0s
+
+#4 [ 1/18] FROM docker.io/library/debian:bullseye@sha256:6f519a81440354a85eb592c5f32109ab80605f6b892455983a6f618bf87fabe9
+#4 resolve docker.io/library/debian:bullseye@sha256:6f519a81440354a85eb592c5f32109ab80605f6b892455983a6f618bf87fabe9 done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 26.83kB 0.0s done
+#5 DONE 0.0s
+
+#6 [ 8/18] RUN . /opt/conda/etc/profile.d/conda.sh
+#6 CACHED
+
+#7 [ 5/18] RUN apt-get install -y xz-utils &&     curl -fsSLO https://nodejs.org/dist/v14.21.3/node-v14.21.3-linux-x64.tar.xz &&     echo "05c08a107c50572ab39ce9e8663a2a2d696b5d262d5bd6f98d84b997ce932d9a  node-v14.21.3-linux-x64.tar.xz" | sha256sum -c - &&     tar -xJf node-v14.21.3-linux-x64.tar.xz -C /usr/local --strip-components=1 &&     rm node-v14.21.3-linux-x64.tar.xz && node --version && npm --version
+#7 CACHED
+
+#8 [ 2/18] RUN printf 'deb http://archive.debian.org/debian bullseye main\ndeb http://archive.debian.org/debian bullseye-updates main\ndeb http://archive.debian.org/debian-security bullseye-security main\n' > /etc/apt/sources.list &&     printf 'Acquire::Check-Valid-Until "false";\n' > /etc/apt/apt.conf.d/99archive
+#8 CACHED
+
+#9 [ 6/18] RUN apt-get install -y build-essential
+#9 CACHED
+
+#10 [ 3/18] RUN apt-get update -y
+#10 CACHED
+
+#11 [ 7/18] RUN wget --quiet https://github.com/conda-forge/miniforge/releases/download/26.7.2-0/Miniforge3-26.7.2-0-Linux-x86_64.sh -O ~/miniconda.sh &&     echo "281b0ac7d550802efc81af633225a5e6116d29ae72f3ab4eae7168c3931a4c05  /root/miniconda.sh" | sha256sum -c - &&     /bin/bash ~/miniconda.sh -b -p /opt/conda &&     rm ~/miniconda.sh &&     printf 'channels:\n  - conda-forge\n  - nodefaults\nchannel_priority: strict\n' > /opt/conda/.condarc &&     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh &&     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc &&     echo "conda activate base" >> ~/.bashrc
+#11 CACHED
+
+#12 [ 4/18] RUN apt-get install -y     curl wget     gnupg     unzip     git
+#12 CACHED
+
+#13 [ 9/18] RUN conda create -n scope python=3.8.3 -y
+#13 CACHED
+
+#14 [10/18] RUN echo "conda activate scope" >> ~/.bashrc
+#14 CACHED
+
+#15 [11/18] RUN conda create -y -n poetry -c conda-forge python=3.10 "poetry=1.1.*" "setuptools<70" && /opt/conda/envs/poetry/bin/poetry --version
+#15 CACHED
+
+#16 [12/18] COPY . /app
+#16 DONE 0.1s
+
+#17 [13/18] RUN cd /app && npm install
+#17 0.697 npm WARN lifecycle SCope@1.8.2~preinstall: cannot run in wd SCope@1.8.2 npm i shelljs command-exists && node bin/install.js (wd=/app)
+#17 7.007 npm notice This endpoint is being retired. Use the bulk advisory endpoint instead. See the following docs for more info: https://api-docs.npmjs.com/#tag/Audit
+#17 40.25 
+#17 40.25 > grpc@1.24.5 install /app/node_modules/grpc
+#17 40.25 > node-pre-gyp install --fallback-to-build --library=static_library
+#17 40.25 
+#17 40.67 node-pre-gyp WARN Using request for node-pre-gyp https download 
+#17 41.14 [grpc] Success: "/app/node_modules/grpc/src/node/extension_binary/node-v83-linux-x64-glibc/grpc_node.node" is installed via remote
+#17 41.16 
+#17 41.16 > grpc-tools@1.10.0 install /app/node_modules/grpc-tools
+#17 41.16 > node-pre-gyp install
+#17 41.16 
+#17 41.56 node-pre-gyp WARN Using request for node-pre-gyp https download 
+#17 41.94 [grpc-tools] Success: "/app/node_modules/grpc-tools/bin/grpc_tools.node" is installed via remote
+#17 42.06 
+#17 42.06 > core-js@3.9.1 postinstall /app/node_modules/@babel/node/node_modules/core-js
+#17 42.06 > node -e "try{require('./postinstall')}catch(e){}"
+#17 42.06 
+#17 42.32 [96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+#17 42.32 
+#17 42.32 [96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+#17 42.32 [96m>[94m https://opencollective.com/core-js [0m
+#17 42.32 [96m>[94m https://www.patreon.com/zloirock [0m
+#17 42.32 
+#17 42.32 [96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+#17 42.32 
+#17 42.40 
+#17 42.40 > core-js@2.6.12 postinstall /app/node_modules/core-js
+#17 42.40 > node -e "try{require('./postinstall')}catch(e){}"
+#17 42.40 
+#17 42.67 [96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+#17 42.67 
+#17 42.67 [96mThe project needs your help! Please consider supporting of core-js on Open Collective or Patreon: [0m
+#17 42.67 [96m>[94m https://opencollective.com/core-js [0m
+#17 42.67 [96m>[94m https://www.patreon.com/zloirock [0m
+#17 42.67 
+#17 42.67 [96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+#17 42.67 
+#17 42.74 
+#17 42.74 > protobufjs@6.8.9 postinstall /app/node_modules/grpc-loader/node_modules/protobufjs
+#17 42.74 > node scripts/postinstall
+#17 42.74 
+#17 43.12 
+#17 43.12 > protobufjs@6.10.2 postinstall /app/node_modules/protobufjs
+#17 43.12 > node scripts/postinstall
+#17 43.12 
+#17 43.59 npm WARN lifecycle SCope@1.8.2~postinstall: cannot run in wd SCope@1.8.2 node bin/configure.js (wd=/app)
+#17 44.66 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/webpack-dev-server/node_modules/fsevents):
+#17 44.66 npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+#17 44.67 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/watchpack-chokidar2/node_modules/fsevents):
+#17 44.67 npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+#17 44.68 npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 (node_modules/fsevents):
+#17 44.68 npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+#17 44.68 
+#17 44.68 added 1486 packages from 1346 contributors and audited 1506 packages in 44.039s
+#17 45.73 
+#17 45.73 67 packages are looking for funding
+#17 45.73   run `npm fund` for details
+#17 45.73 
+#17 45.73 found 578 vulnerabilities (36 low, 194 moderate, 300 high, 48 critical)
+#17 45.73   run `npm audit fix` to fix them, or `npm audit` for details
+#17 DONE 46.2s
+
+#18 [14/18] COPY config.json /app/config.json
+#18 DONE 0.2s
+
+#19 [15/18] RUN cd /app && SCOPE_CONFIG=./config.json SCOPE_PORT=8080 npm run build
+#19 0.563 
+#19 0.563 > SCope@1.8.2 build /app
+#19 0.563 > cross-env NODE_ENV=production NODE_TYPE=local webpack
+#19 0.563 
+#19 1.526 Appending SCOPE_PORT to publicHostAddress
+#19 1.528 {
+#19 1.528   debug: true,
+#19 1.528   publicHostAddress: '127.0.0.1:8080',
+#19 1.528   localHostAddress: '127.0.0.1',
+#19 1.528   httpProtocol: 'http',
+#19 1.528   wsProtocol: 'ws',
+#19 1.528   mPort: 55850,
+#19 1.528   pPort: 55851,
+#19 1.528   xPort: 55852,
+#19 1.528   gPort: 55853,
+#19 1.528   reverseProxyOn: false,
+#19 1.528   orcidAPIClientID: '',
+#19 1.528   orcidAPIClientSecret: '',
+#19 1.528   orcidAPIRedirectURI: '',
+#19 1.528   dataHashSecret: '',
+#19 1.528   data: ''
+#19 1.528 }
+#19 1.763 Changed output.filename to SCope-1.8.2.9ae5207.js
+#19 1.763 Changed output.chunkFilename to SCope-chunk.9ae5207.js
+#19 1.815 Starting type checking service...
+#19 1.828 (node:26) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+#19 1.828 (Use `node --trace-deprecation ...` to show where the warning was created)
+#19 1.939 Browserslist: caniuse-lite is outdated. Please run:
+#19 1.939 npx browserslist@latest --update-db
+#19 1.939 
+#19 1.939 Why you should do it regularly:
+#19 1.939 https://github.com/browserslist/browserslist#browsers-data-updating
+#19 77.60 Cleaning up Webpack files; skipping [githash]: 9ae5207
+#19 77.65 Hash: 47c8ef15dbd03df10956
+#19 77.65 Version: webpack 4.46.0
+#19 77.65 Time: 75795ms
+#19 77.65 Built at: 10/08/2026 5:54:15 AM
+#19 77.65                                Asset      Size  Chunks                    Chunk Names
+#19 77.65 82f60bd0b94a1ed68b1e6e309ce2e8c3.svg   105 KiB          [emitted]         
+#19 77.65 8e3c7f5520f5ae906c6cf6d7f3ddcd19.eot   104 KiB          [emitted]         
+#19 77.65 962a1bf31c081691065fe333d9fa8105.svg   382 KiB          [emitted]  [big]  
+#19 77.65               SCope-1.8.2.9ae5207.js  18.7 MiB       0  [emitted]  [big]  main
+#19 77.65   SCope-1.8.2.9ae5207.js.LICENSE.txt  3.73 KiB          [emitted]         
+#19 77.65 a1a749e89f578a49306ec2b055c073da.svg   496 KiB          [emitted]  [big]  
+#19 77.65 b87b9ba532ace76ae9f6edfe9f72ded2.ttf   103 KiB          [emitted]         
+#19 77.65 Entrypoint main [big] = SCope-1.8.2.9ae5207.js
+#19 77.65    [8] ./node_modules/semantic-ui-react/dist/es/lib/index.js + 1 modules 2.94 KiB {0} [built]
+#19 77.65        |    2 modules
+#19 77.65   [15] ./node_modules/react-ga/dist/esm/index.js + 11 modules 30.2 KiB {0} [built]
+#19 77.65        |    12 modules
+#19 77.65   [16] ./node_modules/d3/index.js + 466 modules 500 KiB {0} [built]
+#19 77.65        |    467 modules
+#19 77.65   [37] (webpack)/buildin/global.js 472 bytes {0} [built]
+#19 77.65   [54] ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js + 1 modules 459 bytes {0} [built]
+#19 77.65        |    2 modules
+#19 77.65   [93] (webpack)/buildin/module.js 497 bytes {0} [built]
+#19 77.65 [1093] ./src/css/header.css 1.01 KiB {0} [built]
+#19 77.65 [1094] ./node_modules/css-loader/dist/cjs.js!./src/css/header.css 1.74 KiB {0} [built]
+#19 77.65 [1095] ./src/css/sidebar.css 1.01 KiB {0} [built]
+#19 77.65 [1096] ./node_modules/css-loader/dist/cjs.js!./src/css/sidebar.css 2.61 KiB {0} [built]
+#19 77.65 [1097] ./src/css/viewer.css 1.01 KiB {0} [built]
+#19 77.65 [1098] ./node_modules/css-loader/dist/cjs.js!./src/css/viewer.css 2.34 KiB {0} [built]
+#19 77.65 [1099] ./src/css/features.css 1.02 KiB {0} [built]
+#19 77.65 [1100] ./node_modules/css-loader/dist/cjs.js!./src/css/features.css 1.62 KiB {0} [built]
+#19 77.65 [1101] ./src/main.tsx + 251 modules 1.42 MiB {0} [built]
+#19 77.65        | ./src/main.tsx 939 bytes [built]
+#19 77.65        | ./src/redux/store.ts 666 bytes [built]
+#19 77.65        | ./src/redux/actions.ts 214 bytes [built]
+#19 77.65        | ./src/redux/reducers/index.ts 533 bytes [built]
+#19 77.65        | ./src/redux/sagas/index.ts 615 bytes [built]
+#19 77.65        | ./src/js/http.js 4.65 KiB [built]
+#19 77.65        | ./src/js/box2.js 8.36 KiB [built]
+#19 77.65        | ./src/redux/actionTypes.ts 47 bytes [built]
+#19 77.65        | ./src/redux/reducers/main.ts 1.51 KiB [built]
+#19 77.65        | ./src/api/fetch.ts 1.32 KiB [built]
+#19 77.65        |     + 242 hidden modules
+#19 77.65     + 1544 hidden modules
+#19 77.65 
+#19 77.65 WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+#19 77.65 This can impact web performance.
+#19 77.65 Assets: 
+#19 77.65   962a1bf31c081691065fe333d9fa8105.svg (382 KiB)
+#19 77.65   a1a749e89f578a49306ec2b055c073da.svg (496 KiB)
+#19 77.65   SCope-1.8.2.9ae5207.js (18.7 MiB)
+#19 77.65 
+#19 77.65 WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+#19 77.65 Entrypoints:
+#19 77.65   main (18.7 MiB)
+#19 77.65       SCope-1.8.2.9ae5207.js
+#19 77.65 
+#19 77.65 
+#19 77.65 WARNING in webpack performance recommendations: 
+#19 77.65 You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+#19 77.65 For more info visit https://webpack.js.org/guides/code-splitting/
+#19 DONE 77.8s
+
+#20 [16/18] RUN cd /app/opt && poetry env use /opt/conda/envs/scope/bin/python && poetry install
+#20 1.140 Creating virtualenv scopeserver-1v7iq-XX-py3.8 in /root/.cache/pypoetry/virtualenvs
+#20 3.128 Using virtualenv: /root/.cache/pypoetry/virtualenvs/scopeserver-1v7iq-XX-py3.8
+#20 3.951 Installing dependencies from lock file
+#20 4.516 
+#20 4.516 Package operations: 98 installs, 0 updates, 0 removals
+#20 4.516 
+#20 4.520   • Installing heapdict (1.0.1)
+#20 4.520   • Installing numpy (1.19.2)
+#20 4.521   • Installing six (1.15.0)
+#20 6.847   • Installing click (7.1.2)
+#20 6.848   • Installing cloudpickle (1.6.0)
+#20 6.849   • Installing dask (1.0.0)
+#20 6.851   • Installing joblib (0.16.0)
+#20 6.853   • Installing lazy-object-proxy (1.4.3)
+#20 6.854   • Installing llvmlite (0.34.0)
+#20 6.855   • Installing msgpack (1.0.0)
+#20 6.858   • Installing psutil (5.7.2)
+#20 6.860   • Installing pyparsing (2.4.7)
+#20 6.861   • Installing python-dateutil (2.8.1)
+#20 6.863   • Installing pytz (2020.1)
+#20 6.864   • Installing pyyaml (5.3.1)
+#20 6.865   • Installing scipy (1.5.2)
+#20 6.869   • Installing sortedcontainers (2.2.2)
+#20 6.870   • Installing tblib (1.7.0)
+#20 6.871   • Installing threadpoolctl (2.1.0)
+#20 6.872   • Installing toolz (0.10.0)
+#20 6.875   • Installing tornado (6.0.4)
+#20 6.878   • Installing wrapt (1.12.1)
+#20 6.880   • Installing zict (2.0.0)
+#20 11.42   • Installing astroid (2.4.2)
+#20 11.42   • Installing attrs (20.2.0)
+#20 11.42   • Installing certifi (2020.6.20)
+#20 11.42   • Installing chardet (3.0.4)
+#20 11.42   • Installing decorator (4.4.2)
+#20 11.42   • Installing dill (0.3.2)
+#20 11.42   • Installing distributed (1.28.1)
+#20 11.42   • Installing h5py (2.10.0)
+#20 11.43   • Installing h11 (0.10.0)
+#20 11.43   • Installing hpack (3.0.0)
+#20 11.43   • Installing hyperframe (5.2.0)
+#20 11.43   • Installing idna (2.10)
+#20 11.43   • Installing iniconfig (1.0.1)
+#20 11.43   • Installing inspect2 (0.1.2)
+#20 11.43   • Installing markupsafe (1.1.1)
+#20 11.44   • Installing mccabe (0.6.1)
+#20 11.44   • Installing numba (0.51.2)
+#20 11.44   • Installing numpy-groupies (0.9.11)
+#20 11.44   • Installing isort (5.5.2)
+#20 11.44   • Installing more-itertools (8.5.0)
+#20 12.31   • Installing packaging (20.4)
+#20 12.34   • Installing pandas (1.1.2)
+#20 12.36   • Installing pluggy (0.13.1)
+#20 12.40   • Installing py (1.9.0)
+#20 12.40   • Installing scikit-learn (0.23.2)
+#20 12.44   • Installing singledispatch (3.4.0.3)
+#20 12.47   • Installing toml (0.10.1)
+#20 12.49   • Installing urllib3 (1.25.10)
+#20 15.12   • Installing appdirs (1.4.4)
+#20 15.12   • Installing arboreto (0.1.5)
+#20 15.12   • Installing boltons (20.2.1)
+#20 15.12   • Installing coverage (5.3)
+#20 15.12   • Installing cytoolz (0.10.1)
+#20 15.12   • Installing dparse (0.5.1)
+#20 15.12   • Installing frozendict (1.2)
+#20 15.12   • Installing grpcio (1.32.0)
+#20 15.13   • Installing h2 (3.2.0)
+#20 15.13   • Installing interlap (0.2.6)
+#20 15.13   • Installing mako (1.1.3)
+#20 15.13   • Installing multiprocessing-on-dill (3.5.0a4)
+#20 15.13   • Installing mypy-extensions (0.4.3)
+#20 15.13   • Installing loompy (3.0.6)
+#20 15.13   • Installing pathspec (0.8.0)
+#20 15.13   • Installing protobuf (3.13.0)
+#20 15.14   • Installing pydantic (1.6.1)
+#20 15.14   • Installing networkx (2.5)
+#20 15.14   • Installing priority (1.3.0)
+#20 15.14   • Installing pyarrow (0.16.0)
+#20 16.11   • Installing pylint (2.6.0)
+#20 16.14   • Installing pytest (6.0.2)
+#20 16.15   • Installing python-editor (1.0.4)
+#20 16.15   • Installing regex (2020.7.14)
+#20 16.16   • Installing requests (2.24.0)
+#20 16.16   • Installing sqlalchemy (1.3.20)
+#20 16.22   • Installing starlette (0.13.6)
+#20 16.26   • Installing tqdm (4.49.0)
+#20 16.28   • Installing typed-ast (1.4.1)
+#20 16.32   • Installing typing-extensions (3.7.4.3)
+#20 16.63   • Installing umap-learn (0.4.6)
+#20 16.67   • Installing wirerope (0.3.1)
+#20 16.77   • Installing wsproto (0.15.0)
+#20 32.86   • Installing alembic (1.4.3)
+#20 32.86   • Installing black (20.8b1)
+#20 32.86   • Installing fastapi (0.61.1)
+#20 32.86   • Installing grpcio-tools (1.32.0)
+#20 32.86   • Installing hypercorn (0.9.5)
+#20 32.86   • Installing hypothesis (5.35.1)
+#20 32.86   • Installing methodtools (0.1.3)
+#20 32.87   • Installing mypy (0.782)
+#20 32.87   • Installing mypy-protobuf (1.23)
+#20 32.87   • Installing pyscenic (0.9.19)
+#20 32.87   • Installing pytest-cov (2.10.1)
+#20 32.87   • Installing python-dotenv (0.14.0)
+#20 32.87   • Installing safety (1.9.0)
+#20 32.87   • Installing pylint-fail-under (0.3.0)
+#20 36.69 
+#20 36.69 Installing the current project: scopeserver (1.8.2)
+#20 DONE 37.3s
+
+#21 [17/18] RUN cd /app/opt/scopeserver/bindserver && npm ci
+#21 4.409 
+#21 4.409 > grpc@1.24.5 install /app/opt/scopeserver/bindserver/node_modules/grpc
+#21 4.409 > node-pre-gyp install --fallback-to-build --library=static_library
+#21 4.409 
+#21 4.793 node-pre-gyp WARN Using request for node-pre-gyp https download 
+#21 5.284 [grpc] Success: "/app/opt/scopeserver/bindserver/node_modules/grpc/src/node/extension_binary/node-v83-linux-x64-glibc/grpc_node.node" is installed via remote
+#21 5.307 added 95 packages in 4.584s
+#21 DONE 5.4s
+
+#22 [18/18] WORKDIR /app/opt
+#22 DONE 0.0s
+
+#23 exporting to image
+#23 exporting layers
+#23 exporting layers 24.8s done
+#23 exporting manifest sha256:bc63ebb30acd75f4faf0438eae3e4f2147e1347405d5f9b7f69699c8919ce327 done
+#23 exporting config sha256:818fc6337c1fe52f5ba4448de7aab487e749d095c45c494e189a8da165360e85 done
+#23 exporting attestation manifest sha256:05f236834feeecc29b58411cbdac509895dae29bdaf40f1c73d7b41ece40b7e7 done
+#23 exporting manifest list sha256:dd89d344b6c3954d153e374ab0300f214da47b84500e6c870d89f0a82b61a04f done
+#23 naming to docker.io/library/scope:1.8.2-9ae5207-final done
+#23 DONE 24.8s
+
+ [33m3 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 41)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 52)
+ - UndefinedVar: Usage of undefined variable '$SCOPE_CONFIG' (line 61)

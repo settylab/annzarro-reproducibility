@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "f02_de_cluster_markers.jpg",
+ "tool": "vizit",
+ "software": "VizIt v1.0.0 as deployed at pd5d.yale.edu (Parkinson's Cell Atlas)",
+ "data": "PD5D_MTG_snRNAseq (hosted)",
+ "url": "https://pd5d.yale.edu/views/clusters?dataset=PD5D_MTG_snRNAseq&cluster=Astrocytes",
+ "captured": "2026-10-05",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/vizit/followup_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "de",
+   "mark": "N",
+   "caption": "Cluster View: marker dot plot and condition comparison (HCvsILB) are read from tables computed when the dataset was prepared (getmarkergenes; 31_clustermarkers.R); nothing is computed for a new selection"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    0,
+    1400,
+    1000
+   ],
+   "label": "Cluster View with a cluster chosen",
+   "selector": "body"
+  }
+ ]
+}

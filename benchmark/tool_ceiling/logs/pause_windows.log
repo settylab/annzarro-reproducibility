@@ -1,0 +1,62 @@
+2026-10-04T04:59:26Z pause on
+2026-10-04T05:19:27Z pause off
+2026-10-04T05:48:51Z pause on (GUI drain)
+2026-10-04T06:42:26Z pause off 40 s to release 3 old-code waiters
+2026-10-04T06:43:11Z pause on again
+2026-10-04T08:18:32Z manual pause lifted (time-share starts)
+2026-10-04T08:18:41Z low-priority pause on (remote ladder first)
+2026-10-04T08:19:13Z low-priority pause off
+2026-10-04T08:19:53Z low-priority pause on (remote ladder first)
+2026-10-04T08:29:14Z low-priority pause off
+2026-10-04T09:00:17Z slot pause on (GUI :00-:15)
+2026-10-04T09:15:19Z slot pause off
+2026-10-04T10:00:04Z slot pause on (GUI :00-:15)
+2026-10-04T10:15:06Z slot pause off
+2026-10-04T11:00:11Z slot pause on (GUI :00-:15)
+2026-10-04T11:15:13Z slot pause off
+2026-10-04T12:00:18Z slot pause on (GUI :00-:15)
+2026-10-04T12:15:00Z slot pause off
+2026-10-04T13:00:07Z slot pause on (GUI :00-:15)
+2026-10-04T13:15:09Z slot pause off
+2026-10-04T14:00:16Z slot pause on (GUI :00-:15)
+2026-10-04T14:15:18Z slot pause off
+2026-10-04T15:00:04Z slot pause on (GUI :00-:15)
+2026-10-04T15:15:07Z slot pause off
+2026-10-04T16:00:13Z slot pause on (GUI :00-:15)
+2026-10-04T16:15:15Z slot pause off
+2026-10-04T17:00:03Z slot pause on (GUI :00-:15)
+2026-10-04T17:15:05Z slot pause off
+2026-10-04T17:54:52Z manual pause on (user live session)
+2026-10-04T18:00:12Z slot pause on (GUI :00-:15)
+2026-10-04T18:15:14Z slot pause off
+2026-10-04T18:29:54Z manual pause off (live session closed 18:28:53Z)
+2026-10-04T19:00:19Z slot pause on (GUI :00-:15)
+2026-10-04T19:15:00Z slot pause off
+2026-10-04T19:24:08Z manual pause on (yield to memory-guard F1 + leak batches, max 2 h)
+2026-10-04T19:32:19Z manual pause off (run_memguard.sh finished)
+2026-10-04T19:48:11Z manual pause on (yield to memory-guard F1 + leak, restarted runner; max 2 h)
+2026-10-04T20:00:05Z slot pause on (GUI :00-:15)
+2026-10-04T20:15:07Z slot pause off
+2026-10-04T20:19:18Z manual pause off (memory-guard done-file)
+2026-10-04T21:00:13Z slot pause on (GUI :00-:15)
+2026-10-04T21:15:15Z slot pause off
+2026-10-04T22:00:19Z slot pause on (GUI :00-:15)
+2026-10-04T22:15:01Z slot pause off
+2026-10-04T23:00:06Z slot pause on (GUI :00-:15)
+2026-10-04T23:15:08Z slot pause off
+2026-10-05T00:00:13Z slot pause on (GUI :00-:15)
+2026-10-05T00:15:16Z slot pause off
+2026-10-05T01:00:00Z slot pause on (GUI :00-:15)
+2026-10-05T01:12:23Z manual pause on (memory-guard fix validation has the lock; 12f93f8 runs retired)
+2026-10-05T01:15:02Z slot pause off
+2026-10-05T02:00:08Z slot pause on (GUI :00-:15)
+2026-10-05T02:15:10Z slot pause off
+2026-10-05T03:00:16Z slot pause on (GUI :00-:15)
+2026-10-05T03:15:18Z slot pause off
+2026-10-05T04:00:05Z slot pause on (GUI :00-:15)
+2026-10-05T04:15:07Z slot pause off
+2026-10-05T04:44:26Z manual pause off (coordinator's suites done; 120f322 ladder)
+2026-10-05T05:00:12Z slot pause on (GUI :00-:15)
+2026-10-05T05:04:53Z slots stopped
+2026-10-05T18:38:11Z manual pause on (laptop standby)
+2026-10-05T18:41:26Z manual pause off (laptop awake)

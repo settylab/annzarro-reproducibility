@@ -1,0 +1,26 @@
+version: 1
+image: 06_explorer_lasso_in_side_panel_sets_shared_count.jpg
+tool: cellxgene
+software: CZ CELLxGENE Discover Explorer (hosted, as served 2026-10-03)
+data: Tabula Sapiens, all cells (1,136,218 cells)
+url: https://cellxgene.cziscience.com/e/53d208b0-2cfd-4366-9866-c3c6114081bc.cxg/
+captured: 2026-10-03
+by: comparison-auditor (shots) / retrofit by evidence-curator
+driver: notes/comparison/demos/cellxgene/focus_check_explorer_lasso.py
+source: manual
+image_sha256: 7e7a35c098d0b86f53f5d24b6284bee823d02f6329e0cd2383881cd684a9fd25
+proves:
+  - column: selection
+    mark: Y
+    caption: >-
+      In hosted Explorer a lasso in the side panel replaces the main panel's lasso in one shared selection count (4750 then 3346 of 1136218).
+callouts:
+  - n: 1
+    box: [690, 640, 92, 82]
+    label: lasso drawn in the side panel (uncorrected_umap)
+  - n: 2
+    box: [370, 98, 130, 21]
+    label: "shared counter: 3346 of 1136218 cells (was 4750 after the main-panel lasso)"
+  - n: 3
+    box: [668, 148, 114, 72]
+    label: earlier lasso in the main UMAP

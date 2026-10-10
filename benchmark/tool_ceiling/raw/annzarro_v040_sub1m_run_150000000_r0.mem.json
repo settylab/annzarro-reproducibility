@@ -1,0 +1,76 @@
+{
+ "cmd": [
+  ".venv/bin/python",
+  "annzarro_task.py",
+  "default",
+  "$DATA_ROOT/tahoe_scale_ceiling/syn_150000000.zarr",
+  "benchmark/tool_ceiling/shots/annzarro_v040_sub1m_run_150000000_r0",
+  "--exe",
+  "$ANNZARRO_SRC/.venv-bench/bin/annzarro",
+  "--inprocess",
+  "--version-label",
+  "3bdeb0913d7e5761c496070dbb30acd2cd32ceb5",
+  "--cat",
+  "cell_type",
+  "--gene",
+  "GENE0",
+  "--subset",
+  "{\"n\": 1000000, \"seed\": 0}"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 14.46,
+ "peaks": {
+  "client": {
+   "fp_peak": 2939905960,
+   "fp_lifetime_sum": 3047107480,
+   "rss_peak": 2614984704,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 2539702984,
+   "fp_lifetime_sum": 2778680608,
+   "rss_peak": 2561409024,
+   "n_proc_max": 2
+  },
+  "harness": {
+   "fp_peak": 132237000,
+   "fp_lifetime_sum": 132630216,
+   "rss_peak": 167165952,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 5135315424,
+   "rss_peak": 4912693248,
+   "fp_lifetime_sum": 5825788088
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.43,
+   970925128
+  ],
+  [
+   5.04,
+   1396893104
+  ],
+  [
+   7.67,
+   2890689912
+  ],
+  [
+   10.2,
+   4428640184
+  ],
+  [
+   12.75,
+   4130828528
+  ]
+ ],
+ "ps_before": "2026-10-06T00:10:57-0700\nmemorystatus_level=90 swap=total = 3072.00M  used = 2234.25M  free = 837.75M  (encrypted)\n42416  53360 100.0 .venv/bin/python\n59322  97216  72.2 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n47413 543152  16.9 /Applications/cmux.app/Contents/MacOS/cmux\n49293 804688   8.6 $HOME/.local/bin/claude\n42479  21104   8.2 benchmark/tool_ceiling/.venv/bin/python\n  605  51232   6.7 /usr/libexec/dasd\n42477  19792   6.4 .venv/bin/python\n42449  12896   5.7 /System/Library/Frameworks/Contacts.framework/Support/contactsd\n42448  12992   5.6 /System/Library/Frameworks/Contacts.framework/Support/contactsd\n42451  12848   5.5 /System/Library/Frameworks/Contacts.framework/Support/contactsd\n",
+ "others_at_start": []
+}

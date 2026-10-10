@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "image": "m04_slots_embeddings_menu.jpg",
+ "tool": "cirrocumulus",
+ "software": "Cirrocumulus 1.1.61 (local cirro launch)",
+ "data": "bm_demo.h5ad (8,090 cells)",
+ "url": "http://127.0.0.1:8901/",
+ "captured": "2026-10-04",
+ "by": "recapture",
+ "driver": "notes/comparison/demos/cirrocumulus/recap_matrix.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "slots",
+   "mark": "P",
+   "caption": "Embeddings offers X_umap and X_draw_graph_fa only; X_pca and X_diffusion are not offered"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    132,
+    239,
+    32
+   ],
+   "label": "Embeddings: two of four obsm entries",
+   "selector": "[role=listbox] >> visible=true"
+  }
+ ]
+}

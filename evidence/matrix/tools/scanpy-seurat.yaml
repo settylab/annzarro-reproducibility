@@ -1,0 +1,846 @@
+# Scanpy / Seurat code: Fig. 1c marks and their evidence.
+# Seeded by evidence/tools/import_notes.py from notes/comparison/scanpy-seurat.md and
+# figures/fig_comparison.py; edit this file from now on (schema: evidence/README.md).
+id: scanpy-seurat
+name: Scanpy / Seurat
+figure:
+  row: 15
+  label: Scanpy / Seurat code
+  largest_documented: 1.3M
+notes: notes/comparison/scanpy-seurat.md
+cells:
+  cells:
+    mark: P
+    reason: >-
+      An obsp row can be copied into obs and drawn on an embedding, but only by code, re-run for each
+      cell, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Row 4236 of `obsp["connectivities"]` copied to an obs column and drawn on UMAP (and, in the Focus section, `obsp["diffusion_distance"]` on two embeddings). Code only; one re-run per cell. *Steps:* script block m04; `focus_row.py` *Evidence:* [m04 (right panel)](screens/scanpy-seurat/m04_slots_obsm_layers_obsp_by_code.jpg), [01_obsp_row_by_code.jpg](screens/scanpy-seurat/01_obsp_row_by_code.jpg)
+
+      **Source and docs.** Code: `adata.obs["d"] = adata.obsp["distances"][i].toarray().ravel(); sc.pl.umap(adata, color="d")`. Seurat: `obj@graphs` holds cell × cell graphs, same pattern with `FeaturePlot`. No GUI; one re-run per focused cell.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scanpy-seurat/m04_slots_obsm_layers_obsp_by_code.jpg
+      label: m04 (right panel)
+    - kind: screenshot
+      path: notes/comparison/screens/scanpy-seurat/01_obsp_row_by_code.jpg
+      label: 01_obsp_row_by_code.jpg
+    - kind: paper
+      url: https://doi.org/10.1186/s13059-017-1382-0
+      label: Wolf et al. 2018, Genome Biology 19:15
+      where: Results, 'SCANPY introduces efficient modular implementation choices'
+      quote: SCANPY introduces a class for representing a graph of neighborhood relations among data points.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        The stored cells x cells graph exists and is reachable by code; showing a row as colour is not
+        described.
+    - kind: paper
+      url: https://doi.org/10.21105/joss.04371
+      label: Virshup et al. 2024, Journal of Open Source Software 9(101):4371
+      where: Fig. 1d legend
+      quote: >-
+        A k-nearest neighbor graph of any desired representation is stored as a sparse adjacency matrix
+        of pairwise relationships among observations in obsp.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Storage only; display by code.
+    - kind: paper
+      url: https://doi.org/10.1101/2021.12.16.473007
+      label: Virshup et al. 2021 (preprint), bioRxiv
+      where: Fig. 1d legend
+      quote: >-
+        A k-nearest neighbor graph of any desired representation is stored as a sparse adjacency matrix
+        of pairwise relationships among observations in obsp.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  genes:
+    mark: P
+    reason: >-
+      A varp row can be drawn as a colour or axis by code (Scanpy only; Seurat has no gene x gene slot),
+      so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** bm_demo has no varp, so the paper's spatial demo (`data/spatial_demo.zarr`, varp `spearman_hvg`, 2000 × 2000) was used: the row for `Mbp` drawn as a bar axis; top partners `Mobp`, `Plp1`, `Mal` (oligodendrocyte genes, as expected). Code only. *Steps:* script block m02 *Evidence:* [screens/scanpy-seurat/m02_varp_row_as_axis.jpg](screens/scanpy-seurat/m02_varp_row_as_axis.jpg)
+
+      **Source and docs.** Scanpy: `adata.varp` row into a `var` column, then plotted with matplotlib or `sc.pl.scatter`. Seurat has no gene × gene slot (graphs are cell × cell; `misc` is free-form), so this is Scanpy-only and by code.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scanpy-seurat/m02_varp_row_as_axis.jpg
+      label: screens/scanpy-seurat/m02_varp_row_as_axis.jpg
+    - kind: paper
+      url: https://doi.org/10.21105/joss.04371
+      label: Virshup et al. 2024, Journal of Open Source Software 9(101):4371
+      where: The ecosystem
+      quote: Relations between the variables of different modalities can then be stored as graphs in varp
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Storage only; display by code.
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  focus:
+    mark: P
+    reason: >-
+      A focused cell's obsp row reaches the plots only through code re-run for each focus, so the figure's
+      N should be P (reachable only by code).
+    detail: |-
+      **Focus, checked in the running app.** The relation row reaches the plots only through code that is re-run for each focus, which is exactly the "reachable only by code" case.
+
+      **Source and docs.** No linked panels exist; "re-drive" means re-running the cells for each focus (or writing an ipywidgets callback). That is exactly the "reachable only by writing code" definition already used for the two columns to its left. See Disagreements.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scanpy-seurat/01_obsp_row_by_code.jpg
+    - kind: screenshot
+      path: notes/comparison/screens/scanpy-seurat/02_feature_colouring_Mpo.jpg
+    - kind: code
+      repo: scverse/scanpy
+      commit: 7ad567d9f7ca52b23b0ffb964e486034ef14283e
+      path: src/scanpy/plotting/legacy/_tools/scatterplots.py
+      lines: '58'
+      url: >-
+        https://github.com/scverse/scanpy/blob/7ad567d9f7ca52b23b0ffb964e486034ef14283e/src/scanpy/plotting/legacy/_tools/scatterplots.py#L58
+      label: 'sc.pl.embedding: colours an embedding by any obs column, e.g. a copied obsp row'
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  slots:
+    mark: P
+    reason: >-
+      AnnData exposes every slot, but only through code, so the figure's Y should be P by the "only by
+      writing code" rule.
+    detail: |-
+      **Checked in the running app (2026-10-04).** One figure reads three slots: `obsm["X_draw_graph_fa"]`, `layers["counts"]` (`layer=`), `obsp["connectivities"]` row. Printed slots: obsm 4, layers 1, obsp 3, uns 3; varm/varp empty in this file. All by code. *Steps:* script block m04 *Evidence:* [screens/scanpy-seurat/m04_slots_obsm_layers_obsp_by_code.jpg](screens/scanpy-seurat/m04_slots_obsm_layers_obsp_by_code.jpg)
+
+      **Source and docs.** AnnData exposes all slots, but only through code (`adata.obsp[...]`). Under the row's rule this is P. `read_h5ad_backed` loads obsm/varm/obsp/varp/uns/layers: `anndata/src/anndata/_io/h5ad.py#L189` (L195 lists the attributes). Seurat reads h5ad only via conversion packages.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scanpy-seurat/m04_slots_obsm_layers_obsp_by_code.jpg
+      label: screens/scanpy-seurat/m04_slots_obsm_layers_obsp_by_code.jpg
+    - kind: paper
+      url: https://doi.org/10.1186/s13059-017-1382-0
+      label: Wolf et al. 2018, Genome Biology 19:15
+      where: Results, 'SCANPY introduces efficient modular implementation choices'
+      quote: >-
+        stores a data matrix with the most general annotations possible: annotations of observations (samples,
+        cells) and variables (features, genes), and unstructured annotations.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: '2018 AnnData: X, obs, var, uns; no obsp/varp yet. All by code.'
+    - kind: paper
+      url: https://doi.org/10.21105/joss.04371
+      label: Virshup et al. 2024, Journal of Open Source Software 9(101):4371
+      where: The AnnData object; Fig. 1a legend
+      quote: >-
+        Multi-dimensional annotations are stored in obsm and varm. Pairwise relationships are stored in
+        obsp and varp.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: All slots exist and are reachable, by code only (the row's P rule).
+    - kind: paper
+      url: https://doi.org/10.1101/2021.12.16.473007
+      label: Virshup et al. 2021 (preprint), bioRxiv
+      where: The AnnData object; Fig. 1a legend
+      quote: >-
+        Multi-dimensional annotations are stored in obsm and varm. Pairwise relationships are stored in
+        obsp and varp.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Same text as the JOSS version.
+    - kind: code
+      repo: scverse/anndata
+      commit: bb86151f85f0608b9aaa83753ef6ec9eafe9d0b6
+      path: src/anndata/_io/h5ad.py
+      lines: '189'
+      url: >-
+        https://github.com/scverse/anndata/blob/bb86151f85f0608b9aaa83753ef6ec9eafe9d0b6/src/anndata/_io/h5ad.py#L189
+      label: 'anndata read_h5ad_backed: reads obsm, varm, obsp, varp, uns, layers'
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  remote:
+    mark: P
+    reason: >-
+      anndata.experimental.read_lazy reads a remote zarr over HTTP/S3/GCS lazily, by code and with optional
+      packages (one gene of a 275k-cell store in 42 s), so the figure's ? should be P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation: `anndata.experimental.read_lazy(FsspecStore.from_url("https://vitessce-demo-data.storage.googleapis.com/anndata-demos/BALF_VIB-UGent_processed_cleaned.zarr/"))` opened 275,056 × 24,740 in 0.7 s (X is a dask `Array`); one gene column came over HTTP in 41.7 s. Code only, and needs optional packages (fsspec, aiohttp, xarray, dask) that a plain scanpy install lacks. *Steps:* script block m06 *Evidence:* observation  Also checked 2026-10-04 against public, **anonymous** stores with no credentials ([`demos/remote/anndata_remote.py`](demos/remote/anndata_remote.py); anndata 0.13.4, zarr 3.4.0, s3fs/gcsfs): `s3://lamindata/.lamindb/CFcQxNjzSRzWZrVh.anndata.zarr` (46,086 x 21,972), lazy open 24.5 s, one gene 5.2 s; `gs://vitessce-demo-data/habib-2017/habib17.processed.h5ad.zarr` (13,067 x 25,587), lazy open 5.5 s, one gene 0.2 s. Code only, so P holds.
+
+      **Source and docs.** `read_lazy` with `zarr.storage.FsspecStore` / `ObjectStore`: `anndata/docs/tutorials/zarr-v3.md#L29-L38`; tutorial reads `https://vitessce-demo-data.storage.googleapis.com/anndata-demos/BALF_VIB-UGent_processed_cleaned.zarr/` lazily (read_lazy tutorial above). `read_zarr(store)` also accepts any store/MutableMapping: `anndata/src/anndata/_io/zarr.py#L151`. Seurat/BPCells: no remote reader found (BPCells docs searched for S3/cloud/remote/HTTP, only `remotes::install_github` hits). P on the strength of anndata.
+    evidence:
+    - kind: script
+      path: notes/comparison/demos/remote/anndata_remote.py
+      label: '`demos/remote/anndata_remote.py`'
+    - kind: paper
+      url: https://doi.org/10.21105/joss.04371
+      label: Virshup et al. 2024, Journal of Open Source Software 9(101):4371
+      where: Outlook
+      quote: >-
+        The anndata project is under active development towards more advanced out-of-core access, better
+        cloud & relational database integration
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Roadmap; no remote reader described. The proposed P rests on read_lazy (anndata 0.12, after this
+        paper).
+    - kind: paper
+      url: https://doi.org/10.1101/2021.12.16.473007
+      label: Virshup et al. 2021 (preprint), bioRxiv
+      where: Outlook
+      quote: >-
+        The anndata project is under active development towards more advanced out-of-core access, better
+        cloud & relational database integration
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Roadmap only.
+    - kind: code
+      repo: scverse/anndata
+      commit: bb86151f85f0608b9aaa83753ef6ec9eafe9d0b6
+      path: src/anndata/experimental/backed/_io.py
+      lines: '44'
+      url: >-
+        https://github.com/scverse/anndata/blob/bb86151f85f0608b9aaa83753ef6ec9eafe9d0b6/src/anndata/experimental/backed/_io.py#L44
+      label: anndata.experimental.read_lazy
+    - kind: code
+      repo: scverse/anndata
+      commit: bb86151f85f0608b9aaa83753ef6ec9eafe9d0b6
+      path: docs/tutorials/zarr-v3.md
+      lines: 29-38
+      url: >-
+        https://github.com/scverse/anndata/blob/bb86151f85f0608b9aaa83753ef6ec9eafe9d0b6/docs/tutorials/zarr-v3.md#L29-L38
+      label: anndata zarr-v3 tutorial, Remote data
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    - evidence/screens/gaps/capture2_code.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  spatial:
+    mark: P
+    reason: >-
+      sc.pl.spatial and Seurat SpatialDimPlot draw spots at tissue coordinates, by code, so the figure's
+      ? should be P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** 10x V1_Human_Lymph_Node (3,962 spots), `obsm["spatial"]` from its `tissue_positions_list.csv`; `sc.pl.spatial(img_key=None)` draws the spots at tissue coordinates. *Steps:* script block m07/m11 (data in `$DEMO_ROOT/cirrocumulus/lymph/`) *Evidence:* [screens/scanpy-seurat/m07_m11_spatial_and_image_underlay.jpg](screens/scanpy-seurat/m07_m11_spatial_and_image_underlay.jpg) (left)
+
+      **Source and docs.** `sc.pl.spatial` / `sc.pl.embedding(basis="spatial")`: `scanpy/src/scanpy/plotting/legacy/_tools/scatterplots.py#L967`; Seurat `SpatialDimPlot`: `seurat/R/convenience.R#L313`; `ImageDimPlot` for imaging data: `seurat/R/visualization.R#L2461`. By code.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scanpy-seurat/m07_m11_spatial_and_image_underlay.jpg
+      label: screens/scanpy-seurat/m07_m11_spatial_and_image_underlay.jpg
+    - kind: paper
+      url: https://doi.org/10.21105/joss.04371
+      label: Virshup et al. 2024, Journal of Open Source Software 9(101):4371
+      where: The ecosystem; Fig. 3a legend
+      quote: >-
+        Squidpy (Palla et al., 2021) uses AnnData to model their data by storing spatial coordinates as
+        an array (obsm)
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Storage, via Squidpy; plotting not described.
+    - kind: code
+      repo: scverse/scanpy
+      commit: 7ad567d9f7ca52b23b0ffb964e486034ef14283e
+      path: src/scanpy/plotting/legacy/_tools/scatterplots.py
+      lines: '967'
+      url: >-
+        https://github.com/scverse/scanpy/blob/7ad567d9f7ca52b23b0ffb964e486034ef14283e/src/scanpy/plotting/legacy/_tools/scatterplots.py#L967
+      label: sc.pl.spatial
+    - kind: code
+      repo: satijalab/seurat
+      commit: b1fe7806172bbcdfa31c8e723cb74b5c73691e63
+      path: R/convenience.R
+      lines: '313'
+      url: >-
+        https://github.com/satijalab/seurat/blob/b1fe7806172bbcdfa31c8e723cb74b5c73691e63/R/convenience.R#L313
+      label: Seurat SpatialDimPlot
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  selection:
+    reason: Seurat `CellSelector`, then code
+    evidence:
+    - kind: docs
+      url: https://satijalab.org/seurat/reference/cellselector
+      label: >-
+        CellSelector: 'Select points on a scatterplot'; returns the names of the selected points (or a
+        Seurat object with their identities set), which other plots use only through code
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: satijalab/seurat
+      commit: b1fe7806172bbcdfa31c8e723cb74b5c73691e63
+      path: R/visualization.R
+      lines: 5583-5596
+      url: >-
+        https://github.com/satijalab/seurat/blob/b1fe7806172bbcdfa31c8e723cb74b5c73691e63/R/visualization.R#L5583-L5596
+      label: CellSelector documentation block (return value)
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: running app
+    detail: Seurat `CellSelector`, then code
+    mark: P
+    reproduce:
+    - evidence/screens/gaps/capture2_code.py
+  annot:
+    mark: P
+    reason: >-
+      Labels are written to obs (or Idents) by code and saved with the object; Seurat's CellSelector lasso
+      is also launched from code, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** A UMAP rectangle became `obs["my_label"]` (1,324 `my_region`, 6,766 `other`), written to an h5ad (557 kB) and read back with the same counts. Code only. *Steps:* script block m09 *Evidence:* [screens/scanpy-seurat/m09_annotation_by_code.jpg](screens/scanpy-seurat/m09_annotation_by_code.jpg)
+
+      **Source and docs.** Writing `adata.obs[...]` / `Idents<-` by code. Seurat `CellSelector` (Shiny gadget lasso that labels cells) is still launched from code: `seurat/R/visualization.R#L5618`, https://satijalab.org/seurat/reference/cellselector
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scanpy-seurat/m09_annotation_by_code.jpg
+      label: screens/scanpy-seurat/m09_annotation_by_code.jpg
+    - kind: paper
+      url: https://doi.org/10.21105/joss.04371
+      label: Virshup et al. 2024, Journal of Open Source Software 9(101):4371
+      where: The data structure
+      quote: >-
+        one builds an understanding of the data matrix by annotating observations and variables using
+        AnnData’s fields (Figure 1)
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: By code.
+    - kind: code
+      repo: satijalab/seurat
+      commit: b1fe7806172bbcdfa31c8e723cb74b5c73691e63
+      path: R/visualization.R
+      lines: '5618'
+      url: >-
+        https://github.com/satijalab/seurat/blob/b1fe7806172bbcdfa31c8e723cb74b5c73691e63/R/visualization.R#L5618
+      label: Seurat CellSelector
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  de:
+    mark: P
+    reason: sc.tl.rank_genes_groups and Seurat FindMarkers compute DE in the session, by code, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** `sc.tl.rank_genes_groups(..., groups=["my_region"], reference="other", method="wilcoxon")` on that label in 3.9 s; top genes Ighm, H3f3a, Ebf1, Cd79a, Vpreb3 (the rectangle sits on the B lineage). *Steps:* script block m10 *Evidence:* [screens/scanpy-seurat/m10_rank_genes_groups_by_code.jpg](screens/scanpy-seurat/m10_rank_genes_groups_by_code.jpg)
+
+      **Source and docs.** `sc.tl.rank_genes_groups`: `scanpy/src/scanpy/tools/_rank_genes_groups.py#L753`; Seurat `FindMarkers`: `seurat/R/differential_expression.R#L638`. By code.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scanpy-seurat/m10_rank_genes_groups_by_code.jpg
+      label: screens/scanpy-seurat/m10_rank_genes_groups_by_code.jpg
+    - kind: paper
+      url: https://doi.org/10.1186/s13059-017-1382-0
+      label: Wolf et al. 2018, Genome Biology 19:15
+      where: Results, 'SCANPY integrates canonical analysis methods in a scalable way'
+      quote: identification of marker genes for clusters via differential expression tests
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Library function called from code.
+    - kind: paper
+      url: https://doi.org/10.1186/s13059-017-1382-0
+      label: Wolf et al. 2018, Genome Biology 19:15
+      where: Fig. 1a legend
+      quote: >-
+        Ranking differentially expressed genes in clusters identifies the MS4A1 marker gene for B cells
+        in cluster 7
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: By code.
+    - kind: paper
+      url: https://doi.org/10.1038/s41587-023-01767-y
+      label: Hao et al. 2024, Nature Biotechnology 42(2):293-304
+      where: Results, 'Community-scale integration for human lung scRNA-seq'
+      quote: >-
+        We grouped cells by both sample replicate and cell type identity, and performed differential expression
+        on the resulting pseudobulk profiles
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: By code.
+    - kind: code
+      repo: scverse/scanpy
+      commit: 7ad567d9f7ca52b23b0ffb964e486034ef14283e
+      path: src/scanpy/tools/_rank_genes_groups.py
+      lines: '753'
+      url: >-
+        https://github.com/scverse/scanpy/blob/7ad567d9f7ca52b23b0ffb964e486034ef14283e/src/scanpy/tools/_rank_genes_groups.py#L753
+      label: sc.tl.rank_genes_groups
+    - kind: code
+      repo: satijalab/seurat
+      commit: b1fe7806172bbcdfa31c8e723cb74b5c73691e63
+      path: R/differential_expression.R
+      lines: '638'
+      url: >-
+        https://github.com/satijalab/seurat/blob/b1fe7806172bbcdfa31c8e723cb74b5c73691e63/R/differential_expression.R#L638
+      label: Seurat FindMarkers.default
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  image:
+    mark: P
+    reason: >-
+      sc.pl.spatial(img_key="hires") and Seurat SpatialPlot draw spots over the H&E, by code, so the figure's
+      ? should be P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Same spots with `img_key="hires"`: clusters over the H&E (the `uns["spatial"]` entry was built from the 10x `spatial/` folder, as `sc.read_visium` does). *Steps:* script block m07/m11 *Evidence:* [screens/scanpy-seurat/m07_m11_spatial_and_image_underlay.jpg](screens/scanpy-seurat/m07_m11_spatial_and_image_underlay.jpg) (right)
+
+      **Source and docs.** `sc.pl.spatial(img_key="hires", alpha_img=...)`: `scanpy/.../legacy/_tools/scatterplots.py#L972`, docstring "Use the parameter `img_key` to see the image in the background" (L989); squidpy `sq.pl.spatial_scatter`: `squidpy/src/squidpy/pl/_spatial.py#L397`; Seurat `SpatialPlot(image.alpha=...)`: `seurat/R/visualization.R#L4350` (param doc L4270), spatial vignette "overlaid on the image with `SpatialDimPlot()`": `seurat/vignettes/spatial_vignette.Rmd#L156`. By code.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scanpy-seurat/m07_m11_spatial_and_image_underlay.jpg
+      label: screens/scanpy-seurat/m07_m11_spatial_and_image_underlay.jpg
+    - kind: paper
+      url: https://doi.org/10.21105/joss.04371
+      label: Virshup et al. 2024, Journal of Open Source Software 9(101):4371
+      where: The ecosystem; Fig. 3a legend
+      quote: >-
+        values from the high-dimensional transcriptomic measurement can be overlaid on an image of the
+        sampled tissue, where an image array (reference) is stored in uns.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: By code (Squidpy).
+    - kind: paper
+      url: https://doi.org/10.1101/2021.12.16.473007
+      label: Virshup et al. 2021 (preprint), bioRxiv
+      where: The ecosystem; Fig. 3a legend
+      quote: >-
+        values from the high-dimensional transcriptomic measurement can be overlaid on an image of the
+        sampled tissue, where an image array (reference) is stored in uns.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: scverse/scanpy
+      commit: 7ad567d9f7ca52b23b0ffb964e486034ef14283e
+      path: src/scanpy/plotting/legacy/_tools/scatterplots.py
+      lines: '967'
+      url: >-
+        https://github.com/scverse/scanpy/blob/7ad567d9f7ca52b23b0ffb964e486034ef14283e/src/scanpy/plotting/legacy/_tools/scatterplots.py#L967
+      label: sc.pl.spatial (img_key draws the image in the background, L989)
+    - kind: code
+      repo: satijalab/seurat
+      commit: b1fe7806172bbcdfa31c8e723cb74b5c73691e63
+      path: R/visualization.R
+      lines: '4350'
+      url: >-
+        https://github.com/satijalab/seurat/blob/b1fe7806172bbcdfa31c8e723cb74b5c73691e63/R/visualization.R#L4350
+      label: Seurat SpatialPlot
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  share:
+    mark: P
+    reason: >-
+      The only "view state" is the script or notebook, which reproduces the view when re-run on the same
+      data, so the figure's Y should be P by the code rule.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation: the "state" is the script. Running the same plotting function twice gave byte-identical PNGs (md5 equal), so sending the script plus data reproduces the view; nothing else stores a view. *Steps:* script block m12
+
+      **Source and docs.** The "view state" is a script or notebook; reproducing it means re-executing code against the same data. Under the row's rule that is P, not Y.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.21105/joss.04371
+      label: Virshup et al. 2024, Journal of Open Source Software 9(101):4371
+      where: The AnnData object
+      quote: >-
+        AnnData offers a native on-disk format that allows sharing data with analysis results in form
+        of learned annotations.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Shares data, not a view; relevant to the current Y (proposed P).
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    - evidence/screens/gaps/capture2_code.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  export:
+    mark: P
+    reason: Plots are saved with plt.savefig / ggsave, by code, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** `fig.savefig` wrote `umap_compartment.pdf` (135,776 bytes) and `.png` (95,579 bytes). scanpy 1.11.5 raised no warning for `save=`; the deprecation cited above is in 1.12. *Steps:* script block m13 *Evidence:* observation (file sizes)
+
+      **Source and docs.** `plt.savefig` / ggplot2 `ggsave`. Scanpy's own `save=` argument is now deprecated (`docs/release-notes/1.12.0.md#L36`; warning at `scanpy/src/scanpy/plotting/legacy/_utils.py#L373`).
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    - evidence/screens/gaps/capture_scanpy_seurat.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+    evidence:
+    - kind: code
+      repo: scverse/scanpy
+      commit: 7ad567d9f7ca52b23b0ffb964e486034ef14283e
+      path: src/scanpy/plotting/legacy/_utils.py
+      lines: '351'
+      url: >-
+        https://github.com/scverse/scanpy/blob/7ad567d9f7ca52b23b0ffb964e486034ef14283e/src/scanpy/plotting/legacy/_utils.py#L351
+      label: scanpy savefig_or_show
+    - kind: code
+      repo: scverse/scanpy
+      commit: 7ad567d9f7ca52b23b0ffb964e486034ef14283e
+      path: src/scanpy/plotting/legacy/_utils.py
+      lines: '373'
+      url: >-
+        https://github.com/scverse/scanpy/blob/7ad567d9f7ca52b23b0ffb964e486034ef14283e/src/scanpy/plotting/legacy/_utils.py#L373
+      label: 'scanpy: save= argument deprecated'
+  desktop:
+    mark: N
+    reason: Scanpy and Seurat are Python and R packages, not applications.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; there is no application, only `import scanpy`.
+
+      **Source and docs.** Python/R packages, no application.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1186/s13059-017-1382-0
+      label: Wolf et al. 2018, Genome Biology 19:15
+      where: Availability and requirements
+      quote: SCANPY and ANNDATA are released via the Python packaging index
+      indicates: N
+      checked: '2026-10-04'
+      archive: null
+      note: Python packages, no application.
+    na:
+      visual: There is no application at all
+      so there is no GUI place in which its absence could be shown.: null
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  hosted:
+    mark: N
+    reason: >-
+      The libraries are not a service; JupyterHub or RStudio Server deployments are third-party, not the
+      tool.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; not a service.
+
+      **Source and docs.** Not a service. Users can run them inside JupyterHub/RStudio Server, but that is a third-party deployment, not the tool.
+    evidence:
+    - kind: docs
+      url: https://scanpy.readthedocs.io/en/stable/installation.html
+      label: 'Scanpy installation: a Python package installed with pip or conda'
+      checked: '2026-10-04'
+    na:
+      visual: There is no application or web interface
+      so there is no GUI place in which its absence could be shown.: null
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  static:
+    mark: N
+    reason: The libraries produce image files, not a web viewer.
+    detail: |-
+      **Checked in the running app (2026-10-04).** N: nothing to show; outputs are image files, no web viewer.
+
+      **Source and docs.** Not applicable; no web output beyond static images.
+    evidence:
+    - kind: docs
+      url: https://scanpy.readthedocs.io/en/stable/installation.html
+      label: 'Scanpy installation: a Python package installed with pip or conda'
+      checked: '2026-10-04'
+    na:
+      visual: There is no application or web interface
+      so there is no GUI place in which its absence could be shown.: null
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  lazy:
+    mark: P
+    reason: >-
+      read_h5ad(backed="r") and read_lazy keep X on disk, but backed mode loads obs, obsm and obsp whole
+      and everything is by code, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** Observation: `read_h5ad(backed="r")` gives X as `_CSRDataset` (on disk); one gene comes back as an 8090 × 1 `csr_matrix`. But opening alone raised max RSS from 250 to 762 MB: backed mode keeps only X on disk and loads obs, obsm and obsp whole (this file holds a dense 8090 × 8090 `diffusion_distance`, 524 MB). So lazy for X only, and by code. *Steps:* script block m05 *Evidence:* observation (printed RSS)
+
+      **Source and docs.** `read_h5ad(backed="r")`: `anndata/src/anndata/_io/h5ad.py#L234`; `anndata.experimental.read_lazy` (added 0.12.0, replacing 0.11's `read_elem_as_dask`, `docs/release-notes/0.12.0.md#L35`, `0.11.0.md#L43`): `anndata/src/anndata/experimental/backed/_io.py#L44`; Seurat BPCells `open_matrix_dir` "does not load the dataset into memory": `seurat/vignettes/seurat5_sketch_analysis.Rmd#L64`. All by code. Note: the brief's "read_lazy in 0.11+" is off by one minor; it is 0.12+.
+
+      **Scale group.** Default is the whole matrix in memory of the user's Python/R process. Opt-in, by code: anndata backed mode (h5ad, X on disk), `read_lazy` (dask/xarray, local or remote Zarr), Scanpy dask support ("highly experimental"), Seurat BPCells on-disk matrices. All in the local analysis process; no browser. Evidence: `h5ad.py#L234`, `_io.py#L44`, `dask.ipynb` intro cell, `seurat5_sketch_analysis.Rmd#L42-L47`.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1186/s13059-017-1382-0
+      label: Wolf et al. 2018, Genome Biology 19:15
+      where: Results, 'SCANPY introduces efficient modular implementation choices'
+      quote: >-
+        This allows operating on an ANNDATA object without fully loading it into memory—the functionality
+        is offered via ANNDATA’s backed mode
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: HDF5 backed mode, opt-in by code.
+    - kind: paper
+      url: https://doi.org/10.21105/joss.04371
+      label: Virshup et al. 2024, Journal of Open Source Software 9(101):4371
+      where: Data access principles
+      quote: >-
+        anndata offers sparse data support, out of core conversions between dense and sparse data, lazy
+        subsetting (“views”) ... and a backed out-of-memory mode.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: By code.
+    - kind: paper
+      url: https://doi.org/10.1101/2021.12.16.473007
+      label: Virshup et al. 2021 (preprint), bioRxiv
+      where: The efficiency of data operations
+      quote: >-
+        anndata offers sparse data support, out of core conversions between dense and sparse data, lazy
+        subsetting (“views”) ... and a backed out-of-memory mode.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Section renamed 'Data access principles' in the JOSS version.
+    - kind: code
+      repo: scverse/anndata
+      commit: bb86151f85f0608b9aaa83753ef6ec9eafe9d0b6
+      path: src/anndata/_io/h5ad.py
+      lines: '234'
+      url: >-
+        https://github.com/scverse/anndata/blob/bb86151f85f0608b9aaa83753ef6ec9eafe9d0b6/src/anndata/_io/h5ad.py#L234
+      label: read_h5ad backed= argument
+    - kind: code
+      repo: scverse/anndata
+      commit: bb86151f85f0608b9aaa83753ef6ec9eafe9d0b6
+      path: src/anndata/experimental/backed/_io.py
+      lines: '44'
+      url: >-
+        https://github.com/scverse/anndata/blob/bb86151f85f0608b9aaa83753ef6ec9eafe9d0b6/src/anndata/experimental/backed/_io.py#L44
+      label: anndata.experimental.read_lazy
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    - evidence/screens/gaps/capture2_code.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app
+  every_cell:
+    mark: Y
+    reason: >-
+      sc.pl scatters draw every point by default; Seurat DimPlot draws every cell and rasterises (does
+      not downsample) above 100,000.
+    detail: >-
+      **Scale group.** Yes by default: `sc.pl.*` scatters every point (no downsampling mode found); Seurat
+      `DimPlot` draws every cell and **rasterizes** (not downsamples) above 100,000 cells. In the sketch
+      workflow the embedding is first computed and plotted on the sketch subset, then projected to all
+      cells (`ProjectData`) and plotted in full. Evidence: `seurat/R/visualization.R#L850-L851`; `seurat5_sketch_analysis.Rmd#L108`
+      (sketch DimPlot) and `#L142` (full.umap, all cells).
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1186/s13059-017-1382-0
+      label: Wolf et al. 2018, Genome Biology 19:15
+      where: Results, 'SCANPY is benchmarked in comparisons with established packages'; Fig. 1c legend
+      quote: we demonstrate the feasibility of analyzing 1.3 million cells without subsampling
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Analysis without subsampling; Fig. 1c legend: 'Visualizing and clustering 1.3 million cells'.
+        Says nothing about a plotting default.
+    - kind: paper
+      url: https://doi.org/10.1038/s41587-023-01767-y
+      label: Hao et al. 2024, Nature Biotechnology 42(2):293-304
+      where: Fig. 5 legend (d)
+      quote: 200,000 cells are shown in each visualization to alleviate overplotting.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        The authors downsampled for this figure by hand; says nothing about the DimPlot default. Does
+        not contradict the Y mark.
+    - kind: code
+      repo: satijalab/seurat
+      commit: b1fe7806172bbcdfa31c8e723cb74b5c73691e63
+      path: R/visualization.R
+      lines: 850-851
+      url: >-
+        https://github.com/satijalab/seurat/blob/b1fe7806172bbcdfa31c8e723cb74b5c73691e63/R/visualization.R#L850-L851
+      label: 'Seurat DimPlot raster= parameter: rasterises above 100,000 cells'
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+  subset:
+    mark: P
+    reason: Subsets that reduce loading (backed slicing, sc.pp.sample, SketchData) are code.
+    detail: |-
+      **Scale group.** Yes, by code: `sc.pp.sample` / `adata[mask]`; Seurat `subset()` and `SketchData` (leverage-score sketch, the user chooses `ncells`). Evidence: `scanpy/src/scanpy/preprocessing/_simple.py#L726`; `seurat/R/sketching.R#L45`; https://satijalab.org/seurat/reference/sketchdata
+
+      **Re-scored under X8 (2026-10-04)**: Subsets that reduce loading (backed slicing, sc.pp.sample, SketchData) are code.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.21105/joss.04371
+      label: Virshup et al. 2024, Journal of Open Source Software 9(101):4371
+      where: The data analysis workflow; Fig. 1e legend
+      quote: Subsetting the data by observations produces a memory-efficient view of AnnData (Figure 1e).
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: By code.
+    - kind: paper
+      url: https://doi.org/10.1038/s41587-023-01767-y
+      label: Hao et al. 2024, Nature Biotechnology 42(2):293-304
+      where: Results, 'Utilizing dictionary learning for massively scalable integration'
+      quote: >-
+        We first select a representative sketch of cells (i.e. 5,000 cells) from each dataset, and treat
+        these cells as atoms in a dictionary
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: Sketch subset chosen by code (SketchData).
+    - kind: paper
+      url: https://doi.org/10.1038/s41587-023-01767-y
+      label: Hao et al. 2024, Nature Biotechnology 42(2):293-304
+      where: Abstract (version of record, texts/seurat5.txt)
+      quote: >-
+        we demonstrate how dictionary learning can be combined with sketching techniques to improve computational
+        scalability
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+    - kind: code
+      repo: scverse/scanpy
+      commit: 7ad567d9f7ca52b23b0ffb964e486034ef14283e
+      path: src/scanpy/preprocessing/_simple.py
+      lines: '726'
+      url: >-
+        https://github.com/scverse/scanpy/blob/7ad567d9f7ca52b23b0ffb964e486034ef14283e/src/scanpy/preprocessing/_simple.py#L726
+      label: sc.pp.sample
+    - kind: code
+      repo: satijalab/seurat
+      commit: b1fe7806172bbcdfa31c8e723cb74b5c73691e63
+      path: R/sketching.R
+      lines: '45'
+      url: https://github.com/satijalab/seurat/blob/b1fe7806172bbcdfa31c8e723cb74b5c73691e63/R/sketching.R#L45
+      label: Seurat SketchData
+    checked:
+      date: '2026-10-03'
+      by: comparison-auditor
+      how: source and docs
+  auto_subset:
+    na:
+      visual: no automatic subsetting in source or docs; a demo-size shot cannot show its absence at scale
+    reason: >-
+      Plots draw every cell; Seurat rasterises above 100,000 cells, which reduces the image, not the cells;
+      sketching is a user step in code.
+    detail: >-
+      **New column (user X8, 2026-10-04).** Plots draw every cell; Seurat rasterises above 100,000 cells,
+      which reduces the image, not the cells; sketching is a user step in code. Evidence is the same as
+      for every cell drawn, which shows how the default view is drawn.
+    evidence:
+    - kind: paper
+      url: https://doi.org/10.1186/s13059-017-1382-0
+      label: Wolf et al. 2018, Genome Biology 19:15
+      where: Results, 'SCANPY is benchmarked in comparisons with established packages'; Fig. 1c legend
+      quote: we demonstrate the feasibility of analyzing 1.3 million cells without subsampling
+      indicates: Y
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        Analysis without subsampling; Fig. 1c legend: 'Visualizing and clustering 1.3 million cells'.
+        Says nothing about a plotting default.
+    - kind: paper
+      url: https://doi.org/10.1038/s41587-023-01767-y
+      label: Hao et al. 2024, Nature Biotechnology 42(2):293-304
+      where: Fig. 5 legend (d)
+      quote: 200,000 cells are shown in each visualization to alleviate overplotting.
+      indicates: P
+      checked: '2026-10-04'
+      archive: null
+      note: >-
+        The authors downsampled for this figure by hand; says nothing about the DimPlot default. Does
+        not contradict the Y mark.
+    - kind: code
+      repo: satijalab/seurat
+      commit: b1fe7806172bbcdfa31c8e723cb74b5c73691e63
+      path: R/visualization.R
+      lines: 850-851
+      url: >-
+        https://github.com/satijalab/seurat/blob/b1fe7806172bbcdfa31c8e723cb74b5c73691e63/R/visualization.R#L850-L851
+      label: 'Seurat DimPlot raster= parameter: rasterises above 100,000 cells'
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: source, docs and earlier app observations, re-read under the X8 definitions
+    reviewed: null
+    mark: N
+retired_cells:
+  filters:
+    mark: P
+    reason: >-
+      Cells are filtered by a code expression (adata[mask], Seurat subset()) and replotted; there is no
+      filter table, so P.
+    detail: |-
+      **Checked in the running app (2026-10-04).** `a[a.obs.highres_celltype == "Neutrophil"]` (2,221 cells) replotted on the same axes. No filter table; the subset is a code expression. *Steps:* script block m08 *Evidence:* [screens/scanpy-seurat/m08_filter_by_code.jpg](screens/scanpy-seurat/m08_filter_by_code.jpg)
+
+      **Source and docs.** Subsetting by code: `adata[adata.obs.x > t]`, Seurat `subset()` (`seurat/vignettes/essential_commands.Rmd#L224`). No filter table.
+    evidence:
+    - kind: screenshot
+      path: notes/comparison/screens/scanpy-seurat/m08_filter_by_code.jpg
+      label: screens/scanpy-seurat/m08_filter_by_code.jpg
+    - kind: code
+      repo: satijalab/seurat
+      commit: b1fe7806172bbcdfa31c8e723cb74b5c73691e63
+      path: vignettes/essential_commands.Rmd
+      lines: '224'
+      url: >-
+        https://github.com/satijalab/seurat/blob/b1fe7806172bbcdfa31c8e723cb74b5c73691e63/vignettes/essential_commands.Rmd#L224
+      label: 'Seurat essential commands: Subset Seurat objects'
+    reproduce:
+    - notes/comparison/demos/scanpy-seurat/matrix_check.py
+    checked:
+      date: '2026-10-04'
+      by: comparison-auditor
+      how: running app

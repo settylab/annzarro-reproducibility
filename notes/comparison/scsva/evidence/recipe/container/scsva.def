@@ -1,0 +1,36 @@
+Bootstrap: docker
+From: rocker/r-ver@sha256:9414f76c5f91f24617b5275b8fe4f4ff1313b3b10698a525cac0063c01f2ca6d
+# (= rocker/r-ver:3.6.3; Apptainer 1.1 refuses tag+digest together)
+# NOT BUILT END TO END: the HPC sandbox refuses the fakeroot %post step. See ../README.md "Verification status".
+
+# Same steps as ./Dockerfile (keep the two in sync). linux/amd64 only.
+%files
+    apt-sources.sh /tmp/apt-sources.sh
+    scsva-py.yml /tmp/scsva-py.yml
+    install_r.R /tmp/install_r.R
+
+%environment
+    export PATH=/opt/pyenv/bin:$PATH
+    export RETICULATE_PYTHON=/opt/pyenv/bin/python
+
+%post
+    set -e
+    SCSVA_COMMIT=c9e8fd6b280910eadf9daba35badcf6933c7f353
+    CRAN_SNAPSHOT=https://packagemanager.posit.co/cran/2020-04-20
+    MICROMAMBA_VERSION=1.5.8
+    bash /tmp/apt-sources.sh
+    apt-get update
+    apt-get install -y --no-install-recommends ca-certificates curl bzip2 git libcairo2-dev libxt-dev \
+        libmagick++-dev libcurl4-openssl-dev libssl-dev libxml2-dev libz-dev fonts-dejavu-core fontconfig
+    rm -rf /var/lib/apt/lists/*
+    curl -fsSL https://micro.mamba.pm/api/micromamba/linux-64/${MICROMAMBA_VERSION} | tar -xj -C /usr/local bin/micromamba
+    MAMBA_ROOT_PREFIX=/opt/mamba /usr/local/bin/micromamba create -y -p /opt/pyenv -f /tmp/scsva-py.yml
+    /usr/local/bin/micromamba clean -a -y
+    Rscript /tmp/install_r.R "${CRAN_SNAPSHOT}"
+    echo 'options(bitmapType = "cairo")  # headless: Shiny png() needs cairo, there is no X11' >> /usr/local/lib/R/etc/Rprofile.site
+    git clone https://github.com/klarman-cell-observatory/scSVA.git /opt/scSVA
+    git -C /opt/scSVA checkout ${SCSVA_COMMIT}
+    R CMD INSTALL /opt/scSVA
+
+%runscript
+    exec Rscript -e "shiny::runApp(system.file('scSVA', package='scSVA'), host='0.0.0.0', port=as.integer(Sys.getenv('SCSVA_PORT','3838')), launch.browser=FALSE)"

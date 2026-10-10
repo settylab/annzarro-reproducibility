@@ -1,0 +1,20 @@
+{
+ "status": "stopped",
+ "rc": -15,
+ "wall_s": 167.07,
+ "rss_peak_bytes": 6010327040,
+ "rss_peak_gb": 5.598,
+ "t_peak_s": 128.0,
+ "hwm_sum_bytes": 6046560256,
+ "hwm_sum_gb": 5.631,
+ "n_procs_seen": 4,
+ "cap_gb": 15.0,
+ "timeout_s": 5400.0,
+ "cmd": [
+  "Rscript",
+  "$SCRATCH/annzarro-scale/scsva/run/launch.R",
+  "54921"
+ ],
+ "host": "hpc-node-04",
+ "slurm_job_id": "10171780"
+}

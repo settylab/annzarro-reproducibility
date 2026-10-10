@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "image": "m00_every_cell_bm_umap_celltype.jpg",
+ "tool": "tissuumaps",
+ "software": "TissUUmaps 3.2.1.11 (server build, pip; TU4 is beta)",
+ "data": "bm_demo_csc.h5ad (8,090 cells x 16,285 genes)",
+ "url": "http://127.0.0.1:8908/bm_demo_csc.h5ad",
+ "captured": "2026-10-04",
+ "by": "comparison-auditor",
+ "driver": "notes/comparison/demos/tissuumaps/matrix_check.py",
+ "source": "dom",
+ "proves": [
+  {
+   "column": "every_cell",
+   "mark": "Y",
+   "caption": "All 8,090 cells drawn on the UMAP (obsm/X_umap), coloured by highres_celltype; the largest WebGL draw call was 8,090 points"
+  },
+  {
+   "column": "auto_subset",
+   "mark": "N",
+   "caption": "No default subset: the whole 8,090-cell dataset is drawn on opening a categorical column (TU3 draws every point; see the paper's 16.7M benchmark 'without relying on data sub-sampling')"
+  }
+ ],
+ "callouts": [
+  {
+   "n": 1,
+   "box": [
+    0,
+    37,
+    941,
+    863
+   ],
+   "label": "markers drawn on the UMAP",
+   "selector": "#ISS_viewer, .openseadragon-container"
+  }
+ ]
+}

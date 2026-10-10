@@ -1,0 +1,22 @@
+version: 1
+image: m15_hosted_shinyapps_instance.jpg
+tool: isee
+software: iSEE 1.5.1 (hosted demo)
+data: allen.subset.rds (Allen mouse cortex subset)
+url: https://kevinrue.shinyapps.io/isee-shiny-contest/
+captured: '2026-10-04'
+by: comparison-auditor (shot); retrofit by evidence-curator
+driver: notes/comparison/demos/isee/matrix_check.py
+source: manual
+image_sha256: 8e5e8a47fbe41717a48d13550801e74a0de7a7c408a298b87fbacbc1a64c7ccc
+proves:
+- column: hosted
+  mark: Y
+  caption: A hosted iSEE 1.5.1 app opens with its panels and interactive tour, served publicly from shinyapps.io (kevinrue.shinyapps.io/isee-shiny-contest).
+callouts:
+- n: 1
+  box: [120, 8, 510, 36]
+  label: iSEE - interactive SummarizedExperiment Explorer v1.5.1
+- n: 2
+  box: [3, 68, 1394, 712]
+  label: panels served by the hosted R process (tour overlay open)

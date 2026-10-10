@@ -1,0 +1,27 @@
+syn_5000000.zarr color=cat mode=live ready 10.5s  js_heap 1.58 GB (316 B/pt)  renderer RSS now 1.90 GB peak 2.53 GB (505 B/pt)  gpu peak 0.34 GB
+total sampled 984 MB = 196.8 B/pt
+    197.7 MB    39.5 B/pt  _safeJSONParse data-manager.js:65   <- _safeJSONParse data-manager.js:65
+    160.0 MB    32.0 B/pt  toPlainArray wire.js:87   <- toPlainArray wire.js:87
+    139.1 MB    27.8 B/pt  __webpack_modules__.7901.color.clean plotly-2.20.0.min.js:2865   <- drawPlot panel-surface.js:277
+     88.7 MB    17.7 B/pt  calc plotly-2.20.0.min.js:97917   <- (anon) plot-update.js:1192
+     83.7 MB    16.7 B/pt  sort plotly-2.20.0.min.js:124733   <- (anon) plot-update.js:1192
+     80.0 MB    16.0 B/pt  ax.makeCalcdata plotly-2.20.0.min.js:46906   <- (anon) plot-update.js:1192
+     80.0 MB    16.0 B/pt  calc plotly-2.20.0.min.js:97917   <- drawPlot panel-surface.js:277
+     56.0 MB    11.2 B/pt  cluster plotly-2.20.0.min.js:124655   <- (anon) plot-update.js:1192
+     39.2 MB     7.8 B/pt  map   <- makeTrace plot-make-helper.js:394
+     28.0 MB     5.6 B/pt  __webpack_modules__.7901.color.clean plotly-2.20.0.min.js:2865   <- (anon) plot-update.js:1192
+     20.0 MB     4.0 B/pt  getCells data-manager.js:1400   <- getCells data-manager.js:1400
+      1.8 MB     0.4 B/pt  webpackUniversalModuleDefinition plotly-2.20.0.min.js:7   <- -
+      0.8 MB     0.2 B/pt  define plotly-2.20.0.min.js:157741   <- -
+      0.5 MB     0.1 B/pt  __nested_webpack_require_889453__ plotly-2.20.0.min.js:114085   <- -
+      0.5 MB     0.1 B/pt  b plotly-2.20.0.min.js:208548   <- drawPlot panel-surface.js:277
+      0.4 MB     0.1 B/pt  (anon) jquery-3.6.4.min.js:2   <- (anon) jquery-3.6.4.min.js:2
+      0.4 MB     0.1 B/pt  c plotly-2.20.0.min.js:208548   <- drawPlot panel-surface.js:277
+      0.3 MB     0.1 B/pt  __webpack_require__ plotly-2.20.0.min.js:223178   <- -
+      0.3 MB     0.1 B/pt  (V8 API)   <- -
+      0.2 MB     0.0 B/pt  __webpack_require__.d plotly-2.20.0.min.js:223214   <- -
+      0.2 MB     0.0 B/pt  (anon) plotly-2.20.0.min.js:183766   <- -
+      0.2 MB     0.0 B/pt  (anon) plotly-2.20.0.min.js:157757   <- -
+      0.2 MB     0.0 B/pt  create plotly-2.20.0.min.js:208482   <- drawPlot panel-surface.js:277
+      0.2 MB     0.0 B/pt  compile plotly-2.20.0.min.js:208550   <- drawPlot panel-surface.js:277
+      0.1 MB     0.0 B/pt  push   <- drawPlot panel-surface.js:277
