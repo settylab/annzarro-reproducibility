@@ -1,0 +1,232 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "none",
+  "$TMPDIR/wt-ucsc-ceiling/benchmark/tool_ceiling/shots/ucsc_remote_default_run_150000000_r0",
+  "--n",
+  "150000000",
+  "--server-url",
+  "http://hpc-node-54:8791/",
+  "--proxy",
+  "socks5://localhost:1080"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 99.44,
+ "peaks": {
+  "client": {
+   "fp_peak": 18463545256,
+   "fp_lifetime_sum": 20122459896,
+   "rss_peak": 16381526016,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1818888,
+   "fp_lifetime_sum": 1818888,
+   "rss_peak": 3768320,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 146016016,
+   "fp_lifetime_sum": 150996848,
+   "rss_peak": 185335808,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 18463545256,
+   "rss_peak": 16381526016,
+   "fp_lifetime_sum": 20124278784
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.31,
+   781443184
+  ],
+  [
+   4.57,
+   1056367088
+  ],
+  [
+   6.79,
+   1150722928
+  ],
+  [
+   9.03,
+   3869781056
+  ],
+  [
+   11.27,
+   3080415792
+  ],
+  [
+   13.51,
+   3251088280
+  ],
+  [
+   15.77,
+   3443469616
+  ],
+  [
+   17.99,
+   3648351968
+  ],
+  [
+   20.24,
+   3846172768
+  ],
+  [
+   22.47,
+   3806213128
+  ],
+  [
+   24.67,
+   3957650536
+  ],
+  [
+   26.9,
+   4110759112
+  ],
+  [
+   29.14,
+   4122916160
+  ],
+  [
+   31.36,
+   4268062304
+  ],
+  [
+   33.58,
+   4419729232
+  ],
+  [
+   35.81,
+   4573018152
+  ],
+  [
+   38.05,
+   4729403672
+  ],
+  [
+   40.29,
+   10044853304
+  ],
+  [
+   42.51,
+   11652780216
+  ],
+  [
+   44.75,
+   12529374208
+  ],
+  [
+   47.0,
+   12559946752
+  ],
+  [
+   49.23,
+   12559946752
+  ],
+  [
+   51.46,
+   12556801024
+  ],
+  [
+   53.66,
+   12556801024
+  ],
+  [
+   55.89,
+   12556801024
+  ],
+  [
+   58.12,
+   12556801024
+  ],
+  [
+   60.34,
+   12556801024
+  ],
+  [
+   62.58,
+   11737026984
+  ],
+  [
+   64.85,
+   10670164160
+  ],
+  [
+   67.14,
+   10335996072
+  ],
+  [
+   69.4,
+   10318629032
+  ],
+  [
+   71.68,
+   10277652648
+  ],
+  [
+   73.96,
+   10237577384
+  ],
+  [
+   76.21,
+   10233661608
+  ],
+  [
+   78.49,
+   10235594920
+  ],
+  [
+   80.76,
+   10497231112
+  ],
+  [
+   82.97,
+   10392307976
+  ],
+  [
+   85.2,
+   10918382144
+  ],
+  [
+   87.42,
+   13046009704
+  ],
+  [
+   89.64,
+   13043208040
+  ],
+  [
+   91.85,
+   13042913128
+  ],
+  [
+   94.08,
+   12496850864
+  ],
+  [
+   96.32,
+   13636964824
+  ],
+  [
+   98.55,
+   18292512680
+  ]
+ ],
+ "ps_before": "2026-10-11T19:49:08-0700\nmemorystatus_level=85 swap=total = 5120.00M  used = 3880.19M  free = 1239.81M  (encrypted)\n53514 267744  79.8 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.39/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n94225 617008  24.4 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n54201  20976   3.6 $TMPDIR/wt-ucsc-ceiling/benchmark/tool_ceiling/.venv/bin/python\n86901 434032   2.5 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n28847 1186352   1.5 $HOME/.local/bin/claude\n54193   1280   1.0 /usr/bin/lockf\n54191   2208   1.0 /bin/sh\n  626 332752   0.9 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n 4725 581968   0.7 claude\n47413 491680   0.5 /Applications/cmux.app/Contents/MacOS/cmux\n",
+ "others_at_start": [
+  "48862 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "54191 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for",
+  "54193 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \""
+ ]
+}

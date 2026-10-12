@@ -9,6 +9,21 @@ its index, so masters of different sizes agree on their shared cells. They exist
 to find AnnZarro's ceiling past the largest real dataset; no biological result comes
 from them. The every-cell and subset tasks colour by `cell_type` and GENE0.
 
+## UCSC Cell Browser past 95.6M cells (SYNTHETIC DATA at 150M)
+
+The 95.6M rung is the real Tahoe-100M (one run, r0). Above it, the HPC worker built a UCSC site from a
+synthetic 150M store (`build_synth.py`, pinned at d6f0bfd, seed 20261004: the first 95,624,334 cells are the
+real store, the rest tiles of it with jittered coordinates) with the same steps and command lines as
+the 95.6M site apart from N: `to_h5ad.py`, `cbImportScanpy` (cell_line_id, skipMarkers, mtx), `cbBuild`,
+Cell Browser 1.2.20, served by `serve_static.py` on :8791 (job 10414102). The job wrapper differs from the
+95.6M one: partition canto (1.5 TB node hpc-host; the build needs 757 GiB), `--mem` 1100G, memmon cap
+mem minus 15 G (1085 GiB), 27 h step timeout. The laptop client sessions go through the SOCKS proxy
+(`web_task.py --server-url --proxy`), two sessions at 150M (r0 and r1, run through run-timed, the clean
+pair; the 95.6M rung had one). Both drew every cell by category and by gene with the client footprint
+at 17.20 GiB, over the 16 GiB budget, so UCSC's 16 GiB ceiling lies between 95.6M (12.02 GiB) and 150M. The
+server's own peak at 150M was not reported by the HPC worker (static server, 0.02 GiB at 20M, 50M and
+95.6M). Preparation cost per step: `ucsc_prep_cost.csv`.
+
 ## Build under test (AnnZarro v0.4.1)
 
 Every AnnZarro row is AnnZarro v0.4.1, the tag itself (78c9da6, tree 661a454f). One install,

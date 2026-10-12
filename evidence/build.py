@@ -781,6 +781,8 @@ def tool_page(t, cols, tool_pages, ceil, ann):
                    "[method](../measurements/tool-ceiling.md)): "
                    + "; ".join(f'{k[0]} {k[1]}: {fmt_n(r["max_n_8gb"])} / {fmt_n(r["max_n_16gb"])} / {fmt_n(r["max_n_32gb"])}'
                                for k, r in meas if r["max_n_8gb"]) + ".\n")
+    if t["id"] == "ucsc-cell-browser":
+        out.append(prep_block(page) + "\n")
     out.append("## Matrix cells\n")
     for c in cols:
         cell = t["cells"].get(c["id"])
@@ -876,6 +878,46 @@ def columns_page(cols):
 
 
 # --------------------------------------------------------------------------- shared helpers for evidence/gen/*
+def prep_block(page):
+    """The preparation caveat of UCSC Cell Browser, computed from ucsc_prep_cost.csv and ucsc_prep_disk.csv
+    (measured values only): shown on the Tool ceiling page and on UCSC's tool page."""
+    d = "benchmark/tool_ceiling"
+    cost = [r for r in csv.DictReader(open(REPO / d / "ucsc_prep_cost.csv")) if r["origin"] == "hpc"]
+    disk = {r["n_cells"]: r for r in csv.DictReader(open(REPO / d / "ucsc_prep_disk.csv"))}
+    rows, last = [], None
+    for n in sorted({int(r["n_cells"]) for r in cost}):
+        st = {r["step"]: r for r in cost if int(r["n_cells"]) == n and r["outcome"].startswith("finished")}
+        if "cbBuild" not in st or "cbImportScanpy" not in st:
+            continue
+        hours = (float(st["cbImportScanpy"]["wall_s"]) + float(st["cbBuild"]["wall_s"])) / 3600
+        rows.append((fmt_n(n), f'{float(st["cbImportScanpy"]["peak_gib"]):.0f}', f'**{float(st["cbBuild"]["peak_gib"]):.0f}**',
+                     f"{hours:.1f}", f'{st["cbBuild"]["node"]} ({float(st["cbBuild"]["node_ram_gib"]):.0f} GiB RAM)',
+                     f'{float(disk[str(n)]["site_gb"]):.0f}'))
+        last = (n, st["cbBuild"], disk[str(n)])
+    n, bld, dk = last
+    standard = max(float(r["node_ram_gib"]) for r in cost if r["partition"] == "<partition>")
+    copies = float(dk["input_h5ad_gb"]) + float(dk["in_dir_matrix_mtx_gz_gb"])
+    table = "\n".join("    " + ln for ln in md_table(rows, ["cells", "cbImportScanpy peak GiB", "cbBuild peak GiB",
+                                                         "prep hours (both steps)", "node that ran cbBuild", "site GB"]).split("\n"))
+    return f"""!!! danger "UCSC Cell Browser needs very large memory to prepare a dataset"
+    UCSC cannot open a store or an h5ad directly. A dataset must first be converted into UCSC's own
+    format (`cbImportScanpy`, then `cbBuild`), and that conversion holds the whole matrix in memory.
+    Every ceiling reported here for UCSC (the client's memory while drawing) **assumes this preparation was
+    possible**. It was measured on the HPC, step by step, and is not part of any client number:
+
+{table}
+
+    At {fmt_n(n)} cells the build peaked at {float(bld["peak_gib"]):.0f} GiB of RAM: above the {standard:.0f} GiB of a standard HPC node, so it
+    ran only on a {float(bld["node_ram_gib"]) / 1024:.1f} TiB node ({bld["node"]}). No ordinary workstation can prepare a dataset of that size for UCSC.
+    The site is large too: {float(dk["site_gb"]):.0f} GB at {fmt_n(n)} cells, of which {copies:.0f} GB are download copies
+    (the h5ad and the matrix) that the viewer never requests. Every value, every attempt and the
+    laptop runs (1M to 10M cells; the 20M run hit the 48 GiB machine cap) are in
+    {link_repo(page, d + "/ucsc_prep_cost.csv", "ucsc_prep_cost.csv")} and
+    {link_repo(page, d + "/ucsc_prep_disk.csv", "ucsc_prep_disk.csv")}; a value that was not recorded reads MISSING.
+    The client ceiling is a property of the viewer; this preparation is a property of the format.
+"""
+
+
 def md_table(rows, head):
     out = ["| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
     out += ["| " + " | ".join(str(x) for x in r) + " |" for r in rows]

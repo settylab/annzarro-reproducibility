@@ -2140,17 +2140,20 @@ claims:
     status: ok
     note: A definition of the method (benchmark/tool_ceiling README/NOTES, operator rule 2026-10-05), not a measurement; nothing pending changes it. The check also requires every ceilings.csv row to carry the same 32 GiB.
   supp1.input.lower_bounds:
-    text: UCSC drew every cell of Tahoe-100M, 95.6 million, the largest real dataset, where its ladder stops
+    text: UCSC drew every cell of Tahoe-100M, 95.6 million, within the 16 GiB budget (12.0 GiB) and every cell of a 150-million-cell synthetic store over it (17.2 GiB), so its ceiling lies between them
     file: manuscript/supplement.tex
     kind: number
     source:
       - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: ucsc, variant: default}, column: max_n_16gb, agg: first}
-      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: ucsc, variant: default}, column: kind_16gb, agg: first, pattern: '^lower bound: (largest N tested)'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: ucsc, variant: default}, column: kind_16gb, agg: first, pattern: '^(ceiling)'}
       - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: ucsc, variant: default}, column: row_status, agg: first, pattern: '^(final)'}
-    compute: "(v[0] / 1e6) if v[0] == 95624334 and v[2] == 'final' else float('nan')"
-    format: 'UCSC drew every cell of Tahoe-100M, {:.1f} million, the largest real dataset, where its ladder stops'
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: ucsc, variant: remote_default, n: 95624334, status: ok}, column: fp_client_gb, agg: max}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: ucsc, variant: remote_default, n: 150000000, status: ok}, column: fp_client_gb, agg: min}
+      - {csv: benchmark/tool_ceiling/results.csv, where: {tool: ucsc, variant: remote_default, n: 150000000, status: ok}, column: n, agg: first}
+    compute: "(v[0] / 1e6, v[3], v[5] / 1e6, v[4]) if v[0] == 95624334 and v[1] == 'ceiling' and v[2] == 'final' and v[3] <= 16 and v[4] > 16 else float('nan')"
+    format: 'UCSC drew every cell of Tahoe-100M, {0:.1f} million, within the 16 GiB budget ({1:.1f} GiB) and every cell of a {2:.0f}-million-cell synthetic store over it ({3:.1f} GiB), so its ceiling lies between them'
     status: ok
-    note: "ceilings.csv ucsc/default, final (ceiling-benchmarker): every cell of the 95.6M store drawn, client 12.02 GiB, server process tree 0.02 GiB (static site, HPC job 10100752); a lower bound, no synthetic sizes run."
+    note: "ceilings.csv ucsc/default, final (ceiling-benchmarker): every cell of the 95.6M store drawn, client 12.02 GiB (one run), within 16 GiB; every cell of the synthetic 150M store drawn in 2 of 2 runs, client 17.20 GiB, over 16 GiB; the ceiling lies between them. The 150M site is synthetic (tiles of Tahoe-100M, build_synth.py). A 120M rung is queued and will narrow the bracket and change this sentence."
   supp1.ceiling.shinycell2:
     text: ShinyCell2 drew 10 million cells, its server at 7.2 GiB (the HPC's process-tree resident memory); at 20 million its app builder, makeShinyApp, refuses the HDF5-backed input, which holds more than $2^{31}-1$ values, an input path limit
     file: manuscript/supplement.tex

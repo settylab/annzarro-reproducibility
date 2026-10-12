@@ -425,9 +425,12 @@ FINAL = {("annzarro", "v041"): "final 2026-10-07: AnnZarro v0.4.1, the tag itsel
          ("scanpy", "lazy_h5ad"): "final 2026-10-06: lazy read of an h5ad; 31.6M within 16 GiB (12.22 GiB, one run); 39.7M "
                                   "over by the median of 3 runs (15.985 / 16.097 / 16.258 GiB: one of three within): client "
                                   "stop at 31.6M (a size fits only if the median of its repeats does)",
-         ("ucsc", "default"): "final 2026-10-06: Cell Browser 1.2.20 served from the HPC (static site; server process tree "
-                             "0.02 GiB at every size); every cell drawn to the full Tahoe-100M, 95.6M (client 12.02 GiB): "
-                             "lower bound, the largest real dataset; no synthetic sizes run",
+         ("ucsc", "default"): "final 2026-10-12: Cell Browser 1.2.20 served from the HPC (static site; server process tree "
+                             "0.02 GiB at 20M, 50M and 95.6M, not reported at 150M); every cell drawn at the full Tahoe-100M, "
+                             "95.6M (client 12.02 GiB, one run), within 16 GiB; every cell drawn at 150M (synthetic tiles of "
+                             "Tahoe-100M, build_synth.py; 2 of 2 runs, client 17.20 GiB), over 16 GiB: client stop at 95.6M, "
+                             "ceiling between 95.6M and 150M (bracket pending a 120M rung); client footprint is macOS "
+                             "phys_footprint (README caveat); preparation needs up to 757 GiB RAM (ucsc_prep_cost.csv)",
          ("cellxgene", "default"): "final 2026-10-06: ladder 1M-14.1M within both budgets (14.1M: client 5.47, server 29.65 GiB); "
                                    "16.8M in 3 of 3 runs over the 32 GiB server budget (35.48-36.12 GiB); 20M on the HPC "
                                    "(server 37.70 GiB RSS): server stop at 14.1M",

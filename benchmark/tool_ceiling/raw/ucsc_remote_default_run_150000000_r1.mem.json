@@ -1,0 +1,224 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "none",
+  "$TMPDIR/wt-ucsc-ceiling/benchmark/tool_ceiling/shots/ucsc_remote_default_run_150000000_r1",
+  "--n",
+  "150000000",
+  "--server-url",
+  "http://hpc-node-54:8791/",
+  "--proxy",
+  "socks5://localhost:1080"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 97.17,
+ "peaks": {
+  "client": {
+   "fp_peak": 18464184472,
+   "fp_lifetime_sum": 20122148840,
+   "rss_peak": 16376987648,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 1818888,
+   "fp_lifetime_sum": 1818888,
+   "rss_peak": 3768320,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 150079056,
+   "fp_lifetime_sum": 154797744,
+   "rss_peak": 192823296,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 18464184472,
+   "rss_peak": 16376987648,
+   "fp_lifetime_sum": 20123967728
+  }
+ },
+ "trace": [
+  [
+   0.05,
+   0
+  ],
+  [
+   2.42,
+   1054794344
+  ],
+  [
+   4.76,
+   1303127064
+  ],
+  [
+   7.11,
+   3256429344
+  ],
+  [
+   9.42,
+   3080383168
+  ],
+  [
+   11.75,
+   3248647208
+  ],
+  [
+   14.06,
+   3438030296
+  ],
+  [
+   16.37,
+   3644174192
+  ],
+  [
+   18.69,
+   3856806200
+  ],
+  [
+   20.99,
+   3820795032
+  ],
+  [
+   23.34,
+   3976869088
+  ],
+  [
+   25.68,
+   4079646088
+  ],
+  [
+   27.97,
+   4212684408
+  ],
+  [
+   30.25,
+   4361303888
+  ],
+  [
+   32.53,
+   4458707032
+  ],
+  [
+   34.8,
+   4614814024
+  ],
+  [
+   37.13,
+   4779211320
+  ],
+  [
+   39.56,
+   11045146544
+  ],
+  [
+   41.84,
+   11703718480
+  ],
+  [
+   44.18,
+   12556981392
+  ],
+  [
+   46.43,
+   12556981392
+  ],
+  [
+   48.67,
+   12556981392
+  ],
+  [
+   50.91,
+   12556948624
+  ],
+  [
+   53.16,
+   12556948624
+  ],
+  [
+   55.44,
+   12553802896
+  ],
+  [
+   57.73,
+   12553835664
+  ],
+  [
+   60.02,
+   11746202192
+  ],
+  [
+   62.27,
+   10664462720
+  ],
+  [
+   64.58,
+   10217720168
+  ],
+  [
+   66.85,
+   10192996712
+  ],
+  [
+   69.13,
+   10194585960
+  ],
+  [
+   71.43,
+   10195650920
+  ],
+  [
+   73.71,
+   10198747520
+  ],
+  [
+   75.97,
+   10200500608
+  ],
+  [
+   78.24,
+   10492610968
+  ],
+  [
+   80.48,
+   10380446104
+  ],
+  [
+   82.7,
+   10889595600
+  ],
+  [
+   84.94,
+   12445322800
+  ],
+  [
+   87.15,
+   13042814968
+  ],
+  [
+   89.36,
+   13042700280
+  ],
+  [
+   91.61,
+   12486185024
+  ],
+  [
+   93.84,
+   13291966816
+  ],
+  [
+   96.08,
+   18460891288
+  ]
+ ],
+ "ps_before": "2026-10-11T19:52:07-0700\nmemorystatus_level=86 swap=total = 5120.00M  used = 3880.19M  free = 1239.81M  (encrypted)\n28847 1186272   3.7 $HOME/.local/bin/claude\n 6219  56128   2.9 $HOME/Projects/investments/.venv/bin/python3\n 1191 1366208   2.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/corespotlightd\n58792   1232   1.2 /usr/bin/lockf\n86901 434032   1.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder\n58790   2208   1.0 /bin/sh\n  618  59392   0.7 /usr/sbin/bluetoothd\n76588 2377456   0.5 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent\n 4725 582208   0.5 claude\n49293 623168   0.4 $HOME/.local/bin/claude\n",
+ "others_at_start": [
+  "56623 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "58790 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for",
+  "58792 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \""
+ ]
+}

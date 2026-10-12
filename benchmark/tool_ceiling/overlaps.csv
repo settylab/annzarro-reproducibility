@@ -335,3 +335,7 @@ M=)"
 scope_default_run_1000000_r0,False,True,"others at start: 2 (88007 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
 scope_default_run_2000000_r0,False,True,"others at start: 2 (7613 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
 scope_default_run_2000000_r1,False,True,"others at start: 2 (65069 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+ucsc_remote_default_run_150000000_r0,False,True,"others at start: 3 (48862 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"
+ucsc_remote_default_run_150000000_r1,False,True,"others at start: 3 (56623 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M=)"

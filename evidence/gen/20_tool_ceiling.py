@@ -172,6 +172,7 @@ and the method. Every number on it is computed from the result files listed next
     - **AnnZarro as a local app** (browser and server on the same laptop), current release: {local_txt}.
 
 {banner}
+{ctx.prep_block(page)}
 ## Source files
 
 | file | provenance |
@@ -181,6 +182,7 @@ and the method. Every number on it is computed from the result files listed next
 | clean-time flags | {prov_badge(f"{d}/overlaps.csv")} |
 | curve | {prov_badge(f"{d}/ceiling_curve.png")} |
 | method | {prov_badge(f"{d}/README.md")} |
+| UCSC preparation cost | {prov_badge(f"{d}/ucsc_prep_cost.csv")} |
 | summariser | {prov_badge(f"{d}/summarize.py")} |
 
 ## Ceilings {{#ceilings}}
