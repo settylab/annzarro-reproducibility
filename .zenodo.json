@@ -21,6 +21,7 @@
   "license": "MIT",
   "related_identifiers": [
     {"relation": "isDocumentedBy", "identifier": "https://settylab.github.io/annzarro-reproducibility/", "scheme": "url"},
-    {"relation": "isSupplementTo", "identifier": "https://github.com/settylab/annzarro", "scheme": "url"}
+    {"relation": "isSupplementTo", "identifier": "https://github.com/settylab/annzarro", "scheme": "url"},
+    {"relation": "isSupplementTo", "identifier": "10.64898/2026.10.10.758158", "scheme": "doi"}
   ]
 }

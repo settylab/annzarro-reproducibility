@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 title: "AnnZarro: evidence site and benchmark code"
-message: "If you use this repository, please cite it together with the AnnZarro preprint."
+message: "If you use this repository, please cite the AnnZarro preprint (preferred-citation) and this repository."
 type: software
 # DRAFT. Authors, order and affiliations follow the \author block of the manuscript (main.tex).
 # ORCIDs are only those marked VERIFIED in the authors' records; S. Baasri's is unconfirmed and left out.
@@ -21,3 +21,17 @@ url: "https://settylab.github.io/annzarro-reproducibility/"
 license: MIT
 # version, date-released and doi are added when the Zenodo release is made:
 # doi: ZENODO_DOI_TBD
+preferred-citation:
+  type: article
+  title: "AnnZarro: scalable, interactive exploration of cell-by-cell and gene-by-gene relationships in single-cell data"
+  authors:
+    - family-names: Otto
+      given-names: Dominik J.
+    - family-names: Baasri
+      given-names: Siddharth
+    - family-names: Setty
+      given-names: Manu
+  journal: bioRxiv
+  year: 2026
+  doi: "10.64898/2026.10.10.758158"
+  url: "https://doi.org/10.64898/2026.10.10.758158"

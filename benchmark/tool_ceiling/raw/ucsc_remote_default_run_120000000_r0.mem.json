@@ -1,0 +1,242 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "none",
+  "$TMPDIR/wt-ucsc-ceiling/benchmark/tool_ceiling/shots/ucsc_remote_default_run_120000000_r0",
+  "--n",
+  "120000000",
+  "--server-url",
+  "http://hpc-node-51:8791/",
+  "--proxy",
+  "socks5://localhost:1080"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 106.73,
+ "peaks": {
+  "client": {
+   "fp_peak": 15362985424,
+   "fp_lifetime_sum": 17639462800,
+   "rss_peak": 13951451136,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 11354568,
+   "fp_lifetime_sum": 14385968,
+   "rss_peak": 22888448,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 139691720,
+   "fp_lifetime_sum": 144033528,
+   "rss_peak": 187400192,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 15362985424,
+   "rss_peak": 13951451136,
+   "fp_lifetime_sum": 17653848768
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.51,
+   820306272
+  ],
+  [
+   4.96,
+   1056875208
+  ],
+  [
+   7.47,
+   940057384
+  ],
+  [
+   9.91,
+   1112400872
+  ],
+  [
+   12.33,
+   3566119856
+  ],
+  [
+   14.79,
+   3438226472
+  ],
+  [
+   17.3,
+   2655693336
+  ],
+  [
+   19.75,
+   2765089544
+  ],
+  [
+   22.18,
+   2876173256
+  ],
+  [
+   24.57,
+   2964073608
+  ],
+  [
+   27.06,
+   3053595976
+  ],
+  [
+   29.49,
+   3129650648
+  ],
+  [
+   31.93,
+   3185225296
+  ],
+  [
+   34.39,
+   3264950032
+  ],
+  [
+   36.82,
+   3215225360
+  ],
+  [
+   39.24,
+   3116691984
+  ],
+  [
+   41.67,
+   3282367112
+  ],
+  [
+   44.06,
+   3446698824
+  ],
+  [
+   46.43,
+   3610407992
+  ],
+  [
+   48.85,
+   3774969152
+  ],
+  [
+   51.26,
+   4367513424
+  ],
+  [
+   53.68,
+   8977500088
+  ],
+  [
+   56.08,
+   10863496392
+  ],
+  [
+   58.48,
+   10863496392
+  ],
+  [
+   60.85,
+   10863496392
+  ],
+  [
+   63.24,
+   10851273928
+  ],
+  [
+   65.67,
+   10851208392
+  ],
+  [
+   68.06,
+   10851224776
+  ],
+  [
+   70.47,
+   11191519472
+  ],
+  [
+   72.87,
+   10622978264
+  ],
+  [
+   75.29,
+   10613835992
+  ],
+  [
+   77.75,
+   10597042392
+  ],
+  [
+   80.22,
+   10601629936
+  ],
+  [
+   82.63,
+   7915176304
+  ],
+  [
+   85.04,
+   7915192688
+  ],
+  [
+   87.52,
+   8235319736
+  ],
+  [
+   89.93,
+   8023949752
+  ],
+  [
+   92.3,
+   8010383632
+  ],
+  [
+   94.67,
+   8417853976
+  ],
+  [
+   97.06,
+   10123347464
+  ],
+  [
+   99.47,
+   10123429384
+  ],
+  [
+   101.83,
+   9691350584
+  ],
+  [
+   104.24,
+   12587158920
+  ],
+  [
+   106.61,
+   0
+  ]
+ ],
+ "ps_before": "2026-10-12T13:53:10-0700\nmemorystatus_level=85 swap=total = 5120.00M  used = 3864.19M  free = 1255.81M  (encrypted)\n45577 201184  95.2 /System/Library/Frameworks/CoreGraphics.framework/Versions/A/XPCServices/CGPDFService.xpc/Contents/MacOS/CGPDFService\n47413 667648  77.4 /Applications/cmux.app/Contents/MacOS/cmux\n  863  21760  18.4 /System/Library/PrivateFrameworks/ModelCatalogRuntime.framework/Versions/A/modelcatalogd\n 7890 206832  13.1 /System/Library/ExtensionKit/Extensions/TGOnDeviceInferenceProviderService.appex/Contents/MacOS/TGOnDeviceInferenceProviderService\n  626 436368  10.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n45837  20992   8.1 $TMPDIR/wt-ucsc-ceiling/benchmark/tool_ceiling/.venv/bin/python\n 6219  59552   7.1 $HOME/Projects/investments/.venv/bin/python3\n53336  61520   6.7 /System/Library/PrivateFrameworks/GenerativeExperiencesRuntime.framework/Versions/A/generativeexperiencesd\n28847 1256128   6.3 $HOME/.local/bin/claude\n  633  35936   4.8 /usr/libexec/runningboardd\n",
+ "others_at_start": [
+  "3022 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "39222 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1791521404390-8dli38.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "41860 /bin/sh $TMPDIR/teamlead-bench/run-test $TMPDIR",
+  "43352 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1791521404390-8dli38.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "43354 /bin/sh $TMPDIR/teamlead-bench/run-test $TMPDIR",
+  "44759 /bin/sh $TMPDIR/teamlead-bench/run-test $TMPDIR",
+  "45826 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for",
+  "45831 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "59509 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1791521404390-8dli38.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "59510 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1791521404390-8dli38.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "59511 /bin/sh $TMPDIR/teamlead-bench/run-test $TMPDIR",
+  "73736 /bin/sh $TMPDIR/teamlead-bench/run-test $TMPDIR",
+  "73737 /bin/sh $TMPDIR/teamlead-bench/run-test /opt/homebrew/bin/npm test"
+ ]
+}

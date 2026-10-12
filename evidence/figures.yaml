@@ -117,7 +117,7 @@ figures:
       external: true
       what: "demo store: obsp/diffusion_walk_t5, obsp/DM_Kernel, obsm/X_umap, obsm/DM_EigenVectors, uns/DM_EigenValues, obs/highres_celltype"
       panels: [a, b, c]
-      store: {md5: a372502012ded8cd238e5eb83e408b89, files: 4243, doi: "10.5281/zenodo.23277103", file: bm_aging_annzarro.zarr.zip, zip_sha256: ba42a5fd921871eac31de19ef6528d1e0d7a33a6cee5c2d2728d2801f40d1131, fetch: data_prep/fetch_demo_store.py}
+      store: {md5: a372502012ded8cd238e5eb83e408b89, files: 4243, doi: "10.5281/zenodo.23277102", file: bm_aging_annzarro.zarr.zip, zip_sha256: ba42a5fd921871eac31de19ef6528d1e0d7a33a6cee5c2d2728d2801f40d1131, fetch: data_prep/fetch_demo_store.py}
     - path: data/neuro_demo/celegans_connectome_cengen.zarr
       external: true
       what: "panel d: the C. elegans connectome and CeNGEN expression store (built by data_prep/neuro_demo.py)"
@@ -135,7 +135,7 @@ figures:
     - {script: data_prep/download_data.sh, makes: "data/murine_bone_marrow_aging.h5ad (Zenodo 10.5281/zenodo.15587768, md5 checked)"}
     - {script: data_prep/pick_examples.py, makes: data_prep/demo_panelsets/examples.json}
   gaps:
-    - "data/bm_aging_annzarro.zarr is gitignored; data_prep/fetch_demo_store.py fetches it from Zenodo 10.5281/zenodo.23277103 (published with the preprint) and checks its md5"
+    - "data/bm_aging_annzarro.zarr is gitignored; data_prep/fetch_demo_store.py fetches it from Zenodo 10.5281/zenodo.23277102 (concept DOI; files pinned to version 1.0) and checks its md5"
   todo: []
 
 - id: genegene
@@ -151,7 +151,7 @@ figures:
       external: true
       what: "demo store: varp/spearman_fold_change, varp/spearman_smoothed, var Kompot DE columns (mean_lfc, mahalanobis, is_de)"
       panels: [a, b, c, d]
-      store: {md5: a372502012ded8cd238e5eb83e408b89, files: 4243, doi: "10.5281/zenodo.23277103", file: bm_aging_annzarro.zarr.zip, zip_sha256: ba42a5fd921871eac31de19ef6528d1e0d7a33a6cee5c2d2728d2801f40d1131, fetch: data_prep/fetch_demo_store.py}
+      store: {md5: a372502012ded8cd238e5eb83e408b89, files: 4243, doi: "10.5281/zenodo.23277102", file: bm_aging_annzarro.zarr.zip, zip_sha256: ba42a5fd921871eac31de19ef6528d1e0d7a33a6cee5c2d2728d2801f40d1131, fetch: data_prep/fetch_demo_store.py}
     - {path: data_prep/demo_panelsets/examples.json, what: store keys (figures/_load.py), panels: [a, b, c, d]}
   reproduced: {commit: a9f2d0325047d6b3cf71728df9b5df0ffb7d221a, date: "2026-10-10", host: "the authors' laptop (macOS)", result: "identical: the re-rendered PNG has the same bytes as the committed one, and the numbers JSON the same values", store_md5: a372502012ded8cd238e5eb83e408b89}
   panels:
@@ -163,7 +163,7 @@ figures:
     - {script: data_prep/prepare_annzarro_store.py, makes: data/bm_aging.zarr}
     - {script: data_prep/run_kompot.py, makes: "Kompot DE/DA results in the processed h5ad"}
   gaps:
-    - "data/bm_aging_annzarro.zarr is gitignored; data_prep/fetch_demo_store.py fetches it from Zenodo 10.5281/zenodo.23277103 (published with the preprint) and checks its md5"
+    - "data/bm_aging_annzarro.zarr is gitignored; data_prep/fetch_demo_store.py fetches it from Zenodo 10.5281/zenodo.23277102 (concept DOI; files pinned to version 1.0) and checks its md5"
   todo: []
 
 - id: cellgene
@@ -179,7 +179,7 @@ figures:
       external: true
       what: "demo store: layers/kompot_de_Young_to_Old_fold_change, layers/kompot_de_{Young,Old}_smoothed, obsm/X_umap, obs Kompot std columns, var is_de"
       panels: [a, b, c, d]
-      store: {md5: a372502012ded8cd238e5eb83e408b89, files: 4243, doi: "10.5281/zenodo.23277103", file: bm_aging_annzarro.zarr.zip, zip_sha256: ba42a5fd921871eac31de19ef6528d1e0d7a33a6cee5c2d2728d2801f40d1131, fetch: data_prep/fetch_demo_store.py}
+      store: {md5: a372502012ded8cd238e5eb83e408b89, files: 4243, doi: "10.5281/zenodo.23277102", file: bm_aging_annzarro.zarr.zip, zip_sha256: ba42a5fd921871eac31de19ef6528d1e0d7a33a6cee5c2d2728d2801f40d1131, fetch: data_prep/fetch_demo_store.py}
     - {path: data_prep/demo_panelsets/examples.json, what: "focus gene S100a9, the locked HSC and focused monocyte", panels: [a, b, c, d]}
   reproduced: {commit: a9f2d0325047d6b3cf71728df9b5df0ffb7d221a, date: "2026-10-10", host: "the authors' laptop (macOS)", result: "identical: the re-rendered PNG has the same bytes as the committed one, and the numbers JSON the same values", store_md5: a372502012ded8cd238e5eb83e408b89}
   panels:
@@ -191,7 +191,7 @@ figures:
     - {script: data_prep/prepare_annzarro_store.py, makes: data/bm_aging.zarr}
     - {script: data_prep/pick_examples.py, makes: data_prep/demo_panelsets/examples.json}
   gaps:
-    - "data/bm_aging_annzarro.zarr is gitignored; data_prep/fetch_demo_store.py fetches it from Zenodo 10.5281/zenodo.23277103 (published with the preprint) and checks its md5"
+    - "data/bm_aging_annzarro.zarr is gitignored; data_prep/fetch_demo_store.py fetches it from Zenodo 10.5281/zenodo.23277102 (concept DOI; files pinned to version 1.0) and checks its md5"
   todo: []
 
 - id: deploy

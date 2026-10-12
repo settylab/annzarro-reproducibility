@@ -102,9 +102,9 @@ The input rule leaves preparation out of every client number, and for UCSC that 
 largest cost of any tool here. UCSC reads only its own site format, so every dataset goes through
 `cbImportScanpy` and `cbBuild`, which hold the whole matrix in memory. Measured on the HPC (HPC worker
 request request-id; memmon process-tree RSS):
-`cbBuild` peaked at 102 GiB at 20M cells, 251 GiB at 50M, 482 GiB at 95.6M and 757 GiB at 150M, the
-last on a 1.5 TB node because it no longer fits a 684 GiB node; both steps took 1.9, 5.5, 9.1 and
-11.9 h. The 150M site is 236 GB, of which 195 GB are download copies that the client never requests.
+`cbBuild` peaked at 102 GiB at 20M cells, 251 GiB at 50M, 482 GiB at 95.6M, 606 GiB at 120M and 757 GiB at 150M,
+the last two on a 1.5 TB node because they leave little or no room on a 684 GiB node; both steps took 1.9, 5.5,
+9.1, 9.5 and 11.9 h. The 150M site is 236 GB, of which 195 GB are download copies that the client never requests.
 `ucsc_prep_cost.csv` (one row per step per attempt, measured values only; MISSING where nothing was
 recorded) and `ucsc_prep_disk.csv` hold every value, with the laptop runs at 1M to 10M cells. The
 client ceiling of UCSC assumes this preparation was possible. AnnZarro opens a zarr store directly

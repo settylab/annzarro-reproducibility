@@ -22,7 +22,7 @@ import numpy as np
 import zarr
 
 ROOT = Path(__file__).resolve().parent.parent
-# The demo store: the AnnZarro showcase store from Zenodo 10.5281/zenodo.23277103 (data_prep/fetch_demo_store.py
+# The demo store: the AnnZarro showcase store from Zenodo 10.5281/zenodo.23277102 (data_prep/fetch_demo_store.py
 # puts it in data/). ANNZARRO_DEMO_STORE names another copy of it, for a host that keeps it elsewhere.
 STORE = Path(os.environ.get("ANNZARRO_DEMO_STORE") or ROOT / "data" / "bm_aging_annzarro.zarr")
 EXAMPLES = json.loads((ROOT / "data_prep" / "demo_panelsets" / "examples.json").read_text())

@@ -14,6 +14,10 @@ AnnZarro paper: each mark of the feature matrix ([[fig:overview]]c) with its sou
 with its method, environment and raw rows, and each figure with the script and data that
 made it.
 
+**Cite.** Otto, D. J., Baasri, S. and Setty, M. *AnnZarro: scalable, interactive exploration of cell-by-cell and
+gene-by-gene relationships in single-cell data.* bioRxiv (2026),
+[doi:10.64898/2026.10.10.758158](https://doi.org/10.64898/2026.10.10.758158).
+
 It is built from files in this repository and nothing else. Every page names the files and
 commits it was built from, and flags any input with uncommitted changes.
 

@@ -2,6 +2,7 @@
 
 This repository holds the evidence and the benchmark code behind the AnnZarro paper
 (Otto, Baasri and Setty; AnnZarro is at [settylab/annzarro](https://github.com/settylab/annzarro)).
+The paper is on bioRxiv: <https://doi.org/10.64898/2026.10.10.758158>.
 It has three parts.
 
 1. **The evidence site** (`evidence/`). A static site that links every mark of the paper's feature
@@ -16,10 +17,13 @@ It has three parts.
 `notes/comparison/` holds the audit notes, demo scripts and annotated screenshots for the compared tools.
 
 **Benchmark results and more:** <https://settylab.github.io/annzarro-reproducibility/>
-(the evidence site, built from this repository; online with the preprint). It holds the feature matrix with the
+(the evidence site, built from this repository). It holds the feature matrix with the
 evidence for every mark, the benchmarks and measurements with their result tables, the claims ledger that ties every
-number in the paper to its source file, and the provenance of each figure. Until it is online, build it yourself
-(next section).
+number in the paper to its source file, and the provenance of each figure. To build it yourself, see the next section.
+
+**How to cite.** Otto, D. J., Baasri, S. and Setty, M. AnnZarro: scalable, interactive exploration of cell-by-cell and
+gene-by-gene relationships in single-cell data. bioRxiv (2026), doi:10.64898/2026.10.10.758158
+(<https://doi.org/10.64898/2026.10.10.758158>). `CITATION.cff` has the machine-readable form.
 
 ## Layout
 
@@ -117,9 +121,9 @@ Large stores are **not** in this repository. The result tables record how each w
   `benchmark/scale/build_tahoe.py` builds the nested stores from its parquet shards.
 - **A UMAP of every Tahoe-100M cell**: the coordinates made for the paper, deposited on Zenodo; the record's
   README is `benchmark/scale/results/zenodo_umap_README.md`, the script `benchmark/scale/zenodo_umap.py`.
-  DOI: ZENODO_DOI_TBD.
-- **AnnZarro showcase store**: the store the paper's showcase figures were drawn from, deposited on Zenodo.
-  DOI: ZENODO_DOI_TBD.
+  Zenodo record [10.5281/zenodo.23277102](https://doi.org/10.5281/zenodo.23277102) (concept DOI; it resolves to the latest version).
+- **AnnZarro showcase store**: the store the paper's showcase figures were drawn from, deposited on Zenodo in the same record
+  ([10.5281/zenodo.23277102](https://doi.org/10.5281/zenodo.23277102), concept DOI).
 - **Release assets**: files too large for git (the 40 MB heap profile `base_gene_5M_total.heapprofile`, the
   other Tahoe-100M plot views of `figures/scale/`, and the screenshots of the plot-ceiling runs) are
   attached to the release of this repository.

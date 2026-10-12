@@ -1,0 +1,249 @@
+{
+ "cmd": [
+  "benchmark/tool_ceiling/.venv/bin/python",
+  "web_task.py",
+  "ucsc",
+  "default",
+  "none",
+  "$TMPDIR/wt-ucsc-ceiling/benchmark/tool_ceiling/shots/ucsc_remote_default_run_120000000_r1",
+  "--n",
+  "120000000",
+  "--server-url",
+  "http://hpc-node-51:8791/",
+  "--proxy",
+  "socks5://localhost:1080"
+ ],
+ "status": "ok",
+ "rc": 0,
+ "wall_s": 111.67,
+ "peaks": {
+  "client": {
+   "fp_peak": 13199739048,
+   "fp_lifetime_sum": 17158411936,
+   "rss_peak": 14052229120,
+   "n_proc_max": 7
+  },
+  "server": {
+   "fp_peak": 2392424,
+   "fp_lifetime_sum": 2392424,
+   "rss_peak": 11223040,
+   "n_proc_max": 1
+  },
+  "harness": {
+   "fp_peak": 139642616,
+   "fp_lifetime_sum": 144475944,
+   "rss_peak": 185991168,
+   "n_proc_max": 1
+  },
+  "total": {
+   "fp_peak": 13199739048,
+   "rss_peak": 14052229120,
+   "fp_lifetime_sum": 17160804360
+  }
+ },
+ "trace": [
+  [
+   0.06,
+   0
+  ],
+  [
+   2.51,
+   1038869024
+  ],
+  [
+   4.93,
+   1085514344
+  ],
+  [
+   7.36,
+   959619808
+  ],
+  [
+   9.75,
+   886711224
+  ],
+  [
+   12.13,
+   3405015768
+  ],
+  [
+   14.53,
+   3428264736
+  ],
+  [
+   16.96,
+   2614733024
+  ],
+  [
+   19.37,
+   2686249352
+  ],
+  [
+   21.75,
+   2755078656
+  ],
+  [
+   24.15,
+   2830871208
+  ],
+  [
+   26.57,
+   2903436088
+  ],
+  [
+   29.0,
+   2984750048
+  ],
+  [
+   31.41,
+   3055643784
+  ],
+  [
+   33.8,
+   3122801944
+  ],
+  [
+   36.21,
+   3186453928
+  ],
+  [
+   38.59,
+   3257019960
+  ],
+  [
+   40.99,
+   3331403464
+  ],
+  [
+   43.37,
+   3098407224
+  ],
+  [
+   45.75,
+   3262034376
+  ],
+  [
+   48.16,
+   3425809008
+  ],
+  [
+   50.54,
+   3588502368
+  ],
+  [
+   52.99,
+   3751785552
+  ],
+  [
+   55.4,
+   3915265344
+  ],
+  [
+   57.8,
+   9191212912
+  ],
+  [
+   60.2,
+   9964407432
+  ],
+  [
+   62.61,
+   10855124024
+  ],
+  [
+   65.03,
+   10851912760
+  ],
+  [
+   67.42,
+   10851912760
+  ],
+  [
+   69.8,
+   10851912760
+  ],
+  [
+   72.15,
+   10851912760
+  ],
+  [
+   74.56,
+   9143371872
+  ],
+  [
+   77.0,
+   11067427104
+  ],
+  [
+   79.44,
+   10614311176
+  ],
+  [
+   81.87,
+   10597370120
+  ],
+  [
+   84.29,
+   10598549768
+  ],
+  [
+   86.71,
+   10603268360
+  ],
+  [
+   89.14,
+   7915897224
+  ],
+  [
+   91.57,
+   8400912776
+  ],
+  [
+   93.99,
+   7999865248
+  ],
+  [
+   96.41,
+   7984480480
+  ],
+  [
+   98.8,
+   8258486736
+  ],
+  [
+   101.17,
+   8681832912
+  ],
+  [
+   103.54,
+   10123576768
+  ],
+  [
+   105.96,
+   9645016536
+  ],
+  [
+   108.33,
+   10327115416
+  ],
+  [
+   110.78,
+   13028673704
+  ]
+ ],
+ "ps_before": "2026-10-12T13:59:20-0700\nmemorystatus_level=87 swap=total = 5120.00M  used = 3864.19M  free = 1255.81M  (encrypted)\n57684  27936  75.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared\n  582  82304  20.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds\n94225 771504   7.3 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n  855 1087200   7.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores\n  626 439120   7.2 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer\n53647 714672   6.5 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.39/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n 6219  59552   6.0 $HOME/Projects/investments/.venv/bin/python3\n34748 195328   5.8 /System/Library/Frameworks/CoreSpotlight.framework/spotlightknowledged\n67838 701664   5.6 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.39/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer)\n94242 607824   2.2 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/155.0.8059.39/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper\n",
+ "others_at_start": [
+  "39222 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1791521404390-8dli38.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "41860 /bin/sh $TMPDIR/teamlead-bench/run-test $TMPDIR",
+  "43352 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1791521404390-8dli38.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "43354 /bin/sh $TMPDIR/teamlead-bench/run-test $TMPDIR",
+  "44759 /bin/sh $TMPDIR/teamlead-bench/run-test $TMPDIR",
+  "49839 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"",
+  "57807 /bin/sh -c \nM=\"$1\"; shift\nREG=$HOME/.annzarro-tests.d\necho \"$$ $(date +%s) $*\" > \"$M\"; trap \"rm -f \\\"$M\\\"\" EXIT; trap \"exit 143\" INT TERM HUP\nreg() { for",
+  "59509 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1791521404390-8dli38.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "59510 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-1791521404390-8dli38.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>",
+  "59511 /bin/sh $TMPDIR/teamlead-bench/run-test $TMPDIR",
+  "73736 /bin/sh $TMPDIR/teamlead-bench/run-test $TMPDIR",
+  "73737 /bin/sh $TMPDIR/teamlead-bench/run-test /opt/homebrew/bin/npm test"
+ ]
+}

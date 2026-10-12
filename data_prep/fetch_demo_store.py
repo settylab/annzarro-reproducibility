@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 """Fetch the AnnZarro showcase store (murine bone-marrow ageing) from Zenodo and verify it.
 
-The store is `bm_aging_annzarro.zarr` (Zenodo record 10.5281/zenodo.23277103, published with the
-preprint). It holds everything `data/bm_aging.zarr` holds, unchanged, plus the fields the AnnZarro
+The store is `bm_aging_annzarro.zarr` (Zenodo record 10.5281/zenodo.23277102, all versions; the files are pinned to
+version 1.0, record 23277103). It holds everything `data/bm_aging.zarr` holds, unchanged, plus the fields the AnnZarro
 documentation and the paper's figure pages use; the paper's figures 4 to 6 read only the unchanged
 arrays. Steps:
 
@@ -18,8 +18,8 @@ Usage (from the repository root):
   python data_prep/fetch_demo_store.py --check DIR     # only verify a store directory (no download)
   python data_prep/fetch_demo_store.py --zip FILE      # use an already downloaded zip
 
-Exit status 0 when every check passes. A record that is still a draft has no downloadable files:
-the script then says so and stops (it never reports a download that did not happen).
+Exit status 0 when every check passes. If the files cannot be downloaded, the script says so and
+stops (it never reports a download that did not happen).
 """
 from __future__ import annotations
 
@@ -31,8 +31,8 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
-DOI = "10.5281/zenodo.23277103"
-RECORD = "https://zenodo.org/records/23277103/files"
+DOI = "10.5281/zenodo.23277102"   # concept DOI: cite this; it resolves to the latest version
+RECORD = "https://zenodo.org/records/23277103/files"   # files stay pinned to version 1.0
 ZIP_NAME = "bm_aging_annzarro.zarr.zip"
 STORE_NAME = "bm_aging_annzarro.zarr"
 ZIP_SHA256 = "ba42a5fd921871eac31de19ef6528d1e0d7a33a6cee5c2d2728d2801f40d1131"
@@ -79,8 +79,7 @@ def download(url, dest: Path):
     except urllib.error.HTTPError as e:
         if e.code == 416:                      # the partial file is already the whole file
             return
-        sys.exit(f"cannot download {url}: HTTP {e.code}. The Zenodo record {DOI} is a draft until the preprint "
-                 "is published; its files are not public before then.")
+        sys.exit(f"cannot download {url}: HTTP {e.code}. See the Zenodo record {DOI}.")
     except urllib.error.URLError as e:
         sys.exit(f"cannot download {url}: {e.reason}")
 

@@ -244,8 +244,8 @@ of which the script reads only some rows is dated by the last commit that change
                 sp = i.get("store")
                 if sp:
                     what += (f'<br><span class="fg-small"><b>Source:</b> <code>bm_aging_annzarro.zarr</code> from Zenodo '
-                             f'<a href="https://doi.org/{sp["doi"]}">{sp["doi"]}</a> (a draft until the preprint is published; '
-                             f'its files are not public before then). Store md5 <code>{sp["md5"]}</code>, {sp["files"]:,} files; '
+                             f'<a href="https://doi.org/{sp["doi"]}">{sp["doi"]}</a> (concept DOI of the record; the files are pinned to '
+                             f'version 1.0). Store md5 <code>{sp["md5"]}</code>, {sp["files"]:,} files; '
                              f'<code>{html.escape(sp["fetch"])}</code> downloads it, checks the zip sha256 and this md5.</span>')
                     h = (d.get("store") or {}).get("here")
                     if h and h["state"] == "verified":

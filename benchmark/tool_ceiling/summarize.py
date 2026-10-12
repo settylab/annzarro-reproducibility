@@ -359,6 +359,8 @@ REMOTE_SERVER = {("scope", "default", 1_000_000): (0.974, "SCope's server in Doc
                  ("ucsc", "default", 20_000_000): (0.022, "HPC worker: static server process-tree RSS peak 0.022 GiB (HWM sum 0.022); 86 requests 200/206; job 10072482 rc 0"),
                  ("ucsc", "default", 50_000_000): (0.022, "HPC worker: static server process-tree RSS peak 0.018 GiB at load, 0.022 GiB during the session (HWM sum identical, one process); 85 requests 200/206; job 10094741 on hpc-node-24, Slurm COMPLETED 0:0"),
                  ("ucsc", "default", 95_624_334): (0.022, "HPC worker: static server process-tree RSS peak 0.018 GiB at load, 0.022 GiB during the session (HWM sum identical, one process); 85 requests 200/206; job 10100752 on hpc-node-22 (build job 10098747), Slurm COMPLETED 0:0"),
+                 ("ucsc", "default", 120_000_000): (0.024, "HPC worker: static server process-tree RSS peak 0.024 GiB (25,395,200 B, one process) during our session window; it equals the job-lifetime peak (VmHWM sum identical, memmon 1 s); job 10427677 on hpc-node-51"),
+                 ("ucsc", "default", 150_000_000): (0.024, "HPC worker: static server process-tree RSS, job-lifetime peak 0.024 GiB (25,927,680 B, one process), a bound for any window including ours (VmHWM sum identical, memmon 1 s); job 10414102 on hpc-node-54"),
                  ("cirrocumulus", "prepared", 20_000_000): (33.85, "HPC worker: server process-tree RSS peak 33.851 GiB at t=774 s of our session (one process; HWM sum 33.851); job 10071716 COMPLETED 0:0; a ShinyCell 10M build shared the node, not in this process tree"),
                  ("cellxgene", "default", 20_000_000): (40_479_461_376 / 2 ** 30, "HPC worker: server process-tree RSS peak during our session, 37.70 GiB (per-process HWM sum 37.87 GiB); job 10068398")}
 # sizes at which a tool cannot read (or build) its input in its own format; no browser run exists there
@@ -426,11 +428,12 @@ FINAL = {("annzarro", "v041"): "final 2026-10-07: AnnZarro v0.4.1, the tag itsel
                                   "over by the median of 3 runs (15.985 / 16.097 / 16.258 GiB: one of three within): client "
                                   "stop at 31.6M (a size fits only if the median of its repeats does)",
          ("ucsc", "default"): "final 2026-10-12: Cell Browser 1.2.20 served from the HPC (static site; server process tree "
-                             "0.02 GiB at 20M, 50M and 95.6M, not reported at 150M); every cell drawn at the full Tahoe-100M, "
-                             "95.6M (client 12.02 GiB, one run), within 16 GiB; every cell drawn at 150M (synthetic tiles of "
-                             "Tahoe-100M, build_synth.py; 2 of 2 runs, client 17.20 GiB), over 16 GiB: client stop at 95.6M, "
-                             "ceiling between 95.6M and 150M (bracket pending a 120M rung); client footprint is macOS "
-                             "phys_footprint (README caveat); preparation needs up to 757 GiB RAM (ucsc_prep_cost.csv)",
+                             "0.02 GiB at every size: 0.024 GiB at 120M (our window) and at most 0.024 GiB at 150M (job lifetime)); every cell drawn at the "
+                             "full Tahoe-100M, 95.6M (client 12.02 GiB, one run) and at synthetic tiles of Tahoe-100M "
+                             "(build_synth.py): 120M (2 runs, client 14.31 and 12.29 GiB, within 16 GiB) and 150M (2 runs, "
+                             "17.20 GiB twice, over 16 GiB): client stop at 120M, ceiling between 120M and 150M (ratio 1.25); "
+                             "the two 120M runs differ by 2 GiB; client footprint is macOS phys_footprint (README caveat); "
+                             "preparation needs up to 757 GiB RAM (ucsc_prep_cost.csv)",
          ("cellxgene", "default"): "final 2026-10-06: ladder 1M-14.1M within both budgets (14.1M: client 5.47, server 29.65 GiB); "
                                    "16.8M in 3 of 3 runs over the 32 GiB server budget (35.48-36.12 GiB); 20M on the HPC "
                                    "(server 37.70 GiB RSS): server stop at 14.1M",

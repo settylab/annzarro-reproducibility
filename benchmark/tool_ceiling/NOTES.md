@@ -20,9 +20,9 @@ Cell Browser 1.2.20, served by `serve_static.py` on :8791 (job 10414102). The jo
 mem minus 15 G (1085 GiB), 27 h step timeout. The laptop client sessions go through the SOCKS proxy
 (`web_task.py --server-url --proxy`), two sessions at 150M (r0 and r1, run through run-timed, the clean
 pair; the 95.6M rung had one). Both drew every cell by category and by gene with the client footprint
-at 17.20 GiB, over the 16 GiB budget, so UCSC's 16 GiB ceiling lies between 95.6M (12.02 GiB) and 150M. The
-server's own peak at 150M was not reported by the HPC worker (static server, 0.02 GiB at 20M, 50M and
-95.6M). Preparation cost per step: `ucsc_prep_cost.csv`.
+at 17.20 GiB, over the 16 GiB budget. A 120M site (HPC job 10427677, same recipe, two sessions) drew every
+cell too, at 14.31 and 12.29 GiB (a 2 GiB spread between the repeats), within 16 GiB, so UCSC's 16 GiB ceiling
+lies between 120M and 150M (ratio 1.25). The static server's process-tree peak was 0.024 GiB at 120M (job 10427677, our window, equal to the job-lifetime peak) and at most 0.024 GiB at 150M (job 10414102, the job-lifetime peak, which bounds any window); memmon 1 s plus the VmHWM sum, one process. The server log shows r0's 120M page load at 13:53:12 on the HPC node's clock, before our recorded start of 13:54:57: a clock offset of up to about 2 min, or a late start record; it does not affect either figure. Preparation cost per step: `ucsc_prep_cost.csv`.
 
 ## Build under test (AnnZarro v0.4.1)
 

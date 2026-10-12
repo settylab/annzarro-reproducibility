@@ -339,3 +339,6 @@ ucsc_remote_default_run_150000000_r0,False,True,"others at start: 3 (48862 /usr/
 M=)"
 ucsc_remote_default_run_150000000_r1,False,True,"others at start: 3 (56623 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
 M=)"
+ucsc_remote_default_run_120000000_r0,False,True,"others at start: 13 (3022 /usr/bin/lockf -k -t 1800 $HOME/.annzarro-bench.lock /bin/sh -c 
+M="")"
+ucsc_remote_default_run_120000000_r1,False,True,others at start: 12 (39222 /bin/zsh -c source $HOME/.claude/shell-snapshots/snapshot-zsh-17915)
