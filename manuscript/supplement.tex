@@ -89,7 +89,7 @@ Moved from Anticipated results, which now leads with what a user sees. The lapto
 Memory stays small on the server as well as in the browser: on the laptop, the server's peak resident memory while serving a gene column or a cell row stayed at 82--102 MiB for layers of 0.2 to 20 GB uncompressed, against 79 MiB idle (\textbf{Fig.~\ref{fig:performance}c}).
 
 % HPC numbers: the HPC worker's v0.4.1 runs on $SCRATCH, J5 (the Tahoe ladder) and T (benchmark/scale/results/hpc/full/, hpc_v041_case_map.tsv).
-% HPC numbers also from the extra $SCRATCH run T2 (job 10195427): kernels and distances at 50,000/100,000 cells, the memory range, the 1.17M Tahoe prefix. Cold = a fresh server and the node's page cache evicted (operator 2026-10-06: the file server's cache is not controlled).
+% HPC numbers also from the extra $SCRATCH run T2 (HPC job): kernels and distances at 50,000/100,000 cells, the memory range, the 1.17M Tahoe prefix. Cold = a fresh server and the node's page cache evicted (operator 2026-10-06: the file server's cache is not controlled).
 %claim{ar.hpc.tahoe_j3}
 The Tahoe-100M ladder of \textbf{Fig.~\ref{fig:scale}} was repeated on an HPC node (36 CPUs, 755 GiB RAM; stores on $SCRATCH, an NFSv4.1 scratch filer; a fresh server and the node's page cache evicted before each cold request): with AnnZarro v0.4.1 the server returned the gene column of X for every cell in 0.16 s cold at 1 million cells and 2.8 s at 95.6 million, and in 2.2 s at 95.6 million for a gene detected in fewer cells (medians of 3 cold requests).
 

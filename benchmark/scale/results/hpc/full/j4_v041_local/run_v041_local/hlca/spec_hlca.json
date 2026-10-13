@@ -9,7 +9,7 @@
   {
    "case_id": "hlca:X_gene_col",
    "kind": "X_gene_col",
-   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "dataset": "$LOCAL_SCRATCH/hlca/hlca_full.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/X",
    "params": {
@@ -27,7 +27,7 @@
   {
    "case_id": "hlca:sparse_layer_cell_row:normalized_csr",
    "kind": "sparse_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "dataset": "$LOCAL_SCRATCH/hlca/hlca_full.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/normalized_csr",
    "params": {
@@ -45,7 +45,7 @@
   {
    "case_id": "hlca:obsm_col:X_umap",
    "kind": "obsm_col",
-   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "dataset": "$LOCAL_SCRATCH/hlca/hlca_full.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsm/X_umap",
    "params": {
@@ -63,7 +63,7 @@
   {
    "case_id": "hlca:obsm_col:X_scanvi_emb",
    "kind": "obsm_col",
-   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "dataset": "$LOCAL_SCRATCH/hlca/hlca_full.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsm/X_scanvi_emb",
    "params": {
@@ -81,7 +81,7 @@
   {
    "case_id": "hlca:obs_col:ann_level_1",
    "kind": "obs_col",
-   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "dataset": "$LOCAL_SCRATCH/hlca/hlca_full.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obs",
    "params": {
@@ -100,7 +100,7 @@
   {
    "case_id": "hlca:obs_col:cell_type",
    "kind": "obs_col",
-   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "dataset": "$LOCAL_SCRATCH/hlca/hlca_full.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obs",
    "params": {
@@ -119,7 +119,7 @@
   {
    "case_id": "hlca:obsp_csr_row:connectivities",
    "kind": "obsp_csr_row",
-   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "dataset": "$LOCAL_SCRATCH/hlca/hlca_full.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/connectivities",
    "params": {
@@ -137,7 +137,7 @@
   {
    "case_id": "hlca:cell_names",
    "kind": "cell_names",
-   "dataset": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "dataset": "$LOCAL_SCRATCH/hlca/hlca_full.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/cells",
    "params": {},
@@ -152,7 +152,7 @@
   {
    "case_id": "hlca_dense:dense_layer_gene_col:lognorm",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/hlca/hlca_dense_4096x128.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/hlca/hlca_dense_4096x128.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm",
    "params": {
@@ -170,7 +170,7 @@
   {
    "case_id": "hlca_dense:dense_layer_cell_row:lognorm",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/hlca/hlca_dense_4096x128.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/hlca/hlca_dense_4096x128.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm",
    "params": {
@@ -188,7 +188,7 @@
   {
    "case_id": "hlca_dense_allx4:dense_layer_gene_col:lognorm",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/hlca/hlca_dense_allx4.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/hlca/hlca_dense_allx4.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm",
    "params": {
@@ -207,7 +207,7 @@
   {
    "case_id": "hlca_dense_allx4:dense_layer_cell_row:lognorm",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/hlca/hlca_dense_allx4.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/hlca/hlca_dense_allx4.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm",
    "params": {

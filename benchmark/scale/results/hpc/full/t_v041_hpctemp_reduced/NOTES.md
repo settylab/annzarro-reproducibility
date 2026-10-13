@@ -1,6 +1,6 @@
 # T: reduced public set on $SCRATCH (NFS), AnnZarro v0.4.1
 
-- **Job:** Slurm 10163488, exclusive node hpc-node-40 (Intel Xeon Gold 6254 @ 3.10 GHz, 36 CPUs, 755 GiB RAM), 2026-10-07 16:27:26 to 2026-10-08 06:34:18 PDT.
+- **Job:** Slurm run-063, exclusive node compute-node (Intel Xeon Gold 6254 @ 3.10 GHz, 36 CPUs, 755 GiB RAM), 2026-10-07 16:27:26 to 2026-10-08 06:34:18 PDT.
 - **Release pin:** AnnZarro v0.4.1, tag commit 78c9da657ecbff30163fd29055f0e6b10e915c5c (tree 661a454f), the same install as J4 (byte-identical to PyPI `annzarro==0.4.1`). The pin guard passed.
 - **Harness:** annzarro-reproducibility `dominik/hpc-bench-v030` @ 1804118b, `rerun_release.sbatch` with stages tahoe_x, grid, pairwise_public, hlca, ladder_obs.
   - The case list is reduced by T_CASES (full match):

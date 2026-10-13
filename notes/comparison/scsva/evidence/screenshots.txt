@@ -8,11 +8,11 @@ Common to all runs:
   App state: scSVA defaults throughout. Grid Resolution 512 (the drive never moves the slider), Point Size 0.1,
     palette inferno, log10 colour scale, gene statistic Mean.
   The image the server sends: one PNG, 755x700 px (timings.json "plot1_img_natural").
-  Per-run evidence: screenshots/provenance/<label>_<job>/{job.log, drive.log, timings.json, run.json}.
+  Per-run evidence: screenshots/provenance/<label>_<job>/{drive.log, timings.json, run.json}.
 
 1. screenshots/bm_aging_8090cells_density_grid512_bin_centres.png
-   = runs/bm_aging_10171777/04_2d_density_grid512.png
-   Slurm job 10171777 (hpc-node-01, 2026-10-07 16:03 PDT), dataset inputs/bm_aging (8,090 cells, X_umap, from
+   = runs/bm_aging_run-073/04_2d_density_grid512.png
+   Slurm HPC job (compute-node, 2026-10-07 16:03 PDT), dataset inputs/bm_aging (8,090 cells, X_umap, from
    bm_aging.zarr), drive.py step "2D density" (Visualize > 2D, first draw, full extent + 0.5% pad), grid 512.
    What it shows: the 2-D density view. Each mark is a non-empty bin centre, coloured by log10 count.
    At this grid the snap is SUB-PIXEL and not visible by eye. It is established by code (S#L720-723, scsva_render.txt 1e)
@@ -21,7 +21,7 @@ Common to all runs:
    not scSVA output.
 
 2. screenshots/bm_aging_8090cells_gene_Malat1_zoomed_rebinned_grid512.png
-   = runs/bm_aging_10171777/08_zoomed_rebinned.png
+   = runs/bm_aging_run-073/08_zoomed_rebinned.png
    Same job. State: the gene view (choose_gene=Malat1, plot_expression=TRUE, statistic Mean). drive.py step "brush
    then double-click": a brush dragged from 40% to 55% of the plot box, then a double-click inside it. Zoom window
    (the recorded plot1_brush, timings.json): x 3.925829..9.239898, y 2.467689..6.862822. scSVA re-bins THIS window at
@@ -29,12 +29,12 @@ Common to all runs:
    In this window every bin holds one cell: 145 cells -> 145 marks (snap_bm_aging_grid512_zoomwindow.json), so each
    mark here depicts one cell, snapped to its bin centre and anonymous (no identity, no hover).
    Supplementary: screenshots/tahoe_95624334cells_gene_MALAT1_zoomed_rebinned_grid512.png
-   = runs/tahoe_95624334_10171780/08_zoomed_rebinned.png, job 10171780, window x 6.411175..12.797879,
+   = runs/tahoe_95624334_run-075/08_zoomed_rebinned.png, HPC job, window x 6.411175..12.797879,
    y -0.987123..4.936472.
 
 3. screenshots/tahoe_95624334cells_groups_category_grid512.png
-   = runs/tahoe_95624334_10171780/09_2d_groups.png
-   Slurm job 10171780 (hpc-node-04, 2026-10-07 16:03 PDT), dataset inputs/tahoe_95624334 (95,624,334 cells, X_umap,
+   = runs/tahoe_95624334_run-075/09_2d_groups.png
+   Slurm HPC job (compute-node, 2026-10-07 16:03 PDT), dataset inputs/tahoe_95624334 (95,624,334 cells, X_umap,
    from competitors/h5ad/tahoe_plot_95624334.h5ad; groups = cell_line_id, 50 groups), drive.py step "groups"
    (after #reset_view: plot_expression=FALSE, show_clusters=TRUE). Full extent, grid 512. The group binning took
    51.3 s (timings.json groups_draw_s).
@@ -43,9 +43,9 @@ Common to all runs:
    group bin at its centre; none carries cell identity.
 
 4. screenshots/bm_aging_8090cells_hover_no_tooltip.png
-   = runs/bm_aging_10171777/05_hover_no_tooltip.png
+   = runs/bm_aging_run-073/05_hover_no_tooltip.png
    Same job. drive.py step "hover probe": the mouse rests at the plot centre for 2 s and nothing appears.
    timings.json hover_input_exists: [] (no Shiny hover input exists; ui.R L109-114 declares none).
 
-The same 11-shot sequence exists for tahoe 1M (job 10171676) and 10M (job 10171779) under scsva/runs/ and
+The same 11-shot sequence exists for tahoe 1M (HPC job) and 10M (HPC job) under scsva/runs/ and
 scsva/screenshots/.

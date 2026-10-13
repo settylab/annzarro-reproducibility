@@ -185,7 +185,7 @@ OUT_OF_SCOPE = {"tissuumaps": "operator 2026-10-06: spatial-specific tool, remov
 SUPERSEDED = {
     ("annzarro", "default"): "d5be664 (tahoe95-run), development build",
     ("annzarro", "noprewarm"): "d5be664 (tahoe95-run), development build, prewarm blocked",
-    ("annzarro", "remote_606f0bc"): "606f0bc on hpc-node-36 via the SOCKS tunnel, dry run",
+    ("annzarro", "remote_606f0bc"): "606f0bc on an HPC node via the SOCKS tunnel, dry run",
     ("annzarro", "v030"): "v030-preview 120f322 (and the v0.3.0 tag server rerun): superseded by the full ladder on v0.3.1 1391357 (operator: one version, the latest release)",
     ("annzarro", "v030p"): "v030-preview 12f93f8: memory-guard double count and old-plot retention, fixed in 120f322",
     ("annzarro", "v031"): "v0.3.1 1391357: superseded by the full ladder on v0.4.0 (RC 3bdeb09 = tag 49e2a19; operator 2026-10-06: the paper moves to v0.4.0)",
@@ -343,7 +343,7 @@ def prep_stop(rows, key, budget):
         if gb is not None:
             g = gb * 1e9 / 2 ** 30
             bad.append((r["n"], f"{r['variant']} {g:.1f} GiB > budget {budget:.0f} GiB "
-                                f"(HPC worker, process-tree RSS peak {gb} GB; laptop run hit the 48 GiB cap)"))
+                                f"(HPC node, process-tree RSS peak {gb} GB; the laptop run reached the 48 GiB cap)"))
         elif r["status"] == "cap":
             bad.append((r["n"], f"{r['variant']} > 48 GiB machine cap (so > budget {budget:.0f} GiB)"))
         elif r["status"] != "ok":
@@ -354,19 +354,19 @@ def prep_stop(rows, key, budget):
 
 
 REMOTE_SERVER = {("scope", "default", 1_000_000): (0.974, "SCope's server in Docker's VM: container cgroup memory (docker stats, every 2 s), not phys_footprint; memmon sees only the docker CLI"),
-                 ("shinycell", "default", 10_000_000): (7.216, "HPC worker: server process-tree RSS peak 7.216 GiB at t=505 s (HWM sum 7.216); job 10080889 rc 0"),
-                 ("shinycell", "default", 5_000_000): (3.722, "HPC worker: server process-tree RSS peak 3.722 GiB at t=338 s (HWM sum 3.871); job 10080457 rc 0"),
-                 ("ucsc", "default", 20_000_000): (0.022, "HPC worker: static server process-tree RSS peak 0.022 GiB (HWM sum 0.022); 86 requests 200/206; job 10072482 rc 0"),
-                 ("ucsc", "default", 50_000_000): (0.022, "HPC worker: static server process-tree RSS peak 0.018 GiB at load, 0.022 GiB during the session (HWM sum identical, one process); 85 requests 200/206; job 10094741 on hpc-node-24, Slurm COMPLETED 0:0"),
-                 ("ucsc", "default", 95_624_334): (0.022, "HPC worker: static server process-tree RSS peak 0.018 GiB at load, 0.022 GiB during the session (HWM sum identical, one process); 85 requests 200/206; job 10100752 on hpc-node-22 (build job 10098747), Slurm COMPLETED 0:0"),
-                 ("ucsc", "default", 120_000_000): (0.024, "HPC worker: static server process-tree RSS peak 0.024 GiB (25,395,200 B, one process) during our session window; it equals the job-lifetime peak (VmHWM sum identical, memmon 1 s); job 10427677 on hpc-node-51"),
-                 ("ucsc", "default", 150_000_000): (0.024, "HPC worker: static server process-tree RSS, job-lifetime peak 0.024 GiB (25,927,680 B, one process), a bound for any window including ours (VmHWM sum identical, memmon 1 s); job 10414102 on hpc-node-54"),
-                 ("cirrocumulus", "prepared", 20_000_000): (33.85, "HPC worker: server process-tree RSS peak 33.851 GiB at t=774 s of our session (one process; HWM sum 33.851); job 10071716 COMPLETED 0:0; a ShinyCell 10M build shared the node, not in this process tree"),
-                 ("cellxgene", "default", 20_000_000): (40_479_461_376 / 2 ** 30, "HPC worker: server process-tree RSS peak during our session, 37.70 GiB (per-process HWM sum 37.87 GiB); job 10068398")}
+                 ("shinycell", "default", 10_000_000): (7.216, "HPC node: server process-tree RSS peak 7.216 GiB (VmHWM sum 7.216)"),
+                 ("shinycell", "default", 5_000_000): (3.722, "HPC node: server process-tree RSS peak 3.722 GiB (VmHWM sum 3.871)"),
+                 ("ucsc", "default", 20_000_000): (0.022, "HPC node: static server process-tree RSS peak 0.022 GiB (VmHWM sum 0.022); 86 requests answered 200 or 206"),
+                 ("ucsc", "default", 50_000_000): (0.022, "HPC node: static server process-tree RSS peak 0.022 GiB during the session (0.018 GiB at load; VmHWM sum identical, one process); 85 requests answered 200 or 206"),
+                 ("ucsc", "default", 95_624_334): (0.022, "HPC node: static server process-tree RSS peak 0.022 GiB during the session (0.018 GiB at load; VmHWM sum identical, one process); 85 requests answered 200 or 206"),
+                 ("ucsc", "default", 120_000_000): (0.024, "HPC node: static server process-tree RSS peak 0.024 GiB (25,395,200 B, one process) during the session window; equal to the server's lifetime peak (VmHWM sum identical, memmon 1 s)"),
+                 ("ucsc", "default", 150_000_000): (0.024, "HPC node: static server process-tree RSS, lifetime peak 0.024 GiB (25,927,680 B, one process), which bounds any session window (VmHWM sum identical, memmon 1 s)"),
+                 ("cirrocumulus", "prepared", 20_000_000): (33.85, "HPC node: server process-tree RSS peak 33.851 GiB during the session (one process; VmHWM sum 33.851)"),
+                 ("cellxgene", "default", 20_000_000): (40_479_461_376 / 2 ** 30, "HPC node: server process-tree RSS peak during the session, 37.70 GiB (per-process VmHWM sum 37.87 GiB)")}
 # sizes at which a tool cannot read (or build) its input in its own format; no browser run exists there
 INPUT_LIMITS = {("shinycell", "default", 20_000_000):
                 "makeShinyApp refuses the HDF5-backed SCE: 'too many elements (>= 2^31) selected along dimension 1 of array' "
-                "(h5mread; 2,231,856,797 stored values; HPC job 10071874, job.log lines 42-45; R 4.4.1, ShinyCell 2.1.0 "
+                "(h5mread; 2,231,856,797 stored values; HPC job log lines 42-45; R 4.4.1, ShinyCell 2.1.0 "
                 "5c61db7, HDF5Array 1.32.0)"}
 HANG_ATTEMPTS = 3  # hang rule: a size with at least this many (non-harness) hang attempts is not renderable
 
@@ -385,7 +385,7 @@ def apply_server_budget(rs, budget):
         if key in REMOTE_SERVER and r["status"] == "ok":
             r["fp_server"], r["server_note"] = REMOTE_SERVER[key]
         elif "server on HPC" in r.get("note", "") and r["status"] == "ok":
-            r["server_pending"] = True  # the HPC worker has not reported this rung's server peak yet
+            r["server_pending"] = True  # the server peak has not been reported this rung's server peak yet
             r["fp_server"] = math.nan  # the laptop's "server" group holds nothing for a remote server
         if r["status"] in ("ok", "cap") and not math.isnan(r["fp_server"]) and r["fp_server"] > budget:
             # (a run killed at the machine cap with its server already past 32 GiB is a server stop too)
@@ -588,7 +588,7 @@ def ceilings(rows):
             rec["first_fail"] = f'{best["status"]} {best["failure_mode"]}'.strip()
         pend = [r for r in rs if r.get("server_pending") and r["n"] == rec["max_n_16gb"]]
         if pend:
-            rec["kind_16gb"] += (f" (the {pend[0]['n'] / 1e6:g}M pass is conditional: server peak pending from the HPC worker; "
+            rec["kind_16gb"] += (f" (the {pend[0]['n'] / 1e6:g}M pass is conditional: server peak not yet measured; "
                                  f"above 32 GiB it becomes a server stop at the previous size)")
         rec["n_runs"] = len(rs)
         rec["row_status"] = FINAL.get((tool, var), "provisional")

@@ -90,7 +90,7 @@ ex inst/scSVA/server.R 689 690
 echo; echo "Q2. SINGLE-CELL HOVER / CLICK / SELECT / IDENTITY"
 echo "  2a. Hover: plotOutput declares click, dblclick and brush, and NO hover (the same for plot2/3/4 at U#L446, L1018, L1183)."
 ex inst/scSVA/ui.R 109 114
-echo "      Measured: the run registered no hover input (timings.json hover_input_exists: [] in jobs 10171777 and 10171780; screenshot 05)."
+echo "      Measured: the run registered no hover input (timings.json hover_input_exists: [] in HPC job and run-075; screenshot 05)."
 echo "  2b. 3-D plotly: no text= or hoverinfo= is set (full plot_ly call S#L1954-L1973), so plotly's default tooltip shows the"
 echo "      x/y/z of a voxel centre (h,i,j). NOT VERIFIED in a browser."
 echo "  2c. Click: a free text annotation or a polygon vertex at the click coordinate; no lookup of a cell."
@@ -133,15 +133,15 @@ cat <<'T'
 
 MEASURED NUMBERS (each with its source)
   - 95,624,334 cells, grid 512, density view: 153,749 non-empty bins (= marks drawn); max 18,243 cells in one bin.
-    Source: runs/probe_95624334_10168759/probe.json (scSVA's own ds$count call, run/backend_probe.R; Slurm job 10168759),
-    reproduced by runs/probe_95624334_10168523/probe.json (job 10168523). Also ladder/hpc_probe_backend.csv row 6.
+    Source: runs/probe_95624334_run-070/probe.json (scSVA's own ds$count call, run/backend_probe.R; Slurm HPC job),
+    reproduced by runs/probe_95624334_run-068/probe.json (HPC job). Also ladder/hpc_probe_backend.csv row 6.
     Of those marks, a fraction 0.0847 hold exactly one cell (probe.json frac_bins_with_one_cell = mean over non-empty
     bins, backend_probe.R L41), i.e. about 13,020 single-cell marks (13,015..13,030 given the 4-digit rounding).
     Caveat: the probe (run/backend_probe.R L26-27) bins over the UNPADDED data min/max, whereas the app pads the
     initial view by 0.5% (S#L644-648), so the app's own grid-512 view differs slightly from these counts.
   - The image sent to the browser: one PNG, 755 x 700 px (naturalWidth x naturalHeight of #plot1 img).
-    Source: runs/<label>_<job>/timings.json "plot1_img_natural": [755, 700], all four GUI runs (10171777, 10171676,
-    10171779, 10171780).
+    Source: runs/<label>_<job>/timings.json "plot1_img_natural": [755, 700], all four GUI runs (run-073, run-071,
+    run-074, run-075).
   - 8,090 cells (bm_aging), grid 512, initial view: 7,422 marks, of which 6,803 are single-cell bins (marks by
     cells per bin: 1:6803 2:576 3:37 4:6); 1,287 cells share a bin with another cell; every cell is moved to its bin
     centre (median 0.0199, max 0.0349 UMAP units; bin 0.0521 x 0.0474).

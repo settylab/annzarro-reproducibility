@@ -9,7 +9,7 @@
   "--n",
   "95624334",
   "--server-url",
-  "http://hpc-node-22:8791/",
+  "http://compute-node:8791/",
   "--proxy",
   "socks5://localhost:1080"
  ],

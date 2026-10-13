@@ -21,7 +21,7 @@ STATUS_SHAPE = {"ok": "circle", "fail": "cross", "error": "cross", "timeout": "c
 LEGEND = [("circle", "ok"), ("declined", "declined by design (the tool's memory guard)"),
           ("cross", "failed (error, timeout)"), ("diamond", "hang"),
           ("square", "over the server budget"), ("arrow", "stopped at the machine cap (peak above it)"),
-          ("ring", "excluded or superseded (reason in the tooltip)")]
+          ("ring", "excluded (reason in the tooltip)")]
 
 
 def esc(s) -> str:

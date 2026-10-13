@@ -6,7 +6,7 @@
   "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
   "benchmark/tool_ceiling/shots/annzarro_remote_606f0bc_run_1000000_r0",
   "--server-url",
-  "http://hpc-node-36:8790",
+  "http://compute-node:8790",
   "--proxy",
   "socks5://127.0.0.1:8767",
   "--n",

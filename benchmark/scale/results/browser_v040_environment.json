@@ -55,7 +55,7 @@
       "system_load": 19.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 79600,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -79,7 +79,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -198,7 +198,7 @@
       "system_load": 25.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 35552,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -222,7 +222,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -341,7 +341,7 @@
       "system_load": 13.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 37193,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -365,7 +365,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -490,7 +490,7 @@
       "system_load": 10.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 41304,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -514,7 +514,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -639,7 +639,7 @@
       "system_load": 31.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 43526,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -663,7 +663,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -788,7 +788,7 @@
       "system_load": 14.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 46196,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -812,7 +812,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -937,7 +937,7 @@
       "system_load": 20.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 48293,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -961,7 +961,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1086,7 +1086,7 @@
       "system_load": 25.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 51321,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1110,7 +1110,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1235,7 +1235,7 @@
       "system_load": 25.9
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 53399,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1259,7 +1259,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1384,7 +1384,7 @@
       "system_load": 27.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 55985,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1408,7 +1408,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1533,7 +1533,7 @@
       "system_load": 24.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 66417,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1557,7 +1557,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1682,7 +1682,7 @@
       "system_load": 26.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 73510,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1706,7 +1706,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1831,7 +1831,7 @@
       "system_load": 19.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 75187,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1855,7 +1855,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1980,7 +1980,7 @@
       "system_load": 20.9
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 76592,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2004,7 +2004,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2129,7 +2129,7 @@
       "system_load": 23.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 77987,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2153,7 +2153,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2278,7 +2278,7 @@
       "system_load": 20.5
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 79694,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2302,7 +2302,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2427,7 +2427,7 @@
       "system_load": 20.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 81389,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2451,7 +2451,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2576,7 +2576,7 @@
       "system_load": 13.9
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 83251,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2600,7 +2600,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2725,7 +2725,7 @@
       "system_load": 24.9
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 84195,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2749,7 +2749,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2874,7 +2874,7 @@
       "system_load": 26.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 85144,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2898,7 +2898,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -3023,7 +3023,7 @@
       "system_load": 26.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 86050,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -3047,7 +3047,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -3172,7 +3172,7 @@
       "system_load": 31.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 87121,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -3196,7 +3196,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -3321,7 +3321,7 @@
       "system_load": 26.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 88192,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -3345,7 +3345,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -3470,7 +3470,7 @@
       "system_load": 26.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 89274,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -3494,7 +3494,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -3619,7 +3619,7 @@
       "system_load": 29.1
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 90212,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -3643,7 +3643,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -3768,7 +3768,7 @@
       "system_load": 24.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 91196,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -3792,7 +3792,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -3917,7 +3917,7 @@
       "system_load": 27.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 92175,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -3941,7 +3941,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -4066,7 +4066,7 @@
       "system_load": 26.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 93333,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -4090,7 +4090,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -4215,7 +4215,7 @@
       "system_load": 22.9
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 94521,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -4239,7 +4239,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -4364,7 +4364,7 @@
       "system_load": 24.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 95695,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -4388,7 +4388,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -4513,7 +4513,7 @@
       "system_load": 27.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 96767,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -4537,7 +4537,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -4662,7 +4662,7 @@
       "system_load": 28.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 97783,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -4686,7 +4686,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -4811,7 +4811,7 @@
       "system_load": 25.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 98898,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -4835,7 +4835,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -4960,7 +4960,7 @@
       "system_load": 26.5
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 655,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -4984,7 +4984,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -5109,7 +5109,7 @@
       "system_load": 30.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 2475,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -5133,7 +5133,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -5258,7 +5258,7 @@
       "system_load": 32.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 4103,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -5282,7 +5282,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -5407,7 +5407,7 @@
       "system_load": 26.1
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 5483,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -5431,7 +5431,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -5556,7 +5556,7 @@
       "system_load": 0.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 6863,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -5580,7 +5580,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -5705,7 +5705,7 @@
       "system_load": 0.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 8263,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -5729,7 +5729,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -5854,7 +5854,7 @@
       "system_load": 25.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 10452,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -5878,7 +5878,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -6003,7 +6003,7 @@
       "system_load": 28.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 12668,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -6027,7 +6027,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -6152,7 +6152,7 @@
       "system_load": 28.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 14873,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -6176,7 +6176,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -6301,7 +6301,7 @@
       "system_load": 24.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 16696,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -6325,7 +6325,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -6450,7 +6450,7 @@
       "system_load": 25.9
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 18521,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -6474,7 +6474,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -6599,7 +6599,7 @@
       "system_load": 14.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 43297,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -6623,7 +6623,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -6750,7 +6750,7 @@
       "system_load": 15.9
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 44283,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -6774,7 +6774,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -6901,7 +6901,7 @@
       "system_load": 22.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 45247,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -6925,7 +6925,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -7052,7 +7052,7 @@
       "system_load": 1.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 46225,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -7076,7 +7076,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -7203,7 +7203,7 @@
       "system_load": 0.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 47089,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -7227,7 +7227,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -7354,7 +7354,7 @@
       "system_load": 19.2
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 48007,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -7378,7 +7378,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -7505,7 +7505,7 @@
       "system_load": 1.1
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 48959,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -7529,7 +7529,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -7656,7 +7656,7 @@
       "system_load": 14.2
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 49919,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -7680,7 +7680,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -7807,7 +7807,7 @@
       "system_load": 10.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 50887,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -7831,7 +7831,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -7958,7 +7958,7 @@
       "system_load": 9.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 51878,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -7982,7 +7982,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -8109,7 +8109,7 @@
       "system_load": 13.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 52741,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -8133,7 +8133,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -8260,7 +8260,7 @@
       "system_load": 13.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 53702,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -8284,7 +8284,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -8411,7 +8411,7 @@
       "system_load": 21.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 54569,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -8435,7 +8435,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -8562,7 +8562,7 @@
       "system_load": 16.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 55574,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -8586,7 +8586,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -8713,7 +8713,7 @@
       "system_load": 18.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 56566,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -8737,7 +8737,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -8864,7 +8864,7 @@
       "system_load": 22.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 57538,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -8888,7 +8888,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -9015,7 +9015,7 @@
       "system_load": 25.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 58443,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -9039,7 +9039,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -9166,7 +9166,7 @@
       "system_load": 22.5
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 59344,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -9190,7 +9190,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -9317,7 +9317,7 @@
       "system_load": 24.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 60233,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -9341,7 +9341,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -9468,7 +9468,7 @@
       "system_load": 41.5
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 61224,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -9492,7 +9492,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -9619,7 +9619,7 @@
       "system_load": 0.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 62211,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -9643,7 +9643,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -9770,7 +9770,7 @@
       "system_load": 19.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 63182,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -9794,7 +9794,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -9921,7 +9921,7 @@
       "system_load": 25.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 64083,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -9945,7 +9945,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -10072,7 +10072,7 @@
       "system_load": 23.2
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 64986,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -10096,7 +10096,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -10223,7 +10223,7 @@
       "system_load": 28.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 65898,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -10247,7 +10247,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -10374,7 +10374,7 @@
       "system_load": 23.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 66917,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -10398,7 +10398,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -10525,7 +10525,7 @@
       "system_load": 25.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 67926,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -10549,7 +10549,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -10676,7 +10676,7 @@
       "system_load": 21.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 68970,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -10700,7 +10700,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -10827,7 +10827,7 @@
       "system_load": 25.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 69900,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -10851,7 +10851,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -10978,7 +10978,7 @@
       "system_load": 22.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 70845,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -11002,7 +11002,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -11129,7 +11129,7 @@
       "system_load": 28.2
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 71842,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -11153,7 +11153,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -11280,7 +11280,7 @@
       "system_load": 22.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 72950,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -11304,7 +11304,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -11431,7 +11431,7 @@
       "system_load": 25.9
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 74047,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -11455,7 +11455,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -11582,7 +11582,7 @@
       "system_load": 25.1
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 75111,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -11606,7 +11606,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -11733,7 +11733,7 @@
       "system_load": 0.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 76199,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -11757,7 +11757,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -11884,7 +11884,7 @@
       "system_load": 25.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 77200,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -11908,7 +11908,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -12035,7 +12035,7 @@
       "system_load": 29.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 78184,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -12059,7 +12059,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -12186,7 +12186,7 @@
       "system_load": 25.9
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 79421,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -12210,7 +12210,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -12337,7 +12337,7 @@
       "system_load": 24.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 80628,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -12361,7 +12361,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -12488,7 +12488,7 @@
       "system_load": 0.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 81856,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -12512,7 +12512,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -12639,7 +12639,7 @@
       "system_load": 25.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 82940,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -12663,7 +12663,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -12790,7 +12790,7 @@
       "system_load": 0.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 84070,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -12814,7 +12814,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -12941,7 +12941,7 @@
       "system_load": 26.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 85198,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -12965,7 +12965,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -13084,7 +13084,7 @@
       "system_load": 50.9
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 86206,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -13108,7 +13108,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -13227,7 +13227,7 @@
       "system_load": 26.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 87202,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -13251,7 +13251,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -13370,7 +13370,7 @@
       "system_load": 27.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 88209,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -13394,7 +13394,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -13513,7 +13513,7 @@
       "system_load": 25.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 89223,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -13537,7 +13537,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -13656,7 +13656,7 @@
       "system_load": 28.1
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 90201,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -13680,7 +13680,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -13799,7 +13799,7 @@
       "system_load": 35.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 91238,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -13823,7 +13823,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -13942,7 +13942,7 @@
       "system_load": 26.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 92226,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -13966,7 +13966,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -14085,7 +14085,7 @@
       "system_load": 24.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 93218,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -14109,7 +14109,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -14228,7 +14228,7 @@
       "system_load": 25.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 94201,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -14252,7 +14252,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -14371,7 +14371,7 @@
       "system_load": 25.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 95196,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -14395,7 +14395,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -14514,7 +14514,7 @@
       "system_load": 25.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 96206,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -14538,7 +14538,7 @@
     "headless": true
    },
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",

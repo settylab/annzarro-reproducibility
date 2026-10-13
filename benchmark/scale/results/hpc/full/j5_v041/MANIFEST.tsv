@@ -1,4 +1,4 @@
-# run=j5_v041 copied=2026-10-08T09:43:48-07:00 host=hpc-demo-node sources=$SCRATCH/annzarro-scale/results_j5 $SCRATCH/annzarro-scale/logs/j5_v041.log $SCRATCH/annzarro-scale/jobs/j5_v041.sh $SCRATCH/annzarro-scale/jobs/j5_slow1m.txt
+# run=j5_v041 copied=2026-10-08T09:43:48-07:00 host=demo-server sources=$SCRATCH/annzarro-scale/results_j5 $SCRATCH/annzarro-scale/logs/j5_v041.log $SCRATCH/annzarro-scale/jobs/j5_v041.sh $SCRATCH/annzarro-scale/jobs/j5_slow1m.txt
 path	bytes	sha256	source
 j5_slow1m.txt	2	87428fc522803d31065e7bce3cf03fe475096631e5e07bbd7a0fde60c4cf25c7	$SCRATCH/annzarro-scale/jobs/j5_slow1m.txt
 j5_v041.log	15895	d9918bd61f00dd6fc8ae0b0244e08cbce071e8768bea6426535c130ad5d2d5f0	$SCRATCH/annzarro-scale/logs/j5_v041.log

@@ -2,9 +2,7 @@
 # Filesystem arm: the same spatial-A endpoints (HTTP + raw zarr) on three locations, in ONE job
 # on ONE node: $DATA_ROOT (served original), $SCRATCH (subset copy), node tmpfs ($TMPDIR, which
 # inside the job sandbox is RAM-backed tmpfs, NOT the node's NVMe).
-#SBATCH --partition=<partition>
-#SBATCH --constraint=compute
-#SBATCH --exclude=hpc-demo-node,hpc-node-32
+#SBATCH --partition=<value>
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=96G
 #SBATCH --time=12:00:00

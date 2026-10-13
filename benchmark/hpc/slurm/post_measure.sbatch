@@ -5,9 +5,7 @@
 # under one job name, so these jobs run strictly one at a time and never load $SCRATCH
 # against each other.  Usage: sbatch post_measure.sbatch EXP http|raw
 #   EXP: chunksweep | pairwise | atlas | real | real_rows   (real*: the $SCRATCH copies)
-#SBATCH --partition=<partition>
-#SBATCH --constraint=compute
-#SBATCH --exclude=hpc-demo-node,hpc-node-32
+#SBATCH --partition=<value>
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=64G
 #SBATCH --time=12:00:00

@@ -1,9 +1,7 @@
 #!/bin/bash
 # Byte-identical copies of the arrays the real-data cases touch, from the served stores on
 # $DATA_ROOT (read-only use) to $SCRATCH, so the real-data cases can be measured off $DATA_ROOT.
-#SBATCH --partition=<partition>
-#SBATCH --constraint=compute
-#SBATCH --exclude=hpc-demo-node,hpc-node-32
+#SBATCH --partition=<value>
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
 #SBATCH --time=8:00:00

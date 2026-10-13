@@ -1,6 +1,6 @@
 {
  "site": "test-2858fc5",
- "hostname": "laptop",
+ "hostname": "compute-node",
  "platform": "macOS-26.5.1-arm64-arm-64bit",
  "python": "3.11.11 (main, Feb 12 2025, 15:06:01) [Clang 19.1.6 ]",
  "packages": {

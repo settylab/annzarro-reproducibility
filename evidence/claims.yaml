@@ -35,8 +35,8 @@ defs:
   src_heaplim: &heaplim {jsonl: benchmark/scale/results/heapcap_v041.jsonl, column: heap.last.0, pattern: 'lim (\d+)'}
   src_bm_cells: &bm_cells {json: figures/numbers/fig2.json, key: n_cells}
   src_bm_genes: &bm_genes {json: figures/numbers/fig3.json, key: n_genes}
-  src_atlas_cells: &atlas_cells {file: benchmark/deployment/hpc-demo-node_runtime_2026-10-01.md, pattern: 'atlas-1.17M-scvi\.zarr \| 78G \| ([\d,]+)'}
-  src_atlas_genes: &atlas_genes {file: benchmark/deployment/hpc-demo-node_runtime_2026-10-01.md, pattern: 'atlas-1.17M-scvi\.zarr \| 78G \| [\d,]+ \| ([\d,]+)'}
+  src_atlas_cells: &atlas_cells {file: benchmark/deployment/demo-server_runtime_2026-10-01.md, pattern: 'atlas-1.17M-scvi\.zarr \| 78G \| ([\d,]+)'}
+  src_atlas_genes: &atlas_genes {file: benchmark/deployment/demo-server_runtime_2026-10-01.md, pattern: 'atlas-1.17M-scvi\.zarr \| 78G \| [\d,]+ \| ([\d,]+)'}
   src_hpc_cells: &hpc_cells {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_allx4:dense_layer_gene_col:lognorm_panel', phase: cold}, column: n_values, agg: first}   # the public HPC layer's cells (a gene column's length)
   src_hpc_genes: &hpc_genes {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_allx4:dense_layer_cell_row:lognorm_panel', phase: cold}, column: n_values, agg: first}   # its genes (a cell row's length)
   src_fig2_rrows: &laptop {file: benchmark/scale/NOTES.md, anchor: 'Apple M3 Max (16 cores), 128 GB RAM'}   # installed RAM: sysctl hw.memsize 137,438,953,472 B = 128 GiB; the text says GiB
@@ -597,7 +597,7 @@ claims:
       - {file: notes/comparison/vitessce.md, anchor: 'millions of points'}
     compute: "'ok' if v[0] >= 1 and v[1] >= 1 else 'below one million'"
     status: ok
-    note: notes/comparison/_summary.md calls "millions of points" a slogan; Vitessce's largest documented dataset is 1.28M cells. ledger row B13 asks for the served numbers instead.
+    note: The audit summary calls "millions of points" a slogan; Vitessce's largest documented dataset is 1.28M cells. ledger row B13 asks for the served numbers instead.
   cmp.annzarro_scale:
     text: AnnZarro was measured on all 95.6 million cells
     file: manuscript/body.tex
@@ -807,7 +807,7 @@ claims:
     compute: (v[0], v[1] / 1e6)
     format: 'takes many seconds ({0:.1f} s at {1:g} million cells on HPC)'
     status: ok
-    note: "One cell row of a whole-gene-chunked (all cells x 4 genes) dense Tahoe-100M layer, 1,000,000 cells x 5,000 genes; T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+    note: "One cell row of a whole-gene-chunked (all cells x 4 genes) dense Tahoe-100M layer, 1,000,000 cells x 5,000 genes; T on v0.4.1 (HPC job, compute-node, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
   ts.large_threshold:
     text: More than 1 million points are drawn
     file: manuscript/body.tex
@@ -945,8 +945,8 @@ claims:
     file: manuscript/supplement.tex
     kind: number
     source:
-      - {json: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_10163488_spec_tahoe_x.json, key: cpu.nproc_allowed}
-      - {file: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_10163488_spec_tahoe_x.json, anchor: 'Intel(R) Xeon(R) Gold 6254 CPU'}
+      - {json: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_run-063_spec_tahoe_x.json, key: cpu.nproc_allowed}
+      - {file: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_run-063_spec_tahoe_x.json, anchor: 'Intel(R) Xeon(R) Gold 6254 CPU'}
     compute: v[0]
     format: 'Xeon Gold 6254, a whole {:.0f}-CPU node'
     status: ok
@@ -969,7 +969,7 @@ claims:
     compute: "(v[0], v[1] / 2**30, v[3], v[4], v[5], 3) if v[2] == '0.4.1' and v[6] == v[7] == v[8] == 3 else float('nan')"
     format: "({0:.0f} CPUs, {1:.0f} GiB RAM; stores on $SCRATCH, an NFSv4.1 scratch filer; a fresh server and the node's page cache evicted before each cold request): with AnnZarro v0.4.1 the server returned the gene column of X for every cell in {2:.2f} s cold at 1 million cells and {3:.1f} s at 95.6 million, and in {4:.1f} s at 95.6 million for a gene detected in fewer cells (medians of {5} cold requests)"
     status: ok
-    note: "Nexus J5 (job 10163489), the Tahoe-100M per-click ladder on one HPC node, AnnZarro v0.4.1: node-cold, stores on $SCRATCH, MANIFEST sha256-checked (annzarro-reproducibility dominik/scale-hpc caca0aa). gene_high_all = the most-detected panel gene, gene_mid_all = detection rank 1000."
+    note: "HPC worker J5 (HPC job), the Tahoe-100M per-click ladder on one HPC node, AnnZarro v0.4.1: node-cold, stores on $SCRATCH, MANIFEST sha256-checked (annzarro-reproducibility dominik/scale-hpc caca0aa). gene_high_all = the most-detected panel gene, gene_mid_all = detection rank 1000."
   ar.hpc.kernel:
     text: "took 0.29, 0.31 and 0.30 s cold for 50,000, 100,000 and 200,000 cells"
     file: manuscript/supplement.tex
@@ -980,7 +980,7 @@ claims:
       - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/pairwise_public/http.csv, where: {case_id: 'tahoe_kernel_200000:obsp_dense_row:gaussian_kernel', phase: cold}, column: latency_s, agg: median}
     format: 'took {0:.2f}, {1:.2f} and {2:.2f} s cold for 50,000, 100,000 and 200,000 cells'
     status: ok
-    note: "One row of a dense cells x cells Gaussian kernel; T2 on v0.4.1 (job 10195427, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv)."
+    note: "One row of a dense cells x cells Gaussian kernel; T2 on v0.4.1 (HPC job, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv)."
   ar.hpc.dist:
     text: "a row of a dense diffusion-distance matrix 0.31, 0.29 and 0.27 s"
     file: manuscript/supplement.tex
@@ -991,7 +991,7 @@ claims:
       - {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: {case_id: 'tahoe_dist_200000:obsp_dense_row:diffmap_distance', phase: cold}, column: latency_s, agg: median}
     format: 'a row of a dense diffusion-distance matrix {0:.2f}, {1:.2f} and {2:.2f} s'
     status: ok
-    note: "50,000 and 100,000 cells from T2 on v0.4.1 (job 10195427, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv). 200,000 cells from T on v0.4.1 (job 10163488), the same protocol."
+    note: "50,000 and 100,000 cells from T2 on v0.4.1 (HPC job, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv). 200,000 cells from T on v0.4.1 (HPC job), the same protocol."
   ar.hpc.largest:
     text: "the largest matrix is 160 GB uncompressed"
     file: manuscript/supplement.tex
@@ -1001,7 +1001,7 @@ claims:
     compute: 4 * v[0] ** 2 / 1e9
     format: 'the largest matrix is {:.0f} GB uncompressed'
     status: ok
-    note: "A row of the dense 200,000 x 200,000 float32 distance matrix has 200,000 values; T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+    note: "A row of the dense 200,000 x 200,000 float32 distance matrix has 200,000 values; T on v0.4.1 (HPC job, compute-node, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
   ar.hpc.rss:
     text: "stayed at 85--89 MiB across distance and correlation matrices of 1.6--160 GB, against 78 MiB idle"
     file: manuscript/supplement.tex
@@ -1016,7 +1016,7 @@ claims:
     compute: "(min(v[0], v[1]), max(v[2], v[3]), 4 * 20000 ** 2 / 1e9, 4 * 200000 ** 2 / 1e9, v[4]) if round(v[4]) == round(v[5]) else float('nan')"
     format: 'stayed at {0:.0f}--{1:.0f} MiB across distance and correlation matrices of {2:.1f}--{3:.0f} GB, against {4:.0f} MiB idle'
     status: ok
-    note: "Per case, the median server high-water mark (VmHWM) over its cold rows, then the smallest and largest of the five cases (correlation rows of 20,000 and 30,000 genes, distance rows of 50,000 to 200,000 cells); idle = the median baseline RSS, the same in both runs. Cases from T (30,000 genes, 200,000 cells; job 10163488) and T2 (the rest; job 10195427), $SCRATCH, node-cold."
+    note: "Per case, the median server high-water mark (VmHWM) over its cold rows, then the smallest and largest of the five cases (correlation rows of 20,000 and 30,000 genes, distance rows of 50,000 to 200,000 cells); idle = the median baseline RSS, the same in both runs. Cases from T (30,000 genes, 200,000 cells; HPC job) and T2 (the rest; HPC job), $SCRATCH, node-cold."
   ar.hpc.varp:
     text: "A gene-by-gene correlation row for 30,000 genes took 0.24 s"
     file: manuscript/supplement.tex
@@ -1024,7 +1024,7 @@ claims:
     source: {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/pairwise_public/http.csv, where: {case_id: 'tahoe_corr_30000:varp_dense_row:gene_corr_pearson', phase: cold}, column: latency_s, agg: median}
     format: 'A gene-by-gene correlation row for 30,000 genes took {:.2f} s'
     status: ok
-    note: "T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+    note: "T on v0.4.1 (HPC job, compute-node, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
   ar.hpc.atlas_n:
     text: On a 1.17-million-cell prefix of Tahoe-100M
     file: manuscript/supplement.tex
@@ -1034,7 +1034,7 @@ claims:
     compute: v[0] / 1e6
     format: 'On a {:.2f}-million-cell prefix of Tahoe-100M'
     status: ok
-    note: "A gene column's length is the store's cell count (1,170,000); T2 on v0.4.1 (job 10195427, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv)."
+    note: "A gene column's length is the store's cell count (1,170,000); T2 on v0.4.1 (HPC job, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv)."
   ar.hpc.atlas_gene:
     text: "a gene column of X took 0.20 s cold and 0.01 s warm and a kNN row 0.21 s cold"
     file: manuscript/supplement.tex
@@ -1045,7 +1045,7 @@ claims:
       - {csv: benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/run_v041_hpctemp_extra/tahoe_x/http.csv, where: {case_id: 'tahoe_x_1.17M:obsp_csr_row:connectivities', phase: cold}, column: latency_s, agg: median}
     format: 'a gene column of X took {0:.2f} s cold and {1:.2f} s warm and a kNN row {2:.2f} s cold'
     status: ok
-    note: "X is CSC; the kNN row is a row of obsp/connectivities (CSR). Warm = the same index again; T2 on v0.4.1 (job 10195427, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv)."
+    note: "X is CSC; the kNN row is a row of obsp/connectivities (CSR). Warm = the same index again; T2 on v0.4.1 (HPC job, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's cold rows (hpc_v041_case_map.tsv)."
   ar.hpc.whole_gene:
     text: "One cell row of a 1-million-cell, 5,000-gene layer of Tahoe-100M with whole-gene chunks took 7.8 s cold, and 0.38 s after rechunking"
     file: manuscript/supplement.tex
@@ -1058,7 +1058,7 @@ claims:
     compute: (v[2] / 1e6, v[3], v[0], v[1])
     format: 'One cell row of a {0:g}-million-cell, {1:,.0f}-gene layer of Tahoe-100M with whole-gene chunks took {2:.1f} s cold, and {3:.2f} s after rechunking'
     status: ok
-    note: "Whole-gene chunks = all cells x 4 genes; rechunked = the Step 10 shape 8192 x 64 (ar.hpc.rule_shape); T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+    note: "Whole-gene chunks = all cells x 4 genes; rechunked = the Step 10 shape 8192 x 64 (ar.hpc.rule_shape); T on v0.4.1 (HPC job, compute-node, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
   ar.hpc.rule_shape:
     text: the Step 10 shape, $8192\times64$
     file: manuscript/supplement.tex
@@ -1531,7 +1531,7 @@ claims:
     compute: (v[0], v[1] / 1e6)
     format: '(whole-gene chunks) takes {0:.2f} s cold at {1:g} million cells'
     status: ok
-    note: "A gene column of the dense Tahoe-100M layer, whole-gene chunks (all cells x 4 genes); T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+    note: "A gene column of the dense Tahoe-100M layer, whole-gene chunks (all cells x 4 genes); T on v0.4.1 (HPC job, compute-node, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
   fig8.pairwise:
     text: "a row of a dense 200,000~$\\times$~200,000 matrix (160 GB uncompressed) 0.27 s cold"
     file: manuscript/sections/figs_results.tex
@@ -1542,7 +1542,7 @@ claims:
     compute: (v[0], v[0], 4 * v[0] ** 2 / 1e9, v[1])
     format: 'a row of a dense {0:,.0f}~$\times$~{1:,.0f} matrix ({2:.0f} GB uncompressed) {3:.2f} s cold'
     status: ok
-    note: "T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+    note: "T on v0.4.1 (HPC job, compute-node, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
   fig8.peak_rss:
     text: "A 160 GB pairwise matrix peaks at 89 MiB on HPC"
     file: manuscript/sections/figs_results.tex
@@ -1553,7 +1553,7 @@ claims:
     compute: (4 * v[0] ** 2 / 1e9, v[1])
     format: 'A {0:.0f} GB pairwise matrix peaks at {1:.0f} MiB on HPC'
     status: ok
-    note: "Median server high-water mark (VmHWM, MiB) over the 200,000-cell distance matrix's cold rows; T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+    note: "Median server high-water mark (VmHWM, MiB) over the 200,000-cell distance matrix's cold rows; T on v0.4.1 (HPC job, compute-node, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
   fig8.idle:
     text: the idle laptop server uses 79 MiB
     file: manuscript/sections/figs_results.tex
@@ -1590,7 +1590,7 @@ claims:
     source: {csv: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/grid/http.csv, where: {case_id: 'tahoe_dense_1M_allx4:dense_layer_cell_row:lognorm_panel', phase: cold}, column: latency_s, agg: median}
     format: '{:.1f} s on HPC'
     status: ok
-    note: "One cell row, whole-gene chunks, 1,000,000 cells; T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+    note: "One cell row, whole-gene chunks, 1,000,000 cells; T on v0.4.1 (HPC job, compute-node, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
   # ======================================================================= figs_results.tex: fig:scale
   fig7.n:
     text: All 95,624,334 cells of Tahoe-100M on a UMAP fitted to 999,073 reference cells
@@ -1819,7 +1819,7 @@ claims:
     compute: (v[0], v[1] / 1e6, v[2])
     format: '{0:.1f} s for {1:g} million cells, against {2:.2f} s'
     status: ok
-    note: "As ar.hpc.whole_gene: whole-gene chunks (all cells x 4 genes) against the rule's 8192 x 64; T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+    note: "As ar.hpc.whole_gene: whole-gene chunks (all cells x 4 genes) against the rule's 8192 x 64; T on v0.4.1 (HPC job, compute-node, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
   prep.status_bar:
     text: The status bar reports 8,090 cells and 16,285 genes
     file: manuscript/sections/procedure_prep.tex
@@ -1858,8 +1858,8 @@ claims:
     file: manuscript/sections/figs_results.tex
     kind: number
     source:
-      - {json: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_10163488_spec_tahoe_x.json, key: cpu.nproc_allowed}
-      - {file: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_10163488_spec_tahoe_x.json, anchor: 'Intel(R) Xeon(R) Gold 6254 CPU'}
+      - {json: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_run-063_spec_tahoe_x.json, key: cpu.nproc_allowed}
+      - {file: benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/run_v041_hpctemp_reduced/tahoe_x/http.env_run-063_spec_tahoe_x.json, anchor: 'Intel(R) Xeon(R) Gold 6254 CPU'}
     compute: v[0]
     format: 'Xeon Gold 6254, a whole {:.0f}-CPU node'
     status: ok
@@ -1902,7 +1902,7 @@ claims:
     compute: (v[0] / 1e6, v[1], 64, v[2], v[3], 2 ** round(math.log2(math.sqrt(5e5 * v[0] / v[1]))), 2 ** round(math.log2(5e5 / 2 ** round(math.log2(math.sqrt(5e5 * v[0] / v[1]))))))
     format: 'a cells~$\times$~genes layer of Tahoe-100M ({0:g} million cells, {1:,.0f} genes) in chunks of all cells by {2:.0f} genes took {3:.1f} s cold for one cell row, against {4:.2f} s in the Step 10 shape for this layer, ${5}\times{6}$'
     status: ok
-    note: "T on v0.4.1 (job 10163488, hpc-node-40, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
+    note: "T on v0.4.1 (HPC job, compute-node, whole exclusive node), stores on $SCRATCH, node-cold; median over the case's 5 cold rows (hpc_v041_case_map.tsv)."
   supp1.cellxgene.render:
     text: the first full render taking 10.8--17.1 s
     file: manuscript/supplement.tex
@@ -2019,9 +2019,9 @@ claims:
     text: at its default several of them fit in the browser's memory side by side
     file: manuscript/body.tex
     kind: qualitative
-    source: {file: notes/APPROVALS.md, anchor: 'several plots with hover and click fit in memory'}
+    source: {file: benchmark/scale/NOTES.md, anchor: 'several plots with hover and click fit in memory'}
     status: ok
-    note: 'The threshold is ui.defaults.large_plot_points in the server config (annzarro start --config), default 1000000; base.yaml at v0.4.1: "1M keeps several regular plots (400-900 B of browser heap per point) open side by side". Retexted 2026-10-06 (operator: the old wording read as if large plots kept hover and click).'
+    note: 'The threshold is ui.defaults.large_plot_points in the server config (annzarro start --config), default 1000000; base.yaml at v0.4.1: "1M keeps several regular plots (400-900 B of browser heap per point) open side by side".'
   supp1.manivault.n:
     text: The documented largest dataset is 15 million cells
     file: manuscript/supplement.tex
@@ -2177,12 +2177,12 @@ claims:
     source:
       - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: prepared}, column: max_n_16gb, agg: first}
       - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: prepared}, column: first_fail_n, agg: first}
-      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: prepared}, column: first_fail, agg: first, pattern: 'server_budget server ([\d.]+) GiB .*HPC worker: server process-tree RSS'}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: prepared}, column: first_fail, agg: first, pattern: 'server_budget server ([\d.]+) GiB .*HPC node: server process-tree RSS'}
       - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: cirrocumulus, variant: prepared}, column: row_status, agg: first, pattern: '^(final)'}
     compute: (v[0] / 1e6, v[1] / 1e6, v[2])
     format: "Cirrocumulus's prepared path drew {0:.0f} million cells; at {1:.0f} million its server passed the budget ({2:.1f} GiB, the HPC's process-tree resident memory, the only measure there)"
     status: ok
-    note: Final row (33.851 GiB peak, job COMPLETED; a ShinyCell build sharing the node is not counted). The figure's Cirrocumulus row is cirrocumulus/default; this path is text only.
+    note: Final row (33.851 GiB peak, the job finished; a ShinyCell build sharing the node is not counted). The figure's Cirrocumulus row is cirrocumulus/default; this path is text only.
   supp1.seurat.dgc_limit:
     text: Seurat's default in-memory matrix (dgCMatrix) holds at most $2^{31}-1$ values, about 19.2 million cells on this panel, but reaches the 16 GiB budget at 2 million cells, long before that, so the limit sets no glyph; the BPCells variant keeps the matrix on disk and avoids it
     file: manuscript/supplement.tex

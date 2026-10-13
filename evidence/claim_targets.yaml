@@ -22,7 +22,7 @@ no_visualization:
   - {claim: equip.server_burst, why: "HTTP concurrency series (http_v040_summary.csv), not drawn on the site yet"}
   - {claim: ar.guard.off, why: "guard-off context (ceilings.csv annzarro/v040_noguard), outside Fig. 1c and the Scale figure"}
   - {claim: supp1.subset.first_plot_1b, why: "two first-plot times from the 1B runs' task.json (raw/annzarro_v040_sub*_run_1000000000_r0); the scale page draws their request times and memory trace instead"}
-  - {claim: lim.threshold_reason, why: "an operator decision (notes/APPROVALS.md), not a measurement"}
+  - {claim: lim.threshold_reason, why: "a design decision, not a measurement"}
   - {claim: sw.anndata, why: "the Procedure's tested package versions (notes/sources/procedure_env.txt), a version record, no series to draw"}
   - {claim: sw.zarr, why: "the Procedure's tested package versions (notes/sources/procedure_env.txt), a version record, no series to draw"}
   - {claim: sw.scanpy, why: "the Procedure's tested package versions (notes/sources/procedure_env.txt), a version record, no series to draw"}

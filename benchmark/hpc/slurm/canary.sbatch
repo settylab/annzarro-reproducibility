@@ -1,9 +1,7 @@
 #!/bin/bash
 # $SCRATCH health canary: N readings of fs_canary.py against a fixed array (the (75000,64)
 # spatial-A chunk-sweep copy: 287 chunk files of ~5 MB), SLEEP seconds apart.
-#SBATCH --partition=<partition>
-#SBATCH --constraint=compute
-#SBATCH --exclude=hpc-demo-node,hpc-node-32
+#SBATCH --partition=<value>
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=4G
 #SBATCH --time=1:00:00

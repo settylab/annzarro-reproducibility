@@ -44,7 +44,7 @@
   "cirrocumulus": "1.1.61"
  },
  "console": [],
- "server_url": "http://hpc-node-36:8791",
+ "server_url": "http://compute-node:8791",
  "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
  "crashed": false,
  "ok": true

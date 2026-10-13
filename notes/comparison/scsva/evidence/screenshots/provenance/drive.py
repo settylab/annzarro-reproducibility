@@ -97,7 +97,7 @@ def plot_src_hash(pg, out_id):
 def wait_new_plot(pg, out_id, before, timeout_s):
     """New image in out_id AND settled: the output no longer carries Shiny's 'recalculating' class,
     no progress/notification panel is visible, and the image is unchanged for 2 s.
-    (Run 10171744: a src change alone fired while scSVA's 'Getting groups' progress was at ~10%.)"""
+    (Run run-072: a src change alone fired while scSVA's 'Getting groups' progress was at ~10%.)"""
     t0 = time.time()
     while time.time() - t0 < timeout_s:
         h = plot_src_hash(pg, out_id)

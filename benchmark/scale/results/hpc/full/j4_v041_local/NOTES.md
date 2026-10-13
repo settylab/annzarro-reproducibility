@@ -1,11 +1,11 @@
 # J4: public HPC set on node-local NVMe, AnnZarro v0.4.1
 
-- **Job:** Slurm 10163485, exclusive node hpc-node-47 (Intel Xeon Gold 6254 @ 3.10 GHz, 36 CPUs, 755 GiB RAM), 2026-10-07 13:10:23-16:26:53 PDT.
+- **Job:** Slurm run-062, exclusive node compute-node (Intel Xeon Gold 6254 @ 3.10 GHz, 36 CPUs, 755 GiB RAM), 2026-10-07 13:10:23-16:26:53 PDT.
 - **Release pin:** AnnZarro v0.4.1, tag commit 78c9da657ecbff30163fd29055f0e6b10e915c5c (tree 661a454f), installed non-editable from the tag clone.
   - Byte-identical to PyPI `annzarro==0.4.1`: `VERIFY.txt` (wheel sha256 = PyPI digest; 182/182 package files identical); `pin_v041.json`.
   - The job's pin guard passed (`annzarro pin OK` in its log).
 - **Harness:** annzarro-reproducibility `dominik/hpc-bench-v030` @ 1804118b, `benchmark/hpc/slurm/rerun_release.sbatch` with STORE_TIER=locscratch and stages tahoe_x, grid, pairwise_public, hlca, limits, concurrency, deploy. `bench_http.py` uses the binary wire (f32) and `categorical=codes`; `bench_raw.py` is the raw-zarr baseline, dense cases only.
-- **Storage:** 39 public stores (771 GB) staged to `/loc/scratch/$SLURM_JOB_ID` (ext4 on NVMe) before measuring (`run_v041_local/locscratch_staging.json`).
+- **Storage:** 39 public stores (771 GB) staged to `$LOCAL_SCRATCH/$SLURM_JOB_ID` (ext4 on NVMe) before measuring (`run_v041_local/locscratch_staging.json`).
 - **Protocol:** node-cold.
   - Before every cold repeat: `posix_fadvise(DONTNEED)` on every file of the case's arrays, verified by `mincore()` (CSV columns `resident_before` / `resident_after_evict`).
   - A fresh `annzarro start` per cold repeat; warm rows reuse it.

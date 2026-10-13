@@ -1,4 +1,4 @@
-# run=j3_v040 copied=2026-10-06T13:37:18-07:00 host=hpc-demo-node sources=$SCRATCH/annzarro-scale/results_j3 $SCRATCH/annzarro-scale/logs/j3_filerwarm.log $SCRATCH/annzarro-scale/logs/j3_filerwarm.slurm.out $SCRATCH/annzarro-scale/jobs/j3_filerwarm.sh $SCRATCH/annzarro-scale/jobs/warmread.py $SCRATCH/annzarro-scale/jobs/warmcheck.py $SCRATCH/annzarro-scale/jobs/j3_slow1m.txt
+# run=j3_v040 copied=2026-10-06T13:37:18-07:00 host=demo-server sources=$SCRATCH/annzarro-scale/results_j3 $SCRATCH/annzarro-scale/logs/j3_filerwarm.log $SCRATCH/annzarro-scale/logs/j3_filerwarm.slurm.out $SCRATCH/annzarro-scale/jobs/j3_filerwarm.sh $SCRATCH/annzarro-scale/jobs/warmread.py $SCRATCH/annzarro-scale/jobs/warmcheck.py $SCRATCH/annzarro-scale/jobs/j3_slow1m.txt
 path	bytes	sha256	source
 j3_filerwarm.log	15871	8b660087202ab8a90441a584f0fc763f92822bd828d75811180e72707bce0e78	$SCRATCH/annzarro-scale/logs/j3_filerwarm.log
 j3_filerwarm.sh	6420	01d7eb321998acd83722289187ff6781188b4e64b2aabb57870f1688a9b65e15	$SCRATCH/annzarro-scale/jobs/j3_filerwarm.sh

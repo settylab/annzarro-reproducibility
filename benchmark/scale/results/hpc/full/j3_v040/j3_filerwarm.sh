@@ -1,7 +1,5 @@
 #!/bin/bash
-#SBATCH --partition=<partition>
-#SBATCH --constraint=compute
-#SBATCH --exclude=hpc-demo-node,hpc-node-32
+#SBATCH --partition=<value>
 #SBATCH --exclusive
 #SBATCH --mem=350G
 #SBATCH --time=16:00:00

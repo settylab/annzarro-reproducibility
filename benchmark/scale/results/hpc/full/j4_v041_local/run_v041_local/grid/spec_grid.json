@@ -9,7 +9,7 @@
   {
    "case_id": "tahoe_dense_1M_1024x1024:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x1024.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x1024.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -28,7 +28,7 @@
   {
    "case_id": "tahoe_dense_1M_1024x1024:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x1024.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x1024.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -47,7 +47,7 @@
   {
    "case_id": "tahoe_dense_1M_1024x512:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x512.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x512.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -66,7 +66,7 @@
   {
    "case_id": "tahoe_dense_1M_1024x512:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x512.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x512.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -85,7 +85,7 @@
   {
    "case_id": "tahoe_dense_1M_1024x64:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x64.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x64.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -104,7 +104,7 @@
   {
    "case_id": "tahoe_dense_1M_1024x64:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x64.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x64.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -123,7 +123,7 @@
   {
    "case_id": "tahoe_dense_1M_16384x512:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x512.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x512.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -142,7 +142,7 @@
   {
    "case_id": "tahoe_dense_1M_16384x512:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x512.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x512.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -161,7 +161,7 @@
   {
    "case_id": "tahoe_dense_1M_16384x64:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x64.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x64.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -180,7 +180,7 @@
   {
    "case_id": "tahoe_dense_1M_16384x64:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x64.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x64.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -199,7 +199,7 @@
   {
    "case_id": "tahoe_dense_1M_256x4096:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x4096.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x4096.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -218,7 +218,7 @@
   {
    "case_id": "tahoe_dense_1M_256x4096:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x4096.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x4096.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -237,7 +237,7 @@
   {
    "case_id": "tahoe_dense_1M_256x512:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x512.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x512.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -256,7 +256,7 @@
   {
    "case_id": "tahoe_dense_1M_256x512:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x512.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x512.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -275,7 +275,7 @@
   {
    "case_id": "tahoe_dense_1M_4096x512:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_4096x512.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_4096x512.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -294,7 +294,7 @@
   {
    "case_id": "tahoe_dense_1M_4096x512:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_4096x512.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_4096x512.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -313,7 +313,7 @@
   {
    "case_id": "tahoe_dense_1M_4096x64:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_4096x64.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_4096x64.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -332,7 +332,7 @@
   {
    "case_id": "tahoe_dense_1M_4096x64:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_4096x64.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_4096x64.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -351,7 +351,7 @@
   {
    "case_id": "tahoe_dense_1M_8192x64:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_8192x64.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_8192x64.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -370,7 +370,7 @@
   {
    "case_id": "tahoe_dense_1M_8192x64:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_8192x64.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_8192x64.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -389,7 +389,7 @@
   {
    "case_id": "tahoe_dense_1M_allx4:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_allx4.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_allx4.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -408,7 +408,7 @@
   {
    "case_id": "tahoe_dense_1M_allx4:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_allx4.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_allx4.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -427,7 +427,7 @@
   {
    "case_id": "tahoe_dense_1M_allx64:dense_layer_gene_col:lognorm_panel",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_allx64.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_allx64.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {
@@ -446,7 +446,7 @@
   {
    "case_id": "tahoe_dense_1M_allx64:dense_layer_cell_row:lognorm_panel",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_allx64.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_allx64.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/lognorm_panel",
    "params": {

@@ -1,9 +1,7 @@
 #!/bin/bash
 # Fix-at-scale: rechunk the (n_cells, 4)-chunked kompot_smooth_all_smoothed layers of the
 # 1.17M-cell integrated atlas and scPLM 460k to the shape given as $1 (default 1024,1024) on $SCRATCH; "all,4" makes a same-filesystem copy of the original layout.
-#SBATCH --partition=<partition>
-#SBATCH --constraint=compute
-#SBATCH --exclude=hpc-demo-node,hpc-node-32
+#SBATCH --partition=<value>
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=48G
 #SBATCH --time=12:00:00

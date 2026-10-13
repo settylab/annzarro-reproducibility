@@ -1,5 +1,5 @@
 {
- "run": "J5, job 10163489, hpc-node-15, 2026-10-08 06:34:19-09:42:19 PDT, AnnZarro v0.4.1 (tag 78c9da6, tree 661a454; byte-identical to PyPI annzarro==0.4.1)",
+ "run": "J5, HPC job, compute-node, 2026-10-08 06:34:19-09:42:19 PDT, AnnZarro v0.4.1 (tag 78c9da6, tree 661a454; byte-identical to PyPI annzarro==0.4.1)",
  "written_by": "annzscale2, 2026-10-08, from J5's own records (annzarro_pin.json, warmcheck.tsv, j5_v041.log); same protocol and wording as J3's cold_protocol.json",
  "definition": "node-cold: compute-node page cache evicted for the store's files + a fresh annzarro server process per cold repeat; the file server's cache is NOT controlled",
  "store_location": "$SCRATCH/annzarro-scale/stores/n<N>/tahoe_<N>.zarr, read in place (NFS4, nfs-scratch-filer:/temp/lab/user); Tahoe-100M-derived (public, CC0-1.0)",

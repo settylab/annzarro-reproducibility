@@ -45,7 +45,7 @@ WINDOWS = [  # (start, end), PDT
 # Whole runs excluded from the basis: the first post-window real-data $SCRATCH run (real http,
 # real_rows) partly fell in W7/W8 and was rerun in full (jobs in runs/real_rerun_ids.txt), so no
 # summary pools rows from two runs of the same case.
-SUPERSEDED_JOBS = {"9987997", "9987998"}
+SUPERSEDED_JOBS = {"run-034", "run-035"}
 WIN = [(pd.Timestamp(a), pd.Timestamp(b)) for a, b in WINDOWS]
 
 runs, res = sys.argv[1], sys.argv[2]

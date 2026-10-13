@@ -1,6 +1,6 @@
 # J5: the Tahoe-100M per-click ladder (1M-95.6M) on an HPC node, AnnZarro v0.4.1
 
-- **Job:** Slurm 10163489, exclusive node hpc-node-15 (compute class, board x11dpu, 36 CPUs, 755 GiB RAM), 2026-10-08 06:34:19-09:42:19 PDT.
+- **Job:** Slurm run-064, exclusive node compute-node (compute class, board x11dpu, 36 CPUs, 755 GiB RAM), 2026-10-08 06:34:19-09:42:19 PDT.
   - The CPU model is not recorded by this harness. HPC compute nodes in the other v0.4.1 jobs report Xeon Gold 6254.
 - **Release pin:** AnnZarro v0.4.1, tag commit 78c9da657ecbff30163fd29055f0e6b10e915c5c (tree 661a454f), byte-identical to PyPI `annzarro==0.4.1`. Recorded in `results_j5/annzarro_pin.json`; the job refuses to run on a mismatch.
 - **Harness:** annzarro-reproducibility b9cd439b (`dominik/j5-v041-harness`), `benchmark/scale/bench_http.py`, which is bfd7cd0 with `categorical=codes` on the two obs_cat requests.

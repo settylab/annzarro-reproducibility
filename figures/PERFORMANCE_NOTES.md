@@ -18,7 +18,7 @@ AnnZarro 0.1.1, are in `PERFORMANCE_HISTORY.md` and are not cited.
 | tag | machine | storage | server | source |
 |---|---|---|---|---|
 | laptop | Apple M3 Max, 128 GB, macOS 26.5.1 | internal NVMe, APFS; cold = fresh APFS clone + fresh process | Flask/werkzeug threaded, 1 process | `benchmark/results/{scale,sparse,sweep}_v041.csv`, `*_v041_environment.json` |
-| HPC | Fred Hutch HPC compute nodes, Xeon Gold 6254, whole exclusive 36-CPU nodes (755 GiB) | `$SCRATCH`, an NFSv4.1 scratch filer; cold = a fresh server and the node's page cache evicted | one server process | HPC worker T (job 10163488), T2 (job 10195427) and J5 (job 10163489) on v0.4.1, `benchmark/scale/results/hpc/full/{t_v041_hpctemp_reduced,t2_v041_hpctemp_extra,j5_v041}/`; claim cases in `hpc_v041_case_map.tsv` |
+| HPC | Fred Hutch HPC compute nodes, Xeon Gold 6254, whole exclusive 36-CPU nodes (755 GiB) | `$SCRATCH`, an NFSv4.1 scratch filer; cold = a fresh server and the node's page cache evicted | one server process | HPC worker T (HPC job), T2 (HPC job) and J5 (HPC job) on v0.4.1, `benchmark/scale/results/hpc/full/{t_v041_hpctemp_reduced,t2_v041_hpctemp_extra,j5_v041}/`; claim cases in `hpc_v041_case_map.tsv` |
 
 Condition mapping (laptop). *cold* = `condition == "cold"`, *warm* = `warm_new` (page cache
 warm, a new index). Points are medians, whiskers IQR (q25-q75), from the per-request CSVs.

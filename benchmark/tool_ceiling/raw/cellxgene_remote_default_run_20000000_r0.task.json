@@ -48,7 +48,7 @@
   "error: Failed to load resource: the server responded with a status of 404 (NOT FOUND)",
   "error: Failed to load resource: the server responded with a status of 404 (NOT FOUND)"
  ],
- "server_url": "http://hpc-node-09:8791",
+ "server_url": "http://compute-node:8791",
  "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
  "crashed": false,
  "ok": true

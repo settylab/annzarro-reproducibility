@@ -19,7 +19,7 @@ the 3-D plotly default tooltip (code says voxel-centre x/y/z only) and the Analy
 | `screenshots.txt` | Manifest: job id, driver step, dataset, grid and zoom window for each image. |
 | `screenshots/` | The bin-centre density view (8,090 cells), the zoomed re-binned views, the 95.6M group (category) view, the hover probe. `provenance/` holds the driver scripts and each run's logs and timings. |
 | `recipe/` | The install that worked: `README.md` (modules, versions, how to start), `build_hpc.sh`, the conda env + explicit lock, the R package inventory, the `launch.R` host shims, and `container/` (Dockerfile/Apptainer def; NOT built end to end, see the recipe README). |
-| `probe/` | The backend probe (scSVA's own vaex `ds$count` binning, grid 512) at 1M, 10M, 20M, 50M and 95.6M cells, Slurm jobs 10168753-10168759, plus `backend_probe.R` that produced them. `probe_95624334_10168759.json` is the source of 153,749 non-empty bins, up to 18,243 cells per bin and `frac_bins_with_one_cell` 0.0847. The probe bins over the raw min/max without the app's 0.5% padding (scsva_render.txt states this). |
+| `probe/` | The backend probe (scSVA's own vaex `ds$count` binning, grid 512) at 1M, 10M, 20M, 50M and 95.6M cells, Slurm HPC job-run-070, plus `backend_probe.R` that produced them. `probe_95624334_run-070.json` is the source of 153,749 non-empty bins, up to 18,243 cells per bin and `frac_bins_with_one_cell` 0.0847. The probe bins over the raw min/max without the app's 0.5% padding (scsva_render.txt states this). |
 
 Reproduce:
 - The code evidence: `bash build_render_txt.sh > scsva_render.txt`.
@@ -32,5 +32,5 @@ The verbatim code excerpts, each with a file:line permalink at c9e8fd6, are insi
 Not in this directory (kept on $SCRATCH, Fred Hutch HPC):
 - The converted inputs, about 11.4 GB: `$SCRATCH/annzarro-scale/scsva/inputs/`. The relative paths in "Reproduce" resolve against the original pack, `$SCRATCH/annzarro-scale/scsva/evidence/` (the app-run line against its parent, `.../scsva/`).
 - The scSVA clone at c9e8fd6 that `build_render_txt.sh` reads: `$SCRATCH/annzarro-scale/scsva/src/scSVA/` (or clone klarman-cell-observatory/scSVA at that sha).
-- The full 11-shot sequences for all four GUI jobs, including tahoe 1M (10171676) and 10M (10171779): `$SCRATCH/annzarro-scale/scsva/runs/` and `.../scsva/screenshots/`.
+- The full 11-shot sequences for all four GUI jobs, including tahoe 1M (run-071) and 10M (run-074): `$SCRATCH/annzarro-scale/scsva/runs/` and `.../scsva/screenshots/`.
 - No file in this pack is over 2 MB; nothing was left out for size.

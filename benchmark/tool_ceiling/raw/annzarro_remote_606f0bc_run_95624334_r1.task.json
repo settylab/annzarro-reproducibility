@@ -28,14 +28,14 @@
   "browser": "chromium 153.0.8010.12"
  },
  "ceiling_rc": 0,
- "server_url": "http://hpc-node-36:8790",
+ "server_url": "http://compute-node:8790",
  "network": {
   "rtt_ms_median": 114.19,
   "rtt_ms_max": 186.72,
   "throughput_MBps_median": 35.8,
   "probe_bytes": 4000000,
   "probe_store": "$SCRATCH/annzarro-scale/stores_panel/n1M/tahoe_panel_1M.zarr",
-  "probe_url": "http://hpc-node-36:8790/api/v1/data/obsm/X_pca_2d?dataset_path=%2Fhpc%2Ftemp%2Flab%2Fdotto%2Fannzarro-scale%2Fstores_panel%2Fn1M%2Ftahoe_panel_1M.zarr&column_name=0&format=f32",
+  "probe_url": "http://compute-node:8790/api/v1/data/obsm/X_pca_2d?dataset_path=%2Fhpc%2Ftemp%2Flab%2Fdotto%2Fannzarro-scale%2Fstores_panel%2Fn1M%2Ftahoe_panel_1M.zarr&column_name=0&format=f32",
   "proxy": "socks5://127.0.0.1:8767"
  },
  "events": [

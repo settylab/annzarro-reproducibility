@@ -27,7 +27,7 @@ not cited.
   benchmarks overlap. `ps` (top 10 by CPU), `kern.memorystatus_level` and swap
   are recorded before each run (`raw/<id>.mem.json`, `ps_before`).
 - Safety cap: a run is killed when its process tree passes **85 GiB** total
-  (status `cap`; 48 GiB for runs before 2026-10-05 evening, see NOTES.md); timeout **30 min** per run (`timeout`), 2 h per conversion.
+  (status `cap`); timeout **30 min** per run (`timeout`), 2 h per conversion.
 - Headless Chromium 153 (Playwright 1.63, `channel="chromium"`, new headless
   mode, WebGL on the GPU through ANGLE Metal: recorded per run), viewport
   1600 x 900, as in `../scale/ceiling`.
@@ -83,8 +83,7 @@ than on a full transcriptome: this favours them, never AnnZarro.
 
 Inputs per tool, each built from the same store:
 
-Under the input rule (NOTES.md) no build below is charged to a tool; the
-conversion runs are kept in conversions_superseded.csv as a record.
+Under the input rule (NOTES.md) no build below is charged to a tool.
 
 | input | built by | charged to |
 | --- | --- | --- |
@@ -100,16 +99,15 @@ conversion runs are kept in conversions_superseded.csv as a record.
 
 The input rule leaves preparation out of every client number, and for UCSC that preparation is the
 largest cost of any tool here. UCSC reads only its own site format, so every dataset goes through
-`cbImportScanpy` and `cbBuild`, which hold the whole matrix in memory. Measured on the HPC (HPC worker
-request request-id; memmon process-tree RSS):
-`cbBuild` peaked at 102 GiB at 20M cells, 251 GiB at 50M, 482 GiB at 95.6M, 606 GiB at 120M and 757 GiB at 150M,
-the last two on a 1.5 TB node because they leave little or no room on a 684 GiB node; both steps took 1.9, 5.5,
-9.1, 9.5 and 11.9 h. The 150M site is 236 GB, of which 195 GB are download copies that the client never requests.
-`ucsc_prep_cost.csv` (one row per step per attempt, measured values only; MISSING where nothing was
-recorded) and `ucsc_prep_disk.csv` hold every value, with the laptop runs at 1M to 10M cells. The
-client ceiling of UCSC assumes this preparation was possible. AnnZarro opens a zarr store directly
-and its viewer converts nothing; making a store from an h5ad is a separate step, which also reads the
-data into memory.
+`cbImportScanpy` and `cbBuild`, which hold the whole matrix in memory. Measured on the HPC (memmon,
+process-tree RSS): `cbBuild` peaks at 102 GiB at 20M cells, 251 GiB at 50M, 482 GiB at 95.6M, 606 GiB at 120M
+and 757 GiB at 150M, the last two on a large-memory (1.5 TB) node; both steps take 1.9, 5.5, 9.1, 9.5 and 11.9 h.
+The 150M site is 236 GB, of which 195 GB are download copies that the client never requests.
+`ucsc_prep_cost.csv` (one row per step, measured values only; MISSING where nothing was recorded) and
+`ucsc_prep_disk.csv` hold the values, with the laptop runs at 1M to 10M cells. The client ceiling of UCSC
+assumes this preparation was possible. AnnZarro opens a zarr store directly and its viewer converts nothing;
+making a store from an h5ad is a separate step, which also reads the data into memory (a laptop
+measurement of that step is in `annzarro_prep_cost.csv`).
 
 ## The task, per tool
 
@@ -128,9 +126,8 @@ Success at N = both colourings drawn for every cell, verified, within 30 min.
 | ShinyCell 2.1.0 | default: CellInfo vs GeneExpr tab | the code (plots every row) |
 | Kana v3.2.0 (live build at kanaverse.org/kana, as served 2026-10-05; scran.js Wasm, 4 GiB heap) | default: explore mode on the h5ad (read in the browser, nothing uploaded) | Kana's header "N cells" |
 
-TissUUmaps 3 and napari-spatialdata were measured too but are out of scope for the paper
-(spatial-specific tools, operator decision 2026-10-06): their summary rows are in
-`ceilings_out_of_scope.csv` (not in `ceilings.csv`), their notes in OUT_OF_SCOPE.md.
+TissUUmaps 3 and napari-spatialdata are spatial-specific tools and out of scope for the paper;
+their summary rows are in `ceilings_out_of_scope.csv` (not in `ceilings.csv`), their notes in OUT_OF_SCOPE.md.
 
 The WebGL counter (`web_task.py`, `GL_HOOK`) wraps drawArrays / drawElements
 (mode POINTS) and their instanced forms on both WebGL contexts and records the
@@ -146,7 +143,7 @@ largest single call and the largest per-frame sum.
   same arithmetic). At Tahoe-100M's ~1,470 stored values per cell the same
   limit is reached at about **1.46M cells**: arithmetic, not measured. An
   HDF5Array/DelayedArray-backed SCE avoids the limit; it was not tested here.
-  ShinyCell and Seurat's default hit the (then 48 GiB) machine cap before reaching it.
+  ShinyCell and Seurat's default reach the machine cap before reaching it.
 - **Server budget.** CELLxGENE and Cirrocumulus keep the whole dataset in the
   server process; their servers pass the 32 GiB server budget while their
   client stays well under 16 GiB (`ceilings.csv`, `kind_16gb`).
@@ -163,7 +160,6 @@ largest single call and the largest per-frame sum.
 | `to_h5ad.py`, `to_sce.R`, `shinycell_build.R`, `vitessce_config.py`, `isee_app.R` | inputs |
 | `queue_*.sh`, `queue_bisect.py` | run orders (ladders; bisection to 1.25x around 16 GiB; two repeats at the bracketing Ns) |
 | `summarize.py` | `ceilings.csv` and `ceiling_curve.png` (a size fits a budget only if the median of its repeats does) |
-| `HISTORY.md` | superseded AnnZarro builds (before v0.4.1); not cited by the paper |
 | `results.csv` | one row per tool x variant x phase x N x run |
 | `raw/` | per run: memmon JSON (peaks, trace, ps before), the task's JSON (phases, checks, versions), log |
 | `docker/` | hard-limit check |

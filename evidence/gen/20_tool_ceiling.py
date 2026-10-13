@@ -172,7 +172,6 @@ and the method. Every number on it is computed from the result files listed next
     - **AnnZarro as a local app** (browser and server on the same laptop), current release: {local_txt}.
 
 {banner}
-{ctx.prep_block(page)}
 ## Source files
 
 | file | provenance |
@@ -182,7 +181,6 @@ and the method. Every number on it is computed from the result files listed next
 | clean-time flags | {prov_badge(f"{d}/overlaps.csv")} |
 | curve | {prov_badge(f"{d}/ceiling_curve.png")} |
 | method | {prov_badge(f"{d}/README.md")} |
-| UCSC preparation cost | {prov_badge(f"{d}/ucsc_prep_cost.csv")} |
 | summariser | {prov_badge(f"{d}/summarize.py")} |
 
 ## Ceilings {{#ceilings}}
@@ -197,7 +195,8 @@ their server; see the server column (server within its {ceil[0]["server_budget_g
 ≥ marks the largest N tested: no failure was found above it, so it is not a limit. "Largest N, gene
 coloring only" is filled where the first plot (colored by gene) draws every cell at an N above the
 largest N that also draws every cell colored by category; "–" means the two agree. The guard-off
-rows are explained in the paragraph below.
+rows are explained in the paragraph below. Preparing a dataset for the UCSC Cell Browser needs very large
+memory, which no ceiling here includes: see [its entry](../tools/ucsc-cell-browser.md).
 
 The figure puts every tool on one memory axis, so the ceilings can be compared at a glance; the charts under
 "Every run" show each run of each variant.

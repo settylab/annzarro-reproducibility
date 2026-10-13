@@ -9,7 +9,7 @@
   {
    "case_id": "tahoe_x_1M:X_gene_col",
    "kind": "X_gene_col",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/X",
    "params": {
@@ -27,7 +27,7 @@
   {
    "case_id": "tahoe_x_1M:sparse_layer_gene_col:counts_csr",
    "kind": "sparse_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/counts_csr",
    "params": {
@@ -45,7 +45,7 @@
   {
    "case_id": "tahoe_x_1M:sparse_layer_cell_row:counts_csr",
    "kind": "sparse_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/counts_csr",
    "params": {
@@ -63,7 +63,7 @@
   {
    "case_id": "tahoe_x_1M:obsm_col:X_pca_2d",
    "kind": "obsm_col",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsm/X_pca_2d",
    "params": {
@@ -81,7 +81,7 @@
   {
    "case_id": "tahoe_x_1M:obs_col:cell_line_id",
    "kind": "obs_col",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obs",
    "params": {
@@ -100,7 +100,7 @@
   {
    "case_id": "tahoe_x_1M:obs_col:drug",
    "kind": "obs_col",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obs",
    "params": {
@@ -119,7 +119,7 @@
   {
    "case_id": "tahoe_x_1M:obsp_csr_row:connectivities",
    "kind": "obsp_csr_row",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/connectivities",
    "params": {
@@ -137,7 +137,7 @@
   {
    "case_id": "tahoe_x_1M:cell_names",
    "kind": "cell_names",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/cells",
    "params": {},
@@ -152,7 +152,7 @@
   {
    "case_id": "tahoe_x_1.17M:X_gene_col",
    "kind": "X_gene_col",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/X",
    "params": {
@@ -170,7 +170,7 @@
   {
    "case_id": "tahoe_x_1.17M:sparse_layer_gene_col:counts_csr",
    "kind": "sparse_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/counts_csr",
    "params": {
@@ -188,7 +188,7 @@
   {
    "case_id": "tahoe_x_1.17M:sparse_layer_cell_row:counts_csr",
    "kind": "sparse_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/counts_csr",
    "params": {
@@ -206,7 +206,7 @@
   {
    "case_id": "tahoe_x_1.17M:obsm_col:X_pca_2d",
    "kind": "obsm_col",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsm/X_pca_2d",
    "params": {
@@ -224,7 +224,7 @@
   {
    "case_id": "tahoe_x_1.17M:obs_col:cell_line_id",
    "kind": "obs_col",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obs",
    "params": {
@@ -243,7 +243,7 @@
   {
    "case_id": "tahoe_x_1.17M:obs_col:drug",
    "kind": "obs_col",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obs",
    "params": {
@@ -262,7 +262,7 @@
   {
    "case_id": "tahoe_x_1.17M:obsp_csr_row:connectivities",
    "kind": "obsp_csr_row",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/connectivities",
    "params": {
@@ -280,7 +280,7 @@
   {
    "case_id": "tahoe_x_1.17M:cell_names",
    "kind": "cell_names",
-   "dataset": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/cells",
    "params": {},

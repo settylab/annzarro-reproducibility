@@ -107,8 +107,8 @@ TOOLS = [
 # Footnote letters on single marks: (row, column index) -> letter, explained in the legend.
 MARK_NOTES = {}
 
-# Scoring of "lazy chunked reads" and "every cell drawn" is open with the user (notes/APPROVALS.md
-# X1): reading "A" scores default behaviour (the TOOLS strings above), reading "B" scores what the
+# Scoring of "lazy chunked reads" and "every cell drawn" is a choice of reading: reading "A" scores
+# default behaviour (the TOOLS strings above), reading "B" scores what the
 # GUI can do at all, after a user choice or a preparation step. Switch here; nothing else changes.
 SCALE_READING = "B"                # user decision X1 (2026-10-04): what the GUI can do
 READING_B = {                      # tool -> {Scale column: mark under reading B}

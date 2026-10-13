@@ -516,7 +516,7 @@ pid=60079 etime=02:59 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lo
 2026-10-05 17:40:22Z
 10:40  up 112 days,  9:25, 27 users, load averages: 2.04 2.15 2.63
 92
-pid=15071 etime=09:21 rss_kb=19856 cmd=.venv/bin/python run.py --web --tool cellxgene --variant remote_default --n 20000000 --run 0 --note server on HPC: http://hpc-node-09:8791; one prior operator
+pid=15071 etime=09:21 rss_kb=19856 cmd=.venv/bin/python run.py --web --tool cellxgene --variant remote_default --n 20000000 --run 0 --note server on HPC: http://compute-node:8791; one prior operator
 pid=15072 etime=09:21 rss_kb=1232 cmd=/usr/bin/lockf -k $HOME/.annzarro-bench.lock /bin/sh -c [ -e $DATA_ROOT/tool_ceiling_data/PAUSE ] || [ -e $DATA_ROOT/tool_ceiling_data/PAUSE_SL
 pid=25773 etime=23:12:01 rss_kb=34896 cmd=/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 8820 --bind 12
 2026-10-05 18:38:27Z

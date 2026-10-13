@@ -2,9 +2,7 @@
 # Chunk-shape sweep inputs: rechunk spatial-A layers/kompot_de_Xenium_smoothed (75000 x 18345,
 # f4, blosc-lz4) into one minimal store per shape on $SCRATCH. Array index -> shape.
 # (all,64) is the CURRENT shape, rewritten so every shape sits on the same filesystem.
-#SBATCH --partition=<partition>
-#SBATCH --constraint=compute
-#SBATCH --exclude=hpc-demo-node,hpc-node-32
+#SBATCH --partition=<value>
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=16G
 #SBATCH --time=4:00:00

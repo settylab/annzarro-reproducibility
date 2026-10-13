@@ -1,19 +1,19 @@
 {
  "src_prefix": "$SCRATCH/annzarro-scale/",
- "dst_root": "/loc/scratch/10163485",
+ "dst_root": "$LOCAL_SCRATCH/run-062",
  "n_stores": 39,
  "source_bytes": 770971938596,
  "avail_bytes_before": 6964346847232,
- "findmnt": "TARGET                SOURCE                            FSTYPE OPTIONS\n/loc/scratch/10163485 /dev/nvme0n1p5[/scratch/10163485] ext4   rw,nosuid,nodev,relatime",
- "df": "Filesystem     Type  Size  Used Avail Use% Mounted on\n/dev/nvme0n1p5 ext4  6.7T  4.5M  6.4T   1% /loc/scratch/10163485",
+ "findmnt": "TARGET                SOURCE                            FSTYPE OPTIONS\n$LOCAL_SCRATCH/run-062 /dev/nvme0n1p5[/scratch/run-062] ext4   rw,nosuid,nodev,relatime",
+ "df": "Filesystem     Type  Size  Used Avail Use% Mounted on\n/dev/nvme0n1p5 ext4  6.7T  4.5M  6.4T   1% $LOCAL_SCRATCH/run-062",
  "lsblk": "",
- "host": "hpc-node-47",
- "job": "10163485",
+ "host": "compute-node",
+ "job": "<job>",
  "workers": 8,
  "stores": [
   {
    "store": "$SCRATCH/annzarro-scale/hlca/hlca_full.zarr",
-   "dst": "/loc/scratch/10163485/hlca/hlca_full.zarr",
+   "dst": "$LOCAL_SCRATCH/hlca/hlca_full.zarr",
    "files": 8603,
    "bytes": 29222197267,
    "src_files": 8603,
@@ -26,7 +26,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_1024x1024.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x1024.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x1024.zarr",
    "files": 4902,
    "bytes": 4292295707,
    "src_files": 4902,
@@ -39,7 +39,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_1024x512.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x512.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x512.zarr",
    "files": 9786,
    "bytes": 4495153744,
    "src_files": 9786,
@@ -52,7 +52,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_1024x64.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x64.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x64.zarr",
    "files": 77199,
    "bytes": 5316037099,
    "src_files": 77199,
@@ -65,7 +65,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_16384x512.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x512.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x512.zarr",
    "files": 636,
    "bytes": 4495079345,
    "src_files": 636,
@@ -78,7 +78,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_16384x64.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x64.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x64.zarr",
    "files": 4914,
    "bytes": 5314951640,
    "src_files": 4914,
@@ -91,7 +91,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_256x4096.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x4096.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x4096.zarr",
    "files": 7830,
    "bytes": 4071927629,
    "src_files": 7830,
@@ -104,7 +104,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_256x512.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x512.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x512.zarr",
    "files": 39086,
    "bytes": 4495621343,
    "src_files": 39086,
@@ -117,7 +117,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_4096x512.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_4096x512.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_4096x512.zarr",
    "files": 2466,
    "bytes": 4495051024,
    "src_files": 2466,
@@ -130,7 +130,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_4096x64.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_4096x64.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_4096x64.zarr",
    "files": 19371,
    "bytes": 5315126071,
    "src_files": 19371,
@@ -143,7 +143,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_8192x64.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_8192x64.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_8192x64.zarr",
    "files": 9733,
    "bytes": 5314990823,
    "src_files": 9733,
@@ -156,7 +156,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_allx4.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_allx4.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_allx4.zarr",
    "files": 1266,
    "bytes": 6168511244,
    "src_files": 1266,
@@ -169,7 +169,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/grid/tahoe_dense_1M_allx64.zarr",
-   "dst": "/loc/scratch/10163485/public/grid/tahoe_dense_1M_allx64.zarr",
+   "dst": "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_allx64.zarr",
    "files": 95,
    "bytes": 5314781987,
    "src_files": 95,
@@ -182,7 +182,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/hlca/hlca_dense_4096x128.zarr",
-   "dst": "/loc/scratch/10163485/public/hlca/hlca_dense_4096x128.zarr",
+   "dst": "$LOCAL_SCRATCH/public/hlca/hlca_dense_4096x128.zarr",
    "files": 241619,
    "bytes": 32814586572,
    "src_files": 241619,
@@ -195,7 +195,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/hlca/hlca_dense_allx4.zarr",
-   "dst": "/loc/scratch/10163485/public/hlca/hlca_dense_allx4.zarr",
+   "dst": "$LOCAL_SCRATCH/public/hlca/hlca_dense_allx4.zarr",
    "files": 13728,
    "bytes": 32733103843,
    "src_files": 13728,
@@ -208,7 +208,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/hlca_dist_100000.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/hlca_dist_100000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/hlca_dist_100000.zarr",
    "files": 12518,
    "bytes": 30747579273,
    "src_files": 12518,
@@ -221,7 +221,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/hlca_dist_200000.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/hlca_dist_200000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/hlca_dist_200000.zarr",
    "files": 50021,
    "bytes": 123945285410,
    "src_files": 50021,
@@ -234,7 +234,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/hlca_dist_50000.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/hlca_dist_50000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/hlca_dist_50000.zarr",
    "files": 3142,
    "bytes": 7773085770,
    "src_files": 3142,
@@ -247,7 +247,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/tahoe_corr_20000.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/tahoe_corr_20000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/tahoe_corr_20000.zarr",
    "files": 646,
    "bytes": 1390524357,
    "src_files": 646,
@@ -260,7 +260,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/tahoe_corr_30000.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/tahoe_corr_30000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/tahoe_corr_30000.zarr",
    "files": 959,
    "bytes": 3119447419,
    "src_files": 959,
@@ -273,7 +273,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/tahoe_dist_100000.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/tahoe_dist_100000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/tahoe_dist_100000.zarr",
    "files": 12518,
    "bytes": 31316853768,
    "src_files": 12518,
@@ -286,7 +286,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/tahoe_dist_200000.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/tahoe_dist_200000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/tahoe_dist_200000.zarr",
    "files": 50021,
    "bytes": 124482205586,
    "src_files": 50021,
@@ -299,7 +299,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/tahoe_dist_200000_r64.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/tahoe_dist_200000_r64.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/tahoe_dist_200000_r64.zarr",
    "files": 3146,
    "bytes": 124624659449,
    "src_files": 3146,
@@ -312,7 +312,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/tahoe_dist_50000.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/tahoe_dist_50000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/tahoe_dist_50000.zarr",
    "files": 3142,
    "bytes": 7984441611,
    "src_files": 3142,
@@ -325,7 +325,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/tahoe_kernel_100000.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/tahoe_kernel_100000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/tahoe_kernel_100000.zarr",
    "files": 12518,
    "bytes": 2311783207,
    "src_files": 12518,
@@ -338,7 +338,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/tahoe_kernel_200000.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/tahoe_kernel_200000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/tahoe_kernel_200000.zarr",
    "files": 50021,
    "bytes": 7615567079,
    "src_files": 50021,
@@ -351,7 +351,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/pairwise/tahoe_kernel_50000.zarr",
-   "dst": "/loc/scratch/10163485/public/pairwise/tahoe_kernel_50000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/pairwise/tahoe_kernel_50000.zarr",
    "files": 3142,
    "bytes": 853907511,
    "src_files": 3142,
@@ -364,7 +364,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/stores/tahoe_x_1.17M.zarr",
-   "dst": "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
+   "dst": "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr",
    "files": 2995,
    "bytes": 4839995482,
    "src_files": 2995,
@@ -377,7 +377,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/stores/tahoe_x_1M.zarr",
-   "dst": "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
+   "dst": "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr",
    "files": 2551,
    "bytes": 4110182904,
    "src_files": 2551,
@@ -390,7 +390,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/synth/syn_obsp_1000000.zarr",
-   "dst": "/loc/scratch/10163485/public/synth/syn_obsp_1000000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/synth/syn_obsp_1000000.zarr",
    "files": 27,
    "bytes": 37561258,
    "src_files": 27,
@@ -403,7 +403,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/synth/syn_obsp_200000.zarr",
-   "dst": "/loc/scratch/10163485/public/synth/syn_obsp_200000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/synth/syn_obsp_200000.zarr",
    "files": 27,
    "bytes": 27560000,
    "src_files": 27,
@@ -416,7 +416,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/synth/syn_obsp_500000.zarr",
-   "dst": "/loc/scratch/10163485/public/synth/syn_obsp_500000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/synth/syn_obsp_500000.zarr",
    "files": 27,
    "bytes": 35477192,
    "src_files": 27,
@@ -429,7 +429,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/synth/syn_varp_30000.zarr",
-   "dst": "/loc/scratch/10163485/public/synth/syn_varp_30000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/synth/syn_varp_30000.zarr",
    "files": 955,
    "bytes": 3003115122,
    "src_files": 955,
@@ -442,7 +442,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/synth/syn_varp_45000.zarr",
-   "dst": "/loc/scratch/10163485/public/synth/syn_varp_45000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/synth/syn_varp_45000.zarr",
    "files": 2830,
    "bytes": 6756523325,
    "src_files": 2830,
@@ -455,7 +455,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/synth/syn_varp_60000.zarr",
-   "dst": "/loc/scratch/10163485/public/synth/syn_varp_60000.zarr",
+   "dst": "$LOCAL_SCRATCH/public/synth/syn_varp_60000.zarr",
    "files": 3767,
    "bytes": 12012048056,
    "src_files": 3767,
@@ -468,7 +468,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/synth/syn_wide_200000x30000_1024x1024.zarr",
-   "dst": "/loc/scratch/10163485/public/synth/syn_wide_200000x30000_1024x1024.zarr",
+   "dst": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x30000_1024x1024.zarr",
    "files": 5897,
    "bytes": 20021903154,
    "src_files": 5897,
@@ -481,7 +481,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/synth/syn_wide_200000x30000_2048x256.zarr",
-   "dst": "/loc/scratch/10163485/public/synth/syn_wide_200000x30000_2048x256.zarr",
+   "dst": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x30000_2048x256.zarr",
    "files": 11581,
    "bytes": 20022291503,
    "src_files": 11581,
@@ -494,7 +494,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/synth/syn_wide_200000x60000_1024x1024.zarr",
-   "dst": "/loc/scratch/10163485/public/synth/syn_wide_200000x60000_1024x1024.zarr",
+   "dst": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x60000_1024x1024.zarr",
    "files": 11581,
    "bytes": 40038101336,
    "src_files": 11581,
@@ -507,7 +507,7 @@
   },
   {
    "store": "$SCRATCH/annzarro-scale/public/synth/syn_wide_200000x60000_1024x512.zarr",
-   "dst": "/loc/scratch/10163485/public/synth/syn_wide_200000x60000_1024x512.zarr",
+   "dst": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x60000_1024x512.zarr",
    "files": 23145,
    "bytes": 40042423486,
    "src_files": 23145,

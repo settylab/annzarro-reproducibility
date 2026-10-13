@@ -54,7 +54,7 @@
       "system_load": 6.2
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 98346,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -71,7 +71,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -118,7 +118,7 @@
     "time_utc": "2026-10-05T12:13:12Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -207,7 +207,7 @@
       "system_load": 4.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 99232,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -224,7 +224,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -271,7 +271,7 @@
     "time_utc": "2026-10-05T12:13:52Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -360,7 +360,7 @@
       "system_load": 15.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 205,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -377,7 +377,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -424,7 +424,7 @@
     "time_utc": "2026-10-05T12:14:31Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -513,7 +513,7 @@
       "system_load": 21.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 1222,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -530,7 +530,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -577,7 +577,7 @@
     "time_utc": "2026-10-05T12:15:10Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -666,7 +666,7 @@
       "system_load": 15.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 2215,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -683,7 +683,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -730,7 +730,7 @@
     "time_utc": "2026-10-05T12:15:50Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -819,7 +819,7 @@
       "system_load": 16.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 3115,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -836,7 +836,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -883,7 +883,7 @@
     "time_utc": "2026-10-05T12:16:29Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -972,7 +972,7 @@
       "system_load": 29.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 3992,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -989,7 +989,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1036,7 +1036,7 @@
     "time_utc": "2026-10-05T12:17:09Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -1125,7 +1125,7 @@
       "system_load": 0.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 4967,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1142,7 +1142,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1189,7 +1189,7 @@
     "time_utc": "2026-10-05T12:17:52Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -1278,7 +1278,7 @@
       "system_load": 17.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 5893,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1295,7 +1295,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1342,7 +1342,7 @@
     "time_utc": "2026-10-05T12:18:34Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -1431,7 +1431,7 @@
       "system_load": 26.4
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 6837,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1448,7 +1448,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1495,7 +1495,7 @@
     "time_utc": "2026-10-05T12:19:16Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -1584,7 +1584,7 @@
       "system_load": 28.0
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 7845,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1601,7 +1601,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1648,7 +1648,7 @@
     "time_utc": "2026-10-05T12:20:02Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -1737,7 +1737,7 @@
       "system_load": 21.2
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 8873,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1754,7 +1754,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1801,7 +1801,7 @@
     "time_utc": "2026-10-05T12:20:49Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -1890,7 +1890,7 @@
       "system_load": 30.8
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 9882,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -1907,7 +1907,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -1954,7 +1954,7 @@
     "time_utc": "2026-10-05T12:21:35Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -2043,7 +2043,7 @@
       "system_load": 16.6
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 11093,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2060,7 +2060,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2107,7 +2107,7 @@
     "time_utc": "2026-10-05T12:22:29Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -2196,7 +2196,7 @@
       "system_load": 19.1
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 12283,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2213,7 +2213,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2260,7 +2260,7 @@
     "time_utc": "2026-10-05T12:23:23Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -2349,7 +2349,7 @@
       "system_load": 31.5
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 13497,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2366,7 +2366,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2413,7 +2413,7 @@
     "time_utc": "2026-10-05T12:24:18Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -2502,7 +2502,7 @@
       "system_load": 29.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 15187,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2519,7 +2519,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2566,7 +2566,7 @@
     "time_utc": "2026-10-05T12:25:35Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -2655,7 +2655,7 @@
       "system_load": 28.9
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 16916,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2672,7 +2672,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2719,7 +2719,7 @@
     "time_utc": "2026-10-05T12:26:54Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -2808,7 +2808,7 @@
       "system_load": 29.3
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 18701,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2825,7 +2825,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -2872,7 +2872,7 @@
     "time_utc": "2026-10-05T12:28:12Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -2961,7 +2961,7 @@
       "system_load": 29.1
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 21193,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -2978,7 +2978,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -3025,7 +3025,7 @@
     "time_utc": "2026-10-05T12:30:08Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {
@@ -3114,7 +3114,7 @@
       "system_load": 28.7
      },
      "server": {
-      "hostname": "laptop",
+      "hostname": "compute-node",
       "pid": 23684,
       "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
       "python_version": "3.13.9",
@@ -3131,7 +3131,7 @@
    },
    "browser": null,
    "machine": {
-    "hostname": "laptop",
+    "hostname": "compute-node",
     "platform": "macOS-26.5.1-arm64-arm-64bit",
     "os": "ProductName:\t\tmacOS; ProductVersion:\t\t26.5.1; BuildVersion:\t\t25F80",
     "cpu": "Apple M3 Max",
@@ -3178,7 +3178,7 @@
     "time_utc": "2026-10-05T12:32:03Z",
     "harness_environment": {
      "site": "laptop",
-     "hostname": "laptop",
+     "hostname": "compute-node",
      "platform": "macOS-26.5.1-arm64-arm-64bit",
      "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
      "packages": {

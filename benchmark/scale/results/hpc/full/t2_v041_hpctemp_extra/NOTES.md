@@ -1,6 +1,6 @@
 # T2: extra $SCRATCH arm for the 5 node-local-only claims, AnnZarro v0.4.1
 
-- **Job:** Slurm 10195427, exclusive node hpc-node-38 (Intel Xeon Gold 6254 @ 3.10 GHz, 36 CPUs, 755 GiB RAM), 2026-10-08 11:00:18-13:18:51 PDT. It was run on the operator's decision (laptop request 20261008T173855Z).
+- **Job:** Slurm run-076, exclusive node compute-node (Intel Xeon Gold 6254 @ 3.10 GHz, 36 CPUs, 755 GiB RAM), 2026-10-08 11:00:18-13:18:51 PDT. It was run on the operator's decision (laptop request 20261008T173855Z).
 - **Release pin:** AnnZarro v0.4.1, tag commit 78c9da657ecbff30163fd29055f0e6b10e915c5c (tree 661a454f), the same install as J4/T (byte-identical to PyPI `annzarro==0.4.1`). The pin guard passed.
 - **Harness:** annzarro-reproducibility `dominik/hpc-bench-v030` @ 1804118b, `rerun_release.sbatch`, stages tahoe_x and pairwise_public.
   - Cases selected by T_CASES (full match):

@@ -1,6 +1,6 @@
 {
  "site": "hpc",
- "hostname": "hpc-node-15",
+ "hostname": "compute-node",
  "platform": "Linux-5.4.0-228-generic-x86_64-with-glibc2.27",
  "python": "3.11.14 (main, Jan 13 2026, 17:35:07) [Clang 21.1.4 ]",
  "packages": {

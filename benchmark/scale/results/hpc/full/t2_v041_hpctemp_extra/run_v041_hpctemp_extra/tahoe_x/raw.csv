@@ -1,1 +1,1 @@
-run_id,experiment,case_id,kind,dataset,fs,array,op,phase,repeat,first_touch,index,latency_s,n_values,proc_hwm_mb,resident_before,resident_after_evict,ts,node,job_id
+run_id,experiment,case_id,kind,dataset,fs,array,op,phase,repeat,first_touch,index,latency_s,n_values,proc_hwm_mb,resident_before,resident_after_evict,ts

@@ -1,6 +1,6 @@
 {
  "jobs": {
-  "10011130:real_post/real_hpctemp.env_10011130.json": {
+  "run-052:real_post/real_hpctemp.env_run-052.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "0172a6c0bcc648c8257c556328db19bfda5ff2c4",
    "bench_dirty": "M benchmark/hpc/scripts/collect.py",
@@ -16,7 +16,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-28",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221196 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -33,11 +33,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "10011130",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "65536",
    "slurm_partition": "<partition>"
   },
-  "10011131:real_post/real_hpctemp.env_10011131.json": {
+  "run-053:real_post/real_hpctemp.env_run-053.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "0172a6c0bcc648c8257c556328db19bfda5ff2c4",
    "bench_dirty": "M benchmark/hpc/scripts/collect.py",
@@ -53,7 +53,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-33",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221096 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -70,11 +70,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "10011131",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "131072",
    "slurm_partition": "<partition>"
   },
-  "9976358:smoke/smoke.env_9976358.json": {
+  "run-001:smoke/smoke.env_run-001.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "5e44f7dc76f442305bdeae20f4b8f719bcbd5a0a",
    "bench_dirty": "?? benchmark/hpc/scripts/bench_http.py\n?? benchmark/hpc/scripts/bench_raw.py\n?? benchmark/hpc/scripts/benchlib.py\n?? benchmark/hpc/scripts/build_pairwise.py\n?? benchmark/hpc/scripts/make_specs.py\n?? benchmark/hpc/scripts/rechunk_layer.py\n?? benchmark/hpc/scripts/wsgi_bench.py",
@@ -90,7 +90,7 @@
      "mount": "filer:/export/fast/lab nfs rw,nosuid,nodev,relatime,vers=3,rsize=131072,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=hpc-ip,mountvers=3,mountport=300,mountproto=udp,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-08",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       758965272 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -107,11 +107,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9976358",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "65536",
    "slurm_partition": "<partition>"
   },
-  "9976382:real/real_fhfast.env_9976382.json": {
+  "run-002:real/real_fhfast.env_run-002.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "30cf2d291ed77b0888746bf221e108c88b3bd52c",
    "bench_dirty": "M benchmark/hpc/scripts/make_specs.py",
@@ -127,7 +127,7 @@
      "mount": "filer:/export/fast/lab nfs rw,nosuid,nodev,relatime,vers=3,rsize=131072,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=hpc-ip,mountvers=3,mountport=300,mountproto=udp,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-16",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221260 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -144,11 +144,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9976382",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "65536",
    "slurm_partition": "<partition>"
   },
-  "9976383:real/real_rows_fhfast.env_9976383.json": {
+  "run-003:real/real_rows_fhfast.env_run-003.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "30cf2d291ed77b0888746bf221e108c88b3bd52c",
    "bench_dirty": "M benchmark/hpc/scripts/make_specs.py",
@@ -164,7 +164,7 @@
      "mount": "filer:/export/fast/lab nfs rw,nosuid,nodev,relatime,vers=3,rsize=131072,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=hpc-ip,mountvers=3,mountport=300,mountproto=udp,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-18",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       758965264 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -181,11 +181,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9976383",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "131072",
    "slurm_partition": "<partition>"
   },
-  "9976397:chunksweep/http.env_9976397.json": {
+  "run-004:chunksweep/http.env_run-004.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "30cf2d291ed77b0888746bf221e108c88b3bd52c",
    "bench_dirty": "M benchmark/hpc/scripts/make_specs.py",
@@ -205,7 +205,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-17",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221236 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -222,11 +222,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9976397",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "65536",
    "slurm_partition": "<partition>"
   },
-  "9976781:pairwise/http_kernels.env_9976781.json": {
+  "run-006:pairwise/http_kernels.env_run-006.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "30cf2d291ed77b0888746bf221e108c88b3bd52c",
    "bench_dirty": "M benchmark/hpc/scripts/build_pairwise.py\n M benchmark/hpc/scripts/make_specs.py\n?? benchmark/hpc/scripts/summarize.py",
@@ -242,7 +242,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-22",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221188 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -259,11 +259,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9976781",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "65536",
    "slurm_partition": "<partition>"
   },
-  "9976799:fsarm/env_fhfast_9976799.json": {
+  "run-008:fsarm/env_fhfast_run-008.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "2cbb96431b1242360a4c59ef6f144c15fed27aa4",
    "bench_dirty": "",
@@ -279,7 +279,7 @@
      "mount": "filer:/export/fast/lab nfs rw,nosuid,nodev,relatime,vers=3,rsize=131072,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=hpc-ip,mountvers=3,mountport=300,mountproto=udp,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-07",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791211608 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -296,11 +296,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9976799",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "98304",
    "slurm_partition": "<partition>"
   },
-  "9976799:fsarm/env_hpctemp_9976799.json": {
+  "run-008:fsarm/env_hpctemp_run-008.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "2cbb96431b1242360a4c59ef6f144c15fed27aa4",
    "bench_dirty": "",
@@ -316,7 +316,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-07",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791211608 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -333,11 +333,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9976799",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "98304",
    "slurm_partition": "<partition>"
   },
-  "9976799:fsarm/env_tmpfs_9976799.json": {
+  "run-008:fsarm/env_tmpfs_run-008.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "2cbb96431b1242360a4c59ef6f144c15fed27aa4",
    "bench_dirty": "",
@@ -348,12 +348,12 @@
     "nproc_allowed": "4"
    },
    "filesystems": {
-    "/loc/scratch/9976799": {
+    "$LOCAL_SCRATCH/run-008": {
      "df": "tmpfs          tmpfs   395605804 16937856 378667948       5% /",
      "mount": "tmpfs[/newroot] tmpfs rw,nosuid,nodev,relatime,uid=71780,gid=71780"
     }
    },
-   "hostname": "hpc-node-07",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791211608 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -370,11 +370,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9976799",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "98304",
    "slurm_partition": "<partition>"
   },
-  "9978406:pairwise/http_dist_corr.env_9978406.json": {
+  "run-009:pairwise/http_dist_corr.env_run-009.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "2cbb96431b1242360a4c59ef6f144c15fed27aa4",
    "bench_dirty": "M benchmark/hpc/scripts/bench_http.py\n M benchmark/hpc/scripts/build_pairwise.py\n M benchmark/hpc/scripts/make_specs.py\n?? benchmark/hpc/scripts/bench_concurrency.py",
@@ -390,7 +390,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-34",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221208 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -407,11 +407,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9978406",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "65536",
    "slurm_partition": "<partition>"
   },
-  "9979078:atlas/http.env_9979078.json": {
+  "run-012:atlas/http.env_run-012.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "2cbb96431b1242360a4c59ef6f144c15fed27aa4",
    "bench_dirty": "M benchmark/hpc/scripts/bench_http.py\n M benchmark/hpc/scripts/build_pairwise.py\n M benchmark/hpc/scripts/make_specs.py\n?? benchmark/hpc/scripts/bench_concurrency.py",
@@ -427,7 +427,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-45",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221200 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -444,11 +444,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9979078",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "131072",
    "slurm_partition": "<partition>"
   },
-  "9979171:real/real_fhfast_rerun.env_9979171.json": {
+  "run-014:real/real_fhfast_rerun.env_run-014.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "deae42df43192bdd63d26ff70c5a3290f6b5670a",
    "bench_dirty": "M benchmark/hpc/scripts/collect.py",
@@ -464,7 +464,7 @@
      "mount": "filer:/export/fast/lab nfs rw,nosuid,nodev,relatime,vers=3,rsize=131072,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=hpc-ip,mountvers=3,mountport=300,mountproto=udp,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-11",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221240 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -481,11 +481,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9979171",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "65536",
    "slurm_partition": "<partition>"
   },
-  "9980190:atlas/http_aspect.env_9980190.json": {
+  "run-015:atlas/http_aspect.env_run-015.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "deae42df43192bdd63d26ff70c5a3290f6b5670a",
    "bench_dirty": "M benchmark/hpc/scripts/collect.py",
@@ -501,7 +501,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-44",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221192 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -518,11 +518,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9980190",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "65536",
    "slurm_partition": "<partition>"
   },
-  "9987982:post/chunksweep/http.env_9987982.json": {
+  "run-028:post/chunksweep/http.env_run-028.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "10f0eca48e67b07d400dbd4d5138f13cc77c3e8e",
    "bench_dirty": "M benchmark/hpc/scripts/collect.py",
@@ -538,7 +538,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-06",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       725934760 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -555,11 +555,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9987982",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "65536",
    "slurm_partition": "<partition>"
   },
-  "9987992:post/pairwise/http.env_9987992.json": {
+  "run-030:post/pairwise/http.env_run-030.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
    "bench_dirty": "",
@@ -575,7 +575,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-09",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221152 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -592,11 +592,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9987992",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "65536",
    "slurm_partition": "<partition>"
   },
-  "9987994:post/fsarm/env_hpctemp_9987994.json": {
+  "run-032:post/fsarm/env_hpctemp_run-032.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
    "bench_dirty": "",
@@ -612,7 +612,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-43",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221204 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -629,11 +629,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9987994",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "98304",
    "slurm_partition": "<partition>"
   },
-  "9987994:post/fsarm/env_tmpfs_9987994.json": {
+  "run-032:post/fsarm/env_tmpfs_run-032.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
    "bench_dirty": "",
@@ -644,12 +644,12 @@
     "nproc_allowed": "4"
    },
    "filesystems": {
-    "/loc/scratch/9987994": {
+    "$LOCAL_SCRATCH/run-032": {
      "df": "tmpfs          tmpfs   395610600 16937856 378672744       5% /",
      "mount": "tmpfs[/newroot] tmpfs rw,nosuid,nodev,relatime,uid=71780,gid=71780"
     }
    },
-   "hostname": "hpc-node-43",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221204 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -666,11 +666,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9987994",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "98304",
    "slurm_partition": "<partition>"
   },
-  "9987997:real_post/real_hpctemp.env_9987997.json": {
+  "run-034:real_post/real_hpctemp.env_run-034.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
    "bench_dirty": "",
@@ -686,7 +686,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-29",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791221096 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -703,11 +703,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9987997",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "65536",
    "slurm_partition": "<partition>"
   },
-  "9987998:real_post/real_hpctemp.env_9987998.json": {
+  "run-035:real_post/real_hpctemp.env_run-035.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
    "bench_dirty": "",
@@ -723,7 +723,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-07",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791211608 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -740,11 +740,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9987998",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "131072",
    "slurm_partition": "<partition>"
   },
-  "9987999:real_post/real_tmpfs.env_9987999.json": {
+  "run-036:real_post/real_tmpfs.env_run-036.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
    "bench_dirty": "",
@@ -755,12 +755,12 @@
     "nproc_allowed": "4"
    },
    "filesystems": {
-    "/loc/scratch/9987999": {
+    "$LOCAL_SCRATCH/run-036": {
      "df": "tmpfs          tmpfs   395605784 6662352 388943432       2% /",
      "mount": "tmpfs[/newroot] tmpfs rw,nosuid,nodev,relatime,uid=71780,gid=71780"
     }
    },
-   "hostname": "hpc-node-05",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791211568 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -777,11 +777,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9987999",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "49152",
    "slurm_partition": "<partition>"
   },
-  "9988003:real_post/real_tmpfs.env_9988003.json": {
+  "run-037:real_post/real_tmpfs.env_run-037.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
    "bench_dirty": "",
@@ -792,12 +792,12 @@
     "nproc_allowed": "4"
    },
    "filesystems": {
-    "/loc/scratch/9988003": {
+    "$LOCAL_SCRATCH/run-037": {
      "df": "tmpfs          tmpfs   395605784 62797584 332808200      16% /",
      "mount": "tmpfs[/newroot] tmpfs rw,nosuid,nodev,relatime,uid=71780,gid=71780"
     }
    },
-   "hostname": "hpc-node-05",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791211568 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -814,11 +814,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9988003",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "131072",
    "slurm_partition": "<partition>"
   },
-  "9988004:real_post/real_tmpfs.env_9988004.json": {
+  "run-038:real_post/real_tmpfs.env_run-038.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
    "bench_dirty": "",
@@ -829,12 +829,12 @@
     "nproc_allowed": "4"
    },
    "filesystems": {
-    "/loc/scratch/9988004": {
+    "$LOCAL_SCRATCH/run-038": {
      "df": "tmpfs          tmpfs   395605784 64428128 331177656      17% /",
      "mount": "tmpfs[/newroot] tmpfs rw,nosuid,nodev,relatime,uid=71780,gid=71780"
     }
    },
-   "hostname": "hpc-node-05",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791211568 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -851,11 +851,11 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9988004",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "131072",
    "slurm_partition": "<partition>"
   },
-  "9988005:post/atlas/http.env_9988005.json": {
+  "run-039:post/atlas/http.env_run-039.json": {
    "annzarro_commit": "63b57e6658531777d7354ba50b6b9c9f82b83b6a",
    "bench_commit": "e88c604fac04ff814ff3c5870b3e11b4eef1f00b",
    "bench_dirty": "",
@@ -871,7 +871,7 @@
      "mount": "nfs-scratch-filer:/temp/lab/user nfs4 rw,nosuid,nodev,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=hpc-ip,local_lock=none,addr=hpc-ip"
     }
    },
-   "hostname": "hpc-node-05",
+   "hostname": "compute-node",
    "kernel": "5.4.0-228-generic",
    "mem_total": "MemTotal:       791211568 kB",
    "os": "Ubuntu 18.04.6 LTS",
@@ -888,13 +888,13 @@
    },
    "python": "3.11.14",
    "slurm_cpus_on_node": "4",
-   "slurm_job_id": "9988005",
+   "slurm_job_id": "<job>",
    "slurm_mem_per_node_mb": "131072",
    "slurm_partition": "<partition>"
   }
  },
  "specs": {
-  "runs/fsarm/spec_fhfast_9976799.json": {
+  "runs/fsarm/spec_fhfast_run-008.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -1038,7 +1038,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/fsarm/spec_hpctemp_9976799.json": {
+  "runs/fsarm/spec_hpctemp_run-008.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -1182,14 +1182,14 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/fsarm/spec_tmpfs_9976799.json": {
+  "runs/fsarm/spec_tmpfs_run-008.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
      "axis_len": 18345,
      "case_id": "fsarm_tmpfs:X_gene_col",
      "chunk": 1,
-     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "X"
      ],
@@ -1206,7 +1206,7 @@
      "axis_len": 18345,
      "case_id": "fsarm_tmpfs:dense_layer_gene_col:kompot_de_Xenium_smoothed",
      "chunk": 64,
-     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "layers/kompot_de_Xenium_smoothed"
      ],
@@ -1223,7 +1223,7 @@
      "axis_len": 75000,
      "case_id": "fsarm_tmpfs:dense_layer_cell_row:kompot_de_Xenium_smoothed",
      "chunk": 75000,
-     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "layers/kompot_de_Xenium_smoothed"
      ],
@@ -1240,7 +1240,7 @@
      "axis_len": 2,
      "case_id": "fsarm_tmpfs:obsm_col:X_umap",
      "chunk": 2,
-     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "obsm/X_umap"
      ],
@@ -1257,7 +1257,7 @@
      "axis_len": null,
      "case_id": "fsarm_tmpfs:obs_col:celltype",
      "chunk": 1,
-     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "obs/celltype"
      ],
@@ -1274,7 +1274,7 @@
      "axis_len": 75000,
      "case_id": "fsarm_tmpfs:obsp_dense_row:dist_spatial",
      "chunk": 16,
-     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "obsp/dist_spatial"
      ],
@@ -1291,7 +1291,7 @@
      "axis_len": 18345,
      "case_id": "fsarm_tmpfs:varp_dense_row:gene_corr_pearson_lognorm",
      "chunk": 64,
-     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "varp/gene_corr_pearson_lognorm"
      ],
@@ -1308,7 +1308,7 @@
      "axis_len": null,
      "case_id": "fsarm_tmpfs:cell_names",
      "chunk": 1,
-     "dataset": "/loc/scratch/9976799/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "obs/_index"
      ],
@@ -1326,7 +1326,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/post/atlas/spec_atlas_9988005.json": {
+  "runs/post/atlas/spec_atlas_run-039.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -1710,7 +1710,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/post/atlas/spec_atlas_9988006.json": {
+  "runs/post/atlas/spec_atlas_run-040.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -2094,7 +2094,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/post/chunksweep/spec_chunksweep_9987982.json": {
+  "runs/post/chunksweep/spec_chunksweep_run-028.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -2328,7 +2328,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/post/chunksweep/spec_chunksweep_9987983.json": {
+  "runs/post/chunksweep/spec_chunksweep_run-029.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -2562,7 +2562,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/post/fsarm/spec_hpctemp_9987994.json": {
+  "runs/post/fsarm/spec_hpctemp_run-032.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -2706,14 +2706,14 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/post/fsarm/spec_tmpfs_9987994.json": {
+  "runs/post/fsarm/spec_tmpfs_run-032.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
      "axis_len": 18345,
      "case_id": "fsarm_tmpfs:X_gene_col",
      "chunk": 1,
-     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "X"
      ],
@@ -2730,7 +2730,7 @@
      "axis_len": 18345,
      "case_id": "fsarm_tmpfs:dense_layer_gene_col:kompot_de_Xenium_smoothed",
      "chunk": 64,
-     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "layers/kompot_de_Xenium_smoothed"
      ],
@@ -2747,7 +2747,7 @@
      "axis_len": 75000,
      "case_id": "fsarm_tmpfs:dense_layer_cell_row:kompot_de_Xenium_smoothed",
      "chunk": 75000,
-     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "layers/kompot_de_Xenium_smoothed"
      ],
@@ -2764,7 +2764,7 @@
      "axis_len": 2,
      "case_id": "fsarm_tmpfs:obsm_col:X_umap",
      "chunk": 2,
-     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "obsm/X_umap"
      ],
@@ -2781,7 +2781,7 @@
      "axis_len": null,
      "case_id": "fsarm_tmpfs:obs_col:celltype",
      "chunk": 1,
-     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "obs/celltype"
      ],
@@ -2798,7 +2798,7 @@
      "axis_len": 75000,
      "case_id": "fsarm_tmpfs:obsp_dense_row:dist_spatial",
      "chunk": 16,
-     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "obsp/dist_spatial"
      ],
@@ -2815,7 +2815,7 @@
      "axis_len": 18345,
      "case_id": "fsarm_tmpfs:varp_dense_row:gene_corr_pearson_lognorm",
      "chunk": 64,
-     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "varp/gene_corr_pearson_lognorm"
      ],
@@ -2832,7 +2832,7 @@
      "axis_len": null,
      "case_id": "fsarm_tmpfs:cell_names",
      "chunk": 1,
-     "dataset": "/loc/scratch/9987994/spatial-A-subset.zarr",
+     "dataset": "$LOCAL_SCRATCH/spatial-A-subset.zarr",
      "evict": [
       "obs/_index"
      ],
@@ -2850,7 +2850,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/post/pairwise/spec_pairwise_9987992.json": {
+  "runs/post/pairwise/spec_pairwise_run-030.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -3064,7 +3064,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/post/pairwise/spec_pairwise_9987993.json": {
+  "runs/post/pairwise/spec_pairwise_run-031.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -3278,7 +3278,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/real_post/spec_real_10011130.json": {
+  "runs/real_post/spec_real_run-052.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -3570,7 +3570,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/real_post/spec_real_9987997.json": {
+  "runs/real_post/spec_real_run-034.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -3862,7 +3862,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/real_post/spec_real_rows_10011131.json": {
+  "runs/real_post/spec_real_rows_run-053.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -3904,7 +3904,7 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/real_post/spec_real_rows_9987998.json": {
+  "runs/real_post/spec_real_rows_run-035.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
@@ -3946,14 +3946,14 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/real_post/spec_tmpfs_atlas-1.17M-raw_9987999.json": {
+  "runs/real_post/spec_tmpfs_atlas-1.17M-raw_run-036.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
      "axis_len": 12731,
      "case_id": "atlas-1.17M-raw:X_gene_col",
      "chunk": 1,
-     "dataset": "/loc/scratch/9987999/atlas-1.17M-raw.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-raw.zarr",
      "evict": [
       "X"
      ],
@@ -3969,7 +3969,7 @@
      "axis_len": null,
      "case_id": "atlas-1.17M-raw:obs_col:cell_type",
      "chunk": 1,
-     "dataset": "/loc/scratch/9987999/atlas-1.17M-raw.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-raw.zarr",
      "evict": [
       "obs/cell_type"
      ],
@@ -3985,7 +3985,7 @@
      "axis_len": null,
      "case_id": "atlas-1.17M-raw:cell_names",
      "chunk": 1,
-     "dataset": "/loc/scratch/9987999/atlas-1.17M-raw.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-raw.zarr",
      "evict": [
       "obs/_index"
      ],
@@ -4002,14 +4002,14 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/real_post/spec_tmpfs_atlas-1.17M-scvi_9988004.json": {
+  "runs/real_post/spec_tmpfs_atlas-1.17M-scvi_run-038.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
      "axis_len": 12731,
      "case_id": "atlas-1.17M-scvi:X_gene_col",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-scvi.zarr",
      "evict": [
       "X"
      ],
@@ -4025,7 +4025,7 @@
      "axis_len": 12731,
      "case_id": "atlas-1.17M-scvi:sparse_layer_gene_col:lognorm",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-scvi.zarr",
      "evict": [
       "layers/lognorm"
      ],
@@ -4041,7 +4041,7 @@
      "axis_len": 12731,
      "case_id": "atlas-1.17M-scvi:dense_layer_gene_col:kompot_smooth_all_smoothed",
      "chunk": 4,
-     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-scvi.zarr",
      "evict": [
       "layers/kompot_smooth_all_smoothed"
      ],
@@ -4057,7 +4057,7 @@
      "axis_len": 2,
      "case_id": "atlas-1.17M-scvi:obsm_col:X_umap",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-scvi.zarr",
      "evict": [
       "obsm/X_umap"
      ],
@@ -4073,7 +4073,7 @@
      "axis_len": 30,
      "case_id": "atlas-1.17M-scvi:obsm_col:X_scVI",
      "chunk": 4,
-     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-scvi.zarr",
      "evict": [
       "obsm/X_scVI"
      ],
@@ -4089,7 +4089,7 @@
      "axis_len": null,
      "case_id": "atlas-1.17M-scvi:obs_col:cell_type",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-scvi.zarr",
      "evict": [
       "obs/cell_type"
      ],
@@ -4105,7 +4105,7 @@
      "axis_len": null,
      "case_id": "atlas-1.17M-scvi:obs_col:kompot_da_lfc",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-scvi.zarr",
      "evict": [
       "obs/kompot_da_lfc"
      ],
@@ -4121,7 +4121,7 @@
      "axis_len": 1165934,
      "case_id": "atlas-1.17M-scvi:obsp_csr_row:connectivities",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-scvi.zarr",
      "evict": [
       "obsp/connectivities"
      ],
@@ -4137,7 +4137,7 @@
      "axis_len": null,
      "case_id": "atlas-1.17M-scvi:cell_names",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-scvi.zarr",
      "evict": [
       "obs/_index"
      ],
@@ -4151,7 +4151,7 @@
      "axis_len": 1165934,
      "case_id": "atlas-1.17M-scvi:dense_layer_cell_row:kompot_smooth_all_smoothed",
      "chunk": 1165934,
-     "dataset": "/loc/scratch/9988004/atlas-1.17M-scvi.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-1.17M-scvi.zarr",
      "evict": [
       "layers/kompot_smooth_all_smoothed"
      ],
@@ -4170,14 +4170,14 @@
    "seed": 20261001,
    "warm_repeats": 5
   },
-  "runs/real_post/spec_tmpfs_atlas-scPLM_9988003.json": {
+  "runs/real_post/spec_tmpfs_atlas-scPLM_run-037.json": {
    "annzarro_dir": "$SCRATCH/annzarro-bench/src/annzarro",
    "cases": [
     {
      "axis_len": 33538,
      "case_id": "scPLM:X_gene_col",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-scPLM.zarr",
      "evict": [
       "X"
      ],
@@ -4193,7 +4193,7 @@
      "axis_len": 33538,
      "case_id": "scPLM:dense_layer_gene_col:kompot_smooth_all_smoothed",
      "chunk": 4,
-     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-scPLM.zarr",
      "evict": [
       "layers/kompot_smooth_all_smoothed"
      ],
@@ -4209,7 +4209,7 @@
      "axis_len": 2,
      "case_id": "scPLM:obsm_col:X_umap",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-scPLM.zarr",
      "evict": [
       "obsm/X_umap"
      ],
@@ -4225,7 +4225,7 @@
      "axis_len": null,
      "case_id": "scPLM:obs_col:cell_type",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-scPLM.zarr",
      "evict": [
       "obs/cell_type"
      ],
@@ -4241,7 +4241,7 @@
      "axis_len": null,
      "case_id": "scPLM:obs_col:nCount_RNA",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-scPLM.zarr",
      "evict": [
       "obs/nCount_RNA"
      ],
@@ -4257,7 +4257,7 @@
      "axis_len": null,
      "case_id": "scPLM:cell_names",
      "chunk": 1,
-     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-scPLM.zarr",
      "evict": [
       "obs/_index"
      ],
@@ -4271,7 +4271,7 @@
      "axis_len": 460337,
      "case_id": "scPLM:dense_layer_cell_row:kompot_smooth_all_smoothed",
      "chunk": 460337,
-     "dataset": "/loc/scratch/9988003/atlas-scPLM.zarr",
+     "dataset": "$LOCAL_SCRATCH/atlas-scPLM.zarr",
      "evict": [
       "layers/kompot_smooth_all_smoothed"
      ],

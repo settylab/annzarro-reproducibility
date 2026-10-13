@@ -7,7 +7,7 @@ two disagree; GitHub's licence detector reports NOASSERTION.
 
 ## A. What was built and run here (HPC, verified)
 
-Fred Hutch HPC, Ubuntu 18.04 nodes, built by `build_hpc.sh` (Slurm job 10168106, BUILD_OK).
+Fred Hutch HPC, Ubuntu 18.04 nodes, built by `build_hpc.sh` (Slurm HPC job, BUILD_OK).
 
 | piece | version | from |
 |---|---|---|
@@ -45,7 +45,7 @@ Bioconductor 3.10 + scSVA at c9e8fd6. Port 3838.
 
 **Verification status — read this.** The Dockerfile was NOT built end to end here: this
 sandbox refuses the fakeroot `%post` step (`Failed to set mount propagation: Operation not
-permitted`, job 10168177). What WAS verified: the base digest pulls (job 10168251); the
+permitted`, HPC job). What WAS verified: the base digest pulls (HPC job); the
 Python env and the R package set/versions are the ones that built and ran in A (except that R
 is 3.6.3 instead of 3.6.2, and the 29 module packages come from the snapshot instead of the
 module; versions can differ slightly). The apt step was simulated against the pulled rootfs

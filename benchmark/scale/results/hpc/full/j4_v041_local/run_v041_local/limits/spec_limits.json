@@ -9,7 +9,7 @@
   {
    "case_id": "syn_obsp_1000000:obsp_dense_row:synthetic",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_obsp_1000000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_obsp_1000000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/synthetic",
    "params": {
@@ -27,7 +27,7 @@
   {
    "case_id": "syn_obsp_200000:obsp_dense_row:synthetic",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_obsp_200000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_obsp_200000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/synthetic",
    "params": {
@@ -45,7 +45,7 @@
   {
    "case_id": "syn_obsp_500000:obsp_dense_row:synthetic",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_obsp_500000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_obsp_500000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/synthetic",
    "params": {
@@ -63,7 +63,7 @@
   {
    "case_id": "syn_varp_30000:varp_dense_row:synthetic",
    "kind": "varp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_varp_30000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_varp_30000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/varp/synthetic",
    "params": {
@@ -81,7 +81,7 @@
   {
    "case_id": "syn_varp_45000:varp_dense_row:synthetic",
    "kind": "varp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_varp_45000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_varp_45000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/varp/synthetic",
    "params": {
@@ -99,7 +99,7 @@
   {
    "case_id": "syn_varp_60000:varp_dense_row:synthetic",
    "kind": "varp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_varp_60000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_varp_60000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/varp/synthetic",
    "params": {
@@ -117,7 +117,7 @@
   {
    "case_id": "syn_wide_200000x30000_1024x1024:dense_layer_gene_col:synthetic",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_wide_200000x30000_1024x1024.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x30000_1024x1024.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/synthetic",
    "params": {
@@ -135,7 +135,7 @@
   {
    "case_id": "syn_wide_200000x30000_1024x1024:dense_layer_cell_row:synthetic",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_wide_200000x30000_1024x1024.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x30000_1024x1024.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/synthetic",
    "params": {
@@ -153,7 +153,7 @@
   {
    "case_id": "syn_wide_200000x30000_2048x256:dense_layer_gene_col:synthetic",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_wide_200000x30000_2048x256.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x30000_2048x256.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/synthetic",
    "params": {
@@ -171,7 +171,7 @@
   {
    "case_id": "syn_wide_200000x30000_2048x256:dense_layer_cell_row:synthetic",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_wide_200000x30000_2048x256.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x30000_2048x256.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/synthetic",
    "params": {
@@ -189,7 +189,7 @@
   {
    "case_id": "syn_wide_200000x60000_1024x1024:dense_layer_gene_col:synthetic",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_wide_200000x60000_1024x1024.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x60000_1024x1024.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/synthetic",
    "params": {
@@ -207,7 +207,7 @@
   {
    "case_id": "syn_wide_200000x60000_1024x1024:dense_layer_cell_row:synthetic",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_wide_200000x60000_1024x1024.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x60000_1024x1024.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/synthetic",
    "params": {
@@ -225,7 +225,7 @@
   {
    "case_id": "syn_wide_200000x60000_1024x512:dense_layer_gene_col:synthetic",
    "kind": "dense_layer_gene_col",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_wide_200000x60000_1024x512.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x60000_1024x512.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/synthetic",
    "params": {
@@ -243,7 +243,7 @@
   {
    "case_id": "syn_wide_200000x60000_1024x512:dense_layer_cell_row:synthetic",
    "kind": "dense_layer_cell_row",
-   "dataset": "/loc/scratch/10163485/public/synth/syn_wide_200000x60000_1024x512.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/synth/syn_wide_200000x60000_1024x512.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/layer/synthetic",
    "params": {

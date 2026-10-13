@@ -1,5 +1,5 @@
 {
- "run": "J3, job 10100751, hpc-node-27, 2026-10-06 08:09:52-11:41:43 PDT, AnnZarro v0.4.0 (commit 3bdeb09, tree bb2ace6 = tag v0.4.0 49e2a19)",
+ "run": "J3, HPC job, compute-node, 2026-10-06 08:09:52-11:41:43 PDT, AnnZarro v0.4.0 (commit 3bdeb09, tree bb2ace6 = tag v0.4.0 49e2a19)",
  "definition": "node-cold: compute-node page cache evicted for the store's files + a fresh annzarro server process per cold repeat; the file server's cache is NOT controlled",
  "store_location": "$SCRATCH/annzarro-scale/stores/n<N>/tahoe_<N>.zarr, read in place (NFS4, nfs-scratch-filer:/temp/lab/user); Tahoe-100M-derived (public, CC0-1.0)",
  "eviction": "annzarro-reproducibility bfd7cd0 benchmark/scale/bench_http.py make_cold(mode='fadvise'): os.posix_fadvise(fd, 0, 0, POSIX_FADV_DONTNEED) on EVERY file of the store (os.walk), before each cold repeat; per-file OSError is ignored",

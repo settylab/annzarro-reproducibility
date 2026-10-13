@@ -7,6 +7,11 @@ series (v0.4.0, v0.3.0, release-0.3, the pre-#62/#63 baseline) are in `HISTORY.m
 Results are in `results/`, the summary tables come from `summarize.py`, and the figure
 is drawn by `../../figures/fig_scale.py` (`manuscript/figures/fig_scale.{pdf,png}`).
 
+## Large-plot threshold
+
+Large-plot mode starts above 1,000,000 points (`ui.defaults.large_plot_points`, default 1000000): at that size
+several plots with hover and click fit in memory side by side (400-900 B of browser heap per point).
+
 ## Data
 
 - **Tahoe-100M** (Tahoe Therapeutics with the Arc Institute; Zhang et al.,
@@ -170,11 +175,11 @@ The HPC worker ran the HPC series on AnnZarro v0.4.1 (tag 78c9da6) on whole excl
 fresh server and the node's page cache evicted before each cold request. Results, each copy checked
 against its MANIFEST sha256, are in `results/hpc/full/`:
 
-- `j5_v041/`: J5 (job 10163489), the Tahoe-100M per-click ladder of this page at 1M to 95.6M cells.
-- `t_v041_hpctemp_reduced/`: T (job 10163488), the public HPC set on `$SCRATCH`: dense Tahoe-100M
+- `j5_v041/`: J5 (HPC job), the Tahoe-100M per-click ladder of this page at 1M to 95.6M cells.
+- `t_v041_hpctemp_reduced/`: T (HPC job), the public HPC set on `$SCRATCH`: dense Tahoe-100M
   layers in several chunk shapes (`grid`), dense pairwise matrices up to 200,000 x 200,000
   (`pairwise_public`), and the node environment.
-- `t2_v041_hpctemp_extra/`: T2 (job 10195427), the cases T did not cover: kernels and distances at
+- `t2_v041_hpctemp_extra/`: T2 (HPC job), the cases T did not cover: kernels and distances at
   50,000 to 200,000 cells, a 20,000-gene correlation row and a 1.17-million-cell Tahoe-100M prefix.
 - `hpc_v041_case_map.tsv` maps every paper claim to its case, file and statistic (medians over a
   case's cold rows). Run J4 (node-local NVMe) is kept with them but is not a claim source.

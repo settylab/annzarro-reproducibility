@@ -244,7 +244,7 @@ Every number on the measurement pages follows from the runs by the rules on this
 constants below are read from the benchmark's own code when the site is built
 ({link(page, f"{TC}/summarize.py", "summarize.py")}, {link(page, f"{TC}/run.py", "run.py")},
 {link(page, f"{TC}/memmon.py", "memmon.py")}), so the page cannot drift from what produced
-`ceilings.csv`. Method: {link(page, f"{TC}/README.md", "README.md")}; decisions and their dates:
+`ceilings.csv`. Method: {link(page, f"{TC}/README.md", "README.md")}; decisions:
 {link(page, f"{TC}/NOTES.md", "NOTES.md")}.
 
 ## Budgets
@@ -252,26 +252,25 @@ constants below are read from the benchmark's own code when the site is built
 | budget | value | measured as | applies to |
 |---|---|---|---|
 | client | **{S.BUDGETS[1]} GiB** (also reported at {S.BUDGETS[0]} and {S.BUDGETS[2]} GiB) | `phys_footprint` peak, summed over every browser process (browser, renderer, GPU); for a library (Scanpy, Seurat) the whole R or Python process | the Fig. 1c value: the largest N whose client stays within it |
-| server | **{S.SERVER_BUDGET_GIB:.0f} GiB**, flat, the same for every tool, AnnZarro included | `phys_footprint` concurrent peak of the server process tree (50 ms samples); process-tree RSS where only the HPC worker measured it (labelled) | a server above it at size N stops the tool at the previous size that passed |
+| server | **{S.SERVER_BUDGET_GIB:.0f} GiB**, flat, the same for every tool, AnnZarro included | `phys_footprint` concurrent peak of the server process tree (50 ms samples); process-tree RSS where the server ran on an HPC node (labelled) | a server above it at size N stops the tool at the previous size that passed |
 | data preparation | **not measured** (input rule, below) | – | every tool is given its input already prepared |
-| laptop safety cap | **{cap:g} GiB** (`run.py --cap-gb`){f"; {cap_old:g} GiB until {cap_until}" if cap_old else ""} | the whole process tree | a machine guard, not a budget: a run that reaches it is killed (status `cap`) |
+| laptop safety cap | **{cap:g} GiB** (`run.py --cap-gb`) | the whole process tree | a machine guard, not a budget: a run that reaches it is killed (status `cap`) |
 
 **Why these values.** What the benchmark's own records say: the client budget is the figure's
 question, the largest N a tool draws within {S.BUDGETS[1]} GiB, and {S.BUDGETS[0]} and
 {S.BUDGETS[2]} GiB are reported beside it because each tool climbs the ladder past
 {S.BUDGETS[1]} GiB, so one curve answers all three (README). The server budget is a flat
-{S.SERVER_BUDGET_GIB:.0f} GiB by operator decision (2026-10-05), replacing first a budget derived
-from AnnZarro's own 1B subset peak and then one that also covered data preparation (NOTES). The
+{S.SERVER_BUDGET_GIB:.0f} GiB, the same for every tool (NOTES). The
 {cap:g} GiB cap is a machine guard on a shared 128 GB laptop, not a budget (README, NOTES). The records
 give no reason for choosing {S.BUDGETS[1]} GiB or the cap's value.
 
 **What an arrow means.** On the charts an up-arrow at the cap line is a run killed at the cap (drawn
-at the cap it ran under: {cap:g} GiB now{f", {cap_old:g} GiB for runs before {cap_until}" if cap_old else ""}): its true peak is
+at the cap that run ran under{f": {cap:g} GiB, or {cap_old:g} GiB for the runs made under that cap" if cap_old else f": {cap:g} GiB"}): its true peak is
 above that and unknown. Because every cap is above the 32 GiB server budget, such a
 run is over the budget either way.
 
 **Units.** Memory is binary throughout: 1 GiB = 2^30 bytes, so 16 GiB = 17.2 GB. Data sizes
-(stores, payloads, files) are decimal: 1 GB = 10^9 bytes. Where the HPC worker reported a peak in GB,
+(stores, payloads, files) are decimal: 1 GB = 10^9 bytes. Where a peak was reported in GB,
 it is converted to GiB on the page and labelled with its metric (process-tree RSS).
 
 ## From runs to a result
@@ -301,11 +300,10 @@ a client stop.
 
 ## Runs that do not count
 
-Runs on superseded builds, harness failures (a driver that waited for a signal the tool never
-gives) and runs that overlapped a user session are kept in git and drawn nowhere:
-{link(page, f"{TC}/results.csv", "results.csv")} (all runs), `summarize.HARNESS_FAILURES` and
-`summarize.SUPERSEDED` in {link(page, f"{TC}/summarize.py", "summarize.py")}, and
-`benchmark/tool_ceiling/ceilings_superseded.csv` and `conversions_superseded.csv` (not shown on this site).
+Runs on other AnnZarro builds, harness failures (a driver that waited for a signal the tool never
+gives) and runs that overlapped a user session are not counted and drawn nowhere. The file
+{link(page, f"{TC}/results.csv", "results.csv")} holds every run, and `summarize.HARNESS_FAILURES` in
+{link(page, f"{TC}/summarize.py", "summarize.py")} names the harness failures with their reasons.
 
 ## Input rule
 
@@ -313,9 +311,8 @@ From {link(page, f"{TC}/NOTES.md", "NOTES.md")}, verbatim:
 
 {input_rule}
 
-The conversion runs made before this rule stay in git (`conversions_superseded.csv`), not on this site.
 
-Server values taken from the HPC worker (HPC cross-check):
+Server values measured on the HPC node that served the tool:
 
 {rsrv}
 
@@ -380,7 +377,7 @@ def ceiling_page(ctx, S, svg, rows, page):
         ch.hline(S.SERVER_BUDGET_GIB, f"server budget {S.SERVER_BUDGET_GIB:.0f} GiB")
         ch.hline(cap, f"laptop cap {cap:g} GiB", cls="ev-ref ev-cap", left=True)
         if cap_old and any(r.get("cap") == cap_old for r in rs):
-            ch.hline(cap_old, f"cap until {cap_until}: {cap_old:g} GiB", cls="ev-ref ev-cap", left=True)
+            ch.hline(cap_old, f"machine cap of those runs: {cap_old:g} GiB", cls="ev-ref ev-cap", left=True)
         stop = None
         if c.get("max_n_16gb"):
             srv_rendered = c["figure_value"].startswith("server-rendered")
@@ -412,7 +409,7 @@ def ceiling_page(ctx, S, svg, rows, page):
         for r in rs + tag:
             if r["status"] == "cap":
                 ch.point(r["n"], r["cap"], "arrow", "ev-s1",
-                         tip(r, f"stopped at the machine cap of {r['cap']:g} GiB (then): peak above it"))
+                         tip(r, f"stopped at the machine cap of {r['cap']:g} GiB: peak above it"))
                 continue
             ch.point(r["n"], r["client"], shape(r), "ev-s1",
                      tip(r, f"series: client every cell · {human_status(r)}"))
@@ -562,7 +559,7 @@ Data: {f"[results.csv]({rel(page, csv_link)})" if csv_link else link(page, f"{TC
 {legend}
 
 Dashed lines: the 16 GiB client budget and the {S.SERVER_BUDGET_GIB:.0f} GiB server budget; dotted:
-the {cap:g} GiB laptop cap{f" (runs before {cap_until} ran under {cap_old:g} GiB, drawn at that cap)" if cap_old else ""}. Server peaks the HPC worker measured are process-tree RSS (labelled in the
+the {cap:g} GiB laptop cap{f" (runs made under a {cap_old:g} GiB cap are drawn at that cap)" if cap_old else ""}. Server peaks measured on an HPC node are process-tree RSS (labelled in the
 tooltip); every other value is `phys_footprint`.
 
 """ + "\n\n".join(blocks) + "\n\n" + tail

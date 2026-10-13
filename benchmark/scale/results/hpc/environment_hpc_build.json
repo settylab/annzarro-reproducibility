@@ -35,50 +35,50 @@
   "purge": "30 days after creation (expires ~2026-11-01)"
  },
  "nodes": {
-  "hpc-node-02": {
+  "compute-node": {
    "cpu": "Intel(R) Xeon(R) Gold 6146 CPU @ 3.20GHz",
    "logical_cpus": 24,
    "mem_total_kib": 394870020,
    "jobs": [
-    "A1 10000646",
-    "A2 10000650",
-    "B 10000651"
+    "A1 run-042",
+    "A2 run-043",
+    "B run-044"
    ]
   },
-  "hpc-node-45": {
+  "compute-node": {
    "cpu": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
    "logical_cpus": 36,
    "mem_total_kib": 791221200,
    "jobs": [
-    "C 10000652"
+    "C run-045"
    ]
   },
-  "hpc-node-42": {
+  "compute-node": {
    "cpu": "not measured (compute class)",
    "jobs": [
-    "download 10000196"
+    "download run-041"
    ]
   },
-  "hpc-node-03": {
+  "compute-node": {
    "cpu": "not measured (gizmoj class)",
    "jobs": [
-    "D 10000653"
+    "D run-046"
    ]
   },
-  "hpc-node-33": {
+  "compute-node": {
    "cpu": "not measured (compute class)",
    "jobs": [
-    "F 10008693"
+    "F run-047"
    ]
   },
-  "hpc-node-21": {
+  "compute-node": {
    "cpu": "not measured (compute class; 36 cores, 777 GB per subset_hpc_environment.json)",
    "jobs": [
-    "E 10008694"
+    "E run-048"
    ]
   }
  },
- "cpu_source": "/proc/cpuinfo read by 1-CPU Slurm jobs 10010237/10010238 (lscpu fails: /sys hidden in the job sandbox)",
+ "cpu_source": "/proc/cpuinfo read by 1-CPU Slurm HPC job/10010238 (lscpu fails: /sys hidden in the job sandbox)",
  "gpu": "none used",
  "exclusive_nodes": false,
  "note": "Jobs shared nodes with other users (lab QOS near its 800-CPU cap), so wall times include co-tenant load."

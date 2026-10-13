@@ -85,7 +85,7 @@ placeholders; set them to your own directories to rerun:
 | `$ANNZARRO_SRC` | a checkout of [settylab/annzarro](https://github.com/settylab/annzarro) at the tag a result names |
 | `$TMPDIR` | scratch space for a run |
 
-HPC nodes appear as `hpc-node-NN`, the live demo node as `hpc-demo-node`. Process listings kept next to
+HPC nodes appear as `compute-node`, the live demo node as `demo-server`. Process listings kept next to
 some results (`ps_*.txt`) list the benchmark's own processes only; the count of omitted lines is at the end
 of each file. Three unpublished lab datasets appear under shape-only labels (`spatial-A`, `atlas-1.17M-scvi`,
 `atlas-1.17M-raw`, `atlas-scPLM`). Dataset names and sample ids of other unpublished data are relabelled the same way.

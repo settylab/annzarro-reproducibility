@@ -15,6 +15,6 @@
   "$SCRATCH/annzarro-scale/scsva/run/launch.R",
   "50807"
  ],
- "host": "hpc-node-01",
- "slurm_job_id": "10171777"
+ "host": "compute-node",
+ "slurm_job_id": "<job>"
 }

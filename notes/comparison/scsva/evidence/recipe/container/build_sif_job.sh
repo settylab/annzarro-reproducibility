@@ -4,7 +4,7 @@ D=$SCRATCH/annzarro-scale/scsva/recipe/container
 A=$SCRATCH/annzarro-scale
 source /app/lmod/lmod/init/bash; module load Apptainer/1.1.6
 export APPTAINER_CACHEDIR=$A/sifcache
-export APPTAINER_TMPDIR=/loc/scratch/${SLURM_JOB_ID}; mkdir -p $APPTAINER_TMPDIR 2>/dev/null || export APPTAINER_TMPDIR=$A/siftmp
+export APPTAINER_TMPDIR=$LOCAL_SCRATCH/${SLURM_JOB_ID}; mkdir -p $APPTAINER_TMPDIR 2>/dev/null || export APPTAINER_TMPDIR=$A/siftmp
 hostname; apptainer --version; date -Is
 cd $D
 apptainer build --fakeroot --force $A/scsva/scsva_c9e8fd6.sif scsva.def; rc=$?

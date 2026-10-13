@@ -1,9 +1,7 @@
 #!/bin/bash
 # obsp/varp whole-row chunking rule (~1e6 values per chunk, rows rounded to a power of two):
 # rechunk the dense pairwise stores to the rule's row counts and to bracketing ones.
-#SBATCH --partition=<partition>
-#SBATCH --constraint=compute
-#SBATCH --exclude=hpc-demo-node,hpc-node-32
+#SBATCH --partition=<value>
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=8:00:00

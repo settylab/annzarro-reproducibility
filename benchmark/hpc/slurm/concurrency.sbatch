@@ -2,9 +2,7 @@
 # Concurrency test for the live-instance 23-26 s cold cell row: 3 sync workers (the live
 # config), N = 1, 2, 4, 8 simultaneous cold cell-row requests; served (75000, 64) store on
 # $DATA_ROOT, its same-shape copy on $SCRATCH, and the (1024, 1024) rechunk.
-#SBATCH --partition=<partition>
-#SBATCH --constraint=compute
-#SBATCH --exclude=hpc-demo-node,hpc-node-32
+#SBATCH --partition=<value>
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
 #SBATCH --time=6:00:00

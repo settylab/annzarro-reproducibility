@@ -29,88 +29,88 @@
   "deploy": {
     "cache_dataset_limit": 12,
     "cache_memory_mb": 8000,
-    "data_dir": "/loc/scratch/10163485",
+    "data_dir": "$LOCAL_SCRATCH/run-062",
     "datasets": [
-      "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr",
-      "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr",
-      "/loc/scratch/10163485/hlca/hlca_full.zarr",
-      "/loc/scratch/10163485/public/hlca/hlca_dense_4096x128.zarr",
-      "/loc/scratch/10163485/public/hlca/hlca_dense_allx4.zarr",
-      "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x1024.zarr",
-      "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x512.zarr",
-      "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x64.zarr",
-      "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x512.zarr",
-      "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x64.zarr",
-      "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x4096.zarr",
-      "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x512.zarr"
+      "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr",
+      "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr",
+      "$LOCAL_SCRATCH/hlca/hlca_full.zarr",
+      "$LOCAL_SCRATCH/public/hlca/hlca_dense_4096x128.zarr",
+      "$LOCAL_SCRATCH/public/hlca/hlca_dense_allx4.zarr",
+      "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x1024.zarr",
+      "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x512.zarr",
+      "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x64.zarr",
+      "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x512.zarr",
+      "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x64.zarr",
+      "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x4096.zarr",
+      "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x512.zarr"
     ],
     "workers": 1
   },
   "disk": {
-    "/loc/scratch/10163485/hlca/hlca_full.zarr": "",
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x1024.zarr": "",
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x512.zarr": "",
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x64.zarr": "",
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x512.zarr": "",
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x64.zarr": "",
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x4096.zarr": "",
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x512.zarr": "",
-    "/loc/scratch/10163485/public/hlca/hlca_dense_4096x128.zarr": "",
-    "/loc/scratch/10163485/public/hlca/hlca_dense_allx4.zarr": "",
-    "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr": "",
-    "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr": ""
+    "$LOCAL_SCRATCH/hlca/hlca_full.zarr": "",
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x1024.zarr": "",
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x512.zarr": "",
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x64.zarr": "",
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x512.zarr": "",
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x64.zarr": "",
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x4096.zarr": "",
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x512.zarr": "",
+    "$LOCAL_SCRATCH/public/hlca/hlca_dense_4096x128.zarr": "",
+    "$LOCAL_SCRATCH/public/hlca/hlca_dense_allx4.zarr": "",
+    "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr": "",
+    "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr": ""
   },
   "filesystems": {
-    "/loc/scratch/10163485/hlca/hlca_full.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/hlca/hlca_full.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     },
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x1024.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x1024.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     },
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x512.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x512.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     },
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_1024x64.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_1024x64.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     },
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x512.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x512.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     },
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_16384x64.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_16384x64.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     },
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x4096.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x4096.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     },
-    "/loc/scratch/10163485/public/grid/tahoe_dense_1M_256x512.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/public/grid/tahoe_dense_1M_256x512.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     },
-    "/loc/scratch/10163485/public/hlca/hlca_dense_4096x128.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/public/hlca/hlca_dense_4096x128.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     },
-    "/loc/scratch/10163485/public/hlca/hlca_dense_allx4.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/public/hlca/hlca_dense_allx4.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     },
-    "/loc/scratch/10163485/public/stores/tahoe_x_1.17M.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/public/stores/tahoe_x_1.17M.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     },
-    "/loc/scratch/10163485/public/stores/tahoe_x_1M.zarr": {
-      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% /loc/scratch/10163485",
-      "mount": "/dev/nvme0n1p5[/scratch/10163485] ext4 rw,nosuid,nodev,relatime"
+    "$LOCAL_SCRATCH/public/stores/tahoe_x_1M.zarr": {
+      "df": "/dev/nvme0n1p5 ext4  7162151628 754354472 6046770028      12% $LOCAL_SCRATCH/run-062",
+      "mount": "/dev/nvme0n1p5[/scratch/run-062] ext4 rw,nosuid,nodev,relatime"
     }
   },
-  "hostname": "hpc-node-47",
+  "hostname": "compute-node",
   "kernel": "5.4.0-228-generic",
   "mem_total": "MemTotal:       791221092 kB",
   "os": "Ubuntu 18.04.6 LTS",
@@ -127,7 +127,7 @@
   },
   "python": "3.11.14",
   "slurm_cpus_on_node": "36",
-  "slurm_job_id": "10163485",
+  "slurm_job_id": "<job>",
   "slurm_mem_per_node_mb": "358400",
   "slurm_partition": "<partition>",
   "store_tier": "locscratch"

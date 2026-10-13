@@ -31,7 +31,7 @@
  "console": [
   "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
  ],
- "server_url": "http://hpc-node-09:8791",
+ "server_url": "http://compute-node:8791",
  "every_cell_basis": "server.R plots ggData[sample(nrow(ggData))]: every row, shuffled; not counted in the page",
  "gl_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Max, Unspecified Version)",
  "crashed": false,

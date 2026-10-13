@@ -2,9 +2,7 @@
 # Real-data cases against node tmpfs (RAM; the floor reference): copy ONE $SCRATCH real
 # store into $TMPDIR, then run its real + real_rows cases (same case ids, so the same seeded
 # indices as the $DATA_ROOT and $SCRATCH runs). Usage: sbatch --mem=<size> real_tmpfs.sbatch STORE
-#SBATCH --partition=<partition>
-#SBATCH --constraint=compute
-#SBATCH --exclude=hpc-demo-node,hpc-node-32
+#SBATCH --partition=<value>
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=48G
 #SBATCH --time=12:00:00

@@ -8,12 +8,12 @@ Earlier scheduling and pinning history (v0.3.1 and older builds) was removed on 
   non-editable from the clean clone hpcbench/src_v040rc; 26 vendor assets verified (vendor_assets.py + --check), shipped;
   `uv pip check` clean, packages identical to v0.3.1's lock (hpcbench/pin_v040rc.json). The guards check commit, tree and
   that tag v0.4.0 names 49e2a19 with the same tree; annzarro_pin.json records all four.
-  Smoke 10100511 (hpc-node-20): both harnesses rc 0; J3 data clicks byte-identical to v0.3.1 (only open_structure +29 B).
-  JOBS: J3 = **10100751** (afterany:10098747, the UCSC 95.6M build: J3 runs on a quiet filer), then UCSC 95.6M server
+  Smoke run-060 (compute-node): both harnesses rc 0; J3 data clicks byte-identical to v0.3.1 (only open_structure +29 B).
+  JOBS: J3 = **run-061** (afterany:10098747, the UCSC 95.6M build: J3 runs on a quiet filer), then UCSC 95.6M server
   10100752 (afterok:build, afterany:J3), then T = **10100753** (afterany:J3,afterany:10100752; run dir hpcbench/run_v040).
-  Held 10093086 and T 10093326 (v0.3.1) CANCELLED, never ran.
+  Held 10093086 and T run-059 (v0.3.1) CANCELLED, never ran.
 - 2026-10-06 10:45 PDT: OPERATOR (request 20261006T173541Z): cold = NODE-cold only (fresh server + evicted compute-node page
-  cache); file-server-cold dropped. J3 10100751 (running since 08:09:52 on hpc-node-27) already complies, unchanged: it never had
+  cache); file-server-cold dropped. J3 run-061 (running since 08:09:52 on compute-node) already complies, unchanged: it never had
   a filer-cold step. Its node-cold = bench_http bfd7cd0 make_cold("fadvise"): posix_fadvise(fd,0,0,POSIX_FADV_DONTNEED) on
   EVERY file of the store (os.walk), per-file OSError IGNORED, no per-rep mincore check ("cold prep" seconds in the startup
   note), then a fresh `annzarro start` per cold rep. LIMITATION vs T: eviction errors are silent and residency is not

@@ -43,9 +43,9 @@ current:                            # v0.4.1 series as they land; a v0.4.0 serie
   - {csv: benchmark/tool_ceiling/subset_request_times.csv, where: {run: [annzarro_v041_sub_run_1000000000_r0, annzarro_v041_sub1m_run_1000000000_r0]}}
   - {file: "benchmark/tool_ceiling/raw/annzarro_v041_*"}
   # v0.4.0 series not yet rerun on v0.4.1 (tag 49e2a19; ran on RC 3bdeb09, the same tree)
-  - {file: "benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/*"}   # HPC worker T on v0.4.1 (job 10163488), $SCRATCH, node-cold
-  - {file: "benchmark/scale/results/hpc/full/j5_v041/*"}   # HPC worker J5 on v0.4.1 (job 10163489): the J3 Tahoe ladder repeated
-  - {file: "benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/*"}   # HPC worker T2 on v0.4.1 (job 10195427): the cases T did not cover, $SCRATCH
+  - {file: "benchmark/scale/results/hpc/full/t_v041_hpctemp_reduced/*"}   # HPC worker T on v0.4.1 (HPC job), $SCRATCH, node-cold
+  - {file: "benchmark/scale/results/hpc/full/j5_v041/*"}   # HPC worker J5 on v0.4.1 (HPC job): the J3 Tahoe ladder repeated
+  - {file: "benchmark/scale/results/hpc/full/t2_v041_hpctemp_extra/*"}   # HPC worker T2 on v0.4.1 (HPC job): the cases T did not cover, $SCRATCH
   - {file: "figures/scale/tahoe95M_umap*.view.json"}   # Scale a-d shots, re-shot on v0.4.1 (commands.txt, *.view_environment.json)
   - {file: "figures/scale/tahoe95M_malat1*"}   # Scale b and c by MALAT1 (the operator's view), shot on v0.4.1
   - {file: "benchmark/scale/NOTES.md"}

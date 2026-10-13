@@ -10,18 +10,18 @@ Nested AnnZarro stores of every cell of Tahoe-100M (95,624,334 cells), with a 5,
 - **Package under test:** annzarro 0.2.0 from PyPI.
 - **Environment:** `environment_hpc_build.json`, `venv_panel.freeze.txt`, `subset_hpc_environment.json`.
 
-## Pipeline and cost (`builds_hpc.csv`, from sacct)
+## Pipeline and cost (`builds_hpc.csv`, from the scheduler's accounting)
 
 | step | job | node (cores) | wall | peak RSS |
 |---|---|---|---|---|
-| download: 3,388 shards, 315 GB, plus metadata | 10000196 | hpc-node-42 (8) | 22 min | 0.2 GB |
-| A1: `build_tahoe.py obs`; `umap_tahoe.py sample`; `build_tahoe.py refit` | 10000646 | hpc-node-02 (16) | 19 min | 38.6 GB |
-| A2: `master --n-pcs 50 --detect-at …` (8,378 s); `panel`; `panel-master` (3,736 s) | 10000650 | hpc-node-02 (16) | 3 h 27 min | 45.1 GB |
-| B: `store --genes` + `check`, 1M..95.6M | 10000651 | hpc-node-02 (16) | 3 h 46 min | 265 GB |
-| C: `umap_tahoe.py fit` (1,339 s); `place` (1,859 s); `validate` | 10000652 | hpc-node-45 (24) | 1 h 09 min | 30.9 GB |
-| D: `umap_tahoe.py write` × 7 | 10000653 | hpc-node-03 (4) | 3 min | 0.1 GB |
-| F: `build_tahoe.py plot-copy` (slim 95.6M) | 10008693 | hpc-node-33 (4) | 9 min | 2.9 GB |
-| E: `bench_subset.py --verify`, 7 stores | 10008694 | hpc-node-21 (8) | 1 h 48 min | 20.1 GB |
+| download: 3,388 shards, 315 GB, plus metadata | run-041 | compute-node (8) | 22 min | 0.2 GB |
+| A1: `build_tahoe.py obs`; `umap_tahoe.py sample`; `build_tahoe.py refit` | run-042 | compute-node (16) | 19 min | 38.6 GB |
+| A2: `master --n-pcs 50 --detect-at …` (8,378 s); `panel`; `panel-master` (3,736 s) | run-043 | compute-node (16) | 3 h 27 min | 45.1 GB |
+| B: `store --genes` + `check`, 1M..95.6M | run-044 | compute-node (16) | 3 h 46 min | 265 GB |
+| C: `umap_tahoe.py fit` (1,339 s); `place` (1,859 s); `validate` | run-045 | compute-node (24) | 1 h 09 min | 30.9 GB |
+| D: `umap_tahoe.py write` × 7 | run-046 | compute-node (4) | 3 min | 0.1 GB |
+| F: `build_tahoe.py plot-copy` (slim 95.6M) | run-047 | compute-node (4) | 9 min | 2.9 GB |
+| E: `bench_subset.py --verify`, 7 stores | run-048 | compute-node (8) | 1 h 48 min | 20.1 GB |
 
 No node was exclusive; the lab QOS was near its 800-CPU cap. B ran with `--mem-entries 3e10`: the 50M store took 2 CSC passes and 95.6M took 4.
 
@@ -144,7 +144,7 @@ Paths are under `$SCRATCH/annzarro-scale/stores_panel/`; `stores/store_sizes.tsv
 ## Server benchmark on the panel series (`http_hpc_panel.csv`, `http_hpc_panel_environment.json`)
 
 - **Run:** `bench_http.py` at `77d2a7b` (the main e2907e6 version) against annzarro 0.2.0, over the 7 panel stores. Defaults: 3 reps; each rep runs a fresh server process with a cold store (`posix_fadvise(DONTNEED)`) for the default 100k subset (`_sub`) and for all cells (`_all`), then 2 warm repeats; request timeout 600 s; a click slower than 120 s is not run at larger N.
-- **Job:** 10011105 on one **exclusive** hpc-node-46 node (36 cores, 810 GB), 3 h 23 min. No build ran during it. The full-gene builds were chained after it, and only the skeptic's read-only checks were queued behind it.
+- **Job:** 10011105 on one **exclusive** compute-node node (36 cores, 810 GB), 3 h 23 min. No build ran during it. The full-gene builds were chained after it, and only the skeptic's read-only checks were queued behind it.
 - **Statuses:** 1,507 requests returned HTTP 200. 11 were skipped by the slow rule (`cell_row_cscscan_all`, which took 126.6 s at 10M, skipped from 10M rep 1 upward). No errors and no timeouts.
 
 **Cold medians, seconds:**
@@ -165,7 +165,7 @@ Paths are under `$SCRATCH/annzarro-scale/stores_panel/`; `stores/store_sizes.tsv
 
 - **Server peak RSS** (process tree, max over the run): 0.71 GB at 1M, 3.8 at 10M, 7.5 at 20M, 14.5 at 50M and **25.2 GB at 95.6M**.
 - **Warm repeats:** the 100k-subset clicks stay at 6-50 ms at every N. All-cell gene and embedding clicks are 1.2-1.6 s warm at 95.6M.
-- **Warm `obs_cat_all` at 95.6M (83.7 s, against 6.7 s at 50M) is a cache-budget eviction, measured** (`diag/`, jobs 10013007 and 10013040, annzarro 0.2.0, shared nodes):
+- **Warm `obs_cat_all` at 95.6M (83.7 s, against 6.7 s at 50M) is a cache-budget eviction, measured** (`diag/`, HPC job and 10013040, annzarro 0.2.0, shared nodes):
   - `annzarro start` uses the production config; `/api/v1/cache/info` reports `max_memory_mb: 4000`.
   - A categorical obs column is returned and cached as a Python list of strings. annzarro costs it at 57 B + len per value: **3,147 MB at 50M, 6,019 MB at 95.6M**.
   - At 50M it fits: after the first request the cache holds 3,147 MB (79%), and warm requests take 8.4 s, which is JSON encoding of the 600 MB response (5.5-6.1 s in process).
@@ -177,10 +177,10 @@ Paths are under `$SCRATCH/annzarro-scale/stores_panel/`; `stores/store_sizes.tsv
 
 `full/` holds the original scale request's deliverable: `run_site.sh http` from annzarro-reproducibility **bfd7cd0** against AnnZarro **2858fc58** (package 0.1.1, venv SCRATCH/venv), over full-gene stores (62,710 genes).
 
-**Jobs** (`full/jobs_sacct.txt`):
-- H 10011110 (hpc-node-25, 14 min): old plate-4-basis PCA fit (`full/pca_fit_plate4_basis.npz`; 203,220 cells, PC1-2 2.01/1.57%, as on the laptop) and the projection of all cells onto its 2 PCs, for `obsm/X_pca_2d`.
-- I 10011111 (hpc-node-25, 16 CPUs, 4h41m, MaxRSS 244 GiB): 7 stores from `work/master.zarr`. Build seconds, check seconds and sizes are in `full/builds_full_hpc.tsv`; the build JSONs are in `full/stores/`. The 1M store is 3,721,994,538 B and the 95.6M store is 410,892,598,870 B. All passed `build_tahoe.py check`, with the same narrow scope as above.
-- J 10013772 (hpc-node-23, `--exclusive`, 36 CPUs, Xeon Gold 6254, 755 GiB RAM, 7h36m): `full/http_hpc.csv` (1,518 rows: 1,507 with status 200, 11 skipped) and `full/http_hpc_environment.json`. Settings: cold_mode fadvise, 3 reps, 2 warm repeats; stores on $SCRATCH NFS4.
+**Jobs:**
+- H run-050 (compute-node, 14 min): old plate-4-basis PCA fit (`full/pca_fit_plate4_basis.npz`; 203,220 cells, PC1-2 2.01/1.57%, as on the laptop) and the projection of all cells onto its 2 PCs, for `obsm/X_pca_2d`.
+- I run-051 (compute-node, 16 CPUs, 4h41m, MaxRSS 244 GiB): 7 stores from `work/master.zarr`. Build seconds, check seconds and sizes are in `full/builds_full_hpc.tsv`; the build JSONs are in `full/stores/`. The 1M store is 3,721,994,538 B and the 95.6M store is 410,892,598,870 B. All passed `build_tahoe.py check`, with the same narrow scope as above.
+- J run-055 (compute-node, `--exclusive`, 36 CPUs, Xeon Gold 6254, 755 GiB RAM, 7h36m): `full/http_hpc.csv` (1,518 rows: 1,507 with status 200, 11 skipped) and `full/http_hpc_environment.json`. Settings: cold_mode fadvise, 3 reps, 2 warm repeats; stores on $SCRATCH NFS4.
   - The 11 skipped rows are `cell_row_cscscan_all` cold at 10M and above; run_site.sh skips it once it is slow at a smaller N.
 
 **Contaminated cold reps at 95.6M.** `cold prep` (posix_fadvise over every store file, `full/j_cold_prep.txt`) is stable across reps for 1M-50M (e.g. 50M: 449-572 s). At 95.6M it was 1,104 / 923 / 941 s for rep0 sub, rep0 all and rep1 sub, then **6,779 s (rep1 all), 6,184 s (rep2 sub) and 1,607 s (rep2 all)**.

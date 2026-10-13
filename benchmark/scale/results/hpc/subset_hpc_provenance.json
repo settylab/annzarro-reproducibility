@@ -2,8 +2,8 @@
  "bench_subset_py_commit": "fc5eaaba0586561c616b63c9b6c5924279c7d817",
  "bench_subset_py_path": "benchmark/scale/bench_subset.py (run from a worktree at that commit)",
  "annzarro": "0.2.0 (PyPI)",
- "slurm_job": 10008694,
- "node": "hpc-node-21 (8 cores requested, not exclusive)",
+ "slurm_job": "<job>",
+ "node": "compute-node",
  "command": "bench_subset.py <7 panel stores 1M..95.6M> --site hpc --out subset_hpc.csv --scratch <SCRATCH>/tmp_subset --port 8902 --verify",
  "note": "the same flags as run_site.sh subset; called directly because run_site.sh hard-wires the full-gene venv and stores"
 }

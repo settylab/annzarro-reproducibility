@@ -1,9 +1,7 @@
 #!/bin/bash
 # Dense pairwise inputs: Gaussian obsp kernels (50k, 100k, 200k cells) and Pearson
 # varp correlations (20k, 30k genes), written to $SCRATCH. Array index -> build.
-#SBATCH --partition=<partition>
-#SBATCH --constraint=compute
-#SBATCH --exclude=hpc-demo-node,hpc-node-32
+#SBATCH --partition=<value>
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=96G
 #SBATCH --time=12:00:00

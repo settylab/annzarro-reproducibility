@@ -13,7 +13,7 @@ export R_LIBS_USER=$S/rlib PATH=$S/pyenv/bin:$PATH RETICULATE_PYTHON=$S/pyenv/bi
 PORT=$($A/hpcbench/venv/bin/python -c 'import socket;s=socket.socket();s.bind(("127.0.0.1",0));print(s.getsockname()[1])')
 CAP=$(( ${SLURM_MEM_PER_NODE:-16384} / 1024 - 1 ))
 # the app writes its tempdir under TMPDIR; keep it node-local
-export TMPDIR=/loc/scratch/$J; mkdir -p $TMPDIR 2>/dev/null || export TMPDIR=$R/tmp; mkdir -p $TMPDIR
+export TMPDIR=$LOCAL_SCRATCH/$J; mkdir -p $TMPDIR 2>/dev/null || export TMPDIR=$R/tmp; mkdir -p $TMPDIR
 $A/hpcbench/venv/bin/python $A/competitors/memmon_linux.py --out $R/run.json --cap-gb $CAP --interval 0.5 \
    --live $R/live.tsv --stop-file $R/STOP --timeout 5400 -- \
    Rscript $S/run/launch.R $PORT &
@@ -25,5 +25,4 @@ PLAYWRIGHT_BROWSERS_PATH=$S/ms-playwright timeout 80m $S/pwvenv/bin/python -I $S
 echo "drive rc=$?"
 touch $R/STOP; wait $MPID; echo "memmon rc=$?"
 cat $R/run.json
-sacct -j $J -n -P -o JobID,MaxRSS,Elapsed,NodeList 2>/dev/null
 echo "=== end $(date -Is)"

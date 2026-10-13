@@ -9,7 +9,7 @@
   {
    "case_id": "hlca_dist_100000:obsp_dense_row:diffmap_distance",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/hlca_dist_100000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/hlca_dist_100000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/diffmap_distance",
    "params": {
@@ -28,7 +28,7 @@
   {
    "case_id": "hlca_dist_200000:obsp_dense_row:diffmap_distance",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/hlca_dist_200000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/hlca_dist_200000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/diffmap_distance",
    "params": {
@@ -47,7 +47,7 @@
   {
    "case_id": "hlca_dist_50000:obsp_dense_row:diffmap_distance",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/hlca_dist_50000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/hlca_dist_50000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/diffmap_distance",
    "params": {
@@ -66,7 +66,7 @@
   {
    "case_id": "tahoe_corr_20000:varp_dense_row:gene_corr_pearson",
    "kind": "varp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/tahoe_corr_20000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/tahoe_corr_20000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/varp/gene_corr_pearson",
    "params": {
@@ -85,7 +85,7 @@
   {
    "case_id": "tahoe_corr_30000:varp_dense_row:gene_corr_pearson",
    "kind": "varp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/tahoe_corr_30000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/tahoe_corr_30000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/varp/gene_corr_pearson",
    "params": {
@@ -104,7 +104,7 @@
   {
    "case_id": "tahoe_dist_100000:obsp_dense_row:diffmap_distance",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/tahoe_dist_100000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/tahoe_dist_100000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/diffmap_distance",
    "params": {
@@ -123,7 +123,7 @@
   {
    "case_id": "tahoe_dist_200000:obsp_dense_row:diffmap_distance",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/tahoe_dist_200000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/tahoe_dist_200000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/diffmap_distance",
    "params": {
@@ -142,7 +142,7 @@
   {
    "case_id": "tahoe_dist_200000_r64:obsp_dense_row:diffmap_distance",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/tahoe_dist_200000_r64.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/tahoe_dist_200000_r64.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/diffmap_distance",
    "params": {
@@ -161,7 +161,7 @@
   {
    "case_id": "tahoe_dist_50000:obsp_dense_row:diffmap_distance",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/tahoe_dist_50000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/tahoe_dist_50000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/diffmap_distance",
    "params": {
@@ -180,7 +180,7 @@
   {
    "case_id": "tahoe_kernel_100000:obsp_dense_row:gaussian_kernel",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/tahoe_kernel_100000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/tahoe_kernel_100000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/gaussian_kernel",
    "params": {
@@ -199,7 +199,7 @@
   {
    "case_id": "tahoe_kernel_200000:obsp_dense_row:gaussian_kernel",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/tahoe_kernel_200000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/tahoe_kernel_200000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/gaussian_kernel",
    "params": {
@@ -218,7 +218,7 @@
   {
    "case_id": "tahoe_kernel_50000:obsp_dense_row:gaussian_kernel",
    "kind": "obsp_dense_row",
-   "dataset": "/loc/scratch/10163485/public/pairwise/tahoe_kernel_50000.zarr",
+   "dataset": "$LOCAL_SCRATCH/public/pairwise/tahoe_kernel_50000.zarr",
    "fs": "locscratch",
    "route": "/api/v1/data/obsp/gaussian_kernel",
    "params": {
