@@ -83,7 +83,7 @@
 .ev-chart .ev-glyph line { stroke: var(--ev-glyph); stroke-width: 1.5; }
 .ev-chart .ev-glyph text { font-size: calc(13.5px * var(--k, 1)); font-weight: 700; fill: var(--ev-glyph); }
 .ev-chart .ev-line { fill: none; stroke-width: 1.4; }
-.ev-chart .ev-dash { stroke-dasharray: 4 3; }
+.ev-chart .ev-dash { stroke-dasharray: 5 3; stroke-width: 2.4; }
 .ev-chart .ev-s1 { fill: var(--ev-c1); stroke: var(--ev-c1); }
 .ev-chart .ev-s2 { fill: var(--ev-c2); stroke: var(--ev-c2); }
 .ev-chart .ev-s3 { fill: var(--ev-c3); stroke: var(--ev-c3); }
@@ -127,7 +127,7 @@ figure.ev-fig figcaption { font-size: 0.76rem; max-width: 40rem; margin-top: 0.1
 .ev-fn { font-size: 0.6em; color: var(--md-default-fg-color--light); margin-left: 1px; }
 .ev-dagger { margin-left: 2px; }
 .ev-matrix td.ev-cell { white-space: nowrap; }
-.ev-chart .ev-dot { stroke-dasharray: 1.5 2.5; stroke-width: 1.8; }
+.ev-chart .ev-dot { stroke-dasharray: 2 3; stroke-width: 2.6; }
 .ev-guard { font-size: 0.68rem; max-width: 46rem; border-left: 3px solid var(--ev-accent); padding: 0.2rem 0.6rem; margin: 0.4rem 0 0.8rem; }
 
 /* Charts fill the page column (single column, larger type). Wide pages (matrix, coverage, tool ceiling) add

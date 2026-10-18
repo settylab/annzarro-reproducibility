@@ -232,10 +232,11 @@ def check_figure(fig):
     # whose output was byte-identical: git has no output commit for it, so it dates the last verified render.
     repro = fig.get("reproduced")
     ref_time = out_time                 # what inputs are compared with: the last render, or the last verified reproduction
+    ref_sha = out_sha                   # the tree that render saw: a later change is doc-only if its AST matches this tree
     if repro and out_time is not None:
         ct = git("log", "-1", "--format=%ct", repro["commit"])
-        if ct:
-            ref_time = max(out_time, float(ct))
+        if ct and float(ct) > out_time:
+            ref_time, ref_sha = float(ct), repro["commit"]
     stale, dirty = [], []
     for o in outs:
         if o["state"] in ("dirty", "untracked"):
@@ -249,7 +250,7 @@ def check_figure(fig):
             d["stale"] = True
             since = git("log", "--format=%h %cd %s", "--date=short", f"--since={int(ref_time) + 1}", "--", d["path"]) \
                 if d["basis"] == "commit" else ""
-            d["doc_only"] = doc_only(d["path"], out_sha)
+            d["doc_only"] = doc_only(d["path"], ref_sha)
             stale.append({"role": role, "path": d["path"], "by": d["time"] - ref_time,
                           "doc_only": d["doc_only"], "commits_since": since.splitlines()[:5]})
     related = [dict(date_file(p), what=r.get("what", "")) for r in fig.get("related", []) or []

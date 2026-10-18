@@ -87,7 +87,7 @@ GROUPS = [
 # Largest dataset the project documents or hosts (not a limit): S1 of each notes file;
 # AnnZarro: figures/scale/README.md.
 TOOLS = [
-    ("AnnZarro",              "YYY YYY YNNN YY YYN YPYY", "1.5B (this paper,\nwith a subset)"),
+    ("AnnZarro",              "YYY YYY YNNN YY YYN YPYY", "200M, every cell\ndrawn at 17.4 GiB\n(1.5B with a subset)"),
     ("CELLxGENE Explorer",    "NNN NPY YPYY NY NYN YYPN", "11.4M (served, drawn;\ndocs state 4.3M)"),
     ("CELLxGENE Annotate",    "NNN NNN YYYN NN NPN PYPN", "1M (README claim)"),
     ("Vitessce",              "NNN PYY YPNY YP NPY YYNN", "1.28M"),

@@ -168,7 +168,7 @@ about it here; the input's expected identity is listed, and the figure's last re
 drawn from it. {chip("reproduced", "reproduced")} the figure was re-drawn from the published store and the
 result compared with the committed figure (the record gives commit, date, machine and result);
 {chip("reproduced", "store verified")} the store on the host that built this page has the recorded md5. An input
-of which the script reads only some rows is dated by the last commit that changed those rows.
+of which the script reads only some rows or columns is dated by the last commit that changed them.
 
 **Now:** {n_stale} stale, {n_doc} doc-only, {n_dirty} with uncommitted inputs, of {len(results)} figures.
 """, '<div class="fg-scroll"><table class="fg-tab fg-sum"><thead><tr><th>figure</th><th>label</th><th>status</th>'
@@ -261,8 +261,12 @@ of which the script reads only some rows is dated by the last commit that change
                              f'<code>{r["out_sha"]}</code> on {fc._iso(r["out_time"])[:10]}, on a machine that has it.</span>')
                 if i.get("reads"):
                     rd = i["reads"]
-                    what += ('<br><span class="fg-small">Only ' + html.escape(", ".join(f"{k} = {v}" for k, v in rd.get("where", {}).items()))
-                             + ' rows' + (', columns ' + html.escape(", ".join(rd["columns"])) if rd.get("columns") else "")
+                    parts = []
+                    if rd.get("where"):
+                        parts.append(html.escape(", ".join(f"{k} = {v}" for k, v in rd["where"].items())) + " rows")
+                    if rd.get("columns"):
+                        parts.append("columns " + html.escape(", ".join(rd["columns"])))
+                    what += ('<br><span class="fg-small">Only ' + ", ".join(parts)
                              + ' are read: dated by the last commit that changed them.</span>')
                 out.append(f'<tr><td class="fg-file">{a(d["path"])}</td><td class="fg-nw">{", ".join(i.get("panels", [])) or "-"}</td>'
                            f'<td>{what}</td><td class="fg-nw">{when(d)}</td><td>{dep_status(d)}</td></tr>')

@@ -2855,6 +2855,16 @@ claims:
     compute: (v[0], 5 if v[1] == 1 else float('nan'))
     format: "{1:.0f} million {0:.1f} s"
     status: ok
+  supp1.annzarro.doc_every:
+    text: 200 million cells, every cell drawn in one plot (synthetic store, this paper's measurement above)
+    file: manuscript/supplement.tex
+    kind: number
+    source:
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: max_n_ok, agg: first}
+      - {csv: benchmark/tool_ceiling/ceilings.csv, where: {tool: annzarro, variant: v041}, column: row_status, agg: first, pattern: '^(final)'}
+    compute: "(v[0] / 1e6) if v[1] == 'final' else float('nan')"
+    format: "{:g} million cells, every cell drawn in one plot (synthetic store, this paper's measurement above)"
+    status: ok
   supp1.annzarro.doc_1b:
     text: 1.5 billion cells opened and drawn on a subset, the largest store tested and so a lower bound (synthetic stores, this paper's measurement above)
     file: manuscript/supplement.tex

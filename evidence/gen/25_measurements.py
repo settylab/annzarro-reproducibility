@@ -445,6 +445,16 @@ def ceiling_page(ctx, S, svg, rows, page):
             ch.line([(n, st.median(v)) for n, v in sorted(sc.items())], cls, dash=True)
             ch.line([(n, st.median(v)) for n, v in sorted(ss.items())], cls, dot=True)
             sub_series.append((name, sv, cls, sr))
+        # direct labels right of each subset line's last point, so the panel reads without the legend
+        for name, sv, cls, sr in sub_series:
+            ok = [r for r in sr if r["status"] == "ok"]
+            if ok:
+                last = max(r["n"] for r in ok)
+                lab = "1M subset" if sv.endswith("1m") else ("100k subset" if tool == "annzarro" else name)
+                ch.text(last * 1.35, st.median([r["client"] for r in ok]) * 0.9, lab, cls=f"ev-note {cls}")
+        sv_srv = [r for _, _, _, sr in sub_series for r in sr if r["status"] == "ok" and not math.isnan(r["server"])]
+        if sv_srv:
+            ch.text(max(r["n"] for r in sv_srv) * 1.35, max(r["server"] for r in sv_srv) * 1.05, "servers", cls="ev-note")
         # a memory-guard refusal: what it is and why, from the refusal's own text (first_fail_detail)
         guard_note = ""
         dec_runs = sorted((r for r in rs + tag if declined(r)), key=lambda r: r["n"])
@@ -511,7 +521,7 @@ def ceiling_page(ctx, S, svg, rows, page):
                        _num(r["server"]) if (r in srv_rows) else "(tag rerun)", f"{r['status']} {r['mode']}".strip()[:160])
                       for r in rs + tag + [x for _, _, _, sr in sub_series for x in sr]])
         derived = (f"**[[fig:overview]]c: {c['figure_value'] or '–'}** · {c['kind_16gb']}"
-                   + (f" · stopped at {stop[0]:,} ({stop[1]})" if stop and f"{stop[0]:,}" not in c["kind_16gb"] else ""))
+                   + (f" · the next size tested, {stop[0]:,}, stopped it ({stop[1]})" if stop and f"{stop[0]:,}" not in c["kind_16gb"] else ""))
         if tag:
             derived += " · server values from a separate rerun of the same release"
         sw = sorted({r["software"] for r in rs + tag + [x for _, _, _, sr in sub_series for x in sr] if r.get("software")})
@@ -519,6 +529,11 @@ def ceiling_page(ctx, S, svg, rows, page):
             derived += "\nMeasured with " + "; ".join(sw) + "."
         elif sw and len(sw) <= 2:
             derived += "\nSoftware: " + "; ".join(sw) + "."
+        if sub_series and tool == "annzarro":
+            derived += ("\nBlue and orange: every cell drawn in one plot. Green (100k subset): AnnZarro opened on its default subset "
+                        "(100,000 cells shown for a store above 200,000); purple (1M subset): on a 1,000,000-cell subset; dotted lines "
+                        "and hollow points are their servers. With a subset the "
+                        "client holds only the subset's cells, so its memory stays flat as the store grows; the server reads the store.")
         if notes:
             derived += "\n" + " ".join(notes)
         pk = [("ev-s1", "client, every cell")] + ([("ev-s2", "server, every cell")] if srv else [])
@@ -549,7 +564,10 @@ def ceiling_page(ctx, S, svg, rows, page):
 ## Every run {{#every-run}}
 
 Every run behind [[fig:overview]]c's measured cells, per tool and variant, on the versions the paper reports.
-Blue: client peak; orange: server peak; the lines join the medians at each N. The [[fig:overview]]c value is
+Blue: client peak; orange: server peak (every cell drawn). AnnZarro's panel adds its two subset modes:
+green for the automatic (default) 100,000-cell subset and purple for a 1,000,000-cell subset, each with its
+client as a dashed line and filled points and its server as a dotted line and hollow points. The lines join
+the medians at each N. The [[fig:overview]]c value is
 marked on each panel, and the shaded band runs from it to the run that stopped the tool (hover it
 for the rule, [rules](rules.md); hover any point for its run id and numbers).
 
@@ -621,10 +639,14 @@ def scale_page(ctx, S, svg, rows, page):
               "conf95auto": (f"conf95auto_{rel_tag}",)}
     labels = {"first_plot": "first plot", "recolour": "recolour by another gene", "recolour_cat": "recolour by cell line",
               "part_step": "step to the next part", "balance": "subset balanced across cell lines"}
+    # a group measured at one N only (the cold confirmations at 95.6M) is a table, not a chart of one point
+    one_n = {g for g, gtags in groups.items() if len({e["n"] for e in ev if e["tag"] in gtags}) == 1}
     charts, tables = [], []
     for event in CT.EVENTS:
         label = labels[event]
         for g, gtags in groups.items():
+            if g in one_n:
+                continue
             pts = [e for e in ev if e["event"] == event and e["tag"] in gtags]
             if not pts:
                 continue
@@ -657,6 +679,8 @@ def scale_page(ctx, S, svg, rows, page):
     # browser and server memory of every run, per group (renderer, GPU, server RSS)
     mem_charts = []
     for g, gtags in groups.items():
+        if g in one_n:
+            continue
         pts = [e for e in ev if e["tag"] in gtags]
         vals = [_f(e[k]) for e in pts for k in ("renderer_rss_gb", "gpu_rss_gb", "server_rss_gb") if not math.isnan(_f(e[k]))]
         if not vals:
@@ -679,6 +703,30 @@ def scale_page(ctx, S, svg, rows, page):
         mem_charts.append(f'<figure class="ev-fig" id="{anchor}">{mem_html}'
                           f'<figcaption>{CT.backs_html(page_md, anchor, rel)}</figcaption></figure>')
     memory = '<div class="ev-charts">' + "".join(mem_charts) + "</div>" if mem_charts else ""
+    # single-N groups: one row per group, event and colour (median of the reps); the claim anchors sit on it
+    one_rows, one_ids = [], []
+    for g in sorted(one_n):
+        pts = [e for e in ev if e["tag"] in groups[g]]
+        one_ids += [CT.scale_anchor(x, g) for x in CT.EVENTS if any(e["event"] == x for e in pts)] + [f"memory-{g}"]
+        by = defaultdict(list)
+        for e in pts:
+            by[(e["event"], e["color"])].append(e)
+        for (event, col), es in sorted(by.items()):
+            if event not in CT.EVENTS:
+                continue
+            s = [e["s"] for e in es if e["status"] == "ok" and not math.isnan(e["s"])]
+            one_rows.append((CT.SCALE_GROUPS[g], f"{es[0]['n']:,}", labels[event], col, len(es),
+                             _num(st.median(s)) if s else "–", _num(max(_f(e["renderer_rss_gb"]) for e in es))))
+    one_html = ("".join(f'<span id="{a}"></span>' for a in one_ids) + "\n\n"
+                + _tbl(["group", "N", "event", "colour", "reps", "median s", "renderer RSS GB (max)"], one_rows)) if one_rows else ""
+    # tags this page charts nowhere else (summarize_rerun.py writes them to the same events file)
+    shown = {t for gt in groups.values() for t in gt}
+    other = sorted((e for e in ev if e["tag"] not in shown), key=lambda e: (e["tag"], e["n"], e["event"], e["color"], e["rep"]))
+    other_tbl = _tbl(["tag", "N", "event", "colour", "rep", "seconds", "status", "renderer RSS GB"],
+                     [(e["tag"], f"{e['n']:,}", e["event"], e["color"], e["rep"], _num(e["s"]), e["status"], e["renderer_rss_gb"])
+                      for e in other]) if other else ""
+    ladder = {g: sorted({e["n"] for e in ev if e["tag"] in gt}) for g, gt in groups.items() if g not in one_n}
+    ladder_text = "; ".join(f"{CT.SCALE_GROUPS[g]}: " + ", ".join(ctx.fmt_n(n) for n in ns) for g, ns in ladder.items() if ns)
     # memory-guard edge: the current AnnZarro row's runs from the tool ceiling, 50M and up
     edge = sorted((r for r in rows if r["tool"] == "annzarro" and r["panel"] == ("annzarro", cur)
                    and r["phase"] == "run" and r["counted"] and r["n"] >= 50_000_000), key=lambda r: (r["n"], r["id"]))
@@ -708,7 +756,7 @@ def scale_page(ctx, S, svg, rows, page):
     series = defaultdict(lambda: defaultdict(list))
     for r in sub:
         k = "1M subset" if r["variant"].endswith("sub1m") else "default subset"
-        cls = "ev-s3" if k == "1M subset" else "ev-s1"
+        cls = "ev-s4" if k == "1M subset" else "ev-s3"
         U.point(r["n"], r["client"], svg.shape_of(r["status"]), cls, tip(r, f"series: client, {k}"))
         U.point(r["n"], r["server"], svg.shape_of(r["status"]), "ev-s2", tip(r, f"series: server, {k}"))
         if r["status"] == "ok":
@@ -779,16 +827,35 @@ def scale_page(ctx, S, svg, rows, page):
 [[fig:scale]]'s data, every rep: AnnZarro {rel_ver} ({release['commit'][:7]}) on prefixes of Tahoe-100M (the first N cells) up to
 95.6M, and synthetic stores above it for the memory-guard edge and the subset reach (recipes in
 {link(page, f"{TC}/NOTES.md", "NOTES.md")}). Hover any point for the run, store and numbers.
+{("The browser series was measured at these sizes and no others (" + ladder_text + "), so the charts start at "
+  + ctx.fmt_n(min(n for ns in ladder.values() for n in ns)) + ".") if ladder_text else ""}
 
 ## First plot, recolour, part step and balanced subset, every rep {{#timing}}
 
-Blue: coloured by a gene; orange: by cell line. Lines join the medians. Data:
+Blue: coloured by a gene; orange: by cell line. Lines join the medians. Zoom and drag timings are in the
+same file and are not charted. Data:
 {dl(evf, Path(evf).name) if ev else "(the " + ver + " series has not landed yet)"}{(" (" + prov(evf) + ")") if ev else ""}.
 
 {svg.legend_html([("ev-s1", "gene"), ("ev-s2", "cell line")], shapes=False)}
 
 {timing}
-""" + _details("Every rep (first plot and recolours)", "\n\n".join(tables)) + f"""
+""" + _details("Every rep (first plot and recolours)", "\n\n".join(tables)) + (f"""
+
+### Point size at {ctx.fmt_n(next(e["n"] for e in ev if e["tag"] in groups[min(one_n)]))} cells {{#point-size}}
+
+Cold confirmations at one size only, so a table rather than a chart: the app's automatic point size
+against point size 1 (opacity 0.2), median of the reps.
+
+{one_html}
+""" if one_html else "") + (f"""
+
+### Other runs in the same file {{#other-runs}}
+
+Runs of the same series that the charts above do not draw (tags in
+{link(page, "benchmark/scale/NOTES.md", "NOTES.md")}: `guard175` the first plot at 175M (synthetic),
+`endpoint` the recolour end-point check).
+
+""" + _details(f"{len(other)} events", other_tbl) if other else "") + f"""
 
 ## Browser and server memory {{#memory}}
 
@@ -812,9 +879,12 @@ circle, a refusal by the memory guard a cross (its own text in the tooltip and t
 With the default subset (100,000 cells) and a 1,000,000-cell subset, the client stays small at
 every size; the server grows with the store. All runs on {ver} ({ver_commit}).
 
-{svg.legend_html([("ev-s1", "client, default subset"), ("ev-s3", "client, 1M subset"), ("ev-s2", "server")], shapes=False)}
+Green: client with the default subset; purple: client with the 1M subset; orange: server (both subsets),
+as on the [Tool ceiling](tool-ceiling.md) page.
 
-{svg.grid([U.render([('ev-s1', 'client, default subset'), ('ev-s3', 'client, 1M subset'), ('ev-s2', 'server')])])}
+{svg.legend_html([("ev-s3", "client, default subset"), ("ev-s4", "client, 1M subset"), ("ev-s2", "server")], shapes=False)}
+
+{svg.grid([U.render([('ev-s3', 'client, default subset'), ('ev-s4', 'client, 1M subset'), ('ev-s2', 'server')])])}
 {CT.backs_html(page_md, "subset-reach", rel)}
 """ + _details("Subset runs", _tbl(["run", "N", "status", "client GiB", "server GiB", "note"], sub_rows)) + f"""
 

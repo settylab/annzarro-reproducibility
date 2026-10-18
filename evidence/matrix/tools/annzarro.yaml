@@ -10,8 +10,9 @@ figure:
   row: 1
   label: AnnZarro
   largest_documented: |-
-    1.5B (this paper,
-    with a subset)
+    200M, every cell
+    drawn at 17.4 GiB
+    (1.5B with a subset)
 notes: evidence/notes/annzarro.md
 cells:
   cells:

@@ -33,8 +33,8 @@ A tool that downloads a whole file before loading it does not read a remote stor
 % Sources (paper repo, not cited in the text): benchmark/scale/ceiling/build_stores.py; benchmark/tool_ceiling/NOTES.md; benchmark/tool_ceiling/NOTES.md; benchmark/tool_ceiling/subset_request_times.csv; benchmark/tool_ceiling/server_profile_1b.csv; benchmark/tool_ceiling
 
 \begin{itemize}[nosep]
-%claim{supp1.annzarro.doc_1b} %claim{supp1.annzarro.n} %claim{supp1.annzarro.threshold} %claim{supp1.annzarro.scale_marks}
-\item \textbf{AnnZarro.} 1.5 billion cells opened and drawn on a subset, the largest store tested and so a lower bound (synthetic stores, this paper's measurement above); 95,624,334 cells of Tahoe-100M, every cell drawn in one plot on request (\textbf{Fig.~\ref{fig:scale}}). Data are read in chunks on demand on the server; above 200,000 cells the default view is a reproducible 100,000-cell subset, whose parts reach every cell, and one setting draws every cell in one plot.
+%claim{supp1.annzarro.doc_every} %claim{supp1.annzarro.doc_1b} %claim{supp1.annzarro.n} %claim{supp1.annzarro.threshold} %claim{supp1.annzarro.scale_marks}
+\item \textbf{AnnZarro.} 200 million cells, every cell drawn in one plot (synthetic store, this paper's measurement above); 1.5 billion cells opened and drawn on a subset, the largest store tested and so a lower bound (synthetic stores, this paper's measurement above); 95,624,334 cells of Tahoe-100M, every cell drawn in one plot on request (\textbf{Fig.~\ref{fig:scale}}). Data are read in chunks on demand on the server; above 200,000 cells the default view is a reproducible 100,000-cell subset, whose parts reach every cell, and one setting draws every cell in one plot.
 % Sources (paper repo, not cited in the text): figures/scale/README.md
 %claim{supp1.cellxgene.filesize} %claim{supp1.cellxgene.4_3M} %claim{supp1.cellxgene.docline} %claim{supp1.cellxgene.paper} %claim{supp1.cellxgene.11M} %claim{supp1.cellxgene.scale_marks} %claim{supp1.cellxgene.render} %claim{supp1.cellxgene.readout} %claim{supp1.cellxgene.policy_figure} %claim{supp1.cellxgene.runs}
 %claim{supp1.cellxgene.annotate}

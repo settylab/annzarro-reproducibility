@@ -697,7 +697,7 @@ this page and the figure are checked to be identical.
 
 {chr(10).join(h)}
 
-The cells strip is [[fig:overview]]c's, on the same log axis (100k to 1B): above the line, the largest
+The cells strip is [[fig:overview]]c's, on the same log axis (100k to 10B): above the line, the largest
 number of cells drawn within the 16 GiB client budget, shaped by what stopped the tool; below
 it, the largest dataset documented or observed. Hover a strip for it in words; click it for every
 run behind it ([Tool ceiling](measurements/tool-ceiling.md)).{star_text}
